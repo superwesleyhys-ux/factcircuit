@@ -1,249 +1,92 @@
 #!/usr/bin/env python3
-"""新闻溯源 Agent CLI 入口。"""
+"""Local Astra news tracing by default; the legacy API renderer is opt-in."""
 from __future__ import annotations
 
 import argparse
 import asyncio
+import json
+from pathlib import Path
 import sys
+import tempfile
+from urllib.parse import urlsplit
 
-from rich.console import Console
-from rich.panel import Panel
-from rich.table import Table
-from rich.tree import Tree
-
-from agent.core import NewsTracingAgent
-from agent.llm_client import LLMClient
-from agent.models import CredibilityBreakdown, EventNode, TimelineEvent, TracingReport
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[1]
 
 
-console = Console()
+def _run_local(args):
+    # The repository path works without installing the legacy API dependencies.
+    if str(REPO) not in sys.path:
+        sys.path.insert(0, str(REPO))
+    from newsverify.cli import main as trace_main
+
+    options = ["--tunnel", "local"]
+    for name in ("model", "reasoning_effort", "timeout", "max_model_calls", "output"):
+        value = getattr(args, name)
+        if value is not None:
+            options.extend(["--" + name.replace("_", "-"), str(value)])
+    if args.input:
+        return trace_main(["trace-news", str(args.input), *options])
+    item = {"id": "news-1", "text": args.news}
+    url = urlsplit(args.news)
+    if url.scheme in {"http", "https"} and url.netloc:
+        item["url"] = args.news
+    payload = {"news": [item]}
+    if args.depth is not None:
+        payload["config"] = {"depth": args.depth}
+    with tempfile.TemporaryDirectory(prefix="factcircuit-news-") as directory:
+        source = Path(directory) / "input.json"
+        source.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        return trace_main(["trace-news", str(source), *options])
 
 
-# ── 报告渲染 ───────────────────────────────────────────────
+def _run_api(args):
+    # Import the original renderer/client only after explicit API selection.
+    if str(HERE) not in sys.path:
+        sys.path.insert(0, str(HERE))
+    from legacy_main import run_api
+    asyncio.run(run_api(args.news, depth=3 if args.depth is None else args.depth,
+                        model=args.model))
+    return 0
 
 
-def render_report(report: TracingReport) -> None:
-    console.print()
-
-    # 1) 直答 — 最醒目的核心输出
-    if report.direct_response:
-        console.print(Panel(
-            report.direct_response,
-            title="[bold]直答[/bold]",
-            border_style="bold bright_white on blue",
-            padding=(1, 2),
-        ))
-
-    # 2) 可信度指标 — 透明原始维度，不是单一分数
-    _render_credibility(report.credibility)
-
-    # 3) 事件时间线
-    if report.event_timeline:
-        _render_event_timeline(report.event_timeline)
-
-    # 4) 因果事件树
-    console.print()
-    tree = Tree(
-        f"[bold]{report.event.title}[/bold] ({report.event.date})",
-        guide_style="cyan",
-    )
-    _build_rich_tree(tree, report.event)
-    console.print(Panel(tree, title="因果事件树"))
-
-    # 5) 事实核查表
-    if report.consistent_facts or report.disputed_facts:
-        console.print()
-        fact_table = Table(title="事实核查", show_lines=True)
-        fact_table.add_column("状态", justify="center", no_wrap=True)
-        fact_table.add_column("事实声明")
-        fact_table.add_column("来源数", justify="center")
-
-        for f in report.consistent_facts:
-            fact_table.add_row(
-                "[green]一致[/green]",
-                f.claim,
-                str(len(f.source_urls)),
-            )
-        for f in report.disputed_facts:
-            fact_table.add_row(
-                "[red]分歧[/red]",
-                f.claim,
-                str(len(f.source_urls)),
-            )
-        console.print(fact_table)
-
-    # 6) 信源一览
-    if report.source_timeline:
-        console.print()
-        src_table = Table(
-            title=f"信源一览 ({len(report.source_timeline)} 个来源)",
-            show_lines=True,
-        )
-        src_table.add_column("时间", style="cyan", no_wrap=True)
-        src_table.add_column("来源", style="bold")
-        src_table.add_column("类型", style="dim")
-        src_table.add_column("首发", justify="center")
-        src_table.add_column("链接", style="dim", max_width=50)
-
-        for s in report.source_timeline:
-            src_table.add_row(
-                s.publish_time or "—",
-                s.outlet or "—",
-                s.source_type or "—",
-                "★" if s.is_original else "",
-                s.url if s.url else "—",
-            )
-        console.print(src_table)
-
-    # 7) 关键发现 / 信息缺口 / 立场标注
-    if report.causal_summary:
-        console.print(
-            Panel(report.causal_summary, title="因果链综述", border_style="blue")
-        )
-    if report.key_findings:
-        findings = "\n".join(f"  * {f}" for f in report.key_findings)
-        console.print(Panel(findings, title="关键发现", border_style="green"))
-    if report.information_gaps:
-        gaps = "\n".join(f"  ! {g}" for g in report.information_gaps)
-        console.print(Panel(gaps, title="信息缺口", border_style="yellow"))
-    if report.bias_notes:
-        notes = "\n".join(f"  > {n}" for n in report.bias_notes)
-        console.print(Panel(notes, title="立场/偏见标注", border_style="red"))
-
-
-def _render_credibility(cred: CredibilityBreakdown) -> None:
-    gr_pct = f"{cred.grounding_rate:.0%}" if cred.total_causal_nodes else "N/A"
-    types_str = "、".join(cred.source_types) if cred.source_types else "—"
-    line = (
-        f"[bold]{cred.source_count}[/bold] 个信源  [dim]|[/dim]  "
-        f"[bold]{len(cred.source_types)}[/bold] 类媒体 [dim]({types_str})[/dim]  "
-        f"[dim]|[/dim]  "
-        f"[green]{cred.consistent_count}[/green] 条一致 / "
-        f"[red]{cred.disputed_count}[/red] 条争议  [dim]|[/dim]  "
-        f"因果锚定 [bold]{cred.grounded_count}[/bold]/"
-        f"[bold]{cred.total_causal_nodes}[/bold] "
-        f"[dim]({gr_pct})[/dim]"
-    )
-    console.print(Panel(line, title="可信度指标", expand=False, border_style="dim"))
-
-
-def _render_event_timeline(events: list[TimelineEvent]) -> None:
-    console.print()
-    table = Table(
-        title=f"事件时间线 ({len(events)} 个事件)",
-        show_lines=True,
-    )
-    table.add_column("日期", style="cyan", no_wrap=True)
-    table.add_column("事件", max_width=40)
-    table.add_column("详情", max_width=50)
-    table.add_column("级别", justify="center", no_wrap=True)
-    table.add_column("佐证", justify="center", no_wrap=True)
-    table.add_column("多方视角", max_width=45)
-
-    sig_style = {"重大": "bold red", "重要": "bold yellow", "背景": "dim"}
-
-    for ev in events:
-        style = sig_style.get(ev.significance, "")
-        title = f"[{style}]{ev.title}[/{style}]" if style else ev.title
-        verified_mark = "[green]V[/green]" if ev.verified else "[dim]-[/dim]"
-
-        perspectives = ""
-        if ev.perspectives:
-            parts = []
-            for p in ev.perspectives[:2]:
-                src = p.get("source", "?")
-                framing = p.get("framing", "")
-                if len(framing) > 30:
-                    framing = framing[:28] + "…"
-                parts.append(f"[dim]{src}:[/dim] {framing}")
-            perspectives = "\n".join(parts)
-
-        desc = ev.description
-        if len(desc) > 60:
-            desc = desc[:58] + "…"
-
-        table.add_row(
-            ev.date or "—",
-            title,
-            desc,
-            f"[{style}]{ev.significance}[/{style}]" if style else ev.significance,
-            verified_mark,
-            perspectives or "—",
-        )
-
-    console.print(table)
-
-
-def _build_rich_tree(parent: Tree, node: EventNode) -> None:
-    for child in node.causes:
-        rel_tag = f" [dim][{child.relation}][/dim]" if child.relation else ""
-        conf = f" [dim]({child.confidence:.0%})[/dim]"
-        grounded_tag = " [green][有据][/green]" if child.grounded else " [yellow][推测][/yellow]"
-        branch = parent.add(
-            f"[bold]{child.title}[/bold] ({child.date}){rel_tag}{conf}{grounded_tag}"
-        )
-        if child.summary:
-            branch.add(f"[italic]{child.summary}[/italic]")
-        if child.sources:
-            src_text = ", ".join(
-                s.get("title", s.get("url", "?")) for s in child.sources[:3]
-            )
-            branch.add(f"[dim]来源: {src_text}[/dim]")
-        _build_rich_tree(branch, child)
-
-
-# ── CLI ────────────────────────────────────────────────────
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="新闻溯源 Agent — 双轨并行 + 递归因果挖掘",
-    )
-    parser.add_argument(
-        "news",
-        nargs="?",
-        help="新闻文本或 URL（不提供则进入交互模式）",
-    )
-    parser.add_argument(
-        "--depth",
-        type=int,
-        default=3,
-        help="因果挖掘最大递归深度（默认 3）",
-    )
-    return parser.parse_args()
-
-
-async def async_main() -> None:
-    args = parse_args()
-
-    news_input = args.news
-    if not news_input:
-        console.print("[bold]新闻溯源 Agent[/bold]", style="cyan")
-        console.print("请输入新闻文本或 URL（输入空行结束）:\n")
-        lines: list[str] = []
-        try:
-            while True:
-                line = input()
-                if not line and lines:
-                    break
-                lines.append(line)
-        except EOFError:
-            pass
-        news_input = "\n".join(lines).strip()
-
-    if not news_input:
-        console.print("[red]未提供任何输入，退出。[/red]")
-        sys.exit(1)
-
-    llm = LLMClient()
-    agent = NewsTracingAgent(llm=llm, max_depth=args.depth, console=console)
-    report = await agent.run(news_input)
-    render_report(report)
-
-
-def main() -> None:
-    asyncio.run(async_main())
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="新闻溯源：默认通过本地 Codex 使用 Astra，输出 FactCircuit JSON。")
+    parser.add_argument("news", nargs="?", help="新闻文本或 URL；省略时从标准输入读取")
+    parser.add_argument("--input", type=Path, help="FactCircuit trace-news JSON 输入")
+    parser.add_argument("--output", type=Path, help="本地模式 JSON 输出文件；默认输出到标准输出")
+    parser.add_argument("--tunnel", choices=("local", "api"), default="local",
+                        help="默认 local；api 显式启用旧版 API 工作流")
+    parser.add_argument("--model", help="本地默认 gpt-6-astra；可显式选择其他本地 Codex 模型")
+    parser.add_argument("--reasoning-effort", help="本地 Codex 推理强度")
+    parser.add_argument("--depth", type=int, help="文本/URL 的因果递归深度")
+    parser.add_argument("--timeout", type=float, help="本地模式每次模型调用超时秒数")
+    parser.add_argument("--max-model-calls", type=int, help="本地模式模型调用总预算")
+    args = parser.parse_args(argv)
+    if args.input and args.news:
+        parser.error("news and --input are mutually exclusive")
+    if args.input and args.depth is not None:
+        parser.error("Set config.depth in the --input JSON file")
+    if args.tunnel == "api" and any(getattr(args, k) is not None for k in
+                                   ("input", "output", "reasoning_effort", "timeout", "max_model_calls")):
+        parser.error("--tunnel api uses the legacy console renderer; JSON and local-budget flags require local mode")
+    if not args.input and not args.news:
+        if sys.stdin.isatty():
+            print("请输入新闻文本或 URL，然后按 Ctrl-D：", file=sys.stderr)
+        args.news = sys.stdin.read().strip()
+    if not args.input and not args.news:
+        parser.error("Provide news text, a URL, or --input JSON")
+    try:
+        return _run_local(args) if args.tunnel == "local" else _run_api(args)
+    except (OSError, ValueError) as exc:
+        print(f"news-tracing: {exc}", file=sys.stderr)
+        return 2
+    except ModuleNotFoundError as exc:
+        if args.tunnel != "api":
+            raise
+        print(f"Legacy API dependency unavailable ({exc.name}); install requirements.txt for --tunnel api.", file=sys.stderr)
+        return 2
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -14,14 +14,17 @@ execution uses `trace-model`; its default tunnel is `local`.
 
 ```bash
 python -m newsverify trace-model examples/model_trace.json --tunnel local --output reports/model-local.json
-python -m newsverify trace-model examples/model_trace.json --tunnel api --output reports/model-api.json
+python -m newsverify trace-model examples/model_trace.json --tunnel api --model YOUR_API_MODEL --output reports/model-api.json
 ```
 
 Both commands accept the same local JSON schema (`target`, `rounds`, optional
-`config`). `--model` and `--reasoning-effort` select model settings. Omitted
-settings are read from the Codex configuration; effort defaults to `medium` if
-unset. If there is no configured model, `--model` is required. The API model must
-be available to the API account; Codex access does not establish API access.
+`config`). `--model` and `--reasoning-effort` select model settings.
+Local model selection uses `--model`, then `FACTCIRCUIT_MODEL`, then
+`gpt-6-astra`. It does not inherit the global Codex model. For the local path, omitted reasoning
+effort is read from the Codex configuration, with `medium` as the fallback.
+The API path does not read that configuration and defaults to `medium`.
+The API path requires `--model` or `OPENAI_MODEL` for a model available to that
+API account; Codex access does not establish API access.
 Provide API credentials through the environment, never through fixture files.
 
 HTTPS certificate and hostname verification remain enabled. The API path uses

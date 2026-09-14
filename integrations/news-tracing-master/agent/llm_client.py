@@ -18,13 +18,19 @@ JSON_EXTRACT_PROMPT = (
 class LLMClient:
     """Chat Completions API 封装。需要联网搜索时用搜索模型获取信息，再用主模型结构化。"""
 
-    def __init__(self) -> None:
+    def __init__(self, *, model: str | None = None) -> None:
+        self.model = model if model is not None else os.getenv("OPENAI_MODEL")
+        if not self.model or not self.model.strip():
+            raise ValueError("API mode requires --model or OPENAI_MODEL for your API provider")
+        self.model = self.model.strip()
+        self.search_model = os.getenv("OPENAI_SEARCH_MODEL")
+        if not self.search_model or not self.search_model.strip():
+            raise ValueError("API mode requires OPENAI_SEARCH_MODEL for your provider's search model")
+        self.search_model = self.search_model.strip()
         self.client = AsyncOpenAI(
             api_key=os.getenv("OPENAI_API_KEY"),
             base_url=os.getenv("OPENAI_BASE_URL") or None,
         )
-        self.model = os.getenv("OPENAI_MODEL", "gpt-5.4-mini")
-        self.search_model = os.getenv("OPENAI_SEARCH_MODEL", "gpt-4o-search-preview")
         self.total_input_tokens = 0
         self.total_output_tokens = 0
 

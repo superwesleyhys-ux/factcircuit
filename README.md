@@ -176,13 +176,17 @@ harness. **Local is the default** for `trace-model`. Select API explicitly:
 python -m newsverify trace-model examples/model_trace.json --output reports/model-local.json
 
 # Tunnel 2: OpenAI Responses API, using OPENAI_API_KEY from the environment
-python -m newsverify trace-model examples/model_trace.json --tunnel api --output reports/model-api.json
+python -m newsverify trace-model examples/model_trace.json --tunnel api --model YOUR_API_MODEL --output reports/model-api.json
 ```
 
-`--model` and `--reasoning-effort` override the configured Codex model/settings;
-if no model is configured, supply `--model`. `--timeout` sets the per-call timeout
+The local default model is `gpt-6-astra`; `--model` explicitly selects another
+model available through the local Codex CLI. `FACTCIRCUIT_MODEL` provides a
+project-level default without changing the user's global Codex setting.
+`--reasoning-effort` continues to use the configured global effort when omitted.
+`--timeout` sets the per-call timeout
 in seconds (default 180). The API tunnel uses the standard library and requires
-`OPENAI_API_KEY`; the local tunnel does not use an API key. Local Codex execution
+`OPENAI_API_KEY` and an explicit `--model` or `OPENAI_MODEL`; the local tunnel
+does not use an API key. Local Codex execution
 can still use a hosted model, so it is distinct from offline inference.
 
 Reports contain `execution.tunnel`, model settings and measured model-call usage.

@@ -169,21 +169,30 @@ class ModelVerifier:
         return VerificationResult(response["verdict"], basis, response["rationale"])
 
 
-def _settings(model, effort):
+DEFAULT_LOCAL_MODEL = "gpt-6-astra"
+
+
+def _settings(model, effort, *, tunnel="local"):
     configured = {}
-    if model is None or effort is None:
+    if tunnel == "local" and effort is None:
         config_dir = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
         path = config_dir / "config.toml"
         if path.is_file():
             try:
                 configured = tomllib.loads(path.read_text(encoding="utf-8"))
             except (ValueError, OSError):
-                raise ValueError("Cannot read Codex model settings; supply --model and --reasoning-effort") from None
-    model = model if model is not None else configured.get("model")
+                raise ValueError("Cannot read Codex reasoning settings; supply --reasoning-effort") from None
+    if model is None:
+        if tunnel == "api":
+            model = os.environ.get("OPENAI_MODEL")
+            if not model:
+                raise ValueError("API mode requires --model or OPENAI_MODEL for an available API model")
+        else:
+            model = os.environ.get("FACTCIRCUIT_MODEL", DEFAULT_LOCAL_MODEL)
     effort = effort if effort is not None else configured.get("model_reasoning_effort", "medium")
     if not isinstance(model, str) or not model.strip():
-        raise ValueError("Supply --model or configure a default model in Codex")
-    return model, effort
+        raise ValueError("Supply a nonempty --model or project model setting")
+    return model.strip(), effort
 
 
 def run_model_trace(payload, *, tunnel="local", model=None, reasoning_effort=None, timeout=180):
@@ -191,7 +200,7 @@ def run_model_trace(payload, *, tunnel="local", model=None, reasoning_effort=Non
     if tunnel not in {"local", "api"}:
         raise ValueError("tunnel must be local or api")
     target, provider, config = prepare_snapshot(payload)
-    model, effort = _settings(model, reasoning_effort)
+    model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
     transport = (LocalTunnel if tunnel == "local" else APITunnel)(
         model=model, reasoning_effort=effort, timeout=timeout)
     report = run_provenance(target, provider, ModelDecomposer(transport),

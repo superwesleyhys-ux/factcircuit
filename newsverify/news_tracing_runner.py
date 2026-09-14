@@ -461,7 +461,7 @@ def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=No
         identifiers.add(item["id"])
         entries.append(deepcopy(item))
     if transport is None:
-        model, effort = _settings(model, reasoning_effort)
+        model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
         transport = (LocalTunnel if tunnel == "local" else APITunnel)(model=model, reasoning_effort=effort, timeout=timeout)
     elif transport.kind != tunnel:
         raise ValueError("The transport must match the selected tunnel")
