@@ -1,0 +1,11 @@
+{
+  "registration_matches_manifest": true,
+  "frozen_files_and_cutoff_valid": true,
+  "sealed_gold_hash_valid": true,
+  "all_scheduled_steps_present_once": true,
+  "request_hashes_valid": true,
+  "identical_packet_hashes_in_both_arms": true,
+  "one_local_call_per_step": true,
+  "no_retry_or_fallback": true,
+  "runner_reports_no_gold_loaded": true
+}

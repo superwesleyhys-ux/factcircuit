@@ -1,5 +1,13 @@
 # Honest system holdout: original model vs FactCircuit source tracing
 
+> **Interpretation correction — 2026-09-14:** This historical run used unequal,
+> manually curated evidence packets. Its runner did not perform automated
+> retrieval. The outcome-aware selection and summaries were not independently
+> blind. The numerical outputs below are preserved, but any system-level or
+> “blind” interpretation is superseded by this note. It does not establish a
+> same-evidence policy advantage or deliberate fabrication detection. See the
+> [v6 same-evidence protocol](../../../experiments/astra-same-evidence-v6-20260914/PROTOCOL.md).
+
 This is a preregistered system comparison on eight previously unused papers. The direct
 arm received the anonymized original-article record. The harness arm received the same
 record plus source traces that were already public by the end of 2024. Later publisher

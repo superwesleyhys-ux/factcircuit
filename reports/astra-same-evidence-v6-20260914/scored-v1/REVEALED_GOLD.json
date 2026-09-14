@@ -1,0 +1,151 @@
+{
+  "created_before_calls": true,
+  "outcome_window": "2025-01-01 through 2026-09-14",
+  "cutoff_annotations": "Assistant-labelled descriptive states of these summaries, not independently determined scientific truth.",
+  "cases": [
+    {
+      "id": "q8701",
+      "title": "Nox2 dependent redox-regulation of microglial response to amyloid-β stimulation and microgliosis in aging.",
+      "doi": "10.1038/s41598-020-58422-8",
+      "outcome": {
+        "status": "no_retraction_located",
+        "checked_through": "2026-09-14",
+        "checks": [
+          "Europe PMC exact DOI core record: publication types and correction links",
+          "exact DOI web search with retraction terms",
+          "publisher correction notice"
+        ],
+        "censoring": "Absence of a located retraction is not proof of authenticity; follow-up is unequal."
+      },
+      "outcome_risk_target": "ordinary",
+      "cutoff_assessment_target": "addressed_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q7071",
+      "title": "The Effect of Mesenchymal Stem Cell-Derived Exosomes and miR17-5p Inhibitor on Multicellular Liver Fibrosis Microtissues.",
+      "doi": "10.1155/2023/8836452",
+      "outcome": {
+        "status": "retracted_for_data_reliability",
+        "date": "2026-04-17",
+        "doi": "10.1155/sci/9804587",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13089195/"
+      },
+      "outcome_risk_target": "elevated",
+      "cutoff_assessment_target": "no_specific_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "No pre-cutoff concern was located in the checked records. Earliest comment on the checked PubPeer thread is 2025-10-13; later criticisms are excluded from model input."
+    },
+    {
+      "id": "q2371",
+      "title": "Evaluation of Wound-Healing Activity of Hydrogel Extract of Sansevieria trifasciata Leaves (Asparagaceae).",
+      "doi": "10.1155/2023/7680518",
+      "outcome": {
+        "status": "retracted_for_data_reliability",
+        "date": "2025-11-21",
+        "doi": "10.1155/adpp/9783217",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12638215/"
+      },
+      "outcome_risk_target": "elevated",
+      "cutoff_assessment_target": "unresolved_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q6297",
+      "title": "T cell-encoded CD80 and 4-1BBL induce auto- and transcostimulation, resulting in potent tumor rejection.",
+      "doi": "10.1038/nm1676",
+      "outcome": {
+        "status": "no_retraction_located",
+        "checked_through": "2026-09-14",
+        "checks": [
+          "Europe PMC exact DOI core record: publication types and correction links",
+          "exact DOI web search with retraction terms",
+          "publisher correction notice"
+        ],
+        "censoring": "Absence of a located retraction is not proof of authenticity; follow-up is unequal."
+      },
+      "outcome_risk_target": "ordinary",
+      "cutoff_assessment_target": "addressed_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q9641",
+      "title": "Ameliorating Effect of Malva neglecta Wallr on Obesity and Diabetes in Wistar Rats: A Mechanistic Study.",
+      "doi": "10.1155/2022/2614599",
+      "outcome": {
+        "status": "retracted_for_data_reliability",
+        "date": "2025-10-26",
+        "doi": "10.1155/bmri/9879623",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12554781/"
+      },
+      "outcome_risk_target": "elevated",
+      "cutoff_assessment_target": "unresolved_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q6682",
+      "title": "Interleukin-10-Modified Adipose-Derived Mesenchymal Stem Cells Prevent Hypertrophic Scar Formation via Regulating the Biological Characteristics of Fibroblasts and Inflammation.",
+      "doi": "10.1155/2022/6368311",
+      "outcome": {
+        "status": "retracted_for_data_reliability",
+        "date": "2025-12-17",
+        "doi": "10.1155/mi/9785923",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12767476/"
+      },
+      "outcome_risk_target": "elevated",
+      "cutoff_assessment_target": "unresolved_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q9417",
+      "title": "An oncogenic Ezh2 mutation induces tumors through global redistribution of histone 3 lysine 27 trimethylation.",
+      "doi": "10.1038/nm.4092",
+      "outcome": {
+        "status": "no_retraction_located",
+        "checked_through": "2026-09-14",
+        "checks": [
+          "Europe PMC exact DOI core record: publication types and correction links",
+          "exact DOI web search with retraction terms",
+          "publisher correction notice"
+        ],
+        "censoring": "Absence of a located retraction is not proof of authenticity; follow-up is unequal."
+      },
+      "outcome_risk_target": "ordinary",
+      "cutoff_assessment_target": "addressed_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    },
+    {
+      "id": "q3724",
+      "title": "Tumor cell-specific bioluminescence platform to identify stroma-induced changes to anticancer drug activity.",
+      "doi": "10.1038/nm.2112",
+      "outcome": {
+        "status": "no_retraction_located",
+        "checked_through": "2026-09-14",
+        "checks": [
+          "Europe PMC exact DOI core record: publication types and correction links",
+          "exact DOI web search with retraction terms",
+          "publisher correction notice"
+        ],
+        "censoring": "Absence of a located retraction is not proof of authenticity; follow-up is unequal."
+      },
+      "outcome_risk_target": "ordinary",
+      "cutoff_assessment_target": "addressed_concern",
+      "fabrication_established_target": false,
+      "annotation_origin": "assistant-curated with later outcomes known; not blinded independent adjudication",
+      "note": "Concern status describes only the supplied packet, not all evidence that existed."
+    }
+  ]
+}
