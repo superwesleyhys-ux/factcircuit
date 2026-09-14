@@ -1,0 +1,99 @@
+{
+  "created_at": "2026-09-14T17:44:00.631257+00:00",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "tunnel": "local",
+  "cutoff": "2024-12-31",
+  "timeout_seconds": 240,
+  "retry_count": 0,
+  "repeats": 1,
+  "case_order": [
+    "q8701",
+    "q7071",
+    "q2371",
+    "q6297",
+    "q9641",
+    "q6682",
+    "q9417",
+    "q3724"
+  ],
+  "schedule": [
+    {
+      "case_id": "q8701",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q8701",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q7071",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q7071",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q2371",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q2371",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q6297",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q6297",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q9641",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q9641",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q6682",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q6682",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q9417",
+      "arm": "direct"
+    },
+    {
+      "case_id": "q9417",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q3724",
+      "arm": "harness"
+    },
+    {
+      "case_id": "q3724",
+      "arm": "direct"
+    }
+  ],
+  "primary_metric": "later_outcome_balanced_accuracy_with_abstentions_and_failures_as_misses",
+  "sealed_gold_sha256": "c393d7346e26f98a82b32c17304279b5cb5cee2a4d0db32b0958c7e9b185059c",
+  "frozen_sha256": {
+    "corpus.json": "760b080e4ae8b777ad54d197b05d205e99474deb96a0bdadcc92b279a25c9ded",
+    "SOURCE_AUDIT.json": "f62dfe8706a30075822bf81da85bab9ba3b017199efd30059ce5d93c3e4cfd04",
+    "PROTOCOL.md": "a55aa8bf05f7e28a5476b6171fa50fcbf42d35559a4d5701bc175026d47fbd68",
+    "policies.py": "156c1be45613c4a4cf6eca93433c6ec52c87d5f11e7b7b8996cb662b010bb08e",
+    "run_test.py": "ae46ff1b848dd92e07a1881bc4667b67dc7e1841f0dbdb41c86e270c322e80a6",
+    "summarize_test.py": "0fe6c9e65fb92c788e49b98ee98b8b5da5537c5a005fca5db268ed141c898040",
+    "check_safeguards.py": "66992ad9ba377f3b2e563b6d53229d0d31ff8a3846786e1d94398037835f576f",
+    "../../newsverify/tunnels.py": "5ca2843d7086ffbff77b1ea20598f819860126d7b19ff8a92695b39a0431f1a4",
+    "../../newsverify/__init__.py": "90fc21d71c6994c19e501788df6c9415e0f7ef7640161134dd8a64c7a96f0ce2"
+  }
+}

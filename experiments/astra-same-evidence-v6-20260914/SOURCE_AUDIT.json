@@ -1,0 +1,270 @@
+{
+  "checked_at": "2026-09-14",
+  "contains_post_cutoff_outcomes": false,
+  "capture_notice": "Current pages retrieved in 2026. Only original abstract content and dated pre-cutoff comment/correction text were paraphrased. Historical availability is reconstructed from source dates and visible edit histories, not independently verified archival snapshots. Full captures stay local; capture hashes include current metadata that is never sent to the model.",
+  "selection": "Purposive retrospective selection by an outcome-aware assistant. New article DOIs absent from tracked prior reports/experiments; no claim of independence between all authors or source families.",
+  "excluded_candidate": {
+    "reason": "KIF5A candidate discarded during source selection because its notice cross-references an image family already used. No model calls were made.",
+    "description": "KIF5A / bladder cancer candidate"
+  },
+  "cases": [
+    {
+      "id": "q8701",
+      "title": "Nox2 dependent redox-regulation of microglial response to amyloid-β stimulation and microgliosis in aging.",
+      "doi": "10.1038/s41598-020-58422-8",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1038/s41598-020-58422-8",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038%2Fs41598-020-58422-8&format=json&resultType=core",
+          "available_at": "2020-01-31",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "3391d34f42e036ec8c54ad08f0771fba32f63457cea47b7469f4d3dfd8a6f708"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://www.nature.com/articles/s41598-023-31194-7",
+          "available_at": "2023-03-31",
+          "locator": "publisher correction body",
+          "capture_sha256": "3b0adf821996f783ccd5956c71496c72124de92ac05ae0038ea0dbba2b72d102"
+        }
+      ]
+    },
+    {
+      "id": "q7071",
+      "title": "The Effect of Mesenchymal Stem Cell-Derived Exosomes and miR17-5p Inhibitor on Multicellular Liver Fibrosis Microtissues.",
+      "doi": "10.1155/2023/8836452",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002",
+            "p003"
+          ],
+          "url": "https://doi.org/10.1155/2023/8836452",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1155%2F2023%2F8836452&format=json&resultType=core",
+          "available_at": "2023-08-04",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "8706370bcece2763377e4903a77564a134715fb684bf122b07c7256b1a5a542d"
+        }
+      ]
+    },
+    {
+      "id": "q2371",
+      "title": "Evaluation of Wound-Healing Activity of Hydrogel Extract of Sansevieria trifasciata Leaves (Asparagaceae).",
+      "doi": "10.1155/2023/7680518",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1155/2023/7680518",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1155%2F2023%2F7680518&format=json&resultType=core",
+          "available_at": "2023-08-29",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "7eefe14dd825c65dc02229f29529d4cb323359a36964f921d7ddee2a77ed3158"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://pubpeer.com/publications/1F094C362C6712E7461D030DA20339",
+          "available_at": "2023-09-14",
+          "locator": "comments 1",
+          "capture_sha256": "f63a42f4118f92909c2c6bb6bc4bd6b7020e4736de6c5dbc57239d44ccdcd07e",
+          "comment_dates": [
+            {
+              "id": 1,
+              "accepted_at": "2023-09-14T23:35:08.000000Z",
+              "edits": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q6297",
+      "title": "T cell-encoded CD80 and 4-1BBL induce auto- and transcostimulation, resulting in potent tumor rejection.",
+      "doi": "10.1038/nm1676",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1038/nm1676",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038%2Fnm1676&format=json&resultType=core",
+          "available_at": "2007-11-18",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "53d42864dbc64ccacd9082f801f6b642cd1e081c3e61904b1db3a642c6b4d45c"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://www.nature.com/articles/s41591-024-02882-2",
+          "available_at": "2024-02-28",
+          "locator": "publisher correction body",
+          "capture_sha256": "2cf8eb7e9acbfb4dcb9a593c05332cb7dbdee4b6d539f654c3bd40c25b7d63fd"
+        }
+      ]
+    },
+    {
+      "id": "q9641",
+      "title": "Ameliorating Effect of Malva neglecta Wallr on Obesity and Diabetes in Wistar Rats: A Mechanistic Study.",
+      "doi": "10.1155/2022/2614599",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1155/2022/2614599",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1155%2F2022%2F2614599&format=json&resultType=core",
+          "available_at": "2022-05-28",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "14f9eb9cb2b05692f5ca47523211d5d385c2095af35b9bddf054c78527bfe867"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://pubpeer.com/publications/E450F7C297C7241C7993FEFC96CE2A",
+          "available_at": "2023-12-18",
+          "locator": "comments 1,2",
+          "capture_sha256": "6838e43706e02240151f5d2b20815d6c3cc6dd076fce9075d1ca41f770403a43",
+          "comment_dates": [
+            {
+              "id": 1,
+              "accepted_at": "2023-01-22T01:14:40.000000Z",
+              "edits": []
+            },
+            {
+              "id": 2,
+              "accepted_at": "2023-12-18T09:31:21.000000Z",
+              "edits": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q6682",
+      "title": "Interleukin-10-Modified Adipose-Derived Mesenchymal Stem Cells Prevent Hypertrophic Scar Formation via Regulating the Biological Characteristics of Fibroblasts and Inflammation.",
+      "doi": "10.1155/2022/6368311",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1155/2022/6368311",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1155%2F2022%2F6368311&format=json&resultType=core",
+          "available_at": "2022-06-21",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "058a008f60da82163684eeb678e640f02be427f9ac6a8ca6967b270da4947825"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://pubpeer.com/publications/6AEDC7888866CCD33231CAAC40407E",
+          "available_at": "2024-01-25",
+          "locator": "comments 1,2",
+          "capture_sha256": "0671fc0c5367790fb831a0cc255d480785d9edffcd743b2853869091cc584f54",
+          "comment_dates": [
+            {
+              "id": 1,
+              "accepted_at": "2024-01-25T11:10:09.000000Z",
+              "edits": [
+                "2024-01-25 11:16:28",
+                "2024-01-25 11:18:30",
+                "2024-01-25 11:25:01"
+              ]
+            },
+            {
+              "id": 2,
+              "accepted_at": "2024-01-25T11:31:29.000000Z",
+              "edits": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q9417",
+      "title": "An oncogenic Ezh2 mutation induces tumors through global redistribution of histone 3 lysine 27 trimethylation.",
+      "doi": "10.1038/nm.4092",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1038/nm.4092",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038%2Fnm.4092&format=json&resultType=core",
+          "available_at": "2016-05-02",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "ed63b6b8a0c7548c7427eb67ab058374589e76304e5cf901e2671e08801f8e72"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://www.nature.com/articles/s41591-024-02867-1",
+          "available_at": "2024-02-21",
+          "locator": "publisher correction body",
+          "capture_sha256": "35b0972c75d213130cd665a61c1262c880a944e40189f879eb5380026f01337b"
+        }
+      ]
+    },
+    {
+      "id": "q3724",
+      "title": "Tumor cell-specific bioluminescence platform to identify stroma-induced changes to anticancer drug activity.",
+      "doi": "10.1038/nm.2112",
+      "sources": [
+        {
+          "source_id": "s1",
+          "passage_ids": [
+            "p001",
+            "p002"
+          ],
+          "url": "https://doi.org/10.1038/nm.2112",
+          "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038%2Fnm.2112&format=json&resultType=core",
+          "available_at": "2010-03-14",
+          "locator": "original article abstract; only pre-cutoff scientific claims paraphrased",
+          "capture_sha256": "85f0ec132672313394a05255dc26b2930faa9739df77103811d0ab213fb5aa61"
+        },
+        {
+          "source_id": "s2",
+          "passage_ids": [
+            "p003"
+          ],
+          "url": "https://www.nature.com/articles/s41591-024-02847-5",
+          "available_at": "2024-02-14",
+          "locator": "publisher correction body",
+          "capture_sha256": "0ea604b43a0cea8fc36046826808223b70600ea186b5830fdb78babf1b100715"
+        }
+      ]
+    }
+  ]
+}

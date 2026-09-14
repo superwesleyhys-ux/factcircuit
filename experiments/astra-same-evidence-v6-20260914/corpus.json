@@ -1,0 +1,230 @@
+{
+  "cutoff": "2024-12-31",
+  "format": "assistant_curated_anonymized_paraphrases",
+  "cases": [
+    {
+      "id": "q8701",
+      "packet": {
+        "case_id": "q8701",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2020-01-31",
+            "kind": "article_abstract_summary",
+            "text": "The study investigated an oxidase-dependent redox pathway in microglial responses to amyloid stimulation, using cultured cells, young and aging mice, and post-mortem human tissue."
+          },
+          {
+            "id": "p002",
+            "available_at": "2020-01-31",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported reactive oxygen generation, signaling changes and inflammatory responses, with reductions in the presence of an inhibitor or in knockout animals. They concluded that the pathway contributes to microglial activation and aging-associated inflammation."
+          },
+          {
+            "id": "p003",
+            "available_at": "2023-03-31",
+            "kind": "publisher_correction_summary",
+            "text": "A publisher correction dated 2023-03-31 reports that the Figure 3A phosphoprotein blot had duplicated another protein’s blot; the corresponding supplementary raw-data blot was also duplicated, and Figure 4C raw data had been omitted. The notice says the article and supplementary file were corrected. This reports a repair but is not an independent audit of the experiments."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q7071",
+      "packet": {
+        "case_id": "q7071",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2023-08-04",
+            "kind": "article_abstract_summary",
+            "text": "A multicellular liver microtissue model combined hepatocyte, stellate and endothelial cells. Fatty acids were used to induce a fibrosis-like condition, and stem-cell-derived exosomes and an inhibitory RNA treatment were tested."
+          },
+          {
+            "id": "p002",
+            "available_at": "2023-08-04",
+            "kind": "article_abstract_summary",
+            "text": "The report describes cell viability, reactive oxygen species, liver enzymes, inflammation, histopathology and matrix-protein expression as readouts. It reports reductions in inflammatory and fibrosis-associated markers following treatment."
+          },
+          {
+            "id": "p003",
+            "available_at": "2023-08-04",
+            "kind": "article_abstract_summary",
+            "text": "The authors proposed the model for studying fibrosis and drug development, and suggested that the exosome treatment and inhibitory RNA might have therapeutic potential. The reported conclusions are based on the described microtissue experiments."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q2371",
+      "packet": {
+        "case_id": "q2371",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2023-08-29",
+            "kind": "article_abstract_summary",
+            "text": "A leaf-extract hydrogel was assessed for wound healing. The report describes five groups of four mice, including negative and positive controls and three extract concentrations, treated in an incision-wound experiment."
+          },
+          {
+            "id": "p002",
+            "available_at": "2023-08-29",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported that higher-concentration preparations improved wound closure relative to the negative control. They also reported physical and stability testing of the formulations and proposed development as a plant-derived wound treatment."
+          },
+          {
+            "id": "p003",
+            "available_at": "2023-09-14",
+            "kind": "public_comment_summary",
+            "text": "On 2023-09-14 a public commenter questioned whether several wound photographs in Figure 5 could represent different animals, describing similarities after rotation, stretching and zooming. The commenter requested uncropped original photographs. No response or replacement photographs are contained in that supplied comment."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q6297",
+      "packet": {
+        "case_id": "q6297",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2007-11-18",
+            "kind": "article_abstract_summary",
+            "text": "Human T cells were engineered to express two costimulatory ligands. The report tested responses to tumor cells and antitumor activity in immunodeficient mice."
+          },
+          {
+            "id": "p002",
+            "available_at": "2007-11-18",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported stimulation both of the engineered cells themselves and of neighboring T cells, together with rejection of large systemic tumors. They proposed the approach for targeted adoptive cellular therapy."
+          },
+          {
+            "id": "p003",
+            "available_at": "2024-02-28",
+            "kind": "publisher_correction_summary",
+            "text": "A publisher correction dated 2024-02-28 reports that the day-8 images for one engineered-cell treatment group in Figure 3a had been duplicated from another mouse group. It states that original data were located and provides a revised figure. The notice also explains that empty positions in the figure represent deceased mice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q9641",
+      "packet": {
+        "case_id": "q9641",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2022-05-28",
+            "kind": "article_abstract_summary",
+            "text": "A plant extract was studied in rats with diet-induced obesity followed by chemically induced diabetes. The report describes chemical characterization, enzyme inhibition and antioxidant assays, then oral treatment of the diseased animals."
+          },
+          {
+            "id": "p002",
+            "available_at": "2022-05-28",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported reduced blood glucose, body weight and several metabolic markers, together with altered antioxidant measures in liver, kidney and pancreas. They attributed the reported benefits partly to reduced oxidative stress and insulin resistance."
+          },
+          {
+            "id": "p003",
+            "available_at": "2023-12-18",
+            "kind": "public_comment_summary",
+            "text": "A public commenter on 2023-01-22 reported overlapping tissue-image regions in Figure 3 despite differing experimental conditions and magnification. Another comment on 2023-12-18 identified overlap in Figure 4 across images intended to show different conditions. These are commenters’ observations; the supplied dated comments do not provide replacement source images."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q6682",
+      "packet": {
+        "case_id": "q6682",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2022-06-21",
+            "kind": "article_abstract_summary",
+            "text": "Genetically modified adipose-derived mesenchymal stem cells were investigated for prevention of hypertrophic scarring, using fibroblast assays and an animal wound model. The study compared modified cells with unmodified cells."
+          },
+          {
+            "id": "p002",
+            "available_at": "2022-06-21",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported stronger inhibition of fibroblast proliferation, migration and extracellular-matrix synthesis, as well as smaller scars and reduced inflammation. They proposed involvement of growth-factor and inflammatory signaling pathways."
+          },
+          {
+            "id": "p003",
+            "available_at": "2024-01-25",
+            "kind": "public_comment_summary",
+            "text": "Two public comments dated 2024-01-25 juxtaposed Figure 3a with Figure 5b of another article, and described a repeated panel between Figures 5A and 8e with apparently different descriptions. The first is a presented comparison, not a textual determination of manipulation. The supplied comments contain no author explanation or corrected panel."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q9417",
+      "packet": {
+        "case_id": "q9417",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2016-05-02",
+            "kind": "article_abstract_summary",
+            "text": "A conditional mouse model was used to study a recurrent gain-of-function mutation in a histone methyltransferase. Expression in B cells or melanocytes was compared with other genetic backgrounds."
+          },
+          {
+            "id": "p002",
+            "available_at": "2016-05-02",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported lymphoma or melanoma development and redistribution of a histone methylation mark, including increased and decreased repression at different genomic sites. They proposed broad chromatin reorganization as a mechanism."
+          },
+          {
+            "id": "p003",
+            "available_at": "2024-02-21",
+            "kind": "publisher_correction_summary",
+            "text": "A publisher correction dated 2024-02-21 identifies an incorrect histone H3 loading-control western-blot panel in Figure 1g. It states that the original experimental data were located and supplies a corrected panel. It does not claim an independent replication of the whole study."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q3724",
+      "packet": {
+        "case_id": "q3724",
+        "cutoff": "2024-12-31",
+        "question": "Assess the supplied record and separately forecast major data-reliability withdrawal risk. Do these cutoff records establish deliberate fabrication?",
+        "evidence_passages": [
+          {
+            "id": "p001",
+            "available_at": "2010-03-14",
+            "kind": "article_abstract_summary",
+            "text": "An assay used luciferase-expressing tumor cells grown with nonmalignant accessory cells to measure tumor viability during drug exposure. The stated purpose was to capture effects of the tumor microenvironment on drug activity."
+          },
+          {
+            "id": "p002",
+            "available_at": "2010-03-14",
+            "kind": "article_abstract_summary",
+            "text": "The authors reported that stromal cells can increase resistance to some drugs and increase sensitivity to others. They also described a compound with stronger activity in an orthotopic disease model than in a conventional subcutaneous model."
+          },
+          {
+            "id": "p003",
+            "available_at": "2024-02-14",
+            "kind": "publisher_correction_summary",
+            "text": "A publisher correction dated 2024-02-14 reports that a treatment-group day-19 bioluminescence image was also used for the control group in Supplementary Figure 8b. It states that original data were located and that the figure was amended through supplementary information supplied with the correction."
+          }
+        ]
+      }
+    }
+  ]
+}

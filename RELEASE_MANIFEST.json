@@ -189,6 +189,46 @@
       "sha256": "4747d8705f629f1c34cf522030f8f9c0684b6107ae8a379d02b7beb09ad953e3"
     },
     {
+      "path": "experiments/astra-same-evidence-v6-20260914/PROTOCOL.md",
+      "bytes": 6442,
+      "sha256": "a55aa8bf05f7e28a5476b6171fa50fcbf42d35559a4d5701bc175026d47fbd68"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/REGISTRATION.json",
+      "bytes": 2397,
+      "sha256": "fa26fec50fb7da8eb82ae4788af24415d9d2a3d79ee8c36d647a51594075c00c"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/SOURCE_AUDIT.json",
+      "bytes": 10819,
+      "sha256": "f62dfe8706a30075822bf81da85bab9ba3b017199efd30059ce5d93c3e4cfd04"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/check_safeguards.py",
+      "bytes": 3759,
+      "sha256": "66992ad9ba377f3b2e563b6d53229d0d31ff8a3846786e1d94398037835f576f"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/corpus.json",
+      "bytes": 12886,
+      "sha256": "760b080e4ae8b777ad54d197b05d205e99474deb96a0bdadcc92b279a25c9ded"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/policies.py",
+      "bytes": 3585,
+      "sha256": "156c1be45613c4a4cf6eca93433c6ec52c87d5f11e7b7b8996cb662b010bb08e"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/run_test.py",
+      "bytes": 7706,
+      "sha256": "ae46ff1b848dd92e07a1881bc4667b67dc7e1841f0dbdb41c86e270c322e80a6"
+    },
+    {
+      "path": "experiments/astra-same-evidence-v6-20260914/summarize_test.py",
+      "bytes": 13843,
+      "sha256": "0fe6c9e65fb92c788e49b98ee98b8b5da5537c5a005fca5db268ed141c898040"
+    },
+    {
       "path": "experiments/double-loop-pilot/requirements.lock.txt",
       "bytes": 85,
       "sha256": "8e5f20451e7857b041c67fb488c37c9b1f403f350de72e7fea1ebceef55e3173"
