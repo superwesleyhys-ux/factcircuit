@@ -84,7 +84,7 @@ class ModelTraceTests(unittest.TestCase):
         self.addCleanup(blocker.stop)
         self.config_dir = tempfile.TemporaryDirectory()
         self.addCleanup(self.config_dir.cleanup)
-        environment = patch.dict(os.environ, {"CODEX_HOME": self.config_dir.name})
+        environment = patch.dict(os.environ, {"CODEX_HOME": self.config_dir.name}, clear=True)
         environment.start()
         self.addCleanup(environment.stop)
 
@@ -241,23 +241,84 @@ class ModelTraceTests(unittest.TestCase):
         local.assert_not_called()
         api.assert_not_called()
 
-    def test_model_and_reasoning_defaults_come_from_codex_settings(self):
+    def test_astra_project_default_ignores_global_model_but_keeps_reasoning(self):
         Path(self.config_dir.name, "config.toml").write_text(
             'model = "configured-test-model"\nmodel_reasoning_effort = "high"\n', encoding="utf-8")
-        tunnel = FakeTunnel(model="configured-test-model", reasoning_effort="high")
+        tunnel = FakeTunnel(model="gpt-6-astra", reasoning_effort="high")
         with patch("newsverify.model_runner.LocalTunnel", return_value=tunnel) as local:
             report = run_model_trace(snapshot())
-        local.assert_called_once_with(model="configured-test-model", reasoning_effort="high", timeout=180)
-        self.assertEqual(report["execution"]["model"], "configured-test-model")
+        local.assert_called_once_with(model="gpt-6-astra", reasoning_effort="high", timeout=180)
+        self.assertEqual(report["execution"]["model"], "gpt-6-astra")
         self.assertEqual(report["execution"]["reasoning_effort"], "high")
+        self.assertIn('model = "configured-test-model"', Path(self.config_dir.name, "config.toml").read_text())
 
-    def test_missing_model_is_a_clear_setup_error(self):
+    def test_no_config_defaults_to_local_astra_without_api_key(self):
+        with patch("newsverify.model_runner.LocalTunnel", return_value=FakeTunnel(model="gpt-6-astra")) as local, \
+                patch("newsverify.model_runner.APITunnel") as api:
+            run_model_trace(snapshot())
+        local.assert_called_once_with(model="gpt-6-astra", reasoning_effort="medium", timeout=180)
+        api.assert_not_called()
+
+    def test_project_environment_and_explicit_local_model_override(self):
+        with patch.dict(os.environ, {"FACTCIRCUIT_MODEL": "project-model"}), \
+                patch("newsverify.model_runner.LocalTunnel", return_value=FakeTunnel()) as local:
+            run_model_trace(snapshot())
+            self.assertEqual(local.call_args.kwargs["model"], "project-model")
+            run_model_trace(snapshot(), model="gpt-5.6-luna")
+            self.assertEqual(local.call_args.kwargs["model"], "gpt-5.6-luna")
+
+    def test_api_requires_explicit_provider_model_before_construction(self):
         with patch("newsverify.model_runner.LocalTunnel") as local, \
                 patch("newsverify.model_runner.APITunnel") as api:
-            with self.assertRaisesRegex(ValueError, "model"):
-                run_model_trace(snapshot())
+            with self.assertRaisesRegex(ValueError, "API mode requires"):
+                run_model_trace(snapshot(), tunnel="api")
         local.assert_not_called()
         api.assert_not_called()
+
+    def test_api_uses_explicit_provider_environment(self):
+        with patch.dict(os.environ, {"OPENAI_MODEL": "provider-model", "FACTCIRCUIT_MODEL": "local-only-model"}), \
+                patch("newsverify.model_runner.APITunnel", return_value=FakeTunnel(kind="api")) as api, \
+                patch("newsverify.model_runner.LocalTunnel") as local:
+            run_model_trace(snapshot(), tunnel="api")
+        self.assertEqual(api.call_args.kwargs["model"], "provider-model")
+        local.assert_not_called()
+
+    def test_api_ignores_invalid_local_config_and_defaults_to_medium(self):
+        Path(self.config_dir.name, "config.toml").write_text("invalid = [", encoding="utf-8")
+        with patch("newsverify.model_runner.APITunnel", return_value=FakeTunnel(kind="api")) as api, \
+                patch("newsverify.model_runner.LocalTunnel") as local:
+            run_model_trace(snapshot(), tunnel="api", model="provider-model")
+        api.assert_called_once_with(model="provider-model", reasoning_effort="medium", timeout=180)
+        local.assert_not_called()
+
+    def test_api_does_not_inherit_local_reasoning_effort(self):
+        Path(self.config_dir.name, "config.toml").write_text(
+            'model_reasoning_effort = "high"\n', encoding="utf-8")
+        with patch("newsverify.model_runner.APITunnel", return_value=FakeTunnel(kind="api")) as api:
+            run_model_trace(snapshot(), tunnel="api", model="provider-model")
+        api.assert_called_once_with(model="provider-model", reasoning_effort="medium", timeout=180)
+
+    def test_explicit_api_reasoning_effort_is_preserved(self):
+        Path(self.config_dir.name, "config.toml").write_text("invalid = [", encoding="utf-8")
+        with patch("newsverify.model_runner.APITunnel", return_value=FakeTunnel(kind="api")) as api:
+            run_model_trace(snapshot(), tunnel="api", model="provider-model", reasoning_effort="low")
+        api.assert_called_once_with(model="provider-model", reasoning_effort="low", timeout=180)
+
+    def test_explicit_empty_model_does_not_fall_back(self):
+        with patch("newsverify.model_runner.LocalTunnel") as local, \
+                patch("newsverify.model_runner.APITunnel") as api:
+            for tunnel in ("local", "api"):
+                with self.assertRaisesRegex(ValueError, "nonempty"):
+                    run_model_trace(snapshot(), tunnel=tunnel, model="  ")
+        local.assert_not_called()
+        api.assert_not_called()
+
+    def test_empty_project_model_override_is_an_error(self):
+        with patch.dict(os.environ, {"FACTCIRCUIT_MODEL": ""}), \
+                patch("newsverify.model_runner.LocalTunnel") as local:
+            with self.assertRaisesRegex(ValueError, "nonempty"):
+                run_model_trace(snapshot())
+        local.assert_not_called()
 
     def test_cli_defaults_local_and_accepts_explicit_api(self):
         with tempfile.TemporaryDirectory() as directory:

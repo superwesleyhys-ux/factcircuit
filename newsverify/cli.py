@@ -86,8 +86,10 @@ def main(argv=None, *, prog="newsverify"):
         if command in {"trace-model", "early-risk"}:
             child.add_argument("--tunnel", choices=("local", "api"), default="local",
                                help="model execution path (default: local Codex CLI)")
-            child.add_argument("--model", help="model ID (default: configured Codex model)")
-            child.add_argument("--reasoning-effort", help="reasoning effort (default: Codex setting or medium)")
+            child.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
+            child.add_argument("--reasoning-effort", help=(
+                "reasoning effort (default: low)" if command == "early-risk"
+                else "reasoning effort (default: Codex setting or medium)"))
             child.add_argument("--timeout", type=float, default=180,
                                help="timeout in seconds for each model call (default: 180)")
     score_parser = sub.add_parser("score")
@@ -105,7 +107,7 @@ def main(argv=None, *, prog="newsverify"):
     news_parser.add_argument("input", type=Path, help="JSON file containing a news list")
     news_parser.add_argument("--output", type=Path)
     news_parser.add_argument("--tunnel", choices=("local", "api"), default="local")
-    news_parser.add_argument("--model")
+    news_parser.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
     news_parser.add_argument("--reasoning-effort")
     news_parser.add_argument("--timeout", type=float, default=90)
     news_parser.add_argument("--max-model-calls", type=int, default=40,

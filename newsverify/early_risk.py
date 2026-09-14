@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import re
 from typing import Any
 
+from .model_runner import _settings
 from .tunnels import APITunnel, LocalTunnel
 
 
@@ -220,8 +221,7 @@ def run_early_risk(case: dict, *, tunnel: str = "local", model: str | None = Non
     if transport is None:
         if tunnel not in {"local", "api"}:
             raise ValueError("tunnel must be local or api")
-        if not isinstance(model, str) or not model.strip():
-            raise ValueError("model is required")
+        model, reasoning_effort = _settings(model, reasoning_effort, tunnel=tunnel)
         transport = (LocalTunnel if tunnel == "local" else APITunnel)(
             model=model, reasoning_effort=reasoning_effort, timeout=timeout)
     value = transport.generate("early_risk", POLICY, packet, RESULT_SCHEMA)

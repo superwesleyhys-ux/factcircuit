@@ -457,7 +457,7 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         if type(getattr(config, name)) is not int or getattr(config, name) < 1:
             raise ValueError(f"{name} must be a positive integer")
     if transport is None:
-        model, effort = _settings(model, reasoning_effort)
+        model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
         transport = (LocalTunnel if tunnel == "local" else APITunnel)(
             model=model, reasoning_effort=effort, timeout=timeout)
     elif transport.kind != tunnel:

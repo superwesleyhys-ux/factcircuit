@@ -3,6 +3,14 @@
 All notable changes to FactCircuit are documented here. The project uses
 semantic versioning for its public releases.
 
+## Unreleased
+
+- Default local model-backed tracing to Astra; select other Codex models with
+  `--model` or `FACTCIRCUIT_MODEL` without changing global model settings.
+- Route the standalone news-tracing entry point through local FactCircuit by
+  default. The legacy API workflow requires explicit `--tunnel api` and provider
+  model settings; local mode does not load the API dependencies.
+
 ## 0.3.2 — 2026-09-08
 
 - Added a packaged offline `quickstart` command with input/config/trace artifacts

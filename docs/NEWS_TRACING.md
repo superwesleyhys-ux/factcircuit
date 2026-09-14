@@ -42,10 +42,13 @@ Replace the example text, claim and URL with the actual news item. Then run:
 python -m newsverify trace-news news.json --output reports/news-trace.json
 ```
 
-The default `local` tunnel runs the installed Codex CLI with its existing login.
-Local orchestration does **not** mean offline model weights. `--model` and
-`--reasoning-effort` override the configured Codex settings; effort defaults to
-`medium` when unset. Supply `--model` if no model is configured.
+The default `local` tunnel runs the installed Codex CLI with its existing login
+and uses `gpt-6-astra` unless `--model` or `FACTCIRCUIT_MODEL` selects another
+locally available model.
+Local orchestration does **not** mean offline model weights. The local default
+is independent of the user's global model setting; `--model` and
+`FACTCIRCUIT_MODEL` provide explicit project/model overrides. Reasoning effort
+continues to use the configured global setting when omitted.
 
 To select the API explicitly, set `OPENAI_API_KEY` in your environment and run:
 

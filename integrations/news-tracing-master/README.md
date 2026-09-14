@@ -2,7 +2,7 @@
 
 基于 LLM 的新闻溯源 Agent，输入一条新闻或话题，**直接回答**用户关心的问题，并附带透明的多维度可信度指标。同时生成事件时间线、因果分析、多源事实核查等详情供展开查阅。
 
-## 架构
+## API 工作流架构
 
 ```
 Phase 1: 解构 + 搜索规划
@@ -15,33 +15,53 @@ Phase 3: 时间线构建 + 综合研判
     锚定验证 → 事件时间线 → 多方视角 → 可信度指标 → 直答生成 → 详细研判
 ```
 
-## 快速开始
+## 快速开始（本地 Codex 路由）
 
 ```bash
-cd news
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-# macOS/Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-
-cp .env.example .env
-# 编辑 .env，填入你的 API Key
+# 从仓库根目录进入集成目录
+cd integrations/news-tracing-master
+python main.py "美伊冲突" --model gpt-6-astra --reasoning-effort low
 ```
 
-`.env` 配置项：
+本地默认委托仓库根目录的 FactCircuit `trace-news`，使用 Codex 登录和本地 CLI；不需要 API key 或额外 provider。默认模型为 `gpt-6-astra`，也可以用 `--model` 显式选择当前本地可用的其他模型。设置 `FACTCIRCUIT_MODEL` 可提供项目级默认模型。
+
+“本地”指启动和登录通道；Astra 推理仍在云端完成。
+
+本地路径不会自动读取 `.env`；请先导出项目默认值，或在命令前设置一次：
+
+```bash
+export FACTCIRCUIT_MODEL=gpt-6-astra
+FACTCIRCUIT_MODEL=gpt-5.6-luna python main.py "美伊冲突" --reasoning-effort low
+```
+
+## 输入与输出
+
+```bash
+python main.py "美伊冲突" --output RESULT.json
+python main.py --input CASE.json --output RESULT.json --model gpt-6-astra
+```
+
+`--input` 接收 JSON 新闻输入，`--output` 写入 JSON 结果；也可直接提供位置参数新闻文本。
+
+原有的富 API 工作流需要显式选择 API 路由。该路径需要安装依赖并自行配置 provider：
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env
+```
 
 ```
 OPENAI_API_KEY=sk-xxx
 OPENAI_BASE_URL=https://api.openai.com/v1
-OPENAI_MODEL=gpt-5.4-mini
-OPENAI_SEARCH_MODEL=gpt-4o-search-preview
+OPENAI_MODEL=provider-model-id
+OPENAI_SEARCH_MODEL=provider-search-model-id
 ```
 
-支持任何兼容 OpenAI API 的代理服务，修改 `OPENAI_BASE_URL` 即可。`OPENAI_SEARCH_MODEL` 用于带联网搜索的调用。
+```bash
+python main.py "美伊冲突" --tunnel api
+```
+
+使用 `--tunnel api` 才启用该 provider 路径；API 与本地路由不会自动回退。`OPENAI_MODEL` 必须是 provider 实际支持的模型 ID，不能假定 API 提供 Astra。
 
 ## 使用
 
@@ -58,7 +78,7 @@ python main.py
 
 ## 报告输出
 
-报告按以下顺序输出：
+本地路径输出 FactCircuit JSON，包括来源链、事实判断和调用记录。显式 API 路径使用原有 Rich 报告，按以下顺序输出：
 
 | 模块 | 说明 |
 |------|------|
@@ -74,13 +94,17 @@ python main.py
 
 ```
 news/
-├── main.py                 # CLI 入口 + 报告渲染
+├── main.py                 # 默认本地分发；API 需显式选择
+├── legacy_main.py          # 原 API 工作流和 Rich 报告渲染
 ├── agent/
 │   ├── core.py             # 双轨并行编排 + 时间线构建
-│   ├── llm_client.py       # OpenAI API 封装（支持搜索模型）
+│   ├── llm_client.py       # legacy API client（支持搜索模型）
 │   ├── models.py           # 数据模型（CredibilityBreakdown, TimelineEvent, ...）
 │   └── prompts.py          # 各阶段 prompt 模板
 ├── requirements.txt
 ├── .env.example
 └── .gitignore
 ```
+
+本地默认入口由 `main.py` 委托仓库根目录的 FactCircuit；上图中的 Rich renderer 与
+`agent/` workflow 属于显式 API legacy 路径。
