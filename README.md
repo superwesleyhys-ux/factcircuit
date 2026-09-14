@@ -8,121 +8,74 @@
 
 Version 0.2.0: a bounded, auditable news provenance loop with **decomposition on every retrieval return**, a separate verification feedback stage, and a fixed-target evaluation toolkit.
 
-**Status: local harness with offline replay, opt-in live news tracing, and two model execution paths.** Semantic judgments in the demo are hand-authored annotations. The default decomposer preserves original text and leaves source questions unresolved. Model-backed tracing supports local Codex execution and an optional OpenAI API tunnel. A preregistered eight-paper exploratory system holdout found an accuracy improvement from adding cutoff-safe source tracing; the earlier same-evidence prompt-only holdout did not.
+**Status: local harness with offline replay, opt-in live news tracing, and two model execution paths.** Semantic judgments in the demo are hand-authored annotations. The default decomposer preserves original text and leaves source questions unresolved. Model-backed tracing supports local Codex execution and an optional OpenAI API tunnel. Earlier comparisons used unequal, manually curated evidence packets. Their scores do not establish automated retrieval performance or a same-evidence advantage. See the current evaluation and methodology notes below.
 
 Repository Discussions are enabled, and the repository includes a prepared **Accuracy decline** reporting form for reproducible metric regressions or weaker trace outcomes. Reports should identify the affected metric or behavior, include the run configuration, and avoid treating synthetic fixtures as real-world performance evidence.
 
-## Astra source-tracing holdout: harness won
+## Latest Astra test: new data, same evidence, tie
 
-On September 12, holdout v5 tested eight new anonymized papers with
-`gpt-6-astra`. Four papers had precise integrity traces public by December 31,
-2024 and were formally retracted in 2025 or 2026. Four controls had real
-pre-cutoff publisher corrections with replacement figures or source data and
-no located retraction through the audit date. The later outcomes stayed in a
-sealed file until all model calls finished.
+On **September 14, 2026**, v6 tested eight new anonymized research papers
+published before 2024. Both arms received exactly the same three text summaries
+per paper, using only source content dated through **December 31, 2024**.
+The candidate added a new artifact-and-rebuttal verification policy. All **16
+real Astra calls** used local Codex login, low reasoning, one call per arm/case,
+and no retries or API fallback. Local login still uses remote model inference.
 
-Both arms used Astra at low reasoning through the local Codex-login route,
-with one call per paper and no retries or API fallback. The direct arm received
-four passages from the original-paper record. FactCircuit received those same
-passages plus two dated, cutoff-eligible source-trace passages.
-
-| Registered measure | Direct Astra | Astra + FactCircuit |
+| Measure | Direct Astra | Astra + v6 policy |
 |---|---:|---:|
-| Balanced accuracy | 50.0% | **100.0%** |
-| Overall accuracy | 4/8 | **8/8** |
-| Later-positive recall | 0/4 | **4/4** |
-| Control specificity | 4/4 | 4/4 |
-| Valid outputs | 8/8 | 8/8 |
-| Input + output tokens | **75,198** | 78,836 |
-| Harness / direct tokens | 1.00x | 1.05x |
+| Later-outcome forecast matches | **7/8 (87.5%)** | **7/8 (87.5%)** |
+| Later-retracted papers flagged elevated | 3/4 | 3/4 |
+| Controls predicted ordinary | 4/4 | 4/4 |
+| Forecast abstentions | 1 | 1 |
+| Cutoff record-state annotation matches | 8/8 | 8/8 |
+| Unsupported assertions of established fabrication | 0 | 0 |
+| Input + output tokens | **76,960** | 78,750 |
 
-**FactCircuit met all three preregistered success conditions and exceeded
-direct Astra by 50 percentage points in balanced accuracy.** All 16 calls and
-all integrity checks passed. The gain measures the source-tracing system: the
-harness arm received additional dated evidence found by that system. It does
-not show that prompt wording alone improves Astra.
+**The candidate did not outperform direct Astra.** Both abstained on the same
+paper: the supplied pre-cutoff abstract contained no specific integrity concern,
+while the checked public criticism first appeared in 2025. That abstention counts
+as a miss for outcome prediction, not as a false factual assertion. The candidate
+used **2.3% more tokens**; paired predictions were identical (McNemar p = 1.0).
 
-The [complete Astra report, per-case decisions, revealed labels, and token receipts](reports/honest-system-holdout-v5-astra-20260912/scored-v1/README.md)
-and [pre-inference registration](experiments/honest-system-holdout-v5-astra-20260912/PROTOCOL.md)
-are included for audit. The frozen setup and sealed-gold hash were pushed in
-commit `83d86338` before the first model call. This eight-case result is
-exploratory and too small for a stable population estimate; right-censored
-controls are not proof that a paper is authentic.
+This is a small, retrospectively selected **same-evidence decision-stage test**.
+The source editor knew the outcomes, curated the summaries and annotated cutoff
+states; these are not independent truth labels. Models did not retrieve sources,
+inspect images, or verify raw experiments. Retraction for unreliable data is not
+proof of deliberate fraud, and controls without a located retraction are not
+proved authentic. These numbers are not general fake-news detection accuracy.
 
-## Previous Luna source-tracing holdout v4: harness won
+See the [full v6 report and per-case results](reports/astra-same-evidence-v6-20260914/scored-v1/README.md),
+[parsed outputs and call receipts](reports/astra-same-evidence-v6-20260914/run-001/predictions.json),
+and [frozen protocol and source limitations](experiments/astra-same-evidence-v6-20260914/PROTOCOL.md).
+The setup was pushed as `904d65eb` before inference. All registered integrity
+checks passed; **461 regression tests**, **7 evaluation safeguards**, and the
+installed-wheel local smoke check passed.
 
-On September 11, holdout v4 used eight more previously unused, anonymized
-papers. Four had precise public integrity traces by December 31, 2024 and were
-retracted in 2025. Four controls had real publisher corrections with corrected
-figures or source data and no located retraction through the audit date. The
-outcomes were sealed outside the repository; their hash, both prompts, the
-corpus, call order, model, scorer, and pass conditions were committed and
-pushed before inference.
+## Earlier unequal-evidence comparisons: interpretation corrected
 
-Both arms used `gpt-5.6-luna` at low reasoning through the local Codex-login
-route. Each paper received one call per arm, with no retries or API fallback.
-The direct arm saw the original-paper record. The FactCircuit arm saw the same
-record plus cutoff-eligible source traces.
+**Methodology correction, September 14:** the v5, v4 and earlier source-trace
+comparison runners send frozen text packets to a model. They do not execute an
+automated retrieval stage during evaluation. Their candidate arms receive extra
+curated concern/correction passages that the direct arms do not receive. The
+previous description of these scores as proof of an automated source-tracing
+system advantage was unsupported.
 
-| Registered measure | Direct model | FactCircuit source tracing |
-|---|---:|---:|
-| Balanced accuracy | 50.0% | **100.0%** |
-| Overall accuracy | 4/8 | **8/8** |
-| Later-positive recall | 0/4 | **4/4** |
-| Control specificity | 4/4 | 4/4 |
-| Valid outputs | 8/8 | 8/8 |
-| Input + output tokens | **53,421** | 56,196 |
-| Harness / direct tokens | 1.00x | 1.05x |
+The recorded outputs are preserved:
 
-**FactCircuit met all three preregistered success conditions and exceeded the
-direct model by 50 percentage points in balanced accuracy.** All 16 local model
-calls and all audit checks passed. This is a small exploratory system test; it
-does not establish a stable population estimate, and a right-censored control
-does not prove a paper authentic.
+| Run | Model | Direct outcome matches | Candidate outcome matches | Evidence design |
+|---|---|---:|---:|---|
+| [v5](reports/honest-system-holdout-v5-astra-20260912/scored-v1/README.md) | Astra | 4/8 | 8/8 | Extra curated traces for candidate |
+| [v4](reports/honest-system-holdout-v4-20260911/scored-v1/README.md) | Luna | 4/8 | 8/8 | Extra curated traces for candidate |
+| [Earlier source-trace run](reports/honest-system-holdout-20260911/scored-v1/README.md) | Luna | 4/8 | 8/8 | Extra curated traces for candidate |
 
-The [complete v4 report, per-case decisions, sealed labels, and token receipts](reports/honest-system-holdout-v4-20260911/scored-v1/README.md)
-and the [call-before-result preregistration](experiments/honest-system-holdout-v4-20260911/PROTOCOL.md)
-are included for audit. The frozen setup was pushed in commit `bf34d6b` before
-the first model call.
+These selected, eight-case comparisons measure responses to different supplied
+evidence. They do not show independent source finding, better reasoning on the
+same evidence, representative fake-news accuracy, or proof of deliberate fraud.
+Sealing later labels does not make outcome-aware source selection independently
+blind. Original predictions, registrations and receipts remain unchanged.
 
-An intervening [v3 run](reports/honest-system-holdout-v3-20260911/POSTMORTEM.md)
-is retained as infrastructure-invalid: its schema allowed six evidence
-citations while the runtime validator allowed only five, so one successful
-model response was discarded. Its favorable 87.5% versus 50% score is not
-counted as a valid win and the failed case was not rerun.
-
-## Source-tracing system holdout: harness won
-
-On September 11, a preregistered comparison used eight previously unused,
-anonymized papers published before 2024. Four had specific public integrity
-signals by December 31, 2024 and were retracted in 2025–2026; four were
-domain-matched controls with no located retraction through the audit date.
-
-Both arms used `gpt-5.6-luna` at low reasoning through the local Codex-login
-route, with one call per paper and no retries. The direct arm received the
-original-paper record. The FactCircuit arm received the same record plus the
-source traces that the harness had located before the cutoff. Later outcomes
-were sealed until all calls finished.
-
-| Registered measure | Direct model | FactCircuit source tracing |
-|---|---:|---:|
-| Balanced accuracy | 50.0% | **100.0%** |
-| Overall accuracy | 4/8 | **8/8** |
-| Later-positive recall | 0/4 | **4/4** |
-| Control specificity | 4/4 | 4/4 |
-| Input + output tokens | **53,330** | 56,558 |
-| Harness / direct tokens | 1.00x | 1.06x |
-
-**FactCircuit met every preregistered success condition and exceeded the direct
-model by 50 percentage points in balanced accuracy.** The gain came from the
-retrieval stage surfacing dated, checkable pre-cutoff image-provenance signals;
-this is a system-level result, not evidence that a prompt alone improved the
-model. The sample is exploratory and too small for a stable population estimate.
-
-The [complete report, per-case decisions, sealed labels, and token receipts](reports/honest-system-holdout-20260911/scored-v1/README.md)
-and the [call-before-result preregistration](experiments/honest-system-holdout-20260911/PROTOCOL.md)
-are included for audit. The frozen setup was pushed in commit `efce85a` before
-the first model call.
+The [v3 infrastructure failure](reports/honest-system-holdout-v3-20260911/POSTMORTEM.md)
+is also preserved and excluded from valid-win claims.
 
 ## Same-task historical holdout: harness did not win
 

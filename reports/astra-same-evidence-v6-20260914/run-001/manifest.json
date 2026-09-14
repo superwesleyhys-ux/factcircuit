@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-09-14T17:46:05.895401+00:00",
+  "registration_sha256": "fa26fec50fb7da8eb82ae4788af24415d9d2a3d79ee8c36d647a51594075c00c",
+  "git_commit_before_calls": "904d65eb34acb14265b656ec72d58949210e3af8",
+  "codex_cli_version": "codex-cli 0.153.1",
+  "requested_model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "tunnel": "local",
+  "model_weights_local": false,
+  "api_credentials_removed": true,
+  "web_tools_plugins_skills_disabled": true,
+  "retrieval_performed": false,
+  "retries": 0,
+  "fallback": false,
+  "gold_loaded": false,
+  "calls_expected": 16,
+  "timeout_seconds": 240,
+  "finished_at": "2026-09-14T17:48:36.215953+00:00",
+  "calls_attempted": 16,
+  "outputs_valid": 16
+}

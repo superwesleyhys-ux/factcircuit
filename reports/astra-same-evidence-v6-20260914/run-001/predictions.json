@@ -1,0 +1,652 @@
+{
+  "gold_loaded": false,
+  "results": [
+    {
+      "sequence": 1,
+      "case_id": "q8701",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:46:05.952035+00:00",
+      "status": "completed",
+      "request_sha256": "b34626faf3ed6021c365474aa6f6246697783d7784a63b42ced8755881a3ce99",
+      "packet_sha256": "e1c28ca5c1ddc92efb3cf3c5cc13929d25b0a69812ca9d1e0faab7f546037e5e",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The duplicated Figure 3A blot, duplication in its supplementary raw data, and omitted Figure 4C raw data are specific reliability concerns. However, the dated publisher correction reports correcting both the article and supplementary file, and the packet supplies no specific outstanding defect. The supplied record therefore supports addressed_concern and, on balance, an ordinary withdrawal-risk forecast. The reported repair is not an independent audit, so this does not establish the underlying experiments’ authenticity. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 10.06582250003703,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9481,
+            "cached_input_tokens": 0,
+            "output_tokens": 183,
+            "reasoning_output_tokens": 32
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:46:16.018387+00:00"
+    },
+    {
+      "sequence": 2,
+      "case_id": "q8701",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:46:16.019165+00:00",
+      "status": "completed",
+      "request_sha256": "6c83ef7e72c8faca7bcd20dd2c683b5d58285b95613d800d34b170ce2f518a42",
+      "packet_sha256": "e1c28ca5c1ddc92efb3cf3c5cc13929d25b0a69812ca9d1e0faab7f546037e5e",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The correction documents within-paper duplication: Figure 3A’s phosphoprotein blot represented another protein’s blot, and the corresponding supplementary raw-data blot was also duplicated. Separately, Figure 4C raw data were omitted. The March 2023 notice reports corrections to the article and supplementary file, providing a reported remedy with no specific outstanding defect supplied in this packet. Presentation or assembly errors remain a plausible benign explanation, although their cause is not established. The remaining gap is independent verification of the corrected artifacts and underlying experiments; the summary does not provide that verification. Given the documented repair and no supplied unresolved mismatch, I forecast ordinary withdrawal risk with medium confidence. This is not a finding of authenticity, and the packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 11.510869374964386,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9645,
+            "cached_input_tokens": 0,
+            "output_tokens": 253,
+            "reasoning_output_tokens": 52
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:46:27.530751+00:00"
+    },
+    {
+      "sequence": 3,
+      "case_id": "q7071",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:46:27.531457+00:00",
+      "status": "completed",
+      "request_sha256": "7b11de3da8cf3566f8a4af1a3bdfe3ce40afc92b23f7eb1fdf4ed1c731e3a96f",
+      "packet_sha256": "4209542e872ddb674d359bfdc819c38f15c4fe4a0666ecbb3fac5ac57ad409d2",
+      "result": {
+        "risk": "insufficient_evidence",
+        "cutoff_assessment": "no_specific_concern",
+        "fabrication_established": false,
+        "confidence": "high",
+        "evidence_passage_ids": [
+          "p001",
+          "p002",
+          "p003"
+        ],
+        "rationale": "The packet contains only summaries of the experimental model, reported readouts, and authors’ conclusions. It supplies no challenged artifact, reuse comparison, omission, or specific integrity allegation requiring a remedy. Thus, no specific concern is documented at the cutoff, and deliberate fabrication is not established. These summaries do not independently verify the results or provide enough reliability evidence to responsibly predict either elevated or ordinary withdrawal risk. The remaining gap is evidence assessing the underlying data, rather than merely reporting the authors’ claims."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.574448542087339,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9614,
+            "cached_input_tokens": 0,
+            "output_tokens": 189,
+            "reasoning_output_tokens": 30
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:46:36.106685+00:00"
+    },
+    {
+      "sequence": 4,
+      "case_id": "q7071",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:46:36.107727+00:00",
+      "status": "completed",
+      "request_sha256": "68b2420631fd1f39532a4f4374b13d4d23241be11e97e55087e86eb6c87b7a85",
+      "packet_sha256": "4209542e872ddb674d359bfdc819c38f15c4fe4a0666ecbb3fac5ac57ad409d2",
+      "result": {
+        "risk": "insufficient_evidence",
+        "cutoff_assessment": "no_specific_concern",
+        "fabrication_established": false,
+        "confidence": "low",
+        "evidence_passage_ids": [
+          "p001",
+          "p002",
+          "p003"
+        ],
+        "rationale": "The packet summarizes the experimental model, reported readouts and therapeutic conclusions, but supplies no specific integrity concern or independent assessment of data reliability. These author-reported claims alone do not support a responsible positive or negative forecast of a later major data-reliability withdrawal. The supplied record therefore contains no specific concern, while providing too little evidence to assess withdrawal risk. It does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.387404166976921,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9452,
+            "cached_input_tokens": 0,
+            "output_tokens": 163,
+            "reasoning_output_tokens": 24
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:46:44.495953+00:00"
+    },
+    {
+      "sequence": 5,
+      "case_id": "q2371",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:46:44.497018+00:00",
+      "status": "completed",
+      "request_sha256": "d473dcb2129b7e9a5d7bf4bb8dda2652c9bbeb51a8f61fe7affd285feebc9448",
+      "packet_sha256": "4f9d5bb9b06fcd6a79164d4e5678b3affca84e26d9254c61efb8565126cc6b68",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p001",
+          "p003"
+        ],
+        "rationale": "The specific allegation that several wound photographs may depict the same animal raises a material reliability concern in a study reporting only four mice per group. This supports an elevated forecast of major data-reliability withdrawal, although the allegation remains unverified and does not make withdrawal certain. The supplied record contains a request for uncropped originals but no documented response or remedy, so the concern is unresolved at cutoff. These curated summaries do not independently establish image duplication, its cause, or deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 9.11649954202585,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9455,
+            "cached_input_tokens": 0,
+            "output_tokens": 150,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:46:53.614389+00:00"
+    },
+    {
+      "sequence": 6,
+      "case_id": "q2371",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:46:53.615586+00:00",
+      "status": "completed",
+      "request_sha256": "76af3e56af04da9f277fc9a5125aa173095a2a2e3a69082994a41a7111006e64",
+      "packet_sha256": "4f9d5bb9b06fcd6a79164d4e5678b3affca84e26d9254c61efb8565126cc6b68",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p001",
+          "p003"
+        ],
+        "rationale": "The commenter identifies a specific potential within-paper mismatch: several Figure 5 wound photographs presented as different animals reportedly look similar after rotation, stretching, and zooming. If substantiated, reuse across animal identities could undermine the reported mouse experiment. This is an observer’s comparison, not independently verified manipulation; resemblance or a presentation error remains a possible benign explanation. The supplied record contains a request for uncropped originals but no response, corrected panel, or replacement photographs resolving the identity question. That unresolved concern supports an elevated withdrawal forecast, with uncertainty because neither the images nor original data were inspected here. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 9.544714250019751,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9623,
+            "cached_input_tokens": 0,
+            "output_tokens": 205,
+            "reasoning_output_tokens": 23
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:03.161255+00:00"
+    },
+    {
+      "sequence": 7,
+      "case_id": "q6297",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:47:03.162390+00:00",
+      "status": "completed",
+      "request_sha256": "5ab1f2c6107ead5c2d7a6fe127fa4442a28a5f319cf6fe0ff95f0bd07dfaa576",
+      "packet_sha256": "b4b9499510b39cd5bfcb13c67d7373a2c2c19f7c778caa6138bc58a2e7cd7b35",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The documented concern is within-paper reuse: Figure 3a day-8 images purportedly representing one engineered-cell treatment group were duplicated from another mouse group. The February 2024 correction reports locating original data and supplies a revised figure addressing that group-identity mismatch; it also explains empty positions as deceased mice. This is a concrete reported remedy, rather than a generic assurance, and the packet supplies no specific outstanding defect. Accordingly, the supplied record supports addressed_concern and an ordinary withdrawal-risk forecast. The remaining limitation is that the curated summary does not permit independent verification of the replacement images or underlying data. The duplication establishes a reported error, but the packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.913493999978527,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9625,
+            "cached_input_tokens": 0,
+            "output_tokens": 187,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:12.076848+00:00"
+    },
+    {
+      "sequence": 8,
+      "case_id": "q6297",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:47:12.077849+00:00",
+      "status": "completed",
+      "request_sha256": "2aad30a26f1e9d5431388b55cf0d052b9e12ce291b283510e2c85babdf47f725",
+      "packet_sha256": "b4b9499510b39cd5bfcb13c67d7373a2c2c19f7c778caa6138bc58a2e7cd7b35",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The correction documents a specific duplicated-image concern and reports a concrete remedy: original data were located and a revised figure supplied. It also clarifies that empty positions represent deceased mice. No specific outstanding defect is supplied, supporting addressed_concern. Although the duplication raises reliability concerns, the reported repair and lack of a supplied unresolved defect favor an ordinary forecast of later major data-reliability withdrawal. This is a judgment about the limited record, not independent verification of the replacement figure or proof of authenticity. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 7.675822750083171,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9461,
+            "cached_input_tokens": 0,
+            "output_tokens": 156,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:19.750531+00:00"
+    },
+    {
+      "sequence": 9,
+      "case_id": "q9641",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:47:19.751070+00:00",
+      "status": "completed",
+      "request_sha256": "dc915a6e34cba00aee247b2eb691c83d1c479ab30e7631e4b12449fcbe417b10",
+      "packet_sha256": "3597301e1df654c74f810c95be827443293dd95e22daac7cc2bb9b1b64e6d6b5",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "Reported tissue-image overlaps across different experimental conditions in two figures raise a specific concern about the reliability of the experimental evidence and support an elevated withdrawal-risk forecast. The supplied record documents no concrete remedy, so the concern remains unresolved at the cutoff. Confidence is medium because the evidence consists of curated summaries of commenters’ observations, not independently inspected images or raw data. These allegations do not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 7.542822040966712,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9473,
+            "cached_input_tokens": 0,
+            "output_tokens": 130,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:27.286848+00:00"
+    },
+    {
+      "sequence": 10,
+      "case_id": "q9641",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:47:27.287809+00:00",
+      "status": "completed",
+      "request_sha256": "d49893c29dc46ec25c694307faf6d39afa5186916f787a02ffed89b1da031ff1",
+      "packet_sha256": "3597301e1df654c74f810c95be827443293dd95e22daac7cc2bb9b1b64e6d6b5",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The dated comments report within-paper tissue-image overlaps: Figure 3 images purport to represent different experimental conditions and magnifications, and Figure 4 images different conditions. These are reported comparisons, not independently verified manipulation. Different magnifications could explain shared regions from one specimen, but would not by themselves explain images labeled as different experimental conditions. Accidental panel assembly or labeling errors remain possible. The packet supplies no dated explanation, corrected panels, or replacement data resolving either mismatch. The record therefore contains unresolved concerns, and reported overlaps across two figures support an elevated forecast of major data-reliability withdrawal. The remaining gap is whether the images accurately represent their assigned conditions and whether source data can resolve the discrepancies. Neither the comments nor the lack of a documented remedy establishes deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 9.792348959017545,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9637,
+            "cached_input_tokens": 0,
+            "output_tokens": 206,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:37.075218+00:00"
+    },
+    {
+      "sequence": 11,
+      "case_id": "q6682",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:47:37.076206+00:00",
+      "status": "completed",
+      "request_sha256": "1bcf8616fa074a6b90f5a2359c9ac455e9c18983e1833e701f784b29e01612c1",
+      "packet_sha256": "a8f59f902b6c02f509d5547c7afd1bc7a457389feac4a7e41584716413df127e",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p001",
+          "p003"
+        ],
+        "rationale": "The January 2024 comments report within-paper panel repetition between Figures 5A and 8e under apparently different descriptions, raising a specific concern about experimental identity. They also juxtapose Figure 3a with another article’s Figure 5b; that comparison alone does not establish duplication or manipulation. The summaries do not specify the panels’ exact conditions, so their experimental identities cannot be fully reconstructed. Accidental panel selection or legitimate reuse could explain the observations, but the packet supplies neither an author explanation nor a corrected panel or replacement data resolving the apparent mismatch by cutoff. The unresolved within-paper concern supports an elevated withdrawal-risk forecast, with limited confidence because the evidence consists of curated comment summaries rather than independently inspected artifacts. The supplied record establishes neither manipulation nor deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 11.886232584016398,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9645,
+            "cached_input_tokens": 0,
+            "output_tokens": 241,
+            "reasoning_output_tokens": 31
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:48.959767+00:00"
+    },
+    {
+      "sequence": 12,
+      "case_id": "q6682",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:47:48.960782+00:00",
+      "status": "completed",
+      "request_sha256": "e0fef831a1e238dd453866a638bc0d5653890b4b16290cdeb9030dae343fc688",
+      "packet_sha256": "a8f59f902b6c02f509d5547c7afd1bc7a457389feac4a7e41584716413df127e",
+      "result": {
+        "risk": "elevated",
+        "cutoff_assessment": "unresolved_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The reported repeated panel with apparently different descriptions raises a specific concern about figure reliability and supports an elevated forecast of later major data-reliability withdrawal. The cross-article juxtaposition adds a question but is not itself a determination of manipulation. The supplied record contains no author explanation or corrected panel, so the concern remains unresolved at the cutoff. Confidence is limited because these are summaries of public comments, not independently inspected images or verified findings. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.229297916055657,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9475,
+            "cached_input_tokens": 0,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:47:57.189580+00:00"
+    },
+    {
+      "sequence": 13,
+      "case_id": "q9417",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:47:57.190563+00:00",
+      "status": "completed",
+      "request_sha256": "a4cf6eb2e354aede07c060f577fb15df73646a6d0099e51faeaea1f98a0517f4",
+      "packet_sha256": "d50d59ac4db7d92bfcdab1ef36274fef380c0d1b6391d79b1da03f64347a7f58",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The supplied correction identifies a specific incorrect loading-control panel and reports a concrete remedy: locating the original experimental data and supplying a corrected panel. The packet supplies no specific outstanding defect, supporting addressed_concern. This documented panel error and reported repair do not provide a strong basis for predicting a later major data-reliability withdrawal, so ordinary is the best forecast. The repair is reported rather than independently verified here, and it does not validate the entire study. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.02776087494567,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9458,
+            "cached_input_tokens": 0,
+            "output_tokens": 148,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:48:05.218399+00:00"
+    },
+    {
+      "sequence": 14,
+      "case_id": "q9417",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:48:05.219457+00:00",
+      "status": "completed",
+      "request_sha256": "fdeb05403dc69ff57717b76a44b4fe41148fe6d742e8ccefc33a7c781aed8908",
+      "packet_sha256": "d50d59ac4db7d92bfcdab1ef36274fef380c0d1b6391d79b1da03f64347a7f58",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The documented concern concerns an incorrect histone H3 loading-control western-blot panel in Figure 1g. The February 2024 correction reports locating the original experimental data and supplies a corrected panel, a concrete remedy for that specific presentation error rather than a generic assurance. The packet supplies no specific outstanding defect or cross-paper mismatch. This supports an addressed concern and an ordinary forecast of later major data-reliability withdrawal. The remaining gap is that the reported repair has not been independently verified here and does not independently validate the whole study. The supplied record does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 10.351159290992655,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9622,
+            "cached_input_tokens": 7552,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 31
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:48:15.570868+00:00"
+    },
+    {
+      "sequence": 15,
+      "case_id": "q3724",
+      "arm": "harness",
+      "started_at": "2026-09-14T17:48:15.571940+00:00",
+      "status": "completed",
+      "request_sha256": "d8862aca4332490dc00aa6c6aadafcb7b2fb33698912f39a957eee68e56c421b",
+      "packet_sha256": "9e298eb08ed5c523ac7cabb312608e202a0f6580500b31a1698c5ac605696f02",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The documented concern is within-paper reuse: a day-19 bioluminescence image representing a treatment group also represented the control group in Supplementary Figure 8b. The February 2024 correction reports locating original data and amending the figure through corrected supplementary information, a concrete remedy addressing that particular mismatch. The supplied record identifies no specific outstanding defect. This supports an addressed concern and an ordinary withdrawal-risk forecast, although ordinary does not establish authenticity. The remaining limitation is that the packet summarizes the repair; it does not permit independent inspection of the original data or corrected panel. The duplication establishes a reported presentation error, but the cutoff record does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_harness",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 11.82981662498787,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9638,
+            "cached_input_tokens": 0,
+            "output_tokens": 221,
+            "reasoning_output_tokens": 35
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:48:27.402276+00:00"
+    },
+    {
+      "sequence": 16,
+      "case_id": "q3724",
+      "arm": "direct",
+      "started_at": "2026-09-14T17:48:27.403181+00:00",
+      "status": "completed",
+      "request_sha256": "8c9d71a1e02ceb5c5afbf22d5cb46f6dca5e36efdb6c52b970069e6f0a310e33",
+      "packet_sha256": "9e298eb08ed5c523ac7cabb312608e202a0f6580500b31a1698c5ac605696f02",
+      "result": {
+        "risk": "ordinary",
+        "cutoff_assessment": "addressed_concern",
+        "fabrication_established": false,
+        "confidence": "medium",
+        "evidence_passage_ids": [
+          "p003"
+        ],
+        "rationale": "The correction documents a specific image duplication between treatment and control groups, but also reports that original data were located and the supplementary figure was amended. The supplied record therefore reports a concrete remedy with no specific outstanding defect, supporting addressed_concern. On this limited evidence, ordinary withdrawal risk is the best forecast: the documented error warrants concern, but the reported repair provides no affirmative basis for predicting a later major data-reliability withdrawal. This is not independent verification of the repair or a finding of authenticity. The packet does not establish deliberate fabrication."
+      },
+      "calls": [
+        {
+          "stage": "astra_v6_direct",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 240.0,
+          "wall_seconds": 8.811161083052866,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 9472,
+            "cached_input_tokens": 7552,
+            "output_tokens": 157,
+            "reasoning_output_tokens": 0
+          },
+          "local_skills_disabled": 66,
+          "exit_code": 0
+        }
+      ],
+      "finished_at": "2026-09-14T17:48:36.214873+00:00"
+    }
+  ]
+}

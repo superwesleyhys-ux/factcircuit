@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 23294,
-      "sha256": "c09b0b26dbd7cb946464cb74ba21d345838d67c9443b4da0974368f1bfcbea7b"
+      "bytes": 21256,
+      "sha256": "8a3a54016fbded3d575024c79186d66b94d2cc4f6397c401939663c3fccc9fe7"
     },
     {
       "path": "SECURITY.md",
@@ -984,6 +984,36 @@
       "sha256": "aefbc29d85b7b8a8a83f1a7d221783f772e1fa8a341493fdf4be43a6cfa7e91c"
     },
     {
+      "path": "reports/astra-same-evidence-v6-20260914/run-001/manifest.json",
+      "bytes": 707,
+      "sha256": "18dea9660fd4d2d637db464f1a19a4304e0c6d8ca4e6df42858aed6241c693f9"
+    },
+    {
+      "path": "reports/astra-same-evidence-v6-20260914/run-001/predictions.json",
+      "bytes": 31363,
+      "sha256": "b7ad30faa01ca698cea976d7f4904d93ba884361864c9eae29e5724abc0e0250"
+    },
+    {
+      "path": "reports/astra-same-evidence-v6-20260914/scored-v1/AUDIT.json",
+      "bytes": 351,
+      "sha256": "7064443c7c83ffea9db66488cccfcafca5c0b9c6420a560ddfef659143e06860"
+    },
+    {
+      "path": "reports/astra-same-evidence-v6-20260914/scored-v1/README.md",
+      "bytes": 4223,
+      "sha256": "0e83c0d2201bf1cc78e94b1843dbb1b0f2cbb70dc9adeca36a911486500bb7d9"
+    },
+    {
+      "path": "reports/astra-same-evidence-v6-20260914/scored-v1/REVEALED_GOLD.json",
+      "bytes": 7392,
+      "sha256": "c393d7346e26f98a82b32c17304279b5cb5cee2a4d0db32b0958c7e9b185059c"
+    },
+    {
+      "path": "reports/astra-same-evidence-v6-20260914/scored-v1/SUMMARY.json",
+      "bytes": 8453,
+      "sha256": "606bb0f598cb25b3575e99404a52bb8bee102bf9656d44bd526dadf0958aa048"
+    },
+    {
       "path": "reports/benchmark.json",
       "bytes": 10902,
       "sha256": "8ad80b8f32635563ea24f28b543c1fd60f0a92516b66ffb83028776e683213da"
@@ -1900,8 +1930,8 @@
     },
     {
       "path": "reports/honest-system-holdout-20260911/scored-v1/README.md",
-      "bytes": 2715,
-      "sha256": "5bd4208273936ad608d6c692542100690ef9e802f70a11aff1c09b040b0e6a2a"
+      "bytes": 3282,
+      "sha256": "b102b828d94378b3eaf193f0e8998a61b8dc191f1be84931799fd3adb13d1768"
     },
     {
       "path": "reports/honest-system-holdout-20260911/scored-v1/REVEALED_GOLD.json",
@@ -1965,8 +1995,8 @@
     },
     {
       "path": "reports/honest-system-holdout-v4-20260911/scored-v1/README.md",
-      "bytes": 2720,
-      "sha256": "5d770a058c7056a6768b01a328a965b74a6c3231dd430a31d09646aa16730485"
+      "bytes": 3287,
+      "sha256": "40e20848e9b83e1425b040aacbd88339518c8b3aadf9ddf0879a05b447f30696"
     },
     {
       "path": "reports/honest-system-holdout-v4-20260911/scored-v1/REVEALED_GOLD.json",
@@ -1995,8 +2025,8 @@
     },
     {
       "path": "reports/honest-system-holdout-v5-astra-20260912/scored-v1/README.md",
-      "bytes": 2724,
-      "sha256": "7cbfea1d88690db2b781ed2bd2f4442e70f448c63834cf3d63a9c000f542482d"
+      "bytes": 3291,
+      "sha256": "a3a2206c17ea531d7be235433c2e3470cbf96f3e79b6949da777ca96eae22f72"
     },
     {
       "path": "reports/honest-system-holdout-v5-astra-20260912/scored-v1/REVEALED_GOLD.json",
