@@ -77,39 +77,6 @@ blind. Original predictions, registrations and receipts remain unchanged.
 The [v3 infrastructure failure](reports/honest-system-holdout-v3-20260911/POSTMORTEM.md)
 is also preserved and excluded from valid-win claims.
 
-## Same-task historical holdout: harness did not win
-
-On September 11, a preregistered local comparison used eight anonymized papers
-published before 2024: four with fabrication or falsification findings first
-published in 2025–2026 and four matched controls. Every case asked the same
-research-integrity screening question. Model packets contained only information
-public by December 31, 2024; later official outcomes were kept out of inference.
-
-Both arms used `gpt-5.6-luna` at low reasoning through the local Codex-login
-route, with one call per paper and no retries.
-
-| Registered measure | Direct model | FactCircuit harness |
-|---|---:|---:|
-| Balanced accuracy | **87.5%** | 75.0% |
-| Overall accuracy | **7/8** | 6/8 |
-| Later-positive recall | **3/4** | 2/4 |
-| Control specificity | 4/4 | 4/4 |
-| Input + output tokens | **53,302** | 55,378 |
-| Harness / direct tokens | 1.00x | 1.04x |
-
-**The direct model won this holdout. FactCircuit did not demonstrate an accuracy
-improvement.** The harness missed one case with no pre-cutoff warning signal and
-one case with a public image-manipulation allegation that its fixed policy
-treated as insufficient. Changing that threshold now would overfit this
-holdout; it must be developed separately and tested on new cases.
-
-The [complete honest result, per-case decisions and token receipts](reports/honest-holdout-20260911/README.md)
-include the failed unsupported-model launch and a discarded run containing one
-post-cutoff disclosure. Those attempts remain visible rather than being
-silently removed. This eight-case result is exploratory, and control labels
-mean no public official finding was located by the audit date, not proof of
-authenticity.
-
 ## Invalidated local historical diagnostic
 
 The September 11 development run compared `gpt-5.6-luna` directly with the
