@@ -1,0 +1,2938 @@
+{
+  "schema_version": 1,
+  "case_id": "a702",
+  "arm": "harness",
+  "frozen_commit": "21b31f02",
+  "cutoff": "2024-12-31T23:59:59Z",
+  "scope": "Offline read-only post-run full-source, identity, exact-basis, admission, chain and complete gap-lifecycle audit. No network/model calls or raw/frozen-file edits. No scientific truth, future withdrawal or intentional-fabrication accuracy scoring.",
+  "sources": [
+    {
+      "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+      "version_id": "news-a13131e70a4f69c4",
+      "capture_at": "2024-12-08T06:32:21+00:00",
+      "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "raw_bytes": 47465,
+      "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+      "text_chars": 23826,
+      "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+      "cache_body": "experiments/live-origin-v12-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body",
+      "cache_metadata": "experiments/live-origin-v12-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json",
+      "independently_checked": {
+        "body_sha256_matches_cache_and_run": true,
+        "all_original_cache_metadata_fields_equal_normalized_record": true,
+        "memento_equals_source_capture": true,
+        "capture_before_cutoff": true,
+        "original_link_equals_url": true,
+        "offline_reextract_full_text_title_links_equal": true,
+        "no_parser_errors": true,
+        "closing_html_present": true,
+        "within_5MB_raw_1Mchar_text_limits": true
+      }
+    },
+    {
+      "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "title": "Asteroid Dust Found in Crater Closes Case of Dinosaur Extinction - UT News",
+      "version_id": "news-142f8b7ee5e986ab",
+      "capture_at": "2024-12-19T09:53:10+00:00",
+      "archive_url": "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "raw_bytes": 257279,
+      "raw_sha256": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+      "text_chars": 12416,
+      "text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+      "cache_body": "experiments/live-origin-v12-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body",
+      "cache_metadata": "experiments/live-origin-v12-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json",
+      "independently_checked": {
+        "body_sha256_matches_cache_and_run": true,
+        "all_original_cache_metadata_fields_equal_normalized_record": true,
+        "memento_equals_source_capture": true,
+        "capture_before_cutoff": true,
+        "original_link_equals_url": true,
+        "offline_reextract_full_text_title_links_equal": true,
+        "no_parser_errors": true,
+        "closing_html_present": true,
+        "within_5MB_raw_1Mchar_text_limits": true
+      }
+    },
+    {
+      "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+      "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+      "version_id": "news-bae041d1fdfa54b4",
+      "capture_at": "2024-12-22T18:21:04+00:00",
+      "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+      "raw_bytes": 459056,
+      "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+      "text_chars": 186687,
+      "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+      "cache_body": "experiments/live-origin-v12-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body",
+      "cache_metadata": "experiments/live-origin-v12-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json",
+      "independently_checked": {
+        "body_sha256_matches_cache_and_run": true,
+        "all_original_cache_metadata_fields_equal_normalized_record": true,
+        "memento_equals_source_capture": true,
+        "capture_before_cutoff": true,
+        "original_link_equals_url": true,
+        "offline_reextract_full_text_title_links_equal": true,
+        "no_parser_errors": true,
+        "closing_html_present": true,
+        "within_5MB_raw_1Mchar_text_limits": true
+      }
+    }
+  ],
+  "primary_fullness": {
+    "exact_title": "Globally distributed iridium layer preserved within the Chicxulub impact structure",
+    "doi": "10.1126/sciadv.abe3647",
+    "raw_H1_exact": true,
+    "full_main_article": true,
+    "body_section_positions": {
+      "Abstract": 13017,
+      "INTRODUCTION": 14315,
+      "RESULTS": 27089,
+      "DISCUSSION": 40219,
+      "Reworking and hydrothermal overprint": 46402,
+      "HSE carrier phase and fallout of dust": 56335,
+      "MATERIALS AND METHODS": 67946,
+      "Acknowledgments": 93460,
+      "Supplementary Material": 96332,
+      "REFERENCES AND NOTES": 96908
+    },
+    "raw_and_text_laboratory_methods_subsections_checked": 9,
+    "qualifiers_retained": [
+      "reworking/hydrothermal overprint",
+      "carrier-phase uncertainty",
+      "timing of deposition",
+      "return-of-life implications"
+    ],
+    "references_present": true,
+    "limits": "Complete main HTML article, including methods/references. External supplements and binary figure images were not fetched; no independent numerical replication is claimed."
+  },
+  "bibliographic_binding": {
+    "receipt_id": "b2b2d13ffd7043ee843419905f4c4580",
+    "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+    "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+    "identity": {
+      "doi": "10.1126/sciadv.abe3647",
+      "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure",
+      "authors": [
+        "Steven Goderis",
+        "Honami Sato",
+        "Ludovic Ferrière",
+        "Birger Schmitz",
+        "David Burney",
+        "Pim Kaskes",
+        "Johan Vellekoop",
+        "Axel Wittmann",
+        "Toni Schulz",
+        "Stepan M. Chernonozhkin",
+        "Philippe Claeys",
+        "Sietze J. de Graaff",
+        "Thomas Déhais",
+        "Niels J. de Winter",
+        "Mikael Elfman",
+        "Jean-Guillaume Feignon",
+        "Akira Ishikawa",
+        "Christian Koeberl",
+        "Per Kristiansson",
+        "Clive R. Neal",
+        "Jeremy D. Owens",
+        "Martin Schmieder",
+        "Matthias Sinnesael",
+        "Frank Vanhaecke",
+        "Stijn J. M. Van Malderen",
+        "Timothy J. Bralower",
+        "Sean P. S. Gulick",
+        "David A. Kring",
+        "Christopher M. Lowery",
+        "Joanna V. Morgan",
+        "Jan Smit",
+        "Michael T. Whalen",
+        "IODP-ICDP Expedition 364 Scientists"
+      ],
+      "journal": "Science Advances"
+    },
+    "exact_quote_locations": {
+      "source": [
+        {
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb",
+          "occurrences": [
+            {
+              "start": 3691,
+              "end": 3869,
+              "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "adb75bb2b607e00c0ddb806795d60e5fa10fe5fb930df59d7d2a9564f42b0fcd",
+          "occurrences": [
+            {
+              "start": 1728,
+              "end": 1740,
+              "quote_sha256": "adb75bb2b607e00c0ddb806795d60e5fa10fe5fb930df59d7d2a9564f42b0fcd"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "be376d2155e402f49528b6e58cef0b726b04bac9b1a8366f20e3e4f78a6c9081",
+          "occurrences": [
+            {
+              "start": 5010,
+              "end": 5386,
+              "quote_sha256": "be376d2155e402f49528b6e58cef0b726b04bac9b1a8366f20e3e4f78a6c9081"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6",
+          "occurrences": [
+            {
+              "start": 6985,
+              "end": 7242,
+              "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6"
+            }
+          ]
+        }
+      ],
+      "target": [
+        {
+          "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184",
+          "occurrences": [
+            {
+              "start": 50,
+              "end": 72,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 314,
+              "end": 336,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 946,
+              "end": 968,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1326,
+              "end": 1348,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1386,
+              "end": 1408,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1455,
+              "end": 1477,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1526,
+              "end": 1548,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1595,
+              "end": 1617,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1665,
+              "end": 1687,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 1748,
+              "end": 1770,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 2168,
+              "end": 2190,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 2257,
+              "end": 2279,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 4224,
+              "end": 4246,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 4490,
+              "end": 4512,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 6393,
+              "end": 6415,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 6608,
+              "end": 6630,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 6765,
+              "end": 6787,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 6912,
+              "end": 6934,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7065,
+              "end": 7087,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7130,
+              "end": 7152,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7278,
+              "end": 7300,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7424,
+              "end": 7446,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7568,
+              "end": 7590,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7732,
+              "end": 7754,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 7880,
+              "end": 7902,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8032,
+              "end": 8054,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8178,
+              "end": 8200,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8329,
+              "end": 8351,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8475,
+              "end": 8497,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8630,
+              "end": 8652,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8777,
+              "end": 8799,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 8927,
+              "end": 8949,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9076,
+              "end": 9098,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9144,
+              "end": 9166,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9292,
+              "end": 9314,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9441,
+              "end": 9463,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9592,
+              "end": 9614,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9740,
+              "end": 9762,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 9897,
+              "end": 9919,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10049,
+              "end": 10071,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10199,
+              "end": 10221,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10346,
+              "end": 10368,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10500,
+              "end": 10522,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10649,
+              "end": 10671,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10790,
+              "end": 10812,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 10940,
+              "end": 10962,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11112,
+              "end": 11134,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11233,
+              "end": 11255,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11306,
+              "end": 11328,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11346,
+              "end": 11368,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11921,
+              "end": 11943,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 11981,
+              "end": 12003,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12052,
+              "end": 12074,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12118,
+              "end": 12140,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12179,
+              "end": 12201,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12243,
+              "end": 12265,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12318,
+              "end": 12340,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12387,
+              "end": 12409,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12463,
+              "end": 12485,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12537,
+              "end": 12559,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12612,
+              "end": 12634,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12685,
+              "end": 12707,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12751,
+              "end": 12773,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12815,
+              "end": 12837,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12874,
+              "end": 12896,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12934,
+              "end": 12956,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 12993,
+              "end": 13015,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14502,
+              "end": 14524,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14557,
+              "end": 14579,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14773,
+              "end": 14795,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14830,
+              "end": 14852,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14886,
+              "end": 14908,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 14942,
+              "end": 14964,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15286,
+              "end": 15308,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15342,
+              "end": 15364,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15397,
+              "end": 15419,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15679,
+              "end": 15701,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15736,
+              "end": 15758,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 15792,
+              "end": 15814,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16001,
+              "end": 16023,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16307,
+              "end": 16329,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16543,
+              "end": 16565,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16786,
+              "end": 16808,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16842,
+              "end": 16864,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 16899,
+              "end": 16921,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17348,
+              "end": 17370,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17405,
+              "end": 17427,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17462,
+              "end": 17484,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17636,
+              "end": 17658,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17693,
+              "end": 17715,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 17750,
+              "end": 17772,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18052,
+              "end": 18074,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18108,
+              "end": 18130,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18194,
+              "end": 18216,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18277,
+              "end": 18299,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18481,
+              "end": 18503,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 18972,
+              "end": 18994,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19270,
+              "end": 19292,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19327,
+              "end": 19349,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19403,
+              "end": 19425,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19584,
+              "end": 19606,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19642,
+              "end": 19664,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 19699,
+              "end": 19721,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20296,
+              "end": 20318,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20353,
+              "end": 20375,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20693,
+              "end": 20715,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20750,
+              "end": 20772,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20806,
+              "end": 20828,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 20862,
+              "end": 20884,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21133,
+              "end": 21155,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21189,
+              "end": 21211,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21633,
+              "end": 21655,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21689,
+              "end": 21711,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21746,
+              "end": 21768,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 21802,
+              "end": 21824,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 22395,
+              "end": 22417,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 22453,
+              "end": 22475,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 22510,
+              "end": 22532,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 22867,
+              "end": 22889,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 22924,
+              "end": 22946,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 23063,
+              "end": 23085,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 23120,
+              "end": 23142,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 23451,
+              "end": 23473,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 23803,
+              "end": 23825,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 24888,
+              "end": 24910,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 25037,
+              "end": 25059,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 25158,
+              "end": 25180,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 25258,
+              "end": 25280,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 25515,
+              "end": 25537,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 25792,
+              "end": 25814,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 26487,
+              "end": 26509,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 27257,
+              "end": 27279,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 27315,
+              "end": 27337,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 27372,
+              "end": 27394,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 27644,
+              "end": 27666,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 27701,
+              "end": 27723,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28124,
+              "end": 28146,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28181,
+              "end": 28203,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28238,
+              "end": 28260,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28540,
+              "end": 28562,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28865,
+              "end": 28887,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28921,
+              "end": 28943,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 28978,
+              "end": 29000,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29034,
+              "end": 29056,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29406,
+              "end": 29428,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29463,
+              "end": 29485,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29520,
+              "end": 29542,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29577,
+              "end": 29599,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 29959,
+              "end": 29981,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30016,
+              "end": 30038,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30239,
+              "end": 30261,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30298,
+              "end": 30320,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30375,
+              "end": 30397,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30432,
+              "end": 30454,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30684,
+              "end": 30706,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 30741,
+              "end": 30763,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31050,
+              "end": 31072,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31252,
+              "end": 31274,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31308,
+              "end": 31330,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31365,
+              "end": 31387,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31422,
+              "end": 31444,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 31693,
+              "end": 31715,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 32065,
+              "end": 32087,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 32124,
+              "end": 32146,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 32627,
+              "end": 32649,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 33169,
+              "end": 33191,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 33228,
+              "end": 33250,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 33631,
+              "end": 33653,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 33690,
+              "end": 33712,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 34172,
+              "end": 34194,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 34677,
+              "end": 34699,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35052,
+              "end": 35074,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35293,
+              "end": 35315,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35352,
+              "end": 35374,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35410,
+              "end": 35432,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35466,
+              "end": 35488,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35837,
+              "end": 35859,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 35894,
+              "end": 35916,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36436,
+              "end": 36458,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36493,
+              "end": 36515,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36550,
+              "end": 36572,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36712,
+              "end": 36734,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36862,
+              "end": 36884,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 36958,
+              "end": 36980,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 37073,
+              "end": 37095,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 37422,
+              "end": 37444,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 37764,
+              "end": 37786,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 37852,
+              "end": 37874,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 37934,
+              "end": 37956,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 38387,
+              "end": 38409,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 38921,
+              "end": 38943,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39093,
+              "end": 39115,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39227,
+              "end": 39249,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39284,
+              "end": 39306,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39552,
+              "end": 39574,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39791,
+              "end": 39813,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 39848,
+              "end": 39870,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40122,
+              "end": 40144,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40181,
+              "end": 40203,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40646,
+              "end": 40668,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40702,
+              "end": 40724,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40758,
+              "end": 40780,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 40972,
+              "end": 40994,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41029,
+              "end": 41051,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41085,
+              "end": 41107,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41140,
+              "end": 41162,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41344,
+              "end": 41366,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41400,
+              "end": 41422,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41789,
+              "end": 41811,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41845,
+              "end": 41867,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41901,
+              "end": 41923,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 41961,
+              "end": 41983,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42030,
+              "end": 42052,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42086,
+              "end": 42108,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42325,
+              "end": 42347,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42381,
+              "end": 42403,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42537,
+              "end": 42559,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42593,
+              "end": 42615,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42653,
+              "end": 42675,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 42710,
+              "end": 42732,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43029,
+              "end": 43051,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43086,
+              "end": 43108,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43143,
+              "end": 43165,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43247,
+              "end": 43269,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43305,
+              "end": 43327,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 43647,
+              "end": 43669,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 44080,
+              "end": 44102,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 44211,
+              "end": 44233,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 44346,
+              "end": 44368,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 44568,
+              "end": 44590,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 44908,
+              "end": 44930,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 45222,
+              "end": 45244,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 45279,
+              "end": 45301,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 45681,
+              "end": 45703,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 45738,
+              "end": 45760,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 45984,
+              "end": 46006,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 46320,
+              "end": 46342,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 46376,
+              "end": 46398,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 46712,
+              "end": 46734,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 47049,
+              "end": 47071,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 47420,
+              "end": 47442,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 47621,
+              "end": 47643,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 47763,
+              "end": 47785,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 47938,
+              "end": 47960,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 48327,
+              "end": 48349,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 48384,
+              "end": 48406,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 48441,
+              "end": 48463,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 48679,
+              "end": 48701,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 48922,
+              "end": 48944,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 49090,
+              "end": 49112,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 49147,
+              "end": 49169,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 49204,
+              "end": 49226,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 49261,
+              "end": 49283,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 49655,
+              "end": 49677,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 50223,
+              "end": 50245,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 50394,
+              "end": 50416,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 50453,
+              "end": 50475,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 50531,
+              "end": 50553,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 50748,
+              "end": 50770,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 52058,
+              "end": 52080,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 52249,
+              "end": 52271,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 52785,
+              "end": 52807,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 52957,
+              "end": 52979,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 53408,
+              "end": 53430,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 53466,
+              "end": 53488,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 53768,
+              "end": 53790,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 53873,
+              "end": 53895,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 53932,
+              "end": 53954,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54075,
+              "end": 54097,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54131,
+              "end": 54153,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54188,
+              "end": 54210,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54245,
+              "end": 54267,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54420,
+              "end": 54442,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54731,
+              "end": 54753,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 54788,
+              "end": 54810,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55011,
+              "end": 55033,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55068,
+              "end": 55090,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55125,
+              "end": 55147,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55199,
+              "end": 55221,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55623,
+              "end": 55645,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55680,
+              "end": 55702,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 55944,
+              "end": 55966,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57348,
+              "end": 57370,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57522,
+              "end": 57544,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57705,
+              "end": 57727,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57762,
+              "end": 57784,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57919,
+              "end": 57941,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 57976,
+              "end": 57998,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 58162,
+              "end": 58184,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 58371,
+              "end": 58393,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 58626,
+              "end": 58648,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 59339,
+              "end": 59361,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 59715,
+              "end": 59737,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 60248,
+              "end": 60270,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 60877,
+              "end": 60899,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 61075,
+              "end": 61097,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 61376,
+              "end": 61398,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 61432,
+              "end": 61454,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 61488,
+              "end": 61510,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 61941,
+              "end": 61963,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 62138,
+              "end": 62160,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 62428,
+              "end": 62450,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 62585,
+              "end": 62607,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 62642,
+              "end": 62664,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 63121,
+              "end": 63143,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 63178,
+              "end": 63200,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 63359,
+              "end": 63381,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 63444,
+              "end": 63466,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 63516,
+              "end": 63538,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 64349,
+              "end": 64371,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 64406,
+              "end": 64428,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 64463,
+              "end": 64485,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 64828,
+              "end": 64850,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 65084,
+              "end": 65106,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 65141,
+              "end": 65163,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 65566,
+              "end": 65588,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 65623,
+              "end": 65645,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 65895,
+              "end": 65917,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 66018,
+              "end": 66040,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 66126,
+              "end": 66148,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 66231,
+              "end": 66253,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 66606,
+              "end": 66628,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 67282,
+              "end": 67304,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 68219,
+              "end": 68241,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 68308,
+              "end": 68330,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 68549,
+              "end": 68571,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 69845,
+              "end": 69867,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 71293,
+              "end": 71315,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 72803,
+              "end": 72825,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 75429,
+              "end": 75451,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 75488,
+              "end": 75510,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 76753,
+              "end": 76775,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 76987,
+              "end": 77009,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 77908,
+              "end": 77930,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 81002,
+              "end": 81024,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 81119,
+              "end": 81141,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 81492,
+              "end": 81514,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 83712,
+              "end": 83734,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 84201,
+              "end": 84223,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 86969,
+              "end": 86991,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 87725,
+              "end": 87747,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 89166,
+              "end": 89188,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 91583,
+              "end": 91605,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 92457,
+              "end": 92479,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 96718,
+              "end": 96740,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 96850,
+              "end": 96872,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 155006,
+              "end": 155028,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 155113,
+              "end": 155135,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 159701,
+              "end": 159723,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 169382,
+              "end": 169404,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 171699,
+              "end": 171721,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 171739,
+              "end": 171761,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 175839,
+              "end": 175861,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 176704,
+              "end": 176726,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177017,
+              "end": 177039,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177071,
+              "end": 177093,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177132,
+              "end": 177154,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177191,
+              "end": 177213,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177250,
+              "end": 177272,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177311,
+              "end": 177333,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 177369,
+              "end": 177391,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 179925,
+              "end": 179947,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 179995,
+              "end": 180017,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180067,
+              "end": 180089,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180120,
+              "end": 180142,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180173,
+              "end": 180195,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180226,
+              "end": 180248,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180279,
+              "end": 180301,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180332,
+              "end": 180354,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180385,
+              "end": 180407,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180438,
+              "end": 180460,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 180837,
+              "end": 180859,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 186322,
+              "end": 186344,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            },
+            {
+              "start": 186646,
+              "end": 186668,
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268",
+          "occurrences": [
+            {
+              "start": 6074,
+              "end": 6156,
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268"
+            },
+            {
+              "start": 6266,
+              "end": 6348,
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268"
+            },
+            {
+              "start": 171586,
+              "end": 171668,
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4",
+          "occurrences": [
+            {
+              "start": 6349,
+              "end": 6363,
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4"
+            },
+            {
+              "start": 159656,
+              "end": 159670,
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4"
+            },
+            {
+              "start": 171562,
+              "end": 171576,
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4"
+            },
+            {
+              "start": 173159,
+              "end": 173173,
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4"
+            },
+            {
+              "start": 174287,
+              "end": 174301,
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4"
+            }
+          ]
+        },
+        {
+          "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9",
+          "occurrences": [
+            {
+              "start": 549,
+              "end": 565,
+              "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9"
+            }
+          ]
+        }
+      ]
+    },
+    "lookup_response_sha256": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+    "proof_sha256": "4f821c4f33321195d9a03a2d4cd2419a807f805d6f0fda680353f029aa1921ab",
+    "first_native_injection_call": 18,
+    "paper_already_admitted_in_call": 15,
+    "paper_prior_verdict_call": 16,
+    "locator_created_at": "2021-02-24T15:16:13Z",
+    "locator_published_date_parts": [
+      [
+        2021,
+        2,
+        26
+      ]
+    ],
+    "archived_paper_and_UT_display_date": "2021-02-24",
+    "date_discrepancy": "Crossref published=2021-02-26 while both archived paper and UT citation specify 2021-02-24. Disclosed difference; no cause inferred. Matching author/journal, exact title/DOI and specific findings identify the same producing record.",
+    "evidence_scope": "Modern bibliography is an identity locator only. UT narrative citation is not converted to an observed hyperlink or an imagined formal DOI citation."
+  },
+  "native_calls": [
+    {
+      "call": 12,
+      "stage": "decompose",
+      "current_version": "news-a13131e70a4f69c4",
+      "open_gap_ids_before": [
+        "origin:a702:c1"
+      ],
+      "new_gap_ids": [],
+      "explicit_resolution_ids": [],
+      "raw_quote_count": 4,
+      "accepted_exact_spans": [
+        {
+          "path": "$.fragments[0].span",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2220,
+          "end": 2597,
+          "quote_sha256": "2477ed04e920d54e508b595d16ed587370b2838caa3ed08762ec9c95abdf20ef"
+        },
+        {
+          "path": "$.fragments[1].span",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 3109,
+          "end": 3652,
+          "quote_sha256": "9c4e9bb72e513cf52dae8854b07ba1de1535a1acf166cc9d2f4f7190b4cc8b1b"
+        },
+        {
+          "path": "$.relations[0].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        },
+        {
+          "path": "$.relations[1].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2598,
+          "end": 2776,
+          "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a"
+        }
+      ]
+    },
+    {
+      "call": 13,
+      "stage": "verify",
+      "current_version": null,
+      "open_gap_ids_before": [
+        "origin:a702:c1"
+      ],
+      "new_gap_ids": [
+        "verification:a702:c1:primary_evidence"
+      ],
+      "explicit_resolution_ids": [],
+      "raw_quote_count": 2,
+      "accepted_exact_spans": [
+        {
+          "path": "$.basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2395,
+          "end": 2597,
+          "quote_sha256": "f4023dfedf066af98db77146955ac964502a4309c1c77bb842cbd828d1999645"
+        },
+        {
+          "path": "$.basis[1]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 3373,
+          "end": 3469,
+          "quote_sha256": "a26e4258efa6de3111e8328056c2bd5b13de32acf1c3ab579d9356d7261a6f5f"
+        }
+      ]
+    },
+    {
+      "call": 15,
+      "stage": "decompose",
+      "current_version": "news-bae041d1fdfa54b4",
+      "open_gap_ids_before": [
+        "origin:a702:c1",
+        "verification:a702:c1:primary_evidence"
+      ],
+      "new_gap_ids": [],
+      "explicit_resolution_ids": [],
+      "raw_quote_count": 5,
+      "accepted_exact_spans": [
+        {
+          "path": "$.fragments[0].span",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13588,
+          "quote_sha256": "1c2c8fe3383bdc61f7ef1a10a6dfdfb20f904edef3ec6ad4e2aba61918009710"
+        },
+        {
+          "path": "$.fragments[1].span",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        },
+        {
+          "path": "$.relations[0].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2598,
+          "end": 2776,
+          "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a"
+        },
+        {
+          "path": "$.origins[0].basis[0]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "path": "$.origins[0].basis[1]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        }
+      ]
+    },
+    {
+      "call": 16,
+      "stage": "verify",
+      "current_version": null,
+      "open_gap_ids_before": [
+        "origin:a702:c1",
+        "verification:a702:c1:primary_evidence",
+        "lineage:a702:c1"
+      ],
+      "new_gap_ids": [],
+      "explicit_resolution_ids": [
+        "verification:a702:c1:primary_evidence"
+      ],
+      "raw_quote_count": 4,
+      "accepted_exact_spans": [
+        {
+          "path": "$.basis[0]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "path": "$.basis[1]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        },
+        {
+          "path": "$.resolutions[0].basis[0]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 26513,
+          "end": 26822,
+          "quote_sha256": "521e2df134c7a6e6065b23ff59cc2429c207051fe2326e107f97314a136a068a"
+        },
+        {
+          "path": "$.resolutions[0].basis[1]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 66632,
+          "end": 66904,
+          "quote_sha256": "efd1cde55361462509e399dd4eec4be8aa9a4671cef435f84b8412c58a097f67"
+        }
+      ]
+    },
+    {
+      "call": 18,
+      "stage": "decompose",
+      "current_version": "news-142f8b7ee5e986ab",
+      "open_gap_ids_before": [
+        "origin:a702:c1",
+        "lineage:a702:c1"
+      ],
+      "new_gap_ids": [],
+      "explicit_resolution_ids": [
+        "lineage:a702:c1",
+        "origin:a702:c1"
+      ],
+      "raw_quote_count": 13,
+      "accepted_exact_spans": [
+        {
+          "path": "$.fragments[0].span",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3313,
+          "end": 3690,
+          "quote_sha256": "2477ed04e920d54e508b595d16ed587370b2838caa3ed08762ec9c95abdf20ef"
+        },
+        {
+          "path": "$.fragments[1].span",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 4467,
+          "end": 5009,
+          "quote_sha256": "80ed6d4f0ff44db96de668e6a4f0c49c25f34af0175dbe7dd432dfdb19edd4cb"
+        },
+        {
+          "path": "$.relations[0].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        },
+        {
+          "path": "$.relations[1].basis[0]",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3691,
+          "end": 3869,
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+        },
+        {
+          "path": "$.relations[1].basis[1]",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 6985,
+          "end": 7242,
+          "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6"
+        },
+        {
+          "path": "$.relations[1].basis[2]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "path": "$.relations[1].basis[3]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        },
+        {
+          "path": "$.resolutions[0].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        },
+        {
+          "path": "$.resolutions[0].basis[1]",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3691,
+          "end": 3869,
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+        },
+        {
+          "path": "$.resolutions[0].basis[2]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "path": "$.resolutions[1].basis[0]",
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        },
+        {
+          "path": "$.resolutions[1].basis[1]",
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3691,
+          "end": 3869,
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+        },
+        {
+          "path": "$.resolutions[1].basis[2]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        }
+      ]
+    },
+    {
+      "call": 19,
+      "stage": "verify",
+      "current_version": null,
+      "open_gap_ids_before": [],
+      "new_gap_ids": [],
+      "explicit_resolution_ids": [],
+      "raw_quote_count": 2,
+      "accepted_exact_spans": [
+        {
+          "path": "$.basis[0]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        },
+        {
+          "path": "$.basis[1]",
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 66632,
+          "end": 66904,
+          "quote_sha256": "efd1cde55361462509e399dd4eec4be8aa9a4671cef435f84b8412c58a097f67"
+        }
+      ]
+    }
+  ],
+  "native_relations": [
+    {
+      "id": "news-a13131e70a4f69c4:relation:r1",
+      "from_version": "news-a13131e70a4f69c4",
+      "to_version": null,
+      "kind": "derives",
+      "status": "declared",
+      "upstream_locator": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "basis": [
+        {
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        }
+      ]
+    },
+    {
+      "id": "news-a13131e70a4f69c4:relation:r2",
+      "from_version": "news-a13131e70a4f69c4",
+      "to_version": null,
+      "kind": "cites",
+      "status": "declared",
+      "upstream_locator": "Science Advances study led by Steven Goderis, published February 24, identified in the February 24, 2021 article.",
+      "basis": [
+        {
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2598,
+          "end": 2776,
+          "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a"
+        }
+      ]
+    },
+    {
+      "id": "news-bae041d1fdfa54b4:relation:r1",
+      "from_version": "news-a13131e70a4f69c4",
+      "to_version": "news-bae041d1fdfa54b4",
+      "kind": "cites",
+      "status": "inferred",
+      "upstream_locator": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+      "basis": [
+        {
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 2598,
+          "end": 2776,
+          "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a"
+        }
+      ]
+    },
+    {
+      "id": "news-142f8b7ee5e986ab:relation:r1",
+      "from_version": "news-a13131e70a4f69c4",
+      "to_version": "news-142f8b7ee5e986ab",
+      "kind": "derives",
+      "status": "direct",
+      "upstream_locator": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "basis": [
+        {
+          "version_id": "news-a13131e70a4f69c4",
+          "start": 7848,
+          "end": 8078,
+          "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+        }
+      ]
+    },
+    {
+      "id": "news-142f8b7ee5e986ab:relation:r2",
+      "from_version": "news-142f8b7ee5e986ab",
+      "to_version": "news-bae041d1fdfa54b4",
+      "kind": "cites",
+      "status": "direct",
+      "upstream_locator": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+      "basis": [
+        {
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3691,
+          "end": 3869,
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+        },
+        {
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 6985,
+          "end": 7242,
+          "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6"
+        },
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        }
+      ]
+    }
+  ],
+  "native_origins": [
+    {
+      "target_id": "a702:c1",
+      "version_id": "news-bae041d1fdfa54b4",
+      "material_kind": "original_observation",
+      "basis": [
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        }
+      ]
+    }
+  ],
+  "gap_lifecycle": {
+    "origin:a702:c1": {
+      "created": "runner before call12",
+      "retained_before_calls": [
+        12,
+        13,
+        15,
+        16,
+        18
+      ],
+      "explicit_resolution_call": 18,
+      "semantic_basis": "New UT source supplies final path to retained original observations; paper alone did not close producing-lineage obligation."
+    },
+    "verification:a702:c1:primary_evidence": {
+      "created_by_call": 13,
+      "retained_before_calls": [
+        15,
+        16
+      ],
+      "explicit_resolution_call": 16,
+      "semantic_basis": "Primary article provides measured crater iridium, meteoritic-vs-hydrothermal discrimination and K-Pg stratigraphy. Missing external supplements limit numerical replication and remain disclosed."
+    },
+    "lineage:a702:c1": {
+      "created": "host direct-lineage gate after paper call15",
+      "first_observed_call": 16,
+      "retained_before_calls": [
+        16,
+        18
+      ],
+      "explicit_resolution_call": 18,
+      "semantic_basis": "Paper origin had only inferred seed path; UT contextual citation plus dual-sided exact evidence completes seed→UT→paper."
+    },
+    "final_open_gap_ids": [],
+    "all_final_resolutions": [
+      {
+        "gap_id": "lineage:a702:c1",
+        "basis": [
+          {
+            "version_id": "news-142f8b7ee5e986ab",
+            "start": 3691,
+            "end": 3869,
+            "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+          },
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "start": 7848,
+            "end": 8078,
+            "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+          },
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "start": 13195,
+            "end": 13411,
+            "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+          }
+        ]
+      },
+      {
+        "gap_id": "origin:a702:c1",
+        "basis": [
+          {
+            "version_id": "news-142f8b7ee5e986ab",
+            "start": 3691,
+            "end": 3869,
+            "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+          },
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "start": 7848,
+            "end": 8078,
+            "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf"
+          },
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "start": 33266,
+            "end": 33416,
+            "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+          }
+        ]
+      },
+      {
+        "gap_id": "verification:a702:c1:primary_evidence",
+        "basis": [
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "start": 26513,
+            "end": 26822,
+            "quote_sha256": "521e2df134c7a6e6065b23ff59cc2429c207051fe2326e107f97314a136a068a"
+          },
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "start": 66632,
+            "end": 66904,
+            "quote_sha256": "efd1cde55361462509e399dd4eec4be8aa9a4671cef435f84b8412c58a097f67"
+          }
+        ]
+      }
+    ],
+    "normalization_note": "Model responses supply quotes; host resolves exact offsets and fills gap defaults. Two provenance resolution basis arrays are reordered; IDs, rationales and complete basis multisets match original model responses. No evidence was dropped."
+  },
+  "final": {
+    "fact_status": "supported",
+    "risk": "ordinary",
+    "fabrication_established": false,
+    "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+    "origin_chain": [
+      "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "https://www.science.org/doi/10.1126/sciadv.abe3647"
+    ],
+    "exact_citation_locations": [
+      {
+        "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "occurrences": [
+          {
+            "start": 3810,
+            "end": 3869,
+            "quote_sha256": "977e143d8654e2204a1e58fa8d2a139771962c06a7fca41e40cb00debe808154"
+          }
+        ]
+      },
+      {
+        "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+        "occurrences": [
+          {
+            "start": 69671,
+            "end": 69765,
+            "quote_sha256": "882a35a936439d42b84f357798e2811a33c33ff05d441b2bb05314b855c3b44e"
+          }
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "all_three_full_cache_reextractions_passed",
+      "passed": true
+    },
+    {
+      "name": "exact_paper_title_not_correction_or_related_item",
+      "passed": true
+    },
+    {
+      "name": "call_12_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_12_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "call_13_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_13_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "call_15_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_15_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "call_16_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_16_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "call_18_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_18_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "call_19_model_quotes_preserved",
+      "passed": true
+    },
+    {
+      "name": "call_19_spans_exact_and_admitted",
+      "passed": true
+    },
+    {
+      "name": "all_final_resolution_ids_rationales_basis_preserved",
+      "passed": true
+    },
+    {
+      "name": "every_observed_gap_transition_preserved",
+      "passed": true
+    },
+    {
+      "name": "no_unrecorded_model_gap_births",
+      "passed": true
+    },
+    {
+      "name": "host_lineage_birth_after_origin_without_direct_path",
+      "passed": true
+    },
+    {
+      "name": "final_gaps_empty_and_all_created_ids_accounted",
+      "passed": true
+    },
+    {
+      "name": "analysis_ledger_not_replaced",
+      "passed": true
+    },
+    {
+      "name": "three_verdicts_kept",
+      "passed": true
+    },
+    {
+      "name": "binding_two_source_hashes_and_exact_quotes",
+      "passed": true
+    },
+    {
+      "name": "modern_lookup_identity_matches_primary",
+      "passed": true
+    },
+    {
+      "name": "seed_actual_link_to_UT",
+      "passed": true
+    },
+    {
+      "name": "no_paper_link_fabricated_in_UT",
+      "passed": true
+    },
+    {
+      "name": "two_native_direct_edges_match_final_chain",
+      "passed": true
+    },
+    {
+      "name": "inferred_and_declared_edges_retained",
+      "passed": true
+    },
+    {
+      "name": "only_primary_observation_origin",
+      "passed": true
+    },
+    {
+      "name": "all_native_materials_admitted_and_equal_saved",
+      "passed": true
+    },
+    {
+      "name": "all_final_quotes_exact",
+      "passed": true
+    },
+    {
+      "name": "final_chain_same_three_admitted_sources",
+      "passed": true
+    },
+    {
+      "name": "native_completed_with_supported_fact",
+      "passed": true
+    },
+    {
+      "name": "no_source_native_or_final_errors",
+      "passed": true
+    },
+    {
+      "name": "frozen_registered_files_unchanged",
+      "passed": true
+    },
+    {
+      "name": "inputs_unchanged",
+      "passed": true
+    },
+    {
+      "name": "main_section_positions_match_saved_body",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "checks": 36,
+    "passed": 36,
+    "failed": 0,
+    "native_exact_span_occurrences": 30,
+    "independent_joint_source_success": true,
+    "scope_limit": "Success of source tracing, not proof of fact/risk prediction accuracy."
+  },
+  "input_sha256": {
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/workflow.json": "26587123129741de2ff858121189ae0d359ce412aaefe92b1ab85d590d017476",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/result.json": "2c7bbdb8839782d4e0b05aac85205d2f0f2644f0ad33d66ce33b92ce46a25a4f",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/archive-records.json": "ead9aba6bed9fd2af5eb1842ecc32a240b761675c678eb9ed280ed37a1e51948",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/model-io.json": "275bdd6f95f964ab4c2f523771df3aadf3e243b0b021b5a41a31a8d77f7649d4",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/calls.json": "d51c0a101aff016a0fbbb5394f26addc9350f0f149976de6b89515429f6f8c9c",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/retrieval.json": "3c12694c9b512ad0077906c457b44bf8c9d3fb5ac5ccce4a8ea97dfe72ac74ab",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-bibliography/b2b2d13ffd7043ee843419905f4c4580.response.json": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-bibliography/b2b2d13ffd7043ee843419905f4c4580-0.proof.json": "4f821c4f33321195d9a03a2d4cd2419a807f805d6f0fda680353f029aa1921ab",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-bibliography/b2b2d13ffd7043ee843419905f4c4580.json": "6b87ae34806bbac00f87d59b19f18797a8c75022d4459d192f3df5019ca7505e",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0009-1789422225215452000.stdout": "1743bc29c3e047b85c8250103735bfc328b59bac57716449b47fd5592c9a5aad",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0010-1789422237939838000.stderr": "32bcbef13d3b96eed1aeddbb3fcf575658b50aba61ae57899cbddad34021452c",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0014-1789422309044136000.request.json": "b3f2c1b402acc63ad9bd088adad71133e4cbebd9a60479253226f82c4dd52eb4",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0009-1789422204242137000.request.json": "e0ab01787ffea06774c540e0a04f438f1b8369e5c1909a8e194f414bd30a862e",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0015-1789422352973896000.stdout": "9d03b267882c415b346a0341a80c6d6158ec5d8eb88fa8d99265cb8dca988c9b",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0007-1789422176608281000.stdout": "b9ecaa35619be6481870dab5a978796a302934ffc3d093e9877717e85032f655",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0020-1789422469079918000.stdout": "620400252287ddba1fffcd6d6e3ad920e0f5cea0b1654f07685a1346f99055a1",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0005-1789422125530318000.request.json": "730242215373120700c0b1e7c7529b6f97c4f0f4e0133d54e5b0c96195e53291",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0018-1789422439624655000.stderr": "6b4fbb6ddaea6c9e24f3a2dad10661d4a7dae89f3c0a36bdd5406cf61cbaf8ba",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0014-1789422315099183000.stdout": "81f7a36e3e6e991f4a8c01b871b55c7be47d4229c983f89aacf80560a308c5b0",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0008-1789422204213396000.stderr": "652fcb401f287e3db1200c675eef4cb27ebb0c476929ae7fdaaf054d4c06bf1b",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0004-1789422125514452000.stdout": "92c3d064b8b30f0f86ae2522ffbea91ecbe1c3a65c64d1c3e88bcb1d978ae5f7",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0012-1789422297779275000.stdout": "e4a285608f95fef0b58e318039e0a42a0f02c762b6ab06d4f8d2cf76cf3039f7",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0011-1789422264452955000.stderr": "2faca3deb1e20568a7e74cf2d7741352534df3239ccd9e130bc42c922dd21452",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0019-1789422449903186000.stdout": "42b5f462da5d2d64b76a4d6b31961a42d8591f0c0ba30b8ef8e612dae7540e79",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0011-1789422264452955000.stdout": "d9c3c829eaaa37d316a01c400d64b1f11a9810849f9a0f6e266a1ec71ad4a9ab",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0006-1789422142592991000.request.json": "39099be3238d7be7320162339166421d1acd1a8191b7514c7a2576fb297e3fa1",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0004-1789422125514452000.stderr": "2fd82d14f9a4e705036ccece933416c2838f1c58ab0c94f9f8354c95bc979694",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0012-1789422297779275000.stderr": "8e9f9c972d817e8565636afc1253a15b1c6ca5ffdbf46375b63df970aeff1530",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0018-1789422380967807000.request.json": "baf0fb32b0d2953065eb3c4deb46c6bad8cf60f394e25350a50e91168e332ec5",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0019-1789422449903186000.stderr": "717a73715c4b9bf3e2940351193d048bd4a5df2f39453447e05ce14c4dc8eae9",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0007-1789422176608281000.stderr": "0290f247b17746230296ab3d14c73055069bcf5aeaa5ffeefab4cdc6689ce161",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0020-1789422469079918000.stderr": "0cb77a42337181d8e3e1f03c9b82974153486bc83f536445ef71e58f242ab3ea",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0015-1789422352973896000.stderr": "cacabeb6df0fd921cc2d4b4db76566f8f9cff9a28a60e0bbf7628cde6a84e9d9",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0014-1789422315099183000.stderr": "f91de767efee3a3148b7cf47e2486212329566fda9ae8eafc5c88eae8636b43d",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0008-1789422204213396000.stdout": "9c16c677b48dcdfdf273c0b77d502aabbe4fcce3f2918c2ef348c667071865eb",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0016-1789422353007351000.request.json": "3db30c8114fcdc1c5fb903265a48e01f48c05975ec210cb22bf79b2f2dae6cd7",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0018-1789422439624655000.stdout": "f633587ed6b934bfaf776da6fa8ebff263b789a356b0c4e2e33399ae32b6bc87",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0010-1789422237939838000.stdout": "aca83c5b77b8fa30f63bc1ef78134ee44cb2385ccd56ba5ece722576d60e7b3f",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0017-1789422374494815000.request.json": "52933b5bb3232c7baa8c7e188ed2298e59f1d2010eed8e15a2bf0fb9214e001a",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0009-1789422225215452000.stderr": "d5c4f6139569800b040a7da4a35cf3fc8053d159c8824a1c5034e9f6c2508804",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0005-1789422142572940000.stdout": "d1deacaea97aca5ab347bc7d659a95ae4e2a36eec5495025ea4a832ea85db93e",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0013-1789422297805620000.request.json": "2bccf846c7833168e8e36f02334d2bc3d7f0eea00737f824b99510e4aef67066",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0004-1789422115869159000.request.json": "b2f0ffc65c80d6fe80fc82666e4f9b7bad5c0fca010f70e0cbcd9a9ca5f4091c",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0003-1789422108612303000.request.json": "7488dd24b869969662198b38bbf6451e7cffb8bcbdce3eaf342ef90c8905ef45",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0013-1789422309013463000.stderr": "a534c54825bbabc61c5641d397183a5fa4fad41e68850545b077467f2b307a51",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0008-1789422176631800000.request.json": "935b08b15e368bcb471b05b48eb0d579231ad0c5e783c7d7ad4303bef482d464",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0003-1789422115778679000.stdout": "aecce4f3c5fa4af17616d1f28c91f5fc9767f262e60b124be708b83c6bfea2db",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0017-1789422380932782000.stderr": "f57cca90cebc012de52e3cce3910fc780c86f0aa36772c98e879c878811cc00a",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0001-1789422082768024000.request.json": "628c702f9454addf372048f44faf3ab766ddc1eafe2afcc568fcecb88e4f21ad",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0016-1789422374463618000.stderr": "03ac882a56264fef07316eaa03beb398ece433bfd8944b2853cb7d5a032b66a5",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0001-1789422092010090000.stderr": "e18db3b70647c04ac746f15b8cc9dff50b19fb337da54cad9faaa51d6967f839",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0002-1789422106723899000.stdout": "c59532cd994ea642917fde8c0329129fd6a657a7f43db73349e2f914449637b1",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0020-1789422449962420000.request.json": "ca4fa0a37a1213e2bfdf3945a8e599545dee9db1aa6ab18bae4e751c9f00572d",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0006-1789422150845590000.stderr": "ee772b069792c73e9cf6c3cb6ad12ae42e4283c69b125d8c916cf736fd95307d",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0011-1789422237969504000.request.json": "4f59e8086e14d2df114cbac8daeea3476b83c7693e7eb5e55df98fddcd1840f2",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0007-1789422150866844000.request.json": "02e47ef4e92c455f5990a12a55966dbc572f4a2ed54d59f6f4c6d2b5f21d36bf",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0006-1789422150845590000.stdout": "eb65ed9baf04e5a9fbcb5dd031e45d0f59ca86f579cd0a3fb4034d9b5b1b1bb6",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0015-1789422315127613000.request.json": "871631b92fc5a06d84d3e292a0f70e6090c55f5c2f66b71f73efad16ae194f4a",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0002-1789422106723899000.stderr": "6f63b1ed26363f2c2d1f0c2cb6a336c89139c0f6cd4914cf3fab45e7139adc4a",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0012-1789422264507901000.request.json": "ee19837882f1fd8091ff347dbb879382aa93dcf1017c6b7629535ad7f244d161",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0016-1789422374463618000.stdout": "ba26de7d5b4b16f71b7910bf7a1b7078a342ac85c934021935bce2a8ac049916",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0002-1789422092027295000.request.json": "f1ced26495c6ab228f45b22a42e59d7fdf5dc651571d5d2e327fdc595cf9db7c",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0001-1789422092010090000.stdout": "e9e1d420064a4403424ad0e9117d7f4ef883988a124461d2256f4eeeb2e14e07",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0019-1789422439663660000.request.json": "a1fafe5c6b219f30cdde1eb80480f1264810610e10f7b4682a52976377230ca5",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0010-1789422225246012000.request.json": "632f468e8a15844faa35f49a708507c78e39545fad03d2b95ed87f84d3d602a1",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0003-1789422115778679000.stderr": "7c14e6523ba28c8e4f5d3c3bbb36501b839681484a4c52785ed7987bb59e62d8",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0017-1789422380932782000.stdout": "a927c7e10ab3074ea55ee88851528b5381850f3085cc93f99a8a979714eecc0d",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0005-1789422142572940000.stderr": "d8bfca38b028ce7c282eeca0736d648007aa56140dad20b2283f1f4b9fdacda5",
+    "experiments/live-origin-v12-20260914/private-run-01/a702-harness/private-cli-events/0013-1789422309013463000.stdout": "91d4285560bc9cf5e9d5ca37be97aa072b84214366d2b6b89336c9a53aaceb4f",
+    "experiments/live-origin-v12-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+    "experiments/live-origin-v12-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+    "experiments/live-origin-v12-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+    "experiments/live-origin-v12-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json": "fa42d2926838689a96cfeb0c8bef97cc8faa6101705454cfe78fb2d848610524",
+    "experiments/live-origin-v12-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+    "experiments/live-origin-v12-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f"
+  },
+  "registration_sha256": "b79437bb6c2bff5f9704da55c4d4e83cb378e59f7d70660de3c53fd5c81628fe",
+  "peer_receipt_audit": "<temporary>/factcircuit-v12-a702-receipt-audit.json"
+}

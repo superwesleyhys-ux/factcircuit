@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "scope": "path-only public export",
+  "source_directory": "<live-origin-v9-20260914-source>",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "source_sha256": "a40016ac0379d667c7383c16ee50565745606f40cd7e496c066b778940377d85",
+      "public_sha256": "b7d4e77fb0f1796981ad95298cdd1050374179e4c283d72dd0bc83a172594c82"
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "bace96d708d6d8eb5949b1848d03c137c530d4ccc00e74e338b122dfe90e3406",
+      "public_sha256": "f921a13a2ad7d5806c06e5083b7bc1b6b3c65ad79aa4c165ab15a9e08603732b"
+    },
+    {
+      "path": "RECEIPTS.json",
+      "source_sha256": "ca845902c1ea4d03c0356ba217ed3d1dc2e9f378d436863618464b2a7de07a2d",
+      "public_sha256": "ca845902c1ea4d03c0356ba217ed3d1dc2e9f378d436863618464b2a7de07a2d"
+    },
+    {
+      "path": "RESULTS.json",
+      "source_sha256": "79c3e5f410e1400cfd89c5db952255fa1b1424c5fb58030d6b384e1022ece1e2",
+      "public_sha256": "79c3e5f410e1400cfd89c5db952255fa1b1424c5fb58030d6b384e1022ece1e2"
+    },
+    {
+      "path": "STAGE_TOKENS.json",
+      "source_sha256": "a4e59682c52d876ff8a92431521118507c0c53ca280ef175743e4b6f3ca6fc79",
+      "public_sha256": "a4e59682c52d876ff8a92431521118507c0c53ca280ef175743e4b6f3ca6fc79"
+    },
+    {
+      "path": "SUMMARY.json",
+      "source_sha256": "a90a62de8d99674d630fc7fb554cb1038f652277259cfd58d2e44e81baffb90b",
+      "public_sha256": "a90a62de8d99674d630fc7fb554cb1038f652277259cfd58d2e44e81baffb90b"
+    }
+  ],
+  "redactions": [
+    {
+      "file": "AUDIT.json",
+      "kind": "path-only"
+    }
+  ],
+  "non_path_changes": [
+    {
+      "file": "README.md",
+      "kind": "broken experiment links converted to plain local-source notes"
+    }
+  ]
+}

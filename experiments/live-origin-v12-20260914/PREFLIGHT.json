@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-09-14T21:32:42.952279+00:00",
+  "model_calls": 0,
+  "seed_hashes_unchanged": true,
+  "regression_status": "passed",
+  "regression_tests": 530,
+  "initial_full_regression": {
+    "tests": 530,
+    "failures": 6,
+    "errors": 0,
+    "cause": "Legacy integration mock responses depended on repeated decomposition and prior full-text packets; migrated only test fixtures while preserving strict chain and false-edge rejection assertions."
+  },
+  "archive_checks": 18,
+  "bibliography_checks": 28,
+  "recovery_checks": 6,
+  "immutable_journal_and_fail_fast_checks": 2,
+  "request_receipt_audit_self_tests": 16,
+  "unchanged_v11_response_replay": {
+    "valid": true,
+    "checks": 15,
+    "new_real_model_calls": 0
+  },
+  "default_model_change": "Same explicit Astra/low model remains registered in both arms; new project default and optional local model selection tested separately and published in PR 17.",
+  "scope": "Local regressions and replay validate plumbing and evidence invariants, not new model quality or source-tracing success."
+}

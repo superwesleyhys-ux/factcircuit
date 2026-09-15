@@ -1,0 +1,26 @@
+{
+  "direct": {
+    "cases": 2,
+    "primary_study_fetched": 2,
+    "validated_final_primary_chain": 2,
+    "calls": 10,
+    "successful_calls": 10,
+    "known_usage_calls": 10,
+    "input_tokens": 1003252,
+    "output_tokens": 1991,
+    "total_tokens": 1005243,
+    "strict_native_primary_trace_success": null
+  },
+  "harness": {
+    "cases": 2,
+    "primary_study_fetched": 2,
+    "validated_final_primary_chain": 2,
+    "calls": 32,
+    "successful_calls": 32,
+    "known_usage_calls": 32,
+    "input_tokens": 2647212,
+    "output_tokens": 16973,
+    "total_tokens": 2664185,
+    "strict_native_primary_trace_success": 0
+  }
+}

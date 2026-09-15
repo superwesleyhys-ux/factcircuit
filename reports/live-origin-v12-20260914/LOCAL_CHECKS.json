@@ -1,0 +1,31 @@
+{
+  "scope": "Local publication checks on the exact frozen runtime files plus public documentation/artifacts. Synthetic tests and package checks make no new model calls and do not measure accuracy.",
+  "regression_tests": 530,
+  "regressions_passed": true,
+  "python": "3.14.5",
+  "platform": "Darwin",
+  "benchmark_completed": true,
+  "wheel_smoke": {
+    "status": "passed",
+    "version": "0.3.2",
+    "platform": "darwin",
+    "python": "3.14.5",
+    "model_api_calls": 0,
+    "new_model_inference": false,
+    "wheel": "factcircuit-0.3.2-py3-none-any.whl",
+    "installed_version": "factcircuit 0.3.2",
+    "outside_checkout": true,
+    "installed_default_example": "passed",
+    "installed_configured_example": "passed",
+    "compatibility_cli": "passed"
+  },
+  "logs_sha256": {
+    "regression_log": "2b9781dc7ad8f1d3c20b3b5e16f6ceb6d9454953437d958c4f25958830081a7f",
+    "synthetic_benchmark": "8ad80b8f32635563ea24f28b543c1fd60f0a92516b66ffb83028776e683213da",
+    "wheel_smoke_log": "fbb61fd235d6066bb2e239fe985274a75d9aeb1a387077c74a3b8311d4a0c58c"
+  },
+  "registered_code_hashes": 72,
+  "registered_code_hashes_unchanged": true,
+  "all_new_report_links_resolve": true,
+  "pre_existing_broken_targets_listed_in": "KNOWN_ISSUES.md"
+}

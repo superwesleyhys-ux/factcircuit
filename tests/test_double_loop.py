@@ -1,9 +1,11 @@
 """Contract tests with explicit fixtures; these are not model-accuracy evidence."""
 from copy import deepcopy
+from dataclasses import asdict
 import json
 import unittest
 
-from newsverify.double_loop import run_double_loop_trace
+from newsverify.double_loop import DoubleLoopDecomposer, run_double_loop_trace
+from newsverify.provenance import Gap, MaterialVersion, Target
 
 
 def material(id, content, available="2026-01-01T00:00:00Z"):
@@ -89,7 +91,8 @@ def payload(extra=()):
     return {"target": {"id": "target", "text": "The measured result was 30 units.",
                        "as_of": "2026-01-03T00:00:00Z", "source_version_id": "notice"},
             "materials": deepcopy([D1, D2, *extra]), "initial_version_ids": ["notice"],
-            "config": {"max_rounds": 4, "max_documents": 4, "max_decomposition_calls": 8}}
+            "config": {"max_rounds": 4, "max_documents": 4, "max_decomposition_calls": 8,
+                       "reanalyze_existing_versions": True}}
 
 
 class DoubleLoopTests(unittest.TestCase):
@@ -119,6 +122,146 @@ class DoubleLoopTests(unittest.TestCase):
         decomposition = next(o for o in round2 if o["action"] == "decompose_completed" and o["version_id"] == "record")
         verification = next(o for o in round2 if o["action"] == "verification_started")
         self.assertLess(decomposition["sequence"], verification["sequence"])
+
+    def test_omitted_own_open_gap_blocks_false_provenance_completion(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "confirmation-source",
+            "question": "Retrieve the original provenance confirmation record.", "stage": "provenance"})
+        report, _ = self.run_script(steps)
+        self.assertEqual([], report["errors"])
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+        self.assertTrue(any(g["id"] == "confirmation-source" for g in report["gaps"]))
+        revisited = [h["analysis"] for h in report["analysis_history"] if h["version_id"] == "notice"][-1]
+        self.assertTrue(any(g["id"] == "confirmation-source" for g in revisited["gaps"]))
+        self.assertIn("Carried forward", revisited["notes"])
+
+    def test_carried_gap_closes_only_after_fetched_evidenced_resolution(self):
+        confirmation = material("confirmation", "Original provenance confirmation: record is the producing measurement record.")
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "confirmation-source",
+            "question": "Retrieve the original provenance confirmation record.", "stage": "provenance"})
+        steps.extend([
+            ("select", {"version_id": "confirmation", "rationale": "Read the missing confirmation record."}),
+            ("decompose", analysis(confirmation, resolutions=[resolution("confirmation-source", confirmation)])),
+            deepcopy(script()[5]),
+        ])
+        report, transport = self.run_script(steps, payload(extra=[confirmation]))
+        self.assertEqual([], report["errors"])
+        self.assertEqual([], transport.steps)
+        self.assertEqual("original_material_located", report["provenance_status"])
+        self.assertFalse(any(g["id"] == "confirmation-source" for g in report["gaps"]))
+        self.assertIn("confirmation", report["eligible_version_ids"])
+
+    def test_resolved_prior_gap_is_not_carried_back_into_reanalysis(self):
+        report, _ = self.run_script()
+        self.assertEqual([], report["errors"])
+        revisited = [h["analysis"] for h in report["analysis_history"] if h["version_id"] == "notice"][-1]
+        self.assertFalse(any(g["id"] == "need-primary" for g in revisited["gaps"]))
+        self.assertEqual("original_material_located", report["provenance_status"])
+
+    def test_reanalysis_does_not_steal_other_material_open_gap(self):
+        steps = script()
+        steps[3][1]["gaps"].append({"id": "record-owned",
+            "question": "Find the producing record's provenance appendix.", "stage": "provenance"})
+        report, _ = self.run_script(steps)
+        self.assertEqual([], report["errors"])
+        revisited = [h["analysis"] for h in report["analysis_history"] if h["version_id"] == "notice"][-1]
+        self.assertFalse(any(g["id"] == "record-owned" for g in revisited["gaps"]))
+        self.assertTrue(any(g["id"] == "record-owned" for g in report["gaps"]))
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+
+    def test_invalid_resolution_cannot_remove_omitted_open_gap(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "confirmation-source",
+            "question": "Retrieve the original provenance confirmation record.", "stage": "provenance"})
+        bad = resolution("confirmation-source")
+        bad["basis"][0]["quote"] = "This quotation does not exist."
+        steps[4][1]["resolutions"] = [bad]
+        report, _ = self.run_script(steps)
+        self.assertTrue(report["errors"])
+        self.assertTrue(any(g["id"] == "confirmation-source" for g in report["gaps"]))
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+
+    def test_invalid_reanalysis_fragment_retains_prior_gap_obligations(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "confirmation-source",
+            "question": "Retrieve the original provenance confirmation record.", "stage": "provenance"})
+        steps[4][1]["fragments"][0]["quote"] = "This quotation does not exist."
+        report, _ = self.run_script(steps)
+        self.assertTrue(report["errors"])
+        self.assertTrue(any(g["id"] == "confirmation-source" for g in report["gaps"]))
+        self.assertEqual(1, len([h for h in report["analysis_history"] if h["version_id"] == "notice"]))
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+
+    def test_carry_preserves_full_prior_gap_metadata(self):
+        gap = Gap("owned", "Inspect the provenance record.", "provenance",
+                  blocking=False, decision_impact="Origin identity context.", locator=D2["url"])
+        context = {"current_material_eligible": True, "materials": [D1],
+            "analyses": {"notice": {"gaps": [asdict(gap)], "resolutions": []}},
+            "gaps": [asdict(gap)]}
+        transport = ScriptedTransport([("decompose", analysis(D1))])
+        result = DoubleLoopDecomposer(transport).decompose(
+            Target(**payload()["target"]), MaterialVersion(**D1), context)
+        self.assertEqual((gap,), result.gaps)
+
+    def test_revisit_cannot_redeclare_origin_owned_by_other_material(self):
+        steps = script()
+        # The revisit of notice proposes record's origin again; only record's
+        # own analysis may emit that origin.
+        steps[4][1]["origins"] = [{"version_id": "record", "basis": [quote(D2)],
+            "material_kind": "original_record", "rationale": "redeclared"}]
+        report, _ = self.run_script(steps)
+        self.assertEqual([], report["errors"])
+        self.assertEqual("original_material_located", report["provenance_status"])
+        self.assertTrue(any(o["version_id"] == "record" for h in report["analysis_history"]
+                            for o in h["analysis"].get("origins", [])))
+        self.assertTrue(any("Ignored non-current origin proposals" in h["analysis"].get("notes", "")
+                            for h in report["analysis_history"]))
+
+    def test_only_noncurrent_origin_proposal_does_not_resolve_gap(self):
+        steps = script()
+        steps[3][1]["origins"] = []
+        steps[4][1]["origins"] = [{"version_id": "record", "basis": [quote(D2)],
+            "material_kind": "original_record", "rationale": "non-current"}]
+        steps[3][1]["resolutions"] = []
+        report, _ = self.run_script(steps)
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+        self.assertEqual([], [o for h in report["analysis_history"] for o in h["analysis"].get("origins", [])
+                              if h["version_id"] == "notice"])
+        self.assertTrue(any(g["id"] == "origin:target" for g in report["gaps"]))
+
+    def test_invalid_current_origin_basis_remains_unresolved(self):
+        steps = script()
+        steps[3][1]["origins"] = [{"version_id": "record", "basis": [quote(D1)],
+            "material_kind": "original_record", "rationale": "wrong version span"}]
+        report, _ = self.run_script(steps)
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+
+    def test_duplicate_system_origin_gap_is_ignored_and_remains_owned(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "origin:target",
+            "question": "A paraphrased origin question", "stage": "provenance"})
+        report, _ = self.run_script(steps)
+        self.assertEqual([], report["errors"])
+        self.assertEqual("original_material_located", report["provenance_status"])
+        self.assertTrue(any("Ignored duplicate system-owned" in h["analysis"].get("notes", "")
+                            for h in report["analysis_history"]))
+
+    def test_duplicate_origin_without_basis_cannot_resolve_provenance(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "origin:target", "question": "Paraphrase", "stage": "provenance"})
+        steps[3][1]["resolutions"] = []
+        steps[3][1]["origins"] = []
+        report, _ = self.run_script(steps)
+        self.assertNotEqual("original_material_located", report["provenance_status"])
+
+    def test_current_material_gap_is_not_dropped_as_reserved(self):
+        steps = script()
+        steps[0][1]["gaps"].append({"id": "need-local", "question": "A local unresolved obligation", "stage": "provenance"})
+        report, _ = self.run_script(steps)
+        # The ordinary model-owned gap remains in the history even after a revisit.
+        self.assertTrue(any(g["id"] == "need-local" for h in report["analysis_history"]
+                            for g in h["analysis"].get("gaps", [])))
 
     def test_decomposition_preserves_every_source_without_resending_current_full_text(self):
         report, transport = self.run_script()

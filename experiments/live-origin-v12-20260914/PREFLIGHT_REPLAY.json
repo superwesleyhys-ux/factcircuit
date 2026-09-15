@@ -1,0 +1,315 @@
+{
+  "kind": "Offline replay of unchanged authoritative V11 responses; not a model result",
+  "created_at": "2026-09-14T21:33:23.828165+00:00",
+  "new_real_model_calls": 0,
+  "valid": true,
+  "checks": {
+    "omitted_only_expected_seed_revisits": true,
+    "unchanged_responses_consumed_in_order": true,
+    "no_unused_or_synthesized_responses": true,
+    "incremental_default_active": true,
+    "exactly_three_unique_decompositions": true,
+    "ecu_gap_still_open_before_ecu_admission": true,
+    "ecu_gap_closed_only_by_ecu_analysis": true,
+    "ecu_resolution_quotes_admitted_ecu_text": true,
+    "verification_gap_retained": true,
+    "all_native_relation_quotes_exact": true,
+    "native_observed_link_path_still_valid": true,
+    "old_complete_materials_not_resent": true,
+    "native_execution_without_errors": true,
+    "source_files_unchanged": true,
+    "runtime_code_stable_during_replay": true
+  },
+  "source_run": "<source-run>",
+  "source_file_sha256": {
+    "<source-run>/workflow.json": "890e9bf86725275a8e45c76faa40a0d6f4e7a7732a3eb7be4f3edcc837a2de2c",
+    "<source-run>/model-io.json": "8e0d6fb222c410e74443ca2c45614f7dcbd0fcc17c34eb62c469ab329d5bde55",
+    "<source-run>/sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+    "<source-run>/result.json": "f290b216d06720927188924792856e50ebfb192e1cb5cf44dda805949988b1b1",
+    "<source-run>/private-cli-events/0010-1789416438164374000.stdout": "77078c7daebf8d66622761dbe0d118be4151d0f6fc377cf06398156a08e91f97",
+    "<source-run>/private-cli-events/0011-1789416448294483000.stdout": "837deedfd10e9d5bb05e46fde5694452d486824561c3853bf7fbeb6adc6ed403",
+    "<source-run>/private-cli-events/0012-1789416453263161000.stdout": "3d15cb9e421f61ba66b8b5bc453b629791f68a77c3ebce231e1849aee42edd81",
+    "<source-run>/private-cli-events/0013-1789416500224606000.stdout": "a2d187d22d9ee003d637979b8bdfe2f3fc709b37a188c70d8e5ed2ab2a510b8d",
+    "<source-run>/private-cli-events/0014-1789416540728426000.stdout": "a994f156fbc31f607700161132af9111e3623aa85d5feeb91323e32738c2edc0",
+    "<source-run>/private-cli-events/0015-1789416555248504000.stdout": "6508f902c5c3fee2c934b835c3ccc2c2dc179c611bda6449eaf538a3a7ada56d",
+    "<source-run>/private-cli-events/0016-1789416561537434000.stdout": "5c35b8a98d3b44d9cb01290a9dcbbb21015029278eece3c0476e69eda0ad0d62",
+    "<source-run>/private-cli-events/0017-1789416598502697000.stdout": "173708403769ed8dfdaa097e44688fe2f3bf6d2cd22d310b63e537e8d8f253ca",
+    "<source-run>/private-cli-events/0018-1789416645747424000.stdout": "37303717196411e1b07ca8676c834589cff618167a20f6fb992a7c804f5485ae",
+    "<source-run>/private-cli-events/0019-1789416661734930000.stdout": "6eacbc611ba92320cfa392c7e5119440f23c8789cac3990fef843878d30cf248"
+  },
+  "runtime_code_sha256": {
+    "<checkout>/newsverify/double_loop.py": "9c93a66b8d1e135670713e5cbd05aad6aa126486e48979511420e6e1a7e2192b",
+    "<checkout>/newsverify/provenance.py": "58817c042e91eaa1771bd6e6fa4294d4ab8d5454bd7200949c97cd04e0917a15",
+    "<checkout>/newsverify/news_tracing_runner.py": "68a442b1478265306006add587b883af828170ab5324428f8aa1c15dac5f41e8"
+  },
+  "source_response_records": [
+    {
+      "call_index_one_based": 10,
+      "stage": "decompose",
+      "version_id": "news-ce8dcf7a5dfb9351",
+      "cli_path": "<source-run>/private-cli-events/0010-1789416438164374000.stdout",
+      "cli_sha256": "77078c7daebf8d66622761dbe0d118be4151d0f6fc377cf06398156a08e91f97",
+      "response_canonical_sha256": "2e0472838dcbfd3fd187e591604e43a6c992ab6abd138014f511ffef7cf77e28",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 11,
+      "stage": "verify",
+      "version_id": null,
+      "cli_path": "<source-run>/private-cli-events/0011-1789416448294483000.stdout",
+      "cli_sha256": "837deedfd10e9d5bb05e46fde5694452d486824561c3853bf7fbeb6adc6ed403",
+      "response_canonical_sha256": "db2c6d90b031efae91cda575cfe91661da11957b0dc4fa68dfd8489d233fb5f1",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 12,
+      "stage": "select",
+      "version_id": null,
+      "cli_path": "<source-run>/private-cli-events/0012-1789416453263161000.stdout",
+      "cli_sha256": "3d15cb9e421f61ba66b8b5bc453b629791f68a77c3ebce231e1849aee42edd81",
+      "response_canonical_sha256": "124bd2c82bd5e03ab36b5634147b3b861c07d734e68af0601a04bb1ab7cc7099",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 13,
+      "stage": "decompose",
+      "version_id": "news-4be0ee7d2b38540c",
+      "cli_path": "<source-run>/private-cli-events/0013-1789416500224606000.stdout",
+      "cli_sha256": "a2d187d22d9ee003d637979b8bdfe2f3fc709b37a188c70d8e5ed2ab2a510b8d",
+      "response_canonical_sha256": "d155b9136930b1588bd77fad9fd7b1db1a7467ef9ec2f0960278e1fbf6920b0b",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 14,
+      "stage": "decompose",
+      "version_id": "news-ce8dcf7a5dfb9351",
+      "cli_path": "<source-run>/private-cli-events/0014-1789416540728426000.stdout",
+      "cli_sha256": "a994f156fbc31f607700161132af9111e3623aa85d5feeb91323e32738c2edc0",
+      "response_canonical_sha256": "5d240777c15fc52da7be0c5c62b941e75022573d1bc1766b94ef6cc030fdb325",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": true
+    },
+    {
+      "call_index_one_based": 15,
+      "stage": "verify",
+      "version_id": null,
+      "cli_path": "<source-run>/private-cli-events/0015-1789416555248504000.stdout",
+      "cli_sha256": "6508f902c5c3fee2c934b835c3ccc2c2dc179c611bda6449eaf538a3a7ada56d",
+      "response_canonical_sha256": "ab4fce9e94905b0941369eedf0e7f3384f8a71e93d2f611e8831b6bfcebd17c7",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 16,
+      "stage": "select",
+      "version_id": null,
+      "cli_path": "<source-run>/private-cli-events/0016-1789416561537434000.stdout",
+      "cli_sha256": "5c35b8a98d3b44d9cb01290a9dcbbb21015029278eece3c0476e69eda0ad0d62",
+      "response_canonical_sha256": "e2e2ea08811cf061bb139cec38a2d5c5b034f1c161f4091452b730f46285d520",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 17,
+      "stage": "decompose",
+      "version_id": "news-f0d35c9093a55768",
+      "cli_path": "<source-run>/private-cli-events/0017-1789416598502697000.stdout",
+      "cli_sha256": "173708403769ed8dfdaa097e44688fe2f3bf6d2cd22d310b63e537e8d8f253ca",
+      "response_canonical_sha256": "ec15aea2f3d5d67638021397c64a8382c1f66b555e98ed10b928dad04d53026e",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    },
+    {
+      "call_index_one_based": 18,
+      "stage": "decompose",
+      "version_id": "news-ce8dcf7a5dfb9351",
+      "cli_path": "<source-run>/private-cli-events/0018-1789416645747424000.stdout",
+      "cli_sha256": "37303717196411e1b07ca8676c834589cff618167a20f6fb992a7c804f5485ae",
+      "response_canonical_sha256": "a82e1a55f1c4ee6cf9141628cbcf15953a116f75fd206dcd51069432be662d75",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": true
+    },
+    {
+      "call_index_one_based": 19,
+      "stage": "verify",
+      "version_id": null,
+      "cli_path": "<source-run>/private-cli-events/0019-1789416661734930000.stdout",
+      "cli_sha256": "6eacbc611ba92320cfa392c7e5119440f23c8789cac3990fef843878d30cf248",
+      "response_canonical_sha256": "d0aa18ca1297cc2ef737d5f0dc306da78212feef76a87785c4bbb60c9208223a",
+      "matches_immutable_workflow_response": true,
+      "omitted_repeated_decomposition": false
+    }
+  ],
+  "omitted_repeated_decomposition_calls": [
+    14,
+    18
+  ],
+  "retained_original_call_order": [
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    19
+  ],
+  "offline_response_dispatches": 8,
+  "unconsumed_script_steps": 0,
+  "decompositions_by_version": {
+    "news-ce8dcf7a5dfb9351": 1,
+    "news-4be0ee7d2b38540c": 1,
+    "news-f0d35c9093a55768": 1
+  },
+  "packet_checks": [
+    {
+      "original_call": 10,
+      "stage": "decompose",
+      "current_version_id": "news-ce8dcf7a5dfb9351",
+      "complete_context_version_ids": [],
+      "prior_version_ids": [],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 26298,
+      "open_gap_ids": [
+        "origin:a701:c1"
+      ]
+    },
+    {
+      "original_call": 11,
+      "stage": "verify",
+      "current_version_id": null,
+      "complete_context_version_ids": [
+        "news-ce8dcf7a5dfb9351"
+      ],
+      "prior_version_ids": [],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 30726,
+      "open_gap_ids": [
+        "origin:a701:c1",
+        "airburst-paper-original-record",
+        "ecu-source-version"
+      ]
+    },
+    {
+      "original_call": 13,
+      "stage": "decompose",
+      "current_version_id": "news-4be0ee7d2b38540c",
+      "complete_context_version_ids": [],
+      "prior_version_ids": [
+        "news-ce8dcf7a5dfb9351"
+      ],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 377208,
+      "open_gap_ids": [
+        "origin:a701:c1",
+        "airburst-paper-original-record",
+        "ecu-source-version",
+        "verify-airburst-cause-date"
+      ]
+    },
+    {
+      "original_call": 15,
+      "stage": "verify",
+      "current_version_id": null,
+      "complete_context_version_ids": [
+        "news-4be0ee7d2b38540c"
+      ],
+      "prior_version_ids": [
+        "news-ce8dcf7a5dfb9351"
+      ],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 381790,
+      "open_gap_ids": [
+        "ecu-source-version",
+        "verify-airburst-cause-date"
+      ]
+    },
+    {
+      "original_call": 17,
+      "stage": "decompose",
+      "current_version_id": "news-f0d35c9093a55768",
+      "complete_context_version_ids": [],
+      "prior_version_ids": [
+        "news-ce8dcf7a5dfb9351",
+        "news-4be0ee7d2b38540c"
+      ],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 26017,
+      "open_gap_ids": [
+        "ecu-source-version",
+        "verify-airburst-cause-date"
+      ]
+    },
+    {
+      "original_call": 19,
+      "stage": "verify",
+      "current_version_id": null,
+      "complete_context_version_ids": [
+        "news-f0d35c9093a55768"
+      ],
+      "prior_version_ids": [
+        "news-ce8dcf7a5dfb9351",
+        "news-4be0ee7d2b38540c"
+      ],
+      "prior_metadata_hashes_valid": true,
+      "old_complete_bodies_absent_from_entire_packet": true,
+      "only_new_complete_materials_in_context": true,
+      "serialized_packet_characters": 29606,
+      "open_gap_ids": [
+        "verify-airburst-cause-date"
+      ]
+    }
+  ],
+  "replayed_provenance_status": "original_material_located",
+  "replayed_fact_status": "unresolved",
+  "replayed_stop_reason": "empty_results",
+  "replayed_errors": [],
+  "retained_gap_ids": [
+    "verify-airburst-cause-date"
+  ],
+  "located_origins": [
+    {
+      "url": "https://www.nature.com/articles/s41598-021-97778-3",
+      "version_id": "news-4be0ee7d2b38540c",
+      "claim_ids": [
+        "a701:c1"
+      ],
+      "material_kind": "original_observation"
+    }
+  ],
+  "direct_native_relations": [
+    {
+      "from_version": "news-ce8dcf7a5dfb9351",
+      "to_version": "news-4be0ee7d2b38540c",
+      "kind": "cites",
+      "status": "direct"
+    },
+    {
+      "from_version": "news-f0d35c9093a55768",
+      "to_version": "news-4be0ee7d2b38540c",
+      "kind": "cites",
+      "status": "direct"
+    },
+    {
+      "from_version": "news-ce8dcf7a5dfb9351",
+      "to_version": "news-f0d35c9093a55768",
+      "kind": "derives",
+      "status": "direct"
+    }
+  ],
+  "authority_limit": "CLI responses match immutable workflow snapshots. No response content is adapted. V12 packets differ from original V11 inputs; this verifies compatibility and host invariants, not how a new model would respond. Full text may appear once per source in decomposition and once as newly admitted verification evidence; older complete texts are replaced by metadata and retained exact evidence."
+}

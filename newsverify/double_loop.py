@@ -1,4 +1,4 @@
-"""Opt-in model-backed provenance reanalysis and verification feedback.
+"""Opt-in model-backed incremental provenance and verification feedback.
 
 The provider adaptively selects from an immutable local snapshot pool. It does
 not search the open web, download material, or change the existing one-round
@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
+import hashlib
 from dataclasses import asdict
 import json
 from pathlib import Path
@@ -87,9 +88,23 @@ record, interview, dataset, or observation. An early article or a source with no
 outgoing links is not automatically original. Resolve origin:<target.id> only
 with an evidenced original and an actual direct lineage path from the target's
 source_version_id. This establishes provenance, not the target's truth.
+An origin finding belongs to the material currently being decomposed: emit only
+the current material's version_id. Existing origin findings for other materials
+remain owned by their original analyses and must not be redeclared here.
+Once the target originating record and citation identity are established, missing
+supplementary files, raw measurements, replication, corrections, or reliability
+challenges are factual-verification gaps for the verifier. Keep genuine unknown
+source identity or lineage as provenance gaps. Preserve relevant qualifiers and
+limitations in either case; do not relabel one kind as the other.
 
 Emit concrete provenance gaps for missing materials or uncertain source links.
 Use stable, descriptive gap IDs and reuse an existing gap ID for the same issue.
+Only origin:<target> and lineage:<target> are runner-owned definitions. Ordinary
+gaps previously created by this same material remain its obligations: carry an
+omitted still-open gap forward unchanged until an exact evidenced resolution.
+Do not redeclare runner-owned IDs with a new question or lifecycle. Resolve any
+gap only with exact evidence when justified; only introduce IDs for genuinely
+new gaps.
 Resolve only listed open gaps, previously evidenced resolutions in any current
 analysis, or gaps created in this same analysis. A resolution
 needs exact evidence and an explanation of how that evidence closes the question.
@@ -137,6 +152,55 @@ materials answer them. You may also resolve a verification gap created in this
 response or reaffirm a gap previously created in verification_history with fresh
 exact evidence, but cannot resolve provenance gaps. An unanswered verification gap
 keeps the visible verdict unresolved. Return the required JSON object.
+"""
+
+INCREMENTAL_DECOMPOSE_PROMPT = COMMON + """
+Analyze only the newly admitted current material, whose complete text is under
+material. Each immutable version is decomposed once. Earlier full texts are not
+resent: context.prior_materials gives their identities and hashes; context.analyses
+and verification_history retain the validated exact evidence and decisions.
+Use those earlier exact spans as an evidence ledger, not as new independent sources.
+If an earlier detail is absent from that ledger, preserve the missing-evidence gap.
+
+Return one to five target-relevant fragments from the current material. Every
+quote must be exact, nonempty and occur once in its specified original version.
+Prefer one or two fragments and concise rationales. Preserve qualifiers, numbers,
+negation and uncertainty. Do not reproduce unrelated sections of the paper.
+
+Earlier analyses remain immutable. Integrate this new material by emitting new
+relations and explicit evidenced resolutions here, including relations from an
+earlier version to this version. Relations point downstream to upstream; their
+basis must quote from_version. Direct lineage requires actual documented source
+use and an obtained eligible upstream, not similarity or factual agreement.
+Keep an unavailable upstream as declared with to_version=null and its locator.
+An old declared edge is not automatically promoted when its source arrives.
+Use stable local IDs; do not redeclare another material's gap definitions.
+
+Only the current material can receive an origin finding in this analysis. Quote
+its relevant original observation, record, interview or dataset. Resolve
+origin:<target.id> only with an evidenced original and an actual direct lineage
+path from source_version_id. Source identity does not establish empirical truth.
+Missing supplements, measurements, replication, corrections or reliability
+checks remain factual verification gaps; unknown source identity or lineage
+remains a provenance gap. Do not relabel unresolved obligations to close them.
+
+Keep all open gaps until an explicit exact evidenced resolution answers them.
+Resolve only listed gaps or gaps created here. origin:<target> and lineage:<target>
+are runner-owned definitions and cannot be redefined. A new source may explicitly
+resolve an earlier source's gap without replacing the earlier analysis.
+Set revisit_versions=[]: unchanged earlier versions will not be decomposed again.
+Do not give a final factual verdict. Return the required JSON object.
+"""
+
+INCREMENTAL_VERIFY_PROMPT = VERIFY_PROMPT + """
+
+This verification is incremental. context.materials contains complete texts only
+for versions not included in a previous accepted verification. Earlier versions
+are represented by metadata in prior_materials and exact evidence in analyses
+and verification_history. Integrate the new evidence with the previous verdict,
+qualifiers and open gaps. Do not infer unseen details of an earlier text or treat
+its cached evidence as newly retrieved corroboration. Host validation still
+checks all quotes against the complete original versions.
 """
 
 SELECT_PROMPT = """Choose the single unseen snapshot most likely to answer one of
@@ -189,11 +253,27 @@ def _basis(items, materials):
     return tuple(exact_span(item["version_id"], item["quote"], materials) for item in items)
 
 
-def _context(context, current_material_id=None):
+def _context(context, current_material_id=None, *, incremental=False):
     # Fragments, relations and origins are already present within analyses.
     # Avoid sending a second copy, while retaining every current analysis.
     keys = ("materials", "analyses", "gaps", "verification_history", "usage")
     result = {key: deepcopy(context[key]) for key in keys if key in context}
+    if incremental:
+        previous = set(context.get("verified_version_ids", ()))
+        prior_materials = []
+        new_materials = []
+        for material in result.get("materials", []):
+            if current_material_id is None and material["version_id"] not in previous:
+                new_materials.append(material)
+            elif material["version_id"] != current_material_id:
+                text = material.pop("content")
+                material.update(content_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                                content_chars=len(text))
+                prior_materials.append(material)
+        result["materials"] = new_materials
+        result["prior_materials"] = prior_materials
+        result["verified_version_ids"] = sorted(previous)
+        return result
     if current_material_id is not None and "materials" in result:
         # Decomposition already carries the complete current material in its
         # own field. Preserve all other versions and prior analyses; the host
@@ -272,15 +352,17 @@ class CallBudgetTransport:
 
 
 class DoubleLoopDecomposer:
-    def __init__(self, transport):
+    def __init__(self, transport, *, incremental=False):
         self.transport = transport
+        self.incremental = incremental
 
     def decompose(self, target, material, context):
         if not context["current_material_eligible"]:
             return ConservativeDecomposer().decompose(target, material, context)
-        response = self.transport.generate("decompose", DECOMPOSE_PROMPT,
+        prompt = INCREMENTAL_DECOMPOSE_PROMPT if self.incremental else DECOMPOSE_PROMPT
+        response = self.transport.generate("decompose", prompt,
             {"target": asdict(target), "material": asdict(material),
-             "context": _context(context, material.version_id)},
+             "context": _context(context, material.version_id, incremental=self.incremental)},
             FULL_ANALYSIS_SCHEMA)
         validate_full_output(response, FULL_ANALYSIS_SCHEMA)
         if not 1 <= len(response["fragments"]) <= 5:
@@ -290,6 +372,28 @@ class DoubleLoopDecomposer:
         _unique([item["id"] for item in response["fragments"]], "fragment IDs")
         _unique([item["id"] for item in response["relations"]], "relation IDs")
         _unique([item["id"] for item in response["gaps"]], "gap IDs")
+        # The runner owns the initial origin obligation. A model may resolve it,
+        # but a repeated/paraphrased definition must not become a second owner.
+        reserved = {"origin:" + target.id, "lineage:" + target.id}
+        reserved.intersection_update(item["id"] for item in context["gaps"])
+        duplicate_reserved = [item["id"] for item in response["gaps"] if item["id"] in reserved]
+        if duplicate_reserved:
+            response["gaps"] = [item for item in response["gaps"] if item["id"] not in reserved]
+            response["notes"] = (response["notes"].rstrip() +
+                " Ignored duplicate system-owned gap definitions: " + ", ".join(sorted(duplicate_reserved)) + ".")
+        # Reanalysis replaces the material's prior snapshot. Preserve its open
+        # ordinary obligations when the model omitted them; explicit valid
+        # resolutions are allowed to close them below.
+        prior = context["analyses"].get(material.version_id, {})
+        open_context = {item["id"] for item in context["gaps"]}
+        resolved_now = {item["gap_id"] for item in response["resolutions"]}
+        carried = [item for item in prior.get("gaps", ())
+                   if item["id"] in open_context and item["id"] not in reserved and item["id"] not in resolved_now
+                   and item["id"] not in {g["id"] for g in response["gaps"]}]
+        if carried:
+            response["gaps"].extend(carried)
+            response["notes"] = (response["notes"].rstrip() +
+                " Carried forward still-open same-material gaps: " + ", ".join(sorted(g["id"] for g in carried)) + ".")
         _unique(response["revisit_versions"], "revisit_versions")
         old_versions = set(context["analyses"]) - {material.version_id}
         if any(item not in old_versions for item in response["revisit_versions"]):
@@ -299,9 +403,8 @@ class DoubleLoopDecomposer:
         # analysis. It is still a known gap and requires fresh valid evidence.
         allowed_resolutions.update(item["gap_id"] for analysis in context["analyses"].values()
                                    for item in analysis.get("resolutions", ()))
-        # A malformed quote should not abort the whole double loop.  Preserve
-        # the conservative unresolved path so later verification can still
-        # use valid evidence from the other stages.
+        # A malformed quote fails closed; retaining the prior analysis is safer
+        # than replacing it with an analysis that could omit open obligations.
         try:
             fragments = tuple(Fragment(
                 _local_id(material.version_id, "fragment", item["id"]), item["text"],
@@ -309,7 +412,7 @@ class DoubleLoopDecomposer:
                 tuple(item["qualifiers"]),
             ) for item in response["fragments"])
         except ValueError:
-            return ConservativeDecomposer().decompose(target, material, context)
+            raise ValueError("Malformed current-material fragment; prior analysis retained") from None
         _unique([item.id for item in fragments], "normalized fragment IDs")
         relations = tuple(Relation(
             _local_id(material.version_id, "relation", item["id"]), item["from_version"],
@@ -317,24 +420,31 @@ class DoubleLoopDecomposer:
             _basis(item["basis"], materials), item["rationale"], item["upstream_locator"],
         ) for item in response["relations"])
         _unique([item.id for item in relations], "normalized relation IDs")
+        noncurrent_origins = [item for item in response["origins"] if item["version_id"] != material.version_id]
+        if noncurrent_origins:
+            response["notes"] = (response["notes"].rstrip() +
+                " Ignored non-current origin proposals; origin ownership remains with each material's analysis.")
         return Analysis(
             fragments=fragments, relations=relations,
             gaps=tuple(Gap(**item) for item in response["gaps"]),
             resolutions=_resolutions(response["resolutions"], materials, allowed_resolutions),
             origins=tuple(OriginFinding(target.id, item["version_id"],
                 _basis(item["basis"], materials), item["material_kind"], item["rationale"])
-                for item in response["origins"]),
+                for item in response["origins"] if item["version_id"] == material.version_id),
             revisit_versions=tuple(response["revisit_versions"]), notes=response["notes"],
         )
 
 
 class DoubleLoopVerifier:
-    def __init__(self, transport):
+    def __init__(self, transport, *, incremental=False):
         self.transport = transport
+        self.incremental = incremental
 
     def verify(self, target, context):
-        response = self.transport.generate("verify", VERIFY_PROMPT,
-            {"target": asdict(target), "context": _context(context)}, FULL_VERDICT_SCHEMA)
+        prompt = INCREMENTAL_VERIFY_PROMPT if self.incremental else VERIFY_PROMPT
+        response = self.transport.generate("verify", prompt,
+            {"target": asdict(target), "context": _context(context, incremental=self.incremental)},
+            FULL_VERDICT_SCHEMA)
         validate_full_output(response, FULL_VERDICT_SCHEMA)
         materials = {item["version_id"]: item for item in context["materials"]}
         _unique([item["id"] for item in response["gaps"]], "verification gap IDs")
@@ -365,7 +475,7 @@ class DoubleLoopVerifier:
 class SnapshotPoolProvider:
     """Select unseen eligible snapshots in response to the actual current gaps."""
 
-    def __init__(self, target, materials, initial_version_ids, transport):
+    def __init__(self, target, materials, initial_version_ids, transport, *, deduplicate_aliases=False):
         self.target = target
         self.transport = transport
         self.materials = {item.version_id: item for item in materials}
@@ -382,6 +492,25 @@ class SnapshotPoolProvider:
                            if (reasons := _material_eligibility(item, cutoff))}
         if self.initial_version_id in self.exclusions:
             raise ValueError("Initial version must be historically eligible")
+        self.aliases = {}
+        if deduplicate_aliases:
+            # Exact same publisher version under another local ID. Keep the
+            # configured initial ID as representative; do not forge admission
+            # of aliases or merge any differing content/availability metadata.
+            representatives = {}
+            ordered = [self.materials[self.initial_version_id]] + [
+                item for item in materials if item.version_id != self.initial_version_id]
+            for item in ordered:
+                if item.version_id in self.exclusions:
+                    continue
+                identity = asdict(item)
+                identity.pop("version_id")
+                identity.pop("retrieved_at")
+                fingerprint = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+                if fingerprint in representatives:
+                    self.aliases[item.version_id] = representatives[fingerprint]
+                else:
+                    representatives[fingerprint] = item.version_id
         self.seen = set()
         self.requests = []
 
@@ -397,7 +526,7 @@ class SnapshotPoolProvider:
             request["reason"] = "initial_snapshot"
         else:
             candidates = [item for key, item in self.materials.items()
-                          if key not in self.seen and key not in self.exclusions]
+                          if key not in self.seen and key not in self.exclusions and key not in self.aliases]
             request["candidate_version_ids"] = [item.version_id for item in candidates]
             if not candidates:
                 request["reason"] = "pool_exhausted"
@@ -437,7 +566,7 @@ class SnapshotPoolProvider:
 
 def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effort=None,
                           timeout=90, max_model_calls=10, transport=None):
-    """Run bounded adaptive snapshot selection, provenance reanalysis and feedback."""
+    """Analyze each immutable snapshot once by default; explicit legacy mode remains available."""
     if tunnel not in {"local", "api"}:
         raise ValueError("tunnel must be local or api")
     if not isinstance(payload, dict) or not isinstance(payload.get("target"), dict):
@@ -452,7 +581,11 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         materials.append(MaterialVersion(**item))
     if payload.get("config") is not None and not isinstance(payload["config"], dict):
         raise ValueError("double-loop config must be an object")
-    config = TraceConfig(**(payload.get("config") or {}))
+    options = dict(payload.get("config") or {})
+    options.setdefault("reanalyze_existing_versions", False)
+    config = TraceConfig(**options)
+    if type(config.reanalyze_existing_versions) is not bool:
+        raise ValueError("reanalyze_existing_versions must be a boolean")
     for name in ("max_rounds", "max_documents", "max_decomposition_calls"):
         if type(getattr(config, name)) is not int or getattr(config, name) < 1:
             raise ValueError(f"{name} must be a positive integer")
@@ -463,9 +596,11 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
     elif transport.kind != tunnel:
         raise ValueError("Supplied transport kind must match the selected tunnel")
     bounded = CallBudgetTransport(transport, max_model_calls)
-    provider = SnapshotPoolProvider(target, materials, payload.get("initial_version_ids"), bounded)
-    report = run_provenance(target, provider, DoubleLoopDecomposer(bounded),
-                            DoubleLoopVerifier(bounded), config)
+    incremental = not config.reanalyze_existing_versions
+    provider = SnapshotPoolProvider(target, materials, payload.get("initial_version_ids"), bounded,
+                                    deduplicate_aliases=incremental)
+    report = run_provenance(target, provider, DoubleLoopDecomposer(bounded, incremental=incremental),
+                            DoubleLoopVerifier(bounded, incremental=incremental), config)
     report["execution_mode"] = "double_loop_model_trace"
     report["execution"] = {
         "tunnel": bounded.kind, "model": bounded.model,
@@ -474,7 +609,12 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         "model_io": bounded.model_io, "blocked_calls": bounded.blocked_calls,
         "provider_requests": provider.requests,
         "pool_version_ids": list(provider.materials), "pool_exclusions": provider.exclusions,
-        "scope": "Adaptive selection from a fixed local snapshot pool, model provenance reanalysis, and independent verification feedback; no open-web retrieval.",
+        "pool_aliases_not_admitted": dict(provider.aliases),
+        "incremental_source_analysis": incremental,
+        "scope": ("Adaptive selection from a fixed local snapshot pool, "
+                  + ("one analysis per immutable source with incremental evidence packets"
+                     if incremental else "legacy provenance reanalysis")
+                  + ", and independent verification feedback; no open-web retrieval."),
     }
     return report
 

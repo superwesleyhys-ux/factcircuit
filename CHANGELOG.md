@@ -5,6 +5,14 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Added incremental double-loop source analysis: each immutable version is
+  decomposed and verified once per claim with full retained text, while prior findings
+  and open gaps remain in later context. Legacy reanalysis requires the
+  explicit boolean `reanalyze_existing_versions` option. Added cutoff-bound
+  historical collector checks, strict bibliography identity binding that does
+  not imply factual truth, and opt-in private LocalTunnel diagnostics that
+  preserve failed-call status.
+
 - Default local model-backed tracing to Astra; select other Codex models with
   `--model` or `FACTCIRCUIT_MODEL` without changing global model settings.
 - Route the standalone news-tracing entry point through local FactCircuit by

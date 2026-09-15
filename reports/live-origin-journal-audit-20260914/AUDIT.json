@@ -1,0 +1,881 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-14T20:09:32.790850+00:00",
+  "scope": {
+    "kind": "Standalone read-only audit of journal aliasing, with an offline diagnostic replay",
+    "v11_frozen_commit": "6e88fb2ca6257ff792ddad10dbd1eb815e07a6bc",
+    "v11_observations_are_point_in_time": true,
+    "new_real_model_calls": 0,
+    "frozen_sources_or_raw_results_modified": false,
+    "contains_raw_article_or_body_excerpts": false
+  },
+  "findings": [
+    {
+      "id": "response_reference_aliasing",
+      "severity": "material_audit_integrity",
+      "finding": "The journal stores response objects by reference. Later host normalization or retrieval-result augmentation changes earlier logged model responses."
+    },
+    {
+      "id": "input_reference_aliasing",
+      "severity": "material_audit_integrity",
+      "finding": "The journal stores packet objects by reference. Mutable prior_decisions and collection_errors can change after the actual call. First retrieval records demonstrably contain later decisions."
+    }
+  ],
+  "observation_coverage": [
+    {
+      "version": "v10",
+      "armcase": "a701-direct",
+      "outer_rows_observed": 6,
+      "completed_cli_responses_compared": 6,
+      "news_level_immutable_snapshots_observed": 0,
+      "native_pre_advice_snapshots_observed": 0,
+      "complete_run_marker_present": true
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "outer_rows_observed": 17,
+      "completed_cli_responses_compared": 17,
+      "news_level_immutable_snapshots_observed": 14,
+      "native_pre_advice_snapshots_observed": 7,
+      "complete_run_marker_present": true
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-direct",
+      "outer_rows_observed": 4,
+      "completed_cli_responses_compared": 4,
+      "news_level_immutable_snapshots_observed": 0,
+      "native_pre_advice_snapshots_observed": 0,
+      "complete_run_marker_present": true
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "outer_rows_observed": 18,
+      "completed_cli_responses_compared": 18,
+      "news_level_immutable_snapshots_observed": 13,
+      "native_pre_advice_snapshots_observed": 6,
+      "complete_run_marker_present": true
+    },
+    {
+      "version": "v11",
+      "armcase": "a701-direct",
+      "outer_rows_observed": 5,
+      "completed_cli_responses_compared": 5,
+      "news_level_immutable_snapshots_observed": 0,
+      "native_pre_advice_snapshots_observed": 0,
+      "complete_run_marker_present": false
+    },
+    {
+      "version": "v11",
+      "armcase": "a701-harness",
+      "outer_rows_observed": 17,
+      "completed_cli_responses_compared": 16,
+      "news_level_immutable_snapshots_observed": 0,
+      "native_pre_advice_snapshots_observed": 0,
+      "complete_run_marker_present": false
+    }
+  ],
+  "observed_examples": [
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a701-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0001-1789414987738370000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "e1722121b5b2fd59ce1a248f0af2f5d07e094101494e3706d524944bc4f6ebe2",
+      "outer_response_canonical_sha256": "7ac37c816fd5889a1d1e9cd6fe4d64ba0d43b3f9ae7e6508fc250bb8e7b0b18f",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a701-direct",
+      "call_index_one_based": 2,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/1/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0002-1789414998098750000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "7eabd2b0237d5dabe6ea6759ca636c901725931182de227617951c7b8f00ed5e",
+      "outer_response_canonical_sha256": "f754ef385b9a406b7fe4e3815c069bf8d50d95e1811ce8de5e90fdfdc06ff0f8",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a701-direct",
+      "call_index_one_based": 3,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/2/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0003-1789415023544768000.stdout",
+      "differing_top_level_fields": [
+        "binding",
+        "lookup",
+        "selection"
+      ],
+      "raw_response_canonical_sha256": "91af6d76fcd296b0cf6252d69f22e726a2fcaf665434d48281a80135344e7a0e",
+      "outer_response_canonical_sha256": "8fc46451a4197453aea49829e720fc3633ea7f0cc36c7fe3cedb56fd76264671",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a701-direct",
+      "call_index_one_based": 5,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/4/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0005-1789415081245153000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "1af229d668042b77ddfd9c2d9a2a68f3ab75d88dbbe213fc64c1bd5a21fb48cd",
+      "outer_response_canonical_sha256": "9b76f1bc95515ee09a7d37257beab0f918acd02acc774060d9178eaf7b459a6b",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v10",
+      "armcase": "a701-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 4,
+      "logged_actions": [
+        "fetch",
+        "fetch",
+        "bibliography",
+        "fetch"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0001-1789415157455227000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "faa0fd43f3ee08db5207ff05ff4ab085abe2baf8b2101ca022ab61f0f365d57c",
+      "outer_response_canonical_sha256": "c59e51af20652cd5ab31b4cf66eee17f03a9813000e62a352e974d3903a07ed8",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 2,
+      "logged_actions": [
+        "fetch",
+        "stop"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a702-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0001-1789415896084402000.stdout",
+      "differing_top_level_fields": [
+        "binding",
+        "lookup",
+        "selection"
+      ],
+      "raw_response_canonical_sha256": "ebfb61226e21b4fa98f6e89d314f9bca6e8f9950bffa13658c1f2e6616b80160",
+      "outer_response_canonical_sha256": "62359c4912b69db53b13ca742e89b65422440627528519f9f126922acbe0d048",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v10",
+      "armcase": "a702-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 2,
+      "logged_actions": [
+        "bibliography",
+        "stop"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0001-1789415532883609000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "cd23c7766fa4456ee8f6396dfd040896799cce6c2a7afc63036d67f45cdde9cb",
+      "outer_response_canonical_sha256": "b5c14151c8e9adf3980a9ca653dfd500c09567c431ade4fa2845c7b0e8f26deb",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 2,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/model-io.json",
+      "outer_json_pointer": "/1/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0002-1789415547392351000.stdout",
+      "differing_top_level_fields": [
+        "binding",
+        "lookup",
+        "selection"
+      ],
+      "raw_response_canonical_sha256": "9e6411cf7f0836765facc773abf5928ed6aaef3855a38779667323b7875e1eaa",
+      "outer_response_canonical_sha256": "4ac6418e31e6b8cc13e49b10fc0a8bb62eb73d1b721cf8454913efb359cd856d",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 3,
+      "logged_actions": [
+        "fetch",
+        "bibliography",
+        "stop"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v11",
+      "armcase": "a701-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "9d76556008c592e741d6b91924837be2364c4f3448cf061ef7fa00313174759d",
+      "outer_response_canonical_sha256": "fff498980949feca9dd73a73fc0d5ab33267e1d6f3e5053a934bd5918b6b0fc0",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v11",
+      "armcase": "a701-direct",
+      "call_index_one_based": 2,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/1/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "4fd5f247eefa47c193615833a69c85e81275a3b4f5b2a3ae7014666eb6a2cecd",
+      "outer_response_canonical_sha256": "6c8b54b8adb94f65ea75cc00543d7925dfcb1fb44857c60c99c684175fba76a7",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v11",
+      "armcase": "a701-direct",
+      "call_index_one_based": 3,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/2/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "4453053feda470881ffbe6eca3fee9d50dc2102a9c041613dfef1fc268b2e375",
+      "outer_response_canonical_sha256": "b8e576a0d7bfbf0c6eb23f3e6d7a730a1b3830a365aa0f87423ba10c6b44d043",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v11",
+      "armcase": "a701-direct",
+      "call_index_one_based": 1,
+      "stage": "direct_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 4,
+      "logged_actions": [
+        "fetch",
+        "fetch",
+        "fetch",
+        "stop"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    },
+    {
+      "kind": "outer_response_aliasing",
+      "version": "v11",
+      "armcase": "a701-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-harness/model-io.json",
+      "outer_json_pointer": "/0/response",
+      "cli_output_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stdout",
+      "differing_top_level_fields": [
+        "fetch_results"
+      ],
+      "raw_response_canonical_sha256": "1843d96d0f31dfd26fd53a90db169aee78224aecabafe185299d2bff7d3069af",
+      "outer_response_canonical_sha256": "124f991ba48ed2a0cd16aa0593a9eec992cfe706d46e1149cb812d2d78a7ffb2",
+      "difference_origin": "Host postprocessing, not text emitted by the model."
+    },
+    {
+      "kind": "outer_input_aliasing",
+      "version": "v11",
+      "armcase": "a701-harness",
+      "call_index_one_based": 1,
+      "stage": "harness_retrieval_decision",
+      "outer_log_path": "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-harness/model-io.json",
+      "outer_json_pointer": "/0/packet/prior_decisions",
+      "logged_count": 2,
+      "logged_actions": [
+        "fetch",
+        "stop"
+      ],
+      "expected_count_at_first_call_from_frozen_control_flow": 0,
+      "first_logged_prior_equals_same_call_response": true,
+      "claim_limit": "The completed log is contaminated by later in-memory mutations. This does not establish that future decisions were present in the actual call input."
+    }
+  ],
+  "immutable_workflow_snapshot_checks": [
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 3,
+      "stage": "deconstruct",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/0",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "d1988e1e2534a3ee57bd7c6ae712bb8890397eacaedfa1a6e7dfbdea453ff0ac",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 4,
+      "stage": "search_plan",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/1",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "cb539e793f68bc75534da568b5599fc9a635c7401e3ad241dfc9b4723445f1bb",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 5,
+      "stage": "source_trace",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/2",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "9c4807979b322314a87f3c8cdc8a926530e0d9f32fa502db096bca53bf1ab817",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 6,
+      "stage": "source_verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/3",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "c791184825285c8c81f69612cd78d1da6777a6d9fa4055c483d7bf42a28bb7e0",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 7,
+      "stage": "timeline_build",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/4",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "4e05a62705820efd3f1d870d11833d3665630856342f1977b76bcf67a0c62481",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 8,
+      "stage": "direct_response",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/5",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "93b14864897846869f69cf44c59370a26a722db0396a57bff6c3a54062b1ab00",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 9,
+      "stage": "synthesis",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/6",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "34c3b3fdaa87d19eb843697ac58293d2431e214d33e31f460a8b7cf65c40cc49",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 10,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/7",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "fc31371be2d0cd384785982c851d4eda88b39f5a571bd0c078dde65730bb9408",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 11,
+      "stage": "verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/8",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "8b68a98f1755fb7c4a909f1b454f6fcd09ab9c64dee5523ec4e58a4544784497",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 12,
+      "stage": "select",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/9",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "8b7ee5907e920498f9692bce5bba53b3a208195f0432754a4e97e86fc2666f3c",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 13,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/10",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "f2111c8d94785abac310de790847bd5e587a08c55dfdd5a9d28657835624d1b7",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 14,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/11",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "59d199e578d1e89f95bd3adbd73f2bd2c0c5f1057096461023e90665e3184fac",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 15,
+      "stage": "verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/12",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "12d0dacc539054a6a15df1fb7d8afaad4f56060a6175489e1b06b8bfef40f527",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a701-harness",
+      "call_index_one_based": 16,
+      "stage": "select",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/13",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "fc9f72deedae9d1866305173d5d1bf119bed0dfd377732eff0ab763f9f80833a",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 5,
+      "stage": "deconstruct",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/0",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "46a1210a2ff60e9d28b967eddf67ae01020487ef612856396f1bff27a5115526",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 6,
+      "stage": "search_plan",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/1",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "08eff1991993fcfba265e4663e5a7cc08214ca6eda52107bf5cb36ca7d42f8de",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 7,
+      "stage": "source_trace",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/2",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "4d5f03a9870a7e84f757830deb10cfd5d71b6d95b86398d0f0096867a98fb5b4",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 8,
+      "stage": "source_verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/3",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "6a21a1bb4f27217fc4ea83d3608076627a561625b61312b01b028266dc340d94",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 9,
+      "stage": "timeline_build",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/4",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "75c5efd52509e7568f89bbe55232a52bc7a7483122f211676adfd9798885e2bd",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 10,
+      "stage": "direct_response",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/5",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "2de05bf9fab3b95fb0630c4b54117f0b9e3f7aa017cbab9c694de4cd7b680f29",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 11,
+      "stage": "synthesis",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/6",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": null,
+      "derived_serialized_stdin_utf8_sha256": "0b53758379aa5eda7d990c7dbdbb991c39b4c4cf5f1c489524328ae4d78ce889",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 12,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/7",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "f1782626aa0d5136c1fac0463c3a103a5aa839584ffea26a49736af96c805e85",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 13,
+      "stage": "verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/8",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "e75eb2ffb1a02e3009b089c11a4eeca978fb01c8a17daddc58d2a1834817f729",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 14,
+      "stage": "select",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/9",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "1a950267203771a8b71e4da7bd02e2ead0933031144a6c4f4b0b70b096a0e7a8",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 15,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/10",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "4009ad4ba7f60e782d3bac868cbd303e18cee116e94fe285cc11788339421982",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 16,
+      "stage": "decompose",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/11",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "8fe72dac9371894016656af37d1713a0b1fc64fc3fadbd57524623416e8bf159",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    },
+    {
+      "version": "v10",
+      "armcase": "a702-harness",
+      "call_index_one_based": 17,
+      "stage": "verify",
+      "workflow_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+      "snapshot_json_pointer": "/results/0/execution/model_io/12",
+      "stage_alignment_matches": true,
+      "snapshot_response_matches_cli": true,
+      "snapshot_packet_matches_outer_current_packet": true,
+      "snapshot_includes_post_advice_packet": true,
+      "derived_serialized_stdin_utf8_sha256": "05bee1f032b44e07b08dac876be2f7cfd04cd5db667cce3803bb7db58d9b0711",
+      "stdin_hash_authority": "Deterministically reconstructed from the immutable logical snapshot and frozen serializer; no independent original stdin byte capture exists in inspected artifacts."
+    }
+  ],
+  "authority": {
+    "outputs": {
+      "raw_cli": "Saved agent_message JSON in private-cli-events/*.stdout is authoritative evidence of the emitted model response for inspected successful calls. The ephemeral output file used by LocalTunnel is not retained. All compared news-level immutable snapshots match CLI outputs.",
+      "news_level_snapshot": "workflow.json /results/<i>/execution/model_io/<j>/response is a pre-normalization deepcopy.",
+      "native_snapshot": "workflow.json /results/<i>/claims/<j>/trace/execution/model_io/<k>/response is also a pre-normalization deepcopy.",
+      "outer_journal": "model-io.json response may include later host edits; it must not be labeled unmodified model output."
+    },
+    "inputs": {
+      "independent_exact_serialized_cli_stdin_retained": false,
+      "inspection_scope": "Frozen runner/tunnel code and saved run artifacts inspected. No original stdin capture was found there; this does not assert that no external platform logging exists.",
+      "code_evidence": "LocalTunnel constructs a Python input string and passes it to subprocess.run. Its diagnostic writer saves stdout/stderr only. Temporary schema/output files are removed on exit; --ephemeral is supplied.",
+      "news_level_snapshot": "The item-level workflow execution snapshot is recorded by the shared CallBudgetTransport after _ResearchAdviceTransport adds advice and eligible citation resolutions. This is the best retained logical input record for covered harness research/native calls. Frozen _prompt_parts and LocalTunnel deterministically reconstruct the serialized input text from it; original process-input bytes were not independently captured.",
+      "native_inner_snapshot": "The nested native trace snapshot is taken before research advice/citation wrapper additions. It is authoritative for the inner adapter packet, not by itself the complete final CLI input.",
+      "retrieval_and_final_calls": "These calls bypass the news-level CallBudgetTransport. Their outer packet log is not an independent immutable snapshot. Candidate-selection and final packets show no specific mutation in this audit, but absence of a detected difference does not establish independently captured input fidelity.",
+      "stdout_stderr_limit": "Saved CLI responses and usage counts do not reconstruct the original prompt text.",
+      "diagnostic_stream_check": {
+        "streams_read": 132,
+        "streams_containing_serialization_marker": [],
+        "interpretation": "No EVIDENCE PACKET serialization marker found in inspected stdout/stderr streams. Combined with frozen save logic, this supports absence of retained serialized stdin in these diagnostics; it does not prove absence in uninspected external infrastructure."
+      }
+    }
+  },
+  "reconstruction": {
+    "covered_harness_calls": {
+      "method": "Use the item-level immutable workflow execution entry, including instructions, packet and schema. Serialize with the frozen _prompt_parts implementation, then join instructions + newline + evidence as LocalTunnel does. Align entries to outer call indices by stage/order and verify each response against its CLI file.",
+      "confidence": "High for the reconstructed logical/serialized text under the inspected frozen control flow; not independent verification of original stdin bytes."
+    },
+    "retrieval_calls_without_immutable_snapshot": {
+      "method": [
+        "Start from frozen retrieval code and the saved outer packet; classify every field by mutability.",
+        "Recover model-selected action fields from CLI response JSON, and derive each decision step from call order. The first retrieval prior_decisions is empty. For later retrieval steps, use only earlier completed retrieval decisions, enriched with host tool results that existed before that next call.",
+        "Use retrieval.json, bibliography request/response/proof receipts, source-request records, archive captures, call timestamps and saved source versions to reconstruct the document catalog and completed tool results available at that point.",
+        "Do not copy the final prior_decisions or collection_errors list wholesale into earlier prompts. When a collection error or host mutation lacks sufficient timing evidence, mark that field unknown rather than asserting an exact reconstruction.",
+        "A replay built this way is derived diagnostic evidence, not a replacement for the original input log. Preserve original files and record assumptions separately."
+      ],
+      "confidence": "First-call empty prior_decisions follows directly from inspected control flow. General full-input reconstruction is conditional and may be incomplete; exact fidelity is not established in this audit."
+    }
+  },
+  "offline_replay": {
+    "source_run": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness",
+    "source_responses": "Authoritative saved CLI responses, not the mutable outer journal",
+    "responses_consumed_per_replay": 7,
+    "real_model_calls": 0,
+    "reference_vs_deepcopy_complete_report_equal": true,
+    "same_provenance_status": "partial",
+    "same_retained_gap_ids": [
+      "ecu-source-version",
+      "verify-airburst-cause-and-date"
+    ],
+    "unconsumed_reference_steps": 0,
+    "unconsumed_deepcopy_steps": 0,
+    "aliasing_examples": [
+      {
+        "source_cli_output_path": "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0014-1789415480699044000.stdout",
+        "original_call_index_one_based": 14,
+        "stage": "decompose",
+        "changed_fields": [
+          "gaps",
+          "notes"
+        ],
+        "raw_gap_ids": [],
+        "reference_journal_gap_ids": [
+          "ecu-source-version"
+        ],
+        "host_note_appended": true,
+        "raw_response_canonical_sha256": "0a37e769248b5528e5a69a4ebf49639465dfc35a8b42b4c625ce118eb2fd4b34",
+        "mutated_response_canonical_sha256": "8930e9da0c4b1a2e0aee05838be4ae74796a9651a11ade21225ec786ab16f448",
+        "native_snapshot_equals_raw": true,
+        "deepcopy_journal_equals_raw": true
+      }
+    ],
+    "behavior_limit": "The two offline runs have identical complete reports. This establishes behavior-preserving logging changes for this replay. It is not a new model prediction or a counterfactual stochastic final-forecast run."
+  },
+  "recommended_post_run_fix": {
+    "change": "Deepcopy packet and schema when JournalTransport creates its record, and deepcopy result when recording response. Continue returning the original result to the caller. Keep normalization and tool outcomes in separate host artifacts.",
+    "tests": [
+      "After a stubbed call, mutate nested returned gaps/notes and append to original packet prior_decisions and collection_errors. Trigger another journal flush; earlier in-memory and persisted records must remain equal to their original snapshots.",
+      "Exercise an actual carryforward normalization with a stubbed transport. Native and journal response snapshots must equal the unmodified stub response while the accepted analysis carries the gap.",
+      "Replay unchanged saved responses under reference versus snapshot logging and compare behavioral reports, gap state, statuses, source chains and call counts."
+    ],
+    "existing_runs": "Do not rewrite frozen raw logs or relabel statuses. Publish the authority caveat and use preserved CLI/native snapshots for audits."
+  },
+  "observed_file_sha256": {
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json": "f583a8353019c0f378bf5e8dbb1aef16451052b559a6e39793963f0c7ff1497b",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0001-1789414987738370000.stdout": "db251e106166a841803277d7af35c2db367bf4fece0446d50efdde2d9c004167",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0002-1789414998098750000.stdout": "9f874cb4c053763ddcd13a0be4225cd7bd53389aa5b573a87fbf9cbb5545836d",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0003-1789415023544768000.stdout": "fb40de3f0ab50e16fe2d05157861bcb5ef7e2c15161331c830019120a86f651b",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0005-1789415081245153000.stdout": "92f04bd2ad1ffa95ff63ae4cff5c56dc56ba2600cf749784b31e8a14a0fc8e53",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-direct/workflow.json": "7f8c80469a69953011cade0cd8c8c3cf36dc89007b1b72bf21f583ad7727ab28",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/model-io.json": "038f913054babf8ef7ee74e235ffbf0640b7c10d2aceb7a76355ce5378809339",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0001-1789415157455227000.stdout": "70ac3594e32331465e58d8ba5f82fb4477cbce4a6abf2ca6373447d967a783d4",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json": "811cab25d37239379bcaf6e1d8e28821ce9bff7e32382c0a7d968a28c1f4373b",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/model-io.json": "c5a19fc812918646b352887acb10f632df2056decd3f7ba0bbd5989bda670d67",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0001-1789415896084402000.stdout": "45039b4df0b3d1869c0e4a959f485d2ba12afd6b2e0746b51b607af41553bc07",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-direct/workflow.json": "140592aac9efca07106cc81013aced2c7f01cd3bba93b916765a6f43c3295592",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/model-io.json": "3f3aac192c675bc8c4c4b736e1b30a01fa3ec5610754fe5d0c6c9e12a1389243",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0001-1789415532883609000.stdout": "5e782a8a848dc440592cbd14e38f5e6b76344949345d219303310e3fe2e1f60f",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0002-1789415547392351000.stdout": "6ddfdf9bbd70ff6aa80e1d53a351f8bf2218c3a54b8534724277bbc217d710a4",
+    "<checkout> tracing/private-data/live-origin-v10-checkout/experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json": "67e12e754631acb24e9f7daacde83cd85dafe8659b744985d837b94cd1d92edd",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json": "a89f896425832b2946d2fc050666bd9bbda511b9f403be597338cd46ba4ae24c",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stdout": "cde73d9ab7800a996960401757bfb00adf969176567f03c90f79ae369f34ce48",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stdout": "d699962065c8d8e8141425fee7cb9a694e70274f58cfdce62b487bc8a7b17f6c",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stdout": "e2bbe0d0fe65bca4d36b3461f53233a782ff5fb16499d8a1c4a577046622f333",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-direct/workflow.json": "f47cc5b3606107d3078c615e37de24db43cea54794a6afb5db905874b45dfe46",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-harness/model-io.json": "74c52c8866f5920e7a7ffee619fc86afd035724dae9fbff1da88fd84295ec32b",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stdout": "ea19022175f9b766eba5c977b1aa2aece755eab6d004a90170310d0985751e7b"
+  },
+  "frozen_code_sha256": {
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/run_test.py": "bab8ed5cace94ffa7bba1b4afe5cd07751aba77d3f95e9819ed8f61f5aa4c644",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/experiments/live-origin-v11-20260914/retrieval.py": "5edb0f4a7d9d13bd9aeefd0beb98457b22f65f2addcafa8298d1003bf1b59762",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/newsverify/double_loop.py": "b7742acac891d8095db2d5c869c2f78aa2ca2398368a833e0208dd9189616560",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/newsverify/news_tracing_runner.py": "ef7fa0f15c09190f7f855c8e2cb7f912d2f929fe59384445faa950db76256ae3",
+    "<checkout> tracing/private-data/live-origin-v11-checkout/newsverify/tunnels.py": "ee8c116b997075f5f029130ca278ba7d19e6dd42b8310ec20ece1de0622575fc"
+  }
+}

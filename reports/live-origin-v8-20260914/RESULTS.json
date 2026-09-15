@@ -1,0 +1,232 @@
+[
+  {
+    "case_id": "a701",
+    "arm": "direct",
+    "assessment_status": "failed",
+    "errors": [
+      "missing_author_journal_citation_context"
+    ],
+    "source_errors": [
+      {
+        "operation": "fetch",
+        "code": "archive_index_unavailable",
+        "url": "https://doi.org/10.1038/s41598-022-08216-x"
+      },
+      {
+        "operation": "fetch",
+        "code": "archive_http_timeout",
+        "url": "https://doi.org/10.1038/s41598-023-35266-6"
+      }
+    ],
+    "primary_study_fetched": true,
+    "primary_urls": [
+      "https://www.nature.com/articles/s41598-021-97778-3"
+    ],
+    "validated_final_primary_chain": false,
+    "native_status": null,
+    "native_errors": [],
+    "native_primary_located": null,
+    "strict_native_primary_trace_success": null,
+    "native_relation_quote_count": 0,
+    "native_relation_quotes_valid": true,
+    "fact_status": null,
+    "risk": null,
+    "fabrication_established": null,
+    "origin_url": null,
+    "origin_chain": null,
+    "rationale": null,
+    "calls": 3,
+    "successful_calls": 3,
+    "known_usage_calls": 3,
+    "input_tokens": 381573,
+    "output_tokens": 491,
+    "total_tokens": 382064,
+    "source_count": 2,
+    "bibliographic_bindings": 0,
+    "sources": [
+      {
+        "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+        "available_at": "2023-05-26T21:22:00+00:00",
+        "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+        "characters": 23821
+      },
+      {
+        "url": "https://www.nature.com/articles/s41598-021-97778-3",
+        "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+        "available_at": "2024-03-12T11:05:45+00:00",
+        "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+        "characters": 366632
+      }
+    ]
+  },
+  {
+    "case_id": "a701",
+    "arm": "harness",
+    "assessment_status": "failed",
+    "errors": [
+      "Origin chain must start at input and contain no cycle"
+    ],
+    "source_errors": [],
+    "primary_study_fetched": true,
+    "primary_urls": [
+      "https://www.nature.com/articles/s41598-021-97778-3"
+    ],
+    "validated_final_primary_chain": false,
+    "native_status": "failed",
+    "native_errors": [
+      {
+        "stage": "decomposer",
+        "type": "ValueError",
+        "message": "conflicting gap id across owners: origin:a701:c1",
+        "claim_id": "a701:c1"
+      }
+    ],
+    "native_primary_located": false,
+    "strict_native_primary_trace_success": false,
+    "native_relation_quote_count": 0,
+    "native_relation_quotes_valid": true,
+    "fact_status": "unresolved",
+    "risk": "elevated",
+    "fabrication_established": false,
+    "origin_url": "https://www.nature.com/articles/s41598-021-97778-3",
+    "origin_chain": [
+      "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+      "http://dx.doi.org/10.1038/s41598-021-97778-3",
+      "https://www.nature.com/articles/s41598-021-97778-3"
+    ],
+    "rationale": "The study reports dating and impact indicators, but cosmic causation remains unresolved; ScienceDaily supplies no independent corroboration. The February 2023 editorial investigation into data and conclusions elevates the forecast of major reliability withdrawal by end-2026, without establishing contradiction or intentional fabrication. Origin is the fetched Bunch et al. study: ScienceDaily links its DOI; matching title, authors and DOI establish the final bibliographic connection, not an observed redirect. ScienceDaily separately links ECU’s unfetched release. Raw data, supplementary tables and linked critiques were not supplied, limiting independent assessment.",
+    "calls": 11,
+    "successful_calls": 11,
+    "known_usage_calls": 11,
+    "input_tokens": 1254234,
+    "output_tokens": 5009,
+    "total_tokens": 1259243,
+    "source_count": 2,
+    "bibliographic_bindings": 0,
+    "sources": [
+      {
+        "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+        "available_at": "2023-05-26T21:22:00+00:00",
+        "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+        "characters": 23821
+      },
+      {
+        "url": "https://www.nature.com/articles/s41598-021-97778-3",
+        "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+        "available_at": "2024-03-12T11:05:45+00:00",
+        "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+        "characters": 366632
+      }
+    ]
+  },
+  {
+    "case_id": "a702",
+    "arm": "harness",
+    "assessment_status": "completed",
+    "errors": [],
+    "source_errors": [],
+    "primary_study_fetched": false,
+    "primary_urls": [],
+    "validated_final_primary_chain": false,
+    "native_status": "completed",
+    "native_errors": [],
+    "native_primary_located": false,
+    "strict_native_primary_trace_success": false,
+    "native_relation_quote_count": 3,
+    "native_relation_quotes_valid": true,
+    "fact_status": "unresolved",
+    "risk": "insufficient_evidence",
+    "fabrication_established": false,
+    "origin_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+    "origin_chain": [
+      "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+    ],
+    "rationale": "The observed hyperlink traces ScienceDaily to the fetched UT release, verifying the publicity origin. The research origin remains unverified: neither the Science Advances study nor its measurements is supplied, and no study hyperlink is observed. Both pages report crater iridium and an asteroid fingerprint, but constitute one publicity account, not independent corroboration. Thus the underlying empirical claim remains unresolved at cutoff. Reported laboratory agreement is encouraging but cannot be checked here. Evidence is insufficient to forecast major reliability withdrawal by end-2026; nothing supplied establishes intentional fabrication.",
+    "calls": 17,
+    "successful_calls": 17,
+    "known_usage_calls": 17,
+    "input_tokens": 375800,
+    "output_tokens": 6788,
+    "total_tokens": 382588,
+    "source_count": 2,
+    "bibliographic_bindings": 0,
+    "sources": [
+      {
+        "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+        "available_at": "2024-12-08T06:32:21+00:00",
+        "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+        "characters": 23826
+      },
+      {
+        "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "title": "Asteroid Dust Found in Crater Closes Case of Dinosaur Extinction - UT News",
+        "available_at": "2024-12-19T09:53:10+00:00",
+        "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+        "characters": 12416
+      }
+    ]
+  },
+  {
+    "case_id": "a702",
+    "arm": "direct",
+    "assessment_status": "completed",
+    "errors": [],
+    "source_errors": [],
+    "primary_study_fetched": true,
+    "primary_urls": [
+      "https://www.science.org/doi/10.1126/sciadv.abe3647"
+    ],
+    "validated_final_primary_chain": true,
+    "native_status": null,
+    "native_errors": [],
+    "native_primary_located": null,
+    "strict_native_primary_trace_success": null,
+    "native_relation_quote_count": 0,
+    "native_relation_quotes_valid": true,
+    "fact_status": "supported",
+    "risk": "ordinary",
+    "fabrication_established": false,
+    "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+    "origin_chain": [
+      "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "https://www.science.org/doi/10.1126/sciadv.abe3647"
+    ],
+    "rationale": "The study supports the claim through crater-core iridium measurements, near-chondritic element ratios and osmium isotopes. ScienceDaily hyperlinks UT; UT-to-study is bibliographic identification, checked against Goderis, journal, date and matching findings, not an observed hyperlink. The primary text was fetched. Four-laboratory analyses, analytical controls and discussion of alternative processes support ordinary withdrawal risk through 2026; authenticity is not proved. Limitations: news copies are not corroboration; supplements and independent replication were not supplied. Redistribution complicates precise deposition timing without contradicting the fixed claim. No supplied evidence establishes intentional fabrication.",
+    "calls": 6,
+    "successful_calls": 6,
+    "known_usage_calls": 6,
+    "input_tokens": 334931,
+    "output_tokens": 1353,
+    "total_tokens": 336284,
+    "source_count": 3,
+    "bibliographic_bindings": 1,
+    "sources": [
+      {
+        "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+        "available_at": "2024-12-08T06:32:21+00:00",
+        "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+        "characters": 23826
+      },
+      {
+        "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "title": "Asteroid Dust Found in Crater Closes Case of Dinosaur Extinction - UT News",
+        "available_at": "2024-12-19T09:53:10+00:00",
+        "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+        "characters": 12416
+      },
+      {
+        "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+        "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+        "available_at": "2024-12-22T18:21:04+00:00",
+        "content_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+        "characters": 186687
+      }
+    ]
+  }
+]

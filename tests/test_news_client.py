@@ -353,6 +353,25 @@ class NewsClientTests(unittest.IsolatedAsyncioTestCase):
         live = TracingClient(SyntheticTransport(), collector_fixture())._evidence()[0]
         self.assertNotIn("version_id", live)
 
+    def test_evidence_capacity_requires_explicit_larger_opt_in(self):
+        collector = collector_fixture()
+        late = "late qualification: simulated, not measured."
+        doc = SimpleNamespace(url=KNOWN, title="Large", content="x" * 240000 + late,
+                              retrieved_at="2023-12-30T00:00:00Z", published_at=None,
+                              version_id="large")
+        collector.evidence_documents = [doc]
+        collector.documents = {KNOWN: doc}
+        with self.assertRaisesRegex(TunnelError, "capacity exceeded"):
+            TracingClient(SyntheticTransport(), collector)._evidence()
+        evidence = TracingClient(SyntheticTransport(), collector, max_evidence_chars=300000)._evidence()
+        self.assertTrue(evidence[0]["content"].endswith(late))
+
+    def test_evidence_capacity_rejects_malformed_limits(self):
+        for value in (True, False, 0, -1, 1_000_001, "300000", 3.5):
+            with self.subTest(value=value):
+                with self.assertRaises(ValueError):
+                    TracingClient(SyntheticTransport(), collector_fixture(), max_evidence_chars=value)
+
     def test_short_snapshot_does_not_displace_other_versions_evidence(self):
         collector = collector_fixture()
         collector.evidence_documents = [SimpleNamespace(url=KNOWN, title="Version", content="x" * size,

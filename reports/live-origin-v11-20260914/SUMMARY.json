@@ -1,0 +1,30 @@
+{
+  "direct": {
+    "cases": 2,
+    "primary_study_fetched": 2,
+    "validated_final_primary_chain": 2,
+    "calls": 9,
+    "successful_calls": 9,
+    "known_usage_calls": 9,
+    "input_tokens": 1132306,
+    "output_tokens": 1864,
+    "total_tokens": 1134170,
+    "strict_native_primary_trace_success": null,
+    "validated_primary_chain_and_native_trace": null,
+    "full_body_independent_audit_required": true
+  },
+  "harness": {
+    "cases": 2,
+    "primary_study_fetched": 2,
+    "validated_final_primary_chain": 2,
+    "calls": 30,
+    "successful_calls": 26,
+    "known_usage_calls": 27,
+    "input_tokens": 2500153,
+    "output_tokens": 13691,
+    "total_tokens": null,
+    "strict_native_primary_trace_success": 1,
+    "validated_primary_chain_and_native_trace": 1,
+    "full_body_independent_audit_required": true
+  }
+}

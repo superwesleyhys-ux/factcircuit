@@ -1,0 +1,114 @@
+{
+  "direct:direct_retrieval_decision": {
+    "calls": 6,
+    "successful_calls": 6,
+    "known_usage_calls": 6,
+    "input_tokens": 734514,
+    "output_tokens": 1002
+  },
+  "direct:direct_bibliography_choice": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 18585,
+    "output_tokens": 146
+  },
+  "direct:shared_final_forecast": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 330362,
+    "output_tokens": 901
+  },
+  "harness:harness_retrieval_decision": {
+    "calls": 5,
+    "successful_calls": 5,
+    "known_usage_calls": 5,
+    "input_tokens": 395421,
+    "output_tokens": 924
+  },
+  "harness:deconstruct": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 214924,
+    "output_tokens": 841
+  },
+  "harness:search_plan": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 203036,
+    "output_tokens": 275
+  },
+  "harness:source_trace": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 202637,
+    "output_tokens": 1422
+  },
+  "harness:source_verify": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 204104,
+    "output_tokens": 1863
+  },
+  "harness:timeline_build": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 204694,
+    "output_tokens": 1431
+  },
+  "harness:direct_response": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 218875,
+    "output_tokens": 460
+  },
+  "harness:synthesis": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 208345,
+    "output_tokens": 1342
+  },
+  "harness:decompose": {
+    "calls": 6,
+    "successful_calls": 6,
+    "known_usage_calls": 6,
+    "input_tokens": 441225,
+    "output_tokens": 7462
+  },
+  "harness:verify": {
+    "calls": 4,
+    "successful_calls": 4,
+    "known_usage_calls": 4,
+    "input_tokens": 240470,
+    "output_tokens": 1363
+  },
+  "harness:select": {
+    "calls": 3,
+    "successful_calls": 3,
+    "known_usage_calls": 3,
+    "input_tokens": 31537,
+    "output_tokens": 191
+  },
+  "harness:shared_final_forecast": {
+    "calls": 2,
+    "successful_calls": 2,
+    "known_usage_calls": 2,
+    "input_tokens": 288497,
+    "output_tokens": 829
+  },
+  "harness:harness_bibliography_choice": {
+    "calls": 1,
+    "successful_calls": 1,
+    "known_usage_calls": 1,
+    "input_tokens": 9489,
+    "output_tokens": 118
+  }
+}

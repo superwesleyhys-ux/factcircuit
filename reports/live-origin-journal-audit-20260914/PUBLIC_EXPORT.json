@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scope": "path-only public export",
+  "source_directory": "<live-origin-journal-audit-20260914-source>",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "source_sha256": "832ab52e725ce33f3d52232de9e92cda0c4f520ccb88fcc710f4a44f411329fe",
+      "public_sha256": "55254b68e976ec2d02e46c514fcf65ccd7bca724bc0832c365a482e79b4e71d8"
+    }
+  ],
+  "redactions": [
+    {
+      "file": "AUDIT.json",
+      "kind": "path-only"
+    }
+  ],
+  "non_path_changes": []
+}

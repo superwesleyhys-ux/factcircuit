@@ -1,0 +1,2249 @@
+{
+  "schema_version": 1,
+  "audit_kind": "independent_post_run_source_span_gap_lifecycle_and_joint_outcome_audit",
+  "created_at": "2026-09-14T20:05:12.569875+00:00",
+  "auditor": "archive_rootcause independent subagent",
+  "cutoff": "2024-12-31T23:59:59Z",
+  "scope": "Retrospective development run V10. New audit only; no model calls, new network evidence, changes to code, source bytes, raw predictions or mechanical reports. Not a held-out accuracy evaluation.",
+  "definitions": {
+    "target_primary": "Exact original article title before journal suffix plus canonical target URL/DOI identity; correction notices and critiques are excluded even if they repeat the full target title or DOI.",
+    "full_body": "Entire extracted main-page article from the validated archived raw bytes, with substantive sections and references. Separate supplements and image binaries are outside this completeness claim.",
+    "mechanical_joint": "Existing RESULTS.json validated_primary_chain_and_native_trace; preserves native reported completion.",
+    "independent_joint": "Harness full primary main body AND independently validated final primary chain AND native strict primary trace with exact spans, required bibliographic endpoints and no silently dropped unresolved blocking provenance gaps.",
+    "direct_joint": "Null because direct arm has no native trace; direct full-primary-plus-final-chain success is reported separately.",
+    "gap_integrity": "A blocking gap must remain until explicitly evidence-resolved. Revisit omission, even after identifying an alternative valid primary path, is not a resolution."
+  },
+  "summary": {
+    "arm_cases": 4,
+    "returned_source_occurrences_checked": 12,
+    "primary_full_body_retrieved_arm_cases": 4,
+    "validated_final_primary_chain_arm_cases": 4,
+    "raw_returned_text_all_match_full_cache_reextraction": true,
+    "all_checked_capture_dates_pre_cutoff": true,
+    "all_checked_native_and_final_spans_valid": true,
+    "source_errors_preserved": 2,
+    "failed_model_calls_preserved": 0,
+    "mechanical_harness_joint": {
+      "successes": 1,
+      "denominator": 2
+    },
+    "independent_harness_joint": {
+      "successes": 0,
+      "denominator": 2
+    },
+    "direct_full_primary_and_final_chain": {
+      "successes": 2,
+      "denominator": 2
+    },
+    "harness_gap_lifecycle_violations": 2,
+    "dropped_blocking_gap_ids": [
+      "ecu-source-version",
+      "ut-release-source-lineage"
+    ],
+    "discrepancy": "a701-harness mechanically reports native completion but silently drops ecu-source-version without resolution; independent joint success fails. a702-harness already fails the wrapper origin gate and additionally drops ut-release-source-lineage. The preliminary mechanical 1/2 must not be described as independently audited strict success."
+  },
+  "arms": [
+    {
+      "case_id": "a701",
+      "arm": "direct",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://doi.org/10.1038/s41598-022-08216-x"
+        },
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://doi.org/10.1038/s41598-023-35266-6"
+        }
+      ],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "raw_bytes": 50344,
+          "extracted_chars": 23821,
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json",
+          "cache_metadata_sha256": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": false
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "final_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "citation_doi": [
+            "10.1038/s41598-021-97778-3"
+          ],
+          "canonical_links": [
+            "https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "source_type": "target_primary_study",
+          "counts_as_target_primary": true,
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "raw_bytes": 1072038,
+          "extracted_chars": 366632,
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json",
+          "cache_metadata_sha256": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240606060916id_/https://dx.doi.org/10.1038/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://www.nature.com/articles/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3&code=8c90b94a-72db-498f-9cc8-1d3b128ab9c4",
+            "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "legacy_cache_validation_limit": null,
+          "complete_html_termination": true,
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "Introduction",
+                "start_char": 8140,
+                "next_section": "Results and interpretations",
+                "end_char": 38249,
+                "section_span_chars": 30109,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Results and interpretations",
+                "start_char": 38249,
+                "next_section": "Conclusions",
+                "end_char": 237087,
+                "section_span_chars": 198838,
+                "audit_minimum_chars": 20000,
+                "passed": true
+              },
+              {
+                "section": "Conclusions",
+                "start_char": 237087,
+                "next_section": "Methods",
+                "end_char": 242273,
+                "section_span_chars": 5186,
+                "audit_minimum_chars": 1000,
+                "passed": true
+              },
+              {
+                "section": "Methods",
+                "start_char": 242273,
+                "next_section": "Data availability",
+                "end_char": 250982,
+                "section_span_chars": 8709,
+                "audit_minimum_chars": 3000,
+                "passed": true
+              },
+              {
+                "section": "References",
+                "start_char": 251676,
+                "next_section": "Acknowledgements",
+                "end_char": 339698,
+                "section_span_chars": 88022,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 5778,
+                "passed": true
+              },
+              {
+                "section": "Data availability",
+                "start_char": 250982,
+                "passed": true
+              },
+              {
+                "section": "Change history",
+                "start_char": 251118,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Information",
+                "start_char": 357650,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched."
+          }
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "https://www.nature.com/articles/s41598-022-08216-x",
+          "final_url": "https://www.nature.com/articles/s41598-022-08216-x",
+          "title": "No mineralogic or geochemical evidence of impact at Tall el-Hammam, a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "citation_doi": [
+            "10.1038/s41598-022-08216-x"
+          ],
+          "canonical_links": [
+            "https://www.nature.com/articles/s41598-022-08216-x"
+          ],
+          "source_type": "matters_arising_critique",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-02-29T22:18:00+00:00",
+          "archive_url": "https://web.archive.org/web/20240229221800id_/https://www.nature.com/articles/s41598-022-08216-x",
+          "raw_bytes": 301429,
+          "extracted_chars": 45812,
+          "raw_sha256": "1b6481b1eeab3ca40bbb52415bca8ac34e66556e4ea946dd303cbf80df9e6ab4",
+          "text_sha256": "feb3839e1b95d8d274a3a1715695a0962c06778f011ae3345c87c219b712c83e",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/3bf75661d81ac2e20d844972d3afda8c02b6fc52978ed2c4c6bf297f870db0b7.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/3bf75661d81ac2e20d844972d3afda8c02b6fc52978ed2c4c6bf297f870db0b7.json",
+          "cache_metadata_sha256": "9cef4b13172e989c8b29b76feb4b39e76df4582d4a67c4e928338a688d1e7b78",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240229221800id_/https://www.nature.com/articles/s41598-022-08216-x"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "legacy_cache_validation_limit": null,
+          "complete_html_termination": true,
+          "fullness": {
+            "main_page_complete": true,
+            "assessment": "Substantive notice/commentary, figure-caption text where present, references and back matter survive full extraction; no prefix truncation.",
+            "references_start_char": 16908,
+            "image_binaries_separately_retrieved": false
+          },
+          "primary_exclusion_reason": "Distinct exact article title and distinct canonical citation DOI; mentions of the target paper do not make this notice the target original study."
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/3"
+          },
+          "requested_url": "https://doi.org/10.1038/s41598-022-06266-9",
+          "final_url": "https://www.nature.com/articles/s41598-022-06266-9",
+          "title": "Author Correction: A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "citation_doi": [
+            "10.1038/s41598-022-06266-9"
+          ],
+          "canonical_links": [
+            "https://www.nature.com/articles/s41598-022-06266-9"
+          ],
+          "source_type": "author_correction",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-10-29T18:31:36+00:00",
+          "archive_url": "https://web.archive.org/web/20241029183136id_/https://www.nature.com/articles/s41598-022-06266-9",
+          "raw_bytes": 358696,
+          "extracted_chars": 62060,
+          "raw_sha256": "f4b33dda70fde8dab8cb9013eb7842b2cf3ed0fba9530caa19557ee0ab63094c",
+          "text_sha256": "403604c412831f98ef0da3849c58ac3731df0921da5574802ea39eea29a466ce",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.json",
+          "cache_metadata_sha256": "100759289bbb109f22d54f496d698d5f2776f3eae899b0f32d82c206c9ea0973",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241029183135id_/https://doi.org/10.1038%2FS41598-022-06266-9",
+            "https://web.archive.org/web/20241029183135id_/https://www.nature.com/articles/s41598-022-06266-9",
+            "https://web.archive.org/web/20241029183136id_/https://www.nature.com/articles/s41598-022-06266-9"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "legacy_cache_validation_limit": null,
+          "complete_html_termination": true,
+          "fullness": {
+            "main_page_complete": true,
+            "assessment": "Substantive notice/commentary, figure-caption text where present, references and back matter survive full extraction; no prefix truncation.",
+            "references_start_char": 42830,
+            "image_binaries_separately_retrieved": false
+          },
+          "primary_exclusion_reason": "Distinct exact article title and distinct canonical citation DOI; mentions of the target paper do not make this notice the target original study."
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "adjacent_validated_aliases_collapsed": true,
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "http://dx.doi.org/10.1038/s41598-021-97778-3"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          }
+        ],
+        "validated": true
+      },
+      "final_citation_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "quote_sha256": "dc028097447c0a318f678818f274442534741f24bc86995c20c471812c95d96c",
+          "words": 18,
+          "chars": 113,
+          "exact_match_count": 2,
+          "exact_and_within_final_quote_limit": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.nature.com/articles/s41598-022-08216-x",
+          "quote_sha256": "7fd8c5514e26f3ccfc4a3fb2b5d2e6f3d6bb31e3e5e770074a5f6ee50a936b07",
+          "words": 15,
+          "chars": 113,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/2"
+          },
+          "url": "https://www.nature.com/articles/s41598-022-06266-9",
+          "quote_sha256": "a1276bbf56ebf8af5acdd53a407e1e2d45ba4a4f05bc01048c7e208d1a4c1c2c",
+          "words": 14,
+          "chars": 101,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        }
+      ],
+      "bibliographic_bindings": [],
+      "prediction_preserved": {
+        "fact_status": "conflicting",
+        "risk": "elevated",
+        "fabrication_established": false,
+        "origin_url": "https://www.nature.com/articles/s41598-021-97778-3"
+      },
+      "model_calls": 6,
+      "failed_model_calls": 0,
+      "total_returned_evidence_chars": 498325,
+      "mechanical_joint_primary_trace_success": null,
+      "independent_joint_primary_trace_success": null,
+      "independent_direct_primary_source_and_chain_success": true,
+      "interpretation_notes": [
+        "The critique and Author Correction are additional, distinct pre-cutoff sources and do not count as the target original study.",
+        "The original raw rationale characterizes DOI-to-publisher identity as not an observed redirect, but the preserved archive record contains a validated six-hop replay chain; the raw rationale is not rewritten.",
+        "A correction about removing extraneous image elements does not by itself establish fabricated measurements; the original fabrication_established=false verdict remains."
+      ]
+    },
+    {
+      "case_id": "a701",
+      "arm": "harness",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "raw_bytes": 50344,
+          "extracted_chars": 23821,
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json",
+          "cache_metadata_sha256": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": false
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "final_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "title": "BIBLICAL BURNING | News Services | ECU",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://news.ecu.edu/2021/10/07/biblical-burning/"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-07-17T10:50:04+00:00",
+          "archive_url": "https://web.archive.org/web/20240717105004id_/https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "raw_bytes": 124683,
+          "extracted_chars": 10157,
+          "raw_sha256": "887e38901d8c661e25fef9120af1a1256654e2509a4402f682ce50bf56e0d994",
+          "text_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.json",
+          "cache_metadata_sha256": "e680a48166a30b42cb935ca7d5d86d01ff1324b147f74a33095b0fa0eb687d93",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240717105004id_/https://news.ecu.edu/2021/10/07/biblical-burning/"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": false
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "final_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "citation_doi": [
+            "10.1038/s41598-021-97778-3"
+          ],
+          "canonical_links": [
+            "https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "source_type": "target_primary_study",
+          "counts_as_target_primary": true,
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "raw_bytes": 1072038,
+          "extracted_chars": 366632,
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json",
+          "cache_metadata_sha256": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240606060916id_/https://dx.doi.org/10.1038/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://www.nature.com/articles/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3&code=8c90b94a-72db-498f-9cc8-1d3b128ab9c4",
+            "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "legacy_cache_validation_limit": null,
+          "complete_html_termination": true,
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "Introduction",
+                "start_char": 8140,
+                "next_section": "Results and interpretations",
+                "end_char": 38249,
+                "section_span_chars": 30109,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Results and interpretations",
+                "start_char": 38249,
+                "next_section": "Conclusions",
+                "end_char": 237087,
+                "section_span_chars": 198838,
+                "audit_minimum_chars": 20000,
+                "passed": true
+              },
+              {
+                "section": "Conclusions",
+                "start_char": 237087,
+                "next_section": "Methods",
+                "end_char": 242273,
+                "section_span_chars": 5186,
+                "audit_minimum_chars": 1000,
+                "passed": true
+              },
+              {
+                "section": "Methods",
+                "start_char": 242273,
+                "next_section": "Data availability",
+                "end_char": 250982,
+                "section_span_chars": 8709,
+                "audit_minimum_chars": 3000,
+                "passed": true
+              },
+              {
+                "section": "References",
+                "start_char": 251676,
+                "next_section": "Acknowledgements",
+                "end_char": 339698,
+                "section_span_chars": 88022,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 5778,
+                "passed": true
+              },
+              {
+                "section": "Data availability",
+                "start_char": 250982,
+                "passed": true
+              },
+              {
+                "section": "Change history",
+                "start_char": 251118,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Information",
+                "start_char": 357650,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched."
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "adjacent_validated_aliases_collapsed": false,
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "to_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://news.ecu.edu/2021/10/07/biblical-burning/"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          },
+          {
+            "from_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://www.nature.com/articles/s41598-021-97778-3"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          }
+        ],
+        "validated": true
+      },
+      "final_citation_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "quote_sha256": "dc028097447c0a318f678818f274442534741f24bc86995c20c471812c95d96c",
+          "words": 18,
+          "chars": 113,
+          "exact_match_count": 2,
+          "exact_and_within_final_quote_limit": true
+        }
+      ],
+      "bibliographic_bindings": [],
+      "prediction_preserved": {
+        "fact_status": "unresolved",
+        "risk": "elevated",
+        "fabrication_established": false,
+        "origin_url": "https://www.nature.com/articles/s41598-021-97778-3"
+      },
+      "model_calls": 17,
+      "failed_model_calls": 0,
+      "total_returned_evidence_chars": 400610,
+      "mechanical_joint_primary_trace_success": true,
+      "independent_joint_primary_trace_success": false,
+      "independent_direct_primary_source_and_chain_success": null,
+      "native_audit": {
+        "wrapper_status": "completed",
+        "wrapper_errors": [],
+        "claim_provenance_status": "original_material_located",
+        "claim_fact_status": "unresolved",
+        "claim_errors": [],
+        "origin_summary": {
+          "status": "located",
+          "sources": [
+            {
+              "url": "https://www.nature.com/articles/s41598-021-97778-3",
+              "version_id": "news-4be0ee7d2b38540c",
+              "claim_ids": [
+                "a701:c1"
+              ],
+              "material_kind": "original_record"
+            }
+          ],
+          "claim_count": 1,
+          "located_claims": 1,
+          "upstream_candidates": [],
+          "scope": "Origins require model-assessed original material and a direct source path, with exact source quotations and observed links or separately validated bibliographic citations checked by the harness. This is not independent semantic authentication, proof of earliest publication, or proof of truth."
+        },
+        "origin_link_gap": null,
+        "nested_trace_provenance_status": "original_material_located",
+        "nested_trace_fact_status": "unresolved",
+        "trace_assessment_valid": true,
+        "trace_stop_reason": "empty_results",
+        "materials": [
+          {
+            "version_id": "news-ce8dcf7a5dfb9351",
+            "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+            "matches_complete_host_source": true
+          },
+          {
+            "version_id": "news-4be0ee7d2b38540c",
+            "url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+            "matches_complete_host_source": true
+          }
+        ],
+        "host_fetched_but_not_native_admitted_urls": [
+          "https://news.ecu.edu/2021/10/07/biblical-burning/"
+        ],
+        "origins": [
+          {
+            "target_id": "a701:c1",
+            "version_id": "news-4be0ee7d2b38540c",
+            "material_kind": "original_record"
+          }
+        ],
+        "relations": [
+          {
+            "id": "news-ce8dcf7a5dfb9351:relation:r1",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": null,
+            "kind": "derives",
+            "status": "declared",
+            "upstream_locator": "East Carolina University, Jules Norwood, https://news.ecu.edu/2021/10/07/biblical-burning/"
+          },
+          {
+            "id": "news-ce8dcf7a5dfb9351:relation:r2",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-4be0ee7d2b38540c",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          },
+          {
+            "id": "news-4be0ee7d2b38540c:relation:r1",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-4be0ee7d2b38540c",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          }
+        ],
+        "unique_relation_endpoint_kind_status_count": 2,
+        "span_checks": {
+          "origins": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/origins/0/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 35885,
+              "end": 35968,
+              "quote_sha256": "3c1853df21952072c1a306e6cd4decf052bf215f7d3663906dac556cbe68eca5",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/origins/0/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 60221,
+              "end": 60357,
+              "quote_sha256": "49ef30c04938e80209c9fb0ffa5c408caad2543147e4cfc46fa47cc7543c5321",
+              "exact": true
+            }
+          ],
+          "relations": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/0/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7114,
+              "end": 7321,
+              "quote_sha256": "547208292ab1805b221d32cfa2d3565928b64e6f455ef211807bb384e5e9e4c6",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 359739,
+              "end": 359786,
+              "quote_sha256": "98cfe81db5a7616c001e806d13aba78f9a0c7912816af82a6966b4c4847d1801",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/2/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/2/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 359739,
+              "end": 359786,
+              "quote_sha256": "98cfe81db5a7616c001e806d13aba78f9a0c7912816af82a6966b4c4847d1801",
+              "exact": true
+            }
+          ],
+          "resolutions": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 35885,
+              "end": 35968,
+              "quote_sha256": "3c1853df21952072c1a306e6cd4decf052bf215f7d3663906dac556cbe68eca5",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 60221,
+              "end": 60357,
+              "quote_sha256": "49ef30c04938e80209c9fb0ffa5c408caad2543147e4cfc46fa47cc7543c5321",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/2"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 359739,
+              "end": 359786,
+              "quote_sha256": "98cfe81db5a7616c001e806d13aba78f9a0c7912816af82a6966b4c4847d1801",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/3"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5787,
+              "end": 5971,
+              "quote_sha256": "8455ffe243009073765e8f43bbb755855ada2bfb0fb481a6a1516c7671d0ed5e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 35885,
+              "end": 35968,
+              "quote_sha256": "3c1853df21952072c1a306e6cd4decf052bf215f7d3663906dac556cbe68eca5",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/2"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 359739,
+              "end": 359786,
+              "quote_sha256": "98cfe81db5a7616c001e806d13aba78f9a0c7912816af82a6966b4c4847d1801",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/3"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            }
+          ],
+          "verification_history": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/0/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 1302,
+              "end": 1571,
+              "quote_sha256": "e4bb25f2d749931b90695bdf7dece7872d875b748298c1c4372ceb49af20b56e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5787,
+              "end": 5971,
+              "quote_sha256": "8455ffe243009073765e8f43bbb755855ada2bfb0fb481a6a1516c7671d0ed5e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5116,
+              "end": 5286,
+              "quote_sha256": "bf390fe26f3693e80abacc83d73a4c5427cb77da0df5bfa561b1c325af2d1cb7",
+              "exact": true
+            }
+          ]
+        },
+        "all_checked_spans_exact": true,
+        "gap_lifecycle_violations": [
+          {
+            "gap_id": "ecu-source-version",
+            "stage": "provenance",
+            "blocking": true,
+            "owner_version_id": "news-ce8dcf7a5dfb9351",
+            "initial_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/0/analysis/gaps/0"
+            },
+            "initial_analysis_revision": 1,
+            "revisit_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2"
+            },
+            "revisit_analysis_revision": 3,
+            "revisit_gaps_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/gaps"
+            },
+            "revisit_gap_ids": [],
+            "revisit_notes_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/notes"
+            },
+            "revisit_notes": "The ECU source gap remains open; ScienceDaily supplies no independent confirmation of the study. The study's editorial concerns, corrections, supplementary evidence and causal reliability remain factual-verification matters.",
+            "revisit_resolution_ids": [
+              "cited-study-original-record",
+              "origin:a701:c1"
+            ],
+            "final_gaps_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/gaps"
+            },
+            "final_gap_ids": [
+              "verify-airburst-cause-and-date"
+            ],
+            "final_resolutions_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/resolutions"
+            },
+            "final_resolution_ids": [
+              "cited-study-original-record",
+              "origin:a701:c1"
+            ],
+            "explicit_resolution_for_dropped_gap": false,
+            "independent_gap_lifecycle_pass": false
+          }
+        ],
+        "gap_lifecycle_pass": false,
+        "final_gap_ids": [
+          "verify-airburst-cause-and-date"
+        ],
+        "final_gaps_ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+          "json_pointer": "/results/0/claims/0/trace/gaps"
+        },
+        "verification_history": [
+          {
+            "ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/0"
+            },
+            "round": 1,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-airburst-cause-and-date"
+            ],
+            "resolution_ids": []
+          },
+          {
+            "ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/1"
+            },
+            "round": 2,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-airburst-cause-and-date"
+            ],
+            "resolution_ids": []
+          }
+        ],
+        "verification_gap_lifecycle_pass": true,
+        "bibliographic_native_endpoint_checks": [],
+        "mechanical_strict_native_success": true,
+        "independent_strict_native_success": false,
+        "interpretation": "The direct ScienceDaily-to-study DOI citation and own-study origin spans are valid. Repeated native citation representations are not independent evidence. ECU was host-fetched but never native-admitted. Its blocking provenance gap disappeared without resolution while revisit notes explicitly retained it; completed provenance is therefore not independent strict success. The separate blocking empirical verification gap remains and the fact verdict is unresolved."
+      }
+    },
+    {
+      "case_id": "a702",
+      "arm": "direct",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "raw_bytes": 47465,
+          "extracted_chars": 23826,
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json",
+          "cache_metadata_sha256": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": false
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "final_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "source_type": "target_primary_study",
+          "counts_as_target_primary": true,
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "raw_bytes": 459056,
+          "extracted_chars": 186687,
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json",
+          "cache_metadata_sha256": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": true,
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "INTRODUCTION",
+                "start_char": 14315,
+                "next_section": "RESULTS",
+                "end_char": 27089,
+                "section_span_chars": 12774,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "RESULTS",
+                "start_char": 27089,
+                "next_section": "DISCUSSION",
+                "end_char": 40219,
+                "section_span_chars": 13130,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "DISCUSSION",
+                "start_char": 40219,
+                "next_section": "MATERIALS AND METHODS",
+                "end_char": 67946,
+                "section_span_chars": 27727,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "MATERIALS AND METHODS",
+                "start_char": 67946,
+                "next_section": "Acknowledgments",
+                "end_char": 93460,
+                "section_span_chars": 25514,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "REFERENCES AND NOTES",
+                "start_char": 96908,
+                "next_section": "Submit a Response to This Article",
+                "end_char": 153872,
+                "section_span_chars": 56964,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 13017,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Material",
+                "start_char": 96623,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched."
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "adjacent_validated_aliases_collapsed": false,
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "basis": "validated_source_bound_bibliographic_identity",
+            "observed_link_urls": [],
+            "bibliographic_receipt_ids": [
+              "1e3cf02235284408a7d5a4f130b1118a"
+            ],
+            "valid": true
+          }
+        ],
+        "validated": true
+      },
+      "final_citation_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "882a35a936439d42b84f357798e2811a33c33ff05d441b2bb05314b855c3b44e",
+          "words": 13,
+          "chars": 94,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+          "words": 16,
+          "chars": 114,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        }
+      ],
+      "bibliographic_bindings": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/bibliography/0"
+          },
+          "source_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "receipt_id": "1e3cf02235284408a7d5a4f130b1118a",
+          "source_text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "target_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "checks": {
+            "source_citation_context_bound": true,
+            "source_version_unchanged": true,
+            "formal_citation_identifier_matches": true,
+            "archive_cutoff_and_identity": true,
+            "selected_publisher_url": true,
+            "page_title_matches": true,
+            "identity_in_front_matter": true,
+            "source_topics_in_primary": true,
+            "primary_body_present": true
+          },
+          "independent_identity_and_source_binding_pass": true,
+          "quote_checks": [
+            {
+              "side": "source",
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "chars": 178,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "ab172fda9ad5549c82b62cc01d3e3addd8aa4244fa84743c46a42dbf9cba2ab4",
+              "chars": 23,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "5b8ba0cb1264ffb72d2074cb43be639b1ddc9c184df1808c44d59211b2c8cc89",
+              "chars": 360,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184",
+              "chars": 22,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268",
+              "chars": 82,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4",
+              "chars": 14,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9",
+              "chars": 16,
+              "exact_match": true,
+              "case_insensitive_match": true
+            }
+          ]
+        }
+      ],
+      "prediction_preserved": {
+        "fact_status": "supported",
+        "risk": "ordinary",
+        "fabrication_established": false,
+        "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      },
+      "model_calls": 4,
+      "failed_model_calls": 0,
+      "total_returned_evidence_chars": 210513,
+      "mechanical_joint_primary_trace_success": null,
+      "independent_joint_primary_trace_success": null,
+      "independent_direct_primary_source_and_chain_success": true
+    },
+    {
+      "case_id": "a702",
+      "arm": "harness",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "raw_bytes": 47465,
+          "extracted_chars": 23826,
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json",
+          "cache_metadata_sha256": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": false
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "final_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "title": "Asteroid Dust Found in Crater Closes Case of Dinosaur Extinction - UT News",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+          ],
+          "source_type": "secondary_news",
+          "counts_as_target_primary": false,
+          "capture_at": "2024-12-19T09:53:10+00:00",
+          "archive_url": "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "raw_bytes": 257279,
+          "extracted_chars": 12416,
+          "raw_sha256": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+          "text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json",
+          "cache_metadata_sha256": "fa42d2926838689a96cfeb0c8bef97cc8faa6101705454cfe78fb2d848610524",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": true
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "final_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+          "citation_doi": [],
+          "canonical_links": [
+            "https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "source_type": "target_primary_study",
+          "counts_as_target_primary": true,
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "raw_bytes": 459056,
+          "extracted_chars": 186687,
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "raw_cache_ref": "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body",
+          "cache_metadata_ref": "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json",
+          "cache_metadata_sha256": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+          "record_identity_date_and_digest_valid": true,
+          "returned_text_equals_fresh_full_extraction": true,
+          "within_registered_size_caps": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "legacy_cache_validation_limit": "Only final capture identity/Memento was preserved in legacy V7 record; missing intermediate hops are not inferred.",
+          "complete_html_termination": true,
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "INTRODUCTION",
+                "start_char": 14315,
+                "next_section": "RESULTS",
+                "end_char": 27089,
+                "section_span_chars": 12774,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "RESULTS",
+                "start_char": 27089,
+                "next_section": "DISCUSSION",
+                "end_char": 40219,
+                "section_span_chars": 13130,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "DISCUSSION",
+                "start_char": 40219,
+                "next_section": "MATERIALS AND METHODS",
+                "end_char": 67946,
+                "section_span_chars": 27727,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "MATERIALS AND METHODS",
+                "start_char": 67946,
+                "next_section": "Acknowledgments",
+                "end_char": 93460,
+                "section_span_chars": 25514,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "REFERENCES AND NOTES",
+                "start_char": 96908,
+                "next_section": "Submit a Response to This Article",
+                "end_char": 153872,
+                "section_span_chars": 56964,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 13017,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Material",
+                "start_char": 96623,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched."
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "adjacent_validated_aliases_collapsed": false,
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "to_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          },
+          {
+            "from_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "basis": "validated_source_bound_bibliographic_identity",
+            "observed_link_urls": [],
+            "bibliographic_receipt_ids": [
+              "a5b7d6cb8d134b85bf3ac39db0d05048"
+            ],
+            "valid": true
+          }
+        ],
+        "validated": true
+      },
+      "final_citation_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "quote_sha256": "977e143d8654e2204a1e58fa8d2a139771962c06a7fca41e40cb00debe808154",
+          "words": 11,
+          "chars": 59,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "882a35a936439d42b84f357798e2811a33c33ff05d441b2bb05314b855c3b44e",
+          "words": 13,
+          "chars": 94,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/prediction/citations/2"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+          "words": 16,
+          "chars": 114,
+          "exact_match_count": 1,
+          "exact_and_within_final_quote_limit": true
+        }
+      ],
+      "bibliographic_bindings": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/bibliography/0"
+          },
+          "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "receipt_id": "a5b7d6cb8d134b85bf3ac39db0d05048",
+          "source_text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+          "target_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "checks": {
+            "source_citation_context_bound": true,
+            "source_version_unchanged": true,
+            "formal_citation_identifier_matches": true,
+            "archive_cutoff_and_identity": true,
+            "selected_publisher_url": true,
+            "page_title_matches": true,
+            "identity_in_front_matter": true,
+            "source_topics_in_primary": true,
+            "primary_body_present": true
+          },
+          "independent_identity_and_source_binding_pass": true,
+          "quote_checks": [
+            {
+              "side": "source",
+              "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb",
+              "chars": 178,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "adb75bb2b607e00c0ddb806795d60e5fa10fe5fb930df59d7d2a9564f42b0fcd",
+              "chars": 12,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "be376d2155e402f49528b6e58cef0b726b04bac9b1a8366f20e3e4f78a6c9081",
+              "chars": 376,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6",
+              "chars": 257,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184",
+              "chars": 22,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268",
+              "chars": 82,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4",
+              "chars": 14,
+              "exact_match": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9",
+              "chars": 16,
+              "exact_match": true,
+              "case_insensitive_match": true
+            }
+          ]
+        }
+      ],
+      "prediction_preserved": {
+        "fact_status": "supported",
+        "risk": "ordinary",
+        "fabrication_established": false,
+        "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      },
+      "model_calls": 18,
+      "failed_model_calls": 0,
+      "total_returned_evidence_chars": 222929,
+      "mechanical_joint_primary_trace_success": false,
+      "independent_joint_primary_trace_success": false,
+      "independent_direct_primary_source_and_chain_success": null,
+      "native_audit": {
+        "wrapper_status": "completed",
+        "wrapper_errors": [],
+        "claim_provenance_status": "unresolved",
+        "claim_fact_status": "supported",
+        "claim_errors": [],
+        "origin_summary": {
+          "status": "unresolved",
+          "sources": [],
+          "claim_count": 1,
+          "located_claims": 0,
+          "upstream_candidates": [],
+          "scope": "Origins require model-assessed original material and a direct source path, with exact source quotations and observed links or separately validated bibliographic citations checked by the harness. This is not independent semantic authentication, proof of earliest publication, or proof of truth."
+        },
+        "origin_link_gap": "The proposed origin path lacks observed links or validated bibliographic citations with native evidence from both versions.",
+        "nested_trace_provenance_status": "original_material_located",
+        "nested_trace_fact_status": "supported",
+        "trace_assessment_valid": true,
+        "trace_stop_reason": "complete",
+        "materials": [
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+            "matches_complete_host_source": true
+          },
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+            "matches_complete_host_source": true
+          }
+        ],
+        "host_fetched_but_not_native_admitted_urls": [
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+        ],
+        "origins": [
+          {
+            "target_id": "a702:c1",
+            "version_id": "news-bae041d1fdfa54b4",
+            "material_kind": "original_observation"
+          }
+        ],
+        "relations": [
+          {
+            "id": "news-a13131e70a4f69c4:relation:relation:r1",
+            "from_version": "news-a13131e70a4f69c4",
+            "to_version": null,
+            "kind": "derives",
+            "status": "declared",
+            "upstream_locator": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+          },
+          {
+            "id": "news-a13131e70a4f69c4:relation:relation:r2",
+            "from_version": "news-a13131e70a4f69c4",
+            "to_version": "news-bae041d1fdfa54b4",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          }
+        ],
+        "unique_relation_endpoint_kind_status_count": 2,
+        "span_checks": {
+          "origins": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/origins/0/basis/0"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13195,
+              "end": 13411,
+              "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807",
+              "exact": true
+            }
+          ],
+          "relations": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/0/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 7848,
+              "end": 8078,
+              "quote_sha256": "e477c6f385542df024fbfcaf8b736870bbb38a1bbe0189300afdce27d9e5c4bf",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 2598,
+              "end": 2776,
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 11257,
+              "end": 11300,
+              "quote_sha256": "6480525612183814d2823cf7e5b86f02ae6b111ec4c79ded99b165a9ebcff33e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/2"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 171586,
+              "end": 171721,
+              "quote_sha256": "5d50c0699ed5f3fd41b72e7fa59e8d8f505970032d660a5bb91f20d0a96a928a",
+              "exact": true
+            }
+          ],
+          "resolutions": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 2598,
+              "end": 2776,
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 11257,
+              "end": 11300,
+              "quote_sha256": "6480525612183814d2823cf7e5b86f02ae6b111ec4c79ded99b165a9ebcff33e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/2"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13195,
+              "end": 13411,
+              "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/3"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 171586,
+              "end": 171721,
+              "quote_sha256": "5d50c0699ed5f3fd41b72e7fa59e8d8f505970032d660a5bb91f20d0a96a928a",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 2598,
+              "end": 2776,
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13195,
+              "end": 13411,
+              "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/2/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 2598,
+              "end": 2776,
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/2/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13195,
+              "end": 13411,
+              "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/3/basis/0"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13827,
+              "end": 13941,
+              "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/3/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 46439,
+              "end": 46737,
+              "quote_sha256": "c39990817d76d0e8cc4d9dcf5e36dd07bb16f1e0b975d387d77da8e65be48950",
+              "exact": true
+            }
+          ],
+          "verification_history": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/0/basis/0"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 2395,
+              "end": 2597,
+              "quote_sha256": "f4023dfedf066af98db77146955ac964502a4309c1c77bb842cbd828d1999645",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/0/basis/1"
+              },
+              "version_id": "news-a13131e70a4f69c4",
+              "start": 4657,
+              "end": 4915,
+              "quote_sha256": "81f610f855c675bacaf62f5fdc0415489c4005e4ae74388f48b924e8971e67a5",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/basis/0"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13195,
+              "end": 13411,
+              "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/resolutions/0/basis/0"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 46439,
+              "end": 46737,
+              "quote_sha256": "c39990817d76d0e8cc4d9dcf5e36dd07bb16f1e0b975d387d77da8e65be48950",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/resolutions/0/basis/1"
+              },
+              "version_id": "news-bae041d1fdfa54b4",
+              "start": 13827,
+              "end": 13941,
+              "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+              "exact": true
+            }
+          ]
+        },
+        "all_checked_spans_exact": true,
+        "gap_lifecycle_violations": [
+          {
+            "gap_id": "ut-release-source-lineage",
+            "stage": "provenance",
+            "blocking": true,
+            "owner_version_id": "news-a13131e70a4f69c4",
+            "initial_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/0/analysis/gaps/0"
+            },
+            "initial_analysis_revision": 1,
+            "revisit_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2"
+            },
+            "revisit_analysis_revision": 3,
+            "revisit_gaps_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/gaps"
+            },
+            "revisit_gap_ids": [],
+            "revisit_notes_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/notes"
+            },
+            "revisit_notes": "Both supplied versions have evidenced availability before cutoff; r2 is upgraded because the cited original study is now obtained. The university-release gap remains open, while supplementary data and redistribution concerns remain verification issues.",
+            "revisit_resolution_ids": [
+              "goderis-study-identity",
+              "origin:a702:c1",
+              "lineage:a702:c1"
+            ],
+            "final_gaps_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/gaps"
+            },
+            "final_gap_ids": [],
+            "final_resolutions_ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/resolutions"
+            },
+            "final_resolution_ids": [
+              "goderis-study-identity",
+              "lineage:a702:c1",
+              "origin:a702:c1",
+              "verify-crater-iridium-origin-boundary"
+            ],
+            "explicit_resolution_for_dropped_gap": false,
+            "independent_gap_lifecycle_pass": false
+          }
+        ],
+        "gap_lifecycle_pass": false,
+        "final_gap_ids": [],
+        "final_gaps_ref": {
+          "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+          "json_pointer": "/results/0/claims/0/trace/gaps"
+        },
+        "verification_history": [
+          {
+            "ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/0"
+            },
+            "round": 1,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-crater-iridium-origin-boundary"
+            ],
+            "resolution_ids": []
+          },
+          {
+            "ref": {
+              "file": "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/1"
+            },
+            "round": 2,
+            "verdict": "supported",
+            "gap_ids": [],
+            "resolution_ids": [
+              "verify-crater-iridium-origin-boundary"
+            ]
+          }
+        ],
+        "verification_gap_lifecycle_pass": true,
+        "bibliographic_native_endpoint_checks": [
+          {
+            "receipt_id": "a5b7d6cb8d134b85bf3ac39db0d05048",
+            "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "source_native_admitted": false,
+            "target_native_admitted": true,
+            "both_endpoints_native_admitted": false
+          }
+        ],
+        "mechanical_strict_native_success": false,
+        "independent_strict_native_success": false,
+        "interpretation": "The host final ScienceDaily-to-UT-to-study chain is valid. The receipt binds UT, not ScienceDaily, to the study; UT was never native-admitted. The wrapper correctly refuses the nested trace origin proposal because native evidence from both bound versions is absent. The UT blocking provenance gap also disappeared without resolution. The empirical iridium verification gap was explicitly resolved; its supported fact status is preserved without an accuracy claim."
+      }
+    }
+  ],
+  "comparison_limits": [
+    "a701-direct is conflicting/elevated and has full critique/correction sources; a701-harness is unresolved/elevated and has ECU instead. The evidence sets differ, so these verdicts do not support an accuracy ranking without outcome labels.",
+    "Both a701 arms share identical complete archived main-study text; both a702 arms likewise share identical complete archived main-study text.",
+    "The successful primary-body and final-chain checks do not establish empirical truth, absence of misconduct, or forecast accuracy. Native fact/risk/fabrication outputs are preserved.",
+    "Legacy cache receipts establish final capture identity and date but do not reconstruct missing intermediate redirect hops.",
+    "The audit does not weaken engine origin or factual verification requirements and does not re-score with later events."
+  ],
+  "immutable_receipts": {
+    "prediction_sha256": "461042b844cc5308c04a9ce5904f501a0ebdd4e6fcd16249601df0b09f3c6e9b",
+    "completed_marker_matches_predictions": true,
+    "preexisting_mechanical_receipts_all_raw_hashes_match": true,
+    "registered_files_all_match_frozen_registration": true,
+    "registered_code_receipts": {
+      "experiments/live-origin-v10-20260914/PROTOCOL.md": "b7291370ccb5f87852220701c7d54435d9f86abf1e9db5e46332a306f1289eb4",
+      "experiments/live-origin-v10-20260914/REGISTRATION.json": "e7bd01e71977f442af9f25b113920d68764a035f1faee273e89bb38062eb3b32",
+      "experiments/live-origin-v10-20260914/archive_collector.py": "e01807c27c56c7b3a378f59c939d485a5b74ed9cec96e37a47fd35f914aececd",
+      "experiments/live-origin-v10-20260914/bibliographic_locator.py": "0bdc9cde0a9d10cd989386bfd59305cd6c7532e99947f4fba0c8d0f1dba5006c",
+      "experiments/live-origin-v10-20260914/check_archive.py": "6d2b3a02203a0e6f2415fc5a28be505043e344f4d20d0aa107f81efee6feb53b",
+      "experiments/live-origin-v10-20260914/check_bibliography.py": "66d729d7efcae0b0592870a9604d16510948730f28882c3abb9e888c579e3ba5",
+      "experiments/live-origin-v10-20260914/check_recovery.py": "19d246535f135e7f0e8e7d64e93f01533413364a4808633ed8f4fd24b97829ee",
+      "experiments/live-origin-v10-20260914/retrieval.py": "5edb0f4a7d9d13bd9aeefd0beb98457b22f65f2addcafa8298d1003bf1b59762",
+      "experiments/live-origin-v10-20260914/run_test.py": "bab8ed5cace94ffa7bba1b4afe5cd07751aba77d3f95e9819ed8f61f5aa4c644",
+      "experiments/live-origin-v10-20260914/summarize_test.py": "fc7f1725f654713edd8565e9bec76e43feca3f8e3b4568fa8e0f19b0277a7334",
+      "newsverify/__init__.py": "90fc21d71c6994c19e501788df6c9415e0f7ef7640161134dd8a64c7a96f0ce2",
+      "newsverify/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "newsverify/cli.py": "e6f0f1a55052a469d6723dca7ea063f91de2da2dbb7cca48c591bfc9b645b33b",
+      "newsverify/comparison.py": "b35ddbb2e82a5a763aac31982f28c984ca50a242ecb07a1245128e09199279c5",
+      "newsverify/core.py": "8f148c272de3be772581dc78644411fa2b56d1eb809045ef6423620ac7a41d88",
+      "newsverify/decisions.py": "fe93d618b0f122591b39def16e952a4076c4fc66d69d81198c28489e245b4b3e",
+      "newsverify/double_loop.py": "7482de20c3be45b3f3f271cb3a5561c75632821d23ac8009c60d4850be7600f8",
+      "newsverify/early_risk.py": "0981cef54918f9a603752681617da9c2d22fe41fa684989cebe77b961ea83f08",
+      "newsverify/evaluation.py": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f",
+      "newsverify/local.py": "aba40021d0fb9bc6455bb96bc8065aaae19a186e7d95078a3c6e377caa34e75c",
+      "newsverify/model_runner.py": "04cbfd7aa9c37b6ace92c3867ed5eec2f40852312985854d9e0c63a2d16e3cdc",
+      "newsverify/news_client.py": "086134e1d6a28944176bb2d8ce3f40c55f126e746f99bcd834fc532f6244cce5",
+      "newsverify/news_sources.py": "edae29dd733343aac7edb3474bc63ee42562461c8804dd30c520ff3cc095f584",
+      "newsverify/news_tracing/__init__.py": "a9a9ab21de682f40da13b88bdbdb90bc755c5de99c62f20dc0583106b1febd36",
+      "newsverify/news_tracing/core.py": "56101837026f36474bc5339da18ffe9a13fa8fbba5a5db2ae20e2fb56f20478b",
+      "newsverify/news_tracing/models.py": "83e4223da3376a455590e0390cae5bd690fa8787c3233923855f8e8fd5361344",
+      "newsverify/news_tracing/prompts.py": "c9e478bfd4a66599834c4dd26160d407e2d6be37cf4a2bdfbf777536c3d4a910",
+      "newsverify/news_tracing/schemas.py": "667d09628a9a84f2d8c53e87cde2b41e942725350b3077c2dda9fc4cbd314100",
+      "newsverify/news_tracing_runner.py": "ef7fa0f15c09190f7f855c8e2cb7f912d2f929fe59384445faa950db76256ae3",
+      "newsverify/provenance.py": "72b7ed52327eef54eb35fd2a9bc8fb61ab2f8a77fafd9a315302ebd5ea5136a4",
+      "newsverify/providers.py": "7cb362d1f89270e82b1b34590eecac607a43896a6bbe763c3b88b0254970b568",
+      "newsverify/quickstart.py": "2fded3063ac69f092fcb4e318bfa7a1279701868c8ffc7d50dbb654620353fa6",
+      "newsverify/retrieval.py": "9e8b1a32656f8aeab7eed6250c3efce35f4e1c45b711c492365b3e87beed2567",
+      "newsverify/trace_demo.py": "960c78e0fc2aa2bb428dd13db59c3c8314c7e7ffe533d2fe64d80267474b1251",
+      "newsverify/tunnels.py": "ee8c116b997075f5f029130ca278ba7d19e6dd42b8310ec20ece1de0622575fc",
+      "tests/test_bibliographic_lineage.py": "1cd7ca1ca7a6fbbeb1b7072cf7189375c29b315984fd821a27e9a41b7305a005",
+      "tests/test_double_loop.py": "de1033c41ed679d19adbe2cf9339a2f2f48172c45f14fef6ded3ca0c52b64207",
+      "tests/test_news_client.py": "c41df8f4ca7c6758d1ce14b8f15085b03af0b8a5629a89d1b1607753b1ea67d6",
+      "tests/test_tunnels.py": "deff2baad0e08684ef2625bf628ea9da1e430bd7216681a4e815cbdef80a0b35"
+    },
+    "raw_file_sha256_before_and_after_equal": {
+      "experiments/live-origin-v10-20260914/private-run-01/COMPLETED.json": "89cfa5eac3c09bac35b35c02a60705af350ea595616e95a15513919da050f234",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/archive-records.json": "ec76ce70a6f692525651322bfc371cd304fbbf19f124d570bc3fd8b26f5a4988",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/calls.json": "b1df080faf2fe33cb4919f657065fdce0d9640a7cc1157cfbacafd244ea0c779",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/model-io.json": "f583a8353019c0f378bf5e8dbb1aef16451052b559a6e39793963f0c7ff1497b",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-bibliography/0f845558f6f64015a712e451f5785125-0.proof.json": "b983e779cf295d2a0c76c19bc4c698140d61bb76ad489ddae39e72a0cdbff118",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-bibliography/0f845558f6f64015a712e451f5785125.json": "e0a9febd6ea1222b9324e092651a2477c9325dc3a6c3fe3d2d8c4f258e2c2066",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-bibliography/0f845558f6f64015a712e451f5785125.response.json": "5822fd0356df583763cdd47f7d5b524caaafc4e6a39237f3c44df317a3228a64",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0001-1789414987738370000.stderr": "45af1f03cb5e4897510f457376b81dfd902ae1b328ae0c5694846862e1910c7b",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0001-1789414987738370000.stdout": "db251e106166a841803277d7af35c2db367bf4fece0446d50efdde2d9c004167",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0002-1789414998098750000.stderr": "8b871b2d170a47dc399a861aa87d9400fc17b4b186740de53f9f6ce5bb9a7ac3",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0002-1789414998098750000.stdout": "9f874cb4c053763ddcd13a0be4225cd7bd53389aa5b573a87fbf9cbb5545836d",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0003-1789415023544768000.stderr": "7f852a5d179b7a89ac3e3c3d858c4924970dee6f8e068fc8785ad111ac0d78e1",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0003-1789415023544768000.stdout": "fb40de3f0ab50e16fe2d05157861bcb5ef7e2c15161331c830019120a86f651b",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0004-1789415029330968000.stderr": "b5812fa631612055296788d551657ca2dd0103f82efa7dc92a4c5c809b75d1ed",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0004-1789415029330968000.stdout": "c91d198cb176a96008a1852fca2296aede2e248507246be0db766307ac87907d",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0005-1789415081245153000.stderr": "55464bbbcc40aa97b70bc3bef8ee956c77a8e763548e4e9fb6f678e773f8f792",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0005-1789415081245153000.stdout": "92f04bd2ad1ffa95ff63ae4cff5c56dc56ba2600cf749784b31e8a14a0fc8e53",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0006-1789415147548397000.stderr": "b26f9b22fcfa6546ce53b18c43483851196bb5dc9ec75ad92cac27df4b8762d2",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/private-cli-events/0006-1789415147548397000.stdout": "4c6a0abdda541a7455818651e9bdf558068a637c5fefd5eb8e8533918b8f9721",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/result.json": "b9dd644ca1cba94fad0e3ba4b83698835f41fc3ee9b9f1696c2150bf00c1d647",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/retrieval.json": "57ebde2ac68f218cd6753c9e9105476c1e960cdb8dae8d44256354851518be43",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/sources.json": "baaaf0e3f807d81eecf3eacd05495017049c98086c0c329abf72b87d0647e665",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-direct/workflow.json": "7f8c80469a69953011cade0cd8c8c3cf36dc89007b1b72bf21f583ad7727ab28",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/archive-records.json": "542ac87f1b43cbf39840b0f61491229d0c067ce968726c958707a4b496428c67",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/calls.json": "e59497eccd91a6780753be4a804695764340c4e0da9a1dec8853f74422c6c309",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/model-io.json": "038f913054babf8ef7ee74e235ffbf0640b7c10d2aceb7a76355ce5378809339",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0001-1789415157455227000.stderr": "404e4d11f2cee0b785416b64a35aa6c3a1ac5d81d5c8c78266cd2a7a8b37abb3",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0001-1789415157455227000.stdout": "70ac3594e32331465e58d8ba5f82fb4477cbce4a6abf2ca6373447d967a783d4",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0002-1789415167986811000.stderr": "a37bea5e9833afe48b99cb35dd8a165f4c0d4e006f2f0271737b7fe5e99ae92d",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0002-1789415167986811000.stdout": "2d4c1f95f5882677627b50ec1a77cb8f08c4f5658ebead6de1afd60ef84a530a",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0003-1789415185828319000.stderr": "0413d624f8890013c37e3fd2b6bc141b35efddc3484a84e4fb694087a5f08e5a",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0003-1789415185828319000.stdout": "2bd559c7c91f5b8b694019682a8cb872f93aa942c7325da3f1b21f7b1d429a1a",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0004-1789415194420120000.stderr": "ae553c1b4870b510c50fa42468113c34c51047c0813af08ab989001e88ab2767",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0004-1789415194420120000.stdout": "d85d4fca95be42479e82e00b523ba0bd08c9f68bf11959696a22c850013aeab5",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0005-1789415221500694000.stderr": "5f59f36dfaa03f68a0c3fd88cdd7dd07adcaaaf8189d292dab7098d5005880cd",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0005-1789415221500694000.stdout": "86e869b0a89cb2cc116b56a11b3dd93dc9ba06d64a933846d15034858c953e57",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0006-1789415260407679000.stderr": "7672f7e70935820cc44a9e47bc84bd10e67154f2826319d9a300cb78a1e7f25e",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0006-1789415260407679000.stdout": "80ea410d68d80c5571ef3d021e5e26ddac1a72bed31655380f10298131531a62",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0007-1789415288588843000.stderr": "200f9ae5741228d62139059181bc79448d71951c01b1a7f924295a448379d817",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0007-1789415288588843000.stdout": "9519afb9a0e2da22a8ec9398fb14a0186e9e7f103026402bf6982918273e83d3",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0008-1789415302417858000.stderr": "fd06eb89170b89f7982a7d7e25214b647556fc47744a795a3356c2d8b164a642",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0008-1789415302417858000.stdout": "359a6aba70e0a63a840e54d097073972b255476daa10a9a54483174a71573d4c",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0009-1789415327366547000.stderr": "ef22f3b5ef7487d2aba4d9f8c508406030921c2bc8f8b9af570f472342753177",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0009-1789415327366547000.stdout": "ead7d89c997031c0e15ecd27743072c7ebae250a40552a64f1332e058ea23986",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0010-1789415359690990000.stderr": "62cbddfdbe421f061aceec945726081fb17fd9fa7d3076004f82a121a50a36fd",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0010-1789415359690990000.stdout": "efb1caf273d0dc4d3530f47385b117518c466eba75d76759634bf56b3e663389",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0011-1789415370176680000.stderr": "ae84b8b80642a33b26c0a21a63df78fd9d7fef979995c809d71315eda1146b04",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0011-1789415370176680000.stdout": "3eace39f6853ba799111aa15973250a9efc5c48cf9f37c1bb8a599a6dbd86a8e",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0012-1789415378144249000.stderr": "c38ac5e056f61ee095f20df575a551e0f2eb02d8a3de34c83de129a3b6e83175",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0012-1789415378144249000.stdout": "dbba86a463cb2e8b75123d3065d0f2116203383b1c3a4c5282dc8fb0c68bbcaa",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0013-1789415431927045000.stderr": "03f1a703f4b8c299a1430bcd63a156e71edea82d6ba5d49a6c59875c9f026091",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0013-1789415431927045000.stdout": "d8b30b67610bc7fb26c120f2f23b4e4b844d97ae65dccc1149e98f3ee1601fe6",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0014-1789415480699044000.stderr": "7028c74986972cb2a78b39ac8dc53207a6a653659172497a21d4c5a7c8bd673e",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0014-1789415480699044000.stdout": "5ec2c0faec856674d64ad10924d5856acfadd0e32e0ebf523219842a418030b5",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0015-1789415502645460000.stderr": "3def663fab6ba0266c24111ea59dc77c0a0b66a4327a77e5e5b971b7bb0798e1",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0015-1789415502645460000.stdout": "22975bda9d51c1fb4a8c39aea7f70074a7ce6ba72e37144ff5357c12d8889095",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0016-1789415507799763000.stderr": "4eb3d251f74d7d1e2df1cd379469c23c721c1965ee6bfc89a27e0eb117a621a9",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0016-1789415507799763000.stdout": "83c4ea7dc109cdfdc81efae6ff947706448b26f6e8b6b02642dbcba7a3a6cd2a",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0017-1789415523428615000.stderr": "bae75dee8b987b1d1ec198f1605b07c0c3c006fe825cd67ba8846650b130b558",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/private-cli-events/0017-1789415523428615000.stdout": "a30bc1fc2c8edb541951a6b4026dbba33d8046f08ee661f5772f85eccb5834ef",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/result.json": "9b7db30207ede6102a0315f56bd97d324c028bec386567aa2e6d9e4394509642",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/retrieval.json": "6dd92c26b6ecc0c71dcd1932ec6716b563ac0647fda573efa5d77e72da2d994f",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+      "experiments/live-origin-v10-20260914/private-run-01/a701-harness/workflow.json": "811cab25d37239379bcaf6e1d8e28821ce9bff7e32382c0a7d968a28c1f4373b",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/archive-records.json": "27fccf02573524772c957b3ea31ee54d6f3b4532f0c42acb4607b4057158ab7f",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/calls.json": "81dccf9aa3ea9a8dc9d008759c75666360c0d953521878f377d68cfa8f547020",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/model-io.json": "c5a19fc812918646b352887acb10f632df2056decd3f7ba0bbd5989bda670d67",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-bibliography/1e3cf02235284408a7d5a4f130b1118a-0.proof.json": "951176c83fc6a68d6ae674d21e5e02de3d93fcc21cb08397a7d041ca5b0c7617",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-bibliography/1e3cf02235284408a7d5a4f130b1118a.json": "88855a04fd61c385615b30172527a6bb7567e977190e2a5cecbe55020a3aadeb",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-bibliography/1e3cf02235284408a7d5a4f130b1118a.response.json": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0001-1789415896084402000.stderr": "93cd2ae6bf16fa644c1cec9e979844c7dc3c2c1d327d5c56ee82393758bcf885",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0001-1789415896084402000.stdout": "45039b4df0b3d1869c0e4a959f485d2ba12afd6b2e0746b51b607af41553bc07",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0002-1789415902867567000.stderr": "f46d274a61e83067a1f96d7389c0e1e28e2dde545cfcfd4a10ac3024904c3e72",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0002-1789415902867567000.stdout": "cf1f2e6ba0b76155f1dfd249e190f7b0a460da9929a22cc0fb2a996dafcc5dcc",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0003-1789415912118173000.stderr": "dac058256c4dfb1c3989d3fe32e0b67ec7e40e2cdfbfcad9a8ec77ccb22b9df4",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0003-1789415912118173000.stdout": "2b069809e83120ce19c5f93f85ab9ffc41890662322a871005ad8dc09a796f31",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0004-1789415931108797000.stderr": "150589c3e7c2189087e22077872a4002359d3a0eb2ee905260be199f2363cc92",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/private-cli-events/0004-1789415931108797000.stdout": "d15750cac468e56c26a27ba7a19cfaf9c42c757cde8a0b0b8747187af5be777b",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/result.json": "3c275ba1eded037bf53be96a4e90fd4c40fc7853a7a21dffcf769406b590ee73",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/retrieval.json": "7fd8cbca8a60f9fe4c78a4f92f6f01c03fd6d104780c7218854437984fe1d4d8",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/sources.json": "09cc1ff29dca2b9fb60e0df5629a2cb390fb87da3cfe336203f3efcc2f9a1658",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-direct/workflow.json": "140592aac9efca07106cc81013aced2c7f01cd3bba93b916765a6f43c3295592",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/archive-records.json": "ead9aba6bed9fd2af5eb1842ecc32a240b761675c678eb9ed280ed37a1e51948",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/calls.json": "59bbd14936b2c5ae1c38215df4b6aedb236b4185e97823cce7863be29f01a2cd",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/model-io.json": "3f3aac192c675bc8c4c4b736e1b30a01fa3ec5610754fe5d0c6c9e12a1389243",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-bibliography/a5b7d6cb8d134b85bf3ac39db0d05048-0.proof.json": "82075415671f3f65e45b5294045ba8305d4ec846ad416da2f4f98b8b835a8ba7",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-bibliography/a5b7d6cb8d134b85bf3ac39db0d05048.json": "53665f5f95add2d01e2ff207fdf86cae2b5416987806012136622d730f890403",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-bibliography/a5b7d6cb8d134b85bf3ac39db0d05048.response.json": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0001-1789415532883609000.stderr": "5a963ed0a382193daf5c08f673a92285c3a5b7655dfb35c72a3f026bc223956c",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0001-1789415532883609000.stdout": "5e782a8a848dc440592cbd14e38f5e6b76344949345d219303310e3fe2e1f60f",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0002-1789415547392351000.stderr": "53cb69cfca3a39977fee93900d6bf055795f67d0ec24d37a48e987b1777e5056",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0002-1789415547392351000.stdout": "6ddfdf9bbd70ff6aa80e1d53a351f8bf2218c3a54b8534724277bbc217d710a4",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0003-1789415555082425000.stderr": "cd453664f9d27446d729b7293f097a0ad7b680926355aeefa5a6be01685a58c0",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0003-1789415555082425000.stdout": "7a1d32eb9ab55f797a2d599ab4dcd8ca6bb139b49ac40e597aac86c56a35fbde",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0004-1789415564043166000.stderr": "c9e06b7a9d53a9f240d5790bf7156d4ca821f5fa1594437b578bf11f77c3c274",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0004-1789415564043166000.stdout": "928dfa00034941b39d87739c0ff45e518e48cb3305d9c2000d9d86b35fdb8f6e",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0005-1789415580793323000.stderr": "dbaa14a74a7236d34021a992cfbb8412c8db7261333739b295b26a152bd5cdcf",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0005-1789415580793323000.stdout": "bd1a2caa71a2cdd2638c19ec045ad0aacc95dc4756e7713651c0e555f18477c1",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0006-1789415589644009000.stderr": "ddf94f7d496ac8852f0e3dbe1bd0425d620c4fcedf1fc8b569f1cafe76567d83",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0006-1789415589644009000.stdout": "62fc9d8c5da9111761f99e3b065d1bcb9094691776892969183b1197e62661c4",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0007-1789415616068504000.stderr": "fa2e740f4dba913a9c6d6734ea25977cde203a980870e158c95b0a905df9ade7",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0007-1789415616068504000.stdout": "9a5b0996cb411d37400992cff530b77e37d3a698dc1fff0f99133ae6dcdb6ae0",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0008-1789415644443620000.stderr": "300fa8fa7f923da7620136a1a3c204e7279dbe01bba5835ee4423d0659224a6c",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0008-1789415644443620000.stdout": "a65d5875cfe77195ef89344b9cce8b6a512d176e15527ac4cc8cb4e2abb18c86",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0009-1789415669042948000.stderr": "59ebc1ac0f34eb7bdb82f443d700e1b66fccc6522cd0a13ba4669afa12ad7f6d",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0009-1789415669042948000.stdout": "d1bda95d35c3f87cc09fd760aaabab64ef7b78b0611c0e78a4b9673cbc28bfab",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0010-1789415681166549000.stderr": "7070d5e48533f1d5a841cd02c6f71f5f3d8fbbd3e1afbf9e9ea48dd78b1404cd",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0010-1789415681166549000.stdout": "dbf03db2cc2321320e2652b0e6d9f3bb91c7404b3bb70b602c0e3aa3f811a9b1",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0011-1789415705941625000.stderr": "3ad1d6616d006fe74fe618d92532ee0597daf5148f4934f5d80caef7ce335324",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0011-1789415705941625000.stdout": "4e26354bb9b04725580a8233efc219b3c932ccd9eac2bc0177f5bc76165e5968",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0012-1789415735343973000.stderr": "ea8c3bad49e147ac40e27f434bbded77b33ad9befa26b4acc08c5f1d41566734",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0012-1789415735343973000.stdout": "736d834ad669b44458ec9cfb04a44106af795f124a3c66104572e7cbb3ca99b6",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0013-1789415746863519000.stderr": "bf7f0639003dd70bfd3c89a614dee575ee3d12dc830bca3db0cd9d9f3d158955",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0013-1789415746863519000.stdout": "b22b25a1b8c665240ea341be3fc598cd09691efd02200597614c966662a3611a",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0014-1789415752331351000.stderr": "8af067b9850a03e0c5ddc19a1b5f27e693e260f8ce5826b99503b07fc0d93091",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0014-1789415752331351000.stdout": "48a6d8fb723709e60a3b56e9780c4b209da99897a6d207c9ec90ff5ea93bd05c",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0015-1789415792222474000.stderr": "57c3549b7a996c6314520dab61b6755cd58778674249417fd2bbafe54020c47f",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0015-1789415792222474000.stdout": "22dfbfe6257bbb35e3cdd4b7053b057fe71f528271201a83a8fe8758f7005f3d",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0016-1789415845364754000.stderr": "6f150090b4ed27d7d6bf9d5c68be08ebd9f165aed79e86966fe555f2ff45cd16",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0016-1789415845364754000.stdout": "a25c3e0497d70841a4f61e5f77ddef5c489066f5140023b3baf0487ea6d7ca73",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0017-1789415865788237000.stderr": "97d8360ffc32d04c5789e9a335989b13d331907b82510c10771056809c784b38",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0017-1789415865788237000.stdout": "b4f84ef0da777f33a0c41f163790a16ba91411c4534760598c5866e7c54aee61",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0018-1789415885756452000.stderr": "0af69b71e0ca1570cbbf07e42b03220d32f0a356922bb54946370142ad48feb3",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/private-cli-events/0018-1789415885756452000.stdout": "26fe80575f3b623b296bc35d29d5e9c55cda9aec79d38dd3903ad4c9f7a1253c",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/result.json": "baf7ac66a818f1221a27f6bd9875e26f3d65613828786e297bcd7c22d20fdbb5",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/retrieval.json": "bce9c6273fdc7827dac3b625fb1cf69df34d3807874d0ec1b4dd32a770a553b5",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+      "experiments/live-origin-v10-20260914/private-run-01/a702-harness/workflow.json": "67e12e754631acb24e9f7daacde83cd85dafe8659b744985d837b94cd1d92edd",
+      "experiments/live-origin-v10-20260914/private-run-01/manifest.json": "2115027aa6b6be1c1886f15e8293d82b8bf8194cb450bc037d5f497b5b3eeeda",
+      "experiments/live-origin-v10-20260914/private-run-01/predictions.json": "461042b844cc5308c04a9ce5904f501a0ebdd4e6fcd16249601df0b09f3c6e9b"
+    },
+    "preexisting_report_sha256_before_and_after_equal": {
+      "reports/live-origin-v10-20260914/RECEIPTS.json": "d7dc0f9f56cfa31f34b48dfa6ec68d166f7354857397e1e8986ca36310dfa595",
+      "reports/live-origin-v10-20260914/RESULTS.json": "e8dd3ec6d16848987db3e91b05886c452f96882d24e337c3e999ba4899c1aa33",
+      "reports/live-origin-v10-20260914/STAGE_TOKENS.json": "6a6c883d3b867ded0e9e4b45512051b4164a02e0a2155cece66d0a1b8a50de18",
+      "reports/live-origin-v10-20260914/SUMMARY.json": "288447ae2260852d01d4e7f8aa7406809c2d507ca5d97de32ffe6f48a3949ccc"
+    },
+    "used_cache_file_sha256_before_and_after_equal": {
+      "experiments/live-origin-v10-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+      "experiments/live-origin-v10-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json": "fa42d2926838689a96cfeb0c8bef97cc8faa6101705454cfe78fb2d848610524",
+      "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+      "experiments/live-origin-v10-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+      "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+      "experiments/live-origin-v10-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+      "experiments/live-origin-v10-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.body": "887e38901d8c661e25fef9120af1a1256654e2509a4402f682ce50bf56e0d994",
+      "experiments/live-origin-v10-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.json": "e680a48166a30b42cb935ca7d5d86d01ff1324b147f74a33095b0fa0eb687d93",
+      "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+      "experiments/live-origin-v10-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+      "experiments/live-origin-v10-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.body": "f4b33dda70fde8dab8cb9013eb7842b2cf3ed0fba9530caa19557ee0ab63094c",
+      "experiments/live-origin-v10-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.json": "100759289bbb109f22d54f496d698d5f2776f3eae899b0f32d82c206c9ea0973",
+      "experiments/live-origin-v10-20260914/private-cache/3bf75661d81ac2e20d844972d3afda8c02b6fc52978ed2c4c6bf297f870db0b7.body": "1b6481b1eeab3ca40bbb52415bca8ac34e66556e4ea946dd303cbf80df9e6ab4",
+      "experiments/live-origin-v10-20260914/private-cache/3bf75661d81ac2e20d844972d3afda8c02b6fc52978ed2c4c6bf297f870db0b7.json": "9cef4b13172e989c8b29b76feb4b39e76df4582d4a67c4e928338a688d1e7b78",
+      "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+      "experiments/live-origin-v10-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb"
+    },
+    "all_cache_files_unchanged": true,
+    "raw_files_unchanged": true,
+    "registered_files_unchanged": true,
+    "preexisting_reports_unchanged": true,
+    "new_file_only": "reports/live-origin-v10-20260914/AUDIT.json"
+  }
+}
