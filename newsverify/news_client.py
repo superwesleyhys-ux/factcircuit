@@ -71,9 +71,14 @@ class TracingClient:
     is rejected. There is no automatic legacy fallback, repair or retry.
     """
 
-    def __init__(self, transport, collector):
+    def __init__(self, transport, collector, max_evidence_chars=MAX_RESEARCH_EVIDENCE_CHARS):
+        if isinstance(max_evidence_chars, bool) or not isinstance(max_evidence_chars, int):
+            raise ValueError("max_evidence_chars must be a positive integer")
+        if not 0 < max_evidence_chars <= 1_000_000:
+            raise ValueError("max_evidence_chars must be between 1 and 1000000")
         self.transport = transport
         self.collector = collector
+        self.max_evidence_chars = max_evidence_chars
         self.errors = []
         self.rejected_sources = []
         self._lock = asyncio.Lock()
@@ -92,7 +97,7 @@ class TracingClient:
         # from the model's evidence packet.
         docs = list(getattr(self.collector, "evidence_documents",
                             self.collector.documents.values()))
-        if sum(len(doc.content) for doc in docs) > MAX_RESEARCH_EVIDENCE_CHARS:
+        if sum(len(doc.content) for doc in docs) > self.max_evidence_chars:
             raise TunnelError("Research evidence capacity exceeded; no text truncated or model request sent.")
         evidence = []
         for doc in docs:

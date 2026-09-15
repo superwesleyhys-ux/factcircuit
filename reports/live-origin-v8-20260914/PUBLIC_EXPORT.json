@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "path-only public export",
+  "source_directory": "<live-origin-v8-20260914-source>",
+  "files": [
+    {
+      "path": "README.md",
+      "source_sha256": "ba0af45f38b3a638e5c05201edfc7306e7341090bc354283f2a57b9997afc0d1",
+      "public_sha256": "89a726bbe9162b72c58fcab67f6282d63e724d4b509f0a181bfcd089860979ff"
+    },
+    {
+      "path": "RECEIPTS.json",
+      "source_sha256": "fc94b0d6efc6f6a17fd8517dbaaf1961f8c17c7a87552e9f4c08c4c131dc635d",
+      "public_sha256": "fc94b0d6efc6f6a17fd8517dbaaf1961f8c17c7a87552e9f4c08c4c131dc635d"
+    },
+    {
+      "path": "RESULTS.json",
+      "source_sha256": "efa95b7b75c41c7c4004f47b7d6c6d93c2412cc0e5137b21f51996629e580c8d",
+      "public_sha256": "efa95b7b75c41c7c4004f47b7d6c6d93c2412cc0e5137b21f51996629e580c8d"
+    },
+    {
+      "path": "STAGE_TOKENS.json",
+      "source_sha256": "4b74fb26690ebdbf7dd27379a44ce50220ea5a5f7b5ee3eaa86cbefecfc881ee",
+      "public_sha256": "4b74fb26690ebdbf7dd27379a44ce50220ea5a5f7b5ee3eaa86cbefecfc881ee"
+    },
+    {
+      "path": "SUMMARY.json",
+      "source_sha256": "0ad733e4b748a50d47fda2f127637f0a70a755e85d73426f9953efb4e9339eb5",
+      "public_sha256": "0ad733e4b748a50d47fda2f127637f0a70a755e85d73426f9953efb4e9339eb5"
+    }
+  ],
+  "redactions": [],
+  "non_path_changes": [
+    {
+      "file": "README.md",
+      "kind": "broken experiment links converted to plain local-source notes"
+    }
+  ]
+}

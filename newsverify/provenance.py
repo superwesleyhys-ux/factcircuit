@@ -1,4 +1,4 @@
-"""Versioned provenance orchestration with mandatory decomposition on every return.
+"""Versioned provenance orchestration with explicit source reanalysis policy.
 
 This module does not infer source lineage or news truth. Plug-ins supply semantic
 analyses; the runner enforces version, citation, temporal and loop contracts. The
@@ -139,6 +139,7 @@ class TraceConfig:
     max_rounds: int = 5
     max_documents: int = 30
     max_decomposition_calls: int = 30
+    reanalyze_existing_versions: bool = True
 
 
 class TraceProvider(Protocol):
@@ -493,7 +494,8 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
     Historical eligibility needs an explicit, evidenced ``available_at`` for the
     exact version. ``published_at`` alone never proves historical availability.
     A late retrieval of an evidenced old version is allowed; there is no age cap.
-    All returned valid versions, including duplicates/ineligible ones, visit psi.
+    Reanalysis remains the generic default. Incremental callers can preserve an
+    unchanged version's accepted analysis instead of decomposing it again.
     """
     if isinstance(target, dict):
         raw_target = dict(target)
@@ -516,6 +518,8 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
     for name in ("max_rounds", "max_documents", "max_decomposition_calls"):
         if type(getattr(config, name)) is not int or getattr(config, name) < 1:
             raise ValueError(f"{name} must be a positive integer")
+    if type(config.reanalyze_existing_versions) is not bool:
+        raise ValueError("reanalyze_existing_versions must be a boolean")
     decomposer = decomposer or ConservativeDecomposer()
     materials = {}
     eligible = {}
@@ -525,6 +529,7 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
     analysis_resolution_epochs = {}
     history = []
     verifications = []
+    verified_version_ids = set()
     operations = []
     observations = []
     current_round_returns = []
@@ -569,6 +574,7 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
             "gaps": [asdict(item) for item in gaps.values()],
             "gap_registry": [asdict(item) for item in gap_registry.values()],
             "verification_history": deepcopy(verifications), "usage": dict(usage),
+            "verified_version_ids": sorted(verified_version_ids),
             "current_round_returns": deepcopy(current_round_returns),
             "retrieval_feedback": deepcopy(canonical_retrieval_feedback()),
             "assessments": deepcopy(assessments),
@@ -969,20 +975,37 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
             was_eligible = material.version_id in eligible
             try:
                 # Nothing may enter the graph or verifier before this call.
-                pending = list(analyze(material, reasons, duplicate,
-                                       current_return=return_record))
-                # New upstream snapshots can invalidate an old 'not yet seen'
-                # interpretation even if the semantic plugin forgot to request
-                # reanalysis. Schedule psi; never silently promote the edge.
+                if duplicate and not config.reanalyze_existing_versions:
+                    # Identity and eligibility were checked before this branch.
+                    # Reuse is not a new analysis or an evidence resolution.
+                    pending = []
+                    event("decomposition_reused", version_id=material.version_id,
+                          reason="unchanged_immutable_version", sha256=fingerprint)
+                else:
+                    pending = list(analyze(material, reasons, duplicate,
+                                           current_return=return_record))
+                if not config.reanalyze_existing_versions:
+                    for version_id in pending:
+                        event("reanalysis_skipped", version_id=version_id,
+                              reason="unchanged_immutable_version", trigger="model_request")
+                    pending = []
+                # Legacy mode schedules reanalysis of an old unavailable-source
+                # interpretation. Incremental mode requires the new analysis
+                # to provide the explicit edge; neither mode promotes it here.
                 if not reasons and not was_eligible:
                     for edge in relations.values():
                         if (edge.from_version != material.version_id and edge.from_version in eligible
                                 and edge.to_version is None
                                 and edge.upstream_locator in {material.url, material.version_id}
                                 and edge.from_version not in pending):
-                            pending.append(edge.from_version)
-                            event("upstream_arrival_reanalysis", version_id=edge.from_version,
-                                  upstream_version=material.version_id, relation_id=edge.id)
+                            if config.reanalyze_existing_versions:
+                                pending.append(edge.from_version)
+                                event("upstream_arrival_reanalysis", version_id=edge.from_version,
+                                      upstream_version=material.version_id, relation_id=edge.id)
+                            else:
+                                event("reanalysis_skipped", version_id=edge.from_version,
+                                      reason="unchanged_immutable_version", trigger="upstream_arrival",
+                                      upstream_version=material.version_id, relation_id=edge.id)
                 visited = {material.version_id}
                 while pending:
                     version_id = pending.pop(0)
@@ -1079,7 +1102,10 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
             fail("provider", exc)
             break
         current_verifier_input = verification_input_fingerprint() if eligible else None
-        if verifier is not None and eligible and current_verifier_input != last_verified_input:
+        fresh_verifier_evidence = (config.reanalyze_existing_versions
+                                   or last_verified_input is None or new_eligible > 0)
+        if (verifier is not None and eligible and fresh_verifier_evidence
+                and current_verifier_input != last_verified_input):
             usage["verification_calls"] += 1
             event("verification_started")
             try:
@@ -1152,6 +1178,7 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
             gap_owners.clear()
             gap_owners.update(candidate_owners)
             verifications.append({"round": round_number, **asdict(check)})
+            verified_version_ids.update(eligible)
             verification_gaps.clear()
             verification_gaps.update(candidate_verification_gaps)
             verification_gap_epochs.clear()
@@ -1175,7 +1202,8 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
                 event("assessment_changed", previous=previous_assessments, current=deepcopy(assessments),
                       basis=[asdict(s) for s in check.basis], world_basis=[asdict(s) for s in check.world_basis])
         elif verifier is not None and eligible:
-            event("verification_skipped", reason="unchanged_semantic_input")
+            event("verification_skipped", reason=("unchanged_semantic_input"
+                  if fresh_verifier_evidence else "unchanged_source_versions"))
         # Compare the frozen issue set with the post-verification active set.
         # New branches and provider-local budget deferrals are pending work,
         # even when this round returned no new eligible version.

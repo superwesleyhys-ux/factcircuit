@@ -33,7 +33,7 @@ Select no more than max_urls, the remaining source-fetch allowance in the packet
 """
 ORIGIN_SCOPE = (
     "Origins require model-assessed original material and a direct source path, "
-    "with exact source quotations and observed destination links checked by the harness. This is not independent "
+    "with exact source quotations and observed links or separately validated bibliographic citations checked by the harness. This is not independent "
     "semantic authentication, proof of earliest publication, or proof of truth."
 )
 RESEARCH_ADVICE_LIMIT = 6000
@@ -106,6 +106,43 @@ class _SnapshotCollector:
         return list(self.documents.values())[:limit]
 
 
+class _HistoricalCollectorGuard:
+    """Reject ineligible injected documents before any research-stage exposure."""
+    def __init__(self, collector, cutoff):
+        self.collector, self.cutoff = collector, _time(cutoff, "as_of")
+        self.rejected = set()
+
+    def __getattr__(self, name):
+        return getattr(self.collector, name)
+
+    def _admit(self, document):
+        if document is None:
+            return None
+        material = document.to_material("archive-admission")
+        reasons = _material_eligibility(material, self.cutoff)
+        if reasons:
+            if document.url not in self.rejected:
+                self.rejected.add(document.url)
+                self.collector.errors.append({"operation": "archive_admission", "url": document.url,
+                                              "code": "ineligible_historical_version", "reasons": reasons})
+            return None
+        return document
+
+    @property
+    def documents(self):
+        return {key: doc for key, doc in self.collector.documents.items() if self._admit(doc) is not None}
+
+    @property
+    def evidence_documents(self):
+        return list(self.documents.values())
+
+    def fetch(self, url):
+        return self._admit(self.collector.fetch(url))
+
+    def search(self, query, limit=3):
+        return [doc for doc in self.collector.search(query, limit) if self._admit(doc) is not None]
+
+
 def _research_advice(analysis, materials):
     """Bounded proposals only; this does not construct or admit evidence."""
     analysis = analysis if isinstance(analysis, dict) else {}
@@ -154,8 +191,9 @@ def _research_advice(analysis, materials):
 
 class _ResearchAdviceTransport:
     """Add advice before the shared transport records each actual request."""
-    def __init__(self, transport, advice):
+    def __init__(self, transport, advice, citation_resolutions=()):
         self.transport, self.advice = transport, deepcopy(advice)
+        self.citation_resolutions = deepcopy(list(citation_resolutions))
         self.kind, self.model = transport.kind, transport.model
         self.reasoning_effort = transport.reasoning_effort
 
@@ -167,6 +205,29 @@ class _ResearchAdviceTransport:
         if stage in {"decompose", "select", "verify"}:
             packet = {**packet, "research_advice": deepcopy(self.advice)}
             instructions += "\n" + RESEARCH_ADVICE_RULE
+            context = packet.get("context", {})
+            available = {m["version_id"] for m in context.get("materials", [])}
+            # Incremental packets retain prior admitted versions as metadata.
+            # A catalog entry alone still cannot admit a bibliography endpoint.
+            available.update(m["version_id"] for m in context.get("prior_materials", [])
+                             if m["version_id"] in context.get("analyses", {}))
+            if "material" in packet:
+                available.add(packet["material"]["version_id"])
+            resolutions = [r for r in self.citation_resolutions
+                           if {r["source_version_id"], r["target_version_id"]} <= available]
+            if resolutions:
+                packet["citation_resolutions"] = deepcopy(resolutions)
+                instructions += """
+The citation_resolutions field describes separately recorded bibliographic
+identity matches between retrieved versions. These are locator resolutions,
+not hyperlinks, truth assessments, or automatic provenance findings. Check the
+exact citation context in the downstream material and the identity and content
+of the retrieved study. A bibliography can explicitly cite a study without a
+hyperlink. Emit a direct cites relation only if those canonical texts establish
+actual source use, with exact quotations from both versions. Never cite modern
+index metadata as historical evidence, or confuse a study's references or
+recommendation cards with the study's own findings. Preserve unresolved links.
+"""
         return self.transport.generate(stage, instructions, packet, schema)
 
 
@@ -253,7 +314,82 @@ def _observed_links(materials, collector):
     return observed
 
 
-def _located_origins(claim, observed=None):
+def _resolved_citations(materials, collector, cutoff):
+    """Admit explicit adapter receipts, never model-supplied citation guesses.
+
+    Original documents and hyperlink catalogs remain unchanged. The injected
+    collector owns discovery and identity verification; this boundary rechecks
+    the exact admitted versions and retains only their original quotations.
+    """
+    receipts = getattr(collector, "bibliographic_bindings", [])
+    if not isinstance(receipts, list) or len(receipts) > 20:
+        raise ValueError("Invalid bibliographic binding receipts")
+    by_url = {url_key(m.url): m for m in materials}
+    documents = {url_key(d.url): d for d in collector.documents.values()}
+    admitted = []
+    required_checks = {"source_citation_context_bound", "source_version_unchanged",
+        "archive_cutoff_and_identity", "selected_publisher_url", "page_title_matches",
+        "identity_in_front_matter", "source_topics_in_primary", "primary_body_present"}
+
+    def normalized(text):
+        return " ".join(re.findall(r"\w+", text.casefold()))
+
+    for receipt in receipts:
+        if not isinstance(receipt, dict) or receipt.get("valid") is not True or receipt.get("edge_kind") != "resolved_citation":
+            raise ValueError("Unverified bibliographic binding")
+        checks = receipt.get("checks", {})
+        if not isinstance(checks, dict) or not all(checks.get(k) is True for k in required_checks):
+            raise ValueError("Incomplete bibliographic identity checks")
+        if _time(receipt.get("cutoff"), "citation cutoff") != _time(cutoff, "as_of"):
+            raise ValueError("Bibliographic cutoff mismatch")
+        endpoints = []
+        for side in ("source", "target"):
+            material = by_url.get(url_key(receipt.get(side + "_url")))
+            if material is None or _material_eligibility(material, _time(cutoff, "as_of")):
+                raise ValueError("Bibliographic endpoint not admitted")
+            if hashlib.sha256(material.content.encode()).hexdigest() != receipt.get(side + "_text_sha256"):
+                raise ValueError("Bibliographic endpoint content changed")
+            quotes = receipt.get(side + "_quotes")
+            if not isinstance(quotes, (list, tuple)) or not 1 <= len(quotes) <= 8 or any(
+                not isinstance(q, str) or not q.strip() or len(q) > 6000 or q not in material.content for q in quotes):
+                raise ValueError("Bibliographic quotation not in admitted evidence")
+            endpoints.append(material)
+        source, target = endpoints
+        identity = receipt.get("identity", {})
+        title, doi, journal = (identity.get(k) for k in ("title", "doi", "journal"))
+        if any(not isinstance(v, str) or not v.strip() for v in (title, doi, journal)):
+            raise ValueError("Missing bibliographic identity")
+        doi_pattern = r"(?<![\w/])" + re.escape(doi) + r"(?![\w./:;()-])"
+        if not re.fullmatch(r"10\.\d{4,9}/\S+", doi) or not re.search(doi_pattern, target.content[:24000], re.I):
+            raise ValueError("Bibliographic DOI does not match the complete identifier")
+        target_doc = documents[url_key(target.url)]
+        if normalized(title) not in normalized(target_doc.title) or any(
+                normalized(v) not in normalized(target.content[:24000]) for v in (title, doi, journal)):
+            raise ValueError("Bibliographic identity is not the retrieved article")
+        target_quotes = "\n".join(receipt["target_quotes"])
+        if any(normalized(v) not in normalized(target_quotes) for v in (title, doi, journal)):
+            raise ValueError("Bibliographic proof lacks primary identity anchors")
+        if not re.search(doi_pattern, target_quotes, re.I):
+            raise ValueError("Bibliographic proof lacks the exact DOI identifier")
+        source_quotes = "\n".join(receipt["source_quotes"])
+        authors = identity.get("authors", [])
+        if not isinstance(authors, (list, tuple)) or not any(
+            isinstance(a, str) and len(a.split()) >= 2 and normalized(a) in normalized(source_quotes)
+            and normalized(a) in normalized(target.content[:24000])
+            and normalized(a) in normalized(target_quotes) for a in authors):
+            raise ValueError("Bibliographic author not bound to both versions")
+        if normalized(journal) not in normalized(source_quotes) or not re.search(
+            r"\b(study|published|paper|research|report|article)\b", source_quotes, re.I):
+            raise ValueError("Source quotation lacks bibliographic citation context")
+        admitted.append({"edge_kind": "resolved_citation", "source_version_id": source.version_id,
+            "target_version_id": target.version_id, "source_url": source.url, "target_url": target.url,
+            "source_quotes": list(receipt["source_quotes"]), "target_quotes": list(receipt["target_quotes"]),
+            "receipt_id": receipt.get("receipt_id"),
+            "scope": "Identity resolution only; direct citation and originality still require native evidence checks."})
+    return admitted
+
+
+def _located_origins(claim, observed=None, citation_resolutions=()):
     trace = claim.get("trace") or {}
     if trace.get("provenance_status") != "original_material_located" or trace.get("errors"):
         return []
@@ -261,6 +397,25 @@ def _located_origins(claim, observed=None):
     reachable = set()
     lineage = {"cites", "quotes", "reprints", "translates", "derives"}
     materials = {m["version_id"]: m for m in trace.get("materials", [])}
+    citation_pairs = {(r["source_version_id"], r["target_version_id"])
+                      for r in citation_resolutions}
+
+    def admitted(relation):
+        if observed is None or url_key(materials.get(relation["to_version"], {}).get("url")) in observed.get(relation["from_version"], set()):
+            return True
+        # A resolved bibliography remains distinct from an observed hyperlink.
+        # Native evidence must quote both endpoints, not just repeat metadata.
+        quoted_versions = set()
+        for span in relation.get("basis", []):
+            version_id = span.get("version_id")
+            content = materials.get(version_id, {}).get("content", "")
+            start, end, quote = span.get("start"), span.get("end"), span.get("quote")
+            if (type(start) is int and type(end) is int and 0 <= start < end <= len(content)
+                and isinstance(quote, str) and quote.strip() and content[start:end] == quote):
+                quoted_versions.add(version_id)
+        return (relation["kind"] == "cites"
+                and (relation["from_version"], relation["to_version"]) in citation_pairs
+                and {relation["from_version"], relation["to_version"]} <= quoted_versions)
     while pending:
         version = pending.pop()
         if version is None or version in reachable:
@@ -268,7 +423,7 @@ def _located_origins(claim, observed=None):
         reachable.add(version)
         pending.extend(r["to_version"] for r in trace.get("relations", [])
                        if r["from_version"] == version and r["status"] == "direct" and r["kind"] in lineage
-                       and (observed is None or url_key(materials.get(r["to_version"], {}).get("url")) in observed.get(version, set())))
+                       and admitted(r))
     return [{"url": materials[o["version_id"]]["url"], "version_id": o["version_id"],
              "claim_ids": [claim["id"]], "material_kind": o["material_kind"]}
             for o in trace.get("origins", []) if o["version_id"] in reachable and o["version_id"] in materials]
@@ -311,13 +466,20 @@ def _run_item(entry, config, bounded, collector_factory):
         if entry.get("url"):
             input_doc = collector.fetch(entry["url"])
     else:
-        if entry.get("as_of") is not None:
+        if entry.get("as_of") is not None and collector_factory is None:
             raise ValueError("A historical as_of requires supplied dated materials; current web pages cannot be backdated.")
         collector = (collector_factory or NewsSourceCollector)(max_documents=config["max_documents"],
             max_searches=config["max_searches"], timeout=config["fetch_timeout"])
+        if entry.get("as_of") is not None:
+            # An explicitly injected archive adapter owns historical network I/O.
+            # Ordinary live collectors cannot opt in by publication metadata.
+            archive_cutoff = getattr(collector, "historical_cutoff", None)
+            if archive_cutoff is None or _time(archive_cutoff, "historical_cutoff") != _time(entry["as_of"], "as_of"):
+                raise ValueError("Historical retrieval requires an archive collector bound to the exact cutoff.")
+            collector = _HistoricalCollectorGuard(collector, entry["as_of"])
         if entry.get("url"):
             input_doc = collector.fetch(entry["url"])
-    client = TracingClient(bounded, collector)
+    client = TracingClient(bounded, collector, config["research_evidence_max_chars"])
     agent = NewsTracingAgent(llm=client, max_depth=config["depth"], max_queries=config["max_queries"],
                              research_mode=config["research_mode"])
     # Follow the supplied article first so background research cannot consume
@@ -350,11 +512,14 @@ def _run_item(entry, config, bounded, collector_factory):
     else:
         materials = [doc.to_material("news-" + hashlib.sha256(doc.url.encode()).hexdigest()[:16])
                      for doc in collector.documents.values()]
-        cutoff = _now()  # Current versions were all observed before this fixed cutoff.
-        exclusions = {}
+        cutoff = entry.get("as_of") or _now()
+        exclusions = {m.version_id: reasons for m in materials
+                      if (reasons := _material_eligibility(m, _time(cutoff, "as_of")))}
+        materials = [m for m in materials if m.version_id not in exclusions]
     by_id = {m.version_id: m for m in materials}
     research_advice = _research_advice(analysis, materials)
-    formal_transport = _ResearchAdviceTransport(bounded, research_advice)
+    citation_resolutions = _resolved_citations(materials, collector, cutoff)
+    formal_transport = _ResearchAdviceTransport(bounded, research_advice, citation_resolutions)
     observed = _observed_links(materials, collector)
     start = entry.get("source_version_id")
     if start is not None and start not in by_id:
@@ -386,10 +551,10 @@ def _run_item(entry, config, bounded, collector_factory):
             if not claim["errors"]:
                 claim["fact_status"] = trace["fact_status"]
                 claim["provenance_status"] = trace["provenance_status"]
-                claim["located_sources"] = _located_origins(claim, observed)
+                claim["located_sources"] = _located_origins(claim, observed, citation_resolutions)
                 if trace["provenance_status"] == "original_material_located" and not claim["located_sources"]:
                     claim["provenance_status"] = "unresolved"
-                    claim["origin_link_gap"] = "The proposed origin path is not bound to destination URLs observed in source text or links."
+                    claim["origin_link_gap"] = "The proposed origin path lacks observed links or validated bibliographic citations with native evidence from both versions."
         except Exception as exc:
             claim["errors"].append(_error("claim_trace", exc))
     errors.extend({**err, "claim_id": claim["id"]} for claim in claims for err in claim["errors"])
@@ -400,7 +565,8 @@ def _run_item(entry, config, bounded, collector_factory):
     completed = sum(c["trace"] is not None and not c["errors"] for c in claims)
     return {"id": identifier, "text": text, "input_url": entry.get("url"),
         "status": "completed" if completed == len(claims) and not errors else ("partial" if completed else "failed"),
-        "as_of": cutoff, "mode": "historical_snapshots" if offline else "live_collection",
+        "as_of": cutoff, "mode": ("historical_snapshots" if offline else
+            "live_archive_collection" if entry.get("as_of") else "live_collection"),
         "analysis": {"model_generated_proposals": True, "establishes_truth_or_origin": False, "report": analysis},
         "research_advice": research_advice,
         "claims": claims, "unassessed_claims": omitted, "origin_summary": _origin_summary(claims, followed),
@@ -410,7 +576,8 @@ def _run_item(entry, config, bounded, collector_factory):
             "model_io": bounded.model_io, "blocked_calls": bounded.blocked_calls,
             "source_requests": collector.requests, "source_errors": collector.errors,
             "unfetched_source_proposals": client.rejected_sources,
-            "pool_exclusions": exclusions, "followed_origin_links": followed}}
+            "pool_exclusions": exclusions, "followed_origin_links": followed,
+            "citation_resolutions": citation_resolutions}}
 
 
 def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=None,
@@ -424,13 +591,16 @@ def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=No
         raise ValueError("A batch supports at most 20 news items")
     config = {"depth": 1, "max_queries": 2, "max_claims": 3, "max_documents": 8,
               "max_searches": 3, "max_origin_depth": 2, "max_origin_calls": 10, "fetch_timeout": 15,
-              "research_mode": "full"}
+              "research_mode": "full", "research_evidence_max_chars": 240000}
     supplied = payload.get("config") or {}
     if not isinstance(supplied, dict) or set(supplied) - set(config):
         raise ValueError("Unknown news tracing configuration")
     config.update(supplied)
     if not isinstance(config["research_mode"], str) or config["research_mode"] not in {"full", "claim"}:
         raise ValueError("research_mode must be full or claim")
+    value = config["research_evidence_max_chars"]
+    if isinstance(value, bool) or not isinstance(value, int) or not 0 < value <= 1_000_000:
+        raise ValueError("research_evidence_max_chars must be between 1 and 1000000")
     for key, maximum in (("depth", 3), ("max_queries", 3), ("max_claims", 5), ("max_documents", 20),
                          ("max_searches", 8), ("max_origin_depth", 5), ("max_origin_calls", 30), ("fetch_timeout", 60)):
         _integer(config[key], key, maximum)

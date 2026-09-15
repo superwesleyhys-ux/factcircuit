@@ -1,0 +1,45 @@
+{
+  "scope": "Consolidated post-run independent source and exact-request audit of the two registered development cases. No model calls or replacement predictions.",
+  "frozen_commit": "21b31f027e1c47fd28c25b9568c949dc40f93312",
+  "registered_files_verified": 72,
+  "independent_harness_source_successes": 2,
+  "harness_cases": 2,
+  "dedup_passed_cases": 2,
+  "source_audit_definition": "Complete correctly identified archived original study actually fetched; final chain supported by observed links or separately validated bibliography; native admitted endpoints and exact bases; all source gaps have preserved lifecycle and explicit valid resolutions; no native errors.",
+  "cases": {
+    "a701": {
+      "independent_source_trace_success": true,
+      "source_audit": "A701_SOURCE_AUDIT.json",
+      "source_audit_sha256": "605eb014933e484a2a0abdb53c8ec5fa54d937a6d6aabcb32dc1f1535dc7b8c2",
+      "receipt_audit": "A701_RECEIPT_AUDIT.json",
+      "native_full_text_once_per_stage": true
+    },
+    "a702": {
+      "independent_source_trace_success": true,
+      "source_audit": "A702_SOURCE_AUDIT.json",
+      "source_audit_sha256": "d5ed96e285a1bff8c6f68d606a44df81f0ff3b847eaaa65482e893580e968612",
+      "receipt_audit": "A702_RECEIPT_AUDIT.json",
+      "native_full_text_once_per_stage": true
+    }
+  },
+  "model_attempts": 46,
+  "successful_model_attempts": 46,
+  "unknown_usage_attempts": 0,
+  "total_input_output_tokens": 3625131,
+  "source_request_failures": {
+    "a701-direct": [
+      "archive_index_unavailable on an ancillary 2023 correction",
+      "archive_http_timeout on an external supplement"
+    ],
+    "scope": "Primary study traces passed; optional attachment retrieval is not claimed complete."
+  },
+  "no_same_evidence_or_general_accuracy_advantage_established": true,
+  "model_training_memory_not_removed": true,
+  "readme_and_result_scope": "Repeated two-case source-tracing development test, not general news accuracy or independent scientific authentication.",
+  "direct_original_study_and_final_chain_audit": {
+    "passed_cases": 2,
+    "checks_passed": 64,
+    "file": "DIRECT_SOURCE_AUDIT.json",
+    "native_joint_success": null
+  }
+}

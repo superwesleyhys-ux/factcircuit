@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "scope": "path-only public export",
+  "source_directory": "<live-origin-v11-20260914-source>",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "source_sha256": "97c4a3737ffa97693539d74816a4e22414a77dd0721a30a7f3cf7d4fd5c109ef",
+      "public_sha256": "a869251656601818cd2a2405df1b80c02a7829fc549a16fccc5761503cd3f0e6"
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "4cdb3198d9bc7cf4ee52897a5773fffd040fcf375a5641cd47526275f97f6eee",
+      "public_sha256": "ead8d240d5214834a61382cbdaaff7b78be38029e248c3b0d5fd8e385d7bc4cf"
+    },
+    {
+      "path": "RECEIPTS.json",
+      "source_sha256": "6d5ff39599a181d412732d16f875b349c563cb1f6baec2fe53ab0c23b7dab483",
+      "public_sha256": "6d5ff39599a181d412732d16f875b349c563cb1f6baec2fe53ab0c23b7dab483"
+    },
+    {
+      "path": "RESULTS.json",
+      "source_sha256": "cd562f1ac3e32d0741765a391668569342b9f78f5754cd6ba13daeae9712bab7",
+      "public_sha256": "cd562f1ac3e32d0741765a391668569342b9f78f5754cd6ba13daeae9712bab7"
+    },
+    {
+      "path": "STAGE_TOKENS.json",
+      "source_sha256": "00dd644a1aeb2169498f801cbd83f446a14ac9b8dda56ceca943cb5ca9f88b2a",
+      "public_sha256": "00dd644a1aeb2169498f801cbd83f446a14ac9b8dda56ceca943cb5ca9f88b2a"
+    },
+    {
+      "path": "SUMMARY.json",
+      "source_sha256": "53c9027df62122447f9f7cf16386694e40342c60023425d501c8cc4175d47bbf",
+      "public_sha256": "53c9027df62122447f9f7cf16386694e40342c60023425d501c8cc4175d47bbf"
+    },
+    {
+      "path": "TOKEN_AUDIT.json",
+      "source_sha256": "65c9ce8bef151133f82244e02e08e6416ba43663a967795a4e1a1e32fd6aaa9a",
+      "public_sha256": "18e64ea870f2bbcedfd9dd9360f8a10572002db5d93521254c8c4eb957fbf48f"
+    }
+  ],
+  "redactions": [
+    {
+      "file": "AUDIT.json",
+      "kind": "path-only"
+    },
+    {
+      "file": "TOKEN_AUDIT.json",
+      "kind": "path-only"
+    }
+  ],
+  "non_path_changes": [
+    {
+      "file": "README.md",
+      "kind": "broken experiment links converted to plain local-source notes"
+    }
+  ]
+}

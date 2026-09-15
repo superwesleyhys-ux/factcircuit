@@ -12,7 +12,27 @@ Version 0.2.0: a bounded, auditable news provenance loop with **decomposition on
 
 Repository Discussions are enabled, and the repository includes a prepared **Accuracy decline** reporting form for reproducible metric regressions or weaker trace outcomes. Reports should identify the affected metric or behavior, include the run configuration, and avoid treating synthetic fixtures as real-world performance evidence.
 
-## Latest Astra test: new data, same evidence, tie
+## Latest live source-tracing test: two audited chains
+
+The September 14 V12 development run started from two raw news articles and
+actually retrieved archived sources available by December 31, 2024. Both direct
+Astra and the harness fetched both target original papers. Independent audits
+confirmed **2/2 native harness source chains**, with **no repeated full-text
+review within either native decomposition or native verification**.
+
+All **46 real Astra calls succeeded**. Direct Astra used **896,837 tokens**;
+the harness used **2,728,294**. Their withdrawal-risk categories matched. This
+is a source-tracing and bookkeeping result on two repeatedly used development
+cases; it does **not** establish better fake-news detection accuracy. Other
+research stages still read source text, and two ancillary downloads in the
+direct arm failed.
+
+See the [complete V12 report, per-case evidence audits, token receipts and prior
+failed rounds](reports/live-origin-v12-20260914/README.md). The new incremental
+double-loop behavior preserves prior findings and unresolved gaps while
+requiring explicit evidence for each new source relation.
+
+## Earlier same-evidence Astra test (v6): tie
 
 On **September 14, 2026**, v6 tested eight new anonymized research papers
 published before 2024. Both arms received exactly the same three text summaries

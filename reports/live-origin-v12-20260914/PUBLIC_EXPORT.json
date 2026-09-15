@@ -1,0 +1,96 @@
+{
+  "scope": "Path-only export of completed V12 evidence and receipt audits; authored README and consolidated AUDIT are separate derived documents. Raw sources, prompts and CLI output are not published.",
+  "files": [
+    {
+      "path": "A701_SOURCE_AUDIT.json",
+      "source": "independent-audit/a701-source",
+      "source_sha256": "5942030ef87cfe682cedb2e0d9172061ffa341257e4bde84b9275ad3642a0c36",
+      "public_sha256": "605eb014933e484a2a0abdb53c8ec5fa54d937a6d6aabcb32dc1f1535dc7b8c2",
+      "path_redacted": true
+    },
+    {
+      "path": "A702_SOURCE_AUDIT.json",
+      "source": "independent-audit/a702-source",
+      "source_sha256": "79ad9023c4c18bc1285f0cadd5d8631a25eb78bfb47d5d475127f98cecd94925",
+      "public_sha256": "d5ed96e285a1bff8c6f68d606a44df81f0ff3b847eaaa65482e893580e968612",
+      "path_redacted": true
+    },
+    {
+      "path": "A701_RECEIPT_AUDIT.json",
+      "source": "independent-audit/a701-receipt",
+      "source_sha256": "4e6686480ca5e93c8359f2de6f62d74f94ea987dc49fec8f2efedef13035c452",
+      "public_sha256": "4e6686480ca5e93c8359f2de6f62d74f94ea987dc49fec8f2efedef13035c452",
+      "path_redacted": false
+    },
+    {
+      "path": "A702_RECEIPT_AUDIT.json",
+      "source": "independent-audit/a702-receipt",
+      "source_sha256": "a422c9df290b0caa18e3126a05cf134d195bfa64488904eff6a4dc898c501ce0",
+      "public_sha256": "a422c9df290b0caa18e3126a05cf134d195bfa64488904eff6a4dc898c501ce0",
+      "path_redacted": false
+    },
+    {
+      "path": "COMPLETE_RECEIPT_AUDIT.json",
+      "source": "independent-audit/complete-receipt",
+      "source_sha256": "f982195662f2c950ab4e93dded33a9a169aa18eb36d81133cd38bdc63320d710",
+      "public_sha256": "f982195662f2c950ab4e93dded33a9a169aa18eb36d81133cd38bdc63320d710",
+      "path_redacted": false
+    },
+    {
+      "path": "RUN_MANIFEST.json",
+      "source": "private-run-01/manifest.json",
+      "source_sha256": "0a3e18495ad136dafa1f846f69dc44f16bc83ccb614dcda79bf1d1605b5e1850",
+      "public_sha256": "0a3e18495ad136dafa1f846f69dc44f16bc83ccb614dcda79bf1d1605b5e1850",
+      "path_redacted": false
+    },
+    {
+      "path": "RUN_COMPLETION.json",
+      "source": "private-run-01/COMPLETED.json",
+      "source_sha256": "88127fd36a65bb69f69b5f5d6ce90c544dbc0f1ce11df40a235905b3d8938c7b",
+      "public_sha256": "88127fd36a65bb69f69b5f5d6ce90c544dbc0f1ce11df40a235905b3d8938c7b",
+      "path_redacted": false
+    },
+    {
+      "path": "RESULTS.json",
+      "source": "mechanical-audit/RESULTS.json",
+      "source_sha256": "04055718fdd0f247a37c3860c6748b3736341e8c19a322f01dec8bfec2cf027c",
+      "public_sha256": "04055718fdd0f247a37c3860c6748b3736341e8c19a322f01dec8bfec2cf027c",
+      "path_redacted": false
+    },
+    {
+      "path": "SUMMARY.json",
+      "source": "mechanical-audit/SUMMARY.json",
+      "source_sha256": "b0656ed86d97e8be8f65de4895db169b80a04bbb3e86926f63124e2018782247",
+      "public_sha256": "b0656ed86d97e8be8f65de4895db169b80a04bbb3e86926f63124e2018782247",
+      "path_redacted": false
+    },
+    {
+      "path": "STAGE_TOKENS.json",
+      "source": "mechanical-audit/STAGE_TOKENS.json",
+      "source_sha256": "2aee078de31caa8d0a780ba8c213da61ef12724e193c60163ee216795fc6abe5",
+      "public_sha256": "2aee078de31caa8d0a780ba8c213da61ef12724e193c60163ee216795fc6abe5",
+      "path_redacted": false
+    },
+    {
+      "path": "RECEIPTS.json",
+      "source": "mechanical-audit/RECEIPTS.json",
+      "source_sha256": "9f58912e25a3ecccc25ce5c16a62deda630ef346f5b1ad6f941217aad28e49b2",
+      "public_sha256": "9f58912e25a3ecccc25ce5c16a62deda630ef346f5b1ad6f941217aad28e49b2",
+      "path_redacted": false
+    },
+    {
+      "path": "DEDUP_AUDIT.json",
+      "source": "mechanical-audit/DEDUP_AUDIT.json",
+      "source_sha256": "bd43318ec0cce029989b50ca387e5ef394a7653110ff8c77596aefeccc9f8088",
+      "public_sha256": "bd43318ec0cce029989b50ca387e5ef394a7653110ff8c77596aefeccc9f8088",
+      "path_redacted": false
+    },
+    {
+      "path": "DIRECT_SOURCE_AUDIT.json",
+      "source": "independent-audit/direct-source",
+      "source_sha256": "66ae58102c49ba09fd4cc9a52d4f49d49630b0dac8f33d763a42aa8c7ee48385",
+      "public_sha256": "208476bb235d4bd5bb6c75fd04a22278c68762fc3b99df037294e3f7f019f4c2",
+      "path_redacted": true
+    }
+  ]
+}

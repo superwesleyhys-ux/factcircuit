@@ -295,6 +295,72 @@ class TunnelTests(unittest.TestCase):
         self.assert_safe_failure(LocalTunnel("model"), "did not complete successfully")
         self.connection.assert_not_called()
 
+    def test_local_timeout_preserves_private_partial_stream_and_exact_input(self):
+        with tempfile.TemporaryDirectory() as directory:
+            partial = b'{"type":"error","message":"network unavailable"}\n'
+            def timeout(command, **kwargs):
+                self.local_kwargs = kwargs
+                raise subprocess.TimeoutExpired(command, 1, output=partial, stderr=b'waiting for network')
+            self.process.side_effect = timeout
+            tunnel = LocalTunnel("model", diagnostic_directory=directory)
+            self.assert_safe_failure(tunnel, "timed out")
+            request_path, = Path(directory).glob("*.request.json")
+            request = json.loads(request_path.read_text())
+            self.assertEqual(self.local_kwargs["input"], request["stdin"])
+            self.assertEqual(SCHEMA, request["schema"])
+            self.assertEqual(tunnel.calls[0]["input_sha256"], request["stdin_sha256"])
+            self.assertEqual(0o600, request_path.stat().st_mode & 0o777)
+            stdout, = Path(directory).glob("*.stdout")
+            stderr, = Path(directory).glob("*.stderr")
+            self.assertEqual(partial, stdout.read_bytes())
+            self.assertEqual("waiting for network", stderr.read_text())
+            self.assertIsNone(tunnel.calls[0]["usage"])
+            self.assertNotIn(PACKET["content"], json.dumps(tunnel.calls))
+
+    def test_timeout_receipts_preserve_incomplete_utf8_bytes_exactly(self):
+        with tempfile.TemporaryDirectory() as directory:
+            partial = b'{"incomplete": "' + bytes.fromhex("e282")
+            invalid = bytes.fromhex("ff")
+            self.process.side_effect = subprocess.TimeoutExpired("mock", 1, output=partial, stderr=invalid)
+            tunnel = LocalTunnel("model", diagnostic_directory=directory)
+            self.assert_safe_failure(tunnel, "timed out")
+            stdout, = Path(directory).glob("*.stdout")
+            stderr, = Path(directory).glob("*.stderr")
+            self.assertEqual(partial, stdout.read_bytes())
+            self.assertEqual(invalid, stderr.read_bytes())
+
+    def test_local_success_exact_input_receipt_survives_later_packet_mutation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.local_run()
+            tunnel = LocalTunnel("model", diagnostic_directory=directory)
+            packet = {"nested": {"value": "initial"}}
+            tunnel.generate("stage", "instruction", packet, SCHEMA)
+            packet["nested"]["value"] = "later"
+            request_path, = Path(directory).glob("*.request.json")
+            request = json.loads(request_path.read_text())
+            self.assertEqual(self.local_kwargs["input"], request["stdin"])
+            self.assertIn('"value": "initial"', request["stdin"])
+            self.assertNotIn('"value": "later"', request["stdin"])
+
+    def test_local_opt_in_diagnostics_preserve_failed_event_stream(self):
+        self.local_run(events=[{"type": "turn.completed"}, {"type": "error", "message": SECRET}],
+                       stderr=SECRET)
+        with tempfile.TemporaryDirectory() as directory:
+            tunnel = LocalTunnel("model", diagnostic_directory=directory)
+            self.assert_safe_failure(tunnel)
+            files = sorted(Path(directory).iterdir())
+            self.assertEqual({p.suffix for p in files}, {".stdout", ".stderr", ".json"})
+            self.assertIn("error", next(Path(directory).glob("*.stdout")).read_text())
+            self.assertIn(SECRET, files[0].read_text() + files[1].read_text())
+            self.assertTrue(all((p.stat().st_mode & 0o777) == 0o600 for p in files))
+
+    def test_local_opt_in_diagnostics_preserve_ordinary_success(self):
+        self.local_run()
+        with tempfile.TemporaryDirectory() as directory:
+            tunnel = LocalTunnel("model", diagnostic_directory=directory)
+            self.assertEqual(self.generate(tunnel), ANSWER)
+            self.assertEqual({p.suffix for p in Path(directory).iterdir()}, {".stdout", ".stderr", ".json"})
+
     def test_local_rejects_missing_duplicate_and_failed_turns(self):
         for events in ([], [{"type": "turn.completed"}, {"type": "turn.completed"}],
                        [{"type": "turn.failed", "error": SECRET}],

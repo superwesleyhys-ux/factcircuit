@@ -1,0 +1,1508 @@
+{
+  "scope": "Completed V12 a702-harness only; no future-label inspection",
+  "status": "completed",
+  "call_count": 20,
+  "all_attempts_known_usage": true,
+  "total_input_output": 1126333,
+  "native_total_input_output": 241969,
+  "per_call": [
+    {
+      "index": 1,
+      "stage": "harness_retrieval_decision",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 24623,
+        "cached_input_tokens": 7552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 142,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 24623,
+        "cached_input_tokens": 7552,
+        "output_tokens": 142,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 24765
+    },
+    {
+      "index": 2,
+      "stage": "harness_retrieval_decision",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 32007,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 359,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 32007,
+        "cached_input_tokens": 0,
+        "output_tokens": 359,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 32366
+    },
+    {
+      "index": 3,
+      "stage": "harness_bibliography_choice",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 9482,
+        "cached_input_tokens": 7552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 83,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 9482,
+        "cached_input_tokens": 7552,
+        "output_tokens": 83,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 9565
+    },
+    {
+      "index": 4,
+      "stage": "harness_retrieval_decision",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 129071,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 129071,
+        "cached_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 129203
+    },
+    {
+      "index": 5,
+      "stage": "deconstruct",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 84745,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 84745,
+        "cached_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 85172
+    },
+    {
+      "index": 6,
+      "stage": "search_plan",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 78866,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 109,
+        "reasoning_output_tokens": 11
+      },
+      "saved_usage": {
+        "input_tokens": 78866,
+        "cached_input_tokens": 0,
+        "output_tokens": 109,
+        "reasoning_output_tokens": 11
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 78975
+    },
+    {
+      "index": 7,
+      "stage": "source_trace",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 78668,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 716,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 78668,
+        "cached_input_tokens": 0,
+        "output_tokens": 716,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 79384
+    },
+    {
+      "index": 8,
+      "stage": "source_verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 79404,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 741,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 79404,
+        "cached_input_tokens": 0,
+        "output_tokens": 741,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 80145
+    },
+    {
+      "index": 9,
+      "stage": "timeline_build",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 79682,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 561,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 79682,
+        "cached_input_tokens": 0,
+        "output_tokens": 561,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 80243
+    },
+    {
+      "index": 10,
+      "stage": "direct_response",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 86349,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 269,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 86349,
+        "cached_input_tokens": 0,
+        "output_tokens": 269,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 86618
+    },
+    {
+      "index": 11,
+      "stage": "synthesis",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 81167,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 710,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 81167,
+        "cached_input_tokens": 0,
+        "output_tokens": 710,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 81877
+    },
+    {
+      "index": 12,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 17067,
+        "cached_input_tokens": 7936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 890,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 17067,
+        "cached_input_tokens": 7936,
+        "output_tokens": 890,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 17957
+    },
+    {
+      "index": 13,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 17908,
+        "cached_input_tokens": 7680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 253,
+        "reasoning_output_tokens": 25
+      },
+      "saved_usage": {
+        "input_tokens": 17908,
+        "cached_input_tokens": 7680,
+        "output_tokens": 253,
+        "reasoning_output_tokens": 25
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 18161
+    },
+    {
+      "index": 14,
+      "stage": "select",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 10567,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 62,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 10567,
+        "cached_input_tokens": 0,
+        "output_tokens": 62,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 10629
+    },
+    {
+      "index": 15,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 71290,
+        "cached_input_tokens": 7936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1074,
+        "reasoning_output_tokens": 88
+      },
+      "saved_usage": {
+        "input_tokens": 71290,
+        "cached_input_tokens": 7936,
+        "output_tokens": 1074,
+        "reasoning_output_tokens": 88
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 72364
+    },
+    {
+      "index": 16,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 72272,
+        "cached_input_tokens": 7680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 578,
+        "reasoning_output_tokens": 153
+      },
+      "saved_usage": {
+        "input_tokens": 72272,
+        "cached_input_tokens": 7680,
+        "output_tokens": 578,
+        "reasoning_output_tokens": 153
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 72850
+    },
+    {
+      "index": 17,
+      "stage": "select",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 10198,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 10198,
+        "cached_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 10267
+    },
+    {
+      "index": 18,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 18095,
+        "cached_input_tokens": 7936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1795,
+        "reasoning_output_tokens": 38
+      },
+      "saved_usage": {
+        "input_tokens": 18095,
+        "cached_input_tokens": 7936,
+        "output_tokens": 1795,
+        "reasoning_output_tokens": 38
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 19890
+    },
+    {
+      "index": 19,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 19622,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 229,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 19622,
+        "cached_input_tokens": 0,
+        "output_tokens": 229,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 19851
+    },
+    {
+      "index": 20,
+      "stage": "shared_final_forecast",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 115597,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 454,
+        "reasoning_output_tokens": 56
+      },
+      "saved_usage": {
+        "input_tokens": 115597,
+        "cached_input_tokens": 0,
+        "output_tokens": 454,
+        "reasoning_output_tokens": 56
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 116051
+    }
+  ],
+  "receipt_check_false_flags": [],
+  "exact_receipt_file_hashes": {
+    "private-cli-events/0001-1789422082768024000.request.json": "628c702f9454addf372048f44faf3ab766ddc1eafe2afcc568fcecb88e4f21ad",
+    "private-cli-events/0001-1789422092010090000.stdout": "e9e1d420064a4403424ad0e9117d7f4ef883988a124461d2256f4eeeb2e14e07",
+    "private-cli-events/0001-1789422092010090000.stderr": "e18db3b70647c04ac746f15b8cc9dff50b19fb337da54cad9faaa51d6967f839",
+    "private-cli-events/0002-1789422092027295000.request.json": "f1ced26495c6ab228f45b22a42e59d7fdf5dc651571d5d2e327fdc595cf9db7c",
+    "private-cli-events/0002-1789422106723899000.stdout": "c59532cd994ea642917fde8c0329129fd6a657a7f43db73349e2f914449637b1",
+    "private-cli-events/0002-1789422106723899000.stderr": "6f63b1ed26363f2c2d1f0c2cb6a336c89139c0f6cd4914cf3fab45e7139adc4a",
+    "private-cli-events/0003-1789422108612303000.request.json": "7488dd24b869969662198b38bbf6451e7cffb8bcbdce3eaf342ef90c8905ef45",
+    "private-cli-events/0003-1789422115778679000.stdout": "aecce4f3c5fa4af17616d1f28c91f5fc9767f262e60b124be708b83c6bfea2db",
+    "private-cli-events/0003-1789422115778679000.stderr": "7c14e6523ba28c8e4f5d3c3bbb36501b839681484a4c52785ed7987bb59e62d8",
+    "private-cli-events/0004-1789422115869159000.request.json": "b2f0ffc65c80d6fe80fc82666e4f9b7bad5c0fca010f70e0cbcd9a9ca5f4091c",
+    "private-cli-events/0004-1789422125514452000.stdout": "92c3d064b8b30f0f86ae2522ffbea91ecbe1c3a65c64d1c3e88bcb1d978ae5f7",
+    "private-cli-events/0004-1789422125514452000.stderr": "2fd82d14f9a4e705036ccece933416c2838f1c58ab0c94f9f8354c95bc979694",
+    "private-cli-events/0005-1789422125530318000.request.json": "730242215373120700c0b1e7c7529b6f97c4f0f4e0133d54e5b0c96195e53291",
+    "private-cli-events/0005-1789422142572940000.stdout": "d1deacaea97aca5ab347bc7d659a95ae4e2a36eec5495025ea4a832ea85db93e",
+    "private-cli-events/0005-1789422142572940000.stderr": "d8bfca38b028ce7c282eeca0736d648007aa56140dad20b2283f1f4b9fdacda5",
+    "private-cli-events/0006-1789422142592991000.request.json": "39099be3238d7be7320162339166421d1acd1a8191b7514c7a2576fb297e3fa1",
+    "private-cli-events/0006-1789422150845590000.stdout": "eb65ed9baf04e5a9fbcb5dd031e45d0f59ca86f579cd0a3fb4034d9b5b1b1bb6",
+    "private-cli-events/0006-1789422150845590000.stderr": "ee772b069792c73e9cf6c3cb6ad12ae42e4283c69b125d8c916cf736fd95307d",
+    "private-cli-events/0007-1789422150866844000.request.json": "02e47ef4e92c455f5990a12a55966dbc572f4a2ed54d59f6f4c6d2b5f21d36bf",
+    "private-cli-events/0007-1789422176608281000.stdout": "b9ecaa35619be6481870dab5a978796a302934ffc3d093e9877717e85032f655",
+    "private-cli-events/0007-1789422176608281000.stderr": "0290f247b17746230296ab3d14c73055069bcf5aeaa5ffeefab4cdc6689ce161",
+    "private-cli-events/0008-1789422176631800000.request.json": "935b08b15e368bcb471b05b48eb0d579231ad0c5e783c7d7ad4303bef482d464",
+    "private-cli-events/0008-1789422204213396000.stdout": "9c16c677b48dcdfdf273c0b77d502aabbe4fcce3f2918c2ef348c667071865eb",
+    "private-cli-events/0008-1789422204213396000.stderr": "652fcb401f287e3db1200c675eef4cb27ebb0c476929ae7fdaaf054d4c06bf1b",
+    "private-cli-events/0009-1789422204242137000.request.json": "e0ab01787ffea06774c540e0a04f438f1b8369e5c1909a8e194f414bd30a862e",
+    "private-cli-events/0009-1789422225215452000.stdout": "1743bc29c3e047b85c8250103735bfc328b59bac57716449b47fd5592c9a5aad",
+    "private-cli-events/0009-1789422225215452000.stderr": "d5c4f6139569800b040a7da4a35cf3fc8053d159c8824a1c5034e9f6c2508804",
+    "private-cli-events/0010-1789422225246012000.request.json": "632f468e8a15844faa35f49a708507c78e39545fad03d2b95ed87f84d3d602a1",
+    "private-cli-events/0010-1789422237939838000.stdout": "aca83c5b77b8fa30f63bc1ef78134ee44cb2385ccd56ba5ece722576d60e7b3f",
+    "private-cli-events/0010-1789422237939838000.stderr": "32bcbef13d3b96eed1aeddbb3fcf575658b50aba61ae57899cbddad34021452c",
+    "private-cli-events/0011-1789422237969504000.request.json": "4f59e8086e14d2df114cbac8daeea3476b83c7693e7eb5e55df98fddcd1840f2",
+    "private-cli-events/0011-1789422264452955000.stdout": "d9c3c829eaaa37d316a01c400d64b1f11a9810849f9a0f6e266a1ec71ad4a9ab",
+    "private-cli-events/0011-1789422264452955000.stderr": "2faca3deb1e20568a7e74cf2d7741352534df3239ccd9e130bc42c922dd21452",
+    "private-cli-events/0012-1789422264507901000.request.json": "ee19837882f1fd8091ff347dbb879382aa93dcf1017c6b7629535ad7f244d161",
+    "private-cli-events/0012-1789422297779275000.stdout": "e4a285608f95fef0b58e318039e0a42a0f02c762b6ab06d4f8d2cf76cf3039f7",
+    "private-cli-events/0012-1789422297779275000.stderr": "8e9f9c972d817e8565636afc1253a15b1c6ca5ffdbf46375b63df970aeff1530",
+    "private-cli-events/0013-1789422297805620000.request.json": "2bccf846c7833168e8e36f02334d2bc3d7f0eea00737f824b99510e4aef67066",
+    "private-cli-events/0013-1789422309013463000.stdout": "91d4285560bc9cf5e9d5ca37be97aa072b84214366d2b6b89336c9a53aaceb4f",
+    "private-cli-events/0013-1789422309013463000.stderr": "a534c54825bbabc61c5641d397183a5fa4fad41e68850545b077467f2b307a51",
+    "private-cli-events/0014-1789422309044136000.request.json": "b3f2c1b402acc63ad9bd088adad71133e4cbebd9a60479253226f82c4dd52eb4",
+    "private-cli-events/0014-1789422315099183000.stdout": "81f7a36e3e6e991f4a8c01b871b55c7be47d4229c983f89aacf80560a308c5b0",
+    "private-cli-events/0014-1789422315099183000.stderr": "f91de767efee3a3148b7cf47e2486212329566fda9ae8eafc5c88eae8636b43d",
+    "private-cli-events/0015-1789422315127613000.request.json": "871631b92fc5a06d84d3e292a0f70e6090c55f5c2f66b71f73efad16ae194f4a",
+    "private-cli-events/0015-1789422352973896000.stdout": "9d03b267882c415b346a0341a80c6d6158ec5d8eb88fa8d99265cb8dca988c9b",
+    "private-cli-events/0015-1789422352973896000.stderr": "cacabeb6df0fd921cc2d4b4db76566f8f9cff9a28a60e0bbf7628cde6a84e9d9",
+    "private-cli-events/0016-1789422353007351000.request.json": "3db30c8114fcdc1c5fb903265a48e01f48c05975ec210cb22bf79b2f2dae6cd7",
+    "private-cli-events/0016-1789422374463618000.stdout": "ba26de7d5b4b16f71b7910bf7a1b7078a342ac85c934021935bce2a8ac049916",
+    "private-cli-events/0016-1789422374463618000.stderr": "03ac882a56264fef07316eaa03beb398ece433bfd8944b2853cb7d5a032b66a5",
+    "private-cli-events/0017-1789422374494815000.request.json": "52933b5bb3232c7baa8c7e188ed2298e59f1d2010eed8e15a2bf0fb9214e001a",
+    "private-cli-events/0017-1789422380932782000.stdout": "a927c7e10ab3074ea55ee88851528b5381850f3085cc93f99a8a979714eecc0d",
+    "private-cli-events/0017-1789422380932782000.stderr": "f57cca90cebc012de52e3cce3910fc780c86f0aa36772c98e879c878811cc00a",
+    "private-cli-events/0018-1789422380967807000.request.json": "baf0fb32b0d2953065eb3c4deb46c6bad8cf60f394e25350a50e91168e332ec5",
+    "private-cli-events/0018-1789422439624655000.stdout": "f633587ed6b934bfaf776da6fa8ebff263b789a356b0c4e2e33399ae32b6bc87",
+    "private-cli-events/0018-1789422439624655000.stderr": "6b4fbb6ddaea6c9e24f3a2dad10661d4a7dae89f3c0a36bdd5406cf61cbaf8ba",
+    "private-cli-events/0019-1789422439663660000.request.json": "a1fafe5c6b219f30cdde1eb80480f1264810610e10f7b4682a52976377230ca5",
+    "private-cli-events/0019-1789422449903186000.stdout": "42b5f462da5d2d64b76a4d6b31961a42d8591f0c0ba30b8ef8e612dae7540e79",
+    "private-cli-events/0019-1789422449903186000.stderr": "717a73715c4b9bf3e2940351193d048bd4a5df2f39453447e05ce14c4dc8eae9",
+    "private-cli-events/0020-1789422449962420000.request.json": "ca4fa0a37a1213e2bfdf3945a8e599545dee9db1aa6ab18bae4e751c9f00572d",
+    "private-cli-events/0020-1789422469079918000.stdout": "620400252287ddba1fffcd6d6e3ad920e0f5cea0b1654f07685a1346f99055a1",
+    "private-cli-events/0020-1789422469079918000.stderr": "0cb77a42337181d8e3e1f03c9b82974153486bc83f536445ef71e58f242ab3ea",
+    "calls.json": "d51c0a101aff016a0fbbb5394f26addc9350f0f149976de6b89515429f6f8c9c",
+    "model-io.json": "275bdd6f95f964ab4c2f523771df3aadf3e243b0b021b5a41a31a8d77f7649d4",
+    "workflow.json": "26587123129741de2ff858121189ae0d359ce412aaefe92b1ab85d590d017476",
+    "result.json": "2c7bbdb8839782d4e0b05aac85205d2f0f2644f0ad33d66ce33b92ce46a25a4f",
+    "sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+    "retrieval.json": "3c12694c9b512ad0077906c457b44bf8c9d3fb5ac5ccce4a8ea97dfe72ac74ab",
+    "archive-records.json": "ead9aba6bed9fd2af5eb1842ecc32a240b761675c678eb9ed280ed37a1e51948"
+  },
+  "cutoff": "2024-12-31T23:59:59Z",
+  "source_cutoff_checks": [
+    {
+      "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "available_at": "2024-12-08T06:32:21+00:00",
+      "eligible": true,
+      "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+      "content_chars": 23826
+    },
+    {
+      "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "available_at": "2024-12-19T09:53:10+00:00",
+      "eligible": true,
+      "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+      "content_chars": 12416
+    },
+    {
+      "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+      "available_at": "2024-12-22T18:21:04+00:00",
+      "eligible": true,
+      "content_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+      "content_chars": 186687
+    }
+  ],
+  "seed_hash_matches": true,
+  "item_snapshot_matches_exact_dispatch": true,
+  "inner_snapshot_count_matches": true,
+  "inner_snapshot_checks": [
+    {
+      "call": 12,
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 13,
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 14,
+      "stage": "select",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 15,
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 16,
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 17,
+      "stage": "select",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 18,
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "call": 19,
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    }
+  ],
+  "prior_decision_prefix_checks": [
+    {
+      "call": 1,
+      "prior_decisions_count": 0,
+      "exact_prefix": true
+    },
+    {
+      "call": 2,
+      "prior_decisions_count": 1,
+      "exact_prefix": true
+    },
+    {
+      "call": 4,
+      "prior_decisions_count": 2,
+      "exact_prefix": true
+    }
+  ],
+  "dedup": {
+    "arm": "a702-harness",
+    "valid": true,
+    "dedup_status": "passed",
+    "summary": {
+      "journal_attempts": 20,
+      "request_receipts": 20,
+      "failed_attempts": 0,
+      "blocked_not_counted": 0,
+      "native_packet_count": 6,
+      "native_trace_count": 1,
+      "stage_coverage": {
+        "decompose": true,
+        "verify": true
+      }
+    },
+    "checks": {
+      "input_stable_during_read": true,
+      "full_material_shape": true,
+      "version_identity_no_collision": true,
+      "unique_trace_target": true,
+      "one_accepted_analysis_per_version": true,
+      "accepted_history_never_revisit": true,
+      "final_analyses_preserved": true,
+      "incremental_policy_enabled": true,
+      "no_actual_revisit_operations": true,
+      "aliases_not_forged_as_admitted": true,
+      "call_journal_lengths_match": true,
+      "receipt_filename_has_call_index": true,
+      "no_orphan_or_duplicate_receipts": true,
+      "call_record_objects": true,
+      "call_stage_and_terminal_status_match": true,
+      "one_request_receipt_per_attempt": true,
+      "request_receipt_shape": true,
+      "stdin_hash_matches_receipt_and_call": true,
+      "receipt_schema_and_model_match": true,
+      "stdin_exactly_matches_immutable_journal": true,
+      "native_trace_and_context_available": true,
+      "incremental_packet_lists": true,
+      "unique_materials_in_packet": true,
+      "prior_analyses_preserved_in_packet": true,
+      "prior_verdicts_preserved_in_packet": true,
+      "verified_ids_preserved_in_packet": true,
+      "decompose_no_context_full_bodies": true,
+      "decompose_has_all_prior_metadata": true,
+      "full_content_fields_only_at_declared_locations": true,
+      "verify_only_new_full_bodies": true,
+      "verify_has_all_prior_metadata": true,
+      "verification_history_unambiguous": true,
+      "prior_metadata_only": true,
+      "prior_metadata_hash_matches_original": true,
+      "decompose_at_most_once_per_version": true,
+      "decompose_at_most_once_per_immutable_alias": true,
+      "verify_at_most_once_per_version": true,
+      "verify_at_most_once_per_immutable_alias": true,
+      "all_accepted_analyses_match_actual_dispatch_order": true,
+      "all_accepted_verdicts_match_actual_dispatches": true,
+      "all_model_revisits_recorded_skipped": true,
+      "native_full_body_matches_saved_source": true,
+      "blocked_dispatches_separate": true
+    },
+    "errors": [],
+    "full_exposures_by_version": {
+      "decompose": {
+        "news-142f8b7ee5e986ab": 1,
+        "news-a13131e70a4f69c4": 1,
+        "news-bae041d1fdfa54b4": 1
+      },
+      "verify": {
+        "news-142f8b7ee5e986ab": 1,
+        "news-a13131e70a4f69c4": 1,
+        "news-bae041d1fdfa54b4": 1
+      }
+    },
+    "full_exposures_by_immutable_identity": {
+      "decompose": {
+        "5fc841ee66cb12241f09b40f52d18a89399dde032e5520aac5c8bb2cd3f37ab2": 1,
+        "b6bd636d457089e563636356d53188163555860f30c5f0a8f0883efefeed4fdd": 1,
+        "fc7f44a471989b951a4b215d09e4ec33e5f29531c97f2827330b79c9b674bb0f": 1
+      },
+      "verify": {
+        "5fc841ee66cb12241f09b40f52d18a89399dde032e5520aac5c8bb2cd3f37ab2": 1,
+        "b6bd636d457089e563636356d53188163555860f30c5f0a8f0883efefeed4fdd": 1,
+        "fc7f44a471989b951a4b215d09e4ec33e5f29531c97f2827330b79c9b674bb0f": 1
+      }
+    },
+    "sources": [
+      {
+        "version_id": "news-142f8b7ee5e986ab",
+        "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+        "content_chars": 12416,
+        "available_at": "2024-12-19T09:53:10+00:00",
+        "immutable_identity_sha256": "b6bd636d457089e563636356d53188163555860f30c5f0a8f0883efefeed4fdd"
+      },
+      {
+        "version_id": "news-a13131e70a4f69c4",
+        "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+        "content_chars": 23826,
+        "available_at": "2024-12-08T06:32:21+00:00",
+        "immutable_identity_sha256": "5fc841ee66cb12241f09b40f52d18a89399dde032e5520aac5c8bb2cd3f37ab2"
+      },
+      {
+        "version_id": "news-bae041d1fdfa54b4",
+        "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+        "content_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+        "content_chars": 186687,
+        "available_at": "2024-12-22T18:21:04+00:00",
+        "immutable_identity_sha256": "fc7f44a471989b951a4b215d09e4ec33e5f29531c97f2827330b79c9b674bb0f"
+      }
+    ],
+    "packet_checks": [
+      {
+        "call": 12,
+        "stage": "decompose",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-a13131e70a4f69c4"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+            "content_chars": 23826,
+            "available_at": "2024-12-08T06:32:21+00:00",
+            "availability_basis_sha256": "1bb179cfcaa346fbdf2cfab279b687ca5516e89dd1aedbefd568f26517e91e0c",
+            "immutable_identity_sha256": "5fc841ee66cb12241f09b40f52d18a89399dde032e5520aac5c8bb2cd3f37ab2"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [],
+        "prior_analysis_sha256": {},
+        "prior_verdict_count": 0
+      },
+      {
+        "call": 13,
+        "stage": "verify",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-a13131e70a4f69c4"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "content_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+            "content_chars": 23826,
+            "available_at": "2024-12-08T06:32:21+00:00",
+            "availability_basis_sha256": "1bb179cfcaa346fbdf2cfab279b687ca5516e89dd1aedbefd568f26517e91e0c",
+            "immutable_identity_sha256": "5fc841ee66cb12241f09b40f52d18a89399dde032e5520aac5c8bb2cd3f37ab2"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [],
+        "prior_analysis_sha256": {
+          "news-a13131e70a4f69c4": "f83c4ddd8dfc386f237aee228e94ca270660d660c4740fb7e98a37ecbfb01df3"
+        },
+        "prior_verdict_count": 0
+      },
+      {
+        "call": 15,
+        "stage": "decompose",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-bae041d1fdfa54b4"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "content_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+            "content_chars": 186687,
+            "available_at": "2024-12-22T18:21:04+00:00",
+            "availability_basis_sha256": "2bf81b4b4b273b4026e5e49642dfc515e6f53f5bb8650a5e965d7cf1536d677e",
+            "immutable_identity_sha256": "fc7f44a471989b951a4b215d09e4ec33e5f29531c97f2827330b79c9b674bb0f"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-a13131e70a4f69c4"
+        ],
+        "prior_analysis_sha256": {
+          "news-a13131e70a4f69c4": "f83c4ddd8dfc386f237aee228e94ca270660d660c4740fb7e98a37ecbfb01df3"
+        },
+        "prior_verdict_count": 1
+      },
+      {
+        "call": 16,
+        "stage": "verify",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-bae041d1fdfa54b4"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-bae041d1fdfa54b4",
+            "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "content_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+            "content_chars": 186687,
+            "available_at": "2024-12-22T18:21:04+00:00",
+            "availability_basis_sha256": "2bf81b4b4b273b4026e5e49642dfc515e6f53f5bb8650a5e965d7cf1536d677e",
+            "immutable_identity_sha256": "fc7f44a471989b951a4b215d09e4ec33e5f29531c97f2827330b79c9b674bb0f"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-a13131e70a4f69c4"
+        ],
+        "prior_analysis_sha256": {
+          "news-a13131e70a4f69c4": "f83c4ddd8dfc386f237aee228e94ca270660d660c4740fb7e98a37ecbfb01df3",
+          "news-bae041d1fdfa54b4": "50454bd56b64fb2013976ae1f4bb8cc066078cb54fa07466e9307f2f4a567759"
+        },
+        "prior_verdict_count": 1
+      },
+      {
+        "call": 18,
+        "stage": "decompose",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-142f8b7ee5e986ab"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-142f8b7ee5e986ab",
+            "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+            "content_chars": 12416,
+            "available_at": "2024-12-19T09:53:10+00:00",
+            "availability_basis_sha256": "d71f2724f04513971bb3ce047498c7491471d80fde7d848aaf205c040a271f76",
+            "immutable_identity_sha256": "b6bd636d457089e563636356d53188163555860f30c5f0a8f0883efefeed4fdd"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-a13131e70a4f69c4",
+          "news-bae041d1fdfa54b4"
+        ],
+        "prior_analysis_sha256": {
+          "news-a13131e70a4f69c4": "f83c4ddd8dfc386f237aee228e94ca270660d660c4740fb7e98a37ecbfb01df3",
+          "news-bae041d1fdfa54b4": "50454bd56b64fb2013976ae1f4bb8cc066078cb54fa07466e9307f2f4a567759"
+        },
+        "prior_verdict_count": 2
+      },
+      {
+        "call": 19,
+        "stage": "verify",
+        "target_id": "a702:c1",
+        "full_version_ids": [
+          "news-142f8b7ee5e986ab"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-142f8b7ee5e986ab",
+            "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "content_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+            "content_chars": 12416,
+            "available_at": "2024-12-19T09:53:10+00:00",
+            "availability_basis_sha256": "d71f2724f04513971bb3ce047498c7491471d80fde7d848aaf205c040a271f76",
+            "immutable_identity_sha256": "b6bd636d457089e563636356d53188163555860f30c5f0a8f0883efefeed4fdd"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-a13131e70a4f69c4",
+          "news-bae041d1fdfa54b4"
+        ],
+        "prior_analysis_sha256": {
+          "news-a13131e70a4f69c4": "f83c4ddd8dfc386f237aee228e94ca270660d660c4740fb7e98a37ecbfb01df3",
+          "news-bae041d1fdfa54b4": "50454bd56b64fb2013976ae1f4bb8cc066078cb54fa07466e9307f2f4a567759",
+          "news-142f8b7ee5e986ab": "7d8212a8e72d90854dd9ea2b7c9e93f5c0552424769db4f8cea413a03dc9f4c1"
+        },
+        "prior_verdict_count": 2
+      }
+    ],
+    "input_file_sha256": {
+      "calls.json": "d51c0a101aff016a0fbbb5394f26addc9350f0f149976de6b89515429f6f8c9c",
+      "model-io.json": "275bdd6f95f964ab4c2f523771df3aadf3e243b0b021b5a41a31a8d77f7649d4",
+      "sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+      "workflow.json": "26587123129741de2ff858121189ae0d359ce412aaefe92b1ab85d590d017476",
+      "private-cli-events/0001-1789422082768024000.request.json": "628c702f9454addf372048f44faf3ab766ddc1eafe2afcc568fcecb88e4f21ad",
+      "private-cli-events/0002-1789422092027295000.request.json": "f1ced26495c6ab228f45b22a42e59d7fdf5dc651571d5d2e327fdc595cf9db7c",
+      "private-cli-events/0003-1789422108612303000.request.json": "7488dd24b869969662198b38bbf6451e7cffb8bcbdce3eaf342ef90c8905ef45",
+      "private-cli-events/0004-1789422115869159000.request.json": "b2f0ffc65c80d6fe80fc82666e4f9b7bad5c0fca010f70e0cbcd9a9ca5f4091c",
+      "private-cli-events/0005-1789422125530318000.request.json": "730242215373120700c0b1e7c7529b6f97c4f0f4e0133d54e5b0c96195e53291",
+      "private-cli-events/0006-1789422142592991000.request.json": "39099be3238d7be7320162339166421d1acd1a8191b7514c7a2576fb297e3fa1",
+      "private-cli-events/0007-1789422150866844000.request.json": "02e47ef4e92c455f5990a12a55966dbc572f4a2ed54d59f6f4c6d2b5f21d36bf",
+      "private-cli-events/0008-1789422176631800000.request.json": "935b08b15e368bcb471b05b48eb0d579231ad0c5e783c7d7ad4303bef482d464",
+      "private-cli-events/0009-1789422204242137000.request.json": "e0ab01787ffea06774c540e0a04f438f1b8369e5c1909a8e194f414bd30a862e",
+      "private-cli-events/0010-1789422225246012000.request.json": "632f468e8a15844faa35f49a708507c78e39545fad03d2b95ed87f84d3d602a1",
+      "private-cli-events/0011-1789422237969504000.request.json": "4f59e8086e14d2df114cbac8daeea3476b83c7693e7eb5e55df98fddcd1840f2",
+      "private-cli-events/0012-1789422264507901000.request.json": "ee19837882f1fd8091ff347dbb879382aa93dcf1017c6b7629535ad7f244d161",
+      "private-cli-events/0013-1789422297805620000.request.json": "2bccf846c7833168e8e36f02334d2bc3d7f0eea00737f824b99510e4aef67066",
+      "private-cli-events/0014-1789422309044136000.request.json": "b3f2c1b402acc63ad9bd088adad71133e4cbebd9a60479253226f82c4dd52eb4",
+      "private-cli-events/0015-1789422315127613000.request.json": "871631b92fc5a06d84d3e292a0f70e6090c55f5c2f66b71f73efad16ae194f4a",
+      "private-cli-events/0016-1789422353007351000.request.json": "3db30c8114fcdc1c5fb903265a48e01f48c05975ec210cb22bf79b2f2dae6cd7",
+      "private-cli-events/0017-1789422374494815000.request.json": "52933b5bb3232c7baa8c7e188ed2298e59f1d2010eed8e15a2bf0fb9214e001a",
+      "private-cli-events/0018-1789422380967807000.request.json": "baf0fb32b0d2953065eb3c4deb46c6bad8cf60f394e25350a50e91168e332ec5",
+      "private-cli-events/0019-1789422439663660000.request.json": "a1fafe5c6b219f30cdde1eb80480f1264810610e10f7b4682a52976377230ca5",
+      "private-cli-events/0020-1789422449962420000.request.json": "ca4fa0a37a1213e2bfdf3945a8e599545dee9db1aa6ab18bae4e751c9f00572d"
+    }
+  },
+  "bibliographic_admission_checks": [
+    {
+      "call": 18,
+      "stage": "decompose",
+      "receipt_id": "b2b2d13ffd7043ee843419905f4c4580",
+      "endpoints": [
+        "news-142f8b7ee5e986ab",
+        "news-bae041d1fdfa54b4"
+      ],
+      "prior_endpoint_ids": [
+        "news-bae041d1fdfa54b4"
+      ],
+      "prior_endpoints_have_accepted_analysis": true,
+      "both_endpoints_admitted_or_current": true,
+      "both_endpoint_quotes_exact": true,
+      "current_material_id": "news-142f8b7ee5e986ab"
+    },
+    {
+      "call": 19,
+      "stage": "verify",
+      "receipt_id": "b2b2d13ffd7043ee843419905f4c4580",
+      "endpoints": [
+        "news-142f8b7ee5e986ab",
+        "news-bae041d1fdfa54b4"
+      ],
+      "prior_endpoint_ids": [
+        "news-bae041d1fdfa54b4"
+      ],
+      "prior_endpoints_have_accepted_analysis": true,
+      "both_endpoints_admitted_or_current": true,
+      "both_endpoint_quotes_exact": true,
+      "current_material_id": null
+    }
+  ],
+  "native_bibliographic_edges": [
+    {
+      "id": "news-142f8b7ee5e986ab:relation:r2",
+      "from_version": "news-142f8b7ee5e986ab",
+      "to_version": "news-bae041d1fdfa54b4",
+      "kind": "cites",
+      "status": "direct",
+      "both_endpoint_spans": true,
+      "all_spans_exact": true,
+      "span_anchors": [
+        {
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 3691,
+          "end": 3869,
+          "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb"
+        },
+        {
+          "version_id": "news-142f8b7ee5e986ab",
+          "start": 6985,
+          "end": 7242,
+          "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6"
+        },
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 13195,
+          "end": 13411,
+          "quote_sha256": "ccb02d107c6f43d35855661b4415b21fe97777ae46a86e38c90c66e186cef807"
+        },
+        {
+          "version_id": "news-bae041d1fdfa54b4",
+          "start": 33266,
+          "end": 33416,
+          "quote_sha256": "28b1cc4692890cef7935319945b58d6452cc36c4cab9108feca2cb753dcf6efc"
+        }
+      ]
+    }
+  ],
+  "gap_packet_timeline": [
+    {
+      "call": 12,
+      "stage": "decompose",
+      "context_gaps": [
+        {
+          "id": "origin:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "51522b8b278a04aae187654b2282619007aecf6d7f2dcc2f56b868a3f01ed1e9"
+        }
+      ],
+      "response_gap_ids": [],
+      "response_resolutions": []
+    },
+    {
+      "call": 13,
+      "stage": "verify",
+      "context_gaps": [
+        {
+          "id": "origin:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "51522b8b278a04aae187654b2282619007aecf6d7f2dcc2f56b868a3f01ed1e9"
+        }
+      ],
+      "response_gap_ids": [
+        "verification:a702:c1:primary_evidence"
+      ],
+      "response_resolutions": []
+    },
+    {
+      "call": 15,
+      "stage": "decompose",
+      "context_gaps": [
+        {
+          "id": "origin:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "51522b8b278a04aae187654b2282619007aecf6d7f2dcc2f56b868a3f01ed1e9"
+        },
+        {
+          "id": "verification:a702:c1:primary_evidence",
+          "stage": "verification",
+          "blocking": true,
+          "question_sha256": "745941c50256fa3de1bafeadbea8363b42f296154995d6da52d44dc61a263327"
+        }
+      ],
+      "response_gap_ids": [],
+      "response_resolutions": []
+    },
+    {
+      "call": 16,
+      "stage": "verify",
+      "context_gaps": [
+        {
+          "id": "origin:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "51522b8b278a04aae187654b2282619007aecf6d7f2dcc2f56b868a3f01ed1e9"
+        },
+        {
+          "id": "verification:a702:c1:primary_evidence",
+          "stage": "verification",
+          "blocking": true,
+          "question_sha256": "745941c50256fa3de1bafeadbea8363b42f296154995d6da52d44dc61a263327"
+        },
+        {
+          "id": "lineage:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "0117b915d6844536bcf9db3564c9e1398f74c390f142771625c5df657079a707"
+        }
+      ],
+      "response_gap_ids": [],
+      "response_resolutions": [
+        {
+          "gap_id": "verification:a702:c1:primary_evidence",
+          "basis_version_ids": [
+            "news-bae041d1fdfa54b4"
+          ],
+          "all_quotes_exact": true
+        }
+      ]
+    },
+    {
+      "call": 18,
+      "stage": "decompose",
+      "context_gaps": [
+        {
+          "id": "origin:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "51522b8b278a04aae187654b2282619007aecf6d7f2dcc2f56b868a3f01ed1e9"
+        },
+        {
+          "id": "lineage:a702:c1",
+          "stage": "provenance",
+          "blocking": true,
+          "question_sha256": "0117b915d6844536bcf9db3564c9e1398f74c390f142771625c5df657079a707"
+        }
+      ],
+      "response_gap_ids": [],
+      "response_resolutions": [
+        {
+          "gap_id": "lineage:a702:c1",
+          "basis_version_ids": [
+            "news-142f8b7ee5e986ab",
+            "news-a13131e70a4f69c4",
+            "news-bae041d1fdfa54b4"
+          ],
+          "all_quotes_exact": true
+        },
+        {
+          "gap_id": "origin:a702:c1",
+          "basis_version_ids": [
+            "news-142f8b7ee5e986ab",
+            "news-a13131e70a4f69c4",
+            "news-bae041d1fdfa54b4"
+          ],
+          "all_quotes_exact": true
+        }
+      ]
+    },
+    {
+      "call": 19,
+      "stage": "verify",
+      "context_gaps": [],
+      "response_gap_ids": [],
+      "response_resolutions": []
+    }
+  ],
+  "final_gaps": [],
+  "final_native_status": {
+    "fact_status": "supported",
+    "provenance_status": "original_material_located",
+    "stop_reason": "complete"
+  },
+  "final_prediction": {
+    "fact_status": "supported",
+    "risk": "ordinary",
+    "fabrication_established": false,
+    "origin_chain": [
+      "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+      "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+      "https://www.science.org/doi/10.1126/sciadv.abe3647"
+    ]
+  },
+  "receipt_permissions": {
+    "directory": "0o700",
+    "file_modes": [
+      "0o600"
+    ]
+  },
+  "independent_source_identity_and_gap_semantics_audit": "archive_rootcause",
+  "limits": [
+    "No-repeat applies separately to native full-material decomposition and verification; retained exact evidence/research may recur.",
+    "Prior metadata endpoints require accepted analyses; pending current material supplies its own complete source.",
+    "No truth or fabrication conclusion follows solely from retrieval, deduplication or risk classification."
+  ],
+  "native_bibliographic_span_visibility_in_call18": [
+    {
+      "version_id": "news-142f8b7ee5e986ab",
+      "start": 3691,
+      "end": 3869,
+      "present_in_actual_packet": true,
+      "packet_paths": [
+        [
+          "material",
+          "content"
+        ],
+        [
+          "citation_resolutions",
+          0,
+          "source_quotes",
+          0
+        ]
+      ]
+    },
+    {
+      "version_id": "news-142f8b7ee5e986ab",
+      "start": 6985,
+      "end": 7242,
+      "present_in_actual_packet": true,
+      "packet_paths": [
+        [
+          "material",
+          "content"
+        ],
+        [
+          "citation_resolutions",
+          0,
+          "source_quotes",
+          3
+        ]
+      ]
+    },
+    {
+      "version_id": "news-bae041d1fdfa54b4",
+      "start": 13195,
+      "end": 13411,
+      "present_in_actual_packet": true,
+      "packet_paths": [
+        [
+          "context",
+          "analyses",
+          "news-bae041d1fdfa54b4",
+          "fragments",
+          0,
+          "span",
+          "quote"
+        ],
+        [
+          "context",
+          "analyses",
+          "news-bae041d1fdfa54b4",
+          "origins",
+          0,
+          "basis",
+          0,
+          "quote"
+        ],
+        [
+          "context",
+          "verification_history",
+          1,
+          "basis",
+          0,
+          "quote"
+        ]
+      ]
+    },
+    {
+      "version_id": "news-bae041d1fdfa54b4",
+      "start": 33266,
+      "end": 33416,
+      "present_in_actual_packet": true,
+      "packet_paths": [
+        [
+          "context",
+          "analyses",
+          "news-bae041d1fdfa54b4",
+          "fragments",
+          1,
+          "span",
+          "quote"
+        ],
+        [
+          "context",
+          "analyses",
+          "news-bae041d1fdfa54b4",
+          "origins",
+          0,
+          "basis",
+          1,
+          "quote"
+        ],
+        [
+          "context",
+          "verification_history",
+          1,
+          "basis",
+          1,
+          "quote"
+        ]
+      ]
+    }
+  ],
+  "explicit_cutoff_checks": [
+    {
+      "call": 1,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 2,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 4,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 12,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 13,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 14,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 15,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 16,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 17,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 18,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 19,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    },
+    {
+      "call": 20,
+      "cutoff": "2024-12-31T23:59:59Z",
+      "matches": true
+    }
+  ]
+}

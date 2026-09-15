@@ -42,6 +42,15 @@ Replace the example text, claim and URL with the actual news item. Then run:
 python -m newsverify trace-news news.json --output reports/news-trace.json
 ```
 
+The opt-in `run_double_loop_trace` API uses incremental source analysis by
+default: within each claim's loop, each immutable source version is decomposed
+and verified once with full retained text, while prior analyses, quotes and open gaps remain in later
+context. In a `run_double_loop_trace` payload, set
+`config.reanalyze_existing_versions` to boolean `true` to restore legacy
+reanalysis. This is a double-loop API option, not a `trace-news` configuration
+field. Generic `trace-model` retains its existing behavior; this is not global
+deduplication across every stage or workflow.
+
 The default `local` tunnel runs the installed Codex CLI with its existing login
 and uses `gpt-6-astra` unless `--model` or `FACTCIRCUIT_MODEL` selects another
 locally available model.
@@ -114,6 +123,9 @@ nodes, including the input event.
 ## Historical evidence
 
 For an earlier cutoff, supply the exact text version that was available then.
+Historical custom collectors must be bound to the exact requested cutoff;
+ordinary live pages cannot be backdated. Availability evidence and timestamps
+are checked before a material enters the eligible pool.
 Each material has the following shape:
 
 ```json

@@ -1,0 +1,711 @@
+{
+  "schema": "v9-independent-source-audit-1",
+  "created_at": "2026-09-14T19:45:05.193156+00:00",
+  "scope": "Post-run independent source-body, chain, budget and strict joint-outcome audit. No model calls, prediction replacement or registered-code changes. This new AUDIT.json is the only file written.",
+  "cutoff": "2024-12-31T23:59:59Z",
+  "run_path": "<checkout> tracing/private-data/live-origin-v9-checkout/experiments/live-origin-v9-20260914/private-run-01",
+  "run_predictions_sha256": "aaefaaff9ca73e0c0b7fdd1590794bdf08faa2687dffb63c8f9a78eb974a10f3",
+  "report_results_sha256": "79c3e5f410e1400cfd89c5db952255fa1b1424c5fb58030d6b384e1022ece1e2",
+  "checked_raw_file_sha256": {
+    "COMPLETED.json": "893cf8e59d57fdf52dad43a02eb5100ff4897cbf71eb7fd46c25f84e4da19938",
+    "a701-direct/archive-records.json": "23bf90e2f56e94f71c8e7a9604cad7f5d6ef753c345baffaad0f6fbf0627e25e",
+    "a701-direct/calls.json": "2aa6457b84a5f1016899dd17fad111d1de663eeb047f45af5f78f41d26e6dda6",
+    "a701-direct/model-io.json": "040c588866c508a39b2c59fce598dcff319c847b9bccd5ad3f7912c5ebb645f8",
+    "a701-direct/result.json": "d4317ce7e37ac79010c0ef2ea2bb980bd7804b6cf4bb441f9f3ad213eb5201ad",
+    "a701-direct/retrieval.json": "a2b0eeea7f4b83e4006e9e992f6f9007a41781a13e9d3aab4c8a9602dc9df5f2",
+    "a701-direct/sources.json": "05328265359a6981c64c9e2c52b4057d20357f1d58e6d9554399de79bc70dad7",
+    "a701-direct/workflow.json": "c8dbe12454d69b866664caeeffc71420c93e4fd3a5f8f1f6698f8f5f434f697e",
+    "a701-harness/archive-records.json": "542ac87f1b43cbf39840b0f61491229d0c067ce968726c958707a4b496428c67",
+    "a701-harness/calls.json": "0c007976a446acb1e1d99d2a25bce6df5451806b902d4788d03d685f71217c5c",
+    "a701-harness/model-io.json": "13db1c290acc893e20e00ceb10c4a5c0f6a3bf5ce5bdf7871ba625dffc366645",
+    "a701-harness/result.json": "813912dfb7d4c8f335de50d873bc3caffa1dc0caa266b69dca8dcfae4e228288",
+    "a701-harness/retrieval.json": "3e101e199ed3199508bf235d63c1bef27e77b033a403c0e40f7bcaec0326258c",
+    "a701-harness/sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+    "a701-harness/workflow.json": "f45d2576b54dd1c3331103a863a0151721d83bcab1a01a80b47671cc2ac775bd",
+    "a702-direct/archive-records.json": "27fccf02573524772c957b3ea31ee54d6f3b4532f0c42acb4607b4057158ab7f",
+    "a702-direct/calls.json": "702418ec2204bafc08e2741558505ac2f73dc66d2e011dff7ce40a294dbc98c4",
+    "a702-direct/model-io.json": "95f1e3f5f7037e69907da33814d41feaac6180a39f42696be8765a7e8ad1d92a",
+    "a702-direct/result.json": "e7fb25b3c79996e92a14a510d0795bde4d7cc00388169e68842401668ec8f770",
+    "a702-direct/retrieval.json": "23cd16a81b1e5632cf7779faccc2e05d98d69da44e0dceecf81ac02cc7240a6e",
+    "a702-direct/sources.json": "09cc1ff29dca2b9fb60e0df5629a2cb390fb87da3cfe336203f3efcc2f9a1658",
+    "a702-direct/workflow.json": "05456b80ec1d9b3e8467e58a06b6ca7182db39f6595a5f39f00ed9c1447b34b1",
+    "a702-harness/archive-records.json": "ead9aba6bed9fd2af5eb1842ecc32a240b761675c678eb9ed280ed37a1e51948",
+    "a702-harness/calls.json": "5438d586438e4850a50c96b9c5474906756da590134b519795f8a34ca2d9d0a5",
+    "a702-harness/model-io.json": "eaa22b17085ead5695b623b8c548ce742fed810fe00eadf89adde886791530db",
+    "a702-harness/result.json": "240b7c0303bfa28bf8216326081dce7c8d9161b80c5794c949f7bac9728d17fa",
+    "a702-harness/retrieval.json": "10f48e2ba81bdbca70b9a7dec58328b1b56e2b2a88bca6ba882433656fa762f3",
+    "a702-harness/sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+    "a702-harness/workflow.json": "5086a5214e642964623467ea02b6914d8cd1bdb5c7bece589e75b84526c5f630",
+    "manifest.json": "406aa82fc7f3f85c764c9bacf866bcb44794061efaf77d10141f2ff399c28a4d",
+    "predictions.json": "aaefaaff9ca73e0c0b7fdd1590794bdf08faa2687dffb63c8f9a78eb974a10f3"
+  },
+  "summary": {
+    "arm_cases_audited": 4,
+    "complete_main_primary_articles": 4,
+    "validated_final_primary_chains": 4,
+    "harness_cases": 2,
+    "joint_strict_harness_successes": 0,
+    "harness_native_failure_categories": {
+      "conflicting origin id across materials": 2
+    },
+    "source_error_count": 4,
+    "raw_files_unchanged_during_audit": true
+  },
+  "rows": [
+    {
+      "case_id": "a701",
+      "arm": "direct",
+      "assessment_status_preserved": "completed",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "extracted_text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "raw_bytes": 50344,
+          "extracted_characters": 23821,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": false,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "extracted_text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "raw_bytes": 1072038,
+          "extracted_characters": 366632,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": true,
+          "target_primary_article": true,
+          "main_article_completeness": {
+            "substantive_section_checks": [
+              {
+                "from_heading": "Introduction",
+                "to_heading": "Results and interpretations",
+                "body_characters_between": 30097,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "Results and interpretations",
+                "to_heading": "Conclusions",
+                "body_characters_between": 198811,
+                "minimum_substantive_characters": 20000,
+                "passed": true
+              },
+              {
+                "from_heading": "Conclusions",
+                "to_heading": "Methods",
+                "body_characters_between": 5175,
+                "minimum_substantive_characters": 1000,
+                "passed": true
+              },
+              {
+                "from_heading": "Methods",
+                "to_heading": "Data availability",
+                "body_characters_between": 8702,
+                "minimum_substantive_characters": 3000,
+                "passed": true
+              },
+              {
+                "from_heading": "References",
+                "to_heading": "Acknowledgements",
+                "body_characters_between": 88012,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              }
+            ],
+            "additional_sections_present": {
+              "Data availability": true,
+              "Change history": true,
+              "Supplementary Information": true
+            },
+            "passed": true
+          }
+        }
+      ],
+      "actual_complete_main_primary_article": true,
+      "accepted_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "http://dx.doi.org/10.1038/s41598-021-97778-3",
+        "https://www.nature.com/articles/s41598-021-97778-3"
+      ],
+      "normalized_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "https://www.nature.com/articles/s41598-021-97778-3"
+      ],
+      "chain_checks": {
+        "assessment_completed": true,
+        "all_nodes_fetched": true,
+        "starts_at_input": true,
+        "endpoint_is_actual_primary": true,
+        "no_nonadjacent_cycle": true,
+        "every_edge_observed_or_bound": true
+      },
+      "chain_edges": [
+        {
+          "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "basis": "observed_hyperlink"
+        }
+      ],
+      "validated_final_primary_chain": true,
+      "bibliographic_binding_checks": [],
+      "native_status_preserved": null,
+      "native_errors_preserved": [],
+      "native_provenance_statuses": [],
+      "strict_native_primary_trace_success": null,
+      "joint_strict_harness_success": null,
+      "joint_rule": "complete main primary article AND validated final primary chain AND completed error-free native primary trace",
+      "source_errors_preserved": [
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://doi.org/10.1038/s41598-022-08216-x"
+        },
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://doi.org/10.1038/s41598-023-35266-6"
+        },
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://www.nature.com/articles/s41598-022-08216-x"
+        },
+        {
+          "operation": "fetch",
+          "code": "archive_index_unavailable",
+          "url": "https://doi.org/10.1038/s41598-022-06266-9"
+        }
+      ],
+      "budget_checks": {
+        "model_attempts": 6,
+        "model_cap": 36,
+        "document_attempts": 6,
+        "document_cap": 6,
+        "retrieval_decisions": 4,
+        "decision_cap": 4,
+        "bibliography_lookups": 1,
+        "lookup_cap": 2,
+        "full_evidence_characters": 390453,
+        "evidence_cap": 1000000,
+        "call_journal_counts_match": true,
+        "failed_model_attempts": 0,
+        "within_all_registered_caps": true
+      },
+      "report_metrics_match_independent_audit": true
+    },
+    {
+      "case_id": "a701",
+      "arm": "harness",
+      "assessment_status_preserved": "completed",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "extracted_text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "raw_bytes": 50344,
+          "extracted_characters": 23821,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": false,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "requested_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "archive_url": "https://web.archive.org/web/20240717105004id_/https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "capture_at": "2024-07-17T10:50:04+00:00",
+          "raw_sha256": "887e38901d8c661e25fef9120af1a1256654e2509a4402f682ce50bf56e0d994",
+          "extracted_text_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+          "raw_bytes": 124683,
+          "extracted_characters": 10157,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": false,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "extracted_text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "raw_bytes": 1072038,
+          "extracted_characters": 366632,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": true,
+          "target_primary_article": true,
+          "main_article_completeness": {
+            "substantive_section_checks": [
+              {
+                "from_heading": "Introduction",
+                "to_heading": "Results and interpretations",
+                "body_characters_between": 30097,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "Results and interpretations",
+                "to_heading": "Conclusions",
+                "body_characters_between": 198811,
+                "minimum_substantive_characters": 20000,
+                "passed": true
+              },
+              {
+                "from_heading": "Conclusions",
+                "to_heading": "Methods",
+                "body_characters_between": 5175,
+                "minimum_substantive_characters": 1000,
+                "passed": true
+              },
+              {
+                "from_heading": "Methods",
+                "to_heading": "Data availability",
+                "body_characters_between": 8702,
+                "minimum_substantive_characters": 3000,
+                "passed": true
+              },
+              {
+                "from_heading": "References",
+                "to_heading": "Acknowledgements",
+                "body_characters_between": 88012,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              }
+            ],
+            "additional_sections_present": {
+              "Data availability": true,
+              "Change history": true,
+              "Supplementary Information": true
+            },
+            "passed": true
+          }
+        }
+      ],
+      "actual_complete_main_primary_article": true,
+      "accepted_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "https://news.ecu.edu/2021/10/07/biblical-burning/",
+        "https://www.nature.com/articles/s41598-021-97778-3"
+      ],
+      "normalized_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "https://news.ecu.edu/2021/10/07/biblical-burning/",
+        "https://www.nature.com/articles/s41598-021-97778-3"
+      ],
+      "chain_checks": {
+        "assessment_completed": true,
+        "all_nodes_fetched": true,
+        "starts_at_input": true,
+        "endpoint_is_actual_primary": true,
+        "no_nonadjacent_cycle": true,
+        "every_edge_observed_or_bound": true
+      },
+      "chain_edges": [
+        {
+          "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "to_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "basis": "observed_hyperlink"
+        },
+        {
+          "from_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "basis": "observed_hyperlink"
+        }
+      ],
+      "validated_final_primary_chain": true,
+      "bibliographic_binding_checks": [],
+      "native_status_preserved": "failed",
+      "native_errors_preserved": [
+        {
+          "stage": "decomposer",
+          "type": "ValueError",
+          "message": "conflicting origin id across materials: ('a701:c1', 'news-4be0ee7d2b38540c')",
+          "claim_id": "a701:c1"
+        }
+      ],
+      "native_provenance_statuses": [
+        "unresolved"
+      ],
+      "strict_native_primary_trace_success": false,
+      "joint_strict_harness_success": false,
+      "joint_rule": "complete main primary article AND validated final primary chain AND completed error-free native primary trace",
+      "source_errors_preserved": [],
+      "budget_checks": {
+        "model_attempts": 15,
+        "model_cap": 36,
+        "document_attempts": 3,
+        "document_cap": 6,
+        "retrieval_decisions": 2,
+        "decision_cap": 4,
+        "bibliography_lookups": 0,
+        "lookup_cap": 2,
+        "full_evidence_characters": 400610,
+        "evidence_cap": 1000000,
+        "call_journal_counts_match": true,
+        "failed_model_attempts": 0,
+        "within_all_registered_caps": true
+      },
+      "report_metrics_match_independent_audit": true
+    },
+    {
+      "case_id": "a702",
+      "arm": "direct",
+      "assessment_status_preserved": "completed",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "extracted_text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "raw_bytes": 47465,
+          "extracted_characters": 23826,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": false,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "extracted_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "raw_bytes": 459056,
+          "extracted_characters": 186687,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": true,
+          "target_primary_article": true,
+          "main_article_completeness": {
+            "substantive_section_checks": [
+              {
+                "from_heading": "INTRODUCTION",
+                "to_heading": "RESULTS",
+                "body_characters_between": 12762,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "RESULTS",
+                "to_heading": "DISCUSSION",
+                "body_characters_between": 13123,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "DISCUSSION",
+                "to_heading": "MATERIALS AND METHODS",
+                "body_characters_between": 27717,
+                "minimum_substantive_characters": 10000,
+                "passed": true
+              },
+              {
+                "from_heading": "MATERIALS AND METHODS",
+                "to_heading": "Acknowledgments",
+                "body_characters_between": 25493,
+                "minimum_substantive_characters": 10000,
+                "passed": true
+              },
+              {
+                "from_heading": "REFERENCES AND NOTES",
+                "to_heading": "Submit a Response to This Article",
+                "body_characters_between": 56944,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              }
+            ],
+            "additional_sections_present": {
+              "Supplementary Material": true
+            },
+            "passed": true
+          }
+        }
+      ],
+      "actual_complete_main_primary_article": true,
+      "accepted_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      ],
+      "normalized_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      ],
+      "chain_checks": {
+        "assessment_completed": true,
+        "all_nodes_fetched": true,
+        "starts_at_input": true,
+        "endpoint_is_actual_primary": true,
+        "no_nonadjacent_cycle": true,
+        "every_edge_observed_or_bound": true
+      },
+      "chain_edges": [
+        {
+          "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "basis": "validated_bibliographic_identity"
+        }
+      ],
+      "validated_final_primary_chain": true,
+      "bibliographic_binding_checks": [
+        {
+          "source_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "receipt_id": "aa911528fecc4ec18f285715e090f54a",
+          "checks": {
+            "valid_flag": true,
+            "cutoff_matches": true,
+            "endpoints_fetched": true,
+            "source_text_hash_matches": true,
+            "target_text_hash_matches": true,
+            "exact_source_quotes_present": true,
+            "exact_target_quotes_present": true,
+            "all_recorded_identity_checks_pass": true
+          },
+          "source_quote_count": 3,
+          "target_quote_count": 4,
+          "quote_text_omitted": true
+        }
+      ],
+      "native_status_preserved": null,
+      "native_errors_preserved": [],
+      "native_provenance_statuses": [],
+      "strict_native_primary_trace_success": null,
+      "joint_strict_harness_success": null,
+      "joint_rule": "complete main primary article AND validated final primary chain AND completed error-free native primary trace",
+      "source_errors_preserved": [],
+      "budget_checks": {
+        "model_attempts": 4,
+        "model_cap": 36,
+        "document_attempts": 2,
+        "document_cap": 6,
+        "retrieval_decisions": 2,
+        "decision_cap": 4,
+        "bibliography_lookups": 1,
+        "lookup_cap": 2,
+        "full_evidence_characters": 210513,
+        "evidence_cap": 1000000,
+        "call_journal_counts_match": true,
+        "failed_model_attempts": 0,
+        "within_all_registered_caps": true
+      },
+      "report_metrics_match_independent_audit": true
+    },
+    {
+      "case_id": "a702",
+      "arm": "harness",
+      "assessment_status_preserved": "completed",
+      "sources": [
+        {
+          "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "extracted_text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "raw_bytes": 47465,
+          "extracted_characters": 23826,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": false,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "requested_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "archive_url": "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "capture_at": "2024-12-19T09:53:10+00:00",
+          "raw_sha256": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+          "extracted_text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+          "raw_bytes": 257279,
+          "extracted_characters": 12416,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": true,
+          "target_primary_article": false,
+          "main_article_completeness": null
+        },
+        {
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "extracted_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "raw_bytes": 459056,
+          "extracted_characters": 186687,
+          "raw_hash_identity_and_memento_validated": true,
+          "within_cutoff": true,
+          "returned_text_matches_complete_fresh_extraction": true,
+          "raw_html_has_closing_tag": true,
+          "target_primary_article": true,
+          "main_article_completeness": {
+            "substantive_section_checks": [
+              {
+                "from_heading": "INTRODUCTION",
+                "to_heading": "RESULTS",
+                "body_characters_between": 12762,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "RESULTS",
+                "to_heading": "DISCUSSION",
+                "body_characters_between": 13123,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              },
+              {
+                "from_heading": "DISCUSSION",
+                "to_heading": "MATERIALS AND METHODS",
+                "body_characters_between": 27717,
+                "minimum_substantive_characters": 10000,
+                "passed": true
+              },
+              {
+                "from_heading": "MATERIALS AND METHODS",
+                "to_heading": "Acknowledgments",
+                "body_characters_between": 25493,
+                "minimum_substantive_characters": 10000,
+                "passed": true
+              },
+              {
+                "from_heading": "REFERENCES AND NOTES",
+                "to_heading": "Submit a Response to This Article",
+                "body_characters_between": 56944,
+                "minimum_substantive_characters": 5000,
+                "passed": true
+              }
+            ],
+            "additional_sections_present": {
+              "Supplementary Material": true
+            },
+            "passed": true
+          }
+        }
+      ],
+      "actual_complete_main_primary_article": true,
+      "accepted_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      ],
+      "normalized_final_chain": [
+        "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+        "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+        "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      ],
+      "chain_checks": {
+        "assessment_completed": true,
+        "all_nodes_fetched": true,
+        "starts_at_input": true,
+        "endpoint_is_actual_primary": true,
+        "no_nonadjacent_cycle": true,
+        "every_edge_observed_or_bound": true
+      },
+      "chain_edges": [
+        {
+          "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "to_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "basis": "observed_hyperlink"
+        },
+        {
+          "from_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "basis": "validated_bibliographic_identity"
+        }
+      ],
+      "validated_final_primary_chain": true,
+      "bibliographic_binding_checks": [
+        {
+          "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "receipt_id": "1e27759705ac42f68f3570ad75177d9a",
+          "checks": {
+            "valid_flag": true,
+            "cutoff_matches": true,
+            "endpoints_fetched": true,
+            "source_text_hash_matches": true,
+            "target_text_hash_matches": true,
+            "exact_source_quotes_present": true,
+            "exact_target_quotes_present": true,
+            "all_recorded_identity_checks_pass": true
+          },
+          "source_quote_count": 3,
+          "target_quote_count": 4,
+          "quote_text_omitted": true
+        }
+      ],
+      "native_status_preserved": "failed",
+      "native_errors_preserved": [
+        {
+          "stage": "decomposer",
+          "type": "ValueError",
+          "message": "conflicting origin id across materials: ('a702:c1', 'news-bae041d1fdfa54b4')",
+          "claim_id": "a702:c1"
+        }
+      ],
+      "native_provenance_statuses": [
+        "unresolved"
+      ],
+      "strict_native_primary_trace_success": false,
+      "joint_strict_harness_success": false,
+      "joint_rule": "complete main primary article AND validated final primary chain AND completed error-free native primary trace",
+      "source_errors_preserved": [],
+      "budget_checks": {
+        "model_attempts": 17,
+        "model_cap": 36,
+        "document_attempts": 3,
+        "document_cap": 6,
+        "retrieval_decisions": 3,
+        "decision_cap": 4,
+        "bibliography_lookups": 1,
+        "lookup_cap": 2,
+        "full_evidence_characters": 222929,
+        "evidence_cap": 1000000,
+        "call_journal_counts_match": true,
+        "failed_model_attempts": 0,
+        "within_all_registered_caps": true
+      },
+      "report_metrics_match_independent_audit": true
+    }
+  ],
+  "limitations": [
+    "Main scholarly article bodies are complete and match verified archived raw HTML. Separate supplementary attachment files and original datasets are not claimed downloaded.",
+    "Headline/DOI identity alone was not treated as full-body proof: substantive section spans and exact complete extraction were checked.",
+    "Four a701-direct correction/discussion source requests failed and remain failures. Successful main-article tracing does not mean every requested link was retrieved.",
+    "Both harness native traces failed on an origin ownership collision. A correct final chain does not repair those native failures; joint strict harness success is 0 of 2.",
+    "This retrospective development pair is not an unseen holdout or a prospective forecast validation. No empirical claim or fabrication verdict is inferred from source originality."
+  ]
+}

@@ -99,7 +99,11 @@ The CLI returns 0 for a completed run, including a legitimate unresolved verdict
 1 when the saved trace contains an execution error; and 2 for invalid input or
 configuration, such as a missing API key. No error silently changes the selected
 tunnel. Reports never include authorization headers, API keys or raw HTTP error
-bodies.
+bodies. `LocalTunnel` accepts an optional absolute private diagnostic directory.
+When enabled, it records exact stdin plus a SHA-256 receipt and raw stdout/stderr
+bytes in per-call mode-600 files, including partial streams from failed or
+timed-out calls. It is disabled by default; receipts are not public call data,
+and writing one never changes a failed call into success.
 
 For fully offline operation, continue using:
 

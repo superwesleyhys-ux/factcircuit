@@ -1,0 +1,2757 @@
+{
+  "schema_version": 1,
+  "audit_kind": "independent_post_run_source_native_gap_lineage_and_transport_integrity_audit",
+  "created_at": "2026-09-14T21:05:00.872618+00:00",
+  "auditor": "archive_rootcause independent subagent",
+  "frozen_commit": "6e88fb2ca6257ff792ddad10dbd1eb815e07a6bc",
+  "cutoff": "2024-12-31T23:59:59Z",
+  "scope": "Retrospective development V11. New audit only; no model calls, network evidence, edits to raw/source/registered files, or salvage of failed responses. Not held-out accuracy evaluation.",
+  "definitions": {
+    "target_primary": "Exact original article title before journal suffix plus canonical target URL/DOI. Corrections and critiques are excluded despite mentioning target title or DOI.",
+    "full_body": "Complete extracted main-page article, sections and references; separate supplements, image binaries and experimental datasets were not independently fetched.",
+    "joint_harness_success": "Actual full primary body AND valid final primary chain AND strict native original tracing with accepted exact spans, native admission of necessary lineage endpoints, and no silently dropped blocking provenance gaps.",
+    "direct_joint": "Null because direct arm has no native trace; full primary and final-chain success is separate.",
+    "model_response_authority": "CLI response bytes establish emitted model text. Native CallBudget deepcopies preserve successful responses before host normalization. Rejected CLI text is not accepted native evidence. Outer JournalTransport can retain mutable references and is not an immutable model response record."
+  },
+  "summary": {
+    "arm_cases": 4,
+    "source_occurrences_checked": 12,
+    "primary_full_bodies": 4,
+    "validated_final_primary_chains": 4,
+    "all_source_bytes_and_complete_reextraction_match": true,
+    "all_capture_dates_pre_cutoff": true,
+    "mechanical_harness_joint": {
+      "successes": 1,
+      "denominator": 2
+    },
+    "independent_harness_joint": {
+      "successes": 1,
+      "denominator": 2
+    },
+    "a701_harness_joint": true,
+    "a702_harness_joint": false,
+    "direct_full_primary_and_chain": {
+      "successes": 2,
+      "denominator": 2
+    },
+    "failed_model_calls_preserved": 4,
+    "source_errors_preserved": 1,
+    "a701_dropped_blocking_provenance_gaps": 0,
+    "a702_accepted_native_analyses": 0,
+    "failed_responses_salvaged": 0,
+    "conclusion": "a701 independently passes source tracing while preserving its empirical verification gap. a702 native tracing fails before first accepted analysis; full host sources and completed final forecast do not replace native success."
+  },
+  "arms": [
+    {
+      "case_id": "a701",
+      "arm": "direct",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [
+        {
+          "operation": "fetch",
+          "code": "archive_candidates_exhausted",
+          "url": "https://doi.org/10.1038/s41598-023-35266-6"
+        }
+      ],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "raw_bytes": 50344,
+          "extracted_chars": 23821,
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json",
+          "cache_metadata_sha256": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "final_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "raw_bytes": 1072038,
+          "extracted_chars": 366632,
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json",
+          "cache_metadata_sha256": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240606060916id_/https://dx.doi.org/10.1038/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://www.nature.com/articles/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3&code=8c90b94a-72db-498f-9cc8-1d3b128ab9c4",
+            "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "counts_as_target_primary": true,
+          "source_type": "target_primary_study",
+          "canonical_doi": "10.1038/s41598-021-97778-3",
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "Introduction",
+                "start_char": 8140,
+                "next_section": "Results and interpretations",
+                "end_char": 38249,
+                "section_span_chars": 30109,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Results and interpretations",
+                "start_char": 38249,
+                "next_section": "Conclusions",
+                "end_char": 237087,
+                "section_span_chars": 198838,
+                "audit_minimum_chars": 20000,
+                "passed": true
+              },
+              {
+                "section": "Conclusions",
+                "start_char": 237087,
+                "next_section": "Methods",
+                "end_char": 242273,
+                "section_span_chars": 5186,
+                "audit_minimum_chars": 1000,
+                "passed": true
+              },
+              {
+                "section": "Methods",
+                "start_char": 242273,
+                "next_section": "Data availability",
+                "end_char": 250982,
+                "section_span_chars": 8709,
+                "audit_minimum_chars": 3000,
+                "passed": true
+              },
+              {
+                "section": "References",
+                "start_char": 251676,
+                "next_section": "Acknowledgements",
+                "end_char": 339698,
+                "section_span_chars": 88022,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 5778,
+                "passed": true
+              },
+              {
+                "section": "Data availability",
+                "start_char": 250982,
+                "passed": true
+              },
+              {
+                "section": "Change history",
+                "start_char": 251118,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Information",
+                "start_char": 357650,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched.",
+            "same_complete_primary_bytes_as_previous_independent_audit": true
+          }
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "https://doi.org/10.1038/s41598-022-08216-x",
+          "final_url": "https://www.nature.com/articles/s41598-022-08216-x",
+          "title": "No mineralogic or geochemical evidence of impact at Tall el-Hammam, a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "capture_at": "2023-11-12T15:41:01+00:00",
+          "archive_url": "https://web.archive.org/web/20231112154101id_/https://www.nature.com/articles/s41598-022-08216-x",
+          "raw_bytes": 303383,
+          "extracted_chars": 46049,
+          "raw_sha256": "bf469bb45b467f9dd79fcfea624c0f2a54baa62551c94f574f57c7228f162a5a",
+          "text_sha256": "b08bba279dcd9f5ae95e8eb5fd2e64b9a671d8400cce2b18c4bf5e2c8e5bee88",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/28695c3502423218dcf056fe8e8ca85d9ce026b4e0080674e4e88226ec66f18d.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/28695c3502423218dcf056fe8e8ca85d9ce026b4e0080674e4e88226ec66f18d.json",
+          "cache_metadata_sha256": "82eed4c30f778c80dc46fa3613d138ee00fb8db227cd136a9b602a614ea277e1",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20231014161106id_/https://doi.org/10.1038%2Fs41598-022-08216-x",
+            "https://web.archive.org/web/20231014161106id_/https://www.nature.com/articles/s41598-022-08216-x",
+            "https://web.archive.org/web/20231112154101id_/https://www.nature.com/articles/s41598-022-08216-x"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "counts_as_target_primary": false,
+          "source_type": "matters_arising_critique",
+          "fullness": {
+            "main_page_complete": true,
+            "references_start_char": 16981,
+            "method": "Complete raw-byte extraction and substantive notice/commentary, references and back-matter review; separate image binaries not fetched."
+          },
+          "primary_exclusion_reason": "Exact title and canonical article identity differ from original study; repeating its full title or DOI does not make a notice the original study."
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/sources.json",
+            "json_pointer": "/3"
+          },
+          "requested_url": "https://doi.org/10.1038/s41598-022-06266-9",
+          "final_url": "https://www.nature.com/articles/s41598-022-06266-9",
+          "title": "Author Correction: A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "capture_at": "2024-10-29T18:31:36+00:00",
+          "archive_url": "https://web.archive.org/web/20241029183136id_/https://www.nature.com/articles/s41598-022-06266-9",
+          "raw_bytes": 358696,
+          "extracted_chars": 62060,
+          "raw_sha256": "f4b33dda70fde8dab8cb9013eb7842b2cf3ed0fba9530caa19557ee0ab63094c",
+          "text_sha256": "403604c412831f98ef0da3849c58ac3731df0921da5574802ea39eea29a466ce",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.json",
+          "cache_metadata_sha256": "100759289bbb109f22d54f496d698d5f2776f3eae899b0f32d82c206c9ea0973",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241029183135id_/https://doi.org/10.1038%2FS41598-022-06266-9",
+            "https://web.archive.org/web/20241029183135id_/https://www.nature.com/articles/s41598-022-06266-9",
+            "https://web.archive.org/web/20241029183136id_/https://www.nature.com/articles/s41598-022-06266-9"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "counts_as_target_primary": false,
+          "source_type": "author_correction",
+          "fullness": {
+            "main_page_complete": true,
+            "references_start_char": 42830,
+            "method": "Complete raw-byte extraction and substantive notice/commentary, references and back-matter review; separate image binaries not fetched."
+          },
+          "primary_exclusion_reason": "Exact title and canonical article identity differ from original study; repeating its full title or DOI does not make a notice the original study."
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "validated_final_primary_chain": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "http://dx.doi.org/10.1038/s41598-021-97778-3"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          }
+        ]
+      },
+      "final_quote_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "quote_sha256": "dc028097447c0a318f678818f274442534741f24bc86995c20c471812c95d96c",
+          "words": 18,
+          "exact_match_count": 2,
+          "valid": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.nature.com/articles/s41598-022-08216-x",
+          "quote_sha256": "7fd8c5514e26f3ccfc4a3fb2b5d2e6f3d6bb31e3e5e770074a5f6ee50a936b07",
+          "words": 15,
+          "exact_match_count": 1,
+          "valid": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/result.json",
+            "json_pointer": "/prediction/citations/2"
+          },
+          "url": "https://www.nature.com/articles/s41598-022-06266-9",
+          "quote_sha256": "a1276bbf56ebf8af5acdd53a407e1e2d45ba4a4f05bc01048c7e208d1a4c1c2c",
+          "words": 14,
+          "exact_match_count": 1,
+          "valid": true
+        }
+      ],
+      "bibliographic_bindings": [],
+      "prediction_preserved": {
+        "fact_status": "unresolved",
+        "risk": "elevated",
+        "fabrication_established": false,
+        "origin_url": "https://www.nature.com/articles/s41598-021-97778-3"
+      },
+      "model_calls": 5,
+      "failed_model_calls": 0,
+      "known_usage_calls": 5,
+      "returned_evidence_chars": 498562,
+      "final_prediction_equals_immutable_cli": true,
+      "cli_stream_receipts": [
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stdout",
+          "sha256": "cde73d9ab7800a996960401757bfb00adf969176567f03c90f79ae369f34ce48",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 1
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stdout",
+          "sha256": "d699962065c8d8e8141425fee7cb9a694e70274f58cfdce62b487bc8a7b17f6c",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 2
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stdout",
+          "sha256": "e2bbe0d0fe65bca4d36b3461f53233a782ff5fb16499d8a1c4a577046622f333",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 3
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0004-1789416222429207000.stdout",
+          "sha256": "baf329b7bcad733e5323094cbed79ffd421782794c606b292ebd141c50eb24ba",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 4
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0005-1789416244501906000.stdout",
+          "sha256": "4d4eceb42b065d5f7ac5694814e5af400f39b99ec0b9ae4af05f825df0bd475f",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 5
+        }
+      ],
+      "outer_journal_differences": [
+        {
+          "global_call_number": 1,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "fetch_results"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stdout"
+        },
+        {
+          "global_call_number": 2,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "fetch_results"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stdout"
+        },
+        {
+          "global_call_number": 3,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "fetch_results"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stdout"
+        }
+      ],
+      "mechanical_joint_primary_trace_success": null,
+      "independent_joint_primary_trace_success": null,
+      "direct_primary_body_and_chain_success": true,
+      "limits": [
+        "Critique uses valid 2023-11-12 capture, differing from V10 later capture; all bytes were freshly validated.",
+        "The 2023 correction URL exhausted archive candidates and stays recorded as a source failure.",
+        "Final rationale says DOI-to-publisher matching was not an observed redirect, although the preserved receipt records six replay hops; raw rationale is not rewritten."
+      ]
+    },
+    {
+      "case_id": "a701",
+      "arm": "harness",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "title": "Ancient city could have been destroyed by cosmic airburst, evidence suggests -- ScienceDaily",
+          "capture_at": "2023-05-26T21:22:00+00:00",
+          "archive_url": "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "raw_bytes": 50344,
+          "extracted_chars": 23821,
+          "raw_sha256": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+          "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json",
+          "cache_metadata_sha256": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20230526212200id_/https://www.sciencedaily.com/releases/2021/10/211008160519.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "final_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "title": "BIBLICAL BURNING | News Services | ECU",
+          "capture_at": "2024-07-17T10:50:04+00:00",
+          "archive_url": "https://web.archive.org/web/20240717105004id_/https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "raw_bytes": 124683,
+          "extracted_chars": 10157,
+          "raw_sha256": "887e38901d8c661e25fef9120af1a1256654e2509a4402f682ce50bf56e0d994",
+          "text_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.json",
+          "cache_metadata_sha256": "e680a48166a30b42cb935ca7d5d86d01ff1324b147f74a33095b0fa0eb687d93",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240717105004id_/https://news.ecu.edu/2021/10/07/biblical-burning/"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+          "final_url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "title": "A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea | Scientific Reports",
+          "capture_at": "2024-03-12T11:05:45+00:00",
+          "archive_url": "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3",
+          "raw_bytes": 1072038,
+          "extracted_chars": 366632,
+          "raw_sha256": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+          "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json",
+          "cache_metadata_sha256": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20240606060916id_/https://dx.doi.org/10.1038/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://www.nature.com/articles/s41598-021-97778-3",
+            "https://web.archive.org/web/20240606060916id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3",
+            "https://web.archive.org/web/20240312110545id_/https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41598-021-97778-3&code=8c90b94a-72db-498f-9cc8-1d3b128ab9c4",
+            "https://web.archive.org/web/20240312110545id_/https://www.nature.com/articles/s41598-021-97778-3"
+          ],
+          "replay_chain_scope": "all_recorded_replay_hops",
+          "counts_as_target_primary": true,
+          "source_type": "target_primary_study",
+          "canonical_doi": "10.1038/s41598-021-97778-3",
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "Introduction",
+                "start_char": 8140,
+                "next_section": "Results and interpretations",
+                "end_char": 38249,
+                "section_span_chars": 30109,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Results and interpretations",
+                "start_char": 38249,
+                "next_section": "Conclusions",
+                "end_char": 237087,
+                "section_span_chars": 198838,
+                "audit_minimum_chars": 20000,
+                "passed": true
+              },
+              {
+                "section": "Conclusions",
+                "start_char": 237087,
+                "next_section": "Methods",
+                "end_char": 242273,
+                "section_span_chars": 5186,
+                "audit_minimum_chars": 1000,
+                "passed": true
+              },
+              {
+                "section": "Methods",
+                "start_char": 242273,
+                "next_section": "Data availability",
+                "end_char": 250982,
+                "section_span_chars": 8709,
+                "audit_minimum_chars": 3000,
+                "passed": true
+              },
+              {
+                "section": "References",
+                "start_char": 251676,
+                "next_section": "Acknowledgements",
+                "end_char": 339698,
+                "section_span_chars": 88022,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 5778,
+                "passed": true
+              },
+              {
+                "section": "Data availability",
+                "start_char": 250982,
+                "passed": true
+              },
+              {
+                "section": "Change history",
+                "start_char": 251118,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Information",
+                "start_char": 357650,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched.",
+            "same_complete_primary_bytes_as_previous_independent_audit": true
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "validated_final_primary_chain": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+          "https://news.ecu.edu/2021/10/07/biblical-burning/",
+          "https://www.nature.com/articles/s41598-021-97778-3"
+        ],
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "to_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://news.ecu.edu/2021/10/07/biblical-burning/"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          },
+          {
+            "from_url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "to_url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://www.nature.com/articles/s41598-021-97778-3"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          }
+        ]
+      },
+      "final_quote_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "quote_sha256": "dc028097447c0a318f678818f274442534741f24bc86995c20c471812c95d96c",
+          "words": 18,
+          "exact_match_count": 2,
+          "valid": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.nature.com/articles/s41598-021-97778-3",
+          "quote_sha256": "473f0c221f06a38fb49c242d94479809eacfd0d3dea3b79d8cc5dbf46bf7e44e",
+          "words": 18,
+          "exact_match_count": 1,
+          "valid": true
+        }
+      ],
+      "bibliographic_bindings": [],
+      "prediction_preserved": {
+        "fact_status": "unresolved",
+        "risk": "elevated",
+        "fabrication_established": false,
+        "origin_url": "https://www.nature.com/articles/s41598-021-97778-3"
+      },
+      "model_calls": 20,
+      "failed_model_calls": 0,
+      "known_usage_calls": 20,
+      "returned_evidence_chars": 400610,
+      "final_prediction_equals_immutable_cli": true,
+      "cli_stream_receipts": [
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stdout",
+          "sha256": "ea19022175f9b766eba5c977b1aa2aece755eab6d004a90170310d0985751e7b",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 1
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0002-1789416262670617000.stdout",
+          "sha256": "3ce67cc79393cab902509d314e72144469b283fd4d8b9eac7893130f26c71102",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 2
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0003-1789416279929847000.stdout",
+          "sha256": "497d8ed6d414665fdbd7af610aab204c409cff0bbbbcb0e66e50738bf104b64c",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 3
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0004-1789416288539294000.stdout",
+          "sha256": "7b140b340d59c99f1f276915763e6bbf489c2cf6d0e127010e30ed865e11b9de",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 4
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0005-1789416314122406000.stdout",
+          "sha256": "fcc086885944a8d0e8d83ee0fd51940c82ae244149d46e150628a8d2352e287e",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 5
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0006-1789416343278692000.stdout",
+          "sha256": "87e4c88c5904a38d2001cfd779525207b69a60bf1f7c52aa610438aacb816a30",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 6
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0007-1789416374122359000.stdout",
+          "sha256": "6d9ccc61eba7d1fabc523b5af1d43843167373e58c6431065d44e1a364a133ef",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 7
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0008-1789416388352315000.stdout",
+          "sha256": "de7d7f74c6b9bbdcc741a7fbeef2044ebe1510366a5cfb12b2f01a17b08ab966",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 8
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0009-1789416413715791000.stdout",
+          "sha256": "3375ccdde663958331164e1fc042ec6bcc7e1aa4495d621e42520f200eb26b2f",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 9
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0010-1789416438164374000.stdout",
+          "sha256": "77078c7daebf8d66622761dbe0d118be4151d0f6fc377cf06398156a08e91f97",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 10
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0011-1789416448294483000.stdout",
+          "sha256": "837deedfd10e9d5bb05e46fde5694452d486824561c3853bf7fbeb6adc6ed403",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 11
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0012-1789416453263161000.stdout",
+          "sha256": "3d15cb9e421f61ba66b8b5bc453b629791f68a77c3ebce231e1849aee42edd81",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 12
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0013-1789416500224606000.stdout",
+          "sha256": "a2d187d22d9ee003d637979b8bdfe2f3fc709b37a188c70d8e5ed2ab2a510b8d",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 13
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0014-1789416540728426000.stdout",
+          "sha256": "a994f156fbc31f607700161132af9111e3623aa85d5feeb91323e32738c2edc0",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 14
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0015-1789416555248504000.stdout",
+          "sha256": "6508f902c5c3fee2c934b835c3ccc2c2dc179c611bda6449eaf538a3a7ada56d",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 15
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0016-1789416561537434000.stdout",
+          "sha256": "5c35b8a98d3b44d9cb01290a9dcbbb21015029278eece3c0476e69eda0ad0d62",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 16
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0017-1789416598502697000.stdout",
+          "sha256": "173708403769ed8dfdaa097e44688fe2f3bf6d2cd22d310b63e537e8d8f253ca",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 17
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0018-1789416645747424000.stdout",
+          "sha256": "37303717196411e1b07ca8676c834589cff618167a20f6fb992a7c804f5485ae",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 18
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0019-1789416661734930000.stdout",
+          "sha256": "6eacbc611ba92320cfa392c7e5119440f23c8789cac3990fef843878d30cf248",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 19
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0020-1789416679036161000.stdout",
+          "sha256": "0923b9ce25759233239e0adc7ec440bb3b70f708f26b8399e2ebf16f77d2f998",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 20
+        }
+      ],
+      "outer_journal_differences": [
+        {
+          "global_call_number": 1,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "fetch_results"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stdout"
+        }
+      ],
+      "mechanical_joint_primary_trace_success": true,
+      "independent_joint_primary_trace_success": true,
+      "direct_primary_body_and_chain_success": null,
+      "native_audit": {
+        "wrapper_status": "completed",
+        "wrapper_errors": [],
+        "claim_provenance_status": "original_material_located",
+        "claim_fact_status": "unresolved",
+        "claim_errors": [],
+        "origin_summary": {
+          "status": "located",
+          "sources": [
+            {
+              "url": "https://www.nature.com/articles/s41598-021-97778-3",
+              "version_id": "news-4be0ee7d2b38540c",
+              "claim_ids": [
+                "a701:c1"
+              ],
+              "material_kind": "original_observation"
+            }
+          ],
+          "claim_count": 1,
+          "located_claims": 1,
+          "upstream_candidates": [],
+          "scope": "Origins require model-assessed original material and a direct source path, with exact source quotations and observed links or separately validated bibliographic citations checked by the harness. This is not independent semantic authentication, proof of earliest publication, or proof of truth."
+        },
+        "nested_trace_provenance_status": "original_material_located",
+        "nested_trace_fact_status": "unresolved",
+        "trace_stop_reason": "empty_results",
+        "trace_errors": [],
+        "materials": [
+          {
+            "version_id": "news-ce8dcf7a5dfb9351",
+            "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "text_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+            "matches_complete_host_source": true
+          },
+          {
+            "version_id": "news-4be0ee7d2b38540c",
+            "url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "text_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+            "matches_complete_host_source": true
+          },
+          {
+            "version_id": "news-f0d35c9093a55768",
+            "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "text_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+            "matches_complete_host_source": true
+          }
+        ],
+        "host_fetched_but_not_native_admitted_urls": [],
+        "origins": [
+          {
+            "target_id": "a701:c1",
+            "version_id": "news-4be0ee7d2b38540c",
+            "material_kind": "original_observation"
+          }
+        ],
+        "relations": [
+          {
+            "id": "news-ce8dcf7a5dfb9351:relation:r1",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-f0d35c9093a55768",
+            "kind": "derives",
+            "status": "direct",
+            "upstream_locator": null
+          },
+          {
+            "id": "news-ce8dcf7a5dfb9351:relation:r2",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-4be0ee7d2b38540c",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          },
+          {
+            "id": "news-4be0ee7d2b38540c:relation:r1",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-4be0ee7d2b38540c",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          },
+          {
+            "id": "news-f0d35c9093a55768:relation:r1",
+            "from_version": "news-f0d35c9093a55768",
+            "to_version": "news-4be0ee7d2b38540c",
+            "kind": "cites",
+            "status": "direct",
+            "upstream_locator": null
+          },
+          {
+            "id": "news-f0d35c9093a55768:relation:r2",
+            "from_version": "news-ce8dcf7a5dfb9351",
+            "to_version": "news-f0d35c9093a55768",
+            "kind": "derives",
+            "status": "direct",
+            "upstream_locator": null
+          }
+        ],
+        "accepted_analysis_history_count": 5,
+        "span_checks": {
+          "origins": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/origins/0/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 60221,
+              "end": 60357,
+              "quote_sha256": "49ef30c04938e80209c9fb0ffa5c408caad2543147e4cfc46fa47cc7543c5321",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/origins/0/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 35885,
+              "end": 35968,
+              "quote_sha256": "3c1853df21952072c1a306e6cd4decf052bf215f7d3663906dac556cbe68eca5",
+              "exact": true
+            }
+          ],
+          "relations": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/0/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7114,
+              "end": 7321,
+              "quote_sha256": "547208292ab1805b221d32cfa2d3565928b64e6f455ef211807bb384e5e9e4c6",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/1/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/2/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/3/basis/0"
+              },
+              "version_id": "news-f0d35c9093a55768",
+              "start": 6266,
+              "end": 6454,
+              "quote_sha256": "cb556672d71472c4dfb6f510f153f5315dbfd7f846a4e9a8980bdf81a3966fc6",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/relations/4/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7114,
+              "end": 7321,
+              "quote_sha256": "547208292ab1805b221d32cfa2d3565928b64e6f455ef211807bb384e5e9e4c6",
+              "exact": true
+            }
+          ],
+          "resolutions": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 35885,
+              "end": 35968,
+              "quote_sha256": "3c1853df21952072c1a306e6cd4decf052bf215f7d3663906dac556cbe68eca5",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/0/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 60221,
+              "end": 60357,
+              "quote_sha256": "49ef30c04938e80209c9fb0ffa5c408caad2543147e4cfc46fa47cc7543c5321",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7114,
+              "end": 7321,
+              "quote_sha256": "547208292ab1805b221d32cfa2d3565928b64e6f455ef211807bb384e5e9e4c6",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/1"
+              },
+              "version_id": "news-f0d35c9093a55768",
+              "start": 2858,
+              "end": 2951,
+              "quote_sha256": "c2fdad035f6ce495eb1d9b1a4936f50d8b02071dbd93c719f73455dd5c208a22",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/1/basis/2"
+              },
+              "version_id": "news-f0d35c9093a55768",
+              "start": 6266,
+              "end": 6454,
+              "quote_sha256": "cb556672d71472c4dfb6f510f153f5315dbfd7f846a4e9a8980bdf81a3966fc6",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/2/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 33998,
+              "end": 34150,
+              "quote_sha256": "4a8cd47970ae423cc0ea0383b54ff1448ff458d37045c9790dcf6ba7fb5d5327",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/2/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 60221,
+              "end": 60357,
+              "quote_sha256": "49ef30c04938e80209c9fb0ffa5c408caad2543147e4cfc46fa47cc7543c5321",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/resolutions/2/basis/2"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 7830,
+              "end": 7941,
+              "quote_sha256": "5ccf7078cdd8020af26271b761d0d5367fdc7e2e0dccd916d98b808ec0371bfe",
+              "exact": true
+            }
+          ],
+          "verification_history": [
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/0/basis/0"
+              },
+              "version_id": "news-ce8dcf7a5dfb9351",
+              "start": 1302,
+              "end": 1571,
+              "quote_sha256": "e4bb25f2d749931b90695bdf7dece7872d875b748298c1c4372ceb49af20b56e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5787,
+              "end": 5971,
+              "quote_sha256": "8455ffe243009073765e8f43bbb755855ada2bfb0fb481a6a1516c7671d0ed5e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/1/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5116,
+              "end": 5286,
+              "quote_sha256": "bf390fe26f3693e80abacc83d73a4c5427cb77da0df5bfa561b1c325af2d1cb7",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/2/basis/0"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5787,
+              "end": 5971,
+              "quote_sha256": "8455ffe243009073765e8f43bbb755855ada2bfb0fb481a6a1516c7671d0ed5e",
+              "exact": true
+            },
+            {
+              "ref": {
+                "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                "json_pointer": "/results/0/claims/0/trace/verification_history/2/basis/1"
+              },
+              "version_id": "news-4be0ee7d2b38540c",
+              "start": 5116,
+              "end": 5286,
+              "quote_sha256": "bf390fe26f3693e80abacc83d73a4c5427cb77da0df5bfa561b1c325af2d1cb7",
+              "exact": true
+            }
+          ]
+        },
+        "gap_lifecycles": [
+          {
+            "gap_id": "airburst-paper-original-record",
+            "created_and_retained_occurrences": [
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/0/analysis/gaps/1"
+                },
+                "revision": 1,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "revisit": false,
+                "blocking": true,
+                "stage": "provenance"
+              }
+            ],
+            "explicit_resolution_occurrences": [
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/1/analysis/resolutions/0"
+                },
+                "revision": 2,
+                "version_id": "news-4be0ee7d2b38540c",
+                "basis_count": 2
+              },
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/resolutions/0"
+                },
+                "revision": 3,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "basis_count": 2
+              },
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/4/analysis/resolutions/1"
+                },
+                "revision": 5,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "basis_count": 2
+              }
+            ],
+            "finally_retained": false,
+            "finally_explicitly_resolved": true,
+            "silently_dropped": false,
+            "final_gaps_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/gaps"
+            },
+            "final_resolutions_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/resolutions"
+            }
+          },
+          {
+            "gap_id": "ecu-source-version",
+            "created_and_retained_occurrences": [
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/0/analysis/gaps/0"
+                },
+                "revision": 1,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "revisit": false,
+                "blocking": true,
+                "stage": "provenance"
+              },
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/2/analysis/gaps/0"
+                },
+                "revision": 3,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "revisit": true,
+                "blocking": true,
+                "stage": "provenance"
+              }
+            ],
+            "explicit_resolution_occurrences": [
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/3/analysis/resolutions/0"
+                },
+                "revision": 4,
+                "version_id": "news-f0d35c9093a55768",
+                "basis_count": 3
+              },
+              {
+                "ref": {
+                  "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+                  "json_pointer": "/results/0/claims/0/trace/analysis_history/4/analysis/resolutions/0"
+                },
+                "revision": 5,
+                "version_id": "news-ce8dcf7a5dfb9351",
+                "basis_count": 3
+              }
+            ],
+            "finally_retained": false,
+            "finally_explicitly_resolved": true,
+            "silently_dropped": false,
+            "final_gaps_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/gaps"
+            },
+            "final_resolutions_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/resolutions"
+            }
+          }
+        ],
+        "final_gap_ids": [
+          "verify-airburst-cause-date"
+        ],
+        "final_gaps_ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+          "json_pointer": "/results/0/claims/0/trace/gaps"
+        },
+        "final_resolution_ids": [
+          "airburst-paper-original-record",
+          "ecu-source-version",
+          "origin:a701:c1"
+        ],
+        "verification_history": [
+          {
+            "ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/0"
+            },
+            "round": 1,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-airburst-cause-date"
+            ],
+            "resolution_ids": []
+          },
+          {
+            "ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/1"
+            },
+            "round": 2,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-airburst-cause-date"
+            ],
+            "resolution_ids": []
+          },
+          {
+            "ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/verification_history/2"
+            },
+            "round": 3,
+            "verdict": "unresolved",
+            "gap_ids": [
+              "verify-airburst-cause-date"
+            ],
+            "resolution_ids": []
+          }
+        ],
+        "bibliographic_native_endpoint_checks": [],
+        "native_immutable_response_checks": [
+          {
+            "global_call_number": 10,
+            "native_call_number": 1,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/0"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0010-1789416438164374000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 11,
+            "native_call_number": 2,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/1"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0011-1789416448294483000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 12,
+            "native_call_number": 3,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/2"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0012-1789416453263161000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 13,
+            "native_call_number": 4,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/3"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0013-1789416500224606000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 14,
+            "native_call_number": 5,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/4"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0014-1789416540728426000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 15,
+            "native_call_number": 6,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/5"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0015-1789416555248504000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 16,
+            "native_call_number": 7,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/6"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0016-1789416561537434000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 17,
+            "native_call_number": 8,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/7"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0017-1789416598502697000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 18,
+            "native_call_number": 9,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/8"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0018-1789416645747424000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          },
+          {
+            "global_call_number": 19,
+            "native_call_number": 10,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/9"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0019-1789416661734930000.stdout",
+            "transport_accepted": true,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": true,
+            "error": null,
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          }
+        ],
+        "mechanical_strict_native_success": true,
+        "independent_strict_native_success": true,
+        "ecu_gap_immutable_model_first_revisit_identical_to_initial": true,
+        "ordinary_provenance_gap_lifecycle_pass": true,
+        "interpretation": "All three native materials are admitted. ECU gap remains identical on first seed revisit, is explicitly resolved by ECU analysis, and is confirmed on final seed revisit. Both ordinary provenance gaps and runner origin gap have exact evidenced resolutions. The observed seed-to-ECU-to-study path and own-study origin bases pass. Duplicate relation representations do not create independent evidence. The empirical airburst verification gap remains blocking and factual status remains unresolved."
+      }
+    },
+    {
+      "case_id": "a702",
+      "arm": "direct",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "raw_bytes": 47465,
+          "extracted_chars": 23826,
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json",
+          "cache_metadata_sha256": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "final_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "raw_bytes": 459056,
+          "extracted_chars": 186687,
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json",
+          "cache_metadata_sha256": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": true,
+          "source_type": "target_primary_study",
+          "canonical_doi": "10.1126/sciadv.abe3647",
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "INTRODUCTION",
+                "start_char": 14315,
+                "next_section": "RESULTS",
+                "end_char": 27089,
+                "section_span_chars": 12774,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "RESULTS",
+                "start_char": 27089,
+                "next_section": "DISCUSSION",
+                "end_char": 40219,
+                "section_span_chars": 13130,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "DISCUSSION",
+                "start_char": 40219,
+                "next_section": "MATERIALS AND METHODS",
+                "end_char": 67946,
+                "section_span_chars": 27727,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "MATERIALS AND METHODS",
+                "start_char": 67946,
+                "next_section": "Acknowledgments",
+                "end_char": 93460,
+                "section_span_chars": 25514,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "REFERENCES AND NOTES",
+                "start_char": 96908,
+                "next_section": "Submit a Response to This Article",
+                "end_char": 153872,
+                "section_span_chars": 56964,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 13017,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Material",
+                "start_char": 96623,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched.",
+            "same_complete_primary_bytes_as_previous_independent_audit": true
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "validated_final_primary_chain": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "basis": "validated_source_bound_bibliography",
+            "observed_link_urls": [],
+            "bibliographic_receipt_ids": [
+              "03de00219de844b2b2f0338623112e7b"
+            ],
+            "valid": true
+          }
+        ]
+      },
+      "final_quote_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "882a35a936439d42b84f357798e2811a33c33ff05d441b2bb05314b855c3b44e",
+          "words": 13,
+          "exact_match_count": 1,
+          "valid": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+          "words": 16,
+          "exact_match_count": 1,
+          "valid": true
+        }
+      ],
+      "bibliographic_bindings": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/result.json",
+            "json_pointer": "/bibliography/0"
+          },
+          "source_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "source_text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "target_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "receipt_id": "03de00219de844b2b2f0338623112e7b",
+          "checks": {
+            "source_citation_context_bound": true,
+            "source_version_unchanged": true,
+            "formal_citation_identifier_matches": true,
+            "archive_cutoff_and_identity": true,
+            "selected_publisher_url": true,
+            "page_title_matches": true,
+            "identity_in_front_matter": true,
+            "source_topics_in_primary": true,
+            "primary_body_present": true
+          },
+          "independent_binding_pass": true,
+          "quote_checks": [
+            {
+              "side": "source",
+              "quote_sha256": "0de4d2ec466d7d86a9380b89e4b451a8f203aa047c518f46eca5782049b7b18a",
+              "chars": 178,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "ab172fda9ad5549c82b62cc01d3e3addd8aa4244fa84743c46a42dbf9cba2ab4",
+              "chars": 23,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "5b8ba0cb1264ffb72d2074cb43be639b1ddc9c184df1808c44d59211b2c8cc89",
+              "chars": 360,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184",
+              "chars": 22,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268",
+              "chars": 82,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4",
+              "chars": 14,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9",
+              "chars": 16,
+              "exact": true,
+              "case_insensitive_match": true
+            }
+          ]
+        }
+      ],
+      "prediction_preserved": {
+        "fact_status": "supported",
+        "risk": "ordinary",
+        "fabrication_established": false,
+        "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      },
+      "model_calls": 4,
+      "failed_model_calls": 0,
+      "known_usage_calls": 4,
+      "returned_evidence_chars": 210513,
+      "final_prediction_equals_immutable_cli": true,
+      "cli_stream_receipts": [
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0001-1789419505532267000.stdout",
+          "sha256": "4f38681c6bb476a90ff33a451050fadb2cd55179a1c9ae9458f18696b3e0d93d",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 1
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0002-1789419512926442000.stdout",
+          "sha256": "3672abefe254933589fa10527a11eb1813944f38b9a63223c35cfa64cbd45b81",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 2
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0003-1789419521942950000.stdout",
+          "sha256": "4d18a31d1168176cf0fb07ed4818f756d55d98d5e130d5998da6a42cab204ba3",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 3
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0004-1789419538969354000.stdout",
+          "sha256": "6af859b54be4e8ee30b918feb98fa762c6ae849e4818329cee93eef835df25f2",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 4
+        }
+      ],
+      "outer_journal_differences": [
+        {
+          "global_call_number": 1,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "binding",
+            "lookup",
+            "selection"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0001-1789419505532267000.stdout"
+        }
+      ],
+      "mechanical_joint_primary_trace_success": null,
+      "independent_joint_primary_trace_success": null,
+      "direct_primary_body_and_chain_success": true
+    },
+    {
+      "case_id": "a702",
+      "arm": "harness",
+      "raw_result_status": "completed",
+      "raw_errors": [],
+      "source_errors": [],
+      "sources": [
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/0"
+          },
+          "requested_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "final_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "title": "Asteroid dust found in crater closes case of dinosaur extinction | ScienceDaily",
+          "capture_at": "2024-12-08T06:32:21+00:00",
+          "archive_url": "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "raw_bytes": 47465,
+          "extracted_chars": 23826,
+          "raw_sha256": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+          "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json",
+          "cache_metadata_sha256": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241208063221id_/https://www.sciencedaily.com/releases/2021/02/210224143501.htm"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/1"
+          },
+          "requested_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "final_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "title": "Asteroid Dust Found in Crater Closes Case of Dinosaur Extinction - UT News",
+          "capture_at": "2024-12-19T09:53:10+00:00",
+          "archive_url": "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "raw_bytes": 257279,
+          "extracted_chars": 12416,
+          "raw_sha256": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+          "text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json",
+          "cache_metadata_sha256": "fa42d2926838689a96cfeb0c8bef97cc8faa6101705454cfe78fb2d848610524",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241219095310id_/https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": false,
+          "source_type": "secondary_news"
+        },
+        {
+          "source_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/sources.json",
+            "json_pointer": "/2"
+          },
+          "requested_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "final_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "title": "Globally distributed iridium layer preserved within the Chicxulub impact structure | Science Advances",
+          "capture_at": "2024-12-22T18:21:04+00:00",
+          "archive_url": "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "raw_bytes": 459056,
+          "extracted_chars": 186687,
+          "raw_sha256": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+          "text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "cache_body_ref": "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body",
+          "cache_metadata_ref": "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json",
+          "cache_metadata_sha256": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+          "identity_date_memento_digest_checks_pass": true,
+          "returned_text_matches_complete_reextraction": true,
+          "replay_chain": [
+            "https://web.archive.org/web/20241222182104id_/https://www.science.org/doi/10.1126/sciadv.abe3647"
+          ],
+          "replay_chain_scope": "final_only_legacy_v7",
+          "counts_as_target_primary": true,
+          "source_type": "target_primary_study",
+          "canonical_doi": "10.1126/sciadv.abe3647",
+          "fullness": {
+            "main_article_complete": true,
+            "method": "Manual substantive-section review, full archived HTML termination, independent re-extraction equality, and section extent checks; thresholds are post-run audit checks, not collection or scoring rules.",
+            "section_checks": [
+              {
+                "section": "INTRODUCTION",
+                "start_char": 14315,
+                "next_section": "RESULTS",
+                "end_char": 27089,
+                "section_span_chars": 12774,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "RESULTS",
+                "start_char": 27089,
+                "next_section": "DISCUSSION",
+                "end_char": 40219,
+                "section_span_chars": 13130,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "DISCUSSION",
+                "start_char": 40219,
+                "next_section": "MATERIALS AND METHODS",
+                "end_char": 67946,
+                "section_span_chars": 27727,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "MATERIALS AND METHODS",
+                "start_char": 67946,
+                "next_section": "Acknowledgments",
+                "end_char": 93460,
+                "section_span_chars": 25514,
+                "audit_minimum_chars": 10000,
+                "passed": true
+              },
+              {
+                "section": "REFERENCES AND NOTES",
+                "start_char": 96908,
+                "next_section": "Submit a Response to This Article",
+                "end_char": 153872,
+                "section_span_chars": 56964,
+                "audit_minimum_chars": 5000,
+                "passed": true
+              },
+              {
+                "section": "Abstract",
+                "start_char": 13017,
+                "passed": true
+              },
+              {
+                "section": "Supplementary Material",
+                "start_char": 96623,
+                "passed": true
+              }
+            ],
+            "separate_supplement_files_retrieved": false,
+            "scope_limit": "Complete main-page article text, captions, references and available corrections/change history. Linked supplementary files, raw experimental datasets and image binaries were not separately fetched.",
+            "same_complete_primary_bytes_as_previous_independent_audit": true
+          }
+        }
+      ],
+      "primary_full_body_retrieved": true,
+      "validated_final_primary_chain": true,
+      "final_chain": {
+        "ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/result.json",
+          "json_pointer": "/prediction/origin_chain"
+        },
+        "raw_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "canonical_urls": [
+          "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "edges": [
+          {
+            "from_url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "to_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "basis": "observed_hyperlink_with_validated_replay_alias",
+            "observed_link_urls": [
+              "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/"
+            ],
+            "bibliographic_receipt_ids": [],
+            "valid": true
+          },
+          {
+            "from_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "to_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "basis": "validated_source_bound_bibliography",
+            "observed_link_urls": [],
+            "bibliographic_receipt_ids": [
+              "872fe8756c204e65aa39cd59fd675235"
+            ],
+            "valid": true
+          }
+        ]
+      },
+      "final_quote_checks": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/prediction/citations/0"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "94f3f8ec303aa6bd83920074e634a139b528beba99c968c2d74901019727a994",
+          "words": 11,
+          "exact_match_count": 1,
+          "valid": true
+        },
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/prediction/citations/1"
+          },
+          "url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "quote_sha256": "5e6a7194bd6b92d387acedf632d319ce0fb3f510a87c1cc2c9a9c3d5bee64010",
+          "words": 16,
+          "exact_match_count": 1,
+          "valid": true
+        }
+      ],
+      "bibliographic_bindings": [
+        {
+          "ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/result.json",
+            "json_pointer": "/bibliography/0"
+          },
+          "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+          "source_text_sha256": "f925cd87c846e15d7dd12733e88817dc0c2b2d8ad8809e05558ecc733e43be52",
+          "target_text_sha256": "0b434906a54ea171324c191fda0b7a95dabe6cf305bd4a82835ee92557a01989",
+          "receipt_id": "872fe8756c204e65aa39cd59fd675235",
+          "checks": {
+            "source_citation_context_bound": true,
+            "source_version_unchanged": true,
+            "formal_citation_identifier_matches": true,
+            "archive_cutoff_and_identity": true,
+            "selected_publisher_url": true,
+            "page_title_matches": true,
+            "identity_in_front_matter": true,
+            "source_topics_in_primary": true,
+            "primary_body_present": true
+          },
+          "independent_binding_pass": true,
+          "quote_checks": [
+            {
+              "side": "source",
+              "quote_sha256": "27814cdf099217adb21da6f09d1cb83242a4a6dd29e3a6a96ec2f736a95b33bb",
+              "chars": 178,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "adb75bb2b607e00c0ddb806795d60e5fa10fe5fb930df59d7d2a9564f42b0fcd",
+              "chars": 12,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "2477ed04e920d54e508b595d16ed587370b2838caa3ed08762ec9c95abdf20ef",
+              "chars": 377,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "source",
+              "quote_sha256": "c8005f5b873f806c2ada6f46219b8f2421324b836949b428a22a41674be973e6",
+              "chars": 257,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "acf4ab01f320eeb566e40904a826cd958e2ae83218d2ba97ed9f01e9b7743184",
+              "chars": 22,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "3d2161e1b58e2e04ca83ec52dd25fc8d77c574026f64381b5794acb4782dd268",
+              "chars": 82,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "8ca1c077bc443af40b94050aae6fe6699eb1ccdbd9f0d9d8647d852456bb89c4",
+              "chars": 14,
+              "exact": true,
+              "case_insensitive_match": true
+            },
+            {
+              "side": "target",
+              "quote_sha256": "02ce80cbec2d03fec320c10f96a64bba623c949b1c03d459be5caf7ebd4faff9",
+              "chars": 16,
+              "exact": true,
+              "case_insensitive_match": true
+            }
+          ]
+        }
+      ],
+      "prediction_preserved": {
+        "fact_status": "supported",
+        "risk": "ordinary",
+        "fabrication_established": false,
+        "origin_url": "https://www.science.org/doi/10.1126/sciadv.abe3647"
+      },
+      "model_calls": 10,
+      "failed_model_calls": 4,
+      "known_usage_calls": 7,
+      "returned_evidence_chars": 222929,
+      "final_prediction_equals_immutable_cli": true,
+      "cli_stream_receipts": [
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0001-1789416689634240000.stdout",
+          "sha256": "6370ed0d7aa653603dbe65bec78adb610699aa7bd8f7458f386ba7cd37e6b337",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 1
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0002-1789416723709957000.stdout",
+          "sha256": "0eca5d2e3508314093611008d60566131e1147b32c2385c622c587dda77b1529",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 2
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0003-1789416731682675000.stdout",
+          "sha256": "3f93c7860a210472fd02269a86b531028b2cc40166f2762262b3f1ea7499a916",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 3
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0004-1789416741587145000.stdout",
+          "sha256": "ce5f6213698a124b80dd8cc377f230578847c932a84474b6448a8eeeb793637f",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 4
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0005-1789416760492913000.stdout",
+          "sha256": "16284b2b8a7d9943e3398ae52a780ae8e37d21016eefa52b687e717d23b211c5",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 5
+        },
+        {
+          "global_call_number": 6,
+          "file": null,
+          "reason": "No CLI stdout file retained for this timed-out call; failure remains in calls.json and model-io.json.",
+          "agent_json_response_present": false,
+          "completed_turn_present": false,
+          "error_events": []
+        },
+        {
+          "global_call_number": 7,
+          "file": null,
+          "reason": "No CLI stdout file retained for this timed-out call; failure remains in calls.json and model-io.json.",
+          "agent_json_response_present": false,
+          "completed_turn_present": false,
+          "error_events": []
+        },
+        {
+          "global_call_number": 8,
+          "file": null,
+          "reason": "No CLI stdout file retained for this timed-out call; failure remains in calls.json and model-io.json.",
+          "agent_json_response_present": false,
+          "completed_turn_present": false,
+          "error_events": []
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stdout",
+          "sha256": "1d237da0c07911ddb70701aca3edaa41baf40b9523f098744b3222bd43a032c3",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [
+            {
+              "event_index": 2,
+              "type": "error",
+              "message": "Reconnecting... 2/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+            },
+            {
+              "event_index": 3,
+              "type": "error",
+              "message": "Reconnecting... 3/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+            },
+            {
+              "event_index": 4,
+              "type": "error",
+              "message": "Reconnecting... 4/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+            },
+            {
+              "event_index": 5,
+              "type": "error",
+              "message": "Reconnecting... 5/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+            },
+            {
+              "event_index": 7,
+              "type": "error",
+              "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+            },
+            {
+              "event_index": 8,
+              "type": "error",
+              "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+            },
+            {
+              "event_index": 9,
+              "type": "error",
+              "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+            }
+          ],
+          "error_item_count": 1,
+          "global_call_number": 9
+        },
+        {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0010-1789419495000535000.stdout",
+          "sha256": "74d74c4628b8b867c135af510f55d9b29d3426fee4ccaec925b2848b434e9fc8",
+          "agent_json_response_present": true,
+          "completed_turn_present": true,
+          "error_events": [],
+          "error_item_count": 0,
+          "global_call_number": 10
+        }
+      ],
+      "outer_journal_differences": [
+        {
+          "global_call_number": 1,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "fetch_results"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0001-1789416689634240000.stdout"
+        },
+        {
+          "global_call_number": 2,
+          "kind": "host-mutated outer response",
+          "added_fields": [
+            "binding",
+            "lookup",
+            "selection"
+          ],
+          "changed_model_fields": [],
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0002-1789416723709957000.stdout"
+        },
+        {
+          "global_call_number": 9,
+          "kind": "CLI response exists but transport rejected it",
+          "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stdout",
+          "not_salvaged": true
+        }
+      ],
+      "mechanical_joint_primary_trace_success": false,
+      "independent_joint_primary_trace_success": false,
+      "direct_primary_body_and_chain_success": null,
+      "native_audit": {
+        "wrapper_status": "failed",
+        "wrapper_errors": [
+          {
+            "stage": "search_plan",
+            "type": "TunnelError",
+            "message": "The local model call timed out; no fallback was attempted."
+          },
+          {
+            "stage": "direct_response",
+            "type": "TunnelError",
+            "message": "The local model call timed out; no fallback was attempted."
+          },
+          {
+            "stage": "synthesis",
+            "type": "TunnelError",
+            "message": "The local model call timed out; no fallback was attempted."
+          },
+          {
+            "stage": "decomposer",
+            "type": "TunnelError",
+            "message": "The local model turn failed or was incomplete.",
+            "claim_id": "a702:c1"
+          }
+        ],
+        "claim_provenance_status": "unresolved",
+        "claim_fact_status": "unresolved",
+        "claim_errors": [
+          {
+            "stage": "decomposer",
+            "type": "TunnelError",
+            "message": "The local model turn failed or was incomplete."
+          }
+        ],
+        "origin_summary": {
+          "status": "unresolved",
+          "sources": [],
+          "claim_count": 1,
+          "located_claims": 0,
+          "upstream_candidates": [],
+          "scope": "Origins require model-assessed original material and a direct source path, with exact source quotations and observed links or separately validated bibliographic citations checked by the harness. This is not independent semantic authentication, proof of earliest publication, or proof of truth."
+        },
+        "nested_trace_provenance_status": "unresolved",
+        "nested_trace_fact_status": "unresolved",
+        "trace_stop_reason": "decomposer_error",
+        "trace_errors": [
+          {
+            "stage": "decomposer",
+            "type": "TunnelError",
+            "message": "The local model turn failed or was incomplete."
+          }
+        ],
+        "materials": [
+          {
+            "version_id": "news-a13131e70a4f69c4",
+            "url": "https://www.sciencedaily.com/releases/2021/02/210224143501.htm",
+            "text_sha256": "f755b9248d038f6ebbf34bd9b84940cf54d90723926e05349008c3cc834b7e2c",
+            "matches_complete_host_source": true
+          }
+        ],
+        "host_fetched_but_not_native_admitted_urls": [
+          "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+          "https://www.science.org/doi/10.1126/sciadv.abe3647"
+        ],
+        "origins": [],
+        "relations": [],
+        "accepted_analysis_history_count": 0,
+        "span_checks": {
+          "origins": [],
+          "relations": [],
+          "resolutions": [],
+          "verification_history": []
+        },
+        "gap_lifecycles": [],
+        "final_gap_ids": [
+          "origin:a702:c1"
+        ],
+        "final_gaps_ref": {
+          "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/workflow.json",
+          "json_pointer": "/results/0/claims/0/trace/gaps"
+        },
+        "final_resolution_ids": [],
+        "verification_history": [],
+        "bibliographic_native_endpoint_checks": [
+          {
+            "receipt_id": "872fe8756c204e65aa39cd59fd675235",
+            "source_url": "https://news.utexas.edu/2021/02/24/asteroid-dust-found-in-crater-closes-case-of-dinosaur-extinction/",
+            "target_url": "https://www.science.org/doi/10.1126/sciadv.abe3647",
+            "source_native_admitted": false,
+            "target_native_admitted": false
+          }
+        ],
+        "native_immutable_response_checks": [
+          {
+            "global_call_number": 9,
+            "native_call_number": 1,
+            "native_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/workflow.json",
+              "json_pointer": "/results/0/claims/0/trace/execution/model_io/0"
+            },
+            "cli_ref": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stdout",
+            "transport_accepted": false,
+            "cli_contains_response": true,
+            "accepted_response_exactly_matches_cli": null,
+            "error": "The local model turn failed or was incomplete.",
+            "outer_packet_extra_fields": [
+              "research_advice"
+            ],
+            "outer_packet_changed_shared_fields": []
+          }
+        ],
+        "mechanical_strict_native_success": false,
+        "independent_strict_native_success": false,
+        "ordinary_provenance_gap_lifecycle_assessed": false,
+        "failed_calls": [
+          {
+            "global_call_number": 6,
+            "stage": "search_plan",
+            "timeout_seconds": 180.0,
+            "wall_seconds": 180.02159608295187,
+            "success": false,
+            "status": "failed",
+            "usage": null,
+            "error": "The local model call timed out; no fallback was attempted.",
+            "journal_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/model-io.json",
+              "json_pointer": "/5"
+            }
+          },
+          {
+            "global_call_number": 7,
+            "stage": "direct_response",
+            "timeout_seconds": 180.0,
+            "wall_seconds": 180.02224562503397,
+            "success": false,
+            "status": "failed",
+            "usage": null,
+            "error": "The local model call timed out; no fallback was attempted.",
+            "journal_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/model-io.json",
+              "json_pointer": "/6"
+            }
+          },
+          {
+            "global_call_number": 8,
+            "stage": "synthesis",
+            "timeout_seconds": 180.0,
+            "wall_seconds": 180.01395762502216,
+            "success": false,
+            "status": "failed",
+            "usage": null,
+            "error": "The local model call timed out; no fallback was attempted.",
+            "journal_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/model-io.json",
+              "json_pointer": "/7"
+            }
+          },
+          {
+            "global_call_number": 9,
+            "stage": "decompose",
+            "timeout_seconds": 180.0,
+            "wall_seconds": 82.53833783394657,
+            "success": false,
+            "status": "failed",
+            "usage": {
+              "input_tokens": 16902,
+              "cached_input_tokens": 0,
+              "output_tokens": 909,
+              "reasoning_output_tokens": 19
+            },
+            "exit_code": 0,
+            "error": "The local model turn failed or was incomplete.",
+            "journal_ref": {
+              "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/model-io.json",
+              "json_pointer": "/8"
+            }
+          }
+        ],
+        "recovered_cli_output_not_salvaged": {
+          "global_call_number": 9,
+          "stream_receipt": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stdout",
+            "sha256": "1d237da0c07911ddb70701aca3edaa41baf40b9523f098744b3222bd43a032c3",
+            "agent_json_response_present": true,
+            "completed_turn_present": true,
+            "error_events": [
+              {
+                "event_index": 2,
+                "type": "error",
+                "message": "Reconnecting... 2/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+              },
+              {
+                "event_index": 3,
+                "type": "error",
+                "message": "Reconnecting... 3/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+              },
+              {
+                "event_index": 4,
+                "type": "error",
+                "message": "Reconnecting... 4/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+              },
+              {
+                "event_index": 5,
+                "type": "error",
+                "message": "Reconnecting... 5/5 (stream disconnected before completion: failed to lookup address information: nodename nor servname provided, or not known)"
+              },
+              {
+                "event_index": 7,
+                "type": "error",
+                "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+              },
+              {
+                "event_index": 8,
+                "type": "error",
+                "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+              },
+              {
+                "event_index": 9,
+                "type": "error",
+                "message": "Reconnecting... waiting for network (Connection failed: error sending request)"
+              }
+            ],
+            "error_item_count": 1,
+            "global_call_number": 9
+          },
+          "rule_file": "newsverify/tunnels.py",
+          "rule_lines": [
+            303,
+            304,
+            305
+          ],
+          "reason": "Frozen transport rejects a stream containing error events even when a later model JSON message and turn.completed are present. The emitted response never became an accepted native analysis or evidence.",
+          "native_error_ref": {
+            "file": "experiments/live-origin-v11-20260914/private-run-01/a702-harness/workflow.json",
+            "json_pointer": "/results/0/claims/0/trace/execution/model_io/0/error"
+          },
+          "salvage_performed": false
+        },
+        "interpretation": "Host has complete primary article and valid UT-to-study bibliography binding, but neither endpoint was native-admitted. First native analysis failed; runner retains origin:a702:c1 and stops at decomposer_error with no accepted analyses, relations, origins or verifier verdict. The final supported/ordinary/fabrication=false forecast is separate and cannot establish native success. UTC/monotonic timing discrepancy cause is not established here."
+      }
+    }
+  ],
+  "limits": [
+    "Full source identity/body and exact spans do not prove truth, absence of misconduct or forecast accuracy.",
+    "Both a701 forecasts are unresolved/elevated but direct includes critique/correction while harness includes ECU; no accuracy ranking is inferred.",
+    "a702 supported/ordinary final forecast remains separate from failed/unresolved native trace.",
+    "Three a702 harness timeouts retain unknown usage and have no saved CLI stdout; failed decompose has known usage and recovered model text but remains rejected.",
+    "Legacy final-only archive receipts do not reconstruct unrecorded intermediate redirect hops.",
+    "DNS/network stream errors are observed; suspension or other explanations of long UTC durations are not established by this audit."
+  ],
+  "immutable_receipts": {
+    "predictions_sha256": "1083f4e05c1dba9b34c794e27e375f3a2c36c55b913f5acb50ac9fd6bb7b59f0",
+    "completed_marker_matches": true,
+    "prior_receipts_all_raw_hashes_match": true,
+    "registered_files_match_freeze": true,
+    "registered_file_sha256_before_and_after_equal": {
+      "experiments/live-origin-v11-20260914/PREFLIGHT_REPLAY.json": "b3e397d9fe5e11f10c7928f328da49c5fa452d08bf313a4ed181694e2f482897",
+      "experiments/live-origin-v11-20260914/PROTOCOL.md": "04259374d8cd7052015c9cd932b1591c6d2052890b09bae044ceeb26a49bc3f7",
+      "experiments/live-origin-v11-20260914/REGISTRATION.json": "c4a2cd4cb7163abcb00e69fb2d7d92319cc81d2aad911b633ecd5bb56a1f7ed8",
+      "experiments/live-origin-v11-20260914/archive_collector.py": "ab6206778a848c8b80c337755ab92dbcff0c86254e65829ff15e6d1395910ca7",
+      "experiments/live-origin-v11-20260914/bibliographic_locator.py": "0bdc9cde0a9d10cd989386bfd59305cd6c7532e99947f4fba0c8d0f1dba5006c",
+      "experiments/live-origin-v11-20260914/check_archive.py": "8de724ad19b5a475926f74028d2213519dbad4377a3d2bd37c05ca1fca4589da",
+      "experiments/live-origin-v11-20260914/check_bibliography.py": "66d729d7efcae0b0592870a9604d16510948730f28882c3abb9e888c579e3ba5",
+      "experiments/live-origin-v11-20260914/check_recovery.py": "19d246535f135e7f0e8e7d64e93f01533413364a4808633ed8f4fd24b97829ee",
+      "experiments/live-origin-v11-20260914/retrieval.py": "5edb0f4a7d9d13bd9aeefd0beb98457b22f65f2addcafa8298d1003bf1b59762",
+      "experiments/live-origin-v11-20260914/run_test.py": "bab8ed5cace94ffa7bba1b4afe5cd07751aba77d3f95e9819ed8f61f5aa4c644",
+      "experiments/live-origin-v11-20260914/summarize_test.py": "8149a29dd655c1f7a5683b2cb88c6a2edfbfbc3575b1635af43bd8050fa84ea5",
+      "newsverify/__init__.py": "90fc21d71c6994c19e501788df6c9415e0f7ef7640161134dd8a64c7a96f0ce2",
+      "newsverify/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "newsverify/cli.py": "e6f0f1a55052a469d6723dca7ea063f91de2da2dbb7cca48c591bfc9b645b33b",
+      "newsverify/comparison.py": "b35ddbb2e82a5a763aac31982f28c984ca50a242ecb07a1245128e09199279c5",
+      "newsverify/core.py": "8f148c272de3be772581dc78644411fa2b56d1eb809045ef6423620ac7a41d88",
+      "newsverify/decisions.py": "fe93d618b0f122591b39def16e952a4076c4fc66d69d81198c28489e245b4b3e",
+      "newsverify/double_loop.py": "b7742acac891d8095db2d5c869c2f78aa2ca2398368a833e0208dd9189616560",
+      "newsverify/early_risk.py": "0981cef54918f9a603752681617da9c2d22fe41fa684989cebe77b961ea83f08",
+      "newsverify/evaluation.py": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f",
+      "newsverify/local.py": "aba40021d0fb9bc6455bb96bc8065aaae19a186e7d95078a3c6e377caa34e75c",
+      "newsverify/model_runner.py": "04cbfd7aa9c37b6ace92c3867ed5eec2f40852312985854d9e0c63a2d16e3cdc",
+      "newsverify/news_client.py": "086134e1d6a28944176bb2d8ce3f40c55f126e746f99bcd834fc532f6244cce5",
+      "newsverify/news_sources.py": "edae29dd733343aac7edb3474bc63ee42562461c8804dd30c520ff3cc095f584",
+      "newsverify/news_tracing/__init__.py": "a9a9ab21de682f40da13b88bdbdb90bc755c5de99c62f20dc0583106b1febd36",
+      "newsverify/news_tracing/core.py": "56101837026f36474bc5339da18ffe9a13fa8fbba5a5db2ae20e2fb56f20478b",
+      "newsverify/news_tracing/models.py": "83e4223da3376a455590e0390cae5bd690fa8787c3233923855f8e8fd5361344",
+      "newsverify/news_tracing/prompts.py": "c9e478bfd4a66599834c4dd26160d407e2d6be37cf4a2bdfbf777536c3d4a910",
+      "newsverify/news_tracing/schemas.py": "667d09628a9a84f2d8c53e87cde2b41e942725350b3077c2dda9fc4cbd314100",
+      "newsverify/news_tracing_runner.py": "ef7fa0f15c09190f7f855c8e2cb7f912d2f929fe59384445faa950db76256ae3",
+      "newsverify/provenance.py": "72b7ed52327eef54eb35fd2a9bc8fb61ab2f8a77fafd9a315302ebd5ea5136a4",
+      "newsverify/providers.py": "7cb362d1f89270e82b1b34590eecac607a43896a6bbe763c3b88b0254970b568",
+      "newsverify/quickstart.py": "2fded3063ac69f092fcb4e318bfa7a1279701868c8ffc7d50dbb654620353fa6",
+      "newsverify/retrieval.py": "9e8b1a32656f8aeab7eed6250c3efce35f4e1c45b711c492365b3e87beed2567",
+      "newsverify/trace_demo.py": "960c78e0fc2aa2bb428dd13db59c3c8314c7e7ffe533d2fe64d80267474b1251",
+      "newsverify/tunnels.py": "ee8c116b997075f5f029130ca278ba7d19e6dd42b8310ec20ece1de0622575fc",
+      "tests/test_bibliographic_lineage.py": "1cd7ca1ca7a6fbbeb1b7072cf7189375c29b315984fd821a27e9a41b7305a005",
+      "tests/test_double_loop.py": "950951293c5cb868506064fd2bd614cf3809ac9f2d9b31cc51fada9cef564d0d",
+      "tests/test_news_client.py": "c41df8f4ca7c6758d1ce14b8f15085b03af0b8a5629a89d1b1607753b1ea67d6",
+      "tests/test_tunnels.py": "deff2baad0e08684ef2625bf628ea9da1e430bd7216681a4e815cbdef80a0b35"
+    },
+    "raw_file_sha256_before_and_after_equal": {
+      "experiments/live-origin-v11-20260914/private-run-01/COMPLETED.json": "209e449cc09ec6c23a45eedc798d284b701f25eacee0ce79ecac707e7115118d",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/archive-records.json": "25e79215aa7ae133ebae2a407a68bd5ed685e6c30c1c9336beeb08b32f67feea",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/calls.json": "2cf0754df721244a92aff15f837bfc7c3783ad168029829231a56ca8c6010d45",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/model-io.json": "a89f896425832b2946d2fc050666bd9bbda511b9f403be597338cd46ba4ae24c",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stderr": "87b26136dcbf4d55544998fd44f3e9c3639ce3805901445c3104179d19a8ad5f",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0001-1789416115669971000.stdout": "cde73d9ab7800a996960401757bfb00adf969176567f03c90f79ae369f34ce48",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stderr": "e9a8f78a27fd4b90fef243dbffbc566308ccb5cb99eb8ebc6295f12b9e4cb1e0",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0002-1789416127736615000.stdout": "d699962065c8d8e8141425fee7cb9a694e70274f58cfdce62b487bc8a7b17f6c",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stderr": "0c1707389c4ac1262a936d477f79743b6361064c361391226771e1f661d247a4",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0003-1789416210498403000.stdout": "e2bbe0d0fe65bca4d36b3461f53233a782ff5fb16499d8a1c4a577046622f333",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0004-1789416222429207000.stderr": "24d90be008c83ff3de9ec90bab389dc67abb31d08e8539c2cc370950c6abea0e",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0004-1789416222429207000.stdout": "baf329b7bcad733e5323094cbed79ffd421782794c606b292ebd141c50eb24ba",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0005-1789416244501906000.stderr": "df08fe5a13f1b089c90289d5f626cb8308f6b5ba9a14a574b81d6b8f91462c64",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/private-cli-events/0005-1789416244501906000.stdout": "4d4eceb42b065d5f7ac5694814e5af400f39b99ec0b9ae4af05f825df0bd475f",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/result.json": "396902809f86b6c811f586c1a4ca7550cc26cf5c579a0ea593aad9bcac5f14b6",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/retrieval.json": "a83acf5479bd4a0797f13fb3041174146a59b7ccf7a461b5224362a642e89431",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/sources.json": "441c5aa2fc0226e9c3730a952f621d927192db52aa470b4c5e953d73d3289d49",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-direct/workflow.json": "f47cc5b3606107d3078c615e37de24db43cea54794a6afb5db905874b45dfe46",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/archive-records.json": "542ac87f1b43cbf39840b0f61491229d0c067ce968726c958707a4b496428c67",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/calls.json": "b160b3b4410a737542b644cf75f4dceedb33894e15d44818daa0de6288fd932c",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/model-io.json": "8e0d6fb222c410e74443ca2c45614f7dcbd0fcc17c34eb62c469ab329d5bde55",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stderr": "fc6486798c4ea0826c14980b3666b364d047dabd7f34d281731fd680318fd99d",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0001-1789416252529601000.stdout": "ea19022175f9b766eba5c977b1aa2aece755eab6d004a90170310d0985751e7b",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0002-1789416262670617000.stderr": "e386ba3a889e7706734a9fae3fc2435e9f5baba0c50ab33492df17f2333a2383",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0002-1789416262670617000.stdout": "3ce67cc79393cab902509d314e72144469b283fd4d8b9eac7893130f26c71102",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0003-1789416279929847000.stderr": "ec55a7abd1d027cb6bf56b23f2d0eb9d280cc237ac21a653ae9f7755c233196a",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0003-1789416279929847000.stdout": "497d8ed6d414665fdbd7af610aab204c409cff0bbbbcb0e66e50738bf104b64c",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0004-1789416288539294000.stderr": "5bf54e4f8257dff00ec528c48532954762fd728655b3e5e36c185155d75c2fc6",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0004-1789416288539294000.stdout": "7b140b340d59c99f1f276915763e6bbf489c2cf6d0e127010e30ed865e11b9de",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0005-1789416314122406000.stderr": "ceca3348a1caed7f887a42ddfe16c84d7e20d7fb554be335717bddc6748a8726",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0005-1789416314122406000.stdout": "fcc086885944a8d0e8d83ee0fd51940c82ae244149d46e150628a8d2352e287e",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0006-1789416343278692000.stderr": "00f7c578d2d850079ddf68a33e32ee8c2fa7962a2985d0ce4cbdeb020ffacf11",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0006-1789416343278692000.stdout": "87e4c88c5904a38d2001cfd779525207b69a60bf1f7c52aa610438aacb816a30",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0007-1789416374122359000.stderr": "696af3e55bb4da67739ad1466434fb8526d528497083ea7fa586701e875b2428",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0007-1789416374122359000.stdout": "6d9ccc61eba7d1fabc523b5af1d43843167373e58c6431065d44e1a364a133ef",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0008-1789416388352315000.stderr": "0e7703bbeb830a1257da2a70546bc7c20484743eda77176494ce532dce1bef76",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0008-1789416388352315000.stdout": "de7d7f74c6b9bbdcc741a7fbeef2044ebe1510366a5cfb12b2f01a17b08ab966",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0009-1789416413715791000.stderr": "d3990a0668dd53302af126d2534d132412599f8661afd0e2956d862883a79e6b",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0009-1789416413715791000.stdout": "3375ccdde663958331164e1fc042ec6bcc7e1aa4495d621e42520f200eb26b2f",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0010-1789416438164374000.stderr": "7ecdca32f94718f5f387353076b5e555f7070a007a55b9ae7b9e44202076317c",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0010-1789416438164374000.stdout": "77078c7daebf8d66622761dbe0d118be4151d0f6fc377cf06398156a08e91f97",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0011-1789416448294483000.stderr": "03563a7c8ea53f6a30b4ca2454ad23212c2ea2a0f567814afaa344a024d7efd9",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0011-1789416448294483000.stdout": "837deedfd10e9d5bb05e46fde5694452d486824561c3853bf7fbeb6adc6ed403",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0012-1789416453263161000.stderr": "dc112dde59e478b4729220630e63402664d29c67e4cd6a9f21856f096084f976",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0012-1789416453263161000.stdout": "3d15cb9e421f61ba66b8b5bc453b629791f68a77c3ebce231e1849aee42edd81",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0013-1789416500224606000.stderr": "dbd24ec27c2bac317c79166f29a18857e1e211b1ff94ab2e379d6abc2273ab91",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0013-1789416500224606000.stdout": "a2d187d22d9ee003d637979b8bdfe2f3fc709b37a188c70d8e5ed2ab2a510b8d",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0014-1789416540728426000.stderr": "103f08bf764a7243cd6f023581391825a5628d570d79547294017bbdad6d5539",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0014-1789416540728426000.stdout": "a994f156fbc31f607700161132af9111e3623aa85d5feeb91323e32738c2edc0",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0015-1789416555248504000.stderr": "991bbdad805181ae5df19e71283601d2aa8aeff323c0390e0f81df82bd9181f7",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0015-1789416555248504000.stdout": "6508f902c5c3fee2c934b835c3ccc2c2dc179c611bda6449eaf538a3a7ada56d",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0016-1789416561537434000.stderr": "6cbf68c7109f6fc55e9b0d9fe56173b1d2f3f6cce3efeb39ef25b9a584c6d754",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0016-1789416561537434000.stdout": "5c35b8a98d3b44d9cb01290a9dcbbb21015029278eece3c0476e69eda0ad0d62",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0017-1789416598502697000.stderr": "412344097b9c1b0b25dac7963969cc8db3ed6079969ccc82555e1f364b2c99c4",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0017-1789416598502697000.stdout": "173708403769ed8dfdaa097e44688fe2f3bf6d2cd22d310b63e537e8d8f253ca",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0018-1789416645747424000.stderr": "c80bac4cc5256b3f03362957c80b5ed081b599a0596005fa8a34c4edf5fe094b",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0018-1789416645747424000.stdout": "37303717196411e1b07ca8676c834589cff618167a20f6fb992a7c804f5485ae",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0019-1789416661734930000.stderr": "cb24ad1803b68dba6d29a674fa14c9bdf3cd92f16db17d47822cc3540cee4cd4",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0019-1789416661734930000.stdout": "6eacbc611ba92320cfa392c7e5119440f23c8789cac3990fef843878d30cf248",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0020-1789416679036161000.stderr": "20417c977e005266139a4bf38d9369088518945dfca7400d0a865a084be8fe63",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/private-cli-events/0020-1789416679036161000.stdout": "0923b9ce25759233239e0adc7ec440bb3b70f708f26b8399e2ebf16f77d2f998",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/result.json": "f290b216d06720927188924792856e50ebfb192e1cb5cf44dda805949988b1b1",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/retrieval.json": "61617050d5f973420b26505709e5477ca4375a079db7729ad0c96a8362ca705a",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+      "experiments/live-origin-v11-20260914/private-run-01/a701-harness/workflow.json": "890e9bf86725275a8e45c76faa40a0d6f4e7a7732a3eb7be4f3edcc837a2de2c",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/archive-records.json": "27fccf02573524772c957b3ea31ee54d6f3b4532f0c42acb4607b4057158ab7f",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/calls.json": "efcbdcaa8f744e2f12ff08487d882e7be9953134db80aa6eee1dfd40488a2d1c",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/model-io.json": "dda39ec52fa21516d116802c6d65b9a6f4d2235cfdfe637ef4177b5c51d414b2",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-bibliography/03de00219de844b2b2f0338623112e7b-0.proof.json": "604cf55a648195348297eff7fc22a9568c62ac560924928cf10691bca8203b09",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-bibliography/03de00219de844b2b2f0338623112e7b.json": "2cb9577df9b282302330a8d8dc58b71b84ae5bba687f8b8e3a0e838ccd8eaa8e",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-bibliography/03de00219de844b2b2f0338623112e7b.response.json": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0001-1789419505532267000.stderr": "860e82bd6fc804026cbe68fb23d0e205d781168b524e5dbac68f019c267e4e9a",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0001-1789419505532267000.stdout": "4f38681c6bb476a90ff33a451050fadb2cd55179a1c9ae9458f18696b3e0d93d",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0002-1789419512926442000.stderr": "7cfdc02858fff564c37f2393d8fd45e7deec21be2a5127aae9dae076366edb29",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0002-1789419512926442000.stdout": "3672abefe254933589fa10527a11eb1813944f38b9a63223c35cfa64cbd45b81",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0003-1789419521942950000.stderr": "94caec25435ab0560070909a831300de57048227705ab99ef9cbbf2f66136265",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0003-1789419521942950000.stdout": "4d18a31d1168176cf0fb07ed4818f756d55d98d5e130d5998da6a42cab204ba3",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0004-1789419538969354000.stderr": "a2c44023a8a6dd255323545fbcc969eb7c0985352a83e93265899a838707e6c2",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/private-cli-events/0004-1789419538969354000.stdout": "6af859b54be4e8ee30b918feb98fa762c6ae849e4818329cee93eef835df25f2",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/result.json": "8ee517dbee1d243bf6ee05cef809173318b2cdf339c54dd652041e93f701679e",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/retrieval.json": "5ab1b5d55fde71542e37a3633dc57625f1208736a4594b53a170b58eb9346992",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/sources.json": "09cc1ff29dca2b9fb60e0df5629a2cb390fb87da3cfe336203f3efcc2f9a1658",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-direct/workflow.json": "1b10762880087caf7648626469ff1377b8f9814aff802d8c8a6a5c144dcf044f",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/archive-records.json": "ead9aba6bed9fd2af5eb1842ecc32a240b761675c678eb9ed280ed37a1e51948",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/calls.json": "583f6cff5f4b16aaf039e213f91b02983189d5c9f9ed312d1d407b9130a40a0a",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/model-io.json": "bef483d815002a95bc875e7e23fd3661e01b81a5c9b9a3673dccfc50ed61f8be",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-bibliography/872fe8756c204e65aa39cd59fd675235-0.proof.json": "b4a8e4a3ce3ca591bd36196c0f4df0fc4d34628462ffa7808b34e0151264ec76",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-bibliography/872fe8756c204e65aa39cd59fd675235.json": "5d47c34079deff98acf8a9ca60fb79c740529319d26dee54acd96a51ca1c6440",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-bibliography/872fe8756c204e65aa39cd59fd675235.response.json": "59fea64098942db6624b00ac584dbdb0c22d47a8aeae0487bd606a9b565e950a",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0001-1789416689634240000.stderr": "8a97a9f94b43b3555d4899df589862dd597e0a5ab1352a7c7fffa0a4f1495ca5",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0001-1789416689634240000.stdout": "6370ed0d7aa653603dbe65bec78adb610699aa7bd8f7458f386ba7cd37e6b337",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0002-1789416723709957000.stderr": "c7ded0ff73b7938f8564388099ccdb0ed2054f9a31f4d76ce7a4ba3b9fa89d84",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0002-1789416723709957000.stdout": "0eca5d2e3508314093611008d60566131e1147b32c2385c622c587dda77b1529",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0003-1789416731682675000.stderr": "0daea091ee730e35b2ef3a1a2ac36efccd424ae41f47458b7cffe2efd9fb73dc",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0003-1789416731682675000.stdout": "3f93c7860a210472fd02269a86b531028b2cc40166f2762262b3f1ea7499a916",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0004-1789416741587145000.stderr": "b5992a2b4444bd9abd7e796886e682cdbb2e3e25bfbc50700e51224eee513c8c",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0004-1789416741587145000.stdout": "ce5f6213698a124b80dd8cc377f230578847c932a84474b6448a8eeeb793637f",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0005-1789416760492913000.stderr": "7c0ad94f128d9ee521a5570c9eaab837b2a831eb1e73300dba7ebc604410cd0d",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0005-1789416760492913000.stdout": "16284b2b8a7d9943e3398ae52a780ae8e37d21016eefa52b687e717d23b211c5",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stderr": "5c99a5ec486297f3e7dedeac70ba874ce5cfe08914399bdd3b63cdacdd677ee7",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0009-1789419477177240000.stdout": "1d237da0c07911ddb70701aca3edaa41baf40b9523f098744b3222bd43a032c3",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0010-1789419495000535000.stderr": "b255f68a09441f000a5c515a892f1be090c4f3407c8370a6f8bfc2288358e8f6",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/private-cli-events/0010-1789419495000535000.stdout": "74d74c4628b8b867c135af510f55d9b29d3426fee4ccaec925b2848b434e9fc8",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/result.json": "7360fc4d42d551707a536650c6ee267a78fa77701183f82538158d6c2c566912",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/retrieval.json": "fb1a0f054c6719aae4cd505102ece69206ef6cffa37f40dd388914734c4ecccf",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/sources.json": "7b4a6c979370446cab38f6293e90da5441da975c29fd5bbac4d4b57491da24ec",
+      "experiments/live-origin-v11-20260914/private-run-01/a702-harness/workflow.json": "350831463edebd1c61a281591f76187323746c18741fb90fa0a133142fb1c4d6",
+      "experiments/live-origin-v11-20260914/private-run-01/manifest.json": "0eebfeb0bf9c5365d6280889408bf1326e86ac3ce906916e2ee0417d436247a3",
+      "experiments/live-origin-v11-20260914/private-run-01/predictions.json": "1083f4e05c1dba9b34c794e27e375f3a2c36c55b913f5acb50ac9fd6bb7b59f0"
+    },
+    "preexisting_report_sha256_before_and_after_equal": {
+      "reports/live-origin-v11-20260914/RECEIPTS.json": "6d5ff39599a181d412732d16f875b349c563cb1f6baec2fe53ab0c23b7dab483",
+      "reports/live-origin-v11-20260914/RESULTS.json": "cd562f1ac3e32d0741765a391668569342b9f78f5754cd6ba13daeae9712bab7",
+      "reports/live-origin-v11-20260914/STAGE_TOKENS.json": "00dd644a1aeb2169498f801cbd83f446a14ac9b8dda56ceca943cb5ca9f88b2a",
+      "reports/live-origin-v11-20260914/SUMMARY.json": "53c9027df62122447f9f7cf16386694e40342c60023425d501c8cc4175d47bbf",
+      "reports/live-origin-v11-20260914/TOKEN_AUDIT.json": "9ac9f5cfe8b02399509d139ba524d1185015ff035c8c102808f25394d8997aec"
+    },
+    "used_cache_file_sha256_before_and_after_equal": {
+      "experiments/live-origin-v11-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.body": "017b0045d63bf601dd731c1708b555cb932b8a1ea46030b2863b6cc4aaa4616f",
+      "experiments/live-origin-v11-20260914/private-cache/0384ca77c8370b9dfdd6e57eb35ac17aacaa57bbbd7a09e674b29ef116a9a562.json": "fa42d2926838689a96cfeb0c8bef97cc8faa6101705454cfe78fb2d848610524",
+      "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.body": "ecfc8b25b9deea1a084e077e5f5cdd132a97cad9b25d003b927cd9194e150b6e",
+      "experiments/live-origin-v11-20260914/private-cache/07b64f54e6b66b04680ef1028c77c2f67f4ff978c05fdfe983819258677ddb8c.json": "86a094a4434612c7122b012c5861800319dea7433b3aef04695e6b7cb4c5779e",
+      "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.body": "f5b773686f2179991d325017a07786ff3822475924383c1ce66b68da479c0f50",
+      "experiments/live-origin-v11-20260914/private-cache/07f0f8c280fd0d97f42325d08caf3e455d176197db011b1853da21ba7eddff41.json": "3f37c733f7cbb0087cc58ac4e0bfef6a881103138101489ad2193d2632a3618f",
+      "experiments/live-origin-v11-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.body": "887e38901d8c661e25fef9120af1a1256654e2509a4402f682ce50bf56e0d994",
+      "experiments/live-origin-v11-20260914/private-cache/1c78d683d9544b6bc41d849cebb59fe6a0df634c6babfe8212225e745cef5c8d.json": "e680a48166a30b42cb935ca7d5d86d01ff1324b147f74a33095b0fa0eb687d93",
+      "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.body": "4fb9ffc8e042c3dfdf98618206ff679df7f8522c2d379058c6aae76b1eb09f02",
+      "experiments/live-origin-v11-20260914/private-cache/22b33ba5c5958877652cfacb9ae40f25f4b8c3b4f6c6854d9998fc9fb472b56e.json": "0644a906acfc9ea3cf14c76ecafe41715ab03dcdf216d2d07f22fc40f97f2e95",
+      "experiments/live-origin-v11-20260914/private-cache/28695c3502423218dcf056fe8e8ca85d9ce026b4e0080674e4e88226ec66f18d.body": "bf469bb45b467f9dd79fcfea624c0f2a54baa62551c94f574f57c7228f162a5a",
+      "experiments/live-origin-v11-20260914/private-cache/28695c3502423218dcf056fe8e8ca85d9ce026b4e0080674e4e88226ec66f18d.json": "82eed4c30f778c80dc46fa3613d138ee00fb8db227cd136a9b602a614ea277e1",
+      "experiments/live-origin-v11-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.body": "f4b33dda70fde8dab8cb9013eb7842b2cf3ed0fba9530caa19557ee0ab63094c",
+      "experiments/live-origin-v11-20260914/private-cache/3a800987b3c9c593ddd1655f39b0b7d3b0fa057cb302545ac49b8ccfa012bf19.json": "100759289bbb109f22d54f496d698d5f2776f3eae899b0f32d82c206c9ea0973",
+      "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.body": "f39b45438db9a01f3adc684429243b8142fca2ea5c11efc5c49ccd844f407946",
+      "experiments/live-origin-v11-20260914/private-cache/75d88f39e34cf1f116612b091196ba3fde000ae8b52747ddc0d4e5855a30db94.json": "8c973b7c2ffb9f8fc09afa34252ebb9e1ac10ea0742cd5d1a315750a5d36aeeb"
+    },
+    "previous_primary_fullness_audit": {
+      "path": "<checkout> tracing/private-data/live-origin-v10-checkout/reports/live-origin-v10-20260914/AUDIT.json",
+      "sha256": "cdb2b8a15561f4681b5a026e1285f044c9962e0fa8cd60de44be6a11caf60176",
+      "scope": "Only the identical primary raw/text hashes and substantive-section checks were reused; V11 bytes and metadata freshly revalidated."
+    },
+    "all_raw_cache_registered_preexisting_report_files_unchanged": true,
+    "new_file_only": "reports/live-origin-v11-20260914/AUDIT.json"
+  }
+}

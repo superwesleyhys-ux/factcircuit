@@ -57,6 +57,16 @@ def source_name(source):
     return urlsplit(source["url"]).path.rsplit("/", 1)[-1]
 
 
+def retained_basis(context, source):
+    """Use only exact evidence actually retained in the incremental packet."""
+    if "content" in source:
+        return basis(source)
+    fragments = context["analyses"][source["version_id"]]["fragments"]
+    span = next(item["span"] for item in fragments
+                if item["span"]["version_id"] == source["version_id"])
+    return {"version_id": span["version_id"], "quote": span["quote"]}
+
+
 class OfflineCollector:
     """Instantiation is harmless; any fetch/search would violate offline mode."""
     def __init__(self, **kwargs):
@@ -130,7 +140,9 @@ class NewsFixtureTransport:
 
     def decompose(self, packet):
         source, target = packet["material"], packet["target"]
-        available = {x["version_id"]: x for x in packet["context"]["materials"]}
+        context = packet["context"]
+        available = {x["version_id"]: x for x in
+                     context["materials"] + context.get("prior_materials", [])}
         available[source["version_id"]] = source
         version = source_name(source)
         versions = {source_name(item): key for key, item in available.items()}
@@ -146,20 +158,31 @@ class NewsFixtureTransport:
                 "status": "direct" if direct else "declared", "basis": [basis(source)],
                 "rationale": "The quoted source explicitly identifies this upstream URL.",
                 "upstream_locator": "https://synthetic.invalid/" + upstream})
+        # The new source binds an earlier declared citation using its retained
+        # exact evidence. No earlier analysis is repeated or promoted in place.
+        for previous in context["analyses"].values():
+            for relation in previous["relations"]:
+                if relation["status"] == "declared" and relation["upstream_locator"] == source["url"]:
+                    result["relations"].append({
+                        "id": "obtained-" + relation["from_version"],
+                        "from_version": relation["from_version"], "to_version": source["version_id"],
+                        "kind": "cites", "status": "direct",
+                        "basis": [{"version_id": span["version_id"], "quote": span["quote"]}
+                                  for span in relation["basis"]],
+                        "rationale": "The earlier exact citation identifies this newly obtained source.",
+                        "upstream_locator": source["url"],
+                    })
         if version in {"record", "release", "unrelated"}:
             result["origins"] = [{"version_id": source["version_id"], "basis": [basis(source)],
                 "material_kind": "original_record", "rationale": "Synthetic producing-record annotation."}]
             result["resolutions"] = [{"gap_id": "origin:" + target["id"],
                 "basis": [basis(source)], "rationale": "Synthetic root finding; a source path is still required."}]
-        if version == "wire" and "record" not in versions and "copy" in versions:
-            result["revisit_versions"] = [versions["copy"]]
-        if version == "record" and "wire" in versions:
-            result["revisit_versions"] = [versions["wire"]]
         return result
 
     def verify(self, packet):
         context, target = packet["context"], packet["target"]
-        available = {source_name(x): x for x in context["materials"]}
+        available = {source_name(x): x for x in
+                     context["materials"] + context.get("prior_materials", [])}
         settled = "raw-log" if self.mode == "false_primary" else "record"
         gap_id = "verification:" + target["id"] + ":measurement"
         result = {"verdict": "unresolved", "basis": [],
@@ -167,11 +190,12 @@ class NewsFixtureTransport:
                   "gaps": [{"id": gap_id, "question": "Obtain the synthetic measurement record.",
                             "stage": "verification"}], "resolutions": []}
         if settled in available:
+            evidence = retained_basis(context, available[settled])
             result.update(verdict="contradicted" if self.mode == "false_primary" else "supported",
-                          basis=[basis(available[settled])], gaps=[],
+                          basis=[evidence], gaps=[],
                           rationale="The cited synthetic measurement record settles the stated value.")
             if any(g["id"] == gap_id for g in context["gaps"]):
-                result["resolutions"] = [{"gap_id": gap_id, "basis": [basis(available[settled])],
+                result["resolutions"] = [{"gap_id": gap_id, "basis": [evidence],
                                           "rationale": "The quoted record answers the measurement question."}]
         return result
 
@@ -202,7 +226,7 @@ class NewsTracingIntegrationTests(unittest.TestCase):
         self.assertLessEqual(len(transport.calls), 40)
         return report, transport
 
-    def test_copy_chain_requires_evidenced_revisits_to_the_actual_terminal_origin(self):
+    def test_copy_chain_requires_incremental_exact_edges_to_the_actual_terminal_origin(self):
         report, transport = self.run_fixture([COPY, WIRE, RECORD])
         result = report["results"][0]
         self.assertEqual("completed", result["status"])
@@ -214,8 +238,28 @@ class NewsTracingIntegrationTests(unittest.TestCase):
         direct_edges = {(e["from_version"], e["to_version"]) for e in trace["relations"]
                         if e["status"] == "direct" and e["kind"] == "cites"}
         self.assertEqual({("copy", "wire"), ("wire", "record")}, direct_edges)
-        self.assertEqual({"copy", "wire"}, {h["version_id"] for h in trace["analysis_history"]
-                                           if h["accepted"] and h["revisit"]})
+        history = trace["analysis_history"]
+        self.assertEqual(["copy", "wire", "record"], [h["version_id"] for h in history])
+        self.assertTrue(all(h["accepted"] and not h["revisit"] and not h["duplicate"] for h in history))
+        decompositions = [i["packet"] for i in transport.inputs if i["stage"] == "decompose"]
+        self.assertEqual(["copy", "wire", "record"], [p["material"]["version_id"] for p in decompositions])
+        self.assertEqual(3, trace["usage"]["decomposition_calls"])
+        self.assertFalse(trace["config"]["reanalyze_existing_versions"])
+        for index, packet in enumerate(decompositions):
+            previous = {h["version_id"]: h["analysis"] for h in history[:index]}
+            self.assertEqual(previous, packet["context"]["analyses"])
+            self.assertEqual([], packet["context"]["materials"])
+            self.assertEqual(set(previous), {m["version_id"] for m in packet["context"]["prior_materials"]})
+            self.assertTrue(all("content" not in m for m in packet["context"]["prior_materials"]))
+        self.assertEqual({h["version_id"]: h["analysis"] for h in history}, trace["analyses"])
+        self.assertEqual("declared", trace["analyses"]["copy"]["relations"][0]["status"])
+        self.assertEqual("declared", trace["analyses"]["wire"]["relations"][0]["status"])
+        contents = {m["version_id"]: m["content"] for m in trace["materials"]}
+        for relation in trace["relations"]:
+            if relation["status"] == "direct":
+                self.assertIn(relation["from_version"], {s["version_id"] for s in relation["basis"]})
+                for span in relation["basis"]:
+                    self.assertEqual(span["quote"], contents[span["version_id"]][span["start"]:span["end"]])
         origins = result["origin_summary"]
         self.assertEqual(("located", 1, 1), (origins["status"], origins["claim_count"], origins["located_claims"]))
         self.assertEqual([RECORD["url"]], [s["url"] for s in origins["sources"]])
@@ -443,22 +487,24 @@ class NewsTracingIntegrationTests(unittest.TestCase):
             def decompose(self, packet):
                 result = super().decompose(packet)
                 source = packet["material"]
-                available = {source_name(s): s for s in packet["context"]["materials"]}
+                context = packet["context"]
+                available = {source_name(s): s for s in context.get("prior_materials", [])}
                 if source_name(source) == "unrelated" and "unlinked-copy" in available:
-                    result["revisit_versions"] = [available["unlinked-copy"]["version_id"]]
-                if source_name(source) == "unlinked-copy" and "unrelated" in available:
-                    result["relations"] = [{"id": "invented-use", "from_version": source["version_id"],
-                        "to_version": available["unrelated"]["version_id"], "kind": "cites", "status": "direct",
-                        "basis": [basis(source)], "upstream_locator": UNRELATED["url"],
+                    previous = available["unlinked-copy"]
+                    result["relations"] = [{"id": "invented-use", "from_version": previous["version_id"],
+                        "to_version": source["version_id"], "kind": "cites", "status": "direct",
+                        "basis": [retained_basis(context, previous)], "upstream_locator": source["url"],
                         "rationale": "Synthetic false assertion of a link absent from the actual source."}]
                 return result
 
-        report, _ = self.run_fixture([UNLINKED_COPY, UNRELATED], transport=FalseEdgeTransport())
+        report, transport = self.run_fixture([UNLINKED_COPY, UNRELATED], transport=FalseEdgeTransport())
         result = report["results"][0]
         claim = result["claims"][0]
         self.assertTrue(claim["trace"]["origins"], "The fixture must offer a model-labelled origin")
         self.assertTrue(any(r["status"] == "direct" for r in claim["trace"]["relations"]),
                         "The fixture must exercise a purported direct edge with an exact non-link quote")
+        self.assertEqual(["unlinked-copy", "unrelated"], [entry["packet"]["material"]["version_id"]
+                         for entry in transport.inputs if entry["stage"] == "decompose"])
         self.assertNotEqual("original_material_located", claim["provenance_status"])
         self.assertEqual("unresolved", result["origin_summary"]["status"])
         self.assertEqual([], result["origin_summary"]["sources"])
@@ -563,6 +609,15 @@ class NewsTracingIntegrationTests(unittest.TestCase):
         self.assertEqual([UNLINKED_COPY, UNRELATED, RECORD], item["sources"])
         self.assertEqual("supported", item["claims"][0]["fact_status"])
         self.assertNotEqual("original_material_located", item["claims"][0]["provenance_status"])
+        latest_check = [entry["packet"]["context"] for entry in formal if entry["stage"] == "verify"][-1]
+        self.assertEqual(["unrelated"], [m["version_id"] for m in latest_check["materials"]])
+        prior_record = next(m for m in latest_check["prior_materials"] if m["version_id"] == "record")
+        self.assertNotIn("content", prior_record)
+        self.assertIn("record", latest_check["verified_version_ids"])
+        self.assertEqual(basis(RECORD), retained_basis(latest_check, prior_record))
+        final_evidence = item["claims"][0]["trace"]["verification_history"][-1]["basis"]
+        self.assertEqual(["record"], [span["version_id"] for span in final_evidence])
+        self.assertEqual(RECORD["content"], final_evidence[0]["quote"])
         actual = [entry for entry in item["execution"]["model_io"] if entry["stage"] in {"decompose", "select", "verify"}]
         self.assertEqual([entry["packet"] for entry in formal], [entry["packet"] for entry in actual])
         self.assertEqual(len(transport.calls), len(item["execution"]["model_calls"]))

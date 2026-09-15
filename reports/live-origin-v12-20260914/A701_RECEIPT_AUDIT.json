@@ -1,0 +1,1406 @@
+{
+  "scope": "Completed V12 a701-harness only; no live-arm or future-label inspection",
+  "status": "completed",
+  "commit": "21b31f027e1c47fd28c25b9568c949dc40f93312",
+  "call_count": 18,
+  "all_attempts_known_usage": true,
+  "total_input_output": 1601961,
+  "native_total_input_output": 330053,
+  "per_call": [
+    {
+      "index": 1,
+      "stage": "harness_retrieval_decision",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 24887,
+        "cached_input_tokens": 7552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 149,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 24887,
+        "cached_input_tokens": 7552,
+        "output_tokens": 149,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 25036
+    },
+    {
+      "index": 2,
+      "stage": "harness_retrieval_decision",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 184826,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 184826,
+        "cached_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 184958
+    },
+    {
+      "index": 3,
+      "stage": "deconstruct",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 130179,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 130179,
+        "cached_input_tokens": 0,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 130566
+    },
+    {
+      "index": 4,
+      "stage": "search_plan",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 124135,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 139,
+        "reasoning_output_tokens": 33
+      },
+      "saved_usage": {
+        "input_tokens": 124135,
+        "cached_input_tokens": 0,
+        "output_tokens": 139,
+        "reasoning_output_tokens": 33
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 124274
+    },
+    {
+      "index": 5,
+      "stage": "source_trace",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 123983,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 619,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 123983,
+        "cached_input_tokens": 0,
+        "output_tokens": 619,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 124602
+    },
+    {
+      "index": 6,
+      "stage": "source_verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 124620,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 124620,
+        "cached_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 125047
+    },
+    {
+      "index": 7,
+      "stage": "timeline_build",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 124921,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 634,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 124921,
+        "cached_input_tokens": 0,
+        "output_tokens": 634,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 125555
+    },
+    {
+      "index": 8,
+      "stage": "direct_response",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 131674,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 234,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 131674,
+        "cached_input_tokens": 0,
+        "output_tokens": 234,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 131908
+    },
+    {
+      "index": 9,
+      "stage": "synthesis",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 126251,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 567,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 126251,
+        "cached_input_tokens": 0,
+        "output_tokens": 567,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 126818
+    },
+    {
+      "index": 10,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 17084,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 17084,
+        "cached_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 17890
+    },
+    {
+      "index": 11,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 17842,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 210,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 17842,
+        "cached_input_tokens": 0,
+        "output_tokens": 210,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 18052
+    },
+    {
+      "index": 12,
+      "stage": "select",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 10394,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 64,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 10394,
+        "cached_input_tokens": 0,
+        "output_tokens": 64,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 10458
+    },
+    {
+      "index": 13,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 116808,
+        "cached_input_tokens": 7936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1568,
+        "reasoning_output_tokens": 88
+      },
+      "saved_usage": {
+        "input_tokens": 116808,
+        "cached_input_tokens": 7936,
+        "output_tokens": 1568,
+        "reasoning_output_tokens": 88
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 118376
+    },
+    {
+      "index": 14,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 118153,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 403,
+        "reasoning_output_tokens": 58
+      },
+      "saved_usage": {
+        "input_tokens": 118153,
+        "cached_input_tokens": 0,
+        "output_tokens": 403,
+        "reasoning_output_tokens": 58
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 118556
+    },
+    {
+      "index": 15,
+      "stage": "select",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 10007,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 80,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 10007,
+        "cached_input_tokens": 0,
+        "output_tokens": 80,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 10087
+    },
+    {
+      "index": 16,
+      "stage": "decompose",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 17142,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1110,
+        "reasoning_output_tokens": 44
+      },
+      "saved_usage": {
+        "input_tokens": 17142,
+        "cached_input_tokens": 0,
+        "output_tokens": 1110,
+        "reasoning_output_tokens": 44
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 18252
+    },
+    {
+      "index": 17,
+      "stage": "verify",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 18106,
+        "cached_input_tokens": 7680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 276,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 18106,
+        "cached_input_tokens": 7680,
+        "output_tokens": 276,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 18382
+    },
+    {
+      "index": 18,
+      "stage": "shared_final_forecast",
+      "status": "completed",
+      "unique_receipts": true,
+      "stdin_matches_journal": true,
+      "stdin_sha_matches": true,
+      "schema_matches": true,
+      "model_matches": true,
+      "reasoning_matches": true,
+      "stage_status_matches": true,
+      "response_matches_cli": true,
+      "exactly_one_completed_turn": true,
+      "cli_failure_events": 0,
+      "raw_usage": {
+        "input_tokens": 172820,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 324,
+        "reasoning_output_tokens": 0
+      },
+      "saved_usage": {
+        "input_tokens": 172820,
+        "cached_input_tokens": 0,
+        "output_tokens": 324,
+        "reasoning_output_tokens": 0
+      },
+      "retained_usage_fields_match": true,
+      "total_input_output": 173144
+    }
+  ],
+  "exact_receipt_file_hashes": {
+    "private-cli-events/0001-1789421748548546000.request.json": "f05733d903cea506240efffd60423554f88f33f133efb428b10f6b9649a6d6dc",
+    "private-cli-events/0001-1789421758765662000.stdout": "fd1e61c00386f2613c995f725777e491d34bfd9e3c110633aa8de24a518f3ce3",
+    "private-cli-events/0001-1789421758765662000.stderr": "9cb9112238fc467c581a25a474027a994da9eb7f247f78527ef1e6bfedb82d3c",
+    "private-cli-events/0002-1789421758881629000.request.json": "be2ceaece9639d35ea905ac04c50caf07497aef45dd0bfbdf3a6dea55f0f5971",
+    "private-cli-events/0002-1789421768274428000.stdout": "f134bf577ef280a0258068b261b6ad37246b231be95e38abce0aa3c8772d2aae",
+    "private-cli-events/0002-1789421768274428000.stderr": "d25200fc5c0ce2a263a9f09c9f356154dff72e685459a1d930c070a9051b170e",
+    "private-cli-events/0003-1789421768300710000.request.json": "2bdea52f2539036932e2c0e8c83328d1b19ec40baa161a83e6790fd2e266e576",
+    "private-cli-events/0003-1789421785478673000.stdout": "084f5b77978581e3bd1492f6b9e3225f59b3ff8d3ed541ba3a639a31b1fb7fcc",
+    "private-cli-events/0003-1789421785478673000.stderr": "b7ee9051a195a99decaa054199285fdfcbaa4fe762428564e2272894adf8bead",
+    "private-cli-events/0004-1789421785503662000.request.json": "d331be93a3ffab46f3bd1b50158fd8d4b2a5682570aaf68fa9ae88478bfdb8cd",
+    "private-cli-events/0004-1789421794248445000.stdout": "1c97123fdf2df084153681b40834bb8227feebe82dc6ce3ff70d5eca9ecb70fd",
+    "private-cli-events/0004-1789421794248445000.stderr": "ba01cbf27e92a03130c76577371f9dd6ad08f4c9e295dcafe1e9058b8bd795f9",
+    "private-cli-events/0005-1789421794272595000.request.json": "0b9acabd5fcce348f4f5ed5488bb96f157171f779b1889519078f6a5bcd6a313",
+    "private-cli-events/0005-1789421818362013000.stdout": "d52af76446e6ef07d41fb5d29d31b377cb1fba1fb2be6b67b3cd4bcf3e7e3ca9",
+    "private-cli-events/0005-1789421818362013000.stderr": "5d6945eccf7da9291d67275bf93444ad292ae4f53ea80d1f7800483fe3d179cf",
+    "private-cli-events/0006-1789421818394230000.request.json": "fc920832957eeee050089abe97dc5102c1e6e3dedda657d53c59509d0f5d12d9",
+    "private-cli-events/0006-1789421836709142000.stdout": "2929f80b029feef0f8be0964879fbeb53793cf2721f3b12a337dd8af547ee694",
+    "private-cli-events/0006-1789421836709142000.stderr": "a29b7c712a5fb2818e80e034def076be8ed9cb90fbc37cdc77091b63a54f538b",
+    "private-cli-events/0007-1789421836742346000.request.json": "51c35fb151889f814af9f245dfc2a15514020ff16594f65c63e12383d2215883",
+    "private-cli-events/0007-1789421860728959000.stdout": "e719b4f3ef6c39173c350b56c19514f84211c89759ed87be6154bb1d3d14ca9c",
+    "private-cli-events/0007-1789421860728959000.stderr": "3fc415caa6a0702923ed01db50e86cee1fdcdd8f35920b024b017e286b4ba7a1",
+    "private-cli-events/0008-1789421860768109000.request.json": "3eb7626c79152641c17ccb0f0c1c43d0345e086986c49fd49b45284fa1d12dff",
+    "private-cli-events/0008-1789421873823946000.stdout": "5ee8bb20bbf3570be2aff28b582d45b1a873c61e3c99870c6aa44e378e9cb50c",
+    "private-cli-events/0008-1789421873823946000.stderr": "7b06bdce6637c420e8fc92e9f67c6ad45846243a0f51701eaa4d93065bdb207d",
+    "private-cli-events/0009-1789421873876520000.request.json": "996160da837d0695ab9de8047aa25d665afbf996d64c264ebddfa95308a852a3",
+    "private-cli-events/0009-1789421895627442000.stdout": "bff4dde5de7399262c39051700aab71c6d5f90257b0b5bb1d9d4ab86a3fd95a1",
+    "private-cli-events/0009-1789421895627442000.stderr": "d1cd5c774888ed9649d8b3109dfe0efe1de550fde90643f67f15cbd8f523588e",
+    "private-cli-events/0010-1789421895684574000.request.json": "9d2ba1340dbff924ce6e1302ce1bc6c6b73a316f0148c4042f8786c608f00d4f",
+    "private-cli-events/0010-1789421923668246000.stdout": "ee352f41e25311cc7df9e4ffab3012c7e23c7e85384699694635ef0047050065",
+    "private-cli-events/0010-1789421923668246000.stderr": "4ca55fbbaf672892bd0003f511a6a8616cdf5f902342050e4a757b1fa4685889",
+    "private-cli-events/0011-1789421923711036000.request.json": "ba8a162d254037db8c6a320bcb10388e21fc715b3305bd54e368b2a220a43c34",
+    "private-cli-events/0011-1789421933815533000.stdout": "5a28b41a6ab5cfe7838fccb59be27af77d948a6c23e6ffc05cac07f2ea1d5a74",
+    "private-cli-events/0011-1789421933815533000.stderr": "9dd4eda75f4ec63a51b2b86b4fce0ddfa09469795798fa69dd077a4f90d3643f",
+    "private-cli-events/0012-1789421933856551000.request.json": "80cd795c591422f4d75379ce93b67c472eee69617da3b4c8f6a4d8c1a6dfbdcd",
+    "private-cli-events/0012-1789421938852725000.stdout": "4a5705345e1f691fe78c8f68a8e21f4b6d322154be3d611af82d55fcdc56dff9",
+    "private-cli-events/0012-1789421938852725000.stderr": "62d4eb5a0919e6ab6f3b050c47353d40dac8aaba0e0ddad82431a614d660ca2e",
+    "private-cli-events/0013-1789421938897628000.request.json": "467d58bc7a06d4efd2db74fe3b2e31db59cc5446b322e1a2792beaeb83152e35",
+    "private-cli-events/0013-1789421993081599000.stdout": "c816d08da3fa1d0722cd939b1eb3703a2df927a4a7d2f0f42423c83c03aaf78f",
+    "private-cli-events/0013-1789421993081599000.stderr": "1548c269fa9d98038f35de56fe091a09ad209c47741c7f8d4c51c185a781aca8",
+    "private-cli-events/0014-1789421993133853000.request.json": "878cffb2fc979b3447afee7a9b1d346eb68a50c534fe6e0629282e1c9994d080",
+    "private-cli-events/0014-1789422010166632000.stdout": "622b8d6fad427234ad53213c71818581af024662b6c4defed576aeff441726d1",
+    "private-cli-events/0014-1789422010166632000.stderr": "d9397d72f89026a720f35bf148f436dc9babb7b53a4df8276c97c2795a2f098a",
+    "private-cli-events/0015-1789422010217128000.request.json": "f4e5ae3f3ac1c9b5580e95293ed89a6850964c4ced8f5eba3512ecc191025558",
+    "private-cli-events/0015-1789422015948925000.stdout": "c8b04af6f00f4bbb59cee02fa34a3defe86ac07b7bfbc03556628a266d271f72",
+    "private-cli-events/0015-1789422015948925000.stderr": "a21ced02cf83704b827d1e1b77e969ffaaf42db893402cf510e372da0757894b",
+    "private-cli-events/0016-1789422015999905000.request.json": "6a7acf9f5a81b12e7e354d9b1955d417978fc25f5d6d9d0148cce7404d343391",
+    "private-cli-events/0016-1789422052732175000.stdout": "f11681ab213be6ef0c28945e34cc6a3f976c685e4548b3c435bdf923f128a7da",
+    "private-cli-events/0016-1789422052732175000.stderr": "038becd8b151320e332a6c6314417bbfcea353c19541b2a6a4c84efe00975779",
+    "private-cli-events/0017-1789422052787928000.request.json": "dd11504492298eaa0c57481e9329fcdbe2527f2f9b32e1d6a790c0cc5646139c",
+    "private-cli-events/0017-1789422066837877000.stdout": "3b1e9afcce2d26185ec47b90fbfc3b2f3665e5ff085c87abef38e325bf2290df",
+    "private-cli-events/0017-1789422066837877000.stderr": "782b87f9cf035cb7a5f4a1d29e22a91a887415452e73bc1ff9d0474e401374b5",
+    "private-cli-events/0018-1789422066921358000.request.json": "fb3f56bb04dde854222f5f18a5b72c661b7925ff6727713cc9dd3be1018c686a",
+    "private-cli-events/0018-1789422082618196000.stdout": "9cb4883a39c23b6dc85d7fc4fed4c246dd84ac92df8298fca3aeb85d42878b3c",
+    "private-cli-events/0018-1789422082618196000.stderr": "3cf2585058714d104e8c73ad249620bb96eee4093d59953ef1b37b4b17a44189",
+    "calls.json": "11314acfa45e3265be583dafb75e8fd768f70eb9f17bf88121f9766daade67d8",
+    "model-io.json": "688744ddc5cd56606907c43d869f768e7f6bdcaab8d9d28e2cfecb624d7ce6d8",
+    "workflow.json": "ad42ffb51a1aadfe6710cd82ffa780a62696897b74aa82d9108f7975a71b9c0f",
+    "result.json": "968a5465039b5cb57b3925f11c8f2248bb3c91f0917dbb3e98d4cef8c58e623a",
+    "sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+    "retrieval.json": "c15f2fd3b5da9e77368af8761cae727139d78ba759e8189586eaa984f6153664",
+    "archive-records.json": "542ac87f1b43cbf39840b0f61491229d0c067ce968726c958707a4b496428c67"
+  },
+  "cutoff": "2024-12-31T23:59:59Z",
+  "source_cutoff_checks": [
+    {
+      "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+      "available_at": "2023-05-26T21:22:00+00:00",
+      "eligible": true,
+      "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+      "content_chars": 23821
+    },
+    {
+      "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+      "available_at": "2024-07-17T10:50:04+00:00",
+      "eligible": true,
+      "content_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+      "content_chars": 10157
+    },
+    {
+      "url": "https://www.nature.com/articles/s41598-021-97778-3",
+      "available_at": "2024-03-12T11:05:45+00:00",
+      "eligible": true,
+      "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+      "content_chars": 366632
+    }
+  ],
+  "item_snapshot_matches_exact_dispatch": true,
+  "inner_snapshot_count_matches": true,
+  "inner_snapshot_checks": [
+    {
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "select",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "select",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "decompose",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    },
+    {
+      "stage": "verify",
+      "stage_matches": true,
+      "packet_matches_before_advice": true,
+      "response_matches": true,
+      "schema_matches": true,
+      "instructions_prefix_preserved": true
+    }
+  ],
+  "prior_decision_prefix_exact": [
+    true,
+    true
+  ],
+  "dedup": {
+    "arm": "a701-harness",
+    "valid": true,
+    "dedup_status": "passed",
+    "summary": {
+      "journal_attempts": 18,
+      "request_receipts": 18,
+      "failed_attempts": 0,
+      "blocked_not_counted": 0,
+      "native_packet_count": 6,
+      "native_trace_count": 1,
+      "stage_coverage": {
+        "decompose": true,
+        "verify": true
+      }
+    },
+    "checks": {
+      "input_stable_during_read": true,
+      "full_material_shape": true,
+      "version_identity_no_collision": true,
+      "unique_trace_target": true,
+      "one_accepted_analysis_per_version": true,
+      "accepted_history_never_revisit": true,
+      "final_analyses_preserved": true,
+      "incremental_policy_enabled": true,
+      "no_actual_revisit_operations": true,
+      "aliases_not_forged_as_admitted": true,
+      "call_journal_lengths_match": true,
+      "receipt_filename_has_call_index": true,
+      "no_orphan_or_duplicate_receipts": true,
+      "call_record_objects": true,
+      "call_stage_and_terminal_status_match": true,
+      "one_request_receipt_per_attempt": true,
+      "request_receipt_shape": true,
+      "stdin_hash_matches_receipt_and_call": true,
+      "receipt_schema_and_model_match": true,
+      "stdin_exactly_matches_immutable_journal": true,
+      "native_trace_and_context_available": true,
+      "incremental_packet_lists": true,
+      "unique_materials_in_packet": true,
+      "prior_analyses_preserved_in_packet": true,
+      "prior_verdicts_preserved_in_packet": true,
+      "verified_ids_preserved_in_packet": true,
+      "decompose_no_context_full_bodies": true,
+      "decompose_has_all_prior_metadata": true,
+      "full_content_fields_only_at_declared_locations": true,
+      "verify_only_new_full_bodies": true,
+      "verify_has_all_prior_metadata": true,
+      "verification_history_unambiguous": true,
+      "prior_metadata_only": true,
+      "prior_metadata_hash_matches_original": true,
+      "decompose_at_most_once_per_version": true,
+      "decompose_at_most_once_per_immutable_alias": true,
+      "verify_at_most_once_per_version": true,
+      "verify_at_most_once_per_immutable_alias": true,
+      "all_accepted_analyses_match_actual_dispatch_order": true,
+      "all_accepted_verdicts_match_actual_dispatches": true,
+      "all_model_revisits_recorded_skipped": true,
+      "native_full_body_matches_saved_source": true,
+      "blocked_dispatches_separate": true
+    },
+    "errors": [],
+    "full_exposures_by_version": {
+      "decompose": {
+        "news-4be0ee7d2b38540c": 1,
+        "news-ce8dcf7a5dfb9351": 1,
+        "news-f0d35c9093a55768": 1
+      },
+      "verify": {
+        "news-4be0ee7d2b38540c": 1,
+        "news-ce8dcf7a5dfb9351": 1,
+        "news-f0d35c9093a55768": 1
+      }
+    },
+    "full_exposures_by_immutable_identity": {
+      "decompose": {
+        "3dcdba2f0083482fd9cd4bc538d1621c4ce4f32ac585f41aa69ffe424bf6c5cc": 1,
+        "4df2afd19ee3e8b69787f5c065574b13171b4d71d6dc70e8dc596e5a750a3c87": 1,
+        "e9182c96eb2df7a1b2cd391820b41df97e11b18ad8bfca163e0a0e73e66b92f0": 1
+      },
+      "verify": {
+        "3dcdba2f0083482fd9cd4bc538d1621c4ce4f32ac585f41aa69ffe424bf6c5cc": 1,
+        "4df2afd19ee3e8b69787f5c065574b13171b4d71d6dc70e8dc596e5a750a3c87": 1,
+        "e9182c96eb2df7a1b2cd391820b41df97e11b18ad8bfca163e0a0e73e66b92f0": 1
+      }
+    },
+    "sources": [
+      {
+        "version_id": "news-4be0ee7d2b38540c",
+        "url": "https://www.nature.com/articles/s41598-021-97778-3",
+        "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+        "content_chars": 366632,
+        "available_at": "2024-03-12T11:05:45+00:00",
+        "immutable_identity_sha256": "e9182c96eb2df7a1b2cd391820b41df97e11b18ad8bfca163e0a0e73e66b92f0"
+      },
+      {
+        "version_id": "news-ce8dcf7a5dfb9351",
+        "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+        "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+        "content_chars": 23821,
+        "available_at": "2023-05-26T21:22:00+00:00",
+        "immutable_identity_sha256": "3dcdba2f0083482fd9cd4bc538d1621c4ce4f32ac585f41aa69ffe424bf6c5cc"
+      },
+      {
+        "version_id": "news-f0d35c9093a55768",
+        "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+        "content_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+        "content_chars": 10157,
+        "available_at": "2024-07-17T10:50:04+00:00",
+        "immutable_identity_sha256": "4df2afd19ee3e8b69787f5c065574b13171b4d71d6dc70e8dc596e5a750a3c87"
+      }
+    ],
+    "packet_checks": [
+      {
+        "call": 10,
+        "stage": "decompose",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-ce8dcf7a5dfb9351"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-ce8dcf7a5dfb9351",
+            "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+            "content_chars": 23821,
+            "available_at": "2023-05-26T21:22:00+00:00",
+            "availability_basis_sha256": "dbdbf96945ad251ea97b809578d88ab89b89dacea04184b8ba234ad2d9de3592",
+            "immutable_identity_sha256": "3dcdba2f0083482fd9cd4bc538d1621c4ce4f32ac585f41aa69ffe424bf6c5cc"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [],
+        "prior_analysis_sha256": {},
+        "prior_verdict_count": 0
+      },
+      {
+        "call": 11,
+        "stage": "verify",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-ce8dcf7a5dfb9351"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-ce8dcf7a5dfb9351",
+            "url": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+            "content_sha256": "251d68a27ce48905ba08c36ec55e8b32e36724c462313398dd09a37b6a3cf89b",
+            "content_chars": 23821,
+            "available_at": "2023-05-26T21:22:00+00:00",
+            "availability_basis_sha256": "dbdbf96945ad251ea97b809578d88ab89b89dacea04184b8ba234ad2d9de3592",
+            "immutable_identity_sha256": "3dcdba2f0083482fd9cd4bc538d1621c4ce4f32ac585f41aa69ffe424bf6c5cc"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [],
+        "prior_analysis_sha256": {
+          "news-ce8dcf7a5dfb9351": "107534abf81ca6760f0793a3ee7a73940e8653f882ee50e69cc4da9685b85404"
+        },
+        "prior_verdict_count": 0
+      },
+      {
+        "call": 13,
+        "stage": "decompose",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-4be0ee7d2b38540c"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-4be0ee7d2b38540c",
+            "url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+            "content_chars": 366632,
+            "available_at": "2024-03-12T11:05:45+00:00",
+            "availability_basis_sha256": "3f69363b1db287a7b9082dc68650e09111a72846bac961151390af7fbae356ae",
+            "immutable_identity_sha256": "e9182c96eb2df7a1b2cd391820b41df97e11b18ad8bfca163e0a0e73e66b92f0"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-ce8dcf7a5dfb9351"
+        ],
+        "prior_analysis_sha256": {
+          "news-ce8dcf7a5dfb9351": "107534abf81ca6760f0793a3ee7a73940e8653f882ee50e69cc4da9685b85404"
+        },
+        "prior_verdict_count": 1
+      },
+      {
+        "call": 14,
+        "stage": "verify",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-4be0ee7d2b38540c"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-4be0ee7d2b38540c",
+            "url": "https://www.nature.com/articles/s41598-021-97778-3",
+            "content_sha256": "3a56063984a594d4037e3fee6c9a9f57de6edab5ea1757dc234915d2890e34d3",
+            "content_chars": 366632,
+            "available_at": "2024-03-12T11:05:45+00:00",
+            "availability_basis_sha256": "3f69363b1db287a7b9082dc68650e09111a72846bac961151390af7fbae356ae",
+            "immutable_identity_sha256": "e9182c96eb2df7a1b2cd391820b41df97e11b18ad8bfca163e0a0e73e66b92f0"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-ce8dcf7a5dfb9351"
+        ],
+        "prior_analysis_sha256": {
+          "news-ce8dcf7a5dfb9351": "107534abf81ca6760f0793a3ee7a73940e8653f882ee50e69cc4da9685b85404",
+          "news-4be0ee7d2b38540c": "1701f2fac9c0292aa9b8dd4edc8163d341eecefdd4e3f7caef423532e0b9214d"
+        },
+        "prior_verdict_count": 1
+      },
+      {
+        "call": 16,
+        "stage": "decompose",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-f0d35c9093a55768"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-f0d35c9093a55768",
+            "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "content_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+            "content_chars": 10157,
+            "available_at": "2024-07-17T10:50:04+00:00",
+            "availability_basis_sha256": "fbcd2817ea5ec12ca068b2a8b0e684dd1dac8414dfd83a925bab8bb0fb18db01",
+            "immutable_identity_sha256": "4df2afd19ee3e8b69787f5c065574b13171b4d71d6dc70e8dc596e5a750a3c87"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-ce8dcf7a5dfb9351",
+          "news-4be0ee7d2b38540c"
+        ],
+        "prior_analysis_sha256": {
+          "news-ce8dcf7a5dfb9351": "107534abf81ca6760f0793a3ee7a73940e8653f882ee50e69cc4da9685b85404",
+          "news-4be0ee7d2b38540c": "1701f2fac9c0292aa9b8dd4edc8163d341eecefdd4e3f7caef423532e0b9214d"
+        },
+        "prior_verdict_count": 2
+      },
+      {
+        "call": 17,
+        "stage": "verify",
+        "target_id": "a701:c1",
+        "full_version_ids": [
+          "news-f0d35c9093a55768"
+        ],
+        "failed_attempt": false,
+        "full_material_receipts": [
+          {
+            "version_id": "news-f0d35c9093a55768",
+            "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+            "content_sha256": "07315df4e7be0f3af3cce7448f50b2d32bb467b842e665af87c14d05d37943bb",
+            "content_chars": 10157,
+            "available_at": "2024-07-17T10:50:04+00:00",
+            "availability_basis_sha256": "fbcd2817ea5ec12ca068b2a8b0e684dd1dac8414dfd83a925bab8bb0fb18db01",
+            "immutable_identity_sha256": "4df2afd19ee3e8b69787f5c065574b13171b4d71d6dc70e8dc596e5a750a3c87"
+          }
+        ],
+        "host_state_available": true,
+        "prior_version_ids": [
+          "news-ce8dcf7a5dfb9351",
+          "news-4be0ee7d2b38540c"
+        ],
+        "prior_analysis_sha256": {
+          "news-ce8dcf7a5dfb9351": "107534abf81ca6760f0793a3ee7a73940e8653f882ee50e69cc4da9685b85404",
+          "news-4be0ee7d2b38540c": "1701f2fac9c0292aa9b8dd4edc8163d341eecefdd4e3f7caef423532e0b9214d",
+          "news-f0d35c9093a55768": "535d131080967bbd60aea1564c9b8e4d2094b89e64acb481dc43fb44719588fc"
+        },
+        "prior_verdict_count": 2
+      }
+    ],
+    "input_file_sha256": {
+      "calls.json": "11314acfa45e3265be583dafb75e8fd768f70eb9f17bf88121f9766daade67d8",
+      "model-io.json": "688744ddc5cd56606907c43d869f768e7f6bdcaab8d9d28e2cfecb624d7ce6d8",
+      "sources.json": "5c085bad6c69e918b19c371acfe1a25ccfa0f62c3c5d77ee9e76b049728177c3",
+      "workflow.json": "ad42ffb51a1aadfe6710cd82ffa780a62696897b74aa82d9108f7975a71b9c0f",
+      "private-cli-events/0001-1789421748548546000.request.json": "f05733d903cea506240efffd60423554f88f33f133efb428b10f6b9649a6d6dc",
+      "private-cli-events/0002-1789421758881629000.request.json": "be2ceaece9639d35ea905ac04c50caf07497aef45dd0bfbdf3a6dea55f0f5971",
+      "private-cli-events/0003-1789421768300710000.request.json": "2bdea52f2539036932e2c0e8c83328d1b19ec40baa161a83e6790fd2e266e576",
+      "private-cli-events/0004-1789421785503662000.request.json": "d331be93a3ffab46f3bd1b50158fd8d4b2a5682570aaf68fa9ae88478bfdb8cd",
+      "private-cli-events/0005-1789421794272595000.request.json": "0b9acabd5fcce348f4f5ed5488bb96f157171f779b1889519078f6a5bcd6a313",
+      "private-cli-events/0006-1789421818394230000.request.json": "fc920832957eeee050089abe97dc5102c1e6e3dedda657d53c59509d0f5d12d9",
+      "private-cli-events/0007-1789421836742346000.request.json": "51c35fb151889f814af9f245dfc2a15514020ff16594f65c63e12383d2215883",
+      "private-cli-events/0008-1789421860768109000.request.json": "3eb7626c79152641c17ccb0f0c1c43d0345e086986c49fd49b45284fa1d12dff",
+      "private-cli-events/0009-1789421873876520000.request.json": "996160da837d0695ab9de8047aa25d665afbf996d64c264ebddfa95308a852a3",
+      "private-cli-events/0010-1789421895684574000.request.json": "9d2ba1340dbff924ce6e1302ce1bc6c6b73a316f0148c4042f8786c608f00d4f",
+      "private-cli-events/0011-1789421923711036000.request.json": "ba8a162d254037db8c6a320bcb10388e21fc715b3305bd54e368b2a220a43c34",
+      "private-cli-events/0012-1789421933856551000.request.json": "80cd795c591422f4d75379ce93b67c472eee69617da3b4c8f6a4d8c1a6dfbdcd",
+      "private-cli-events/0013-1789421938897628000.request.json": "467d58bc7a06d4efd2db74fe3b2e31db59cc5446b322e1a2792beaeb83152e35",
+      "private-cli-events/0014-1789421993133853000.request.json": "878cffb2fc979b3447afee7a9b1d346eb68a50c534fe6e0629282e1c9994d080",
+      "private-cli-events/0015-1789422010217128000.request.json": "f4e5ae3f3ac1c9b5580e95293ed89a6850964c4ced8f5eba3512ecc191025558",
+      "private-cli-events/0016-1789422015999905000.request.json": "6a7acf9f5a81b12e7e354d9b1955d417978fc25f5d6d9d0148cce7404d343391",
+      "private-cli-events/0017-1789422052787928000.request.json": "dd11504492298eaa0c57481e9329fcdbe2527f2f9b32e1d6a790c0cc5646139c",
+      "private-cli-events/0018-1789422066921358000.request.json": "fb3f56bb04dde854222f5f18a5b72c661b7925ff6727713cc9dd3be1018c686a"
+    }
+  },
+  "native_direct_edges": [
+    {
+      "id": "news-4be0ee7d2b38540c:relation:r1",
+      "from_version": "news-ce8dcf7a5dfb9351",
+      "to_version": "news-4be0ee7d2b38540c",
+      "kind": "cites",
+      "all_basis_exact": true,
+      "target_observed": true,
+      "basis_version_ids": [
+        "news-ce8dcf7a5dfb9351"
+      ]
+    },
+    {
+      "id": "news-f0d35c9093a55768:relation:r1",
+      "from_version": "news-ce8dcf7a5dfb9351",
+      "to_version": "news-f0d35c9093a55768",
+      "kind": "derives",
+      "all_basis_exact": true,
+      "target_observed": true,
+      "basis_version_ids": [
+        "news-ce8dcf7a5dfb9351"
+      ]
+    },
+    {
+      "id": "news-f0d35c9093a55768:relation:r2",
+      "from_version": "news-f0d35c9093a55768",
+      "to_version": "news-4be0ee7d2b38540c",
+      "kind": "cites",
+      "all_basis_exact": true,
+      "target_observed": true,
+      "basis_version_ids": [
+        "news-f0d35c9093a55768"
+      ]
+    }
+  ],
+  "final_chain": [
+    "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+    "https://news.ecu.edu/2021/10/07/biblical-burning/",
+    "https://www.nature.com/articles/s41598-021-97778-3"
+  ],
+  "final_chain_checks": [
+    {
+      "source": "https://www.sciencedaily.com/releases/2021/10/211008160519.htm",
+      "target": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+      "both_admitted": true,
+      "exact_observed_target": true,
+      "matching_native_direct_edges": [
+        "news-f0d35c9093a55768:relation:r1"
+      ]
+    },
+    {
+      "source": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+      "target": "https://www.nature.com/articles/s41598-021-97778-3",
+      "both_admitted": true,
+      "exact_observed_target": true,
+      "matching_native_direct_edges": [
+        "news-f0d35c9093a55768:relation:r2"
+      ]
+    }
+  ],
+  "origin_checks": [
+    {
+      "version_id": "news-4be0ee7d2b38540c",
+      "kind": "original_observation",
+      "basis_exact": true
+    },
+    {
+      "version_id": "news-f0d35c9093a55768",
+      "kind": "original_interview",
+      "basis_exact": true
+    }
+  ],
+  "bibliography_receipt_count": 0,
+  "located_origins": [
+    {
+      "url": "https://www.nature.com/articles/s41598-021-97778-3",
+      "version_id": "news-4be0ee7d2b38540c",
+      "claim_ids": [
+        "a701:c1"
+      ],
+      "material_kind": "original_observation"
+    },
+    {
+      "url": "https://news.ecu.edu/2021/10/07/biblical-burning/",
+      "version_id": "news-f0d35c9093a55768",
+      "claim_ids": [
+        "a701:c1"
+      ],
+      "material_kind": "original_interview"
+    }
+  ],
+  "final_fact_status": "unresolved",
+  "final_native_provenance_status": "original_material_located",
+  "final_prediction": {
+    "fact_status": "unresolved",
+    "risk": "elevated",
+    "fabrication_established": false
+  },
+  "gap_lifecycle_audit": "independently assigned to archive_rootcause",
+  "receipt_permissions": {
+    "directory": "0o700",
+    "file_modes": [
+      "0o600"
+    ]
+  },
+  "limits": [
+    "Exact stdin proves bytes prepared for local CLI attempt, not remote processing beyond returned completion events.",
+    "Native full-material nonrepetition is checked separately for decomposition and verification; retained exact evidence and research-stage packets can recur.",
+    "Source retrieval and elevated risk do not establish empirical truth or fabrication."
+  ],
+  "receipt_check_false_flags": [],
+  "explicit_packet_cutoffs": [
+    {
+      "call": 1,
+      "values": [
+        {
+          "path": [
+            "cutoff"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 2,
+      "values": [
+        {
+          "path": [
+            "cutoff"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 3,
+      "values": []
+    },
+    {
+      "call": 4,
+      "values": []
+    },
+    {
+      "call": 5,
+      "values": []
+    },
+    {
+      "call": 6,
+      "values": []
+    },
+    {
+      "call": 7,
+      "values": []
+    },
+    {
+      "call": 8,
+      "values": []
+    },
+    {
+      "call": 9,
+      "values": []
+    },
+    {
+      "call": 10,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 11,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 12,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 13,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 14,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 15,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 16,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 17,
+      "values": [
+        {
+          "path": [
+            "target",
+            "as_of"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    },
+    {
+      "call": 18,
+      "values": [
+        {
+          "path": [
+            "cutoff"
+          ],
+          "value": "2024-12-31T23:59:59Z"
+        }
+      ]
+    }
+  ],
+  "observed_link_classification": {
+    "seed_matching_href": [
+      "http://dx.doi.org/10.1038/s41598-021-97778-3"
+    ],
+    "redirect_receipts": [
+      {
+        "operation": "fetch",
+        "url": "http://dx.doi.org/10.1038/s41598-021-97778-3",
+        "final_url": "https://www.nature.com/articles/s41598-021-97778-3",
+        "success": true
+      }
+    ],
+    "ecupaper_exact_href": true
+  },
+  "gap_packet_continuity": {
+    "timeline": [
+      {
+        "call": 10,
+        "stage": "decompose",
+        "context_gaps": [
+          {
+            "id": "origin:a701:c1",
+            "stage": "provenance",
+            "blocking": true,
+            "question_sha256": "5c6f14be091644178f093242d2347394d557354a8f9922ea9c864e4ba68f1344"
+          }
+        ],
+        "response_gap_ids": [],
+        "response_resolution_ids": []
+      },
+      {
+        "call": 11,
+        "stage": "verify",
+        "context_gaps": [
+          {
+            "id": "origin:a701:c1",
+            "stage": "provenance",
+            "blocking": true,
+            "question_sha256": "5c6f14be091644178f093242d2347394d557354a8f9922ea9c864e4ba68f1344"
+          }
+        ],
+        "response_gap_ids": [
+          "verification:a701:c1:primary-evidence"
+        ],
+        "response_resolution_ids": []
+      },
+      {
+        "call": 13,
+        "stage": "decompose",
+        "context_gaps": [
+          {
+            "id": "origin:a701:c1",
+            "stage": "provenance",
+            "blocking": true,
+            "question_sha256": "5c6f14be091644178f093242d2347394d557354a8f9922ea9c864e4ba68f1344"
+          },
+          {
+            "id": "verification:a701:c1:primary-evidence",
+            "stage": "verification",
+            "blocking": true,
+            "question_sha256": "9ee79c8d3a2ac016d229b3a259bb7405acffcbb29f043c26a7e8b9290a902cae"
+          }
+        ],
+        "response_gap_ids": [],
+        "response_resolution_ids": [
+          "origin:a701:c1"
+        ]
+      },
+      {
+        "call": 14,
+        "stage": "verify",
+        "context_gaps": [
+          {
+            "id": "verification:a701:c1:primary-evidence",
+            "stage": "verification",
+            "blocking": true,
+            "question_sha256": "9ee79c8d3a2ac016d229b3a259bb7405acffcbb29f043c26a7e8b9290a902cae"
+          }
+        ],
+        "response_gap_ids": [
+          "verification:a701:c1:primary-evidence"
+        ],
+        "response_resolution_ids": []
+      },
+      {
+        "call": 16,
+        "stage": "decompose",
+        "context_gaps": [
+          {
+            "id": "verification:a701:c1:primary-evidence",
+            "stage": "verification",
+            "blocking": true,
+            "question_sha256": "9ee79c8d3a2ac016d229b3a259bb7405acffcbb29f043c26a7e8b9290a902cae"
+          }
+        ],
+        "response_gap_ids": [],
+        "response_resolution_ids": []
+      },
+      {
+        "call": 17,
+        "stage": "verify",
+        "context_gaps": [
+          {
+            "id": "verification:a701:c1:primary-evidence",
+            "stage": "verification",
+            "blocking": true,
+            "question_sha256": "9ee79c8d3a2ac016d229b3a259bb7405acffcbb29f043c26a7e8b9290a902cae"
+          }
+        ],
+        "response_gap_ids": [
+          "verification:a701:c1:primary-evidence"
+        ],
+        "response_resolution_ids": []
+      }
+    ],
+    "primary_evidence_definition_retained": true,
+    "final_gap_same_definition": true,
+    "final_gap_blocking": true
+  }
+}

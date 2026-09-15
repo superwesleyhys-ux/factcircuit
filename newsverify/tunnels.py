@@ -8,6 +8,7 @@ Only safe metadata is retained in ``calls``; prompts and raw errors are not.
 from __future__ import annotations
 
 import http.client
+import hashlib
 import json
 import math
 import os
@@ -218,6 +219,57 @@ class LocalTunnel(_Tunnel):
 
     kind = "local"
 
+    def __init__(self, model: str, reasoning_effort: str = "medium", timeout: float = 180,
+                 diagnostic_directory: str | Path | None = None):
+        super().__init__(model, reasoning_effort, timeout)
+        if diagnostic_directory is None:
+            self.diagnostic_directory = None
+        else:
+            path = Path(diagnostic_directory)
+            if not path.is_absolute():
+                raise TunnelError("Diagnostic directory must be an absolute path.")
+            self.diagnostic_directory = path
+            try:
+                path.mkdir(mode=0o700, parents=True, exist_ok=True)
+                if not stat.S_ISDIR(path.stat().st_mode):
+                    raise OSError
+                os.chmod(path, 0o700)
+            except OSError:
+                raise TunnelError("Diagnostic directory could not be established.") from None
+
+    def _save_diagnostics(self, call_number: int, stdout: object, stderr: object) -> None:
+        if self.diagnostic_directory is None:
+            return
+        def raw_bytes(value: object) -> bytes:
+            if isinstance(value, bytes):
+                return value
+            return value.encode("utf-8") if isinstance(value, str) else b""
+        stem = f"{call_number:04d}-{time.time_ns()}"
+        try:
+            for suffix, value in (("stdout", stdout), ("stderr", stderr)):
+                target = self.diagnostic_directory / f"{stem}.{suffix}"
+                fd = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+                with os.fdopen(fd, "wb") as stream:
+                    stream.write(raw_bytes(value))
+        except OSError:
+            raise TunnelError("The local diagnostic receipt could not be written.") from None
+
+    def _save_request(self, call_number: int, stdin: str, schema: dict) -> str | None:
+        """Persist exact submitted input only in the opt-in private receipt directory."""
+        if self.diagnostic_directory is None:
+            return None
+        digest = hashlib.sha256(stdin.encode("utf-8")).hexdigest()
+        target = self.diagnostic_directory / f"{call_number:04d}-{time.time_ns()}.request.json"
+        try:
+            fd = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as stream:
+                json.dump({"stdin": stdin, "stdin_sha256": digest, "schema": schema,
+                           "model": self.model, "reasoning_effort": self.reasoning_effort},
+                          stream, ensure_ascii=False, allow_nan=False)
+        except OSError:
+            raise TunnelError("The local input receipt could not be written.") from None
+        return digest
+
     def _generate(self, instructions: str, evidence: str, schema: dict, record: dict) -> dict:
         executable = shutil.which("codex")
         if not executable:
@@ -243,16 +295,22 @@ class LocalTunnel(_Tunnel):
                 "--disable", "apps", "--disable", "plugins", "--disable", "multi_agent",
                 "--json", "--output-schema", str(schema_path), "-o", str(output_path), "-",
             ]
+            stdin = instructions + "\n" + evidence
+            input_hash = self._save_request(len(self.calls), stdin, schema)
+            if input_hash is not None:
+                record["input_sha256"] = input_hash
             try:
                 result = subprocess.run(
-                    command, input=instructions + "\n" + evidence, text=True,
+                    command, input=stdin, text=True,
                     capture_output=True, timeout=self.timeout, env=env,
                 )
-            except subprocess.TimeoutExpired:
+            except subprocess.TimeoutExpired as exc:
+                self._save_diagnostics(len(self.calls), exc.stdout, exc.stderr)
                 raise TunnelError("The local model call timed out; no fallback was attempted.") from None
             except OSError:
                 raise TunnelError("The Codex CLI could not be started.") from None
             record["exit_code"] = result.returncode
+            self._save_diagnostics(len(self.calls), result.stdout, result.stderr)
             if result.returncode:
                 raise TunnelError("The Codex CLI did not complete successfully.")
             if len(result.stdout.encode("utf-8")) > MAX_EVENT_BYTES:

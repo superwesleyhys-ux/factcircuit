@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "scope": "path-only public export",
+  "source_directory": "<live-origin-v10-20260914-source>",
+  "files": [
+    {
+      "path": "AUDIT.json",
+      "source_sha256": "cdb2b8a15561f4681b5a026e1285f044c9962e0fa8cd60de44be6a11caf60176",
+      "public_sha256": "cdb2b8a15561f4681b5a026e1285f044c9962e0fa8cd60de44be6a11caf60176"
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "985989ebe9d131357eeda0f9f8c726c54d1597b100980c6853d6465ff2f054a8",
+      "public_sha256": "dcc65cfb94765d72bfde09adecc1fc84a927a8038e639b2853f051798ef293d2"
+    },
+    {
+      "path": "RECEIPTS.json",
+      "source_sha256": "d7dc0f9f56cfa31f34b48dfa6ec68d166f7354857397e1e8986ca36310dfa595",
+      "public_sha256": "d7dc0f9f56cfa31f34b48dfa6ec68d166f7354857397e1e8986ca36310dfa595"
+    },
+    {
+      "path": "RESULTS.json",
+      "source_sha256": "e8dd3ec6d16848987db3e91b05886c452f96882d24e337c3e999ba4899c1aa33",
+      "public_sha256": "e8dd3ec6d16848987db3e91b05886c452f96882d24e337c3e999ba4899c1aa33"
+    },
+    {
+      "path": "STAGE_TOKENS.json",
+      "source_sha256": "6a6c883d3b867ded0e9e4b45512051b4164a02e0a2155cece66d0a1b8a50de18",
+      "public_sha256": "6a6c883d3b867ded0e9e4b45512051b4164a02e0a2155cece66d0a1b8a50de18"
+    },
+    {
+      "path": "SUMMARY.json",
+      "source_sha256": "288447ae2260852d01d4e7f8aa7406809c2d507ca5d97de32ffe6f48a3949ccc",
+      "public_sha256": "288447ae2260852d01d4e7f8aa7406809c2d507ca5d97de32ffe6f48a3949ccc"
+    }
+  ],
+  "redactions": [],
+  "non_path_changes": [
+    {
+      "file": "README.md",
+      "kind": "broken experiment links converted to plain local-source notes"
+    }
+  ]
+}
