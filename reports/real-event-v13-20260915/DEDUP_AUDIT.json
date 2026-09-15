@@ -1,0 +1,187 @@
+{
+  "kind": "V12 independent native request-receipt dedup audit",
+  "scope": {
+    "unit": "Each immutable publisher version, separately within native decompose and verify.",
+    "experiment_scope": "The registered V12 arms each contain one native claim. Counts aggregate within an arm; this is not a policy for future multi-claim batches.",
+    "counting": "Every matched private request receipt counts, including failed dispatch attempts; blocked-dispatch rows do not. A receipt proves submitted-input preparation and a transport attempt, not that the remote model consumed it. Missing receipts fail closed.",
+    "identity": "URL, content, issuer, publication and availability metadata; local version ID and retrieval time are excluded from alias identity. Changed content/metadata stays distinct.",
+    "retained_evidence": "Previously accepted analyses and exact evidence may recur. They are not counted as newly supplied full-material fields, even for short source texts.",
+    "excluded_stages": "Full news research, source selection and shared final forecast remain separate.",
+    "independent_source_chain_audit_required": true,
+    "does_not_establish_trace_success": true
+  },
+  "valid": true,
+  "summary": {
+    "harness_arms": 1,
+    "dedup_passed": 1,
+    "dedup_failed": 0,
+    "partially_exercised": 0,
+    "not_exercised": 0,
+    "source_trace_success": null
+  },
+  "checks": {
+    "input_stable_during_read": true,
+    "all_registered_harness_arms_present": true
+  },
+  "input_file_sha256": {
+    "manifest.json": "871e678a27e06b8e16158e8a9f00c94e491971a6789d0f70fcfbe0a57d22b87a",
+    "COMPLETED.json": "a25c53cfce748010559be54659bbb012d3289d08922972781219906b1d5b5def"
+  },
+  "errors": [],
+  "arms": [
+    {
+      "arm": "e1301-harness",
+      "valid": true,
+      "dedup_status": "passed",
+      "summary": {
+        "journal_attempts": 9,
+        "request_receipts": 9,
+        "failed_attempts": 0,
+        "blocked_not_counted": 0,
+        "native_packet_count": 2,
+        "native_trace_count": 1,
+        "stage_coverage": {
+          "decompose": true,
+          "verify": true
+        }
+      },
+      "checks": {
+        "input_stable_during_read": true,
+        "full_material_shape": true,
+        "version_identity_no_collision": true,
+        "unique_trace_target": true,
+        "one_accepted_analysis_per_version": true,
+        "accepted_history_never_revisit": true,
+        "final_analyses_preserved": true,
+        "incremental_policy_enabled": true,
+        "no_actual_revisit_operations": true,
+        "aliases_not_forged_as_admitted": true,
+        "call_journal_lengths_match": true,
+        "receipt_filename_has_call_index": true,
+        "no_orphan_or_duplicate_receipts": true,
+        "call_record_objects": true,
+        "call_stage_and_terminal_status_match": true,
+        "one_request_receipt_per_attempt": true,
+        "request_receipt_shape": true,
+        "stdin_hash_matches_receipt_and_call": true,
+        "receipt_schema_and_model_match": true,
+        "stdin_exactly_matches_immutable_journal": true,
+        "native_trace_and_context_available": true,
+        "incremental_packet_lists": true,
+        "unique_materials_in_packet": true,
+        "prior_analyses_preserved_in_packet": true,
+        "prior_verdicts_preserved_in_packet": true,
+        "verified_ids_preserved_in_packet": true,
+        "decompose_no_context_full_bodies": true,
+        "decompose_has_all_prior_metadata": true,
+        "full_content_fields_only_at_declared_locations": true,
+        "verify_only_new_full_bodies": true,
+        "verify_has_all_prior_metadata": true,
+        "verification_history_unambiguous": true,
+        "decompose_at_most_once_per_version": true,
+        "decompose_at_most_once_per_immutable_alias": true,
+        "verify_at_most_once_per_version": true,
+        "verify_at_most_once_per_immutable_alias": true,
+        "all_accepted_analyses_match_actual_dispatch_order": true,
+        "all_accepted_verdicts_match_actual_dispatches": true,
+        "all_model_revisits_recorded_skipped": true,
+        "native_full_body_matches_saved_source": true,
+        "blocked_dispatches_separate": true
+      },
+      "errors": [],
+      "full_exposures_by_version": {
+        "decompose": {
+          "news-4afecbc21339501a": 1
+        },
+        "verify": {
+          "news-4afecbc21339501a": 1
+        }
+      },
+      "full_exposures_by_immutable_identity": {
+        "decompose": {
+          "772c7b7fc2f38eac6cde97c7df3f623946a6f8d71b317e00e110a651e6bacd26": 1
+        },
+        "verify": {
+          "772c7b7fc2f38eac6cde97c7df3f623946a6f8d71b317e00e110a651e6bacd26": 1
+        }
+      },
+      "sources": [
+        {
+          "version_id": "news-4afecbc21339501a",
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "content_sha256": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3",
+          "content_chars": 25878,
+          "available_at": "2023-01-04T14:29:16+00:00",
+          "immutable_identity_sha256": "772c7b7fc2f38eac6cde97c7df3f623946a6f8d71b317e00e110a651e6bacd26"
+        }
+      ],
+      "packet_checks": [
+        {
+          "call": 7,
+          "stage": "decompose",
+          "target_id": "e1301:c1",
+          "full_version_ids": [
+            "news-4afecbc21339501a"
+          ],
+          "failed_attempt": false,
+          "full_material_receipts": [
+            {
+              "version_id": "news-4afecbc21339501a",
+              "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+              "content_sha256": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3",
+              "content_chars": 25878,
+              "available_at": "2023-01-04T14:29:16+00:00",
+              "availability_basis_sha256": "3fbb684123527498a90930528dfd2d9234977dcc74a2b9177e6dc447b30d3cc7",
+              "immutable_identity_sha256": "772c7b7fc2f38eac6cde97c7df3f623946a6f8d71b317e00e110a651e6bacd26"
+            }
+          ],
+          "host_state_available": true,
+          "prior_version_ids": [],
+          "prior_analysis_sha256": {},
+          "prior_verdict_count": 0
+        },
+        {
+          "call": 8,
+          "stage": "verify",
+          "target_id": "e1301:c1",
+          "full_version_ids": [
+            "news-4afecbc21339501a"
+          ],
+          "failed_attempt": false,
+          "full_material_receipts": [
+            {
+              "version_id": "news-4afecbc21339501a",
+              "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+              "content_sha256": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3",
+              "content_chars": 25878,
+              "available_at": "2023-01-04T14:29:16+00:00",
+              "availability_basis_sha256": "3fbb684123527498a90930528dfd2d9234977dcc74a2b9177e6dc447b30d3cc7",
+              "immutable_identity_sha256": "772c7b7fc2f38eac6cde97c7df3f623946a6f8d71b317e00e110a651e6bacd26"
+            }
+          ],
+          "host_state_available": true,
+          "prior_version_ids": [],
+          "prior_analysis_sha256": {
+            "news-4afecbc21339501a": "aa1e93031c8ca4014fb26c17391b4af419912372ac6de4eb67f29e002b9109ba"
+          },
+          "prior_verdict_count": 0
+        }
+      ],
+      "input_file_sha256": {
+        "calls.json": "69bccd8e7f79d745060a2f4dbf7d1d9ee9e19589bc2e7e87b0075a3c9acacfe8",
+        "model-io.json": "f4db1e123916de5e5d0fc38d8d91dbfa340530150a251c9dd56af4a6d3790df4",
+        "sources.json": "12954884bb0f69f32e7d2af6a481da8d7ee14e0b38cc844a4775941be6e04c30",
+        "workflow.json": "b9e384365eea972e397fd8c8ac0e8f6f3e6e80e67bc96a8df42386e238b9c2ce",
+        "private-cli-events/0001-1789512887199634000.request.json": "06f4cc3f198eda3d62a87e909e517305ebad79bd51b6ddc1bf2e5438fecefcff",
+        "private-cli-events/0002-1789512894185837000.request.json": "a9936f265e1b9a042420dffa88f6ab25986b5127905d0dd3a0ba9d0c4fd9119f",
+        "private-cli-events/0003-1789512899865519000.request.json": "7ba1608f74c5881f735e61f5e31d3d41c6c8a6285bd614fa21d8d9e5bda32f41",
+        "private-cli-events/0004-1789512906348984000.request.json": "e44132983a23615fda2fd9da57671500e087722f7fe63fa2bb57021c011daec8",
+        "private-cli-events/0005-1789512918218901000.request.json": "9f74a9d24b8efb90e47e9994b3d5e7ee963379e44011b796754df27cc6f74368",
+        "private-cli-events/0006-1789512926550387000.request.json": "aa954eb257abc96eea708963258f6396efd7d80d0cfed094a3bc1beb91817cea",
+        "private-cli-events/0007-1789512939205601000.request.json": "eaa35d77656fe627931ff59341dbd41cc3b2f34091dd27a35850357234b5a141",
+        "private-cli-events/0008-1789512965010813000.request.json": "eb6d452536f63c2b74ca5bbdb4fde3abf5855866ef28ff7de08d75f70dea216c",
+        "private-cli-events/0009-1789512980126948000.request.json": "fc673274ebce398aff7b2f3cf17600a05c2725b5df496e4f532f9a6df068e00c"
+      }
+    }
+  ]
+}

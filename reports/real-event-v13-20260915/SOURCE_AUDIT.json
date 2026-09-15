@@ -1,0 +1,734 @@
+{
+  "schema_version": 1,
+  "audit_type": "independent_post_run_source_and_native_content_audit",
+  "created_at": "2026-09-15T23:00:08.377516+00:00",
+  "run_directory": "experiments/real-event-v13-20260915/private-run-01",
+  "scope": "Read-only completed V13 run, archived raw seed and metadata, PROTOCOL/registration and post-run outcome. No network or model calls. Only this new audit file is written. CLI responses are compared with immutable stdout; receipt validation here is limited to saved byte hashes and corresponding logical packet/response, not remote execution attestation.",
+  "case_id": "e1301",
+  "summary": {
+    "checks_passed": 37,
+    "checks_total": 37,
+    "material_content_or_native_integrity_errors": [],
+    "both_arms_safe_abstention": true,
+    "source_attribution_valid": true,
+    "upstream_discovery_tested": false,
+    "fraud_detected_from_historical_evidence": false,
+    "forecast_elevated_risk_hit": false,
+    "no_case_level_accuracy_or_superiority_inference": true
+  },
+  "source": {
+    "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+    "issuer": "Aspiration Partners, Inc.; distributed by Business Wire",
+    "publication_at": "2022-02-17T22:36:00Z",
+    "capture_at": "2023-01-04T14:29:16+00:00",
+    "raw_body_sha256": "a6d8698c1316253edcba645f13a8412d5b6a90b12a0968a5f142a1728c4b923d",
+    "raw_body_bytes": 89485,
+    "saved_text_sha256": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3",
+    "saved_text_chars": 25878,
+    "main_article_visible_chunks": 178,
+    "main_article_visible_chunks_sha256": "f3cdce30810d947fb6dcdf4e5c2ea46e2fc1c8467411ffc9d5964330c2d7d180",
+    "main_article_complete_with_tables_qualifiers_correction_and_endmatter": true
+  },
+  "arms": {
+    "direct": {
+      "source_count": 1,
+      "actual_model_calls": 2,
+      "fact_status": "unresolved",
+      "risk": "insufficient_evidence",
+      "fabrication_established": false,
+      "issuer_identity_valid": true,
+      "upstream_discovery_performed": false,
+      "independent_financial_verification_obtained": false,
+      "exact_final_citations": [
+        {
+          "citation_index": 0,
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "quote_sha256": "d419683b795c3ec4a1c32b41756749461ab16cb191a7105cb9638ff27abbae06",
+          "occurrence_count": 1,
+          "spans": [
+            [
+              4375,
+              4445
+            ]
+          ]
+        },
+        {
+          "citation_index": 1,
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "quote_sha256": "d2a982278dbeff80e1330d3a93b1940194115ffa54f197e88d57febd803f15d6",
+          "occurrence_count": 1,
+          "spans": [
+            [
+              4262,
+              4324
+            ]
+          ]
+        }
+      ],
+      "content_assessment": "Accurately distinguishes company attribution from actual FY2021 revenue. The same-day correction concerns an outlook comparison year; neither that correction nor unaudited status establishes intentional fabrication. Abstention is supported by this evidence packet."
+    },
+    "harness": {
+      "source_count": 1,
+      "actual_model_calls": 9,
+      "fact_status": "unresolved",
+      "risk": "insufficient_evidence",
+      "fabrication_established": false,
+      "issuer_identity_valid": true,
+      "upstream_discovery_performed": false,
+      "independent_financial_verification_obtained": false,
+      "exact_final_citations": [
+        {
+          "citation_index": 0,
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "quote_sha256": "d419683b795c3ec4a1c32b41756749461ab16cb191a7105cb9638ff27abbae06",
+          "occurrence_count": 1,
+          "spans": [
+            [
+              4375,
+              4445
+            ]
+          ]
+        },
+        {
+          "citation_index": 1,
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "quote_sha256": "d2a982278dbeff80e1330d3a93b1940194115ffa54f197e88d57febd803f15d6",
+          "occurrence_count": 1,
+          "spans": [
+            [
+              4262,
+              4324
+            ]
+          ]
+        }
+      ],
+      "content_assessment": "Accurately distinguishes company attribution from actual FY2021 revenue. The same-day correction concerns an outlook comparison year; neither that correction nor unaudited status establishes intentional fabrication. Abstention is supported by this evidence packet."
+    }
+  },
+  "native": {
+    "version_id": "news-4afecbc21339501a",
+    "accepted_analysis_count": 1,
+    "relation_count": 0,
+    "origin_count": 1,
+    "provenance_status": "original_material_located",
+    "world_status": "unresolved",
+    "errors": [],
+    "exact_span_checks": [
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/fragments/0/span",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4327,
+          4572
+        ],
+        "quote_sha256": "0a09afd47db8e3aae36990bc1ccb11ec0bf243d5923f7f022230b602842a2b65",
+        "exact": true
+      },
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/fragments/1/span",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4262,
+          4324
+        ],
+        "quote_sha256": "d2a982278dbeff80e1330d3a93b1940194115ffa54f197e88d57febd803f15d6",
+        "exact": true
+      },
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/resolutions/0/basis/0",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          504,
+          594
+        ],
+        "quote_sha256": "34eca76464b83679845d823dec51262a80485f2a3c54e63304e64bc5cc669e68",
+        "exact": true
+      },
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/resolutions/0/basis/1",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4327,
+          4572
+        ],
+        "quote_sha256": "0a09afd47db8e3aae36990bc1ccb11ec0bf243d5923f7f022230b602842a2b65",
+        "exact": true
+      },
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/origins/0/basis/0",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          504,
+          594
+        ],
+        "quote_sha256": "34eca76464b83679845d823dec51262a80485f2a3c54e63304e64bc5cc669e68",
+        "exact": true
+      },
+      {
+        "path": "/trace/analyses/news-4afecbc21339501a/origins/0/basis/1",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4327,
+          4572
+        ],
+        "quote_sha256": "0a09afd47db8e3aae36990bc1ccb11ec0bf243d5923f7f022230b602842a2b65",
+        "exact": true
+      },
+      {
+        "path": "/trace/origins/0/basis/0",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          504,
+          594
+        ],
+        "quote_sha256": "34eca76464b83679845d823dec51262a80485f2a3c54e63304e64bc5cc669e68",
+        "exact": true
+      },
+      {
+        "path": "/trace/origins/0/basis/1",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4327,
+          4572
+        ],
+        "quote_sha256": "0a09afd47db8e3aae36990bc1ccb11ec0bf243d5923f7f022230b602842a2b65",
+        "exact": true
+      },
+      {
+        "path": "/trace/resolutions/0/basis/0",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          504,
+          594
+        ],
+        "quote_sha256": "34eca76464b83679845d823dec51262a80485f2a3c54e63304e64bc5cc669e68",
+        "exact": true
+      },
+      {
+        "path": "/trace/resolutions/0/basis/1",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4327,
+          4572
+        ],
+        "quote_sha256": "0a09afd47db8e3aae36990bc1ccb11ec0bf243d5923f7f022230b602842a2b65",
+        "exact": true
+      },
+      {
+        "path": "/trace/verification_history/0/basis/0",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4375,
+          4572
+        ],
+        "quote_sha256": "fe80cb9cc43e6bab40572dfad247465f42e6950737a670235a3ae44dd5e6b13e",
+        "exact": true
+      },
+      {
+        "path": "/trace/verification_history/0/basis/1",
+        "version_id": "news-4afecbc21339501a",
+        "span": [
+          4262,
+          4324
+        ],
+        "quote_sha256": "d2a982278dbeff80e1330d3a93b1940194115ffa54f197e88d57febd803f15d6",
+        "exact": true
+      }
+    ],
+    "gap_lifecycle": [
+      {
+        "id": "origin:e1301:c1",
+        "created_ref": "e1301-harness/model-io.json#/6/packet/context/gaps/0",
+        "resolution_ref": "e1301-harness/model-io.json#/6/response/resolutions/0",
+        "accepted_ref": "e1301-harness/workflow.json#/results/0/claims/0/trace/resolutions/0",
+        "disposition": "Resolved only as zero-hop issuer attribution, using exact issuer/date and revenue spans."
+      },
+      {
+        "id": "verification:e1301:c1:final_revenue",
+        "created_ref": "e1301-harness/model-io.json#/7/response/gaps/0",
+        "history_ref": "e1301-harness/workflow.json#/results/0/claims/0/trace/verification_history/0/gaps/0",
+        "final_ref": "e1301-harness/workflow.json#/results/0/claims/0/trace/gaps/0",
+        "disposition": "Open and blocking through termination; world assessment remains unresolved. Final forecast preserves its accounting-evidence meaning in research_advice and final rationale. The common final packet does not carry native gap IDs as structured fields."
+      }
+    ]
+  },
+  "post_run_outcome_interpretation": {
+    "outcome_sha256": "8a79c6cbfa8091788f688f335ac8af0bd5ad12f9872fb4bbf8b32cbd5a39088e",
+    "outcome_commitment_matches": true,
+    "later_claim_materially_misleading": true,
+    "forecast_category_both_arms": "insufficient_evidence",
+    "interpretation": "Neither arm issued an elevated-risk forecast; no supported early detection. Later adverse findings do not retroactively justify changing a verdict based on the supplied historical issuer-only evidence. SEC complaint statements remain allegations; outcome distinguishes them from the plea and sentencing.",
+    "eligibility": {
+      "event_before_2024": true,
+      "official_admission_in_2025_2026": true,
+      "first_public_doubt_in_2025_2026": false,
+      "strict_first_revelation_sample": false,
+      "reason": "Bloomberg published an investigation of questionable Aspiration deals on 2024-07-10. Internal 2022 events later described in a 2025 complaint are not automatically public-in-2022 evidence.",
+      "prior_public_investigation_url": "https://www.bloomberg.com/news/features/2024-07-10/questionable-deals-caused-a-climate-finance-startup-to-unravel"
+    }
+  },
+  "limitations": [
+    "One retrospectively outcome-selected positive event, no controls; no accuracy, specificity, superiority or clean first-revelation claim.",
+    "The seed already is the issuer release. A valid one-node provenance result is not upstream discovery or independent accounting verification.",
+    "Both arms stopped after the seed. Link-only tools and observed URLs did not expose the 2024 investigation or detailed SEC filings. This is not an exhaustive audit of everything publicly known by cutoff.",
+    "The article-body check verifies preserved historical visible text, not the authenticity of the financial representations.",
+    "Pretrained model knowledge cannot be erased or independently proved absent."
+  ],
+  "independent_second_content_review": "A separate subagent checked PROTOCOL and both results/sources read-only and found no material attribution, correction, risk or fabrication overclaim.",
+  "checks": [
+    {
+      "name": "run_completed_before_audit",
+      "passed": true
+    },
+    {
+      "name": "outcome_matches_frozen_commitment",
+      "passed": true
+    },
+    {
+      "name": "predictions_match_completion_receipt",
+      "passed": true
+    },
+    {
+      "name": "both_arms_same_complete_source",
+      "passed": true
+    },
+    {
+      "name": "seed_text_matches_registration",
+      "passed": true
+    },
+    {
+      "name": "cache_raw_hash_and_bytes",
+      "passed": true
+    },
+    {
+      "name": "capture_identity",
+      "passed": true
+    },
+    {
+      "name": "capture_is_eligible",
+      "passed": true
+    },
+    {
+      "name": "memento_matches_capture",
+      "passed": true
+    },
+    {
+      "name": "raw_main_article_visible_text_preserved",
+      "passed": true,
+      "detail": {
+        "raw_visible_chunks": 178,
+        "missing_chunk_hashes": [],
+        "method": "Independent standard-library HTMLParser reads archived div.bw-release-story[itemprop=articleBody]; all nonempty visible text chunks occur in saved source after whitespace normalization. No page or prompt text copied into this audit."
+      }
+    },
+    {
+      "name": "main_article_sections_qualifiers_tables_and_correction_present",
+      "passed": true,
+      "detail": {
+        "checked_section_labels": [
+          "Full Year 2021 Financial Highlights (Unaudited)",
+          "Financial Outlook",
+          "Non-GAAP Financial Measures",
+          "Reconciliation of Net Income (Loss)",
+          "About Aspiration Partners, Inc.",
+          "Additional Information and Where to Find It",
+          "Cautionary Statement Regarding Forward-Looking Statements",
+          "Contacts"
+        ]
+      }
+    },
+    {
+      "name": "direct_completed_without_source_or_native_errors",
+      "passed": true
+    },
+    {
+      "name": "direct_only_seed_fetched",
+      "passed": true
+    },
+    {
+      "name": "direct_zero_hop_issuer_identity",
+      "passed": true
+    },
+    {
+      "name": "direct_final_citation_0_exact",
+      "passed": true
+    },
+    {
+      "name": "direct_final_citation_1_exact",
+      "passed": true
+    },
+    {
+      "name": "direct_preserves_world_uncertainty",
+      "passed": true
+    },
+    {
+      "name": "direct_actual_stdin_and_cli_responses_match_saved_journal",
+      "passed": true,
+      "detail": [
+        {
+          "index": 1,
+          "stage": "direct_retrieval_decision",
+          "input_hash_matches": true
+        },
+        {
+          "index": 2,
+          "stage": "shared_final_forecast",
+          "input_hash_matches": true
+        }
+      ]
+    },
+    {
+      "name": "harness_completed_without_source_or_native_errors",
+      "passed": true
+    },
+    {
+      "name": "harness_only_seed_fetched",
+      "passed": true
+    },
+    {
+      "name": "harness_zero_hop_issuer_identity",
+      "passed": true
+    },
+    {
+      "name": "harness_final_citation_0_exact",
+      "passed": true
+    },
+    {
+      "name": "harness_final_citation_1_exact",
+      "passed": true
+    },
+    {
+      "name": "harness_preserves_world_uncertainty",
+      "passed": true
+    },
+    {
+      "name": "harness_actual_stdin_and_cli_responses_match_saved_journal",
+      "passed": true,
+      "detail": [
+        {
+          "index": 1,
+          "stage": "harness_retrieval_decision",
+          "input_hash_matches": true
+        },
+        {
+          "index": 2,
+          "stage": "deconstruct",
+          "input_hash_matches": true
+        },
+        {
+          "index": 3,
+          "stage": "search_plan",
+          "input_hash_matches": true
+        },
+        {
+          "index": 4,
+          "stage": "source_trace",
+          "input_hash_matches": true
+        },
+        {
+          "index": 5,
+          "stage": "source_verify",
+          "input_hash_matches": true
+        },
+        {
+          "index": 6,
+          "stage": "synthesis",
+          "input_hash_matches": true
+        },
+        {
+          "index": 7,
+          "stage": "decompose",
+          "input_hash_matches": true
+        },
+        {
+          "index": 8,
+          "stage": "verify",
+          "input_hash_matches": true
+        },
+        {
+          "index": 9,
+          "stage": "shared_final_forecast",
+          "input_hash_matches": true
+        }
+      ]
+    },
+    {
+      "name": "native_full_text_is_same_eligible_source",
+      "passed": true
+    },
+    {
+      "name": "native_analysis_accepted_and_preserved",
+      "passed": true
+    },
+    {
+      "name": "native_one_decomposition_and_one_verification",
+      "passed": true
+    },
+    {
+      "name": "native_packets_contain_exact_full_source",
+      "passed": true
+    },
+    {
+      "name": "native_prior_analysis_retained_in_verification",
+      "passed": true
+    },
+    {
+      "name": "all_accepted_native_bases_exact",
+      "passed": true,
+      "detail": {
+        "checked_occurrences": 12,
+        "unique_spans": 4
+      }
+    },
+    {
+      "name": "origin_gap_existed_before_resolution",
+      "passed": true
+    },
+    {
+      "name": "origin_zero_hop_resolution_has_exact_issuer_and_revenue_bases",
+      "passed": true
+    },
+    {
+      "name": "verification_gap_born_in_raw_model_response_and_preserved",
+      "passed": true
+    },
+    {
+      "name": "empty_retrieval_does_not_close_verification_gap",
+      "passed": true
+    },
+    {
+      "name": "final_packet_and_answer_preserve_missing_accounting_evidence",
+      "passed": true
+    },
+    {
+      "name": "read_inputs_unchanged_during_audit",
+      "passed": true
+    }
+  ],
+  "input_file_receipts": {
+    "experiments/real-event-v13-20260915/PROTOCOL.md": {
+      "bytes": 5824,
+      "sha256": "824c259d79ed70a73f5bcd24195f3e80aaa02bf84396c61122d391df890aaa84"
+    },
+    "experiments/real-event-v13-20260915/REGISTRATION.json": {
+      "bytes": 5892,
+      "sha256": "f82a96002fe6983d3edddd9671d648cf8df042b19f424225c104d391d8bae7f8"
+    },
+    "experiments/real-event-v13-20260915/cases.json": {
+      "bytes": 234,
+      "sha256": "93ad6175ff5f925929923b2bf8a8ef88dafc1f89888411e1d606e2ed69de3de2"
+    },
+    "experiments/real-event-v13-20260915/private-cache/5f19555add51d064180472ea100b1d3ce701954208456f27c5ad3c391a98271f.body": {
+      "bytes": 89485,
+      "sha256": "a6d8698c1316253edcba645f13a8412d5b6a90b12a0968a5f142a1728c4b923d"
+    },
+    "experiments/real-event-v13-20260915/private-cache/5f19555add51d064180472ea100b1d3ce701954208456f27c5ad3c391a98271f.json": {
+      "bytes": 4045,
+      "sha256": "27ea12248a8e9cc7b19b14325a6c2942dceabdb39afdcbac74c1fc39c0e42b12"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/COMPLETED.json": {
+      "bytes": 144,
+      "sha256": "a25c53cfce748010559be54659bbb012d3289d08922972781219906b1d5b5def"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/archive-records.json": {
+      "bytes": 4300,
+      "sha256": "44875c92ed8f6ae463b0aed0f616e762364a3c42a0f4767bb668b7f77e084c32"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/calls.json": {
+      "bytes": 1073,
+      "sha256": "f59db07f9be89c7f39a2c17af048995b7c1508c4f2a58ac6569482a8ba1334d3"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/model-io.json": {
+      "bytes": 84130,
+      "sha256": "d9a0ecdf1abbe9cad91270ef95dd4f034820421cb291e20ab9bd6c2e3a9cbae7"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0001-1789512864355686000.request.json": {
+      "bytes": 41173,
+      "sha256": "1b459bacda9c7cc5f52661652eb540cedffd726db4016e5609ec23b73582ca75"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0001-1789512871912324000.stderr": {
+      "bytes": 134,
+      "sha256": "11764aee5296eba98ebf10843bc02878d1ec9cfc8eab5a5ea7731c8133f3dcc0"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0001-1789512871912324000.stdout": {
+      "bytes": 796,
+      "sha256": "ea8abb3e4162fe691f414c058692dc0005f0254bfc39c118281d180c83f13580"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0002-1789512871922225000.request.json": {
+      "bytes": 35523,
+      "sha256": "bf9c3ddd248e1ed224ef0a3b83a862b639428185db348d0fff76e1bb89d6df6a"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0002-1789512887179413000.stderr": {
+      "bytes": 134,
+      "sha256": "6becd20adde0002569756bba8b81121065984aafcc47c5888ca1e0a0158c2c51"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/private-cli-events/0002-1789512887179413000.stdout": {
+      "bytes": 1926,
+      "sha256": "e19d1c6c525992858e94c7453319eec39a97b6d3073d87eb9e943ab913338d34"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/result.json": {
+      "bytes": 12906,
+      "sha256": "ff2edbd207683ef5053e08d8f78363d6bab75d117e4a2289418af3566e8b56c9"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/retrieval.json": {
+      "bytes": 473,
+      "sha256": "46d6b13a096aa494a1c367388edcc3c28ae5cb6660486c06b5b63f46d2c71a28"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/sources.json": {
+      "bytes": 33315,
+      "sha256": "12954884bb0f69f32e7d2af6a481da8d7ee14e0b38cc844a4775941be6e04c30"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-direct/workflow.json": {
+      "bytes": 603,
+      "sha256": "ef1289010f07c69b1f8a2fba067987302e9e2946724712e7ec87761578f4f2ea"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/archive-records.json": {
+      "bytes": 4300,
+      "sha256": "44875c92ed8f6ae463b0aed0f616e762364a3c42a0f4767bb668b7f77e084c32"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/calls.json": {
+      "bytes": 4729,
+      "sha256": "69bccd8e7f79d745060a2f4dbf7d1d9ee9e19589bc2e7e87b0075a3c9acacfe8"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/model-io.json": {
+      "bytes": 341365,
+      "sha256": "f4db1e123916de5e5d0fc38d8d91dbfa340530150a251c9dd56af4a6d3790df4"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0001-1789512887199634000.request.json": {
+      "bytes": 41650,
+      "sha256": "06f4cc3f198eda3d62a87e909e517305ebad79bd51b6ddc1bf2e5438fecefcff"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0001-1789512894169116000.stderr": {
+      "bytes": 134,
+      "sha256": "5f1d0fe7932949136e81598b97836c9abbeb7fd6512fea9b910094f8d9944753"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0001-1789512894169116000.stdout": {
+      "bytes": 908,
+      "sha256": "f102606e13598e088de6d16f8086bbc7654c78b1ae2cc393687490a7c8398622"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0002-1789512894185837000.request.json": {
+      "bytes": 31869,
+      "sha256": "a9936f265e1b9a042420dffa88f6ab25986b5127905d0dd3a0ba9d0c4fd9119f"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0002-1789512899854985000.stderr": {
+      "bytes": 134,
+      "sha256": "fe00f538279c098ea7bf320675f65e91ed0fd8198f2d2ea5d62f97cd5e8d4128"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0002-1789512899854985000.stdout": {
+      "bytes": 669,
+      "sha256": "60fe818582667b8494c87036a1cf2e0513b44de23aaa650bb85eeec1b20be98f"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0003-1789512899865519000.request.json": {
+      "bytes": 31745,
+      "sha256": "7ba1608f74c5881f735e61f5e31d3d41c6c8a6285bd614fa21d8d9e5bda32f41"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0003-1789512906338914000.stderr": {
+      "bytes": 134,
+      "sha256": "13160ed86152dd73e8f33156b47cda58b887f2a36dcb887d1a1b34e4dfd406e7"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0003-1789512906338914000.stdout": {
+      "bytes": 683,
+      "sha256": "d0484c53f433817bec37d3eddb1029a3806ed2fd8256c3a7c4828fbda5efd77d"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0004-1789512906348984000.request.json": {
+      "bytes": 32494,
+      "sha256": "e44132983a23615fda2fd9da57671500e087722f7fe63fa2bb57021c011daec8"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0004-1789512918206050000.stderr": {
+      "bytes": 134,
+      "sha256": "bde01fb4c6ee9d2c7187d2effe532705f9e7ef6e4857d583aecdfec9aeeead92"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0004-1789512918206050000.stdout": {
+      "bytes": 1429,
+      "sha256": "436688f1a33f079e7149c905ead44753849b494f7b05bb2225875d7e1529ccdd"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0005-1789512918218901000.request.json": {
+      "bytes": 33654,
+      "sha256": "9f74a9d24b8efb90e47e9994b3d5e7ee963379e44011b796754df27cc6f74368"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0005-1789512926541514000.stderr": {
+      "bytes": 134,
+      "sha256": "87d8958682ab8f286363e362a9c0f01d0d912fdeca6f29eecc130895062ae843"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0005-1789512926541514000.stdout": {
+      "bytes": 899,
+      "sha256": "0496891aad5bbf9cbc6b3e2435c670972fca0425ac17ccd333672d07df0ee3b8"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0006-1789512926550387000.request.json": {
+      "bytes": 34969,
+      "sha256": "aa954eb257abc96eea708963258f6396efd7d80d0cfed094a3bc1beb91817cea"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0006-1789512939194451000.stderr": {
+      "bytes": 134,
+      "sha256": "939db995849f84cd22f4256fd20c481bd04d5518651c1f82f2471176f814ae6a"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0006-1789512939194451000.stdout": {
+      "bytes": 1383,
+      "sha256": "fa93b783d1a104a6640af4baabc55433fa688c00e1ab9a81dea604a47243e22c"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0007-1789512939205601000.request.json": {
+      "bytes": 35542,
+      "sha256": "eaa35d77656fe627931ff59341dbd41cc3b2f34091dd27a35850357234b5a141"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0007-1789512964999508000.stderr": {
+      "bytes": 134,
+      "sha256": "3ffb2475ab3a4dd066ca8056726a7523ad5a988b680440f651ba7e994ae89f25"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0007-1789512964999508000.stdout": {
+      "bytes": 3372,
+      "sha256": "8fe6667b7fe9991abcf53cc417de9b310c40b383c7e1fa22ea6aa9a6246ab46c"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0008-1789512965010813000.request.json": {
+      "bytes": 37256,
+      "sha256": "eb6d452536f63c2b74ca5bbdb4fde3abf5855866ef28ff7de08d75f70dea216c"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0008-1789512980109732000.stderr": {
+      "bytes": 455,
+      "sha256": "db02b7e44f76bdc6b94b443d88c3664796128d694ce8e4d3c15fe00f1cef5bc0"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0008-1789512980109732000.stdout": {
+      "bytes": 1369,
+      "sha256": "4bf83d9926a4e2c4ca94e5371924070741fa46bd894d6dbde38847a5236654b4"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0009-1789512980126948000.request.json": {
+      "bytes": 36257,
+      "sha256": "fc673274ebce398aff7b2f3cf17600a05c2725b5df496e4f532f9a6df068e00c"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0009-1789512994775833000.stderr": {
+      "bytes": 134,
+      "sha256": "5bbfdb8f5b2b8096cc774f29cf86814e8f268dfbdacb9519f1da87b247947e19"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/private-cli-events/0009-1789512994775833000.stdout": {
+      "bytes": 1907,
+      "sha256": "379407f311f8160d1c35c772cde7bf59981d2133826cf905fec89357b0780761"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/result.json": {
+      "bytes": 505453,
+      "sha256": "f6a41ffc1cd6ea07fb2f4cc4b7b163eb4e3517d284a6028ef0fa3e266adfb893"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/retrieval.json": {
+      "bytes": 585,
+      "sha256": "0b717b8b3e6d396e918cf503bfb1da3723816ed0e5b6e396ecbb3f739867053b"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/sources.json": {
+      "bytes": 33315,
+      "sha256": "12954884bb0f69f32e7d2af6a481da8d7ee14e0b38cc844a4775941be6e04c30"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/e1301-harness/workflow.json": {
+      "bytes": 483180,
+      "sha256": "b9e384365eea972e397fd8c8ac0e8f6f3e6e80e67bc96a8df42386e238b9c2ce"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/manifest.json": {
+      "bytes": 6756,
+      "sha256": "871e678a27e06b8e16158e8a9f00c94e491971a6789d0f70fcfbe0a57d22b87a"
+    },
+    "experiments/real-event-v13-20260915/private-run-01/predictions.json": {
+      "bytes": 525854,
+      "sha256": "c882deb5cf71e13a5189aa99d00de8ae18b1aa5bf7d115d2254aabdda4ec6415"
+    },
+    "private-data/v13-adjudication/OUTCOME.json": {
+      "bytes": 3137,
+      "sha256": "8a79c6cbfa8091788f688f335ac8af0bd5ad12f9872fb4bbf8b32cbd5a39088e"
+    }
+  }
+}

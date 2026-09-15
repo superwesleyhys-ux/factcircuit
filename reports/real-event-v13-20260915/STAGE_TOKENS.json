@@ -1,0 +1,79 @@
+[
+  {
+    "arm": "direct",
+    "stage": "direct_retrieval_decision",
+    "input_tokens": 18557,
+    "output_tokens": 103,
+    "total_tokens": 18660
+  },
+  {
+    "arm": "direct",
+    "stage": "shared_final_forecast",
+    "input_tokens": 16805,
+    "output_tokens": 410,
+    "total_tokens": 17215
+  },
+  {
+    "arm": "harness",
+    "stage": "harness_retrieval_decision",
+    "input_tokens": 18633,
+    "output_tokens": 123,
+    "total_tokens": 18756
+  },
+  {
+    "arm": "harness",
+    "stage": "deconstruct",
+    "input_tokens": 15793,
+    "output_tokens": 93,
+    "total_tokens": 15886
+  },
+  {
+    "arm": "harness",
+    "stage": "search_plan",
+    "input_tokens": 15833,
+    "output_tokens": 103,
+    "total_tokens": 15936
+  },
+  {
+    "arm": "harness",
+    "stage": "source_trace",
+    "input_tokens": 15952,
+    "output_tokens": 292,
+    "total_tokens": 16244
+  },
+  {
+    "arm": "harness",
+    "stage": "source_verify",
+    "input_tokens": 16204,
+    "output_tokens": 164,
+    "total_tokens": 16368
+  },
+  {
+    "arm": "harness",
+    "stage": "synthesis",
+    "input_tokens": 16633,
+    "output_tokens": 286,
+    "total_tokens": 16919
+  },
+  {
+    "arm": "harness",
+    "stage": "decompose",
+    "input_tokens": 16490,
+    "output_tokens": 761,
+    "total_tokens": 17251
+  },
+  {
+    "arm": "harness",
+    "stage": "verify",
+    "input_tokens": 17103,
+    "output_tokens": 230,
+    "total_tokens": 17333
+  },
+  {
+    "arm": "harness",
+    "stage": "shared_final_forecast",
+    "input_tokens": 17017,
+    "output_tokens": 387,
+    "total_tokens": 17404
+  }
+]

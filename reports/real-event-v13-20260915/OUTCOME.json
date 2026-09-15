@@ -1,0 +1,60 @@
+{
+  "case_id": "e1301",
+  "registered_at": "2026-09-15T22:51:10.009623+00:00",
+  "use": "Post-run adjudication only. Not imported/read by inference runner or sent to either model. Curator selected retrospectively with outcome knowledge.",
+  "later_claim_materially_misleading": true,
+  "official_findings": [
+    {
+      "date": "2025-10-20",
+      "kind": "guilty_plea",
+      "url": "https://www.justice.gov/criminal/case/united-states-v-joseph-n-sanberg-court-docket-no-25-cr-200-cd-california-united",
+      "summary": "DOJ case record records Sanberg pleading guilty to two wire-fraud counts."
+    },
+    {
+      "date": "2026-06-01",
+      "kind": "sentencing",
+      "url": "https://www.justice.gov/usao-cdca/pr/orange-county-man-who-co-founded-environmentally-friendly-finance-company-sentenced-14",
+      "summary": "DOJ sentencing release states that sham-customer receipts funded by Sanberg inflated Aspiration revenue between March 2021 and November 2022."
+    },
+    {
+      "date": "2025-08-21",
+      "kind": "civil_complaint_allegations",
+      "url": "https://www.sec.gov/files/litigation/complaints/2025/comp26382.pdf",
+      "paragraphs": [
+        55,
+        56,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "summary": "The complaint identifies the exact February 2022 release and $100.6m FY2021 revenue claim; this complaint alone is an allegation, not an adjudication."
+    }
+  ],
+  "eligibility": {
+    "event_before_2024": true,
+    "official_admission_in_2025_2026": true,
+    "first_public_doubt_in_2025_2026": false,
+    "strict_first_revelation_sample": false,
+    "reason": "Bloomberg published an investigation of questionable Aspiration deals on 2024-07-10. Internal 2022 events later described in a 2025 complaint are not automatically public-in-2022 evidence.",
+    "prior_public_investigation_url": "https://www.bloomberg.com/news/features/2024-07-10/questionable-deals-caused-a-climate-finance-startup-to-unravel"
+  },
+  "primary_source_identity": {
+    "publisher": "Aspiration Partners, Inc., distributed by Business Wire",
+    "newsitemid": "20220217005667",
+    "publication_date": "2022-02-17",
+    "title_contains": "Aspiration Reports Fourth Quarter and Full Year 2021 Results",
+    "seed_is_company_release": true,
+    "claim_value": 100.6,
+    "currency": "USD millions",
+    "fiscal_year": 2021,
+    "qualification": "Unaudited and subject to change."
+  },
+  "scoring_rules": {
+    "risk_hit": "elevated plus valid cited pre-cutoff grounds; otherwise separately report category match and evidence adequacy. No numerical accuracy from one positive event.",
+    "fact_verdict": "Audit against actually fetched pre-cutoff text, not against later gold. A press release supports reported attribution, not independent authenticity.",
+    "origin": "Identify actual issuer release. Starting at a primary release is not counted as discovering an upstream origin. Native chain quality is separately audited.",
+    "fabrication": "Only supplied contemporaneous evidence establishes deliberate fabrication; refusal or elevated risk is not fabrication detection."
+  }
+}

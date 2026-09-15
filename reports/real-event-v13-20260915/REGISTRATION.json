@@ -1,0 +1,83 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "cutoff": "2024-12-31T23:59:59Z",
+  "max_calls_per_arm_case": 16,
+  "config": {
+    "depth": 0,
+    "max_queries": 1,
+    "max_claims": 1,
+    "max_documents": 3,
+    "max_searches": 0,
+    "max_origin_depth": 0,
+    "max_origin_calls": 8,
+    "fetch_timeout": 60,
+    "research_mode": "claim",
+    "research_evidence_max_chars": 1000000
+  },
+  "cases": [
+    {
+      "id": "e1301",
+      "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+      "claim": "Aspiration's total revenue for 2021 was $100.6 million."
+    }
+  ],
+  "seed_text_sha256": {
+    "e1301": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3"
+  },
+  "frozen_at": "2026-09-15T22:53:58.188374+00:00",
+  "scope": "New real company event; later-confirmed fraud diagnostic, not a first-revelation holdout or matched-compute comparison.",
+  "outcome_commitment_sha256": "8a79c6cbfa8091788f688f335ac8af0bd5ad12f9872fb4bbf8b32cbd5a39088e",
+  "preflight_model_calls": 0,
+  "offline_tests": {
+    "count": 14,
+    "status": "passed",
+    "log_sha256": "38bfe46bb9783e639f348734a8237da0530a0819e1813c296e0320b752d08f5b"
+  },
+  "sha256": {
+    "experiments/live-origin-v12-20260914/archive_collector.py": "b061229d0769e3f45bc244d6ae941bd170db5763aec651dce94841e91b60c959",
+    "experiments/live-origin-v12-20260914/check_dedup_receipts.py": "d1811b586800dde108495604b1fa68d1c2596c0b3d9745d31b2fc31a36254515",
+    "experiments/real-event-v13-20260915/PREFLIGHT.json": "cf4db5d01a1b53ae6100c4221a40dd5a7762d6bc6c9177a6f9c8a3ee223fad78",
+    "experiments/real-event-v13-20260915/PROTOCOL.md": "824c259d79ed70a73f5bcd24195f3e80aaa02bf84396c61122d391df890aaa84",
+    "experiments/real-event-v13-20260915/cases.json": "93ad6175ff5f925929923b2bf8a8ef88dafc1f89888411e1d606e2ed69de3de2",
+    "experiments/real-event-v13-20260915/retrieval.py": "fe8c62a42186f8182076f8423ab42fc39982a3ae43d4ef583ef3492426b467ce",
+    "experiments/real-event-v13-20260915/run_test.py": "7b19525d472884cd072d66fe9c21d25246e969cf9dd1f25480bc8d80d566eca3",
+    "experiments/real-event-v13-20260915/test_runner.py": "c3e30344f30a979cab58f6478b2bd7334ed724cee7bb4eac04d6800d6c14631d",
+    "factcircuit/__init__.py": "0b0914ae7d834fe25ba45eecccc2e3667ffa95416db0bfaf9367cf272aa8471c",
+    "factcircuit/__main__.py": "452e93adfedbe19b621ac6c2e795f6c4466878d2b168166228bcf20a40ac4c96",
+    "factcircuit/cli.py": "15ddf5cc3aa873640b55f67dc9fcc42e32477c83c1e1048f9ff307e993c16ee2",
+    "factcircuit/comparison.py": "99accd186f03d8247dcafea38d26bafdf1715e12c1a2be539582c9ba6e56f3d5",
+    "factcircuit/core.py": "4db5965cf7f5018c81faaa042dc3538da7141b66638b8f69cbff090a0ec625e4",
+    "factcircuit/decisions.py": "76603bda809fd2204f9ede10a6d00f80a44c8ed1baca7440083c499cb572ca45",
+    "factcircuit/evaluation.py": "77e1e64e8c27052874610cc8b72c7a0a97094eb551bc6baff65db9e47a33e43f",
+    "factcircuit/provenance.py": "9dc1051c1446ed192324ac8ec236bbe5488a72d50cbe7bb2823f9ea9cf09a517",
+    "factcircuit/providers.py": "4f8c2858a4c9abbad20453aeb312d605441973df75f5c66adf65e28d725ed73a",
+    "factcircuit/retrieval.py": "ad8607963c6bc918f56197b571256ca3a692a1d240f8a547646075e75fa2514a",
+    "factcircuit/trace_demo.py": "2d30e12f03aacfd5420a1b2bff923b03c121c060f5a555b069f9d5522c6153e4",
+    "newsverify/__init__.py": "90fc21d71c6994c19e501788df6c9415e0f7ef7640161134dd8a64c7a96f0ce2",
+    "newsverify/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "newsverify/cli.py": "98ca0dee294da959ef86640652d1db7a58d7a630b23110901723c1492668f1c7",
+    "newsverify/comparison.py": "b35ddbb2e82a5a763aac31982f28c984ca50a242ecb07a1245128e09199279c5",
+    "newsverify/core.py": "8f148c272de3be772581dc78644411fa2b56d1eb809045ef6423620ac7a41d88",
+    "newsverify/decisions.py": "fe93d618b0f122591b39def16e952a4076c4fc66d69d81198c28489e245b4b3e",
+    "newsverify/double_loop.py": "9c93a66b8d1e135670713e5cbd05aad6aa126486e48979511420e6e1a7e2192b",
+    "newsverify/early_risk.py": "ae407e51b375ea15838435afd8348326834b5aeebd14861aff7ba55d9b9f87db",
+    "newsverify/evaluation.py": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f",
+    "newsverify/local.py": "aba40021d0fb9bc6455bb96bc8065aaae19a186e7d95078a3c6e377caa34e75c",
+    "newsverify/model_runner.py": "d93978885283b86658c38100db8fd4e3d031b3a4d2695976730b76b925bab282",
+    "newsverify/news_client.py": "086134e1d6a28944176bb2d8ce3f40c55f126e746f99bcd834fc532f6244cce5",
+    "newsverify/news_sources.py": "edae29dd733343aac7edb3474bc63ee42562461c8804dd30c520ff3cc095f584",
+    "newsverify/news_tracing/__init__.py": "a9a9ab21de682f40da13b88bdbdb90bc755c5de99c62f20dc0583106b1febd36",
+    "newsverify/news_tracing/core.py": "56101837026f36474bc5339da18ffe9a13fa8fbba5a5db2ae20e2fb56f20478b",
+    "newsverify/news_tracing/models.py": "83e4223da3376a455590e0390cae5bd690fa8787c3233923855f8e8fd5361344",
+    "newsverify/news_tracing/prompts.py": "c9e478bfd4a66599834c4dd26160d407e2d6be37cf4a2bdfbf777536c3d4a910",
+    "newsverify/news_tracing/schemas.py": "667d09628a9a84f2d8c53e87cde2b41e942725350b3077c2dda9fc4cbd314100",
+    "newsverify/news_tracing_runner.py": "68a442b1478265306006add587b883af828170ab5324428f8aa1c15dac5f41e8",
+    "newsverify/provenance.py": "58817c042e91eaa1771bd6e6fa4294d4ab8d5454bd7200949c97cd04e0917a15",
+    "newsverify/providers.py": "7cb362d1f89270e82b1b34590eecac607a43896a6bbe763c3b88b0254970b568",
+    "newsverify/quickstart.py": "2fded3063ac69f092fcb4e318bfa7a1279701868c8ffc7d50dbb654620353fa6",
+    "newsverify/retrieval.py": "9e8b1a32656f8aeab7eed6250c3efce35f4e1c45b711c492365b3e87beed2567",
+    "newsverify/trace_demo.py": "960c78e0fc2aa2bb428dd13db59c3c8314c7e7ffe533d2fe64d80267474b1251",
+    "newsverify/tunnels.py": "390b1cf1961a40120c28b63b54ff9930ab8b03de78dcccbaace722ac92b87fac"
+  }
+}

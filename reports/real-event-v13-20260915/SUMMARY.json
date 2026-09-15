@@ -1,0 +1,99 @@
+{
+  "case_id": "e1301",
+  "event": "Aspiration FY2021 revenue announcement",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "route": "local Codex CLI login; remote inference",
+  "results": {
+    "direct": {
+      "status": "completed",
+      "prediction": {
+        "fact_status": "unresolved",
+        "origin_url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+        "origin_chain": [
+          "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results"
+        ],
+        "risk": "insufficient_evidence",
+        "fabrication_established": false,
+        "citations": [
+          {
+            "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+            "quote": "Total revenues were $100.6 million, up 584% from $14.7 million in 2020"
+          },
+          {
+            "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+            "quote": "Note: 2021 financials are unaudited and are subject to change."
+          }
+        ],
+        "rationale": "The original source read is Aspiration’s own release distributed by Business Wire. It establishes that Aspiration reported the figure, but the supplied unaudited disclosure does not independently establish actual revenue. The announced correction changes an outlook-table year label, not 2021 revenue. No audited statements or independent corroboration were supplied; linked, unfetched pages establish no further origin. Evidence is insufficient to forecast a claim-specific official correction, finding or admission during 2025–2026. Neither the unaudited status nor the unrelated correction establishes intentional fabrication."
+      },
+      "native_errors": [],
+      "workflow_native_status": null,
+      "attempted_calls": 2,
+      "call_cap_respected": true,
+      "source_errors": []
+    },
+    "harness": {
+      "status": "completed",
+      "prediction": {
+        "fact_status": "unresolved",
+        "origin_url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+        "origin_chain": [
+          "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results"
+        ],
+        "risk": "insufficient_evidence",
+        "fabrication_established": false,
+        "citations": [
+          {
+            "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+            "quote": "Total revenues were $100.6 million, up 584% from $14.7 million in 2020"
+          },
+          {
+            "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+            "quote": "Note: 2021 financials are unaudited and are subject to change."
+          }
+        ],
+        "rationale": "The archived Business Wire release is Aspiration’s own original announcement and establishes that it reported $100.6 million. It does not independently establish actual revenue: the figures are unaudited, and no corroborating financial records are supplied. The correction changes the outlook table’s comparison year, not 2021 revenue. Unfetched SEC links establish no further provenance. At the cutoff, the exact empirical claim remains unresolved. The packet provides insufficient evidence to forecast a material correction, finding or admission during 2025–2026, and establishes no intentional fabrication."
+      },
+      "native_errors": [],
+      "workflow_native_status": "completed",
+      "attempted_calls": 9,
+      "call_cap_respected": true,
+      "source_errors": []
+    }
+  },
+  "conditions": {
+    "direct": {
+      "calls": 2,
+      "successful_calls": 2,
+      "known_usage_calls": 2,
+      "input_tokens": 35362,
+      "output_tokens": 513,
+      "cached_input_tokens": 0,
+      "total_tokens": 35875
+    },
+    "harness": {
+      "calls": 9,
+      "successful_calls": 9,
+      "known_usage_calls": 9,
+      "input_tokens": 149658,
+      "output_tokens": 2439,
+      "cached_input_tokens": 16640,
+      "total_tokens": 152097
+    }
+  },
+  "total_model_tokens": 187972,
+  "harness_direct_token_ratio": 4.2396376306620205,
+  "new_source_documents_opened": {
+    "direct": 0,
+    "harness": 0
+  },
+  "later_positive_flagged": {
+    "direct": false,
+    "harness": false
+  },
+  "strict_first_revelation_sample": false,
+  "benchmark_accuracy": null,
+  "controls": 0,
+  "same_case_repeat_attempts": 0
+}

@@ -1,0 +1,12 @@
+{
+  "source_audit": {
+    "original_sha256": "2b50c5e3e6cf8c6bd82b5461b728b58ae0397a7f859f77abc9634a83e554eae9",
+    "exported_sha256": "4fd13de92117304e0ed5f6d21d85b85a63702523acca838f0a9d8a6544477e80",
+    "changes": [
+      "Only the machine-specific run_directory was changed to a repository-relative path. All audit checks and result values are unchanged."
+    ]
+  },
+  "original_predictions_sha256": "c882deb5cf71e13a5189aa99d00de8ae18b1aa5bf7d115d2254aabdda4ec6415",
+  "private_inputs_published": false,
+  "scope": "Local report artifacts; no GitHub push was performed for this run."
+}

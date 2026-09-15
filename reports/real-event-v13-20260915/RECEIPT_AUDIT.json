@@ -1,0 +1,347 @@
+{
+  "audited_at": "2026-09-15T22:57:51.323150+00:00",
+  "valid": true,
+  "checks": {
+    "completed_prediction_hash": true,
+    "all_44_frozen_files_unchanged": true,
+    "outcome_commitment_unchanged": true,
+    "same_seed_hash": true,
+    "both_final_valid": true,
+    "no_native_errors": true,
+    "all_before_cutoff": true,
+    "all_receipts_valid": true,
+    "all_within_call_ceiling": true
+  },
+  "frozen_file_count": 44,
+  "prediction_sha256": "c882deb5cf71e13a5189aa99d00de8ae18b1aa5bf7d115d2254aabdda4ec6415",
+  "cutoff_checks": [
+    {
+      "arm": "direct",
+      "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+      "available_at": "2023-01-04T14:29:16+00:00",
+      "passed": true
+    },
+    {
+      "arm": "harness",
+      "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+      "available_at": "2023-01-04T14:29:16+00:00",
+      "passed": true
+    }
+  ],
+  "calls": [
+    {
+      "arm": "direct",
+      "call": 1,
+      "stage": "direct_retrieval_decision",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "1b459bacda9c7cc5f52661652eb540cedffd726db4016e5609ec23b73582ca75",
+      "stdout_sha256": "ea8abb3e4162fe691f414c058692dc0005f0254bfc39c118281d180c83f13580",
+      "stdin_sha256": "bc860ba0deae336f0ff2264fe228f50f10e9b355aba704862a6d97e1f28e2715",
+      "usage": {
+        "input_tokens": 18557,
+        "cached_input_tokens": 0,
+        "output_tokens": 103,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "direct",
+      "call": 2,
+      "stage": "shared_final_forecast",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "bf9c3ddd248e1ed224ef0a3b83a862b639428185db348d0fff76e1bb89d6df6a",
+      "stdout_sha256": "e19d1c6c525992858e94c7453319eec39a97b6d3073d87eb9e943ab913338d34",
+      "stdin_sha256": "9fd4bceb5d284ae0efd08c960249e22a52a41d1ee5300d42f36b012572f70ea2",
+      "usage": {
+        "input_tokens": 16805,
+        "cached_input_tokens": 0,
+        "output_tokens": 410,
+        "reasoning_output_tokens": 23
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 1,
+      "stage": "harness_retrieval_decision",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "06f4cc3f198eda3d62a87e909e517305ebad79bd51b6ddc1bf2e5438fecefcff",
+      "stdout_sha256": "f102606e13598e088de6d16f8086bbc7654c78b1ae2cc393687490a7c8398622",
+      "stdin_sha256": "b79619560077de053e8247b1bdf4d51b416d3836b755080f543cb75d18f196e8",
+      "usage": {
+        "input_tokens": 18633,
+        "cached_input_tokens": 0,
+        "output_tokens": 123,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 2,
+      "stage": "deconstruct",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "a9936f265e1b9a042420dffa88f6ab25986b5127905d0dd3a0ba9d0c4fd9119f",
+      "stdout_sha256": "60fe818582667b8494c87036a1cf2e0513b44de23aaa650bb85eeec1b20be98f",
+      "stdin_sha256": "fbccef587467b61b558860f4875e4dc6b30876e77086cd3476b4ce03d86e2d61",
+      "usage": {
+        "input_tokens": 15793,
+        "cached_input_tokens": 0,
+        "output_tokens": 93,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 3,
+      "stage": "search_plan",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "7ba1608f74c5881f735e61f5e31d3d41c6c8a6285bd614fa21d8d9e5bda32f41",
+      "stdout_sha256": "d0484c53f433817bec37d3eddb1029a3806ed2fd8256c3a7c4828fbda5efd77d",
+      "stdin_sha256": "bfdb21caa22748496639e3bb2f17c03cc40b0406c6d5ab75350dc88afb5e9ce5",
+      "usage": {
+        "input_tokens": 15833,
+        "cached_input_tokens": 0,
+        "output_tokens": 103,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 4,
+      "stage": "source_trace",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "e44132983a23615fda2fd9da57671500e087722f7fe63fa2bb57021c011daec8",
+      "stdout_sha256": "436688f1a33f079e7149c905ead44753849b494f7b05bb2225875d7e1529ccdd",
+      "stdin_sha256": "588623dccf930b1fccdf274ff60c3a37064edf0bd2d215a164605dabb3d94da1",
+      "usage": {
+        "input_tokens": 15952,
+        "cached_input_tokens": 0,
+        "output_tokens": 292,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 5,
+      "stage": "source_verify",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "9f74a9d24b8efb90e47e9994b3d5e7ee963379e44011b796754df27cc6f74368",
+      "stdout_sha256": "0496891aad5bbf9cbc6b3e2435c670972fca0425ac17ccd333672d07df0ee3b8",
+      "stdin_sha256": "d3e5f78001bab1a8b22d2dd8ea26c0d6b38e114045ddfa109bc39a6a07e633e5",
+      "usage": {
+        "input_tokens": 16204,
+        "cached_input_tokens": 0,
+        "output_tokens": 164,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 6,
+      "stage": "synthesis",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "aa954eb257abc96eea708963258f6396efd7d80d0cfed094a3bc1beb91817cea",
+      "stdout_sha256": "fa93b783d1a104a6640af4baabc55433fa688c00e1ab9a81dea604a47243e22c",
+      "stdin_sha256": "ac0a3942cd37b3fbe99b19476028665474b26433f6b0146eb9e6f7532e784104",
+      "usage": {
+        "input_tokens": 16633,
+        "cached_input_tokens": 0,
+        "output_tokens": 286,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 7,
+      "stage": "decompose",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "eaa35d77656fe627931ff59341dbd41cc3b2f34091dd27a35850357234b5a141",
+      "stdout_sha256": "8fe6667b7fe9991abcf53cc417de9b310c40b383c7e1fa22ea6aa9a6246ab46c",
+      "stdin_sha256": "4ae39e62ae025a6a93c73e7ade568b7f8930d6975b8be5463f912f91f2613c4a",
+      "usage": {
+        "input_tokens": 16490,
+        "cached_input_tokens": 0,
+        "output_tokens": 761,
+        "reasoning_output_tokens": 41
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 8,
+      "stage": "verify",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "eb6d452536f63c2b74ca5bbdb4fde3abf5855866ef28ff7de08d75f70dea216c",
+      "stdout_sha256": "4bf83d9926a4e2c4ca94e5371924070741fa46bd894d6dbde38847a5236654b4",
+      "stdin_sha256": "f1fd83416914777c90fab8e5e891e2425b2065983e1f6d8596058f72f0cfce7e",
+      "usage": {
+        "input_tokens": 17103,
+        "cached_input_tokens": 16640,
+        "output_tokens": 230,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "arm": "harness",
+      "call": 9,
+      "stage": "shared_final_forecast",
+      "checks": {
+        "request_equals_immutable_journal": true,
+        "request_hash": true,
+        "schema": true,
+        "model": true,
+        "effort": true,
+        "route": true,
+        "no_extra_tools": true,
+        "no_error_event": true,
+        "raw_response_equals_journal": true,
+        "usage": true,
+        "success": true,
+        "later_document_url_absent": true
+      },
+      "request_sha256": "fc673274ebce398aff7b2f3cf17600a05c2725b5df496e4f532f9a6df068e00c",
+      "stdout_sha256": "379407f311f8160d1c35c772cde7bf59981d2133826cf905fec89357b0780761",
+      "stdin_sha256": "0151320c7a5a0d0f5aeb891b7bbab8b865fc46eff6b3a60ae2dc01e69b72b851",
+      "usage": {
+        "input_tokens": 17017,
+        "cached_input_tokens": 0,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Cannot erase or prove absence of model pretraining knowledge.",
+    "No extra source documents were model-selected in this run.",
+    "Input only already-origin company release; no upstream source discovery."
+  ]
+}
