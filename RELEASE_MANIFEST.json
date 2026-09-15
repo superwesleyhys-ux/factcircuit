@@ -739,6 +739,41 @@
       "sha256": "badd4e7b35e10cec3c50528057bc110d19005febd9aa8ae4eba68751c163efcb"
     },
     {
+      "path": "experiments/real-event-v13-20260915/PREFLIGHT.json",
+      "bytes": 8391,
+      "sha256": "cf4db5d01a1b53ae6100c4221a40dd5a7762d6bc6c9177a6f9c8a3ee223fad78"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/PROTOCOL.md",
+      "bytes": 5824,
+      "sha256": "824c259d79ed70a73f5bcd24195f3e80aaa02bf84396c61122d391df890aaa84"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/REGISTRATION.json",
+      "bytes": 5892,
+      "sha256": "f82a96002fe6983d3edddd9671d648cf8df042b19f424225c104d391d8bae7f8"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/cases.json",
+      "bytes": 234,
+      "sha256": "93ad6175ff5f925929923b2bf8a8ef88dafc1f89888411e1d606e2ed69de3de2"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/retrieval.py",
+      "bytes": 5292,
+      "sha256": "fe8c62a42186f8182076f8423ab42fc39982a3ae43d4ef583ef3492426b467ce"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/run_test.py",
+      "bytes": 17312,
+      "sha256": "7b19525d472884cd072d66fe9c21d25246e969cf9dd1f25480bc8d80d566eca3"
+    },
+    {
+      "path": "experiments/real-event-v13-20260915/test_runner.py",
+      "bytes": 18066,
+      "sha256": "c3e30344f30a979cab58f6478b2bd7334ed724cee7bb4eac04d6800d6c14631d"
+    },
+    {
       "path": "experiments/secure_run.py",
       "bytes": 1438,
       "sha256": "3f869162b7ee60082f750d972f5b2afe0a61dac92344ee162f84534c05811cb5"

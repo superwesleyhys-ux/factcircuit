@@ -1,0 +1,214 @@
+{
+  "completed_at": "2026-09-15T22:51:10.007469+00:00",
+  "model_calls": 0,
+  "selected": {
+    "case_id": "e1301",
+    "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+    "title": "CORRECTING and REPLACING Aspiration Reports Fourth Quarter and Full Year 2021 Results | Business Wire",
+    "capture_at": "2023-01-04T14:29:16+00:00",
+    "archive_url": "https://web.archive.org/web/20230104142916id_/https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+    "text_chars": 25878,
+    "text_sha256": "968c3f414462f3428a795a5bfd77b3dddb764fb8b28677ab6cc1673fd0bd1ac3"
+  },
+  "attempts": [
+    {
+      "candidate": "advfn",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.advfn.com/stock-market/stock-news/87324978/aspiration-reports-fourth-quarter-and-full-year-20",
+          "success": false
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.advfn.com%2Fstock-market%2Fstock-news%2F87324978%2Faspiration-reports-fourth-quarter-and-full-year-20&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 3,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        }
+      ],
+      "errors": [
+        {
+          "operation": "fetch",
+          "code": "no_pre_cutoff_capture",
+          "url": "https://www.advfn.com/stock-market/stock-news/87324978/aspiration-reports-fourth-quarter-and-full-year-20"
+        }
+      ]
+    },
+    {
+      "candidate": "businesswire",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/",
+          "success": false
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.businesswire.com%2Fnews%2Fhome%2F20220217005667%2Fen%2F&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 3,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        }
+      ],
+      "errors": [
+        {
+          "operation": "fetch",
+          "code": "no_pre_cutoff_capture",
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/"
+        }
+      ]
+    },
+    {
+      "candidate": "businesswire-full",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "success": true,
+          "final_url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "bytes": 89485
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.businesswire.com%2Fnews%2Fhome%2F20220217005667%2Fen%2FAspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 1318,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        },
+        {
+          "operation": "archive_candidate",
+          "requested_url": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "attempt": 1,
+          "timestamp": "20230104142916",
+          "original": "https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "indexed_status": "200"
+        },
+        {
+          "operation": "archive_http",
+          "stage": "replay",
+          "url": "https://web.archive.org/web/20230104142916id_/https://www.businesswire.com/news/home/20220217005667/en/Aspiration-Reports-Fourth-Quarter-and-Full-Year-2021-Results",
+          "decoded_bytes": 89485,
+          "byte_limit": 5000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": "23418",
+          "content_encoding": "gzip",
+          "memento_datetime": "Wed, 04 Jan 2023 14:29:16 GMT"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "candidate": "street-plus",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.streetinsider.com/Business+Wire/Aspiration+Reports+Fourth+Quarter+and+Full+Year+2021+Results/19641484.html",
+          "success": false
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.streetinsider.com%2FBusiness%2BWire%2FAspiration%2BReports%2BFourth%2BQuarter%2Band%2BFull%2BYear%2B2021%2BResults%2F19641484.html&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 3,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        }
+      ],
+      "errors": [
+        {
+          "operation": "fetch",
+          "code": "no_pre_cutoff_capture",
+          "url": "https://www.streetinsider.com/Business+Wire/Aspiration+Reports+Fourth+Quarter+and+Full+Year+2021+Results/19641484.html"
+        }
+      ]
+    },
+    {
+      "candidate": "tmcnet",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.tmcnet.com/usubmit/-aspiration-reports-fourth-quarter-full-year-2021-results-/2022/02/17/9548184.htm",
+          "success": false
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.tmcnet.com%2Fusubmit%2F-aspiration-reports-fourth-quarter-full-year-2021-results-%2F2022%2F02%2F17%2F9548184.htm&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 3,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        }
+      ],
+      "errors": [
+        {
+          "operation": "fetch",
+          "code": "no_pre_cutoff_capture",
+          "url": "https://www.tmcnet.com/usubmit/-aspiration-reports-fourth-quarter-full-year-2021-results-/2022/02/17/9548184.htm"
+        }
+      ]
+    },
+    {
+      "candidate": "streetinsider-encoded",
+      "requests": [
+        {
+          "operation": "fetch",
+          "url": "https://www.streetinsider.com/Business%2BWire/Aspiration%2BReports%2BFourth%2BQuarter%2Band%2BFull%2BYear%2B2021%2BResults/19641484.html",
+          "success": false
+        },
+        {
+          "operation": "archive_http",
+          "stage": "index",
+          "url": "https://web.archive.org/cdx/search/cdx?url=www.streetinsider.com%2FBusiness%252BWire%2FAspiration%252BReports%252BFourth%252BQuarter%252Band%252BFull%252BYear%252B2021%252BResults%2F19641484.html&output=json&to=20241231235959&limit=1000",
+          "decoded_bytes": 3,
+          "byte_limit": 1000000,
+          "success": true,
+          "status": 200,
+          "curl_returncode": 0,
+          "body_complete": true,
+          "content_type": "application/json",
+          "content_encoding": "gzip"
+        }
+      ],
+      "errors": [
+        {
+          "operation": "fetch",
+          "code": "no_pre_cutoff_capture",
+          "url": "https://www.streetinsider.com/Business%2BWire/Aspiration%2BReports%2BFourth%2BQuarter%2Band%2BFull%2BYear%2B2021%2BResults/19641484.html"
+        }
+      ]
+    }
+  ]
+}
