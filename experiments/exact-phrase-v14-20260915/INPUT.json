@@ -1,0 +1,19 @@
+{
+  "url": "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+  "selectors": [
+    "32 minutes",
+    "73 seconds",
+    {
+      "start": 1289,
+      "end": 1291
+    }
+  ],
+  "as_of": "2024-12-31T23:59:59Z",
+  "limits": {
+    "max_calls": 3,
+    "max_documents": 4,
+    "max_searches": 0,
+    "max_chars": 200000,
+    "context_chars": 160
+  }
+}

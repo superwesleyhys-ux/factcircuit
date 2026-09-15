@@ -12,6 +12,10 @@ Version 0.2.0: a bounded, auditable news provenance loop with **decomposition on
 
 Repository Discussions are enabled, and the repository includes a prepared **Accuracy decline** reporting form for reproducible metric regressions or weaker trace outcomes. Reports should identify the affected metric or behavior, include the run configuration, and avoid treating synthetic fixtures as real-world performance evidence.
 
+## Literal words and phrases: no-summary tracing
+
+The `trace-phrases` command traces individual original-text occurrences with exact positions, preceding/following context and full source documents. It separates textual matches, source attribution and empirical judgments; it does not call the research-summary stages. See the [usage and limitations](docs/literal-phrase-tracing.md) and the [fixed DART comparison protocol](experiments/exact-phrase-v14-20260915/PROTOCOL.md). Exact citations do not guarantee factual truth.
+
 ## Latest live source-tracing test: two audited chains
 
 The September 14 V12 development run started from two raw news articles and

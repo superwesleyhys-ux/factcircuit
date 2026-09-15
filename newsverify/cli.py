@@ -112,6 +112,13 @@ def main(argv=None, *, prog="newsverify"):
     news_parser.add_argument("--timeout", type=float, default=90)
     news_parser.add_argument("--max-model-calls", type=int, default=40,
                              help="shared research and claim-tracing call cap for the whole news batch")
+    phrase_parser = sub.add_parser("trace-phrases", help="trace literal words or phrases individually, with original context")
+    phrase_parser.add_argument("input", type=Path, help="JSON: url, selectors (literal strings or start/end offsets), optional limits/as_of")
+    phrase_parser.add_argument("--output", type=Path, required=True, help="new local JSON file; contains full source text and model receipts")
+    phrase_parser.add_argument("--arm", choices=("direct", "harness"), default="harness")
+    phrase_parser.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra)")
+    phrase_parser.add_argument("--reasoning-effort", default="low")
+    phrase_parser.add_argument("--timeout", type=float, default=180)
     args = parser.parse_args(argv)
     try:
         if args.command == "quickstart":
@@ -125,6 +132,12 @@ def main(argv=None, *, prog="newsverify"):
                   f"{result['usage']['rounds']} rounds; 0 model calls.")
             print(f"Read {args.output / 'SUMMARY.md'}")
             return 0 if result["assessment_valid"] else 1
+        elif args.command == "trace-phrases":
+            if args.output.exists() or args.output.resolve() == args.input.resolve():
+                raise ValueError("phrase output must be a new file; preserve previous attempts")
+            from .phrase_tracing import run_phrase_trace
+            result = run_phrase_trace(json.loads(args.input.read_text(encoding="utf-8")),
+                arm=args.arm, model=args.model, reasoning_effort=args.reasoning_effort, timeout=args.timeout)
         elif args.command == "trace-news":
             if args.output and args.output.resolve() == args.input.resolve():
                 raise ValueError("output must differ from input")
@@ -152,7 +165,7 @@ def main(argv=None, *, prog="newsverify"):
             if args.output and args.output.resolve() == args.input.resolve():
                 raise ValueError("output must differ from input")
             raw = args.input.read_text(encoding="utf-8")
-        if args.command not in ("score", "trace-demo", "compare", "trace-news"):
+        if args.command not in ("score", "trace-demo", "compare", "trace-news", "trace-phrases"):
             payload = json.loads(raw)
             if args.command == "trace":
                 result = run_local(payload)
@@ -180,6 +193,8 @@ def main(argv=None, *, prog="newsverify"):
             return 1
         if args.command == "trace-news":
             return 1 if result["summary"]["failed"] or result["summary"]["partial"] else 0
+        if args.command == "trace-phrases":
+            return 0 if result["status"] == "completed" else 1
         return 1 if args.command == "benchmark" and not result["all_policy_expectations_matched"] else 0
     except (OSError, ValueError, TypeError, KeyError) as exc:
         print(f"{prog}: {exc}", file=sys.stderr)

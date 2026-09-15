@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-09-15T23:42:17.864951+00:00",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "low",
+  "input_sha256": "a8f450ba59f33de118923fc815f06269f7505f80438cd5b1a132899b90d5ab3a",
+  "raw_captures": {
+    "private-data/v14-sources/cache/50bbeb6f1c5f06970c192323fb9bf15fba1e0569cca4a446f38195ee507cea0b.body": "aff9b59b78f85151c2ef68420cc26808c57a39c46a064399540eb73bb46c75ba",
+    "private-data/v14-sources/cache/50bbeb6f1c5f06970c192323fb9bf15fba1e0569cca4a446f38195ee507cea0b.json": "dd7a6160ae95eada0179b3a07a5633232e49dee2b43ca9359a7c8ea0c81dd956",
+    "private-data/v14-sources/cache/c04ec49e03b0517844ec99b285826e7ade3e79e62da0e0a859d60b54750ad659.body": "7892e1e0d610d8f3856f3f1b31501d2f95060974ca4a63b10e07791fbf862133",
+    "private-data/v14-sources/cache/c04ec49e03b0517844ec99b285826e7ade3e79e62da0e0a859d60b54750ad659.json": "f4ec44d97f262cfd082526409f8df400ab06f9e64ee485b4fc26b8158c2afd24"
+  },
+  "files": {
+    "newsverify/__init__.py": "90fc21d71c6994c19e501788df6c9415e0f7ef7640161134dd8a64c7a96f0ce2",
+    "newsverify/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "newsverify/cli.py": "4d11e4ec92c75801da9afd53d31737279a38c0ea31239782f5dbd77214a049a9",
+    "newsverify/comparison.py": "b35ddbb2e82a5a763aac31982f28c984ca50a242ecb07a1245128e09199279c5",
+    "newsverify/core.py": "8f148c272de3be772581dc78644411fa2b56d1eb809045ef6423620ac7a41d88",
+    "newsverify/decisions.py": "fe93d618b0f122591b39def16e952a4076c4fc66d69d81198c28489e245b4b3e",
+    "newsverify/double_loop.py": "9c93a66b8d1e135670713e5cbd05aad6aa126486e48979511420e6e1a7e2192b",
+    "newsverify/early_risk.py": "ae407e51b375ea15838435afd8348326834b5aeebd14861aff7ba55d9b9f87db",
+    "newsverify/evaluation.py": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f",
+    "newsverify/local.py": "aba40021d0fb9bc6455bb96bc8065aaae19a186e7d95078a3c6e377caa34e75c",
+    "newsverify/model_runner.py": "d93978885283b86658c38100db8fd4e3d031b3a4d2695976730b76b925bab282",
+    "newsverify/news_client.py": "086134e1d6a28944176bb2d8ce3f40c55f126e746f99bcd834fc532f6244cce5",
+    "newsverify/news_sources.py": "edae29dd733343aac7edb3474bc63ee42562461c8804dd30c520ff3cc095f584",
+    "newsverify/news_tracing_runner.py": "68a442b1478265306006add587b883af828170ab5324428f8aa1c15dac5f41e8",
+    "newsverify/phrase_sources.py": "9b101464843805eaca2fb86e3360d11999433817049d121a59abae75eb99a4fa",
+    "newsverify/phrase_spans.py": "b1ba2647be3769575b6c574fbf40129500f0fa968afdfbe8c9d3a8bb61e6b1b2",
+    "newsverify/phrase_tracing.py": "a99245b15f372d182b8bdec473cba523ef69540e13554f025f8c60046397fa3c",
+    "newsverify/provenance.py": "58817c042e91eaa1771bd6e6fa4294d4ab8d5454bd7200949c97cd04e0917a15",
+    "newsverify/providers.py": "7cb362d1f89270e82b1b34590eecac607a43896a6bbe763c3b88b0254970b568",
+    "newsverify/quickstart.py": "2fded3063ac69f092fcb4e318bfa7a1279701868c8ffc7d50dbb654620353fa6",
+    "newsverify/retrieval.py": "9e8b1a32656f8aeab7eed6250c3efce35f4e1c45b711c492365b3e87beed2567",
+    "newsverify/trace_demo.py": "960c78e0fc2aa2bb428dd13db59c3c8314c7e7ffe533d2fe64d80267474b1251",
+    "newsverify/tunnels.py": "390b1cf1961a40120c28b63b54ff9930ab8b03de78dcccbaace722ac92b87fac",
+    "experiments/live-origin-v12-20260914/archive_collector.py": "b061229d0769e3f45bc244d6ae941bd170db5763aec651dce94841e91b60c959",
+    "experiments/exact-phrase-v14-20260915/run_test.py": "24dcdcc20c882b00fd7729f0544d131563646e7ac72df5fcdd99c8545034b74d",
+    "experiments/exact-phrase-v14-20260915/PROTOCOL.md": "e37e937a2b04f548c078285b1bc5f4ebcf766b9bdafdadb2a0e9a3de707323ee",
+    "experiments/exact-phrase-v14-20260915/INPUT.json": "cbce7ceca5f6c888f1890ea1dd6ff7de9c146b0b4c9bc8b21d258e1770b6d2c1"
+  },
+  "policy_sha256": {
+    "direct": "7efc7e0e3c9c048c373b25f6c9ba50de96796a12fbd3bb6714954cfa131f7524",
+    "harness": "5454af5fe073a2bdba1fa8adfa26ac042072188300b135e7646edaa67da2d290"
+  },
+  "planned_items": 3,
+  "max_calls_total": 18,
+  "arm_order": [
+    "direct",
+    "harness"
+  ],
+  "later_outcomes_loaded": false,
+  "no_model_calls_during_freeze": true
+}
