@@ -1,0 +1,200 @@
+{
+  "reviewed_at": "2026-09-15T23:46:35.631814+00:00",
+  "review_kind": "Independent post-run descriptive semantic review by a Codex subagent; no new inference batch, source fetch, or prediction edit.",
+  "reviewed_run": "private-data/v14-run-02",
+  "prediction_sha256": {
+    "direct": "743719a1499ba7aec014f5f22fa3af5384490b3577d2e8e2641f77a18a29a228",
+    "harness": "aaf582aff3224a4cd95f6aad1c5a66dbe0f412248ce654d5672549a76e322ee7"
+  },
+  "full_extracted_sources_read": [
+    {
+      "source_id": "s-26c3095592585974bc5e",
+      "url": "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+      "characters": 2881,
+      "text_sha256": "a8f450ba59f33de118923fc815f06269f7505f80438cd5b1a132899b90d5ab3a"
+    },
+    {
+      "source_id": "s-3fe5da0309b03e4c5448",
+      "url": "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/",
+      "characters": 18228,
+      "text_sha256": "33e5d4d4975a172e263d573d91c77ab4c3385e61e49bec2c6fe408d485ecbe50"
+    }
+  ],
+  "per_item": [
+    {
+      "arm": "direct",
+      "item_id": "item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "item_text": "32 minutes",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "source_statement",
+      "raw_verdict": "supported",
+      "finding": "Both arms identify the reported decrease in Dimorphos orbital period, preserve the approximately two-minute uncertainty, and expressly limit support to the NASA announcement. Neither claims independent measurement authentication.",
+      "caveats": [
+        "The missing_evidence list is empty, but the rationale itself explicitly states that the release does not independently establish the underlying measurement. Do not report that measurement authentication was complete."
+      ],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1012,
+          "end": 1241,
+          "role": "source_statement",
+          "text_sha256": "004c525e42d5dbdc2ce2dc61c5d30ddb506182ffa5c789b625aa9d83dd46561f"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12604,
+          "end": 12882,
+          "role": "source_statement",
+          "text_sha256": "d7a7e51f367075ae212c4c484b6130af18b309f5291724be5a11093461cfe74d"
+        }
+      ]
+    },
+    {
+      "arm": "direct",
+      "item_id": "item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "item_text": "if",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "empirical_claim",
+      "raw_verdict": "supported",
+      "finding": "The selected conditional concerns what would count as success, not what was measured. Both arms cite the actual NASA threshold sentence, which does not contain the selected word, and do not substitute an unrelated if occurrence.",
+      "caveats": [
+        "empirical_claim and independent_record are broader labels than the narrow rationale warrants. NASA is the primary declaring authority for the criterion; it is not independent corroboration of its own pre-encounter policy or of physical deflection. This labeling difference alone does not make the criterion conclusion factually wrong."
+      ],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1243,
+          "end": 1349,
+          "role": "source_statement",
+          "text_sha256": "baa98b8038cdb5b5cb2c83e121013142e88ef8907f30fbc50907656761b5ace0"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12885,
+          "end": 13010,
+          "role": "independent_record",
+          "text_sha256": "553f6118eecfb2aca00ed9e1331a71b3017e0d2d21407649f92decdae26b5506"
+        }
+      ]
+    },
+    {
+      "arm": "direct",
+      "item_id": "item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "item_text": "73 seconds",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "empirical_claim",
+      "raw_verdict": "supported",
+      "finding": "Both arms interpret this as the minimum success criterion, including exactly 73 seconds because NASA says 73 seconds or more. Neither treats it as the observed orbital-period change.",
+      "caveats": [
+        "empirical_claim and independent_record are broader labels than the narrow rationale warrants. NASA is the primary declaring authority for the criterion; it is not independent corroboration of its own pre-encounter policy or of physical deflection. This labeling difference alone does not make the criterion conclusion factually wrong."
+      ],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1243,
+          "end": 1349,
+          "role": "source_statement",
+          "text_sha256": "baa98b8038cdb5b5cb2c83e121013142e88ef8907f30fbc50907656761b5ace0"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12885,
+          "end": 13010,
+          "role": "independent_record",
+          "text_sha256": "553f6118eecfb2aca00ed9e1331a71b3017e0d2d21407649f92decdae26b5506"
+        }
+      ]
+    },
+    {
+      "arm": "harness",
+      "item_id": "item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "item_text": "32 minutes",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "source_statement",
+      "raw_verdict": "supported",
+      "finding": "Both arms identify the reported decrease in Dimorphos orbital period, preserve the approximately two-minute uncertainty, and expressly limit support to the NASA announcement. Neither claims independent measurement authentication.",
+      "caveats": [
+        "The Earth-based observation caveat is justified for the orbital-period measurement paragraph. NASA also mentions Hubble debris imagery and LICIACube imagery for mass/shape analysis elsewhere. Do not broaden this into a claim that NASA mentions only ground telescopes or that space observations are disproved."
+      ],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1012,
+          "end": 1241,
+          "role": "source_statement",
+          "text_sha256": "004c525e42d5dbdc2ce2dc61c5d30ddb506182ffa5c789b625aa9d83dd46561f"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12604,
+          "end": 12882,
+          "role": "source_statement",
+          "text_sha256": "d7a7e51f367075ae212c4c484b6130af18b309f5291724be5a11093461cfe74d"
+        }
+      ]
+    },
+    {
+      "arm": "harness",
+      "item_id": "item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "item_text": "if",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "source_statement",
+      "raw_verdict": "supported",
+      "finding": "The selected conditional concerns what would count as success, not what was measured. Both arms cite the actual NASA threshold sentence, which does not contain the selected word, and do not substitute an unrelated if occurrence.",
+      "caveats": [],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1243,
+          "end": 1349,
+          "role": "source_statement",
+          "text_sha256": "baa98b8038cdb5b5cb2c83e121013142e88ef8907f30fbc50907656761b5ace0"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12885,
+          "end": 13010,
+          "role": "source_statement",
+          "text_sha256": "553f6118eecfb2aca00ed9e1331a71b3017e0d2d21407649f92decdae26b5506"
+        }
+      ]
+    },
+    {
+      "arm": "harness",
+      "item_id": "item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "item_text": "73 seconds",
+      "review_status": "substantive_reading_consistent_with_narrow_source_claim",
+      "raw_scope": "source_statement",
+      "raw_verdict": "supported",
+      "finding": "Both arms interpret this as the minimum success criterion, including exactly 73 seconds because NASA says 73 seconds or more. Neither treats it as the observed orbital-period change.",
+      "caveats": [],
+      "citations": [
+        {
+          "source_id": "s-26c3095592585974bc5e",
+          "start": 1243,
+          "end": 1349,
+          "role": "source_statement",
+          "text_sha256": "baa98b8038cdb5b5cb2c83e121013142e88ef8907f30fbc50907656761b5ace0"
+        },
+        {
+          "source_id": "s-3fe5da0309b03e4c5448",
+          "start": 12885,
+          "end": 13010,
+          "role": "source_statement",
+          "text_sha256": "553f6118eecfb2aca00ed9e1331a71b3017e0d2d21407649f92decdae26b5506"
+        }
+      ]
+    }
+  ],
+  "comparative_conclusion": "No demonstrated factual-accuracy improvement. Both arms reached the linked NASA source and preserved the observation-versus-criterion distinction for all three selected occurrences. Harness made provenance limits more explicit; that is a qualitative boundary difference, not proof of an accuracy win.",
+  "winner_assigned": false,
+  "limitations": [
+    "One event with three related selected occurrences is not three independent test events.",
+    "The source pool is a fixed two-document archive replay; search and independent observation records were not tested.",
+    "Both arms share extraction, tool runner and citation validation; this compares added guidance inside that runner, not a complete harness against a bare model.",
+    "No exact lexical if match in the NASA criterion is required for a semantic criterion citation. The cited NASA sentence is the relevant one, not unrelated keyword context.",
+    "NASA testimony about its declared success threshold can support that institutional criterion without proving underlying observations. No contemporaneous pre-encounter specification or independent telescope dataset was supplied.",
+    "This post-run semantic review is not a preregistered numerical accuracy score, human expert certification, or proof of scientific truth."
+  ],
+  "export_note": "Exact citation text omitted here; original review and model outputs unchanged in private-data."
+}

@@ -1,0 +1,8 @@
+{
+  "raw_run": "private-data/v14-run-02",
+  "raw_run_policy": "Complete original documents and exact model inputs/outputs remain local. Public audit removes citation quotation text; model predictions were not changed.",
+  "registration_sha256": "0ff2818f8903aae7dea030ffd3e225f84e2821ce3f15868d08cde48574da48c1",
+  "raw_receipt_audit_sha256": "f8daa3604ad586f051d336c8bbaf7b4a6f13235777b60fa9533af7217b0f1784",
+  "raw_extraction_audit_sha256": "b50aa92813808dbb670b96c773df97736119ac8566bff2cf91805b1e0f6aa236",
+  "raw_semantic_review_sha256": "30af3f4bcffe0d9a2aad8b6b1fe08bbebf73ce319856ab7f47325bf879864b0f"
+}

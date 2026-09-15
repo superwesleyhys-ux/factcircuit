@@ -1,0 +1,750 @@
+{
+  "checks": [
+    {
+      "name": "direct_call_counts",
+      "passed": true
+    },
+    {
+      "name": "direct_planned_item_count",
+      "passed": true
+    },
+    {
+      "name": "direct_1_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_1_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_1_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_1_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_1_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_1_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_1_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_1_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_1_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_1_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_2_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_2_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_2_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_2_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_2_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_2_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_2_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_2_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_2_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_2_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "direct_2_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_3_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_3_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_3_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_3_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_3_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_3_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_3_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_3_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_3_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_3_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_4_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_4_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_4_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_4_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_4_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_4_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_4_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_4_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_4_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_4_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "direct_4_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_5_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_5_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_5_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_5_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_5_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_5_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_5_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_5_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_5_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_5_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_6_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "direct_6_schema",
+      "passed": true
+    },
+    {
+      "name": "direct_6_model_route",
+      "passed": true
+    },
+    {
+      "name": "direct_6_policy",
+      "passed": true
+    },
+    {
+      "name": "direct_6_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "direct_6_raw_response",
+      "passed": true
+    },
+    {
+      "name": "direct_6_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "direct_6_usage",
+      "passed": true
+    },
+    {
+      "name": "direct_6_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "direct_6_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "direct_6_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "direct_context_item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "passed": true
+    },
+    {
+      "name": "direct_per_item_budget_item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "passed": true
+    },
+    {
+      "name": "direct_context_item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "passed": true
+    },
+    {
+      "name": "direct_per_item_budget_item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "passed": true
+    },
+    {
+      "name": "direct_context_item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "passed": true
+    },
+    {
+      "name": "direct_per_item_budget_item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "passed": true
+    },
+    {
+      "name": "harness_call_counts",
+      "passed": true
+    },
+    {
+      "name": "harness_planned_item_count",
+      "passed": true
+    },
+    {
+      "name": "harness_1_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_1_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_1_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_1_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_1_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_1_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_1_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_1_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_1_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_1_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_2_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_2_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_2_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_2_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_2_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_2_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_2_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_2_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_2_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_2_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "harness_2_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_3_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_3_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_3_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_3_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_3_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_3_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_3_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_3_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_3_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_3_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_4_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_4_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_4_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_4_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_4_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_4_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_4_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_4_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_4_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_4_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "harness_4_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_5_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_5_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_5_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_5_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_5_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_5_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_5_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_5_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_5_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_5_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_6_exact_stdin",
+      "passed": true
+    },
+    {
+      "name": "harness_6_schema",
+      "passed": true
+    },
+    {
+      "name": "harness_6_model_route",
+      "passed": true
+    },
+    {
+      "name": "harness_6_policy",
+      "passed": true
+    },
+    {
+      "name": "harness_6_one_completed_turn",
+      "passed": true
+    },
+    {
+      "name": "harness_6_raw_response",
+      "passed": true
+    },
+    {
+      "name": "harness_6_no_extra_tools",
+      "passed": true
+    },
+    {
+      "name": "harness_6_usage",
+      "passed": true
+    },
+    {
+      "name": "harness_6_unchanged_s-26c3095592585974bc5e",
+      "passed": true
+    },
+    {
+      "name": "harness_6_unchanged_s-3fe5da0309b03e4c5448",
+      "passed": true
+    },
+    {
+      "name": "harness_6_no_summary_fields",
+      "passed": true
+    },
+    {
+      "name": "harness_context_item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "passed": true
+    },
+    {
+      "name": "harness_per_item_budget_item-e8387f175793544df0b06c574ff0a914ee2fbf3d6027002640fc8adf30cd1b9b",
+      "passed": true
+    },
+    {
+      "name": "harness_context_item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "passed": true
+    },
+    {
+      "name": "harness_per_item_budget_item-d96a70e9aeed27c138de3e979f50b2d864c115c488d51bf5034f04080f934ffc",
+      "passed": true
+    },
+    {
+      "name": "harness_context_item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "passed": true
+    },
+    {
+      "name": "harness_per_item_budget_item-1e98d586d3f97a29df3919ad7f3bfb0a728558f7257b8b753e9a17636d1461e7",
+      "passed": true
+    },
+    {
+      "name": "identical_first_packets_all_items",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "arms": {
+    "direct": {
+      "status": "completed",
+      "calls": 6,
+      "input_tokens": 134081,
+      "output_tokens": 1215,
+      "total_tokens": 135296,
+      "cached_input_tokens": 0,
+      "items": [
+        {
+          "item": "32 minutes",
+          "start": 1182,
+          "end": 1192,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "source_statement",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "The selected quantity refers to the reduction in Dimorphos’s orbital period around Didymos. NASA’s October 11 release directly supports Axios’s attribution: the reported period fell from 11 hours 55 minutes to 11 hours 23 minutes, with approximately ±2 minutes uncertainty. This verifies what NASA announced; the supplied release does not independently establish the underlying measurement.",
+            "missing_evidence": []
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        },
+        {
+          "item": "if",
+          "start": 1289,
+          "end": 1291,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "empirical_claim",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "The selected “if” introduces a factual claim about DART’s success criterion: a 73-second change in Dimorphos’s orbital period would have qualified. NASA’s supplied release explicitly confirms that pre-established minimum. This supports the conditional criterion; it does not assert that the actual change was only 73 seconds.",
+            "missing_evidence": []
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        },
+        {
+          "item": "73 seconds",
+          "start": 1338,
+          "end": 1348,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "empirical_claim",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "The selected number describes DART’s minimum success threshold for changing Dimorphos’s orbital period around Didymos. NASA’s supplied release explicitly confirms that the threshold established before the encounter was 73 seconds or more. This supports the specific claim about the success criterion; 73 seconds is not presented as the measured outcome.",
+            "missing_evidence": []
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        }
+      ],
+      "result_sha256": "743719a1499ba7aec014f5f22fa3af5384490b3577d2e8e2641f77a18a29a228"
+    },
+    "harness": {
+      "status": "completed",
+      "calls": 6,
+      "input_tokens": 135111,
+      "output_tokens": 1370,
+      "total_tokens": 136481,
+      "cached_input_tokens": 7552,
+      "items": [
+        {
+          "item": "32 minutes",
+          "start": 1182,
+          "end": 1192,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "source_statement",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "The selected occurrence reports NASA’s October 11, 2022 announcement that DART shortened Dimorphos’ orbital period around Didymos by about 32 minutes. NASA’s release supports that attributed number, with approximately ±2 minutes uncertainty. The unit measures orbital duration; there is no negation or table scope. The nearby 73 seconds is the success threshold, not the measured change. NASA describes Earth-based telescopes for this measurement; the passage does not establish Axios’s added space-based characterization. This is issuer self-report and dependent reporting, supporting attribution rather than independent empirical authentication.",
+            "missing_evidence": [
+              "Independent observational records or underlying measurement data verifying the reported orbital-period change."
+            ]
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        },
+        {
+          "item": "if",
+          "start": 1289,
+          "end": 1291,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "source_statement",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "The selected “if” introduces Axios author Miriam Kramer’s conditional statement on October 11, 2022: a 73-second change would have qualified DART as successful. NASA’s same-day release explicitly reports that minimum criterion, specifying orbital period and including 73 seconds itself. There is no negation, table qualification or nearby exception to this threshold. This supports the statement as NASA’s declared success criterion; NASA’s issuer self-report and Axios’s dependent reporting do not independently authenticate the measured orbital change.",
+            "missing_evidence": []
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        },
+        {
+          "item": "73 seconds",
+          "start": 1338,
+          "end": 1348,
+          "status": "completed",
+          "calls": 2,
+          "errors": [],
+          "judgment": {
+            "scope": "source_statement",
+            "verdict": "supported",
+            "origin_chain": [
+              "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+              "https://www.nasa.gov/press-release/nasa-confirms-dart-mission-impact-changed-asteroid-s-motion-in-space"
+            ],
+            "reason": "Axios’s October 11, 2022 conditional statement concerns the success threshold for changing Dimorphos’s orbital period around Didymos, measured in seconds. NASA’s same-date release explicitly states that its pre-encounter minimum was 73 seconds or more, supporting inclusion of exactly 73 seconds. This is NASA’s stated criterion, not a claim that the measured change was 73 seconds. Axios relies on NASA; these are not independent confirmations of measured deflection. No negation, table qualification, or nearby exception changes this threshold.",
+            "missing_evidence": []
+          },
+          "citation_count": 2,
+          "read_source_urls": [
+            "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+            "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/"
+          ],
+          "citation_text_scope": "Exact quotes/contexts retained in private raw results; public export omits full article excerpts."
+        }
+      ],
+      "result_sha256": "aaf582aff3224a4cd95f6aad1c5a66dbe0f412248ce654d5672549a76e322ee7"
+    }
+  },
+  "registration_sha256": "0ff2818f8903aae7dea030ffd3e225f84e2821ce3f15868d08cde48574da48c1",
+  "frozen_files_match": true,
+  "scope": "Packet/citation and receipt integrity, not proof of world truth or model accuracy"
+}

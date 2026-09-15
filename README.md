@@ -16,6 +16,8 @@ Repository Discussions are enabled, and the repository includes a prepared **Acc
 
 The `trace-phrases` command traces individual original-text occurrences with exact positions, preceding/following context and full source documents. It separates textual matches, source attribution and empirical judgments; it does not call the research-summary stages. See the [usage and limitations](docs/literal-phrase-tracing.md) and the [fixed DART comparison protocol](experiments/exact-phrase-v14-20260915/PROTOCOL.md). Exact citations do not guarantee factual truth.
 
+The [real DART diagnostic results](reports/exact-phrase-v14-20260915/README.md) contain 12 actual Astra calls across three related original-text occurrences. Both arms reached the NASA source and preserved the observation-versus-threshold distinction. No factual-accuracy improvement was established; the report retains usage, errors, exact-input audits and comparison limits.
+
 ## Latest live source-tracing test: two audited chains
 
 The September 14 V12 development run started from two raw news articles and

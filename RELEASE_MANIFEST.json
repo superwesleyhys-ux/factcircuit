@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 21452,
-      "sha256": "8ab3c10d4eb058bb88c8cf20aebc4068d625e2fd7f5d9b410a289ecd5507db1d"
+      "bytes": 21830,
+      "sha256": "56f490444b981e9cd02e4aaa7f9eb64ae04f131e0cb03a7f3f4e48e4372b3f4f"
     },
     {
       "path": "SECURITY.md",
@@ -282,6 +282,11 @@
       "path": "experiments/exact-phrase-v14-20260915/REGISTRATION.json",
       "bytes": 4106,
       "sha256": "0ff2818f8903aae7dea030ffd3e225f84e2821ce3f15868d08cde48574da48c1"
+    },
+    {
+      "path": "experiments/exact-phrase-v14-20260915/audit_results.py",
+      "bytes": 5955,
+      "sha256": "306a7863a15ae5b273b1e451d462f719b545e01c9b3cf8eac8320991402947ce"
     },
     {
       "path": "experiments/exact-phrase-v14-20260915/run_test.py",
@@ -1212,6 +1217,41 @@
       "path": "reports/early-risk-total-20260911/SUMMARY.json",
       "bytes": 5262,
       "sha256": "5989e9c1233e24c4310451d704739f9ee14520da29e83213b5ed68b4b7f98436"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/COMPLETION.json",
+      "bytes": 205,
+      "sha256": "2798acbf0e15d5371ac8eb626ee70e3671233b16f97f75a20f44c01d044dfd5a"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/EXPORT.json",
+      "bytes": 613,
+      "sha256": "d2ef19d20d58d338c64df785d2cabe8899c5a4e24593137ce947864d829335e7"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/EXTRACTION_AUDIT.json",
+      "bytes": 34615,
+      "sha256": "b50aa92813808dbb670b96c773df97736119ac8566bff2cf91805b1e0f6aa236"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/README.md",
+      "bytes": 7062,
+      "sha256": "9a9518b9dbb98065d2b638db0b3c4111dac0f15283d62889ad4e3fca3acf0f33"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/RECEIPT_AUDIT.json",
+      "bytes": 21508,
+      "sha256": "5529c5fe20071af401da922c512fba06de5c480278e0de37f866c92bec600012"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/SEMANTIC_REVIEW.json",
+      "bytes": 10307,
+      "sha256": "ffdd5ca50f42b483cebf4cad475cbff87ff4991a4b18dc54c410f90be511b96e"
+    },
+    {
+      "path": "reports/exact-phrase-v14-20260915/SUMMARY.json",
+      "bytes": 1317,
+      "sha256": "cf3ea1c38e4f13d17f2fe726e9b9d12c2c3318fe15457b66ce31b07d39d20cae"
     },
     {
       "path": "reports/first-run-v0.3.2.json",

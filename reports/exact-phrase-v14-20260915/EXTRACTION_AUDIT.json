@@ -1,0 +1,1063 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-15T23:45:21.975862+00:00",
+  "scope": "Read-only audit of the two fixed archived raw documents and LiteralHTML production extraction. No network or model calls. One contemporaneous direct journal snapshot used only to compare delivered source text and item context; no conclusion about live/final model results or harness outputs.",
+  "comparison_rule": "Exact Python Unicode strings after declared HTML entity decoding. No strip, split/join, whitespace folding, Unicode normalization, punctuation replacement, or case folding is used in equality checks. The HTML structure contributes declared newline/tab separators. Offsets identify extracted text, not HTML byte offsets or browser layout.",
+  "sources": {
+    "axios": {
+      "url": "https://www.axios.com/2022/10/11/nasa-dart-asteroid-deflection",
+      "raw_sha256": "aff9b59b78f85151c2ef68420cc26808c57a39c46a064399540eb73bb46c75ba",
+      "raw_bytes": 80813,
+      "literal_text_sha256": "a8f450ba59f33de118923fc815f06269f7505f80438cd5b1a132899b90d5ab3a",
+      "literal_characters": 2881,
+      "available_at": "2023-06-06T04:25:47+00:00",
+      "retrieved_at": "2026-09-15T23:34:43.560421+00:00",
+      "article_container": "main#main-content",
+      "article_data_nodes": [
+        {
+          "node_index": 0,
+          "characters": 12,
+          "sha256": "3c766cca91fa7604959d98ec8d2dfe74b40357a11fdaa908f92f5c02eb76610f",
+          "output_start": 128,
+          "output_end": 140,
+          "exact": true
+        },
+        {
+          "node_index": 1,
+          "characters": 3,
+          "sha256": "d3150495ce4f5d1a27bf576f5f42621ffbd6a6e2e22f7d4ce331b8d0d6674bf7",
+          "output_start": 140,
+          "output_end": 143,
+          "exact": true
+        },
+        {
+          "node_index": 2,
+          "characters": 7,
+          "sha256": "9d948c73e0ad7a5a213a5e7e00b962531ca6b07992a06bd8c2fc2ac5ae23c51b",
+          "output_start": 143,
+          "output_end": 150,
+          "exact": true
+        },
+        {
+          "node_index": 3,
+          "characters": 54,
+          "sha256": "8e7d7eef4d03f72cc4ee166f7d31888f02a2616e20cc51243cae226d4ac141f2",
+          "output_start": 153,
+          "output_end": 207,
+          "exact": true
+        },
+        {
+          "node_index": 4,
+          "characters": 13,
+          "sha256": "7576ef6de446d37f46f01cd0e22fab6adb1b81cb59f9e86e45f5dbde649cedbc",
+          "output_start": 213,
+          "output_end": 226,
+          "exact": true
+        },
+        {
+          "node_index": 5,
+          "characters": 11,
+          "sha256": "66057b5354f7c6ea90d5200b907fd7723ef3ef4ee9caf481c68a543681f5678f",
+          "output_start": 226,
+          "output_end": 237,
+          "exact": true
+        },
+        {
+          "node_index": 6,
+          "characters": 1,
+          "sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "output_start": 237,
+          "output_end": 238,
+          "exact": true
+        },
+        {
+          "node_index": 7,
+          "characters": 11,
+          "sha256": "2e1c74f721aa80a7772b8eb401d7388c956fc420f1c400e54219e28aec299774",
+          "output_start": 238,
+          "output_end": 249,
+          "exact": true
+        },
+        {
+          "node_index": 8,
+          "characters": 39,
+          "sha256": "793e4690e041ccfa420ced147e65b9850e5feb8762253cb0f7c793fc3b5c6dbd",
+          "output_start": 256,
+          "output_end": 295,
+          "exact": true
+        },
+        {
+          "node_index": 9,
+          "characters": 38,
+          "sha256": "02ba959cf085fd8ebb055a5212a54c7b4cd2651dd9c790d8c737a89c3cdf58af",
+          "output_start": 299,
+          "output_end": 337,
+          "exact": true
+        },
+        {
+          "node_index": 10,
+          "characters": 39,
+          "sha256": "bbcf9325d64fc9bbb3bf1f9b40c16648766b3d746589c7c995e939325bdf3a05",
+          "output_start": 341,
+          "output_end": 380,
+          "exact": true
+        },
+        {
+          "node_index": 11,
+          "characters": 36,
+          "sha256": "54b424bd627e3323548fbdefab2733be32407e2b07bd7b5be9eb2116392ea2c6",
+          "output_start": 384,
+          "output_end": 420,
+          "exact": true
+        },
+        {
+          "node_index": 12,
+          "characters": 112,
+          "sha256": "c7f14088742fa11043ad4b3cbbd3906a33f3c26ff0ff7e7e6552a803a6b26722",
+          "output_start": 426,
+          "output_end": 538,
+          "exact": true
+        },
+        {
+          "node_index": 13,
+          "characters": 141,
+          "sha256": "ca2e6bd6b7dab2be16b9f36185cc2ae4db6fc85f257064e3446b7a5afc39a5cf",
+          "output_start": 541,
+          "output_end": 682,
+          "exact": true
+        },
+        {
+          "node_index": 14,
+          "characters": 15,
+          "sha256": "0e3374c9bf13c8cddb2cea109ee651d2a39d2b1379743e582b37f8c9fedd3d4e",
+          "output_start": 684,
+          "output_end": 699,
+          "exact": true
+        },
+        {
+          "node_index": 15,
+          "characters": 162,
+          "sha256": "9edb5b81356274ad1c3e06e06cae847d408969e34b53b36086a7c5ef09f9ce57",
+          "output_start": 699,
+          "output_end": 861,
+          "exact": true
+        },
+        {
+          "node_index": 16,
+          "characters": 15,
+          "sha256": "4f35664d22185cd18d213dbac7d0dfcfa46dbc09d9748db11e87addd5cbc7a74",
+          "output_start": 863,
+          "output_end": 878,
+          "exact": true
+        },
+        {
+          "node_index": 17,
+          "characters": 1,
+          "sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "output_start": 878,
+          "output_end": 879,
+          "exact": true
+        },
+        {
+          "node_index": 18,
+          "characters": 17,
+          "sha256": "bf766ddf6ab6f50e2360199fb8ede2dc5cce8a9c8fe20c83d562e96fb35e3d4e",
+          "output_start": 879,
+          "output_end": 896,
+          "exact": true
+        },
+        {
+          "node_index": 19,
+          "characters": 114,
+          "sha256": "0895742da618ceae479e80903786bb218c5a44da65e44033ace811bbdfd46d88",
+          "output_start": 896,
+          "output_end": 1010,
+          "exact": true
+        },
+        {
+          "node_index": 20,
+          "characters": 14,
+          "sha256": "815a7c21ae60b0f7348461826da1763e85f135d042067b560340b598351754b1",
+          "output_start": 1012,
+          "output_end": 1026,
+          "exact": true
+        },
+        {
+          "node_index": 21,
+          "characters": 215,
+          "sha256": "7b36dfc24e7323e49aeefa5969d95bf127f8490ce0aad28339affddd4b8c35fd",
+          "output_start": 1026,
+          "output_end": 1241,
+          "exact": true
+        },
+        {
+          "node_index": 22,
+          "characters": 107,
+          "sha256": "fb7f7c400325e3259e6d1959f8d2a154901baadd60c1df4e249865208c0d9085",
+          "output_start": 1243,
+          "output_end": 1350,
+          "exact": true
+        },
+        {
+          "node_index": 23,
+          "characters": 121,
+          "sha256": "a5b6e8ebacfc1e5351ddfae0285c88b3fdee4436f72e105d087064d536260099",
+          "output_start": 1352,
+          "output_end": 1473,
+          "exact": true
+        },
+        {
+          "node_index": 24,
+          "characters": 16,
+          "sha256": "d8c78f6a277caf5c147674fe6cbefb4a2d7a644e42eb2bc11584379a8b132006",
+          "output_start": 1475,
+          "output_end": 1491,
+          "exact": true
+        },
+        {
+          "node_index": 25,
+          "characters": 164,
+          "sha256": "1e9a2bb251c385618e209326206925cbb3824d349fa958ca87b927192b2ab365",
+          "output_start": 1491,
+          "output_end": 1655,
+          "exact": true
+        },
+        {
+          "node_index": 26,
+          "characters": 248,
+          "sha256": "b95850817c182dccb58e76bcc8c49278cd7f6e844b8c2bd41b8e1a844f36f307",
+          "output_start": 1657,
+          "output_end": 1905,
+          "exact": true
+        },
+        {
+          "node_index": 27,
+          "characters": 184,
+          "sha256": "cddfe42e919fc34b2cd5d2e99c6397c8dc866de768c5ed75872fea05a50e3e4b",
+          "output_start": 1907,
+          "output_end": 2091,
+          "exact": true
+        },
+        {
+          "node_index": 28,
+          "characters": 97,
+          "sha256": "f9cff35dd2d114fceb35f2ec9a51258c83b2c26d7497e7ea5405980d246bd8c9",
+          "output_start": 2093,
+          "output_end": 2190,
+          "exact": true
+        },
+        {
+          "node_index": 29,
+          "characters": 10,
+          "sha256": "15ad3d88c6733d9b257c322d3afecc9bce2b18558171007db87598c118ca17f9",
+          "output_start": 2192,
+          "output_end": 2202,
+          "exact": true
+        },
+        {
+          "node_index": 30,
+          "characters": 1,
+          "sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "output_start": 2202,
+          "output_end": 2203,
+          "exact": true
+        },
+        {
+          "node_index": 31,
+          "characters": 29,
+          "sha256": "f5eac0dc76281b12e5e599dc2dc3e5f6a3c80e85e326c0c226e2b63fe8965e0e",
+          "output_start": 2203,
+          "output_end": 2232,
+          "exact": true
+        },
+        {
+          "node_index": 32,
+          "characters": 39,
+          "sha256": "793e4690e041ccfa420ced147e65b9850e5feb8762253cb0f7c793fc3b5c6dbd",
+          "output_start": 2239,
+          "output_end": 2278,
+          "exact": true
+        },
+        {
+          "node_index": 33,
+          "characters": 38,
+          "sha256": "02ba959cf085fd8ebb055a5212a54c7b4cd2651dd9c790d8c737a89c3cdf58af",
+          "output_start": 2282,
+          "output_end": 2320,
+          "exact": true
+        },
+        {
+          "node_index": 34,
+          "characters": 39,
+          "sha256": "bbcf9325d64fc9bbb3bf1f9b40c16648766b3d746589c7c995e939325bdf3a05",
+          "output_start": 2324,
+          "output_end": 2363,
+          "exact": true
+        },
+        {
+          "node_index": 35,
+          "characters": 36,
+          "sha256": "54b424bd627e3323548fbdefab2733be32407e2b07bd7b5be9eb2116392ea2c6",
+          "output_start": 2367,
+          "output_end": 2403,
+          "exact": true
+        },
+        {
+          "node_index": 36,
+          "characters": 9,
+          "sha256": "6bce982b050c617bc1f5f68ea0ceea210a7979331fa96b8de8803cf5cd6861e0",
+          "output_start": 2415,
+          "output_end": 2424,
+          "exact": true
+        }
+      ],
+      "nonwhitespace_data_nodes": 34,
+      "all_document_data_node_count": 66,
+      "separators_are_structural_not_claimed_raw_bytes": true
+    },
+    "nasa": {
+      "url": "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/",
+      "raw_sha256": "7892e1e0d610d8f3856f3f1b31501d2f95060974ca4a63b10e07791fbf862133",
+      "raw_bytes": 220519,
+      "literal_text_sha256": "33e5d4d4975a172e263d573d91c77ab4c3385e61e49bec2c6fe408d485ecbe50",
+      "literal_characters": 18228,
+      "available_at": "2024-12-18T04:24:52+00:00",
+      "retrieved_at": "2026-09-15T23:36:29.633012+00:00",
+      "article_container": "article#post-142673 div.entry-content",
+      "article_data_nodes": [
+        {
+          "node_index": 0,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 0,
+          "output_end": 1,
+          "exact": true
+        },
+        {
+          "node_index": 1,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 1,
+          "output_end": 2,
+          "exact": true
+        },
+        {
+          "node_index": 2,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 2,
+          "output_end": 3,
+          "exact": true
+        },
+        {
+          "node_index": 3,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 3,
+          "output_end": 4,
+          "exact": true
+        },
+        {
+          "node_index": 4,
+          "characters": 383,
+          "sha256": "c2d84f1c4677f7def67a8e41acbb52fa4a80ffde4931bea94891483c340f5c8f",
+          "output_start": 11023,
+          "output_end": 11406,
+          "exact": true
+        },
+        {
+          "node_index": 5,
+          "characters": 30,
+          "sha256": "791c9b1e5b45a13313f9dd209056053f661a3800473d6ab41ae1281b3db1489a",
+          "output_start": 11406,
+          "output_end": 11436,
+          "exact": true
+        },
+        {
+          "node_index": 6,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11436,
+          "output_end": 11437,
+          "exact": true
+        },
+        {
+          "node_index": 7,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11437,
+          "output_end": 11438,
+          "exact": true
+        },
+        {
+          "node_index": 8,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11438,
+          "output_end": 11439,
+          "exact": true
+        },
+        {
+          "node_index": 9,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11439,
+          "output_end": 11440,
+          "exact": true
+        },
+        {
+          "node_index": 10,
+          "characters": 35,
+          "sha256": "5a69134f9624b8087fdc2c8cb11c745939303eafb49866d7cb1f4c3f801c161b",
+          "output_start": 11445,
+          "output_end": 11480,
+          "exact": true
+        },
+        {
+          "node_index": 11,
+          "characters": 4,
+          "sha256": "1ccb3618344e9ce36cfe3d10f5c05e9dd8e162430262391cf86e126870786bdc",
+          "output_start": 11480,
+          "output_end": 11484,
+          "exact": true
+        },
+        {
+          "node_index": 12,
+          "characters": 1,
+          "sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8",
+          "output_start": 11484,
+          "output_end": 11485,
+          "exact": true
+        },
+        {
+          "node_index": 13,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11485,
+          "output_end": 11486,
+          "exact": true
+        },
+        {
+          "node_index": 14,
+          "characters": 49,
+          "sha256": "c615ec07103bd47d5fc0778d9dc39e273d27d86f9bcf11bc4e38f2a86d50003b",
+          "output_start": 11488,
+          "output_end": 11537,
+          "exact": true
+        },
+        {
+          "node_index": 15,
+          "characters": 346,
+          "sha256": "c9cbbb01961e02cb1b91e22ea4bb16c1d093342b6268bd32395a074e90424a95",
+          "output_start": 11537,
+          "output_end": 11883,
+          "exact": true
+        },
+        {
+          "node_index": 16,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 11883,
+          "output_end": 11884,
+          "exact": true
+        },
+        {
+          "node_index": 17,
+          "characters": 449,
+          "sha256": "b69095d772a144f49d3f7eb52c0603c59f446765e73d7c8f4338797cd7440fd8",
+          "output_start": 11886,
+          "output_end": 12335,
+          "exact": true
+        },
+        {
+          "node_index": 18,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 12335,
+          "output_end": 12336,
+          "exact": true
+        },
+        {
+          "node_index": 19,
+          "characters": 544,
+          "sha256": "9e00292904b10638951025b7e635beceadae97d15d4dc55bf2133a11cb3590aa",
+          "output_start": 12338,
+          "output_end": 12882,
+          "exact": true
+        },
+        {
+          "node_index": 20,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 12882,
+          "output_end": 12883,
+          "exact": true
+        },
+        {
+          "node_index": 21,
+          "characters": 209,
+          "sha256": "bc367264863752bad7c56c5bcac149933aa2c38c5c84541b57d5d179fdbffd5a",
+          "output_start": 12885,
+          "output_end": 13094,
+          "exact": true
+        },
+        {
+          "node_index": 22,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 13094,
+          "output_end": 13095,
+          "exact": true
+        },
+        {
+          "node_index": 23,
+          "characters": 449,
+          "sha256": "de68e217f8f772abe6d8693638b6b71a6973faa31ecf971c5a16b1d8e20f6a1d",
+          "output_start": 13097,
+          "output_end": 13546,
+          "exact": true
+        },
+        {
+          "node_index": 24,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 13546,
+          "output_end": 13547,
+          "exact": true
+        },
+        {
+          "node_index": 25,
+          "characters": 379,
+          "sha256": "e12a931b7d9e77a699397ab16d0e95aa70f1cdc152dbbd3ef4de693c4b682940",
+          "output_start": 13549,
+          "output_end": 13928,
+          "exact": true
+        },
+        {
+          "node_index": 26,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 13928,
+          "output_end": 13929,
+          "exact": true
+        },
+        {
+          "node_index": 27,
+          "characters": 483,
+          "sha256": "06d350ce3d8737d3e697282c6f8916c47333823c2d6b764a2d8ee667701db2d2",
+          "output_start": 13931,
+          "output_end": 14414,
+          "exact": true
+        },
+        {
+          "node_index": 28,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 14414,
+          "output_end": 14415,
+          "exact": true
+        },
+        {
+          "node_index": 29,
+          "characters": 255,
+          "sha256": "74f2edfe1d05d02f5a0030d254fa7c0a7c0ed54e7a1a06768238777a6ee20876",
+          "output_start": 14417,
+          "output_end": 14672,
+          "exact": true
+        },
+        {
+          "node_index": 30,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 14672,
+          "output_end": 14673,
+          "exact": true
+        },
+        {
+          "node_index": 31,
+          "characters": 411,
+          "sha256": "46edf5784a027ff84e0be55ddd404474bfb01bed687f2eeb74980be0940ba5ec",
+          "output_start": 14675,
+          "output_end": 15086,
+          "exact": true
+        },
+        {
+          "node_index": 32,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 15086,
+          "output_end": 15087,
+          "exact": true
+        },
+        {
+          "node_index": 33,
+          "characters": 515,
+          "sha256": "589914f047f92cd56e44e5866898390ebf98fc26dedca12dc3ffdbc178eb4e45",
+          "output_start": 15089,
+          "output_end": 15604,
+          "exact": true
+        },
+        {
+          "node_index": 34,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 15604,
+          "output_end": 15605,
+          "exact": true
+        },
+        {
+          "node_index": 35,
+          "characters": 559,
+          "sha256": "1e5a010cd088b2eba4572c2a61ea7e325a55b760949035cd1d2bfa4bbf89f7a8",
+          "output_start": 15607,
+          "output_end": 16166,
+          "exact": true
+        },
+        {
+          "node_index": 36,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16166,
+          "output_end": 16167,
+          "exact": true
+        },
+        {
+          "node_index": 37,
+          "characters": 115,
+          "sha256": "d94812840bf8683c10a75054dd1c8f51be637cc92efcb739b00757dfd777b34f",
+          "output_start": 16169,
+          "output_end": 16284,
+          "exact": true
+        },
+        {
+          "node_index": 38,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16284,
+          "output_end": 16285,
+          "exact": true
+        },
+        {
+          "node_index": 39,
+          "characters": 51,
+          "sha256": "48a70deb85ef7f573e88dd3df9a4508fb6d6225a26ea107303508f88baa4c33b",
+          "output_start": 16287,
+          "output_end": 16338,
+          "exact": true
+        },
+        {
+          "node_index": 40,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16338,
+          "output_end": 16339,
+          "exact": true
+        },
+        {
+          "node_index": 41,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16339,
+          "output_end": 16340,
+          "exact": true
+        },
+        {
+          "node_index": 42,
+          "characters": 27,
+          "sha256": "a61920f803d9cb1de9f13138de707fd7624deacab47f35c3cac9f94ad8e1e9a6",
+          "output_start": 16342,
+          "output_end": 16369,
+          "exact": true
+        },
+        {
+          "node_index": 43,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16369,
+          "output_end": 16370,
+          "exact": true
+        },
+        {
+          "node_index": 44,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16370,
+          "output_end": 16371,
+          "exact": true
+        },
+        {
+          "node_index": 45,
+          "characters": 5,
+          "sha256": "3a85d645e6236004db4d1e9337a3c9ce06ee8aeab1d189e7d59d358dbcd5a2d0",
+          "output_start": 16373,
+          "output_end": 16378,
+          "exact": true
+        },
+        {
+          "node_index": 46,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16378,
+          "output_end": 16379,
+          "exact": true
+        },
+        {
+          "node_index": 47,
+          "characters": 11,
+          "sha256": "51bc02a21ccfe57bc2e2891b6b55eaf222aeecff1bd4cd597f998750c2931951",
+          "output_start": 16381,
+          "output_end": 16392,
+          "exact": true
+        },
+        {
+          "node_index": 48,
+          "characters": 25,
+          "sha256": "fa92b4c653f1d915002e99ce6c6cb78163423c397653165ec8eb06f24390ec87",
+          "output_start": 16393,
+          "output_end": 16418,
+          "exact": true
+        },
+        {
+          "node_index": 49,
+          "characters": 13,
+          "sha256": "94d2637aa733f7f002cf5ae94d3764e2a0116dc9580fce0b8abd8e11c2801cc9",
+          "output_start": 16419,
+          "output_end": 16432,
+          "exact": true
+        },
+        {
+          "node_index": 50,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16432,
+          "output_end": 16433,
+          "exact": true
+        },
+        {
+          "node_index": 51,
+          "characters": 24,
+          "sha256": "352254c16c4f55d1f61e962b4d1f07e9778329c2abf70a50fbda75e8cbf3f5bd",
+          "output_start": 16434,
+          "output_end": 16458,
+          "exact": true
+        },
+        {
+          "node_index": 52,
+          "characters": 17,
+          "sha256": "c5915cd09155417e2cb544b313352fdf98b0844bcd77c71b74acd0d1662cb5c8",
+          "output_start": 16459,
+          "output_end": 16476,
+          "exact": true
+        },
+        {
+          "node_index": 53,
+          "characters": 41,
+          "sha256": "12535eb3e4420a752c3ce59f45fdc4299353f7c769d958d8d2a8f2401ddb670a",
+          "output_start": 16477,
+          "output_end": 16518,
+          "exact": true
+        },
+        {
+          "node_index": 54,
+          "characters": 13,
+          "sha256": "d528336d42cd16f4b2d9ec3d5dc07378119b32490254b72cac2f8bcc0298007d",
+          "output_start": 16519,
+          "output_end": 16532,
+          "exact": true
+        },
+        {
+          "node_index": 55,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16532,
+          "output_end": 16533,
+          "exact": true
+        },
+        {
+          "node_index": 56,
+          "characters": 27,
+          "sha256": "9e1d771a0da844782ea24ef7482ed698e3a2d617614841c9420d28ab3a0e3146",
+          "output_start": 16534,
+          "output_end": 16561,
+          "exact": true
+        },
+        {
+          "node_index": 57,
+          "characters": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "output_start": 16561,
+          "output_end": 16562,
+          "exact": true
+        }
+      ],
+      "nonwhitespace_data_nodes": 29,
+      "all_document_data_node_count": 1504,
+      "separators_are_structural_not_claimed_raw_bytes": true
+    }
+  },
+  "checks": [
+    {
+      "name": "axios_raw_hash_matches_archive_receipt",
+      "passed": true
+    },
+    {
+      "name": "axios_entire_literal_output_matches_independent_event_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "axios_article_container_closed",
+      "passed": true
+    },
+    {
+      "name": "axios_every_article_data_node_preserved_exactly_in_order",
+      "passed": true,
+      "detail": {
+        "data_node_count_including_whitespace": 37,
+        "nonwhitespace_node_count": 34
+      }
+    },
+    {
+      "name": "axios_long_head_script_style_template_data_excluded",
+      "passed": true,
+      "detail": {
+        "tested_nodes": 2,
+        "leaked_hashes": []
+      }
+    },
+    {
+      "name": "nasa_raw_hash_matches_archive_receipt",
+      "passed": true
+    },
+    {
+      "name": "nasa_entire_literal_output_matches_independent_event_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "nasa_article_container_closed",
+      "passed": true
+    },
+    {
+      "name": "nasa_every_article_data_node_preserved_exactly_in_order",
+      "passed": true,
+      "detail": {
+        "data_node_count_including_whitespace": 58,
+        "nonwhitespace_node_count": 29
+      }
+    },
+    {
+      "name": "nasa_long_head_script_style_template_data_excluded",
+      "passed": true,
+      "detail": {
+        "tested_nodes": 6,
+        "leaked_hashes": []
+      }
+    },
+    {
+      "name": "nasa_all_29_previously_identified_body_chunks_preserved_without_normalizing",
+      "passed": true
+    },
+    {
+      "name": "nasa_measurement_qualification_criterion_and_hazard_text_present",
+      "passed": true
+    },
+    {
+      "name": "nasa_threshold_sentence_not_misattributed_literal_if",
+      "passed": true
+    },
+    {
+      "name": "packet_1_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_1_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_1_no_outcome_or_curator_notes_fields",
+      "passed": true
+    },
+    {
+      "name": "packet_2_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_2_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_2_no_outcome_or_curator_notes_fields",
+      "passed": true
+    },
+    {
+      "name": "packet_3_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_3_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_3_no_outcome_or_curator_notes_fields",
+      "passed": true
+    },
+    {
+      "name": "packet_4_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_4_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_4_no_outcome_or_curator_notes_fields",
+      "passed": true
+    },
+    {
+      "name": "packet_5_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_5_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_5_no_outcome_or_curator_notes_fields",
+      "passed": true
+    },
+    {
+      "name": "packet_6_target_and_prepost_context_exact_without_normalization",
+      "passed": true
+    },
+    {
+      "name": "packet_6_only_fixed_historical_raw_source_text",
+      "passed": true
+    },
+    {
+      "name": "packet_6_no_outcome_or_curator_notes_fields",
+      "passed": true
+    }
+  ],
+  "journal_snapshot": {
+    "path": "private-data/v14-run-02/direct/journal.json",
+    "sha256": "c118a251ddea6598eae2be73a2b4e3b97de420fa37dc21a88b547f8e45b0cf7a",
+    "entries": 6,
+    "purpose": "Input text/context only; not a result audit",
+    "packets": [
+      {
+        "packet_index": 1,
+        "stage": "phrase_direct",
+        "item_text": "32 minutes",
+        "item_span": [
+          1182,
+          1192
+        ],
+        "context_span": [
+          1012,
+          1352
+        ],
+        "context_sha256": "0c6698985915f00b769cbcf3c2b4afc72cdf9d238e6d850aa15cf56b0adec514",
+        "documents": 1
+      },
+      {
+        "packet_index": 2,
+        "stage": "phrase_direct",
+        "item_text": "32 minutes",
+        "item_span": [
+          1182,
+          1192
+        ],
+        "context_span": [
+          1012,
+          1352
+        ],
+        "context_sha256": "0c6698985915f00b769cbcf3c2b4afc72cdf9d238e6d850aa15cf56b0adec514",
+        "documents": 2
+      },
+      {
+        "packet_index": 3,
+        "stage": "phrase_direct",
+        "item_text": "if",
+        "item_span": [
+          1289,
+          1291
+        ],
+        "context_span": [
+          1129,
+          1451
+        ],
+        "context_sha256": "fb0782c2069ce9cbbbb754ebdef6d53b96cfe2c5bd245e9a3c3da0036469365d",
+        "documents": 1
+      },
+      {
+        "packet_index": 4,
+        "stage": "phrase_direct",
+        "item_text": "if",
+        "item_span": [
+          1289,
+          1291
+        ],
+        "context_span": [
+          1129,
+          1451
+        ],
+        "context_sha256": "fb0782c2069ce9cbbbb754ebdef6d53b96cfe2c5bd245e9a3c3da0036469365d",
+        "documents": 2
+      },
+      {
+        "packet_index": 5,
+        "stage": "phrase_direct",
+        "item_text": "73 seconds",
+        "item_span": [
+          1338,
+          1348
+        ],
+        "context_span": [
+          1178,
+          1508
+        ],
+        "context_sha256": "37fe34a2c94302c0c3cd1fd553be21c5787ea91c549bb91448a29f064ef4fe24",
+        "documents": 1
+      },
+      {
+        "packet_index": 6,
+        "stage": "phrase_direct",
+        "item_text": "73 seconds",
+        "item_span": [
+          1338,
+          1348
+        ],
+        "context_span": [
+          1178,
+          1508
+        ],
+        "context_sha256": "37fe34a2c94302c0c3cd1fd553be21c5787ea91c549bb91448a29f064ef4fe24",
+        "documents": 2
+      }
+    ]
+  },
+  "future_information_boundary": {
+    "historical_source_text_only": true,
+    "ordinary_metadata_present": "Actual retrieval times in 2026 are explicitly separate from 2023/2024 source availability. Archive replay URLs name historic timestamps. Titles come from the archived head and are disclosed separately.",
+    "historical_navigation": "NASA page contains genuine December 2024 navigation/recommendations; these are from the verified archived body, not current 2026 content. The extractor preserves body navigation rather than selectively composing evidence.",
+    "no_universal_absence_claim": "This checks delivered documents against fixed archived bytes and checks snapshot fields. It is not proof of absent pretrained model knowledge, nor a completed-run receipt audit."
+  },
+  "limitations": [
+    "Text-node preservation does not establish browser-rendered visibility: CSS display rules, image alt text, screenshots and dynamically loaded content are outside this extractor contract.",
+    "HTML entities are decoded and structural newlines/cell tabs inserted, so this is not byte-identical HTML or a browser-layout transcript. Raw bytes remain independently hashed and retained.",
+    "The 29 NASA nonempty body text nodes and every actual Axios main-content data node pass exact matching; no whitespace normalization was used for these equality tests.",
+    "This audit does not assess model responses or declare success while the real run is active."
+  ],
+  "input_sha256": {
+    "private-data/v14-sources/cache/50bbeb6f1c5f06970c192323fb9bf15fba1e0569cca4a446f38195ee507cea0b.body": "aff9b59b78f85151c2ef68420cc26808c57a39c46a064399540eb73bb46c75ba",
+    "private-data/v14-sources/cache/50bbeb6f1c5f06970c192323fb9bf15fba1e0569cca4a446f38195ee507cea0b.json": "dd7a6160ae95eada0179b3a07a5633232e49dee2b43ca9359a7c8ea0c81dd956",
+    "private-data/v14-sources/cache/c04ec49e03b0517844ec99b285826e7ade3e79e62da0e0a859d60b54750ad659.body": "7892e1e0d610d8f3856f3f1b31501d2f95060974ca4a63b10e07791fbf862133",
+    "private-data/v14-sources/cache/c04ec49e03b0517844ec99b285826e7ade3e79e62da0e0a859d60b54750ad659.json": "f4ec44d97f262cfd082526409f8df400ab06f9e64ee485b4fc26b8158c2afd24",
+    "private-data/v14-run-02/direct/journal.json": "c118a251ddea6598eae2be73a2b4e3b97de420fa37dc21a88b547f8e45b0cf7a",
+    "newsverify/phrase_sources.py": "9b101464843805eaca2fb86e3360d11999433817049d121a59abae75eb99a4fa"
+  },
+  "summary": {
+    "checks_passed": 31,
+    "checks_total": 31,
+    "material_errors": []
+  }
+}

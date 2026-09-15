@@ -1,0 +1,38 @@
+{
+  "kind": "real_model_inference_on_frozen_public_archive_replay",
+  "independent_events": 1,
+  "selected_occurrences": 3,
+  "real_calls": 12,
+  "total_tokens": 271777,
+  "arms": {
+    "direct": {
+      "status": "completed",
+      "calls": 6,
+      "input_tokens": 134081,
+      "output_tokens": 1215,
+      "total_tokens": 135296,
+      "cached_input_tokens": 0,
+      "result_sha256": "743719a1499ba7aec014f5f22fa3af5384490b3577d2e8e2641f77a18a29a228"
+    },
+    "harness": {
+      "status": "completed",
+      "calls": 6,
+      "input_tokens": 135111,
+      "output_tokens": 1370,
+      "total_tokens": 136481,
+      "cached_input_tokens": 7552,
+      "result_sha256": "aaf582aff3224a4cd95f6aad1c5a66dbe0f412248ce654d5672549a76e322ee7"
+    }
+  },
+  "harness_direct_token_ratio": 1.0087585737937559,
+  "verdict_labels_same": true,
+  "accuracy_improvement_established": false,
+  "receipt_checks_passed": 143,
+  "extraction_checks_passed": 31,
+  "regression_tests_passed": 573,
+  "zero_call_launch_failure_preserved": true,
+  "zero_call_launch_failure_reason": "Relative diagnostic directory rejected before model dispatch; restarted with absolute output path and unchanged registration/policy/data.",
+  "later_outcomes_loaded": false,
+  "held_out_accuracy_evaluation": false,
+  "search_enabled_in_replay": false
+}
