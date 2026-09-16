@@ -112,6 +112,12 @@ def main(argv=None, *, prog="newsverify"):
     news_parser.add_argument("--timeout", type=float, default=90)
     news_parser.add_argument("--max-model-calls", type=int, default=40,
                              help="shared research and claim-tracing call cap for the whole news batch")
+    keyword_parser = sub.add_parser("trace-keywords", help="extract exact source keywords, associate relations, and trace each relation")
+    keyword_parser.add_argument("input", type=Path, help="JSON: url, optional selectors/as_of/limits; no summary")
+    keyword_parser.add_argument("--output", type=Path, required=True, help="new local JSON file; contains full source text and model receipts")
+    keyword_parser.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra)")
+    keyword_parser.add_argument("--reasoning-effort", default="low")
+    keyword_parser.add_argument("--timeout", type=float, default=180)
     phrase_parser = sub.add_parser("trace-phrases", help="trace literal words or phrases individually, with original context")
     phrase_parser.add_argument("input", type=Path, help="JSON: url, selectors (literal strings or start/end offsets), optional limits/as_of")
     phrase_parser.add_argument("--output", type=Path, required=True, help="new local JSON file; contains full source text and model receipts")
@@ -132,6 +138,12 @@ def main(argv=None, *, prog="newsverify"):
                   f"{result['usage']['rounds']} rounds; 0 model calls.")
             print(f"Read {args.output / 'SUMMARY.md'}")
             return 0 if result["assessment_valid"] else 1
+        elif args.command == "trace-keywords":
+            if args.output.exists() or args.output.resolve() == args.input.resolve():
+                raise ValueError("keyword output must be a new file; preserve previous attempts")
+            from .keyword_tracing import run_keyword_trace
+            result = run_keyword_trace(json.loads(args.input.read_text(encoding="utf-8")),
+                model=args.model, reasoning_effort=args.reasoning_effort, timeout=args.timeout)
         elif args.command == "trace-phrases":
             if args.output.exists() or args.output.resolve() == args.input.resolve():
                 raise ValueError("phrase output must be a new file; preserve previous attempts")
@@ -165,7 +177,7 @@ def main(argv=None, *, prog="newsverify"):
             if args.output and args.output.resolve() == args.input.resolve():
                 raise ValueError("output must differ from input")
             raw = args.input.read_text(encoding="utf-8")
-        if args.command not in ("score", "trace-demo", "compare", "trace-news", "trace-phrases"):
+        if args.command not in ("score", "trace-demo", "compare", "trace-news", "trace-phrases", "trace-keywords"):
             payload = json.loads(raw)
             if args.command == "trace":
                 result = run_local(payload)
@@ -185,7 +197,11 @@ def main(argv=None, *, prog="newsverify"):
         rendered = json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
         if args.output:
             args.output.parent.mkdir(parents=True, exist_ok=True)
-            args.output.write_text(rendered, encoding="utf-8")
+            if args.command == "trace-keywords":
+                with args.output.open("x", encoding="utf-8") as destination:
+                    destination.write(rendered)
+            else:
+                args.output.write_text(rendered, encoding="utf-8")
             print(f"Wrote {args.output}")
         else:
             print(rendered, end="")
@@ -193,7 +209,7 @@ def main(argv=None, *, prog="newsverify"):
             return 1
         if args.command == "trace-news":
             return 1 if result["summary"]["failed"] or result["summary"]["partial"] else 0
-        if args.command == "trace-phrases":
+        if args.command in {"trace-phrases", "trace-keywords"}:
             return 0 if result["status"] == "completed" else 1
         return 1 if args.command == "benchmark" and not result["all_policy_expectations_matched"] else 0
     except (OSError, ValueError, TypeError, KeyError) as exc:

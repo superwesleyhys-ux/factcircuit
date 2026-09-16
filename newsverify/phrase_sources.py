@@ -7,7 +7,7 @@ import hashlib
 import re
 from urllib.parse import urljoin
 
-from .news_sources import NewsSourceCollector, SourceDocument, canonical_url, _headers, _PAGE_TYPES
+from .news_sources import NewsSourceCollector, SourceDocument, canonical_url, _headers, _PAGE_TYPES, _publication_time
 
 
 class LiteralHTML(HTMLParser):
@@ -21,9 +21,17 @@ class LiteralHTML(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.url, self.parts, self.links, self.titles = url, [], [], []
         self.hidden, self.in_title, self.anchor = [], False, None
+        self.published_at = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        # Publication metadata is retained separately from capture availability;
+        # it never moves a current capture back before a historical cutoff.
+        metadata_key = (attrs.get("property") or attrs.get("name") or attrs.get("itemprop") or "").lower()
+        if tag == "meta" and metadata_key in {"article:published_time", "datepublished", "pubdate"}:
+            self.published_at = self.published_at or _publication_time(attrs.get("content"))
+        if tag == "time" and (attrs.get("itemprop") or "").lower() == "datepublished":
+            self.published_at = self.published_at or _publication_time(attrs.get("datetime"))
         if tag in {"script", "style", "noscript", "template", "svg", "head"}:
             self.hidden.append(tag)
         if tag == "title":
@@ -100,7 +108,7 @@ def decode_public_document(url, headers, body, *, retrieved_at=None):
         raise ValueError("empty_document")
     return LiteralDocument(
         url=canonical_url(url), title=title or url, content=text,
-        retrieved_at=retrieved_at or datetime.now(timezone.utc).isoformat(),
+        retrieved_at=retrieved_at or datetime.now(timezone.utc).isoformat(), published_at=parser.published_at,
         links=parser.links, raw_body_sha256=hashlib.sha256(body).hexdigest(), raw_bytes=len(body),
         extraction=("plain text decoded without stripping or normalization" if kind == "text/plain" else LiteralDocument.extraction),
     )

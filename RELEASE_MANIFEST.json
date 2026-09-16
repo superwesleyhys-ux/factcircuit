@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 21830,
-      "sha256": "56f490444b981e9cd02e4aaa7f9eb64ae04f131e0cb03a7f3f4e48e4372b3f4f"
+      "bytes": 23158,
+      "sha256": "dc0be43729ad62f9a0d10fdd9e457b4fe7a5e58823f50b1209379e90ddf005d2"
     },
     {
       "path": "SECURITY.md",
@@ -127,6 +127,11 @@
       "path": "docs/TRACE_ADAPTER.md",
       "bytes": 12687,
       "sha256": "aa8b07a2b48a42e07f32246e345a8ec342e9dd871109d09faa51b51c9a8ac6bd"
+    },
+    {
+      "path": "docs/keyword-association-tracing.md",
+      "bytes": 9745,
+      "sha256": "a7d74e448265ea8990301b10dba7abb4578cadd4e6d91aa87d8c4ac05b228f08"
     },
     {
       "path": "docs/literal-phrase-tracing.md",
@@ -950,8 +955,8 @@
     },
     {
       "path": "newsverify/cli.py",
-      "bytes": 11632,
-      "sha256": "4d11e4ec92c75801da9afd53d31737279a38c0ea31239782f5dbd77214a049a9"
+      "bytes": 12986,
+      "sha256": "557576d902c4a0f9de70172ab1b63b5da986ee79e2d4f4697616419fe60f42d0"
     },
     {
       "path": "newsverify/comparison.py",
@@ -987,6 +992,11 @@
       "path": "newsverify/evaluation.py",
       "bytes": 14980,
       "sha256": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f"
+    },
+    {
+      "path": "newsverify/keyword_tracing.py",
+      "bytes": 21114,
+      "sha256": "45903fa04268e6b152600d0017dbed0e495a8140e336b3951990a4187c7da22f"
     },
     {
       "path": "newsverify/local.py",
@@ -1040,8 +1050,8 @@
     },
     {
       "path": "newsverify/phrase_sources.py",
-      "bytes": 6729,
-      "sha256": "9b101464843805eaca2fb86e3360d11999433817049d121a59abae75eb99a4fa"
+      "bytes": 7454,
+      "sha256": "fa614284d4835ec8c28c19b362af631201f626499dfa13cccc1e42b2c1160dcf"
     },
     {
       "path": "newsverify/phrase_spans.py",
@@ -1050,8 +1060,8 @@
     },
     {
       "path": "newsverify/phrase_tracing.py",
-      "bytes": 17515,
-      "sha256": "a99245b15f372d182b8bdec473cba523ef69540e13554f025f8c60046397fa3c"
+      "bytes": 19453,
+      "sha256": "f2a4f4799795295aa285f2cd363fc6dbeb6d35047276a74feff3ee924ea2e304"
     },
     {
       "path": "newsverify/provenance.py",
@@ -3152,6 +3162,16 @@
       "path": "tests/test_incremental_double_loop.py",
       "bytes": 10679,
       "sha256": "91c043b477f4e8854c4b350590f3963c7fa8b036b1505c9e93339c4425e62496"
+    },
+    {
+      "path": "tests/test_keyword_cli.py",
+      "bytes": 6399,
+      "sha256": "d91743b383e677618d5a4d65b11a4459c12899055ceb9c7ff1f62c8c88064dbf"
+    },
+    {
+      "path": "tests/test_keyword_tracing.py",
+      "bytes": 34954,
+      "sha256": "680869b0b94bb9264c27a3d6d84d8c4f5750221502f6a48681a283c2f12f061b"
     },
     {
       "path": "tests/test_local.py",

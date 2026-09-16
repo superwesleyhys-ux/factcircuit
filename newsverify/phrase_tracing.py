@@ -101,7 +101,7 @@ def _document(doc):
     return dict(source_id="s-" + hashlib.sha256((doc.url + "\0" + text_sha256(doc.content)).encode()).hexdigest()[:20],
                 url=doc.url, title=doc.title, content=doc.content, text_sha256=text_sha256(doc.content),
                 available_at=doc.available_at, availability_basis=doc.availability_basis,
-                retrieved_at=doc.retrieved_at, links=deepcopy(doc.links),
+                retrieved_at=doc.retrieved_at, published_at=getattr(doc, "published_at", None), links=deepcopy(doc.links),
                 raw_body_sha256=getattr(doc, "raw_body_sha256", None),
                 extraction=getattr(doc, "extraction", "collector supplied extracted text; offsets are not HTML bytes"),
                 access_status=getattr(doc, "access_status", "collector supplied; completeness not independently established"))
@@ -205,14 +205,29 @@ def run_phrase_trace(payload, *, arm="harness", model=None, reasoning_effort="lo
     transport = transport or LocalTunnel(model=model or os.environ.get("FACTCIRCUIT_MODEL", "gpt-6-astra"),
                                         reasoning_effort=reasoning_effort, timeout=timeout)
     policy = DIRECT if arm == "direct" else HARNESS
-    output = dict(status="completed", arm=arm, limits=limits, as_of=payload.get("as_of"),
+    return _trace_items(seed=seed, seed_row=seed_row, items=items, limits=limits,
+                        cutoff=cutoff, as_of=payload.get("as_of"), arm=arm, transport=transport,
+                        collector_factory=collector, policy=policy)
+
+
+def _trace_items(*, seed, seed_row, items, limits, cutoff, as_of, arm, transport,
+                 collector_factory, policy, item_contexts=None, final_validator=None,
+                 search_validator=None, schema=SCHEMA):
+    """Trace prevalidated source items with a fresh collector for each item.
+
+    ``collector_factory`` is a configured zero-argument factory. Optional item
+    contexts contain source-anchored associations, never prior model judgments.
+    Hooks may impose stricter final-evidence and search-query requirements.
+    """
+    output = dict(status="completed", arm=arm, limits=limits, as_of=as_of,
                   input_source=seed_row, extraction_scope="exact stored text; not a summary; not original HTML byte offsets",
                   policy_sha256=text_sha256(policy), items=[], calls=[], model_calls=0,
                   limitations=["Model semantic judgments and independence assessments are not mechanically proven.",
                                "Exact matches and candidate origin chains do not establish factual truth.",
                                "Public-response parsing does not certify full visual/article completeness."])
     for item in items:
-        active = collector()
+        active = collector_factory()
+        context = deepcopy((item_contexts or {}).get(item["id"]))
         # Seed bytes are shared unchanged; each item receives a fresh retrieval
         # budget and no evidence or model advice from earlier items.
         active.documents[seed.url] = seed
@@ -226,24 +241,39 @@ def run_phrase_trace(payload, *, arm="harness", model=None, reasoning_effort="lo
                 matches = {doc["source_id"]: phrase_occurrences(doc["source_id"], doc["content"], item["text"],
                                                               context_chars=limits["context_chars"])
                            for doc in sources.values()}
+                keyword_matches = None
+                if context is not None and isinstance(context.get("keywords"), list):
+                    keyword_matches = {
+                        doc["source_id"]: {
+                            keyword["id"]: phrase_occurrences(doc["source_id"], doc["content"], keyword["text"],
+                                                               context_chars=limits["context_chars"])
+                            for keyword in context["keywords"]}
+                        for doc in sources.values()}
             except ValueError as exc:
                 result.update(status="failed")
                 result["errors"].append(str(exc))
                 break
             packet = dict(item=deepcopy(item), input_source_id=seed_row["source_id"],
-                          documents=deepcopy(list(sources.values())), as_of=payload.get("as_of"),
+                          documents=deepcopy(list(sources.values())), as_of=as_of,
                           remaining_calls=limits["max_calls"] - round_index,
                           retrieval_history=deepcopy(result["actions"]), limits=deepcopy(limits),
                           exact_matches=matches)
-            io = dict(instructions=policy, packet=deepcopy(packet), schema=deepcopy(SCHEMA), status="started")
+            if context is not None:
+                packet["keyword_association"] = deepcopy(context)
+            if keyword_matches is not None:
+                packet["keyword_matches"] = keyword_matches
+            io = dict(instructions=policy, packet=deepcopy(packet), schema=deepcopy(schema), status="started")
             result["model_io"].append(io)
             output["model_calls"] += 1
             try:
-                value = transport.generate("phrase_" + arm, policy, packet, SCHEMA)
+                value = transport.generate("phrase_" + arm, policy, packet, schema)
                 io["response"] = deepcopy(value)
-                _validate(value, SCHEMA)
+                _validate(value, schema)
                 if value["action"] == "finish":
-                    result["citations"] = _validate_final(value, list(sources.values()), seed.url)
+                    citations = _validate_final(value, list(sources.values()), seed.url)
+                    if final_validator is not None:
+                        final_validator(value, list(sources.values()), seed.url)
+                    result["citations"] = citations
                     result.update(status="completed", judgment=deepcopy(value), citation_integrity="exact_substrings_verified",
                                   semantic_verification="model_assessed", origin_status="candidate_chain_only")
                     io["status"] = "completed"
@@ -260,6 +290,8 @@ def run_phrase_trace(payload, *, arm="harness", model=None, reasoning_effort="lo
                 else:
                     if value["url"] or not value["query"].strip():
                         raise ValueError("search_requires_query_only")
+                    if search_validator is not None:
+                        search_validator(value["query"], deepcopy(context))
                     documents = active.search(value["query"], limit=2)
                 for doc in documents:
                     if doc is None:

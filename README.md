@@ -12,6 +12,16 @@ Version 0.2.0: a bounded, auditable news provenance loop with **decomposition on
 
 Repository Discussions are enabled, and the repository includes a prepared **Accuracy decline** reporting form for reproducible metric regressions or weaker trace outcomes. Reports should identify the affected metric or behavior, include the run configuration, and avoid treating synthetic fixtures as real-world performance evidence.
 
+## Latest strategy: source keywords, associations, and relation-level verification
+
+Use `trace-keywords` to extract literal source phrases with exact positions, make a separate association pass into subject/action/object/time/value/conditions/attribution slots, and trace each resulting relation to original evidence. No summary is generated first. Explicit source assertions and inferred hypotheses remain separate; atomic factual checks precede separate causal, temporal and attribution checks. Keyword searches combine at least two distinct anchors and the policy requests supporting and contrary evidence.
+
+```sh
+python -m factcircuit trace-keywords input.json --output private-data/keyword-run-01.json
+```
+
+The report preserves exact citations, source URLs, dates and hashes, and distinguishes supported, contradicted, insufficient, ambiguous and conflicting results. A mixed result requires distinct supported and contradicted empirical assertions; attribution-only and inferred-hypothesis results cannot certify the article. There is no majority vote or whole-article truth label. See the [Chinese usage, budgets and limitations](docs/keyword-association-tracing.md). This implementation does not establish a real-world accuracy improvement. The earlier `trace-phrases` command remains the frozen comparison path below.
+
 ## Literal words and phrases: no-summary tracing
 
 The `trace-phrases` command traces individual original-text occurrences with exact positions, preceding/following context and full source documents. It separates textual matches, source attribution and empirical judgments; it does not call the research-summary stages. See the [usage and limitations](docs/literal-phrase-tracing.md) and the [fixed DART comparison protocol](experiments/exact-phrase-v14-20260915/PROTOCOL.md). Exact citations do not guarantee factual truth.
