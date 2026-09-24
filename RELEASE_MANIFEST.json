@@ -4,6 +4,16 @@
   "scope": "all git-tracked release checkout files except this self-referential manifest",
   "files": [
     {
+      "path": ".agents/skills/continuous-growth/SKILL.md",
+      "bytes": 4568,
+      "sha256": "765498ae7f32321ad65ebc7e04d0267b9d7d85cc30b7bc1cadaa5144009edba7"
+    },
+    {
+      "path": ".claude/skills/continuous-growth/SKILL.md",
+      "bytes": 4568,
+      "sha256": "765498ae7f32321ad65ebc7e04d0267b9d7d85cc30b7bc1cadaa5144009edba7"
+    },
+    {
       "path": ".github/DISCUSSION_TEMPLATE/accuracy-decline.yml",
       "bytes": 1863,
       "sha256": "ac1d96d21e2197ea9576d1b5f9aca8531ccfecd34b605fe36de1668c44a157b2"
@@ -812,6 +822,26 @@
       "path": "factcircuit/trace_demo.py",
       "bytes": 109,
       "sha256": "2d30e12f03aacfd5420a1b2bff923b03c121c060f5a555b069f9d5522c6153e4"
+    },
+    {
+      "path": "growthkit/README.md",
+      "bytes": 8141,
+      "sha256": "d85c5011c2cf119537ace381e747844d3f3e0d62f9a7fbcc66dec992972c763b"
+    },
+    {
+      "path": "growthkit/SKILL.md",
+      "bytes": 4568,
+      "sha256": "765498ae7f32321ad65ebc7e04d0267b9d7d85cc30b7bc1cadaa5144009edba7"
+    },
+    {
+      "path": "growthkit/engine.py",
+      "bytes": 18286,
+      "sha256": "a9625d72e9578033634c23482dd9e93439233862b87ccbcee846c5d057556040"
+    },
+    {
+      "path": "growthkit/install.py",
+      "bytes": 2603,
+      "sha256": "cde493eecfd8f550a7c7e750470f8ef121cfea9e53f3d1b534d3a83fe704e85f"
     },
     {
       "path": "integrations/NEWS_TRACING_IMPORT.json",
@@ -2952,6 +2982,11 @@
       "path": "tests/test_gap_reopening.py",
       "bytes": 7853,
       "sha256": "198312c26d9a561cefe22b8641b59dad83b7a93c44d8678176dcec96e9946fd9"
+    },
+    {
+      "path": "tests/test_growthkit.py",
+      "bytes": 15672,
+      "sha256": "8e0fbcc493720d147b4da164f32d68601e15731e759f55ba52fd19afa8887454"
     },
     {
       "path": "tests/test_gstack_eval.py",
