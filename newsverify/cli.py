@@ -78,12 +78,12 @@ def main(argv=None, *, prog="newsverify"):
         "--config", type=Path,
         help="optional JSON resource budgets; no credentials",
     )
-    for command in ("demo", "trace-demo", "trace", "trace-model", "early-risk", "verify", "benchmark"):
+    for command in ("demo", "trace-demo", "trace", "trace-model", "judge-facts", "early-risk", "verify", "benchmark"):
         child = sub.add_parser(command)
         if command not in ("demo", "trace-demo"):
             child.add_argument("input", type=Path)
         child.add_argument("--output", type=Path)
-        if command in {"trace-model", "early-risk"}:
+        if command in {"trace-model", "judge-facts", "early-risk"}:
             child.add_argument("--tunnel", choices=("local", "api"), default="local",
                                help="model execution path (default: local Codex CLI)")
             child.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
@@ -92,6 +92,8 @@ def main(argv=None, *, prog="newsverify"):
                 else "reasoning effort (default: Codex setting or medium)"))
             child.add_argument("--timeout", type=float, default=180,
                                help="timeout in seconds for each model call (default: 180)")
+        if command == "judge-facts":
+            child.add_argument("--max-model-calls", type=int, default=10)
     score_parser = sub.add_parser("score")
     score_parser.add_argument("gold", type=Path)
     score_parser.add_argument("predictions", type=Path)
@@ -112,6 +114,8 @@ def main(argv=None, *, prog="newsverify"):
     news_parser.add_argument("--timeout", type=float, default=90)
     news_parser.add_argument("--max-model-calls", type=int, default=40,
                              help="shared research and claim-tracing call cap for the whole news batch")
+    news_parser.add_argument("--factual-judgment", action="store_true",
+                             help="verify underlying records, conditions and arithmetic for world verdicts")
     args = parser.parse_args(argv)
     try:
         if args.command == "quickstart":
@@ -129,9 +133,21 @@ def main(argv=None, *, prog="newsverify"):
             if args.output and args.output.resolve() == args.input.resolve():
                 raise ValueError("output must differ from input")
             from .news_tracing_runner import run_news_tracing
-            result = run_news_tracing(json.loads(args.input.read_text(encoding="utf-8")),
+            payload = json.loads(args.input.read_text(encoding="utf-8"))
+            if args.factual_judgment:
+                if not isinstance(payload, dict) or not isinstance(payload.get("config", {}), dict):
+                    raise ValueError("News input and config must be objects")
+                payload["config"] = {**payload.get("config", {}), "factual_judgment": True}
+            result = run_news_tracing(payload,
                 tunnel=args.tunnel, model=args.model, reasoning_effort=args.reasoning_effort,
                 timeout=args.timeout, max_model_calls=args.max_model_calls)
+        elif args.command == "judge-facts":
+            if args.output and args.output.resolve() == args.input.resolve():
+                raise ValueError("output must differ from input")
+            from .double_loop import run_double_loop_trace
+            result = run_double_loop_trace(json.loads(args.input.read_text(encoding="utf-8")),
+                tunnel=args.tunnel, model=args.model, reasoning_effort=args.reasoning_effort,
+                timeout=args.timeout, max_model_calls=args.max_model_calls, factual_judgment=True)
         elif args.command == "trace-demo":
             from .trace_demo import run_demo
             result = run_demo()
@@ -152,7 +168,7 @@ def main(argv=None, *, prog="newsverify"):
             if args.output and args.output.resolve() == args.input.resolve():
                 raise ValueError("output must differ from input")
             raw = args.input.read_text(encoding="utf-8")
-        if args.command not in ("score", "trace-demo", "compare", "trace-news"):
+        if args.command not in ("score", "trace-demo", "compare", "trace-news", "judge-facts"):
             payload = json.loads(raw)
             if args.command == "trace":
                 result = run_local(payload)
@@ -176,7 +192,7 @@ def main(argv=None, *, prog="newsverify"):
             print(f"Wrote {args.output}")
         else:
             print(rendered, end="")
-        if args.command == "trace-model" and result["errors"]:
+        if args.command in {"trace-model", "judge-facts"} and result["errors"]:
             return 1
         if args.command == "trace-news":
             return 1 if result["summary"]["failed"] or result["summary"]["partial"] else 0

@@ -137,6 +137,24 @@ python -m factcircuit early-risk CASE.json --model gpt-5.6-luna --reasoning-effo
 
 ## Run
 
+### Fact-first verification
+
+The new `judge-facts` entry point checks the underlying real-world claim using
+explicit scope, primary-record, method, arithmetic, source-dependence and
+counterevidence findings. Source quotations are validated; declared arithmetic
+is recomputed with Decimal; missing checks generate executable follow-up tasks.
+It uses the existing model and transport, and does not emit a forecast score.
+
+```sh
+python -m factcircuit judge-facts examples/factual_judgment.json --output reports/factual-judgment.json
+python -m factcircuit trace-news examples/news_tracing.json --factual-judgment --output reports/news-facts.json
+```
+
+The example contains invented numbers, not real experimental data. Existing
+trace commands retain their earlier contracts for reproducible comparisons.
+See [the fact-judgment contract](docs/FACTUAL_JUDGMENT.md) for inference,
+arithmetic, source acquisition and measurement-authentication limits.
+
 Python 3.11+; standard library only. From this project directory:
 
 ```bash

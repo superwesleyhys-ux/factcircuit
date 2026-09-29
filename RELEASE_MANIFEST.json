@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 20927,
-      "sha256": "ea286c012bff1bec8c734bd8e4773d28d6b919baa7fe78684a636a604792e535"
+      "bytes": 21871,
+      "sha256": "48627b9e25968426cbd2c4699753107662d8c594b4efb4d39db986039722187f"
     },
     {
       "path": "SECURITY.md",
@@ -77,6 +77,11 @@
       "path": "docs/FACTCIRCUIT_SPEC.md",
       "bytes": 2242,
       "sha256": "795b5663cc3097b6c65862a2b7ad098b75e2112fffe66196e4afc72fd9e4bd54"
+    },
+    {
+      "path": "docs/FACTUAL_JUDGMENT.md",
+      "bytes": 3399,
+      "sha256": "07bebe83f001338129a03285b0bd79e0a3aeda789aa52bfee0ad94095d9ba254"
     },
     {
       "path": "docs/HISTORICAL_2023_BENCHMARK.md",
@@ -134,6 +139,11 @@
       "sha256": "cb36af702a09bd5538dc975c09a9e624e7bcf9b7bcebb131ae364a7db7047cd1"
     },
     {
+      "path": "docs/superpowers/plans/2026-09-29-factual-judgment.md",
+      "bytes": 3402,
+      "sha256": "8914b45321fd8586882bb64c147558188fc8732f849611441f983812f5b99ac5"
+    },
+    {
       "path": "examples/benchmark.json",
       "bytes": 36258,
       "sha256": "5a4f951c7dde46ef0d074510386656e033e4d625ae8a9c651cfd2a5143943ca6"
@@ -162,6 +172,11 @@
       "path": "examples/evaluation_predictions.json",
       "bytes": 1579,
       "sha256": "9cc51b85d7c1a2bebabfd96c502c4ffa722dd1f48c29a182a88555a56df8a225"
+    },
+    {
+      "path": "examples/factual_judgment.json",
+      "bytes": 1415,
+      "sha256": "98c595d51e6a8005de6e7bae0bbb9625e12816408491092483f5429dcf6d9246"
     },
     {
       "path": "examples/local-claim.json",
@@ -794,6 +809,11 @@
       "sha256": "77e1e64e8c27052874610cc8b72c7a0a97094eb551bc6baff65db9e47a33e43f"
     },
     {
+      "path": "factcircuit/factual_judgment.py",
+      "bytes": 165,
+      "sha256": "da8fc758f01e3d98685cdfa77a972e604b4ad67a62c99d3a8c9724bb80adc509"
+    },
+    {
       "path": "factcircuit/provenance.py",
       "bytes": 95,
       "sha256": "9dc1051c1446ed192324ac8ec236bbe5488a72d50cbe7bb2823f9ea9cf09a517"
@@ -885,8 +905,8 @@
     },
     {
       "path": "newsverify/cli.py",
-      "bytes": 10277,
-      "sha256": "98ca0dee294da959ef86640652d1db7a58d7a630b23110901723c1492668f1c7"
+      "bytes": 11505,
+      "sha256": "be14f02d61d2fa8cd60dee04046fe75cfba6b5665b3dcf667737f18297d17265"
     },
     {
       "path": "newsverify/comparison.py",
@@ -910,8 +930,8 @@
     },
     {
       "path": "newsverify/double_loop.py",
-      "bytes": 37166,
-      "sha256": "9c93a66b8d1e135670713e5cbd05aad6aa126486e48979511420e6e1a7e2192b"
+      "bytes": 38052,
+      "sha256": "eca8f6d4bfca9efd4b4d970ea5bd5118be9540621d83b605194aca6e4d48ca45"
     },
     {
       "path": "newsverify/early_risk.py",
@@ -922,6 +942,11 @@
       "path": "newsverify/evaluation.py",
       "bytes": 14980,
       "sha256": "2c971584562232d979fa9523c610b94a53c6d76a74940dbc58a581773c336e4f"
+    },
+    {
+      "path": "newsverify/factual_judgment.py",
+      "bytes": 14901,
+      "sha256": "e5af20cd93dbd423c21ff61e5ca2fa9d23cd4076674adea423dae09b96752f43"
     },
     {
       "path": "newsverify/local.py",
@@ -970,8 +995,8 @@
     },
     {
       "path": "newsverify/news_tracing_runner.py",
-      "bytes": 38346,
-      "sha256": "68a442b1478265306006add587b883af828170ab5324428f8aa1c15dac5f41e8"
+      "bytes": 38548,
+      "sha256": "d37a6d467438ce679a671eeaef96efc342631d44889c97c18d030ab4818dea3e"
     },
     {
       "path": "newsverify/provenance.py",
@@ -2947,6 +2972,11 @@
       "path": "tests/test_evaluation.py",
       "bytes": 7488,
       "sha256": "6cc4f9cbc470f9af0208ec7fdec9148aafc96442db9b5d0401c9bc756ac70fcb"
+    },
+    {
+      "path": "tests/test_factual_judgment.py",
+      "bytes": 18410,
+      "sha256": "c3be131769037749e743ee4ecbd139f5d4fd1dfeb0b83ac829fdab0955256089"
     },
     {
       "path": "tests/test_gap_reopening.py",

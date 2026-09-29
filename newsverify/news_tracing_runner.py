@@ -545,7 +545,8 @@ def _run_item(entry, config, bounded, collector_factory):
                        "max_decomposition_calls": config["max_documents"] * 2}}
         try:
             trace = run_double_loop_trace(payload, tunnel=bounded.kind, transport=formal_transport,
-                max_model_calls=min(config["max_origin_calls"], remaining))
+                max_model_calls=min(config["max_origin_calls"], remaining),
+                factual_judgment=config["factual_judgment"])
             claim["trace"] = trace
             claim["errors"] = list(trace["errors"])
             if not claim["errors"]:
@@ -591,11 +592,13 @@ def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=No
         raise ValueError("A batch supports at most 20 news items")
     config = {"depth": 1, "max_queries": 2, "max_claims": 3, "max_documents": 8,
               "max_searches": 3, "max_origin_depth": 2, "max_origin_calls": 10, "fetch_timeout": 15,
-              "research_mode": "full", "research_evidence_max_chars": 240000}
+              "research_mode": "full", "research_evidence_max_chars": 240000, "factual_judgment": False}
     supplied = payload.get("config") or {}
     if not isinstance(supplied, dict) or set(supplied) - set(config):
         raise ValueError("Unknown news tracing configuration")
     config.update(supplied)
+    if type(config["factual_judgment"]) is not bool:
+        raise ValueError("factual_judgment must be boolean")
     if not isinstance(config["research_mode"], str) or config["research_mode"] not in {"full", "claim"}:
         raise ValueError("research_mode must be full or claim")
     value = config["research_evidence_max_chars"]

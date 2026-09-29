@@ -1,0 +1,35 @@
+{
+  "target": {
+    "id": "synthetic-count-change",
+    "text": "The measured count increased by 30%.",
+    "as_of": "2024-12-31T23:59:59Z",
+    "source_version_id": "dispatch",
+    "assessment_mode": "world"
+  },
+  "materials": [
+    {
+      "version_id": "dispatch",
+      "url": "https://example.invalid/dispatch",
+      "content": "Synthetic demonstration dispatch: the measured count increased by 30%. The original log is at https://example.invalid/instrument-log.",
+      "issuer": "Synthetic demonstration publisher",
+      "retrieved_at": "2026-09-29T00:00:00Z",
+      "available_at": "2024-01-02T00:00:00Z",
+      "availability_basis": "Handwritten synthetic fixture, not a real historical news item."
+    },
+    {
+      "version_id": "instrument-log",
+      "url": "https://example.invalid/instrument-log",
+      "content": "Synthetic instrument log for the same test: before 60 counts; after 66 counts. Test conditions and device were unchanged. These are invented demonstration numbers, not authenticated laboratory data.",
+      "issuer": "Synthetic demonstration instrument",
+      "retrieved_at": "2026-09-29T00:00:00Z",
+      "available_at": "2024-01-01T00:00:00Z",
+      "availability_basis": "Handwritten synthetic fixture, not a real measurement."
+    }
+  ],
+  "initial_version_ids": ["dispatch"],
+  "config": {
+    "max_rounds": 3,
+    "max_documents": 2,
+    "max_decomposition_calls": 2
+  }
+}
