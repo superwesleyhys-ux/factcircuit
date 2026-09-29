@@ -565,7 +565,7 @@ class SnapshotPoolProvider:
 
 
 def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effort=None,
-                          timeout=90, max_model_calls=10, transport=None):
+                          timeout=90, max_model_calls=10, transport=None, factual_judgment=False):
     """Analyze each immutable snapshot once by default; explicit legacy mode remains available."""
     if tunnel not in {"local", "api"}:
         raise ValueError("tunnel must be local or api")
@@ -573,7 +573,14 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         raise ValueError("double-loop trace requires a target object")
     if not isinstance(payload.get("materials"), list) or not payload["materials"]:
         raise ValueError("double-loop trace requires a nonempty materials list")
-    target = Target(**payload["target"])
+    target_fields = dict(payload["target"])
+    if isinstance(target_fields.get("evidence_scope"), list):
+        target_fields["evidence_scope"] = tuple(target_fields["evidence_scope"])
+    target = Target(**target_fields)
+    if type(factual_judgment) is not bool:
+        raise ValueError("factual_judgment must be boolean")
+    if factual_judgment and target.assessment_mode != "world":
+        raise ValueError("Factual judgment requires assessment_mode=world")
     materials = []
     for item in payload["materials"]:
         if not isinstance(item, dict):
@@ -599,9 +606,17 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
     incremental = not config.reanalyze_existing_versions
     provider = SnapshotPoolProvider(target, materials, payload.get("initial_version_ids"), bounded,
                                     deduplicate_aliases=incremental)
+    if factual_judgment:
+        from .factual_judgment import FactualVerifier
+        verifier = FactualVerifier(bounded)
+    else:
+        verifier = DoubleLoopVerifier(bounded, incremental=incremental)
     report = run_provenance(target, provider, DoubleLoopDecomposer(bounded, incremental=incremental),
-                            DoubleLoopVerifier(bounded, incremental=incremental), config)
-    report["execution_mode"] = "double_loop_model_trace"
+                            verifier, config)
+    report["execution_mode"] = "factual_judgment" if factual_judgment else "double_loop_model_trace"
+    if factual_judgment:
+        report["factual_judgment"] = {"assessment": "world", "history": verifier.history,
+            "scope": "Exact-record checks and recomputed arithmetic; semantic credibility remains model-assessed."}
     report["execution"] = {
         "tunnel": bounded.kind, "model": bounded.model,
         "reasoning_effort": bounded.reasoning_effort,
