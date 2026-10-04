@@ -5,8 +5,7 @@
 > retrieval. The outcome-aware selection and summaries were not independently
 > blind. The numerical outputs below are preserved, but any system-level or
 > “blind” interpretation is superseded by this note. It does not establish a
-> same-evidence policy advantage or deliberate fabrication detection. See the
-> [v6 same-evidence protocol](../../../experiments/astra-same-evidence-v6-20260914/PROTOCOL.md).
+> same-evidence policy advantage or deliberate fabrication detection.
 
 This is a preregistered system comparison on eight previously unused papers. The direct
 arm received the anonymized original-article record. The harness arm received the same
