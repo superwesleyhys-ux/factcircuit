@@ -954,6 +954,16 @@
       "sha256": "9e8b1a32656f8aeab7eed6250c3efce35f4e1c45b711c492365b3e87beed2567"
     },
     {
+      "path": "newsverify/risk_benchmark/__init__.py",
+      "bytes": 86,
+      "sha256": "945a7c7258944a1b8b9a79754d3119690510dd214ed425c1c6cdcc76cc8ca7d2"
+    },
+    {
+      "path": "newsverify/risk_benchmark/judgment_router.py",
+      "bytes": 3895,
+      "sha256": "903790e383e93bbd61332a95e4491b41cd2d8fc39769080ea252ec7d9afe9890"
+    },
+    {
       "path": "newsverify/trace_demo.py",
       "bytes": 7007,
       "sha256": "960c78e0fc2aa2bb428dd13db59c3c8314c7e7ffe533d2fe64d80267474b1251"
@@ -1072,6 +1082,16 @@
       "path": "reports/first-run-v0.3.2.json",
       "bytes": 388,
       "sha256": "c0f45853b8c5de6a42c5c27f0eac1f99e7a3f262eb6c6b81024c8ba0203d1989"
+    },
+    {
+      "path": "reports/forecast-improvement-20260927/CYCLE_136.md",
+      "bytes": 5136,
+      "sha256": "b27ca792704043337692f47243635620a313f466b3914aca9dc9e02f9cf6ac6f"
+    },
+    {
+      "path": "reports/forecast-improvement-20260927/CYCLE_137.md",
+      "bytes": 3924,
+      "sha256": "b0778819b9f5a5f91c6e19cd421792369b4a75bc6f9aaa7d80f8667919b6e784"
     },
     {
       "path": "reports/historical-2023-audit-v0.3.1.json",
@@ -2917,6 +2937,11 @@
       "path": "tests/test_incremental_double_loop.py",
       "bytes": 10679,
       "sha256": "91c043b477f4e8854c4b350590f3963c7fa8b036b1505c9e93339c4425e62496"
+    },
+    {
+      "path": "tests/test_judgment_router.py",
+      "bytes": 3645,
+      "sha256": "353873525a030312a5b999a6ff5c1b756238c1bc453b993a6bcdd980590f7a4d"
     },
     {
       "path": "tests/test_local.py",
