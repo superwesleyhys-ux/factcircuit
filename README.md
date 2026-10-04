@@ -32,45 +32,6 @@ failed rounds](reports/live-origin-v12-20260914/README.md). The new incremental
 double-loop behavior preserves prior findings and unresolved gaps while
 requiring explicit evidence for each new source relation.
 
-## Earlier same-evidence Astra test (v6): tie
-
-On **September 14, 2026**, v6 tested eight new anonymized research papers
-published before 2024. Both arms received exactly the same three text summaries
-per paper, using only source content dated through **December 31, 2024**.
-The candidate added a new artifact-and-rebuttal verification policy. All **16
-real Astra calls** used local Codex login, low reasoning, one call per arm/case,
-and no retries or API fallback. Local login still uses remote model inference.
-
-| Measure | Direct Astra | Astra + v6 policy |
-|---|---:|---:|
-| Later-outcome forecast matches | **7/8 (87.5%)** | **7/8 (87.5%)** |
-| Later-retracted papers flagged elevated | 3/4 | 3/4 |
-| Controls predicted ordinary | 4/4 | 4/4 |
-| Forecast abstentions | 1 | 1 |
-| Cutoff record-state annotation matches | 8/8 | 8/8 |
-| Unsupported assertions of established fabrication | 0 | 0 |
-| Input + output tokens | **76,960** | 78,750 |
-
-**The candidate did not outperform direct Astra.** Both abstained on the same
-paper: the supplied pre-cutoff abstract contained no specific integrity concern,
-while the checked public criticism first appeared in 2025. That abstention counts
-as a miss for outcome prediction, not as a false factual assertion. The candidate
-used **2.3% more tokens**; paired predictions were identical (McNemar p = 1.0).
-
-This is a small, retrospectively selected **same-evidence decision-stage test**.
-The source editor knew the outcomes, curated the summaries and annotated cutoff
-states; these are not independent truth labels. Models did not retrieve sources,
-inspect images, or verify raw experiments. Retraction for unreliable data is not
-proof of deliberate fraud, and controls without a located retraction are not
-proved authentic. These numbers are not general fake-news detection accuracy.
-
-See the [full v6 report and per-case results](reports/astra-same-evidence-v6-20260914/scored-v1/README.md),
-[parsed outputs and call receipts](reports/astra-same-evidence-v6-20260914/run-001/predictions.json),
-and [frozen protocol and source limitations](experiments/astra-same-evidence-v6-20260914/PROTOCOL.md).
-The setup was pushed as `904d65eb` before inference. All registered integrity
-checks passed; **461 regression tests**, **7 evaluation safeguards**, and the
-installed-wheel local smoke check passed.
-
 ## Earlier unequal-evidence comparisons: interpretation corrected
 
 **Methodology correction, September 14:** the v5, v4 and earlier source-trace
