@@ -16,6 +16,7 @@ experiments/*
 !experiments/README.md
 # Reusable experiment modules (not dated run archives).
 !experiments/head_to_head.py
+!experiments/head_to_head_mailbox.py
 !experiments/double-loop-pilot/
 experiments/double-loop-pilot/*
 !experiments/double-loop-pilot/run_test.py

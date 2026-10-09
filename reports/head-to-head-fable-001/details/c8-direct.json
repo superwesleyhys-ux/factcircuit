@@ -1,0 +1,35 @@
+{
+  "case_id": "c8",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-h"
+    },
+    "materials": [
+      {
+        "version_id": "notice-h",
+        "url": "https://fixture.example/notice-h",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-h"
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-h",
+        "quote": "The notice reports a measurement of 30 units."
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "The only supplied material is notice-h, the target's own source, available before the 2026-01-03 cutoff. It is a secondary notice that reports the figure and cites an external record (https://fixture.example/record-h) that is not supplied. A report stating a claim does not make it true, and there is no primary measurement record, independent confirmation, or opposing material in the packet, so the eligible evidence cannot settle the claim either way."
+  }
+}

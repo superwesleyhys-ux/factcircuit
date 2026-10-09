@@ -1,0 +1,156 @@
+{
+  "benchmark_id": "synthetic-dev-pool-003",
+  "scored_at": "2026-10-09T05:30:03.814224Z",
+  "registration": {
+    "registered_at": "2026-10-09T05:08:10.277404Z",
+    "harness_version": "0.3.2",
+    "harness_commit": "4d3224442db606751f2f9faca7a94422fcbb32fb",
+    "success_rule": "harness accuracy strictly greater than direct; every harness output valid; harness total tokens at most 6.0 x direct",
+    "max_token_ratio": 6.0,
+    "max_model_calls": 12,
+    "harness_config": {},
+    "direct_scope": "pool",
+    "comparison": "same evidence: the direct arm receives every cutoff-eligible material"
+  },
+  "settings": {
+    "tunnel": "mailbox",
+    "model": "claude-fable-5.1 (serving agent via mailbox)",
+    "reasoning_effort": "agent",
+    "timeout": 180
+  },
+  "direct": {
+    "cases": 8,
+    "correct": 8,
+    "accuracy": 1.0,
+    "false_claims": 4,
+    "false_claims_identified": 4,
+    "false_claim_recall": 1.0,
+    "abstained": 3,
+    "invalid_outputs": 0,
+    "traceable": 5,
+    "origin_correct": 5,
+    "origin_accuracy": 1.0,
+    "lineage_certified": 0,
+    "total_tokens": 0,
+    "total_calls": 8,
+    "mean_input_tokens_per_call": 0.0,
+    "packet_chars_sent": 22568,
+    "packet_only_tokens_estimate": 5642
+  },
+  "harness": {
+    "cases": 8,
+    "correct": 8,
+    "accuracy": 1.0,
+    "false_claims": 4,
+    "false_claims_identified": 4,
+    "false_claim_recall": 1.0,
+    "abstained": 3,
+    "invalid_outputs": 0,
+    "traceable": 5,
+    "origin_correct": 5,
+    "origin_accuracy": 1.0,
+    "lineage_certified": 5,
+    "total_tokens": 0,
+    "total_calls": 36,
+    "mean_input_tokens_per_call": 0.0,
+    "packet_chars_sent": 211270,
+    "packet_only_tokens_estimate": 52818
+  },
+  "verdict": {
+    "accuracy_strictly_higher": false,
+    "all_harness_outputs_valid": true,
+    "within_token_ratio": false,
+    "token_ratio": null,
+    "packet_only_token_ratio_estimate": 9.361573909961006,
+    "token_rule_basis": "provider-reported input+output tokens, including any fixed per-call overhead",
+    "harness_wins_by_registered_rule": false
+  },
+  "paired_cases": [
+    {
+      "case_id": "c1",
+      "truth": "unresolved",
+      "direct": "unresolved",
+      "harness": "unresolved",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c2",
+      "truth": "contradicted",
+      "direct": "contradicted",
+      "harness": "contradicted",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c3",
+      "truth": "unresolved",
+      "direct": "unresolved",
+      "harness": "unresolved",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c4",
+      "truth": "supported",
+      "direct": "supported",
+      "harness": "supported",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c5",
+      "truth": "contradicted",
+      "direct": "contradicted",
+      "harness": "contradicted",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c6",
+      "truth": "contradicted",
+      "direct": "contradicted",
+      "harness": "contradicted",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c7",
+      "truth": "contradicted",
+      "direct": "contradicted",
+      "harness": "contradicted",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    },
+    {
+      "case_id": "c8",
+      "truth": "unresolved",
+      "direct": "unresolved",
+      "harness": "unresolved",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 0,
+      "harness_tokens": 0
+    }
+  ],
+  "limitations": [
+    "A registered win on a small frozen pool is exploratory, not a population accuracy claim.",
+    "Both arms see supplied snapshots only; neither arm retrieved from the open web.",
+    "Historical cutoff isolation applies to supplied evidence, not to the model's training.",
+    "Invalid or failed outputs count as incorrect; nothing was retried."
+  ]
+}

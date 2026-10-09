@@ -1,0 +1,48 @@
+{
+  "case_id": "c3",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The result of experiment X was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-c"
+    },
+    "materials": [
+      {
+        "version_id": "notice-c",
+        "url": "https://fixture.example/notice-c",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports that experiment X produced 30 units. Source: https://fixture.example/record-x"
+      },
+      {
+        "version_id": "record-y",
+        "url": "https://fixture.example/record-y",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record for experiment Y: the result was 30 units. Experiment X is not covered by this record."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-c",
+        "quote": "The notice reports that experiment X produced 30 units."
+      },
+      {
+        "version_id": "record-y",
+        "quote": "Experiment X is not covered by this record."
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "Both materials are available before the 2026-01-03 cutoff. notice-c is the target's own source and only reports the figure while citing an external record (https://fixture.example/record-x) that is not supplied; a report stating a claim does not make it true. record-y is a primary measurement record, but it is for experiment Y and explicitly states that experiment X is not covered, so its 30-unit figure neither confirms nor contradicts the target, which concerns experiment X. No primary record for experiment X is in the packet, so the eligible evidence cannot settle the claim."
+  }
+}

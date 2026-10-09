@@ -1,10 +1,10 @@
 {
-  "benchmark_id": "synthetic-dev-pool-002",
+  "benchmark_id": "synthetic-dev-pool-003",
   "cases": [
     {
-      "id": "copy-is-not-a-second-source",
+      "id": "c1",
       "target": {
-        "id": "copy-is-not-a-second-source",
+        "id": "c1",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-a"
@@ -21,7 +21,7 @@
           "availability_basis": "Explicit synthetic fixture assertion."
         },
         {
-          "version_id": "copy-of-notice-a",
+          "version_id": "bulletin-mirror",
           "url": "https://mirror.example/bulletin/30-units",
           "content": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a",
           "issuer": "synthetic fixture",
@@ -41,9 +41,9 @@
       }
     },
     {
-      "id": "record-revised-before-cutoff",
+      "id": "c2",
       "target": {
-        "id": "record-revised-before-cutoff",
+        "id": "c2",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-b"
@@ -90,9 +90,9 @@
       }
     },
     {
-      "id": "decoy-record-same-number",
+      "id": "c3",
       "target": {
-        "id": "decoy-record-same-number",
+        "id": "c3",
         "text": "The result of experiment X was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-c"
@@ -129,9 +129,9 @@
       }
     },
     {
-      "id": "two-hop-supported",
+      "id": "c4",
       "target": {
-        "id": "two-hop-supported",
+        "id": "c4",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-d"
@@ -178,9 +178,9 @@
       }
     },
     {
-      "id": "two-hop-contradicted-by-record",
+      "id": "c5",
       "target": {
-        "id": "two-hop-contradicted-by-record",
+        "id": "c5",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-e"
@@ -227,9 +227,9 @@
       }
     },
     {
-      "id": "qualifier-site-mismatch",
+      "id": "c6",
       "target": {
-        "id": "qualifier-site-mismatch",
+        "id": "c6",
         "text": "The result at site A was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-f"
@@ -266,9 +266,9 @@
       }
     },
     {
-      "id": "notice-corrected-before-cutoff",
+      "id": "c7",
       "target": {
-        "id": "notice-corrected-before-cutoff",
+        "id": "c7",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-g-v1"
@@ -315,9 +315,9 @@
       }
     },
     {
-      "id": "notice-only-no-record",
+      "id": "c8",
       "target": {
-        "id": "notice-only-no-record",
+        "id": "c8",
         "text": "The measured result was 30 units.",
         "as_of": "2026-01-03T00:00:00Z",
         "source_version_id": "notice-h"

@@ -1,0 +1,58 @@
+{
+  "benchmark_id": "synthetic-dev-pool-003",
+  "registered_at": "2026-10-09T05:08:10.277404Z",
+  "harness_version": "0.3.2",
+  "harness_commit": "4d3224442db606751f2f9faca7a94422fcbb32fb",
+  "cases_sha256": "3216f951af89a7f34c4b952f7b81251042b73fd378871879f5d623bbb1da43b5",
+  "gold_sha256": "77dfd4354ffd892cac274dbcb0b747767aa892dea937d6bfdb7824c27ddbeaa8",
+  "case_order": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5",
+    "c6",
+    "c7",
+    "c8"
+  ],
+  "arm_order": [
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ]
+  ],
+  "max_token_ratio": 6.0,
+  "max_model_calls": 12,
+  "harness_config": {},
+  "direct_scope": "pool",
+  "comparison": "same evidence: the direct arm receives every cutoff-eligible material",
+  "success_rule": "harness accuracy strictly greater than direct; every harness output valid; harness total tokens at most 6.0 x direct"
+}

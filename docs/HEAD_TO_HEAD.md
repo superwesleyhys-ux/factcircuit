@@ -59,6 +59,20 @@ with the full harness report, or the direct packet and raw response, for
 failure analysis. `score` refuses a gold file whose hash differs from the
 registration, and refuses arms that were run with different settings.
 
+## Serving the model from an agent (mailbox transport)
+
+A model with no API tunnel here, a Claude session acting as a subagent, a
+person, or any agent with file access, can still be the model inside both
+arms: `experiments/head_to_head_mailbox.py` writes every call to a mailbox
+directory as `NNNN.request.json` (`stage`, `instructions`, `evidence`,
+`schema`) and waits for `NNNN.response.json`. Run one driver per arm with
+its own mailbox; the serving agent loops over unanswered requests, answers
+from `evidence` only, and stops when `DONE` appears. Usage is not reported, so
+the token rule cannot be evaluated; `input_chars` and `output_chars` are.
+Blinding is the operator's job: the agent must be permitted to read only its
+mailbox, the gold file must sit outside anything it can reach, and case and
+target ids must be opaque, because the harness packets carry `target.id`.
+
 ## Reading the token numbers
 
 The rule compares provider-reported input plus output tokens, because that is
@@ -104,8 +118,8 @@ file before inference, and never edit the case file after registration.
 
 - `examples/head_to_head_cases.json`: three synthetic cases (supported,
   contradicted by the record, record unavailable at the cutoff).
-- `examples/head_to_head_dev_pool.json`: eight synthetic cases built around
-  the surfaces above: a verbatim copy at a second URL, a same-URL revision
+- `examples/head_to_head_dev_pool.json` (`synthetic-dev-pool-003`, opaque
+  ids): eight synthetic cases built around the surfaces above: a verbatim copy at a second URL, a same-URL revision
   before the cutoff, a decoy record with the same number, two-hop lineage
   with and without a contradicting original, a site qualifier mismatch, a
   corrected notice, and a notice with no record.
@@ -131,8 +145,19 @@ file before inference, and never edit the case file after registration.
   the harness's cost beyond the provider's fixed per-call overhead is the
   context it carries (prior analyses, verification history, prior-material
   metadata), not the documents.
+- fable-001 (Claude Fable 5.1 served through the mailbox transport, opaque
+  ids): direct 8/8, harness 8/8, origins 5/5 against 5/5, lineage certified
+  5/5, 36 calls, packets 9.4× the direct packet characters. The same tie as
+  Astra, from a different model family, with the id leak removed.
+- Caveat on dev-002 and dev-003: the pool's case ids were descriptive
+  (`two-hop-contradicted-by-record`) and the harness packets carry
+  `target.id`, so the harness arm could read the label in the id; one
+  version id (`copy-of-notice-a`) named its own role to both arms. The runs
+  stand as published with this caveat. `synthetic-dev-pool-003` is the same
+  eight cases with opaque ids (`c1`..`c8`, `bulletin-mirror`); its key is in
+  `reports/head-to-head-fable-001/CASE_KEY.json`.
 - On a pool where every eligible material is handed to the direct arm, the
-  bare model has not lost a case in three runs. The harness's remaining
+  bare model has not lost a case in four runs across two model families. The harness's remaining
   advantage to measure is on pools the direct arm cannot be handed whole:
   live retrieval from a page, decoys at scale, and cost.
 
@@ -153,6 +178,11 @@ file before inference, and never edit the case file after registration.
 - [dev-003](../reports/head-to-head-dev-003/SUMMARY.md): same pool and model
   with deferral as the default and the amended verifier prompt. 8/8 against
   8/8, origins 5/5 against 5/5, lineage certified on 4 of 5, 38 calls,
-  5.11×; harness packets 199,206 characters against 22,361. Synthetic.
+  5.11×; harness packets 199,206 characters against 22,361. Synthetic; id
+  leak caveat above.
+- [fable-001](../reports/head-to-head-fable-001/README.md): Claude Fable 5.1
+  served through the mailbox transport on the opaque-id pool. 8/8 against
+  8/8, origins 5/5 against 5/5, lineage certified 5/5, 36 calls; tokens not
+  measurable through that transport. Synthetic.
 
 Synthetic pools check the mechanics. They are not real-news accuracy evidence.

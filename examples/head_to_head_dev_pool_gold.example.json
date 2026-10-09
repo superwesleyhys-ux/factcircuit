@@ -1,11 +1,11 @@
 {
-  "benchmark_id": "synthetic-dev-pool-002",
+  "benchmark_id": "synthetic-dev-pool-003",
   "labels": {
-    "copy-is-not-a-second-source": {
+    "c1": {
       "truth": "unresolved",
       "original_version_ids": null
     },
-    "record-revised-before-cutoff": {
+    "c2": {
       "truth": "contradicted",
       "original_version_ids": [
         [
@@ -17,35 +17,35 @@
         ]
       ]
     },
-    "decoy-record-same-number": {
+    "c3": {
       "truth": "unresolved",
       "original_version_ids": null
     },
-    "two-hop-supported": {
+    "c4": {
       "truth": "supported",
       "original_version_ids": [
         "record-d"
       ]
     },
-    "two-hop-contradicted-by-record": {
+    "c5": {
       "truth": "contradicted",
       "original_version_ids": [
         "record-e"
       ]
     },
-    "qualifier-site-mismatch": {
+    "c6": {
       "truth": "contradicted",
       "original_version_ids": [
         "record-f"
       ]
     },
-    "notice-corrected-before-cutoff": {
+    "c7": {
       "truth": "contradicted",
       "original_version_ids": [
         "record-g"
       ]
     },
-    "notice-only-no-record": {
+    "c8": {
       "truth": "unresolved",
       "original_version_ids": null
     }

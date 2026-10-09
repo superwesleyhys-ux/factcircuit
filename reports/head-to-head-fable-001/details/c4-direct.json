@@ -1,0 +1,63 @@
+{
+  "case_id": "c4",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-d"
+    },
+    "materials": [
+      {
+        "version_id": "notice-d",
+        "url": "https://fixture.example/notice-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/summary-d"
+      },
+      {
+        "version_id": "summary-d",
+        "url": "https://fixture.example/summary-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Summary of the measurement campaign: the result was 30 units. Source: https://fixture.example/record-d"
+      },
+      {
+        "version_id": "record-d",
+        "url": "https://fixture.example/record-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Original measurement record: the result was 30 units."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "supported",
+    "basis": [
+      {
+        "version_id": "record-d",
+        "quote": "Original measurement record: the result was 30 units."
+      },
+      {
+        "version_id": "summary-d",
+        "quote": "Summary of the measurement campaign: the result was 30 units."
+      },
+      {
+        "version_id": "notice-d",
+        "quote": "The notice reports a measurement of 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-d"
+    ],
+    "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-d, cites summary-d, which in turn cites record-d; following that citation chain, the original measurement record is supplied and states exactly the target figure, 30 units, with no later correction or opposing material in the packet. The summary and notice are downstream reports of the same record and add no independent confirmation, but the primary record itself is sufficient to establish the exact target."
+  }
+}
