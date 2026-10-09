@@ -5,6 +5,11 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Restored the canonical README that PR #7 had overwritten with the
+  development-archive README (wrong title, stale v0.2.0 version, `newsverify`
+  commands, five links to unpublished September 8 reports). Docs and
+  CONTRIBUTING now use the `factcircuit` command; added
+  `python -m factcircuit.double_loop` and `factcircuit.early_risk` re-exports.
 - Added incremental double-loop source analysis: each immutable version is
   decomposed and verified once per claim with full retained text, while prior findings
   and open gaps remain in later context. Legacy reanalysis requires the

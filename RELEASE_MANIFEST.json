@@ -25,18 +25,18 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 4310,
-      "sha256": "484a32bc88d975a3cd16c81911b9eded69959e972c1e214108f2bb54a199b5e7"
+      "bytes": 4660,
+      "sha256": "810f66074036289d6809b08f603c9c9a47dbe82b25eea00634971dc43cf5509a"
     },
     {
       "path": "CLAUDE.md",
-      "bytes": 794,
-      "sha256": "cf3070787a24fb9a8a239b3ae42333a66581bc2af56447dfa5ec535e14b9fe5c"
+      "bytes": 1394,
+      "sha256": "136d15b23a35fa2514788fc193b37b2ea2e34d173baa173ed2a9e19cd13af53d"
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 1668,
-      "sha256": "e7a46ca3ce5215e2d8a86fea0d55c22ed06495c9e1ef23ece62471be92251659"
+      "bytes": 1662,
+      "sha256": "1e10c5eaaa7762e8f4f7eb57d302045830bdda203be7ede019389fe7df3c4fbc"
     },
     {
       "path": "LICENSE",
@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18585,
-      "sha256": "7c82d933432874ea568c8f3eadb47d7bed039cfec46a371b8c698c1f0b76cdf3"
+      "bytes": 18313,
+      "sha256": "3761765f0734aab43eec44000c4053488a3449326cab1dcdb1fee0352a0ac804"
     },
     {
       "path": "SECURITY.md",
@@ -65,8 +65,8 @@
     },
     {
       "path": "docs/CODEX_EXECUTION_PLAN.md",
-      "bytes": 11540,
-      "sha256": "7e4187327a23dc1bba73644ba5a134ffa372041572b89283b806f171a8b1dbf1"
+      "bytes": 11577,
+      "sha256": "292a7a4890117047b0db457f0a059f5548aa5d37a47904e5863397d35e83aa2a"
     },
     {
       "path": "docs/EVALUATION_SCHEMA.md",
@@ -85,13 +85,13 @@
     },
     {
       "path": "docs/MODEL_TUNNELS.md",
-      "bytes": 6411,
-      "sha256": "ff833fed00ff81b3a7b4b36591f700f838ccca0b38f40ed10d19e62c1dbe3c99"
+      "bytes": 6493,
+      "sha256": "951d23f5eaa0174b9a854a4df002a9d576ec03a91fa838153c163d5a76022280"
     },
     {
       "path": "docs/NEWS_TRACING.md",
-      "bytes": 12832,
-      "sha256": "f6e79f0eb973dfa7a9cfba52f0cfe88d974666e1df1dfb1834bcc3e33282405e"
+      "bytes": 12834,
+      "sha256": "42a454a75b4d974a4729656455ebb38e6aa8bea55d90ffb64ab0bd0f2168cdbd"
     },
     {
       "path": "docs/PROGRAM_APPLICATION.md",
@@ -747,6 +747,16 @@
       "path": "factcircuit/decisions.py",
       "bytes": 100,
       "sha256": "76603bda809fd2204f9ede10a6d00f80a44c8ed1baca7440083c499cb572ca45"
+    },
+    {
+      "path": "factcircuit/double_loop.py",
+      "bytes": 396,
+      "sha256": "30858ce89b5099d1fad8210c77a1b065e244de83d4aefcd6b4f50718e8b4484a"
+    },
+    {
+      "path": "factcircuit/early_risk.py",
+      "bytes": 140,
+      "sha256": "c17ba89f321f4d41fdfc40c72088fd6feb8ce776bbc109f2b7a99fb8ce3e899d"
     },
     {
       "path": "factcircuit/evaluation.py",
@@ -2855,8 +2865,8 @@
     },
     {
       "path": "tests/test_brand.py",
-      "bytes": 1828,
-      "sha256": "3838d4f48611abf8f761ae328afd9cf012822e7fdf2c51b69741cd99e6fc14c7"
+      "bytes": 2447,
+      "sha256": "5e009e3ed1e345fbf0b24fb60a7eafb1b8d930ae5a664d309cdee8a24ec59964"
     },
     {
       "path": "tests/test_comparison.py",

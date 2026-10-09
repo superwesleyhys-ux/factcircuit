@@ -13,8 +13,8 @@ execution uses `trace-model`; its default tunnel is `local`.
 | Fallback to another tunnel | Never | Never |
 
 ```bash
-python -m newsverify trace-model examples/model_trace.json --tunnel local --output reports/model-local.json
-python -m newsverify trace-model examples/model_trace.json --tunnel api --model YOUR_API_MODEL --output reports/model-api.json
+python -m factcircuit trace-model examples/model_trace.json --tunnel local --output reports/model-local.json
+python -m factcircuit trace-model examples/model_trace.json --tunnel api --model YOUR_API_MODEL --output reports/model-api.json
 ```
 
 Both commands accept the same local JSON schema (`target`, `rounds`, optional
@@ -69,9 +69,10 @@ relations, origin resolution and active follow-up retrieval are not implemented
 in these semantic adapters. A supported fact can therefore retain `partial`
 provenance and open source questions. This is separate from the full core's
 plugin capability. The opt-in `run_double_loop_trace` adapter in
-`newsverify/double_loop.py` adds model-selected follow-up retrieval and source
-reanalysis over a finite material pool. Its fresh gstack-guided comparison is
-documented in the [public evaluation report](../reports/model-evaluation-20260908/README.md).
+`factcircuit/double_loop.py` (implemented in `newsverify/double_loop.py`) adds model-selected follow-up retrieval and source
+reanalysis over a finite material pool. The September 8 gstack-guided
+comparison protocol is kept in `experiments/gstack-harness-eval-20260908/`;
+its report artifacts are not published in this repository.
 
 ## Reports and errors
 
@@ -108,7 +109,7 @@ and writing one never changes a failed call into success.
 For fully offline operation, continue using:
 
 ```bash
-python -m newsverify trace examples/local_trace.json --output reports/local-trace.json
+python -m factcircuit trace examples/local_trace.json --output reports/local-trace.json
 ```
 
 That command preserves snapshots without model inference and reports factual
