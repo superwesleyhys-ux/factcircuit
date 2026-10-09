@@ -1,0 +1,337 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "arm": "harness",
+  "run_at": "2026-10-09T03:36:50.054218Z",
+  "settings": {
+    "tunnel": "local",
+    "model": null,
+    "reasoning_effort": "low",
+    "timeout": 180
+  },
+  "cases_sha256": "8dd4f248282f220f6a20b630477c3648fbd032461ed0e543150b9312e9d323f6",
+  "harness_commit": "55c3fa7f587aa3fba1392f55d41adf137d0ddd55",
+  "results": [
+    {
+      "case_id": "supported-with-record",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "supported",
+      "original_version_ids": [
+        "record-1"
+      ],
+      "error": null,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 2,
+        "documents": 2,
+        "unique_versions": 2,
+        "decomposition_calls": 2,
+        "verification_calls": 2
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11775,
+            "cached_input_tokens": 0,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11977
+          },
+          "wall_seconds": 9.075565334000203,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 2,
+          "stage": "verify",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11896,
+            "cached_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 12023
+          },
+          "wall_seconds": 8.584029041000576,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 3,
+          "stage": "select",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 10914,
+            "cached_input_tokens": 0,
+            "output_tokens": 51,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10965
+          },
+          "wall_seconds": 5.595564958999603,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 4,
+          "stage": "decompose",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 12516,
+            "cached_input_tokens": 0,
+            "output_tokens": 655,
+            "reasoning_output_tokens": 40,
+            "total_tokens": 13171
+          },
+          "wall_seconds": 18.68457370899978,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 5,
+          "stage": "verify",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 12789,
+            "cached_input_tokens": 0,
+            "output_tokens": 165,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 12954
+          },
+          "wall_seconds": 8.667186333000245,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 50.61259883399998,
+      "tokens": {
+        "input_tokens": 59890,
+        "output_tokens": 1200,
+        "calls": 5,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 61090
+      }
+    },
+    {
+      "case_id": "contradicted-by-record",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-2"
+      ],
+      "error": null,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 2,
+        "documents": 2,
+        "unique_versions": 2,
+        "decomposition_calls": 2,
+        "verification_calls": 2
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11775,
+            "cached_input_tokens": 0,
+            "output_tokens": 199,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11974
+          },
+          "wall_seconds": 9.465338332999636,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 2,
+          "stage": "verify",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11895,
+            "cached_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 12022
+          },
+          "wall_seconds": 7.953013749999627,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 3,
+          "stage": "select",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 10926,
+            "cached_input_tokens": 0,
+            "output_tokens": 48,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10974
+          },
+          "wall_seconds": 6.259358791000523,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 4,
+          "stage": "decompose",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 12514,
+            "cached_input_tokens": 0,
+            "output_tokens": 771,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 13285
+          },
+          "wall_seconds": 21.50985812500039,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 5,
+          "stage": "verify",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 12942,
+            "cached_input_tokens": 0,
+            "output_tokens": 163,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 13105
+          },
+          "wall_seconds": 9.05378466699949,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 54.24657991700042,
+      "tokens": {
+        "input_tokens": 60052,
+        "output_tokens": 1308,
+        "calls": 5,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 61360
+      }
+    },
+    {
+      "case_id": "record-unavailable-at-cutoff",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "provenance_status": "partial",
+      "stop_reason": "empty_results",
+      "errors": [],
+      "usage": {
+        "rounds": 2,
+        "documents": 1,
+        "unique_versions": 1,
+        "decomposition_calls": 1,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11775,
+            "cached_input_tokens": 0,
+            "output_tokens": 200,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11975
+          },
+          "wall_seconds": 8.946589165999285,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        },
+        {
+          "call_number": 2,
+          "stage": "verify",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11898,
+            "cached_input_tokens": 0,
+            "output_tokens": 140,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 12038
+          },
+          "wall_seconds": 9.919205583999428,
+          "timeout_seconds": 180.0,
+          "exit_code": 0
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 18.868137542000113,
+      "tokens": {
+        "input_tokens": 23673,
+        "output_tokens": 340,
+        "calls": 2,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 24013
+      }
+    }
+  ]
+}

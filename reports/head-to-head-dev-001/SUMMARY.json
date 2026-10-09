@@ -1,0 +1,91 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "scored_at": "2026-10-09T03:36:50.174037Z",
+  "registration": {
+    "registered_at": "2026-10-09T03:34:27.163739Z",
+    "harness_version": "0.3.2",
+    "harness_commit": "55c3fa7f587aa3fba1392f55d41adf137d0ddd55",
+    "success_rule": "harness accuracy strictly greater than direct; every harness output valid; harness total tokens at most 2.0 x direct",
+    "max_token_ratio": 2.0,
+    "max_model_calls": 12
+  },
+  "settings": {
+    "tunnel": "local",
+    "model": null,
+    "reasoning_effort": "low",
+    "timeout": 180
+  },
+  "direct": {
+    "cases": 3,
+    "correct": 3,
+    "accuracy": 1.0,
+    "false_claims": 1,
+    "false_claims_identified": 1,
+    "false_claim_recall": 1.0,
+    "abstained": 1,
+    "invalid_outputs": 0,
+    "traceable": 2,
+    "origin_correct": 2,
+    "origin_accuracy": 1.0,
+    "total_tokens": 33786
+  },
+  "harness": {
+    "cases": 3,
+    "correct": 3,
+    "accuracy": 1.0,
+    "false_claims": 1,
+    "false_claims_identified": 1,
+    "false_claim_recall": 1.0,
+    "abstained": 1,
+    "invalid_outputs": 0,
+    "traceable": 2,
+    "origin_correct": 2,
+    "origin_accuracy": 1.0,
+    "total_tokens": 146463
+  },
+  "verdict": {
+    "accuracy_strictly_higher": false,
+    "all_harness_outputs_valid": true,
+    "within_token_ratio": false,
+    "token_ratio": 4.335020422660273,
+    "harness_wins_by_registered_rule": false
+  },
+  "paired_cases": [
+    {
+      "case_id": "supported-with-record",
+      "truth": "supported",
+      "direct": "supported",
+      "harness": "supported",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 11411,
+      "harness_tokens": 61090
+    },
+    {
+      "case_id": "contradicted-by-record",
+      "truth": "contradicted",
+      "direct": "contradicted",
+      "harness": "contradicted",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 11235,
+      "harness_tokens": 61360
+    },
+    {
+      "case_id": "record-unavailable-at-cutoff",
+      "truth": "unresolved",
+      "direct": "unresolved",
+      "harness": "unresolved",
+      "direct_correct": true,
+      "harness_correct": true,
+      "direct_tokens": 11140,
+      "harness_tokens": 24013
+    }
+  ],
+  "limitations": [
+    "A registered win on a small frozen pool is exploratory, not a population accuracy claim.",
+    "Both arms see supplied snapshots only; neither arm retrieved from the open web.",
+    "Historical cutoff isolation applies to supplied evidence, not to the model's training.",
+    "Invalid or failed outputs count as incorrect; nothing was retried."
+  ]
+}

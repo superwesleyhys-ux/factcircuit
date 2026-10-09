@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "registered_at": "2026-10-09T03:34:27.163739Z",
+  "harness_version": "0.3.2",
+  "harness_commit": "55c3fa7f587aa3fba1392f55d41adf137d0ddd55",
+  "cases_sha256": "8dd4f248282f220f6a20b630477c3648fbd032461ed0e543150b9312e9d323f6",
+  "gold_sha256": "64f50b56375f9b39645dc66046dbd687669d6b48463bcd944f29b4ca4d4748b6",
+  "case_order": [
+    "supported-with-record",
+    "contradicted-by-record",
+    "record-unavailable-at-cutoff"
+  ],
+  "arm_order": [
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ]
+  ],
+  "max_token_ratio": 2.0,
+  "max_model_calls": 12,
+  "success_rule": "harness accuracy strictly greater than direct; every harness output valid; harness total tokens at most 2.0 x direct"
+}

@@ -1,0 +1,154 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "arm": "direct",
+  "run_at": "2026-10-09T03:36:50.027950Z",
+  "settings": {
+    "tunnel": "local",
+    "model": null,
+    "reasoning_effort": "low",
+    "timeout": 180
+  },
+  "cases_sha256": "8dd4f248282f220f6a20b630477c3648fbd032461ed0e543150b9312e9d323f6",
+  "harness_commit": "55c3fa7f587aa3fba1392f55d41adf137d0ddd55",
+  "results": [
+    {
+      "case_id": "supported-with-record",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "supported",
+      "original_version_ids": [
+        "record-1"
+      ],
+      "error": null,
+      "rationale": "The original measurement record was available before the cutoff and directly establishes the measured result of 30 units.",
+      "basis": [
+        {
+          "version_id": "record-1",
+          "quote": "Original measurement record: the result was 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.22841891600001,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11337,
+            "cached_input_tokens": 0,
+            "output_tokens": 74,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11411
+          },
+          "local_skills_disabled": 112,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.228510167000422,
+      "tokens": {
+        "input_tokens": 11337,
+        "output_tokens": 74,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 11411
+      }
+    },
+    {
+      "case_id": "contradicted-by-record",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-2"
+      ],
+      "error": null,
+      "rationale": "The original measurement record was available before the cutoff and explicitly records 25 units, identifying the notice’s 30-unit figure as a misreport.",
+      "basis": [
+        {
+          "version_id": "record-2",
+          "quote": "Original measurement record: the result was 25 units; the notice misreported it."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.487203374999808,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11144,
+            "cached_input_tokens": 0,
+            "output_tokens": 91,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11235
+          },
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.487303042000349,
+      "tokens": {
+        "input_tokens": 11144,
+        "output_tokens": 91,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 11235
+      }
+    },
+    {
+      "case_id": "record-unavailable-at-cutoff",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "rationale": "The eligible notice reports 30 units, but the cited original measurement record is excluded and not supplied. The report alone cannot establish the measured result.",
+      "basis": [
+        {
+          "version_id": "notice-3",
+          "quote": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-3"
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.31619154100008,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11051,
+            "cached_input_tokens": 0,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11140
+          },
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.31632266700035,
+      "tokens": {
+        "input_tokens": 11051,
+        "output_tokens": 89,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "total_tokens": 11140
+      }
+    }
+  ]
+}
