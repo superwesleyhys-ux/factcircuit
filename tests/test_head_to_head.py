@@ -78,6 +78,30 @@ class HeadToHeadTests(unittest.TestCase):
         self.assertNotIn("labels", (self.run_dir / "REGISTRATION.json").read_text())
         self.assertEqual(["REGISTRATION.json"], [p.name for p in self.run_dir.iterdir()])
 
+    def test_register_records_harness_config_overrides_and_run_applies_them(self):
+        code, _, stderr = run(["register", str(self.cases), "--gold", str(self.gold),
+                               "--output", str(self.run_dir),
+                               "--harness-config", "defer_verification_until_provenance_complete=true",
+                               "--harness-config", "max_rounds=3"])
+        self.assertEqual(0, code, stderr)
+        registration = json.loads((self.run_dir / "REGISTRATION.json").read_text())
+        self.assertEqual({"defer_verification_until_provenance_complete": True, "max_rounds": 3},
+                         registration["harness_config"])
+        seen = []
+        with patch.object(head_to_head, "run_double_loop_trace",
+                          side_effect=lambda payload, **kw: seen.append(payload["config"]) or {
+                              "errors": [], "fact_status": "unresolved", "provenance_status": "partial",
+                              "stop_reason": "round_budget", "usage": {}, "origins": [],
+                              "execution": {"model_calls": [], "blocked_calls": []}}):
+            head_to_head.run_harness(CASES["cases"][0], DirectTransport({}), 12, registration["harness_config"])
+        self.assertTrue(seen[0]["defer_verification_until_provenance_complete"])
+        self.assertEqual(3, seen[0]["max_rounds"])
+        self.assertEqual(4, seen[0]["max_documents"])  # untouched case config survives
+        code, _, stderr = run(["register", str(self.cases), "--gold", str(self.gold),
+                               "--output", str(self.run_dir), "--harness-config", "broken"])
+        self.assertEqual(2, code)
+        self.assertIn("key=value", stderr)
+
     def test_register_refuses_gold_inside_repository(self):
         inside = head_to_head.ROOT / "examples" / "head_to_head_gold.example.json"
         code, _, stderr = run(["register", str(self.cases), "--gold", str(inside),
@@ -115,12 +139,23 @@ class HeadToHeadTests(unittest.TestCase):
         self.assertTrue(all(r["valid"] for r in harness["results"]))
         self.assertEqual(120, direct["results"][0]["tokens"]["total_tokens"])
         self.assertEqual(6, harness["results"][0]["tokens"]["calls"])
+        self.assertEqual("fixture-model", harness["settings"]["model"])
         self.assertNotIn("labels", (self.run_dir / "predictions-harness.json").read_text())
+        self.assertNotIn("report", harness["results"][0])
+        detail = json.loads((self.run_dir / "details" / "c1-harness.json").read_text())
+        self.assertEqual("original_material_located", detail["report"]["provenance_status"])
+        direct_detail = json.loads((self.run_dir / "details" / "c1-direct.json").read_text())
+        self.assertEqual(["notice", "record"], [m["version_id"] for m in direct_detail["packet"]["materials"]])
+        self.assertEqual("unresolved", direct_detail["raw_response"]["verdict"])
 
         code, stdout, stderr = run(["score", str(self.run_dir), "--cases", str(self.cases), "--gold", str(self.gold)])
         self.assertEqual(0, code, stderr)
         summary = json.loads((self.run_dir / "SUMMARY.json").read_text())
         self.assertEqual(0.0, summary["direct"]["accuracy"])
+        self.assertEqual(2, summary["direct"]["total_calls"])
+        self.assertEqual(12, summary["harness"]["total_calls"])
+        self.assertIn("packet_only_token_ratio_estimate", summary["verdict"])
+        self.assertIn("Mean input tokens per call", stdout)
         self.assertEqual(1.0, summary["harness"]["accuracy"])
         self.assertEqual(2, summary["harness"]["origin_correct"])
         self.assertEqual(2, summary["direct"]["abstained"])

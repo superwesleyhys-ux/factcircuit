@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "synthetic-dev-pool-002",
+  "labels": {
+    "copy-is-not-a-second-source": {
+      "truth": "unresolved",
+      "original_version_ids": null
+    },
+    "record-revised-before-cutoff": {
+      "truth": "contradicted",
+      "original_version_ids": [
+        "record-b-v2"
+      ]
+    },
+    "decoy-record-same-number": {
+      "truth": "unresolved",
+      "original_version_ids": null
+    },
+    "two-hop-supported": {
+      "truth": "supported",
+      "original_version_ids": [
+        "record-d"
+      ]
+    },
+    "two-hop-contradicted-by-record": {
+      "truth": "contradicted",
+      "original_version_ids": [
+        "record-e"
+      ]
+    },
+    "qualifier-site-mismatch": {
+      "truth": "contradicted",
+      "original_version_ids": [
+        "record-f"
+      ]
+    },
+    "notice-corrected-before-cutoff": {
+      "truth": "contradicted",
+      "original_version_ids": [
+        "record-g"
+      ]
+    },
+    "notice-only-no-record": {
+      "truth": "unresolved",
+      "original_version_ids": null
+    }
+  }
+}

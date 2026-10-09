@@ -140,6 +140,10 @@ class TraceConfig:
     max_documents: int = 30
     max_decomposition_calls: int = 30
     reanalyze_existing_versions: bool = True
+    # When true, a round whose state still carries a blocking provenance gap
+    # and still has round and document budget to pursue it skips verification;
+    # the verifier runs once the gap is resolved or retrieval can go no further.
+    defer_verification_until_provenance_complete: bool = False
 
 
 class TraceProvider(Protocol):
@@ -1127,8 +1131,20 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
         current_verifier_input = verification_input_fingerprint() if eligible else None
         fresh_verifier_evidence = (config.reanalyze_existing_versions
                                    or last_verified_input is None or new_eligible > 0)
+        # Deferral applies only while retrieval can still act on an open
+        # provenance gap: a round that returned nothing, or has no round or
+        # document budget left, verifies the state it has.
+        deferred = bool(
+            config.defer_verification_until_provenance_complete
+            and any(item.stage == "provenance" and item.blocking for item in gaps.values())
+            and received > 0
+            and round_number < config.max_rounds
+            and usage["documents"] < config.max_documents
+            and usage["decomposition_calls"] < config.max_decomposition_calls)
+        if deferred and verifier is not None and eligible:
+            event("verification_deferred", reason="open_provenance_gap")
         if (verifier is not None and eligible and fresh_verifier_evidence
-                and current_verifier_input != last_verified_input):
+                and current_verifier_input != last_verified_input and not deferred):
             usage["verification_calls"] += 1
             event("verification_started")
             try:
@@ -1224,7 +1240,7 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
             if previous_assessments != assessments:
                 event("assessment_changed", previous=previous_assessments, current=deepcopy(assessments),
                       basis=[asdict(s) for s in check.basis], world_basis=[asdict(s) for s in check.world_basis])
-        elif verifier is not None and eligible:
+        elif verifier is not None and eligible and not deferred:
             event("verification_skipped", reason=("unchanged_semantic_input"
                   if fresh_verifier_evidence else "unchanged_source_versions"))
         # Compare the frozen issue set with the post-verification active set.

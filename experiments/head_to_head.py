@@ -178,7 +178,9 @@ def run_direct(case: dict, transport) -> dict:
               "original_version_ids": None, "error": None}
     try:
         packet, materials = direct_packet(case)
+        result["packet"] = packet
         value = transport.generate("direct_verdict", DIRECT_INSTRUCTIONS, packet, DIRECT_SCHEMA)
+        result["raw_response"] = value
         validate_direct(value, materials)
         result.update(valid=True, verdict=value["verdict"],
                       original_version_ids=sorted(set(value["original_version_ids"])),
@@ -190,10 +192,12 @@ def run_direct(case: dict, transport) -> dict:
     return result
 
 
-def run_harness(case: dict, transport, max_model_calls: int) -> dict:
+def run_harness(case: dict, transport, max_model_calls: int, harness_config: dict | None = None) -> dict:
     started = time.perf_counter()
     payload = {key: case[key] for key in ("target", "materials", "initial_version_ids", "config")
                if key in case}
+    if harness_config:
+        payload["config"] = {**(payload.get("config") or {}), **harness_config}
     result = {"case_id": case["id"], "arm": "harness", "valid": False, "verdict": None,
               "original_version_ids": None, "error": None}
     try:
@@ -206,6 +210,7 @@ def run_harness(case: dict, transport, max_model_calls: int) -> dict:
                       stop_reason=report["stop_reason"], errors=report["errors"],
                       usage=report["usage"], calls=report["execution"]["model_calls"],
                       blocked_calls=report["execution"].get("blocked_calls"))
+        result["report"] = report
         if report["errors"]:
             result["error"] = "harness recorded errors; see errors"
     except (TunnelError, ValueError, TypeError) as exc:
@@ -216,11 +221,14 @@ def run_harness(case: dict, transport, max_model_calls: int) -> dict:
 
 
 def tokens(calls: list[dict]) -> dict:
-    total = {"input_tokens": 0, "output_tokens": 0, "calls": 0, "failed_calls": 0, "missing_usage": 0}
+    total = {"input_tokens": 0, "output_tokens": 0, "calls": 0, "failed_calls": 0, "missing_usage": 0,
+             "input_chars": 0}
     for call in calls:
         total["calls"] += 1
         if not call.get("success"):
             total["failed_calls"] += 1
+        if isinstance(call.get("input_chars"), int):
+            total["input_chars"] += call["input_chars"]
         usage = call.get("usage") or {}
         for key in ("input_tokens", "output_tokens"):
             value = usage.get(key)
@@ -229,10 +237,25 @@ def tokens(calls: list[dict]) -> dict:
             else:
                 total["missing_usage"] += 1
     total["total_tokens"] = total["input_tokens"] + total["output_tokens"]
+    total["mean_input_tokens_per_call"] = (total["input_tokens"] / total["calls"]) if total["calls"] else None
     return total
 
 
 # --- commands ---------------------------------------------------------------
+
+def parse_overrides(items: list[str] | None) -> dict:
+    """``key=value`` pairs for TraceConfig, values parsed as JSON (true, 3) or kept as text."""
+    overrides = {}
+    for item in items or ():
+        key, separator, value = item.partition("=")
+        if not separator or not key.strip():
+            raise ValueError(f"harness config override must look like key=value, got {item!r}")
+        try:
+            overrides[key.strip()] = json.loads(value)
+        except ValueError:
+            overrides[key.strip()] = value
+    return overrides
+
 
 def command_register(arguments) -> int:
     document = read_json(arguments.cases)
@@ -255,6 +278,7 @@ def command_register(arguments) -> int:
         "case_order": [case["id"] for case in cases],
         "arm_order": [ARMS if index % 2 == 0 else ARMS[::-1] for index in range(len(cases))],
         "max_token_ratio": arguments.max_token_ratio, "max_model_calls": arguments.max_model_calls,
+        "harness_config": parse_overrides(arguments.harness_config),
         "success_rule": ("harness accuracy strictly greater than direct; every harness output valid; "
                          f"harness total tokens at most {arguments.max_token_ratio} x direct"),
     }
@@ -275,6 +299,7 @@ def command_run(arguments) -> int:
     cases = {case["id"]: case for case in validate_cases(read_json(arguments.cases))}
     arms = ARMS if arguments.arm == "both" else (arguments.arm,)
     results = {arm: [] for arm in arms}
+    resolved = {}
     for index, case_id in enumerate(registration["case_order"]):
         case = cases[case_id]
         for arm in registration["arm_order"][index]:
@@ -282,16 +307,25 @@ def command_run(arguments) -> int:
                 continue
             transport = make_transport(arguments.tunnel, arguments.model, arguments.reasoning_effort,
                                        arguments.timeout)
+            resolved.setdefault("model", getattr(transport, "model", arguments.model))
+            resolved.setdefault("reasoning_effort", getattr(transport, "reasoning_effort",
+                                                            arguments.reasoning_effort))
             if arm == "direct":
                 result = run_direct(case, transport)
             else:
-                result = run_harness(case, transport, registration["max_model_calls"])
+                result = run_harness(case, transport, registration["max_model_calls"],
+                                     registration.get("harness_config") or None)
             result["tokens"] = tokens(result.get("calls", []))
+            detail = {key: result.pop(key) for key in ("report", "packet", "raw_response") if key in result}
+            if detail:
+                write_json(arguments.run / "details" / f"{case_id}-{arm}.json",
+                           {"case_id": case_id, "arm": arm, **detail})
             results[arm].append(result)
             print(f"{case_id} {arm}: verdict={result['verdict']} valid={result['valid']} "
                   f"tokens={result['tokens']['total_tokens']}", file=sys.stderr)
-    settings = {"tunnel": arguments.tunnel, "model": arguments.model,
-                "reasoning_effort": arguments.reasoning_effort, "timeout": arguments.timeout}
+    settings = {"tunnel": arguments.tunnel, "model": resolved.get("model", arguments.model),
+                "reasoning_effort": resolved.get("reasoning_effort", arguments.reasoning_effort),
+                "timeout": arguments.timeout}
     for arm, items in results.items():
         write_json(arguments.run / f"predictions-{arm}.json", {
             "benchmark_id": registration["benchmark_id"], "arm": arm, "run_at": now(),
@@ -325,6 +359,10 @@ def score_arm(items: list[dict], labels: dict[str, dict]) -> dict:
                      "total_tokens": item["tokens"]["total_tokens"], "calls": item["tokens"]["calls"],
                      "error": item.get("error")})
     total_tokens = sum(row["total_tokens"] for row in rows)
+    total_calls = sum(item["tokens"]["calls"] for item in items)
+    total_input_tokens = sum(item["tokens"]["input_tokens"] for item in items)
+    total_input_chars = sum(item["tokens"].get("input_chars", 0) for item in items)
+    total_output_tokens = sum(item["tokens"]["output_tokens"] for item in items)
     n = len(items)
     return {"cases": n, "correct": correct, "accuracy": correct / n if n else None,
             "false_claims": false_total, "false_claims_identified": false_found,
@@ -332,7 +370,12 @@ def score_arm(items: list[dict], labels: dict[str, dict]) -> dict:
             "abstained": abstained, "invalid_outputs": invalid,
             "traceable": traceable, "origin_correct": origin_correct,
             "origin_accuracy": origin_correct / traceable if traceable else None,
-            "total_tokens": total_tokens, "rows": rows}
+            "total_tokens": total_tokens, "total_calls": total_calls,
+            "mean_input_tokens_per_call": (total_input_tokens / total_calls) if total_calls else None,
+            "packet_chars_sent": total_input_chars,
+            # Rough provider-independent estimate of what the harness itself sent.
+            "packet_only_tokens_estimate": round(total_input_chars / 4) + total_output_tokens,
+            "rows": rows}
 
 
 def command_score(arguments) -> int:
@@ -357,11 +400,15 @@ def command_score(arguments) -> int:
     scores = {arm: score_arm(document["results"], labels) for arm, document in predictions.items()}
     direct, harness = scores["direct"], scores["harness"]
     ratio = (harness["total_tokens"] / direct["total_tokens"]) if direct["total_tokens"] else None
+    packet_ratio = ((harness["packet_only_tokens_estimate"] / direct["packet_only_tokens_estimate"])
+                    if direct["packet_only_tokens_estimate"] else None)
     verdict = {
         "accuracy_strictly_higher": (harness["accuracy"] or 0) > (direct["accuracy"] or 0),
         "all_harness_outputs_valid": harness["invalid_outputs"] == 0,
         "within_token_ratio": ratio is not None and ratio <= registration["max_token_ratio"],
         "token_ratio": ratio,
+        "packet_only_token_ratio_estimate": packet_ratio,
+        "token_rule_basis": "provider-reported input+output tokens, including any fixed per-call overhead",
     }
     verdict["harness_wins_by_registered_rule"] = all(
         verdict[key] for key in ("accuracy_strictly_higher", "all_harness_outputs_valid", "within_token_ratio"))
@@ -375,9 +422,9 @@ def command_score(arguments) -> int:
                        "harness_tokens": row["total_tokens"]})
     summary = {
         "benchmark_id": registration["benchmark_id"], "scored_at": now(),
-        "registration": {key: registration[key] for key in
+        "registration": {key: registration.get(key) for key in
                          ("registered_at", "harness_version", "harness_commit", "success_rule",
-                          "max_token_ratio", "max_model_calls")},
+                          "max_token_ratio", "max_model_calls", "harness_config")},
         "settings": predictions["direct"]["settings"],
         "direct": {key: value for key, value in direct.items() if key != "rows"},
         "harness": {key: value for key, value in harness.items() if key != "rows"},
@@ -402,10 +449,18 @@ def render_summary(summary: dict) -> str:
         return "n/a" if value is None else f"{100 * value:.0f}%"
 
     ratio = "n/a" if verdict["token_ratio"] is None else f"{verdict['token_ratio']:.2f}x"
+    packet = verdict.get("packet_only_token_ratio_estimate")
+    packet_ratio = "n/a" if packet is None else f"{packet:.2f}x"
+
+    def mean(arm):
+        value = arm.get("mean_input_tokens_per_call")
+        return "n/a" if value is None else f"{value:,.0f}"
     lines = [f"# Head-to-head: {summary['benchmark_id']}", "",
-             f"Model `{summary['settings']['model']}` via `{summary['settings']['tunnel']}`; "
+             f"Model `{summary['settings']['model']}` via `{summary['settings']['tunnel']}` "
+             f"(reasoning effort `{summary['settings']['reasoning_effort']}`); "
              f"harness {summary['registration']['harness_version']} "
-             f"({(summary['registration']['harness_commit'] or 'uncommitted')[:12]}).", "",
+             f"({(summary['registration']['harness_commit'] or 'uncommitted')[:12]}); "
+             f"harness config overrides `{json.dumps(summary['registration'].get('harness_config') or {})}`.", "",
              "| Measure | Direct | Harness |", "|---|---:|---:|",
              f"| Accuracy | {direct['correct']}/{direct['cases']} ({pct(direct['accuracy'])}) "
              f"| {harness['correct']}/{harness['cases']} ({pct(harness['accuracy'])}) |",
@@ -415,9 +470,15 @@ def render_summary(summary: dict) -> str:
              f"| {harness['origin_correct']}/{harness['traceable']} |",
              f"| Abstained | {direct['abstained']} | {harness['abstained']} |",
              f"| Invalid outputs | {direct['invalid_outputs']} | {harness['invalid_outputs']} |",
-             f"| Total tokens | {direct['total_tokens']:,} | {harness['total_tokens']:,} |", "",
+             f"| Total tokens | {direct['total_tokens']:,} | {harness['total_tokens']:,} |",
+             f"| Model calls | {direct['total_calls']} | {harness['total_calls']} |",
+             f"| Mean input tokens per call | {mean(direct)} | {mean(harness)} |",
+             f"| Packet chars sent by harness code | {direct['packet_chars_sent']:,} "
+             f"| {harness['packet_chars_sent']:,} |", "",
              f"Token ratio harness/direct: {ratio} "
-             f"(registered limit {summary['registration']['max_token_ratio']}x).", "",
+             f"(registered limit {summary['registration']['max_token_ratio']}x, provider-reported). "
+             f"Packet-only estimate (chars/4 + output): {packet_ratio}. A mean input count far above "
+             f"the packet size is the provider's fixed per-call overhead, paid once per call.", "",
              f"**Harness wins by the registered rule: {verdict['harness_wins_by_registered_rule']}** "
              f"(accuracy higher: {verdict['accuracy_strictly_higher']}, all valid: "
              f"{verdict['all_harness_outputs_valid']}, within tokens: {verdict['within_token_ratio']}).",
@@ -439,6 +500,9 @@ def main(argv=None) -> int:
     register.add_argument("--output", type=Path, required=True)
     register.add_argument("--max-token-ratio", type=float, default=2.0)
     register.add_argument("--max-model-calls", type=int, default=12)
+    register.add_argument("--harness-config", action="append", metavar="KEY=VALUE",
+                          help="TraceConfig override applied to every case in the harness arm, e.g. "
+                               "defer_verification_until_provenance_complete=true; recorded in the registration")
     run = sub.add_parser("run", help="run one or both arms with one tunnel and model")
     run.add_argument("run", type=Path)
     run.add_argument("--cases", type=Path, required=True)

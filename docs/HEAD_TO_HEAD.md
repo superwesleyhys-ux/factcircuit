@@ -36,9 +36,26 @@ python experiments/head_to_head.py score runs/h2h-001 --cases CASES.json --gold 
 
 `register` records the SHA-256 of the case file and of the gold file, the
 harness version and commit, the case order, an alternating arm order, the
-model-call cap, and the token ratio that a win must respect. `run` refuses a
-case file whose hash changed. `score` refuses a gold file whose hash differs
-from the registration, and refuses arms that were run with different settings.
+model-call cap, the token ratio that a win must respect, and any
+`--harness-config KEY=VALUE` overrides (TraceConfig fields applied to every
+case in the harness arm, so one case file can be registered twice to A/B a
+setting such as `defer_verification_until_provenance_complete=true`). `run`
+refuses a case file whose hash changed and writes `details/<case>-<arm>.json`
+with the full harness report, or the direct packet and raw response, for
+failure analysis. `score` refuses a gold file whose hash differs from the
+registration, and refuses arms that were run with different settings.
+
+## Reading the token numbers
+
+The rule compares provider-reported input plus output tokens, because that is
+what the model actually processed. Through the local Codex route every call
+carries the CLI's own fixed prompt (about 11k input tokens per call in
+dev-001, with packets of a few hundred characters), so a multi-call harness
+pays that overhead once per call and a 2× ratio is unreachable for any case
+that fetches even one document. `SUMMARY.md` therefore also shows model calls,
+mean input tokens per call, the characters the harness code itself sent, and a
+packet-only estimate (chars/4 plus output tokens). Register a ratio that
+matches the tunnel you are measuring; the API tunnels carry no such overhead.
 
 ## Registered success rule
 
@@ -73,8 +90,21 @@ file before inference, and never edit the case file after registration.
 
 - `examples/head_to_head_cases.json`: three synthetic cases (supported,
   contradicted by the record, record unavailable at the cutoff).
-- `examples/head_to_head_gold.example.json`: matching labels. Copy it outside
-  the repository before registering; `register` refuses a gold file inside the
+- `examples/head_to_head_dev_pool.json`: eight synthetic cases built around
+  the surfaces above: a verbatim copy at a second URL, a same-URL revision
+  before the cutoff, a decoy record with the same number, two-hop lineage
+  with and without a contradicting original, a site qualifier mismatch, a
+  corrected notice, and a notice with no record.
+- `examples/*_gold.example.json`: matching labels. Copy one outside the
+  repository before registering; `register` refuses a gold file inside the
   checkout.
+
+## Published runs
+
+- [dev-001](../reports/head-to-head-dev-001/SUMMARY.md): `gpt-6-astra`, local
+  route, low effort, the three-case example pool. 3/3 versus 3/3, origins 2/2
+  versus 2/2; harness 146,463 tokens versus 33,786 (4.34×, about 11k of which
+  is fixed Codex overhead on each of the 5 versus 1 calls). The registered
+  rule was not met. Synthetic; checks mechanics, not accuracy.
 
 Synthetic pools check the mechanics. They are not real-news accuracy evidence.
