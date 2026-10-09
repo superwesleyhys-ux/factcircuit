@@ -8,7 +8,7 @@ import unittest
 from newsverify.double_loop import DoubleLoopDecomposer, DoubleLoopVerifier, run_double_loop_trace
 from newsverify.provenance import MaterialVersion, ReplayTraceProvider, Target, TraceConfig, run_provenance
 from tests.test_double_loop import (
-    D1, ScriptedTransport, analysis, edge, material, payload, quote,
+    D1, D2, ScriptedTransport, analysis, edge, material, payload, quote,
     resolution, script, verdict,
 )
 
@@ -61,6 +61,43 @@ class IncrementalDoubleLoopTests(unittest.TestCase):
         self.assertNotIn(marker, json.dumps(checks[1]))
         self.assertTrue(checks[1]["verification_history"])
         self.assertTrue(any(o["action"] == "reanalysis_skipped" for o in report["operations"]))
+
+    def test_deferred_verification_waits_for_the_open_provenance_gap(self):
+        data = incremental_payload()
+        data["config"]["defer_verification_until_provenance_complete"] = True
+        steps = incremental_script()
+        del steps[1]  # no verification while need-primary is open and retrieval can act
+        steps[-1] = ("verify", verdict("supported", basis=[quote(D2)],
+                                       rationale="The original record confirms 30 units."))
+        report, transport = self.run_steps(steps, data)
+        self.assertEqual(["decompose", "select", "decompose", "verify"],
+                         [c["stage"] for c in report["execution"]["model_calls"]])
+        self.assertEqual(1, report["usage"]["verification_calls"])
+        self.assertEqual("supported", report["fact_status"])
+        self.assertEqual("original_material_located", report["provenance_status"])
+        self.assertEqual("complete", report["stop_reason"])
+        self.assertTrue(any(o["action"] == "verification_deferred" for o in report["operations"]))
+        check = [x["packet"]["context"] for x in transport.inputs if x["stage"] == "verify"][0]
+        self.assertEqual(["notice", "record"], sorted(m["version_id"] for m in check["materials"]))
+
+    def test_deferred_verification_still_runs_when_retrieval_cannot_continue(self):
+        data = incremental_payload()
+        data["config"]["defer_verification_until_provenance_complete"] = True
+        data["materials"] = [deepcopy(D1)]  # the linked record is not in the pool
+        steps = [incremental_script()[0], ("verify", verdict())]
+        report, transport = self.run_steps(steps, data)
+        self.assertEqual(["decompose", "verify"], [c["stage"] for c in report["execution"]["model_calls"]])
+        self.assertEqual("unresolved", report["fact_status"])
+        self.assertEqual("partial", report["provenance_status"])
+        self.assertNotEqual("complete", report["stop_reason"])
+
+    def test_deferral_is_off_by_default_and_must_be_boolean(self):
+        data = incremental_payload()
+        data["config"]["defer_verification_until_provenance_complete"] = "yes"
+        with self.assertRaises(ValueError):
+            run_double_loop_trace(data, transport=ScriptedTransport([]))
+        report, _ = self.run_steps(incremental_script())
+        self.assertFalse(any(o["action"] == "verification_deferred" for o in report["operations"]))
 
     def test_new_source_cannot_automatically_promote_old_declared_edge(self):
         steps = incremental_script()

@@ -25,8 +25,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5954,
-      "sha256": "63fa57cfcac8061158595a60ed7382fcbdf4f5af1b01aaecf1e77dee5e7c8bee"
+      "bytes": 6735,
+      "sha256": "9aef2d62936313f4bbaad50c92399b0d4efc026caa9c7496921bd3d5b00c652c"
     },
     {
       "path": "CLAUDE.md",
@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 19301,
-      "sha256": "99d59b3ea2ad03bb2523741d9ab42bf015d0c014b7e51969ec89d066fe3294c4"
+      "bytes": 19554,
+      "sha256": "a7b14b7b5f380f2d7bb6a5a57a0de7e2ec51b06923e5cb30dde4c530711ea311"
     },
     {
       "path": "SECURITY.md",
@@ -80,8 +80,8 @@
     },
     {
       "path": "docs/HEAD_TO_HEAD.md",
-      "bytes": 3901,
-      "sha256": "9814ba9e68a10ce51e0a8e5a3bd56800142bcf627d3620eccb2091b99f98262f"
+      "bytes": 5704,
+      "sha256": "ddacba121845234116baf9aeff07450529c3452b576221a17cb98e57206db76b"
     },
     {
       "path": "docs/HISTORICAL_2023_BENCHMARK.md",
@@ -182,6 +182,16 @@
       "path": "examples/head_to_head_cases.json",
       "bytes": 4217,
       "sha256": "8dd4f248282f220f6a20b630477c3648fbd032461ed0e543150b9312e9d323f6"
+    },
+    {
+      "path": "examples/head_to_head_dev_pool.json",
+      "bytes": 13082,
+      "sha256": "975b9e461eb720f9b7e6a5d4a7f72f4ccb3e035627925ef35034f93e9b9ff89c"
+    },
+    {
+      "path": "examples/head_to_head_dev_pool_gold.example.json",
+      "bytes": 1043,
+      "sha256": "d4a33dbcd13abf61ed553fec6d4766d10606b6ecd293471133c73e679926a149"
     },
     {
       "path": "examples/head_to_head_gold.example.json",
@@ -300,8 +310,8 @@
     },
     {
       "path": "experiments/head_to_head.py",
-      "bytes": 24485,
-      "sha256": "71e96136ee2135f9924bf8579e0bd7979ce28bcd7d519ed371dc8ed7af625a8e"
+      "bytes": 28646,
+      "sha256": "9a198aabbbf6e911098302f678eb94881e0bf01326b6b947cab698e60d6ed786"
     },
     {
       "path": "experiments/historical-2023-pilot2-v2/README.md",
@@ -910,8 +920,8 @@
     },
     {
       "path": "newsverify/double_loop.py",
-      "bytes": 37096,
-      "sha256": "595cdc6789cf0202c1d4ef2cb9c2d73e86b73d4bb5d5430052854cbe1766be77"
+      "bytes": 37168,
+      "sha256": "b8539f950bf7dbdbe0d35b48c3355080ad17d6c1c8448a9eb46dc6f6e45679f5"
     },
     {
       "path": "newsverify/early_risk.py",
@@ -975,8 +985,8 @@
     },
     {
       "path": "newsverify/provenance.py",
-      "bytes": 67241,
-      "sha256": "56054e61acfb18abd13e62f77a626d44f621addecc62b0062c8f30a8e08fa2b8"
+      "bytes": 68311,
+      "sha256": "b62894769e0335fc94ee891fa3bb4a67b1374b6ca9a20909b5576a39c8679476"
     },
     {
       "path": "newsverify/providers.py",
@@ -1000,8 +1010,8 @@
     },
     {
       "path": "newsverify/tunnels.py",
-      "bytes": 27861,
-      "sha256": "ca2b0da5d195538e29f63438cf78edea6839a3ed6b6099e51fa054794affd42f"
+      "bytes": 28077,
+      "sha256": "69e11c236270593eb69f587d7470950813802a30a06aab635bf1bf40259e1ad7"
     },
     {
       "path": "pyproject.toml",
@@ -1112,6 +1122,31 @@
       "path": "reports/first-run-v0.3.2.json",
       "bytes": 388,
       "sha256": "c0f45853b8c5de6a42c5c27f0eac1f99e7a3f262eb6c6b81024c8ba0203d1989"
+    },
+    {
+      "path": "reports/head-to-head-dev-001/REGISTRATION.json",
+      "bytes": 832,
+      "sha256": "17b3e7e424cda28d4498c531e03f5a46ee0ed00f07b398ef1aa05bc801985c3f"
+    },
+    {
+      "path": "reports/head-to-head-dev-001/SUMMARY.json",
+      "bytes": 2620,
+      "sha256": "bf3801d58a64cd3d0a9e7119688c2cf343d1574490952764b9890dc86467110a"
+    },
+    {
+      "path": "reports/head-to-head-dev-001/SUMMARY.md",
+      "bytes": 1145,
+      "sha256": "32767cd1d7e19c80525f6f1e24a59298a6ff3302b5e367f63bdeb19aadf14de7"
+    },
+    {
+      "path": "reports/head-to-head-dev-001/predictions-direct.json",
+      "bytes": 4562,
+      "sha256": "e709645ec7c134cee185d7fdb863f7213ca17f80e8654c44e5f89893ba12b12f"
+    },
+    {
+      "path": "reports/head-to-head-dev-001/predictions-harness.json",
+      "bytes": 9437,
+      "sha256": "8df910f360ced76f49a8f61a52ed1d9441257f4428e3609a3e943fb627df2d73"
     },
     {
       "path": "reports/historical-2023-audit-v0.3.1.json",
@@ -2940,8 +2975,8 @@
     },
     {
       "path": "tests/test_head_to_head.py",
-      "bytes": 10238,
-      "sha256": "c7c2dfe5d2f392d8d2435e3cb61eae97032845753b17d76209c4322034502f71"
+      "bytes": 12834,
+      "sha256": "4995711d02bd10ba1bec3a130d84f69fa2edee34621ce9a8e51b39f57d789a9f"
     },
     {
       "path": "tests/test_historical_collector_guard.py",
@@ -2965,8 +3000,8 @@
     },
     {
       "path": "tests/test_incremental_double_loop.py",
-      "bytes": 10675,
-      "sha256": "fd3d1f53a877103d71f0b18e47fc9449cf838355fe49b09e62360c41b1b90b29"
+      "bytes": 13098,
+      "sha256": "a60233db54c65dfd4ed70744de80fc510d96cd937d31c47214e5ff00fc2e8385"
     },
     {
       "path": "tests/test_local.py",

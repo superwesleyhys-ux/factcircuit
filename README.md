@@ -217,9 +217,12 @@ historical cutoff contract can be audited offline with
 direct single call and double-loop harness, over a frozen case pool with the
 gold file sealed by hash before inference, and declares a win only by a
 registered rule (strictly higher accuracy, every output valid, tokens within a
-registered ratio). See the [protocol](docs/HEAD_TO_HEAD.md). No head-to-head
-run has been published yet; the sections below are the earlier, mostly
-corrected, comparisons.
+registered ratio). See the [protocol](docs/HEAD_TO_HEAD.md). The first
+run, [dev-001](reports/head-to-head-dev-001/SUMMARY.md), is a three-case
+synthetic mechanics check with Astra: 3/3 against 3/3, and 4.34× the
+provider-reported tokens, most of it the Codex CLI's fixed per-call prompt
+paid on 5 calls instead of 1. It establishes nothing about accuracy. The
+sections below are the earlier, mostly corrected, comparisons.
 
 ## What the experiments show so far
 

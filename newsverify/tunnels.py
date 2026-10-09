@@ -153,6 +153,9 @@ class _Tunnel:
         self.calls.append(record)
         try:
             instructions, evidence = _prompt_parts(instructions, packet)
+            # What the harness itself sent; provider-reported input tokens also
+            # include the provider's own fixed per-call overhead.
+            record["input_chars"] = len(instructions) + len(evidence)
             if not isinstance(schema, dict):
                 raise TunnelError("The output schema must be a JSON object.")
             try:

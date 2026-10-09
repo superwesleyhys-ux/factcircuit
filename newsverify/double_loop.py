@@ -584,8 +584,9 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
     options = dict(payload.get("config") or {})
     options.setdefault("reanalyze_existing_versions", False)
     config = from_mapping(TraceConfig, options, "config")
-    if type(config.reanalyze_existing_versions) is not bool:
-        raise ValueError("reanalyze_existing_versions must be a boolean")
+    for name in ("reanalyze_existing_versions", "defer_verification_until_provenance_complete"):
+        if type(getattr(config, name)) is not bool:
+            raise ValueError(f"{name} must be a boolean")
     for name in ("max_rounds", "max_documents", "max_decomposition_calls"):
         if type(getattr(config, name)) is not int or getattr(config, name) < 1:
             raise ValueError(f"{name} must be a positive integer")

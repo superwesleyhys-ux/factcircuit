@@ -5,6 +5,17 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Added `TraceConfig.defer_verification_until_provenance_complete` (default
+  off): while a blocking provenance gap is open and retrieval can still act
+  on it, the round skips verification; the verifier runs once the gap is
+  resolved or retrieval can go no further. Saves one model call per fetched
+  document in the double loop. Tunnel call records now carry `input_chars`.
+- `head_to_head.py` records the resolved model, saves per-case detail files
+  (full harness report; direct packet and raw response), accepts registered
+  `--harness-config` overrides for A/B runs, and reports model calls, mean
+  input tokens per call and a packet-only estimate beside the provider-token
+  rule. Added `examples/head_to_head_dev_pool.json` and published
+  `reports/head-to-head-dev-001`.
 - Added an `anthropic` tunnel (Anthropic Messages API, `ANTHROPIC_API_KEY`,
   `--model` or `ANTHROPIC_MODEL`) so Claude models run the same harness
   prompts; schema compliance comes from one forced tool call. The OpenAI and
