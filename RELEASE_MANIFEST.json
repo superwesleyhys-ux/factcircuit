@@ -25,8 +25,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7516,
-      "sha256": "ff28ca5c2209f0deb14494f83c64c605d3d54d918635194f22491dc9b2b1d618"
+      "bytes": 7806,
+      "sha256": "556fcb4d8dd32fb85519037bbb8746a79251fb72e1a9de1403b04d1553759de7"
     },
     {
       "path": "CLAUDE.md",
@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 19896,
-      "sha256": "34aa69add88164aee06a318c13b10ef0200f17e3532d5f98c1f5b42001f5edcd"
+      "bytes": 20179,
+      "sha256": "e663561a5b80e7613ac4d83aea41ef6b7cbde7bf63eafed98b922c6a957a3135"
     },
     {
       "path": "SECURITY.md",
@@ -80,8 +80,8 @@
     },
     {
       "path": "docs/HEAD_TO_HEAD.md",
-      "bytes": 7585,
-      "sha256": "44314b307ddf8c3521231188fc389ff5ffb5b6e4b79e0d86cc552df1038af5f4"
+      "bytes": 8821,
+      "sha256": "519b0c3f2913da289b5d9d7ccc9b6a3080bf3510df9c886ac51b815f212a8fd0"
     },
     {
       "path": "docs/HISTORICAL_2023_BENCHMARK.md",
@@ -310,8 +310,8 @@
     },
     {
       "path": "experiments/head_to_head.py",
-      "bytes": 29771,
-      "sha256": "6905ae00ed23d763b0b51e78855ea7e95e3f7297179bfab61f807d80048202b7"
+      "bytes": 31408,
+      "sha256": "60b0a58e775da37b2725b62887e60205e84bb0ff83a449d95dbdd0cab6e41b0b"
     },
     {
       "path": "experiments/historical-2023-pilot2-v2/README.md",
@@ -1357,6 +1357,111 @@
       "path": "reports/head-to-head-dev-002b/predictions-harness.json",
       "bytes": 28575,
       "sha256": "8a46d8742424334203141f4804fbede50eb2830f54384385474a2076fd9c051a"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/REGISTRATION.json",
+      "bytes": 1242,
+      "sha256": "80af3aa97f5771c6daca1d797954eba7a23e7a8305ae00948272c7ac02a28fdf"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/SUMMARY.json",
+      "bytes": 4528,
+      "sha256": "716f2a4af9c289e6fe8d69bddebac018c9b3e31380cfaa62636a58b42b781237"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/SUMMARY.md",
+      "bytes": 1968,
+      "sha256": "3cfcea9d4c69b43501812c30e54907813dcd7331d7ee5a05523b28c4db8a8109"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/copy-is-not-a-second-source-direct.json",
+      "bytes": 1985,
+      "sha256": "766fd26f7ecaf2c4a67c50c991844f494cdf3164e2b61961cd4ca8a251358808"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/copy-is-not-a-second-source-harness.json",
+      "bytes": 85912,
+      "sha256": "be71f41658167c92820e7801825be0665d98f82b197eb0df9cccb7b917ac443e"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/decoy-record-same-number-direct.json",
+      "bytes": 1895,
+      "sha256": "21171d558338b528b6e07c542b9cd9aa71ffca6677337b5f9da4ec67af476cb6"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/decoy-record-same-number-harness.json",
+      "bytes": 54989,
+      "sha256": "23337fb9358195b0e7736da7134f336303ec3e41c6f395da9b349e822ce22197"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/notice-corrected-before-cutoff-direct.json",
+      "bytes": 2224,
+      "sha256": "7bd435194410b8bba6ceb63fe21eed770ef59e60d05cb099b1b8dd72119570e3"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/notice-corrected-before-cutoff-harness.json",
+      "bytes": 127162,
+      "sha256": "0fbc75255aa33759f28fb8109f372edeca6e1a6c78ad1dfd6025fcbbc36a3271"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/notice-only-no-record-direct.json",
+      "bytes": 1178,
+      "sha256": "e8c5d3c19bcc446b6950a90d0974d824f6b9e287b0ea8cd8fc93c194ee3cc51a"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/notice-only-no-record-harness.json",
+      "bytes": 47582,
+      "sha256": "1532492779d2b68c5877124850dacfc4b6bcb166a65125886d6b9c625193f9a7"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/qualifier-site-mismatch-direct.json",
+      "bytes": 1548,
+      "sha256": "178595d6a15b42e7c8dfe4044240ed9b70c4f02856bc884822be4cdd5bbd5705"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/qualifier-site-mismatch-harness.json",
+      "bytes": 83272,
+      "sha256": "03d172f30ec751d2f77ce6149fc22380b73bfae29dfc4542e06426769528ebb8"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/record-revised-before-cutoff-direct.json",
+      "bytes": 2101,
+      "sha256": "d49e44ffae77eff8a9d6950bd11843b24d168aefb09317bfce2ea41ea2cdb912"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/record-revised-before-cutoff-harness.json",
+      "bytes": 142548,
+      "sha256": "4673537f379d7c95897cea47aa2189662c9d883a893d5d6039e0b3af15b00859"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/two-hop-contradicted-by-record-direct.json",
+      "bytes": 2394,
+      "sha256": "caac32627a1cf10644ac70921dd60a2f11f077e98c85c63787a19ed2feed5385"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/two-hop-contradicted-by-record-harness.json",
+      "bytes": 132892,
+      "sha256": "ae3b6d5662e0de780463351d572c93b8fba3e9e5609dda5f2047fadcbcb96bc6"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/two-hop-supported-direct.json",
+      "bytes": 1991,
+      "sha256": "9cd273fe8399c94faedc88703995d43068c5674da73ce71a7154bd3f4b46c8a0"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/details/two-hop-supported-harness.json",
+      "bytes": 123274,
+      "sha256": "a7464d71cdf28da3128dd5faaf1217781a9d7c1d11e00f3183ec8cac48f9f6cb"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/predictions-direct.json",
+      "bytes": 13945,
+      "sha256": "8ea9dc870378946254d64c938e78392fae9747e8a662e053e47fad693a2a341f"
+    },
+    {
+      "path": "reports/head-to-head-dev-003/predictions-harness.json",
+      "bytes": 30052,
+      "sha256": "c8e405424a81037a1248de1f665e3b7be369554592616e07e5c7005f6cd0e388"
     },
     {
       "path": "reports/historical-2023-audit-v0.3.1.json",
@@ -3185,8 +3290,8 @@
     },
     {
       "path": "tests/test_head_to_head.py",
-      "bytes": 13990,
-      "sha256": "94df7ddbe1c23f68b70ecf424205eb4116ac422dff0f4d215752ec94a9ebd93c"
+      "bytes": 15070,
+      "sha256": "d8e4b1391e60b13658574f7dbc26b83d30e0b643168af74e8c226ccacbb96c44"
     },
     {
       "path": "tests/test_historical_collector_guard.py",
