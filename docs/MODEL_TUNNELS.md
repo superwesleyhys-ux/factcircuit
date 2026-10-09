@@ -1,21 +1,30 @@
 # Model execution tunnels
 
-The harness runs locally and provides two model execution paths. Model-backed
-execution uses `trace-model`; its default tunnel is `local`.
+The harness runs locally and provides three model execution paths. Model-backed
+execution uses `trace-model`, `early-risk`, `double-loop` and `trace-news`; the
+default tunnel is `local`.
 
-| Setting | Local tunnel | API tunnel |
-| --- | --- | --- |
-| Selection | Default or `--tunnel local` | Explicit `--tunnel api` |
-| Execution | Local `codex exec` subprocess | HTTPS OpenAI Responses API |
-| Authentication | Existing Codex login | `OPENAI_API_KEY` environment variable |
-| Inference | May use a hosted model through Codex | Hosted model |
-| Extra Python dependencies | None | None with system CA roots; optional `certifi` if roots are missing |
-| Fallback to another tunnel | Never | Never |
+| Setting | Local tunnel | API tunnel | Anthropic tunnel |
+| --- | --- | --- | --- |
+| Selection | Default or `--tunnel local` | Explicit `--tunnel api` | Explicit `--tunnel anthropic` |
+| Execution | Local `codex exec` subprocess | HTTPS OpenAI Responses API | HTTPS Anthropic Messages API |
+| Authentication | Existing Codex login | `OPENAI_API_KEY` environment variable | `ANTHROPIC_API_KEY` environment variable |
+| Model | `--model`, `FACTCIRCUIT_MODEL`, or `gpt-6-astra` | `--model` or `OPENAI_MODEL` | `--model` or `ANTHROPIC_MODEL` |
+| Schema contract | `--output-schema` | `json_schema` strict text format | One forced tool call whose `input_schema` is the harness schema |
+| Reasoning effort | Forwarded (`model_reasoning_effort`) | Forwarded (`reasoning.effort`) | Recorded, not forwarded (`reasoning_effort_forwarded: false`) |
+| Extra Python dependencies | None | None with system CA roots; optional `certifi` if roots are missing | Same as API |
+| Fallback to another tunnel | Never | Never | Never |
 
 ```bash
 python -m factcircuit trace-model examples/model_trace.json --tunnel local --output reports/model-local.json
 python -m factcircuit trace-model examples/model_trace.json --tunnel api --model YOUR_API_MODEL --output reports/model-api.json
+python -m factcircuit trace-model examples/model_trace.json --tunnel anthropic --model YOUR_CLAUDE_MODEL --output reports/model-anthropic.json
 ```
+
+A missing Codex CLI or API key is reported when the tunnel is constructed, so
+every command exits 2 before any model work. The Anthropic tunnel does not
+combine a provider reasoning mode with the forced tool call; a comparison
+across tunnels must therefore state that the reasoning settings differ.
 
 Both commands accept the same local JSON schema (`target`, `rounds`, optional
 `config`). `--model` and `--reasoning-effort` select model settings.

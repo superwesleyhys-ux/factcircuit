@@ -176,6 +176,17 @@ class ModelCommandSetupTests(unittest.TestCase):
             self.assertEqual(2, code)
             self.assertIn("OPENAI_API_KEY", stderr)
 
+    def test_anthropic_tunnel_requires_model_then_key(self):
+        with patch.dict("os.environ", {}, clear=True):
+            code, _, stderr = run(["trace-model", str(EXAMPLES / "model_trace.json"),
+                                   "--tunnel", "anthropic"])
+            self.assertEqual(2, code)
+            self.assertIn("ANTHROPIC_MODEL", stderr)
+            code, _, stderr = run(["trace-model", str(EXAMPLES / "model_trace.json"),
+                                   "--tunnel", "anthropic", "--model", "claude-model"])
+            self.assertEqual(2, code)
+            self.assertIn("ANTHROPIC_API_KEY", stderr)
+
     def test_double_loop_subcommand_forwards_options(self):
         expected = {"errors": [], "marker": "forwarded"}
         with patch("newsverify.double_loop.run_double_loop_trace", return_value=expected) as runner:

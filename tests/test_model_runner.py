@@ -113,6 +113,29 @@ class ModelTraceTests(unittest.TestCase):
         self.assertEqual(report["fact_status"], "supported")
         self.assertEqual(report["errors"], [])
 
+    def test_anthropic_is_selected_only_by_explicit_option_and_needs_its_own_model(self):
+        tunnel = FakeTunnel(kind="anthropic")
+        with patch("newsverify.model_runner.LocalTunnel") as local, \
+                patch("newsverify.model_runner.APITunnel") as api, \
+                patch("newsverify.model_runner.AnthropicTunnel", return_value=tunnel) as anthropic:
+            with patch.dict(os.environ, {"OPENAI_MODEL": "other", "FACTCIRCUIT_MODEL": "local"}, clear=True), \
+                    self.assertRaisesRegex(ValueError, "ANTHROPIC_MODEL"):
+                run_model_trace(snapshot(), tunnel="anthropic")
+            anthropic.assert_not_called()
+            with patch.dict(os.environ, {"ANTHROPIC_MODEL": "claude-model"}, clear=True):
+                report = run_model_trace(snapshot(), tunnel="anthropic")
+        local.assert_not_called()
+        api.assert_not_called()
+        anthropic.assert_called_once_with(model="claude-model", reasoning_effort="medium", timeout=180)
+        self.assertEqual(report["execution"]["tunnel"], "anthropic")
+        self.assertEqual(report["errors"], [])
+
+    def test_unknown_tunnel_is_rejected_before_any_construction(self):
+        with patch("newsverify.model_runner.LocalTunnel") as local, \
+                self.assertRaisesRegex(ValueError, "tunnel must be one of local, api, anthropic"):
+            run_model_trace(snapshot(), tunnel="openai")
+        local.assert_not_called()
+
     def test_both_tunnels_receive_identical_prompts_packets_and_schemas(self):
         local = FakeTunnel()
         api = FakeTunnel(kind="api")

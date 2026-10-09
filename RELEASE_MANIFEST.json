@@ -25,13 +25,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5448,
-      "sha256": "1c15b03e579364b6dc7f1f800963cbb72276e5b6c8ef6b987f7925595f84345b"
+      "bytes": 5954,
+      "sha256": "63fa57cfcac8061158595a60ed7382fcbdf4f5af1b01aaecf1e77dee5e7c8bee"
     },
     {
       "path": "CLAUDE.md",
-      "bytes": 1481,
-      "sha256": "e8ad0a78345df865b604dbe95dbe02594725af8b817ec0c71aea7d138facdb8f"
+      "bytes": 1693,
+      "sha256": "c7d77324633f6bd4c896cc4c87a7544a32ad15b7dbd34c66487523a7dec6159d"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 18645,
-      "sha256": "161bb518a505a162755bb3c534e171e624b58e974524dee4cad0caa52fbef240"
+      "bytes": 19301,
+      "sha256": "99d59b3ea2ad03bb2523741d9ab42bf015d0c014b7e51969ec89d066fe3294c4"
     },
     {
       "path": "SECURITY.md",
@@ -79,14 +79,19 @@
       "sha256": "795b5663cc3097b6c65862a2b7ad098b75e2112fffe66196e4afc72fd9e4bd54"
     },
     {
+      "path": "docs/HEAD_TO_HEAD.md",
+      "bytes": 3901,
+      "sha256": "9814ba9e68a10ce51e0a8e5a3bd56800142bcf627d3620eccb2091b99f98262f"
+    },
+    {
       "path": "docs/HISTORICAL_2023_BENCHMARK.md",
       "bytes": 8446,
       "sha256": "5f36a4d9a73c48bf39c32989adaebeca686a6b0dccf39901da964d45c8e426d8"
     },
     {
       "path": "docs/MODEL_TUNNELS.md",
-      "bytes": 6490,
-      "sha256": "bb3152acb14ef80f90db819f779600ef7b8ed751cb98b1117a14f41abdfc8e7a"
+      "bytes": 7488,
+      "sha256": "9e705aea002a5e3b4e2ebc36be3ec422b3f632d2f36ef662de2c88b4e4d6ca4a"
     },
     {
       "path": "docs/NEWS_TRACING.md",
@@ -172,6 +177,16 @@
       "path": "examples/evaluation_predictions.json",
       "bytes": 1579,
       "sha256": "9cc51b85d7c1a2bebabfd96c502c4ffa722dd1f48c29a182a88555a56df8a225"
+    },
+    {
+      "path": "examples/head_to_head_cases.json",
+      "bytes": 4217,
+      "sha256": "8dd4f248282f220f6a20b630477c3648fbd032461ed0e543150b9312e9d323f6"
+    },
+    {
+      "path": "examples/head_to_head_gold.example.json",
+      "bytes": 436,
+      "sha256": "64f50b56375f9b39645dc66046dbd687669d6b48463bcd944f29b4ca4d4748b6"
     },
     {
       "path": "examples/local-claim.json",
@@ -865,8 +880,8 @@
     },
     {
       "path": "newsverify/cli.py",
-      "bytes": 12463,
-      "sha256": "e91a602c7b40c843266daa2da5c407fcccdd67e4d19c9efb4f1ec8c25ba41cc4"
+      "bytes": 12569,
+      "sha256": "58e11238732dcf928134dfe40ecf9e620dbe5d6b30aea7221bb52adf6a5cef9c"
     },
     {
       "path": "newsverify/comparison.py",
@@ -890,13 +905,13 @@
     },
     {
       "path": "newsverify/double_loop.py",
-      "bytes": 37277,
-      "sha256": "96fc23351418a282f722fc530a8b69b724fb0f514ce5657e2be64917d68cc2b4"
+      "bytes": 37096,
+      "sha256": "595cdc6789cf0202c1d4ef2cb9c2d73e86b73d4bb5d5430052854cbe1766be77"
     },
     {
       "path": "newsverify/early_risk.py",
-      "bytes": 11607,
-      "sha256": "3e32bc3a1c074a2bbe481b1a54dbaed508daed55c0a69591049f577734140b0f"
+      "bytes": 11467,
+      "sha256": "9534aaae40f5a08d02059d9935689b6d450da2927bb3bd4b0ef63b4f0d295717"
     },
     {
       "path": "newsverify/evaluation.py",
@@ -910,8 +925,8 @@
     },
     {
       "path": "newsverify/model_runner.py",
-      "bytes": 10244,
-      "sha256": "d93978885283b86658c38100db8fd4e3d031b3a4d2695976730b76b925bab282"
+      "bytes": 11113,
+      "sha256": "f16a1798d6467eb085bb914d60f00aca03be99359b8ced86f8a165fe99798a26"
     },
     {
       "path": "newsverify/news_client.py",
@@ -950,8 +965,8 @@
     },
     {
       "path": "newsverify/news_tracing_runner.py",
-      "bytes": 38413,
-      "sha256": "4fb95b1f26fb8f41b665f41a5794aa6a120d69005dfb10aeecf388cdc9b4ba8e"
+      "bytes": 38216,
+      "sha256": "258064ecd3109274f4b8b16b8fd6c95ed834933111a26c513be52ec989bd099e"
     },
     {
       "path": "newsverify/provenance.py",
@@ -980,8 +995,8 @@
     },
     {
       "path": "newsverify/tunnels.py",
-      "bytes": 22760,
-      "sha256": "f50c3dfb9553834a32f0dd4d69a8e65127fd682b2ffe22a481b1104fddcb0b63"
+      "bytes": 27861,
+      "sha256": "ca2b0da5d195538e29f63438cf78edea6839a3ed6b6099e51fa054794affd42f"
     },
     {
       "path": "pyproject.toml",
@@ -2880,8 +2895,8 @@
     },
     {
       "path": "tests/test_cli.py",
-      "bytes": 9533,
-      "sha256": "047cf6beae18f5ac344194b480708304bf849bee92f71664fecc290943309e85"
+      "bytes": 10155,
+      "sha256": "d8d8e1eccd33a36e5238949c2d141a03c53b1d6099a638b6451d75a6e80c8658"
     },
     {
       "path": "tests/test_comparison.py",
@@ -2917,6 +2932,11 @@
       "path": "tests/test_harness.py",
       "bytes": 15788,
       "sha256": "29b646b9a26bc30e98558792eddb8c8770772855e1bdb18f97e2fd568a2aa2a5"
+    },
+    {
+      "path": "tests/test_head_to_head.py",
+      "bytes": 10238,
+      "sha256": "c7c2dfe5d2f392d8d2435e3cb61eae97032845753b17d76209c4322034502f71"
     },
     {
       "path": "tests/test_historical_collector_guard.py",
@@ -2960,8 +2980,8 @@
     },
     {
       "path": "tests/test_model_runner.py",
-      "bytes": 21062,
-      "sha256": "83a453872d638cf72e88e8f0ede14c61f31b7b5f016801da887eeb5d57ef336e"
+      "bytes": 22512,
+      "sha256": "77cae625630cd6eba35adc0c5f39f00664066d720c16bcb1572d90e8c3e2dd5f"
     },
     {
       "path": "tests/test_news_client.py",
@@ -2980,8 +3000,8 @@
     },
     {
       "path": "tests/test_news_tracing_integration.py",
-      "bytes": 45456,
-      "sha256": "d9fc23426a9eae3c02493c53dbb010feb8b51e56528220ad749fed476514b0d1"
+      "bytes": 45466,
+      "sha256": "85960131bbc4d7ba4e9e1022d8a8659545a46d6a323396edbd1dc571c77ee578"
     },
     {
       "path": "tests/test_optimization_scorer.py",
@@ -3035,8 +3055,8 @@
     },
     {
       "path": "tests/test_tunnels.py",
-      "bytes": 28603,
-      "sha256": "6237c30229dc675e835ecd2481525b4366058426ddd9c9541df9cfb9d1e6505d"
+      "bytes": 35347,
+      "sha256": "ff5d2a172bcde42f0b8393323c1e26c0da750dc64f368c06b9a6d0b486eedacc"
     }
   ]
 }

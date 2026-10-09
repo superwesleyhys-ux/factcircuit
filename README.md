@@ -157,15 +157,16 @@ checking arithmetic. They are not model-performance results.
 
 ### Model-backed tracing
 
-`trace-model`, `trace-news`, `early-risk`, and the double-loop runner run the
-same decomposition and verification adapters through one of two tunnels.
+`trace-model`, `trace-news`, `early-risk`, and `double-loop` run the same
+decomposition and verification adapters through one of three tunnels.
 **Local is the default**: it runs the installed Codex CLI with its existing
 login and uses `gpt-6-astra` unless `--model` or `FACTCIRCUIT_MODEL` selects
 another locally available model. Local orchestration does not mean offline
-weights; the hosted model is still reached through Codex. The API tunnel is
-selected explicitly with `--tunnel api`, reads `OPENAI_API_KEY` from the
-environment, and requires `--model` or `OPENAI_MODEL`. Neither tunnel falls
-back to the other.
+weights; the hosted model is still reached through Codex. `--tunnel api` uses
+the OpenAI Responses API (`OPENAI_API_KEY`, `--model` or `OPENAI_MODEL`);
+`--tunnel anthropic` uses the Anthropic Messages API (`ANTHROPIC_API_KEY`,
+`--model` or `ANTHROPIC_MODEL`), so Claude models can run the same harness.
+No tunnel falls back to another.
 
 ```bash
 # Extract claims and verify facts over supplied snapshots
@@ -209,6 +210,16 @@ historical cutoff contract can be audited offline with
 `experiments/historical_compare.py audit`. See the
 [first-run guide](docs/QUICKSTART.md) and the
 [historical 2023 benchmark contract](docs/HISTORICAL_2023_BENCHMARK.md).
+
+### Head-to-head: bare model versus harness
+
+`experiments/head_to_head.py` runs one model through one tunnel in two arms,
+direct single call and double-loop harness, over a frozen case pool with the
+gold file sealed by hash before inference, and declares a win only by a
+registered rule (strictly higher accuracy, every output valid, tokens within a
+registered ratio). See the [protocol](docs/HEAD_TO_HEAD.md). No head-to-head
+run has been published yet; the sections below are the earlier, mostly
+corrected, comparisons.
 
 ## What the experiments show so far
 
@@ -354,6 +365,7 @@ Current boundaries are deliberate and visible:
 - [FactCircuit specification index](docs/FACTCIRCUIT_SPEC.md)
 - [Installation, configuration, and complete first run](docs/QUICKSTART.md)
 - [Model execution tunnels](docs/MODEL_TUNNELS.md)
+- [Head-to-head protocol](docs/HEAD_TO_HEAD.md)
 - [News tracing](docs/NEWS_TRACING.md)
 - [Trace adapter API](docs/TRACE_ADAPTER.md)
 - [Evaluation schema](docs/EVALUATION_SCHEMA.md)

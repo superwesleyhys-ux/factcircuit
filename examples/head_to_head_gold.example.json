@@ -1,0 +1,21 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "labels": {
+    "supported-with-record": {
+      "truth": "supported",
+      "original_version_ids": [
+        "record-1"
+      ]
+    },
+    "contradicted-by-record": {
+      "truth": "contradicted",
+      "original_version_ids": [
+        "record-2"
+      ]
+    },
+    "record-unavailable-at-cutoff": {
+      "truth": "unresolved",
+      "original_version_ids": null
+    }
+  }
+}

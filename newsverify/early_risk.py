@@ -12,8 +12,8 @@ from datetime import datetime
 import re
 from typing import Any
 
-from .model_runner import _settings
-from .tunnels import APITunnel, LocalTunnel
+from .model_runner import check_tunnel, make_transport
+from .tunnels import AnthropicTunnel, APITunnel, LocalTunnel  # noqa: F401  patched in tests
 
 
 VERDICTS = {"supported", "contradicted", "conflicting", "unresolved"}
@@ -219,11 +219,8 @@ def run_early_risk(case: dict, *, tunnel: str = "local", model: str | None = Non
     """Run one model call and return validated fact and risk outputs with exact spans."""
     packet, passages = build_packet(case)
     if transport is None:
-        if tunnel not in {"local", "api"}:
-            raise ValueError("tunnel must be local or api")
-        model, reasoning_effort = _settings(model, reasoning_effort, tunnel=tunnel)
-        transport = (LocalTunnel if tunnel == "local" else APITunnel)(
-            model=model, reasoning_effort=reasoning_effort, timeout=timeout)
+        check_tunnel(tunnel)
+        transport = make_transport(tunnel, model, reasoning_effort, timeout, namespace=globals())
     value = transport.generate("early_risk", POLICY, packet, RESULT_SCHEMA)
     _validate_response(value, passages)
     evidence = []
