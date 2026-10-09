@@ -20,8 +20,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 2070,
-      "sha256": "f833d22962bfcecb1b2aa8257eecec8688f865e5d2eaac2e7afeb322b2226d56"
+      "bytes": 2155,
+      "sha256": "13dc86d093118ab026bc47da551eaca59005476a614cdfc4b1c8b2adbcb2cb34"
     },
     {
       "path": "CHANGELOG.md",
@@ -297,6 +297,11 @@
       "path": "experiments/harness-optimization-20260909/summarize_round.py",
       "bytes": 44026,
       "sha256": "41c9231559c68fc359be0985ca551a4f4a194f94ea29bc9e66ef5384fb742e47"
+    },
+    {
+      "path": "experiments/head_to_head.py",
+      "bytes": 24484,
+      "sha256": "774153556088e52fe08cb7b68de7e0b122ac4463faabd1fd268109f9f0b26e3e"
     },
     {
       "path": "experiments/historical-2023-pilot2-v2/README.md",
