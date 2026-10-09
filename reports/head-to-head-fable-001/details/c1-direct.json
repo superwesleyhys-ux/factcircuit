@@ -1,0 +1,48 @@
+{
+  "case_id": "c1",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-a"
+    },
+    "materials": [
+      {
+        "version_id": "notice-a",
+        "url": "https://fixture.example/notice-a",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      },
+      {
+        "version_id": "bulletin-mirror",
+        "url": "https://mirror.example/bulletin/30-units",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-a",
+        "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement."
+      },
+      {
+        "version_id": "bulletin-mirror",
+        "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement."
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "Both supplied materials are available before the 2026-01-03 cutoff, but they are identical secondary bulletins that attribute the 30-unit result to a statement and cite the same external record (https://fixture.example/record-a), which is not supplied. notice-a is the target's own source, and bulletin-mirror is a shared-source copy of it, so it adds no independent confirmation. A report stating the claim does not make it true, and no primary measurement record or independent evidence is in the packet, so the claim cannot be settled either way."
+  }
+}

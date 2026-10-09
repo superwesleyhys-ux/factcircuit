@@ -1,0 +1,10 @@
+{
+  "c1": "copy-is-not-a-second-source",
+  "c2": "record-revised-before-cutoff",
+  "c3": "decoy-record-same-number",
+  "c4": "two-hop-supported",
+  "c5": "two-hop-contradicted-by-record",
+  "c6": "qualifier-site-mismatch",
+  "c7": "notice-corrected-before-cutoff",
+  "c8": "notice-only-no-record"
+}

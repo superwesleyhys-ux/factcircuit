@@ -1,0 +1,50 @@
+{
+  "case_id": "c6",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The result at site A was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-f"
+    },
+    "materials": [
+      {
+        "version_id": "notice-f",
+        "url": "https://fixture.example/notice-f",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports that site A produced 30 units. Source: https://fixture.example/record-f"
+      },
+      {
+        "version_id": "record-f",
+        "url": "https://fixture.example/record-f",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record: site B produced 30 units; site A produced 20 units."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-f",
+        "quote": "Measurement record: site B produced 30 units; site A produced 20 units."
+      },
+      {
+        "version_id": "notice-f",
+        "quote": "The notice reports that site A produced 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-f"
+    ],
+    "rationale": "Both materials are available before the 2026-01-03 cutoff. The target's source, notice-f, cites record-f as its source. That primary measurement record attributes 30 units to site B and 20 units to site A, so the exact target (30 units at site A) is directly negated by the record the notice itself relies on; the notice appears to have transposed the site attribution. The notice is a downstream report of the same record and cannot independently confirm a figure the record does not contain. The eligible evidence settles the claim against the target."
+  }
+}

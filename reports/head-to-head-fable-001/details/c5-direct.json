@@ -1,0 +1,63 @@
+{
+  "case_id": "c5",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-e"
+    },
+    "materials": [
+      {
+        "version_id": "notice-e",
+        "url": "https://fixture.example/notice-e",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/summary-e"
+      },
+      {
+        "version_id": "summary-e",
+        "url": "https://fixture.example/summary-e",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Summary of the measurement campaign: the result was 30 units. Source: https://fixture.example/record-e"
+      },
+      {
+        "version_id": "record-e",
+        "url": "https://fixture.example/record-e",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Original measurement record: the result was 25 units."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-e",
+        "quote": "Original measurement record: the result was 25 units."
+      },
+      {
+        "version_id": "summary-e",
+        "quote": "Summary of the measurement campaign: the result was 30 units."
+      },
+      {
+        "version_id": "notice-e",
+        "quote": "The notice reports a measurement of 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-e"
+    ],
+    "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-e, cites summary-e, which cites record-e as the original measurement record. That primary record states the result was 25 units, not the 30 units asserted by the target. The summary and notice are downstream reports of the same record; they share a single source and cannot independently confirm a figure that the cited primary record itself does not contain. The primary record directly negates the exact target figure, so the eligible evidence settles the claim against the target."
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "benchmark_id": "synthetic-dev-pool-003",
+  "arm": "direct",
+  "run_at": "2026-10-09T05:11:41.939437Z",
+  "settings": {
+    "tunnel": "mailbox",
+    "model": "claude-fable-5.1 (serving agent via mailbox)",
+    "reasoning_effort": "agent",
+    "timeout": 180
+  },
+  "cases_sha256": "3216f951af89a7f34c4b952f7b81251042b73fd378871879f5d623bbb1da43b5",
+  "harness_commit": "4d3224442db606751f2f9faca7a94422fcbb32fb",
+  "results": [
+    {
+      "case_id": "c1",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "Both supplied materials are available before the 2026-01-03 cutoff, but they are identical secondary bulletins that attribute the 30-unit result to a statement and cite the same external record (https://fixture.example/record-a), which is not supplied. notice-a is the target's own source, and bulletin-mirror is a shared-source copy of it, so it adds no independent confirmation. A report stating the claim does not make it true, and no primary measurement record or independent evidence is in the packet, so the claim cannot be settled either way.",
+      "basis": [
+        {
+          "version_id": "notice-a",
+          "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement."
+        },
+        {
+          "version_id": "bulletin-mirror",
+          "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 76.511145215,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 2776,
+          "output_chars": 894
+        }
+      ],
+      "wall_seconds": 76.511259983,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 2776,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c2",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-b-v1",
+        "record-b-v2"
+      ],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "The target's source, notice-b, is a secondary notice that cites the measurement record at https://fixture.example/record-b. The primary record itself is supplied in two versions, both available before the 2026-01-03 cutoff. Version 1 (2026-01-01) stated 30 units, but version 2 (2026-01-02), issued as a correction by the same record, states that a transcription error was found and the result was 25 units, not 30. The corrected primary record supersedes the earlier version and directly negates the exact figure in the target; the notice merely repeats the superseded figure and is not independent evidence. The eligible evidence therefore settles the claim against the target.",
+      "basis": [
+        {
+          "version_id": "record-b-v2",
+          "quote": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+        },
+        {
+          "version_id": "record-b-v1",
+          "quote": "Measurement record (version 1): the result was 30 units."
+        },
+        {
+          "version_id": "notice-b",
+          "quote": "The notice reports a measurement of 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 20.503377470000032,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 3021,
+          "output_chars": 1129
+        }
+      ],
+      "wall_seconds": 20.503527555999995,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 3021,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c3",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "Both materials are available before the 2026-01-03 cutoff. notice-c is the target's own source and only reports the figure while citing an external record (https://fixture.example/record-x) that is not supplied; a report stating a claim does not make it true. record-y is a primary measurement record, but it is for experiment Y and explicitly states that experiment X is not covered, so its 30-unit figure neither confirms nor contradicts the target, which concerns experiment X. No primary record for experiment X is in the packet, so the eligible evidence cannot settle the claim.",
+      "basis": [
+        {
+          "version_id": "notice-c",
+          "quote": "The notice reports that experiment X produced 30 units."
+        },
+        {
+          "version_id": "record-y",
+          "quote": "Experiment X is not covered by this record."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 16.518439889000035,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 2713,
+          "output_chars": 845
+        }
+      ],
+      "wall_seconds": 16.51854872499996,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 2713,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c4",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "supported",
+      "original_version_ids": [
+        "record-d"
+      ],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-d, cites summary-d, which in turn cites record-d; following that citation chain, the original measurement record is supplied and states exactly the target figure, 30 units, with no later correction or opposing material in the packet. The summary and notice are downstream reports of the same record and add no independent confirmation, but the primary record itself is sufficient to establish the exact target.",
+      "basis": [
+        {
+          "version_id": "record-d",
+          "quote": "Original measurement record: the result was 30 units."
+        },
+        {
+          "version_id": "summary-d",
+          "quote": "Summary of the measurement campaign: the result was 30 units."
+        },
+        {
+          "version_id": "notice-d",
+          "quote": "The notice reports a measurement of 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 14.502470259000006,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 3009,
+          "output_chars": 876
+        }
+      ],
+      "wall_seconds": 14.502615692999996,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 3009,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c5",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-e"
+      ],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-e, cites summary-e, which cites record-e as the original measurement record. That primary record states the result was 25 units, not the 30 units asserted by the target. The summary and notice are downstream reports of the same record; they share a single source and cannot independently confirm a figure that the cited primary record itself does not contain. The primary record directly negates the exact target figure, so the eligible evidence settles the claim against the target.",
+      "basis": [
+        {
+          "version_id": "record-e",
+          "quote": "Original measurement record: the result was 25 units."
+        },
+        {
+          "version_id": "summary-e",
+          "quote": "Summary of the measurement campaign: the result was 30 units."
+        },
+        {
+          "version_id": "notice-e",
+          "quote": "The notice reports a measurement of 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 16.50259405899999,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 3009,
+          "output_chars": 952
+        }
+      ],
+      "wall_seconds": 16.50270579299996,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 3009,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c6",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-f"
+      ],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "Both materials are available before the 2026-01-03 cutoff. The target's source, notice-f, cites record-f as its source. That primary measurement record attributes 30 units to site B and 20 units to site A, so the exact target (30 units at site A) is directly negated by the record the notice itself relies on; the notice appears to have transposed the site attribution. The notice is a downstream report of the same record and cannot independently confirm a figure the record does not contain. The eligible evidence settles the claim against the target.",
+      "basis": [
+        {
+          "version_id": "record-f",
+          "quote": "Measurement record: site B produced 30 units; site A produced 20 units."
+        },
+        {
+          "version_id": "notice-f",
+          "quote": "The notice reports that site A produced 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 16.502709234000008,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 2667,
+          "output_chars": 849
+        }
+      ],
+      "wall_seconds": 16.502809715000012,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 2667,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c7",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-g"
+      ],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-g-v1, cites record-g, and that primary measurement record states the result was 25 units, not 30. The same notice was then corrected on 2026-01-02 (notice-g-v2), explicitly retracting the 30-unit figure and aligning with the record's 25 units. The original notice is the only material stating 30 units, it is a downstream report of a record that says otherwise, and its own issuer has withdrawn the figure, so there is no unresolved opposition. The eligible evidence settles the claim against the target.",
+      "basis": [
+        {
+          "version_id": "record-g",
+          "quote": "Original measurement record: the result was 25 units."
+        },
+        {
+          "version_id": "notice-g-v2",
+          "quote": "Correction: an earlier version of this notice said 30 units; the record states 25 units."
+        },
+        {
+          "version_id": "notice-g-v1",
+          "quote": "The notice reports a measurement of 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 16.50289650000002,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 3042,
+          "output_chars": 1005
+        }
+      ],
+      "wall_seconds": 16.503020714,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 3042,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c8",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "evidence_scope": "pool",
+      "rationale": "The only supplied material is notice-h, the target's own source, available before the 2026-01-03 cutoff. It is a secondary notice that reports the figure and cites an external record (https://fixture.example/record-h) that is not supplied. A report stating a claim does not make it true, and there is no primary measurement record, independent confirmation, or opposing material in the packet, so the eligible evidence cannot settle the claim either way.",
+      "basis": [
+        {
+          "version_id": "notice-h",
+          "quote": "The notice reports a measurement of 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "timeout_seconds": 1800.0,
+          "wall_seconds": 14.502414390000013,
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "input_chars": 2331,
+          "output_chars": 622
+        }
+      ],
+      "wall_seconds": 14.502535585999965,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 2,
+        "input_chars": 2331,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    }
+  ]
+}

@@ -5,6 +5,12 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Added `experiments/head_to_head_mailbox.py`, a mailbox transport that lets
+  any agent with file access serve as the model in both arms. Published
+  `reports/head-to-head-fable-001` (Claude Fable 5.1 as the model: 8/8
+  against 8/8). The dev pool now uses opaque ids (`synthetic-dev-pool-003`);
+  dev-002/003 carried a label leak through descriptive ids, recorded in
+  `docs/HEAD_TO_HEAD.md`.
 - `head_to_head.py register --direct-scope {pool,initial}` chooses whether
   the direct arm receives every eligible material (same-evidence test) or
   only the initial materials (retrieval test); the registration and summary

@@ -1,0 +1,63 @@
+{
+  "case_id": "c7",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-g-v1"
+    },
+    "materials": [
+      {
+        "version_id": "notice-g-v1",
+        "url": "https://fixture.example/notice-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-g"
+      },
+      {
+        "version_id": "notice-g-v2",
+        "url": "https://fixture.example/notice-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Correction: an earlier version of this notice said 30 units; the record states 25 units. Source: https://fixture.example/record-g"
+      },
+      {
+        "version_id": "record-g",
+        "url": "https://fixture.example/record-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Original measurement record: the result was 25 units."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-g",
+        "quote": "Original measurement record: the result was 25 units."
+      },
+      {
+        "version_id": "notice-g-v2",
+        "quote": "Correction: an earlier version of this notice said 30 units; the record states 25 units."
+      },
+      {
+        "version_id": "notice-g-v1",
+        "quote": "The notice reports a measurement of 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-g"
+    ],
+    "rationale": "All three materials are available before the 2026-01-03 cutoff. The target's source, notice-g-v1, cites record-g, and that primary measurement record states the result was 25 units, not 30. The same notice was then corrected on 2026-01-02 (notice-g-v2), explicitly retracting the 30-unit figure and aligning with the record's 25 units. The original notice is the only material stating 30 units, it is a downstream report of a record that says otherwise, and its own issuer has withdrawn the figure, so there is no unresolved opposition. The eligible evidence settles the claim against the target."
+  }
+}

@@ -1,0 +1,758 @@
+{
+  "benchmark_id": "synthetic-dev-pool-003",
+  "arm": "harness",
+  "run_at": "2026-10-09T05:29:34.804923Z",
+  "settings": {
+    "tunnel": "mailbox",
+    "model": "claude-fable-5.1 (serving agent via mailbox)",
+    "reasoning_effort": "agent",
+    "timeout": 180
+  },
+  "cases_sha256": "3216f951af89a7f34c4b952f7b81251042b73fd378871879f5d623bbb1da43b5",
+  "harness_commit": "4d3224442db606751f2f9faca7a94422fcbb32fb",
+  "results": [
+    {
+      "case_id": "c1",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "lineage_certified": false,
+      "provenance_status": "partial",
+      "stop_reason": "empty_results",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 1,
+        "unique_versions": 1,
+        "decomposition_calls": 1,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 220.530901734,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4196
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 20.503028583999992,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1824
+        },
+        {
+          "call_number": 3,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.503298793,
+          "timeout_seconds": 1800.0,
+          "input_chars": 7503
+        },
+        {
+          "call_number": 4,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.502971075999994,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2239
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 286.043836103,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 4,
+        "failed_calls": 0,
+        "missing_usage": 8,
+        "input_chars": 15762,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c2",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-b-v1",
+        "record-b-v2"
+      ],
+      "error": null,
+      "lineage_certified": true,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 3,
+        "unique_versions": 3,
+        "decomposition_calls": 3,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.50338259600005,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4154
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 40.514460079999935,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1981
+        },
+        {
+          "call_number": 3,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 92.51295780999999,
+          "timeout_seconds": 1800.0,
+          "input_chars": 6648
+        },
+        {
+          "call_number": 4,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.504058094000015,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2106
+        },
+        {
+          "call_number": 5,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 48.50704852600006,
+          "timeout_seconds": 1800.0,
+          "input_chars": 12068
+        },
+        {
+          "call_number": 6,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.505062907000024,
+          "timeout_seconds": 1800.0,
+          "input_chars": 17226
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 257.0562006910001,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 6,
+        "failed_calls": 0,
+        "missing_usage": 12,
+        "input_chars": 44183,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c3",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "lineage_certified": false,
+      "provenance_status": "partial",
+      "stop_reason": "empty_results",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 1,
+        "unique_versions": 1,
+        "decomposition_calls": 1,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.503768123999976,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4178
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 30.50435642499997,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1730
+        },
+        {
+          "call_number": 3,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.503484136999987,
+          "timeout_seconds": 1800.0,
+          "input_chars": 7290
+        },
+        {
+          "call_number": 4,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.50348661299995,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2132
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 102.018994486,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 4,
+        "failed_calls": 0,
+        "missing_usage": 8,
+        "input_chars": 15330,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c4",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "supported",
+      "original_version_ids": [
+        "record-d"
+      ],
+      "error": null,
+      "lineage_certified": true,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 3,
+        "unique_versions": 3,
+        "decomposition_calls": 3,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 28.504323215,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4155
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.50361437899994,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2056
+        },
+        {
+          "call_number": 3,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 40.50656092600002,
+          "timeout_seconds": 1800.0,
+          "input_chars": 6895
+        },
+        {
+          "call_number": 4,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 20.503241281999976,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1682
+        },
+        {
+          "call_number": 5,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 30.504727066999976,
+          "timeout_seconds": 1800.0,
+          "input_chars": 10138
+        },
+        {
+          "call_number": 6,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.503605640999922,
+          "timeout_seconds": 1800.0,
+          "input_chars": 13617
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 167.03340722199994,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 6,
+        "failed_calls": 0,
+        "missing_usage": 12,
+        "input_chars": 38543,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c5",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-e"
+      ],
+      "error": null,
+      "lineage_certified": true,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 3,
+        "unique_versions": 3,
+        "decomposition_calls": 3,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.503871780000054,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4155
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.504292422999924,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2056
+        },
+        {
+          "call_number": 3,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.504515529999935,
+          "timeout_seconds": 1800.0,
+          "input_chars": 6895
+        },
+        {
+          "call_number": 4,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 22.503866711,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1683
+        },
+        {
+          "call_number": 5,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 42.50680115299997,
+          "timeout_seconds": 1800.0,
+          "input_chars": 10140
+        },
+        {
+          "call_number": 6,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.504096996000044,
+          "timeout_seconds": 1800.0,
+          "input_chars": 14389
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 165.03919777800002,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 6,
+        "failed_calls": 0,
+        "missing_usage": 12,
+        "input_chars": 39318,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c6",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-f"
+      ],
+      "error": null,
+      "lineage_certified": true,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 2,
+        "documents": 2,
+        "unique_versions": 2,
+        "decomposition_calls": 2,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.50627054000006,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4160
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 20.503343070000028,
+          "timeout_seconds": 1800.0,
+          "input_chars": 1689
+        },
+        {
+          "call_number": 3,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 32.504788824000116,
+          "timeout_seconds": 1800.0,
+          "input_chars": 6645
+        },
+        {
+          "call_number": 4,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 20.503257463999944,
+          "timeout_seconds": 1800.0,
+          "input_chars": 10722
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 98.02373131600007,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 4,
+        "failed_calls": 0,
+        "missing_usage": 8,
+        "input_chars": 23216,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c7",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-g"
+      ],
+      "error": null,
+      "lineage_certified": true,
+      "provenance_status": "original_material_located",
+      "stop_reason": "complete",
+      "errors": [],
+      "usage": {
+        "rounds": 2,
+        "documents": 2,
+        "unique_versions": 2,
+        "decomposition_calls": 2,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.50455487499994,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4160
+        },
+        {
+          "call_number": 2,
+          "stage": "select",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 28.50403476700012,
+          "timeout_seconds": 1800.0,
+          "input_chars": 2002
+        },
+        {
+          "call_number": 3,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 34.50410938599998,
+          "timeout_seconds": 1800.0,
+          "input_chars": 6710
+        },
+        {
+          "call_number": 4,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 24.503752244999987,
+          "timeout_seconds": 1800.0,
+          "input_chars": 10646
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 114.02138416899993,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 4,
+        "failed_calls": 0,
+        "missing_usage": 8,
+        "input_chars": 23518,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    },
+    {
+      "case_id": "c8",
+      "arm": "harness",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "lineage_certified": false,
+      "provenance_status": "partial",
+      "stop_reason": "empty_results",
+      "errors": [],
+      "usage": {
+        "rounds": 3,
+        "documents": 1,
+        "unique_versions": 1,
+        "decomposition_calls": 1,
+        "verification_calls": 1
+      },
+      "calls": [
+        {
+          "call_number": 1,
+          "stage": "decompose",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.50347173299997,
+          "timeout_seconds": 1800.0,
+          "input_chars": 4154
+        },
+        {
+          "call_number": 2,
+          "stage": "verify",
+          "tunnel": "mailbox",
+          "model": "claude-fable-5.1 (serving agent via mailbox)",
+          "reasoning_effort": "agent",
+          "success": true,
+          "status": "completed",
+          "usage": null,
+          "wall_seconds": 26.50386443100001,
+          "timeout_seconds": 1800.0,
+          "input_chars": 7246
+        }
+      ],
+      "blocked_calls": [],
+      "wall_seconds": 53.010244991000036,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "calls": 2,
+        "failed_calls": 0,
+        "missing_usage": 4,
+        "input_chars": 11400,
+        "total_tokens": 0,
+        "mean_input_tokens_per_call": 0.0
+      }
+    }
+  ]
+}

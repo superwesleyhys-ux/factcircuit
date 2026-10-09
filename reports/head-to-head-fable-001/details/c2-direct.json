@@ -1,0 +1,64 @@
+{
+  "case_id": "c2",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-b"
+    },
+    "materials": [
+      {
+        "version_id": "notice-b",
+        "url": "https://fixture.example/notice-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-b"
+      },
+      {
+        "version_id": "record-b-v1",
+        "url": "https://fixture.example/record-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record (version 1): the result was 30 units."
+      },
+      {
+        "version_id": "record-b-v2",
+        "url": "https://fixture.example/record-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+      }
+    ],
+    "excluded_version_ids": [],
+    "evidence_scope": "pool"
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-b-v2",
+        "quote": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+      },
+      {
+        "version_id": "record-b-v1",
+        "quote": "Measurement record (version 1): the result was 30 units."
+      },
+      {
+        "version_id": "notice-b",
+        "quote": "The notice reports a measurement of 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-b-v1",
+      "record-b-v2"
+    ],
+    "rationale": "The target's source, notice-b, is a secondary notice that cites the measurement record at https://fixture.example/record-b. The primary record itself is supplied in two versions, both available before the 2026-01-03 cutoff. Version 1 (2026-01-01) stated 30 units, but version 2 (2026-01-02), issued as a correction by the same record, states that a transcription error was found and the result was 25 units, not 30. The corrected primary record supersedes the earlier version and directly negates the exact figure in the target; the notice merely repeats the superseded figure and is not independent evidence. The eligible evidence therefore settles the claim against the target."
+  }
+}
