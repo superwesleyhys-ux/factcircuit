@@ -14,7 +14,9 @@ refuses a gold file whose hash differs from the registered one.
 Case file: {"benchmark_id": str, "cases": [{"id", "target", "materials",
 "initial_version_ids", "config"?}]}; each case is a double-loop payload.
 Gold file: {"benchmark_id": str, "labels": {case_id: {"truth": four-state
-label, "original_version_ids": [version_id, ...] or null}}}.
+label, "original_version_ids": [version_id, ...] or null}}}. Where more than
+one answer is acceptable (a record and its own same-URL revision, say), give a
+list of alternatives: [["record-v2"], ["record-v1", "record-v2"]].
 
 A win is declared only by the preregistered rule (strictly higher accuracy,
 every output valid, token total within the registered ratio). Small case pools
@@ -122,10 +124,23 @@ def validate_gold(document, cases: list[dict]) -> dict[str, dict]:
             raise ValueError(f"gold for {case['id']!r} requires a four-state truth label")
         origins = label.get("original_version_ids")
         version_ids = {item["version_id"] for item in case["materials"]}
-        if origins is not None and (not isinstance(origins, list) or not origins
-                                    or any(value not in version_ids for value in origins)):
-            raise ValueError(f"gold origins for {case['id']!r} must name supplied version ids or be null")
+        for alternative in acceptable_origin_sets(origins):
+            if not alternative or any(value not in version_ids for value in alternative):
+                raise ValueError(f"gold origins for {case['id']!r} must name supplied version ids or be null")
     return labels
+
+
+def acceptable_origin_sets(origins) -> list[list[str]]:
+    """Normalize ``null``, one list, or a list of alternative lists to a list of lists."""
+    if origins is None:
+        return []
+    if not isinstance(origins, list) or not origins:
+        raise ValueError("original_version_ids must be null, a nonempty list, or a list of lists")
+    if all(isinstance(item, str) for item in origins):
+        return [origins]
+    if all(isinstance(item, list) and item and all(isinstance(v, str) for v in item) for item in origins):
+        return origins
+    raise ValueError("original_version_ids must be null, a nonempty list, or a list of lists")
 
 
 # --- arms -------------------------------------------------------------------
@@ -203,10 +218,11 @@ def run_harness(case: dict, transport, max_model_calls: int, harness_config: dic
     try:
         report = run_double_loop_trace(payload, tunnel=transport.kind, transport=transport,
                                        max_model_calls=max_model_calls)
-        located = sorted({item["version_id"] for item in report.get("origins", [])}) \
-            if report.get("provenance_status") == "original_material_located" else []
+        named = sorted({item["version_id"] for item in report.get("origins", [])})
         result.update(valid=not report["errors"], verdict=report["fact_status"],
-                      original_version_ids=located, provenance_status=report["provenance_status"],
+                      original_version_ids=named,
+                      lineage_certified=report.get("provenance_status") == "original_material_located",
+                      provenance_status=report["provenance_status"],
                       stop_reason=report["stop_reason"], errors=report["errors"],
                       usage=report["usage"], calls=report["execution"]["model_calls"],
                       blocked_calls=report["execution"].get("blocked_calls"))
@@ -338,7 +354,7 @@ def command_run(arguments) -> int:
 
 def score_arm(items: list[dict], labels: dict[str, dict]) -> dict:
     rows, correct, false_total, false_found, abstained = [], 0, 0, 0, 0
-    traceable, origin_correct, invalid = 0, 0, 0
+    traceable, origin_correct, invalid, certified = 0, 0, 0, 0
     for item in items:
         label = labels[item["case_id"]]
         valid = bool(item["valid"])
@@ -350,10 +366,13 @@ def score_arm(items: list[dict], labels: dict[str, dict]) -> dict:
             false_found += hit
         abstained += valid and item["verdict"] == "unresolved"
         origin_hit = None
-        if label["original_version_ids"] is not None:
+        alternatives = acceptable_origin_sets(label["original_version_ids"])
+        if alternatives:
             traceable += 1
-            origin_hit = valid and sorted(item["original_version_ids"] or []) == sorted(label["original_version_ids"])
+            named = sorted(item["original_version_ids"] or [])
+            origin_hit = valid and any(named == sorted(option) for option in alternatives)
             origin_correct += origin_hit
+        certified += bool(item.get("lineage_certified"))
         rows.append({"case_id": item["case_id"], "truth": label["truth"], "verdict": item["verdict"],
                      "valid": valid, "correct": hit, "origin_correct": origin_hit,
                      "total_tokens": item["tokens"]["total_tokens"], "calls": item["tokens"]["calls"],
@@ -370,6 +389,7 @@ def score_arm(items: list[dict], labels: dict[str, dict]) -> dict:
             "abstained": abstained, "invalid_outputs": invalid,
             "traceable": traceable, "origin_correct": origin_correct,
             "origin_accuracy": origin_correct / traceable if traceable else None,
+            "lineage_certified": certified,
             "total_tokens": total_tokens, "total_calls": total_calls,
             "mean_input_tokens_per_call": (total_input_tokens / total_calls) if total_calls else None,
             "packet_chars_sent": total_input_chars,
@@ -466,8 +486,9 @@ def render_summary(summary: dict) -> str:
              f"| {harness['correct']}/{harness['cases']} ({pct(harness['accuracy'])}) |",
              f"| False-claim recall | {direct['false_claims_identified']}/{direct['false_claims']} "
              f"| {harness['false_claims_identified']}/{harness['false_claims']} |",
-             f"| Origin correct (traceable) | {direct['origin_correct']}/{direct['traceable']} "
+             f"| Origin named correctly (traceable) | {direct['origin_correct']}/{direct['traceable']} "
              f"| {harness['origin_correct']}/{harness['traceable']} |",
+             f"| Lineage path certified by harness | n/a | {harness['lineage_certified']} |",
              f"| Abstained | {direct['abstained']} | {harness['abstained']} |",
              f"| Invalid outputs | {direct['invalid_outputs']} | {harness['invalid_outputs']} |",
              f"| Total tokens | {direct['total_tokens']:,} | {harness['total_tokens']:,} |",

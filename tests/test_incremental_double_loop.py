@@ -91,13 +91,21 @@ class IncrementalDoubleLoopTests(unittest.TestCase):
         self.assertEqual("partial", report["provenance_status"])
         self.assertNotEqual("complete", report["stop_reason"])
 
-    def test_deferral_is_off_by_default_and_must_be_boolean(self):
+    def test_deferral_is_on_by_default_for_the_double_loop_and_must_be_boolean(self):
         data = incremental_payload()
         data["config"]["defer_verification_until_provenance_complete"] = "yes"
         with self.assertRaises(ValueError):
             run_double_loop_trace(data, transport=ScriptedTransport([]))
-        report, _ = self.run_steps(incremental_script())
-        self.assertFalse(any(o["action"] == "verification_deferred" for o in report["operations"]))
+        data = incremental_payload()
+        del data["config"]["defer_verification_until_provenance_complete"]
+        steps = incremental_script()
+        del steps[1]
+        steps[-1] = ("verify", verdict("supported", basis=[quote(D2)],
+                                       rationale="The original record confirms 30 units."))
+        report, _ = self.run_steps(steps, data)
+        self.assertTrue(report["config"]["defer_verification_until_provenance_complete"])
+        self.assertTrue(any(o["action"] == "verification_deferred" for o in report["operations"]))
+        self.assertFalse(TraceConfig().defer_verification_until_provenance_complete)
 
     def test_new_source_cannot_automatically_promote_old_declared_edge(self):
         steps = incremental_script()

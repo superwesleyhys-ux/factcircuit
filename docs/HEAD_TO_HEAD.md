@@ -13,7 +13,13 @@ bare model?" is answered by a registered run rather than by a selected one.
   packet), and the version IDs it considers the original record.
 - **Harness**: `run_double_loop_trace` over the same materials with the same
   tunnel and model. The verdict is `fact_status`; the original record is the
-  located origin set when `provenance_status` is `original_material_located`.
+  set of origins the harness named. Whether it also certified an evidenced
+  lineage path (`provenance_status` of `original_material_located`) is
+  reported separately, since the direct arm never has to prove a path.
+
+Gold `original_version_ids` may list alternatives (`[["record-v2"],
+["record-v1", "record-v2"]]`) where a record and its own same-URL revision
+are both acceptable answers; `null` marks an untraceable case.
 
 Materials that are ineligible at the cutoff are excluded from both arms. Both
 arms are supplied-snapshot only; neither retrieves from the open web.
@@ -99,6 +105,23 @@ file before inference, and never edit the case file after registration.
   repository before registering; `register` refuses a gold file inside the
   checkout.
 
+## What the runs have shown
+
+- dev-002a versus dev-002b (same pool, same model, verification deferred in
+  b): early verification on an incomplete chain produced an escalating
+  standard. On `two-hop-supported` the verifier asked for the summary, then
+  the record, then, with the original record in hand stating the result,
+  for "underlying readings, method or reliability evidence", and left the
+  claim unresolved. With verification deferred until the chain was complete
+  the same model answered `supported` on first sight. The double loop now
+  defers by default and the verifier prompt states the sufficiency standard
+  and forbids restating a gap with a stricter requirement; the news path
+  keeps per-round verification until it is measured there.
+- On a pool where every eligible material is handed to the direct arm, the
+  bare model has not lost a case. The harness's remaining advantage to
+  measure is on pools the direct arm cannot be handed whole: live retrieval
+  from a page, decoys at scale, and cost.
+
 ## Published runs
 
 - [dev-001](../reports/head-to-head-dev-001/SUMMARY.md): `gpt-6-astra`, local
@@ -106,5 +129,12 @@ file before inference, and never edit the case file after registration.
   versus 2/2; harness 146,463 tokens versus 33,786 (4.34×, about 11k of which
   is fixed Codex overhead on each of the 5 versus 1 calls). The registered
   rule was not met. Synthetic; checks mechanics, not accuracy.
+- [dev-002a](../reports/head-to-head-dev-002a/SUMMARY.md) and
+  [dev-002b](../reports/head-to-head-dev-002b/SUMMARY.md): the eight-case dev
+  pool, `gpt-6-astra`, local route, low effort, registered ratio 6×. Direct
+  8/8 in both. Harness 7/8 in 47 calls (6.47×) without deferral; 8/8 in 38
+  calls (5.13×) with it. Origins named correctly 4/5 for every arm; the
+  miss was a same-URL revision scored against a single acceptable set, which
+  the gold format now allows to be listed as alternatives. Synthetic.
 
 Synthetic pools check the mechanics. They are not real-news accuracy evidence.

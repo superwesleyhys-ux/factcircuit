@@ -542,7 +542,10 @@ def _run_item(entry, config, bounded, collector_factory):
             "materials": [asdict(m) for m in materials],
             "initial_version_ids": [start or materials[0].version_id],
             "config": {"max_rounds": config["max_documents"] + 1, "max_documents": config["max_documents"],
-                       "max_decomposition_calls": config["max_documents"] * 2}}
+                       "max_decomposition_calls": config["max_documents"] * 2,
+                       # Deferred verification is measured on the double loop only so far;
+                       # the news path keeps per-round verification until it is measured there.
+                       "defer_verification_until_provenance_complete": False}}
         try:
             trace = run_double_loop_trace(payload, tunnel=bounded.kind, transport=formal_transport,
                 max_model_calls=min(config["max_origin_calls"], remaining))

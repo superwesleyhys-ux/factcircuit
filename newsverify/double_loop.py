@@ -148,6 +148,14 @@ request it as a stage=verification gap. Reuse an existing verification gap ID fo
 the same question. The provider may retrieve a relevant snapshot; that snapshot
 must be decomposed before the next verification. Do not create broad ceremonial
 questions once the target is settled, and never pretend to retrieve a source.
+A gap is settled by the document it asked for once that document answers the
+question: close it with a resolution instead of restating it with a stricter
+requirement. When the eligible original producing record of a measurement, count
+or statement states the target quantity, that record sufficiently supports or
+contradicts a target about what was measured, counted or stated; do not demand
+underlying raw readings, methods or reliability checks unless the target itself
+claims them. Raising the evidence standard after each retrieval is not
+verification.
 Resolve existing verification gaps explicitly with exact evidence when the new
 materials answer them. You may also resolve a verification gap created in this
 response or reaffirm a gap previously created in verification_history with fresh
@@ -345,7 +353,8 @@ class CallBudgetTransport:
         finally:
             extra = getattr(self.transport, "calls", ())[before:]
             if len(extra) == 1 and isinstance(extra[0], dict):
-                for key in ("usage", "wall_seconds", "timeout_seconds", "http_status", "exit_code"):
+                for key in ("usage", "wall_seconds", "timeout_seconds", "http_status", "exit_code",
+                            "input_chars", "reasoning_effort_forwarded"):
                     if key in extra[0]:
                         record[key] = deepcopy(extra[0][key])
             if not extra or "wall_seconds" not in extra[0]:
@@ -583,6 +592,10 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         raise ValueError("double-loop config must be an object")
     options = dict(payload.get("config") or {})
     options.setdefault("reanalyze_existing_versions", False)
+    # Verify once the provenance chain is complete or retrieval can go no further
+    # (dev-002: 8/8 in 38 calls against 7/8 in 47 with early verification, whose
+    # own open gap kept escalating the evidence standard). Explicit false restores it.
+    options.setdefault("defer_verification_until_provenance_complete", True)
     config = from_mapping(TraceConfig, options, "config")
     for name in ("reanalyze_existing_versions", "defer_verification_until_provenance_complete"):
         if type(getattr(config, name)) is not bool:
