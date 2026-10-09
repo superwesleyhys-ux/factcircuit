@@ -1,6 +1,6 @@
 # Contributing
 
-NewsVerify Harness welcomes small, reproducible changes that make evidence handling easier to inspect and harder to misuse.
+FactCircuit welcomes small, reproducible changes that make evidence handling easier to inspect and harder to misuse.
 
 Useful first contributions include a failing evidence fixture, a source-lineage edge case, clearer rejection messages, or an adapter that follows the documented contract. Discuss a new external dependency or a policy change in an issue before building it.
 
@@ -10,7 +10,7 @@ Use Python 3.11 or later. From the repository directory, run:
 
 ```bash
 python -m unittest discover -s tests -v
-python -m newsverify benchmark examples/benchmark.json --output reports/benchmark.json
+python -m factcircuit benchmark examples/benchmark.json --output reports/benchmark.json
 ```
 
 Include the behavior you changed, why it matters, and a minimal fixture or test that would fail without the fix. For policy changes, explain which existing outcomes change and why. Keep fixtures deterministic and use explicit, timezone-aware timestamps.

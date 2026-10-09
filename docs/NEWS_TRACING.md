@@ -39,7 +39,7 @@ Save a JSON input as `news.json`:
 Replace the example text, claim and URL with the actual news item. Then run:
 
 ```bash
-python -m newsverify trace-news news.json --output reports/news-trace.json
+python -m factcircuit trace-news news.json --output reports/news-trace.json
 ```
 
 The opt-in `run_double_loop_trace` API uses incremental source analysis by
@@ -62,7 +62,7 @@ continues to use the configured global setting when omitted.
 To select the API explicitly, set `OPENAI_API_KEY` in your environment and run:
 
 ```bash
-python -m newsverify trace-news news.json --tunnel api --model YOUR_API_MODEL --output reports/news-api.json
+python -m factcircuit trace-news news.json --tunnel api --model YOUR_API_MODEL --output reports/news-api.json
 ```
 
 Neither tunnel silently switches to the other after an error. API access and

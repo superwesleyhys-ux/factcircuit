@@ -29,9 +29,10 @@ See `MODEL_TUNNELS.md` for commands and limitations.
 
 The opt-in `newsverify.double_loop` runner now adds source relations, adaptive
 selection from an eligible local pool, and reanalysis of earlier evidence.
-Its completed development comparison is in
-[the public evaluation report](../reports/model-evaluation-20260908/README.md);
-full source captures and historical experiment packets remain local.
+Its completed development comparison protocol is in
+`experiments/gstack-harness-eval-20260908/`; the report artifacts, full source
+captures and historical experiment packets remain local and are not published
+in this repository.
 
 ## Non-negotiable behavior
 

@@ -46,3 +46,17 @@ class BrandCompatibilityTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DoubleLoopEntryPointTests(unittest.TestCase):
+    def test_factcircuit_double_loop_module_is_runnable(self):
+        completed = subprocess.run(
+            [sys.executable, "-m", "factcircuit.double_loop", "--help"],
+            capture_output=True, text=True, check=True)
+        self.assertIn("--max-model-calls", completed.stdout)
+
+    def test_factcircuit_double_loop_reexports_runner(self):
+        import factcircuit.double_loop
+        import newsverify.double_loop
+        self.assertIs(factcircuit.double_loop.run_double_loop_trace,
+                      newsverify.double_loop.run_double_loop_trace)
