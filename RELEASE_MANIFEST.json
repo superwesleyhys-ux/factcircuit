@@ -300,8 +300,8 @@
     },
     {
       "path": "experiments/head_to_head.py",
-      "bytes": 24484,
-      "sha256": "774153556088e52fe08cb7b68de7e0b122ac4463faabd1fd268109f9f0b26e3e"
+      "bytes": 24485,
+      "sha256": "71e96136ee2135f9924bf8579e0bd7979ce28bcd7d519ed371dc8ed7af625a8e"
     },
     {
       "path": "experiments/historical-2023-pilot2-v2/README.md",

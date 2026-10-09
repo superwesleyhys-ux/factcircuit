@@ -401,6 +401,7 @@ def render_summary(summary: dict) -> str:
     def pct(value):
         return "n/a" if value is None else f"{100 * value:.0f}%"
 
+    ratio = "n/a" if verdict["token_ratio"] is None else f"{verdict['token_ratio']:.2f}x"
     lines = [f"# Head-to-head: {summary['benchmark_id']}", "",
              f"Model `{summary['settings']['model']}` via `{summary['settings']['tunnel']}`; "
              f"harness {summary['registration']['harness_version']} "
@@ -415,8 +416,7 @@ def render_summary(summary: dict) -> str:
              f"| Abstained | {direct['abstained']} | {harness['abstained']} |",
              f"| Invalid outputs | {direct['invalid_outputs']} | {harness['invalid_outputs']} |",
              f"| Total tokens | {direct['total_tokens']:,} | {harness['total_tokens']:,} |", "",
-             f"Token ratio harness/direct: "
-             f"{'n/a' if verdict['token_ratio'] is None else f'{verdict['token_ratio']:.2f}x'} "
+             f"Token ratio harness/direct: {ratio} "
              f"(registered limit {summary['registration']['max_token_ratio']}x).", "",
              f"**Harness wins by the registered rule: {verdict['harness_wins_by_registered_rule']}** "
              f"(accuracy higher: {verdict['accuracy_strictly_higher']}, all valid: "
