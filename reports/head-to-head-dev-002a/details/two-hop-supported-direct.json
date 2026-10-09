@@ -1,0 +1,54 @@
+{
+  "case_id": "two-hop-supported",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-d"
+    },
+    "materials": [
+      {
+        "version_id": "notice-d",
+        "url": "https://fixture.example/notice-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/summary-d"
+      },
+      {
+        "version_id": "summary-d",
+        "url": "https://fixture.example/summary-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Summary of the measurement campaign: the result was 30 units. Source: https://fixture.example/record-d"
+      },
+      {
+        "version_id": "record-d",
+        "url": "https://fixture.example/record-d",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Original measurement record: the result was 30 units."
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "supported",
+    "basis": [
+      {
+        "version_id": "record-d",
+        "quote": "Original measurement record: the result was 30 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-d"
+    ],
+    "rationale": "The original measurement record was available before the cutoff and directly establishes the exact result of 30 units. The notice and summary derive from that record and are not independent confirmation."
+  }
+}

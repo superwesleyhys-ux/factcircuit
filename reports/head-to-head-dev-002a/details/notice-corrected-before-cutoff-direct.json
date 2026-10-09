@@ -1,0 +1,58 @@
+{
+  "case_id": "notice-corrected-before-cutoff",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-g-v1"
+    },
+    "materials": [
+      {
+        "version_id": "notice-g-v1",
+        "url": "https://fixture.example/notice-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-g"
+      },
+      {
+        "version_id": "notice-g-v2",
+        "url": "https://fixture.example/notice-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Correction: an earlier version of this notice said 30 units; the record states 25 units. Source: https://fixture.example/record-g"
+      },
+      {
+        "version_id": "record-g",
+        "url": "https://fixture.example/record-g",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Original measurement record: the result was 25 units."
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-g",
+        "quote": "Original measurement record: the result was 25 units."
+      },
+      {
+        "version_id": "notice-g-v2",
+        "quote": "Correction: an earlier version of this notice said 30 units; the record states 25 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-g"
+    ],
+    "rationale": "The original measurement record establishes 25 units, and the notice corrected its earlier 30-unit report before the cutoff. The superseded report does not create an unresolved conflict."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "qualifier-site-mismatch",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The result at site A was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-f"
+    },
+    "materials": [
+      {
+        "version_id": "notice-f",
+        "url": "https://fixture.example/notice-f",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports that site A produced 30 units. Source: https://fixture.example/record-f"
+      },
+      {
+        "version_id": "record-f",
+        "url": "https://fixture.example/record-f",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record: site B produced 30 units; site A produced 20 units."
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-f",
+        "quote": "Measurement record: site B produced 30 units; site A produced 20 units."
+      }
+    ],
+    "original_version_ids": [
+      "record-f"
+    ],
+    "rationale": "The eligible original measurement record gives site A's result as 20 units and assigns 30 units to site B. The notice's derivative claim misattributes the result."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "case_id": "record-revised-before-cutoff",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-b"
+    },
+    "materials": [
+      {
+        "version_id": "notice-b",
+        "url": "https://fixture.example/notice-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-b"
+      },
+      {
+        "version_id": "record-b-v1",
+        "url": "https://fixture.example/record-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record (version 1): the result was 30 units."
+      },
+      {
+        "version_id": "record-b-v2",
+        "url": "https://fixture.example/record-b",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "contradicted",
+    "basis": [
+      {
+        "version_id": "record-b-v2",
+        "quote": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+      }
+    ],
+    "original_version_ids": [
+      "record-b-v1",
+      "record-b-v2"
+    ],
+    "rationale": "The corrected primary measurement record was available before the cutoff and supersedes the original 30-unit entry. It explicitly gives 25 units, not 30; the notice repeats the erroneous original value."
+  }
+}

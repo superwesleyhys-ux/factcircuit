@@ -1,0 +1,47 @@
+{
+  "case_id": "decoy-record-same-number",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The result of experiment X was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-c"
+    },
+    "materials": [
+      {
+        "version_id": "notice-c",
+        "url": "https://fixture.example/notice-c",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports that experiment X produced 30 units. Source: https://fixture.example/record-x"
+      },
+      {
+        "version_id": "record-y",
+        "url": "https://fixture.example/record-y",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Measurement record for experiment Y: the result was 30 units. Experiment X is not covered by this record."
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-c",
+        "quote": "The notice reports that experiment X produced 30 units. Source: https://fixture.example/record-x"
+      },
+      {
+        "version_id": "record-y",
+        "quote": "Measurement record for experiment Y: the result was 30 units. Experiment X is not covered by this record."
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "The eligible notice reports the claim, but its cited original record is not supplied. The supplied measurement record concerns experiment Y and explicitly excludes X, so it neither confirms nor contradicts X's result. The evidence cannot settle the target at the cutoff."
+  }
+}

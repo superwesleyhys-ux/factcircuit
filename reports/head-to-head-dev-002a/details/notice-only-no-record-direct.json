@@ -1,0 +1,34 @@
+{
+  "case_id": "notice-only-no-record",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-h"
+    },
+    "materials": [
+      {
+        "version_id": "notice-h",
+        "url": "https://fixture.example/notice-h",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-h"
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-h",
+        "quote": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-h"
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "The notice was available before the cutoff, but only reports the measurement and cites an underlying record that is not supplied. The packet does not sufficiently establish the measured result."
+  }
+}

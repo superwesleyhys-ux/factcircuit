@@ -1,0 +1,47 @@
+{
+  "case_id": "copy-is-not-a-second-source",
+  "arm": "direct",
+  "packet": {
+    "target": {
+      "text": "The measured result was 30 units.",
+      "as_of": "2026-01-03T00:00:00Z",
+      "source_version_id": "notice-a"
+    },
+    "materials": [
+      {
+        "version_id": "notice-a",
+        "url": "https://fixture.example/notice-a",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      },
+      {
+        "version_id": "copy-of-notice-a",
+        "url": "https://mirror.example/bulletin/30-units",
+        "issuer": "synthetic fixture",
+        "published_at": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:00:00Z",
+        "availability_basis": "Explicit synthetic fixture assertion.",
+        "content": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      }
+    ],
+    "excluded_version_ids": []
+  },
+  "raw_response": {
+    "verdict": "unresolved",
+    "basis": [
+      {
+        "version_id": "notice-a",
+        "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      },
+      {
+        "version_id": "copy-of-notice-a",
+        "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+      }
+    ],
+    "original_version_ids": [],
+    "rationale": "Both materials were available before the cutoff, but they repeat the same attributed report and provide no independent confirmation. The cited original record is not supplied, so the packet cannot establish the actual measured result."
+  }
+}
