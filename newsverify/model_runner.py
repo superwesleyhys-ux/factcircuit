@@ -10,7 +10,10 @@ from .provenance import (
     Analysis, ConservativeDecomposer, Fragment, Span, VerificationResult,
     run_provenance,
 )
-from .tunnels import APITunnel, LocalTunnel
+from .tunnels import AnthropicTunnel, APITunnel, LocalTunnel  # noqa: F401  resolved by name in transport_class
+
+TUNNELS = ("local", "api", "anthropic")
+MODEL_VARIABLES = {"api": "OPENAI_MODEL", "anthropic": "ANTHROPIC_MODEL"}
 
 
 def _object(**fields):
@@ -183,10 +186,11 @@ def _settings(model, effort, *, tunnel="local"):
             except (ValueError, OSError):
                 raise ValueError("Cannot read Codex reasoning settings; supply --reasoning-effort") from None
     if model is None:
-        if tunnel == "api":
-            model = os.environ.get("OPENAI_MODEL")
+        if tunnel in MODEL_VARIABLES:
+            model = os.environ.get(MODEL_VARIABLES[tunnel])
             if not model:
-                raise ValueError("API mode requires --model or OPENAI_MODEL for an available API model")
+                raise ValueError(f"{'API' if tunnel == 'api' else tunnel.capitalize()} mode requires "
+                                 f"--model or {MODEL_VARIABLES[tunnel]} for an available API model")
         else:
             model = os.environ.get("FACTCIRCUIT_MODEL", DEFAULT_LOCAL_MODEL)
     effort = effort if effort is not None else configured.get("model_reasoning_effort", "medium")
@@ -195,14 +199,29 @@ def _settings(model, effort, *, tunnel="local"):
     return model.strip(), effort
 
 
+def check_tunnel(tunnel):
+    if tunnel not in TUNNELS:
+        raise ValueError("tunnel must be one of " + ", ".join(TUNNELS))
+
+
+def transport_class(tunnel, namespace=None):
+    """Look the class up by name at call time so a module can be patched in tests."""
+    check_tunnel(tunnel)
+    names = {"local": "LocalTunnel", "api": "APITunnel", "anthropic": "AnthropicTunnel"}
+    return (namespace or globals())[names[tunnel]]
+
+
+def make_transport(tunnel, model, reasoning_effort, timeout, namespace=None):
+    """Resolve model settings and construct the selected transport; never another."""
+    model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
+    return transport_class(tunnel, namespace)(model=model, reasoning_effort=effort, timeout=timeout)
+
+
 def run_model_trace(payload, *, tunnel="local", model=None, reasoning_effort=None, timeout=180):
     """Use one selected tunnel for every semantic call; never fall back to another."""
-    if tunnel not in {"local", "api"}:
-        raise ValueError("tunnel must be local or api")
+    check_tunnel(tunnel)
     target, provider, config = prepare_snapshot(payload)
-    model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
-    transport = (LocalTunnel if tunnel == "local" else APITunnel)(
-        model=model, reasoning_effort=effort, timeout=timeout)
+    transport = make_transport(tunnel, model, reasoning_effort, timeout)
     report = run_provenance(target, provider, ModelDecomposer(transport),
                             ModelVerifier(transport), config)
     report["execution_mode"] = "model_trace"

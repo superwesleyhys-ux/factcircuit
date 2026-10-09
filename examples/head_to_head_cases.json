@@ -1,0 +1,122 @@
+{
+  "benchmark_id": "synthetic-head-to-head-example",
+  "cases": [
+    {
+      "id": "supported-with-record",
+      "target": {
+        "id": "t1",
+        "text": "The measured result was 30 units.",
+        "as_of": "2026-01-03T00:00:00Z",
+        "source_version_id": "notice-1"
+      },
+      "materials": [
+        {
+          "version_id": "notice-1",
+          "url": "https://fixture.example/notice-1",
+          "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-1",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-01-01T00:00:00Z",
+          "available_at": "2026-01-01T00:00:00Z",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        },
+        {
+          "version_id": "record-1",
+          "url": "https://fixture.example/record-1",
+          "content": "Original measurement record: the result was 30 units.",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-01-01T00:00:00Z",
+          "available_at": "2026-01-01T00:00:00Z",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        }
+      ],
+      "initial_version_ids": [
+        "notice-1"
+      ],
+      "config": {
+        "max_rounds": 4,
+        "max_documents": 4,
+        "max_decomposition_calls": 8
+      }
+    },
+    {
+      "id": "contradicted-by-record",
+      "target": {
+        "id": "t2",
+        "text": "The measured result was 30 units.",
+        "as_of": "2026-01-03T00:00:00Z",
+        "source_version_id": "notice-2"
+      },
+      "materials": [
+        {
+          "version_id": "notice-2",
+          "url": "https://fixture.example/notice-2",
+          "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-2",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-01-01T00:00:00Z",
+          "available_at": "2026-01-01T00:00:00Z",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        },
+        {
+          "version_id": "record-2",
+          "url": "https://fixture.example/record-2",
+          "content": "Original measurement record: the result was 25 units; the notice misreported it.",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-01-01T00:00:00Z",
+          "available_at": "2026-01-01T00:00:00Z",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        }
+      ],
+      "initial_version_ids": [
+        "notice-2"
+      ],
+      "config": {
+        "max_rounds": 4,
+        "max_documents": 4,
+        "max_decomposition_calls": 8
+      }
+    },
+    {
+      "id": "record-unavailable-at-cutoff",
+      "target": {
+        "id": "t3",
+        "text": "The measured result was 30 units.",
+        "as_of": "2026-01-03T00:00:00Z",
+        "source_version_id": "notice-3"
+      },
+      "materials": [
+        {
+          "version_id": "notice-3",
+          "url": "https://fixture.example/notice-3",
+          "content": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-3",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-01-01T00:00:00Z",
+          "available_at": "2026-01-01T00:00:00Z",
+          "retrieved_at": "2026-01-03T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        },
+        {
+          "version_id": "record-3",
+          "url": "https://fixture.example/record-3",
+          "content": "Original measurement record: the result was 30 units.",
+          "issuer": "synthetic fixture",
+          "published_at": "2026-02-01T00:00:00Z",
+          "available_at": "2026-02-01T00:00:00Z",
+          "retrieved_at": "2026-02-02T00:00:00Z",
+          "availability_basis": "Explicit synthetic fixture assertion."
+        }
+      ],
+      "initial_version_ids": [
+        "notice-3"
+      ],
+      "config": {
+        "max_rounds": 4,
+        "max_documents": 4,
+        "max_decomposition_calls": 8
+      }
+    }
+  ]
+}

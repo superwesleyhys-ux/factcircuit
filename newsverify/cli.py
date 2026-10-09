@@ -10,8 +10,11 @@ from .providers import ReplayProvider
 from .evaluation import evaluate
 from .comparison import compare
 from .local import run_local
+from .model_runner import TUNNELS
 
 STATUSES = {"supported", "contradicted", "conflicting", "unresolved"}
+MODEL_HELP = ("local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); api requires --model or "
+              "OPENAI_MODEL; anthropic requires --model or ANTHROPIC_MODEL")
 HELP = {
     "demo": "run the bundled v0.1 annotated-evidence policy example",
     "trace-demo": "replay four material versions over three offline retrieval rounds",
@@ -98,9 +101,9 @@ def main(argv=None, *, prog="newsverify"):
         child.add_argument("--output", type=Path, help="write the JSON report here instead of stdout")
         if command in {"trace-model", "early-risk", "double-loop"}:
             default_timeout = 90 if command == "double-loop" else 180
-            child.add_argument("--tunnel", choices=("local", "api"), default="local",
+            child.add_argument("--tunnel", choices=TUNNELS, default="local",
                                help="model execution path (default: local Codex CLI)")
-            child.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
+            child.add_argument("--model", help=MODEL_HELP)
             child.add_argument("--reasoning-effort", help=(
                 "reasoning effort (default: low)" if command == "early-risk"
                 else "reasoning effort (default: Codex setting or medium)"))
@@ -124,8 +127,9 @@ def main(argv=None, *, prog="newsverify"):
     news_parser = sub.add_parser("trace-news", help="trace each news claim to source records and verify it")
     news_parser.add_argument("input", type=Path, help="JSON file containing a news list")
     news_parser.add_argument("--output", type=Path)
-    news_parser.add_argument("--tunnel", choices=("local", "api"), default="local")
-    news_parser.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
+    news_parser.add_argument("--tunnel", choices=TUNNELS, default="local",
+                             help="model execution path (default: local Codex CLI)")
+    news_parser.add_argument("--model", help=MODEL_HELP)
     news_parser.add_argument("--reasoning-effort")
     news_parser.add_argument("--timeout", type=float, default=90)
     news_parser.add_argument("--max-model-calls", type=int, default=40,

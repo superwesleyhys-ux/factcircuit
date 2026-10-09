@@ -5,6 +5,13 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Added an `anthropic` tunnel (Anthropic Messages API, `ANTHROPIC_API_KEY`,
+  `--model` or `ANTHROPIC_MODEL`) so Claude models run the same harness
+  prompts; schema compliance comes from one forced tool call. The OpenAI and
+  Anthropic transports share one bounded HTTPS exchange.
+- Added `experiments/head_to_head.py`: a preregistered direct-model versus
+  harness comparison with hash-sealed gold, alternating arm order, a registered
+  success rule, and `SUMMARY.md` output; see `docs/HEAD_TO_HEAD.md`.
 - Added a `double-loop` subcommand to the main CLI (the
   `python -m factcircuit.double_loop` module entry point remains), help text for
   every subcommand, and runnable example inputs for `early-risk` and

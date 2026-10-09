@@ -1,7 +1,8 @@
-"""Explicit local-CLI and Responses API transports for the same harness prompts.
+"""Explicit local-CLI, OpenAI Responses API and Anthropic Messages API transports.
 
-The local transport uses the installed Codex login; it does not imply offline
-model weights. Neither transport retries or falls back to the other transport.
+All transports send the same harness prompts and return the same schema-shaped
+objects. The local transport uses the installed Codex login; it does not imply
+offline model weights. No transport retries or falls back to another transport.
 Only safe metadata is retained in ``calls``; prompts and raw errors are not.
 """
 
@@ -27,10 +28,14 @@ MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 MAX_EVENT_BYTES = 16 * 1024 * 1024
 _API_HOST = "api.openai.com"
 _API_PATH = "/v1/responses"
+_ANTHROPIC_HOST = "api.anthropic.com"
+_ANTHROPIC_PATH = "/v1/messages"
+_ANTHROPIC_VERSION = "2023-06-01"
+_ANTHROPIC_TOOL = "harness_result"
 _USAGE_FIELDS = {
     "input_tokens", "output_tokens", "total_tokens", "cached_input_tokens",
     "cached_tokens", "reasoning_tokens", "reasoning_output_tokens", "input_tokens_details",
-    "output_tokens_details",
+    "output_tokens_details", "cache_read_input_tokens", "cache_creation_input_tokens",
 }
 
 
@@ -85,8 +90,11 @@ def _usage(value: Any) -> dict | None:
     output_details = result.get("output_tokens_details") or {}
     result.setdefault("input_tokens", None)
     result.setdefault("output_tokens", None)
-    result.setdefault("cached_input_tokens", input_details.get("cached_tokens"))
+    result.setdefault("cached_input_tokens", input_details.get("cached_tokens", result.get("cache_read_input_tokens")))
     result.setdefault("reasoning_output_tokens", output_details.get("reasoning_tokens", result.get("reasoning_tokens")))
+    if result.get("total_tokens") is None and isinstance(result.get("input_tokens"), int) \
+            and isinstance(result.get("output_tokens"), int):
+        result["total_tokens"] = result["input_tokens"] + result["output_tokens"]
     return result
 
 
@@ -350,20 +358,30 @@ class LocalTunnel(_Tunnel):
             return _decode_object(raw, "The local model response must be a valid JSON object.")
 
 
-class APITunnel(_Tunnel):
-    """Call the fixed OpenAI Responses endpoint using an explicit API credential."""
+class _HTTPSJSONTunnel(_Tunnel):
+    """One bounded HTTPS POST with verified TLS, a hard deadline and a size cap.
 
-    kind = "api"
+    No redirects are followed, provider error bodies are never read, and the
+    credential never appears in records or error messages.
+    """
+
+    host: str
+    path: str
+    credential_name: str
 
     def __init__(self, model: str, reasoning_effort: str = "medium", timeout: float = 180,
                  api_key: str | None = None):
         super().__init__(model, reasoning_effort, timeout)
-        key = api_key if api_key is not None else os.environ.get("OPENAI_API_KEY")
+        key = api_key if api_key is not None else os.environ.get(self.credential_name)
         if not isinstance(key, str) or not key.strip():
-            raise TunnelError("The API tunnel requires OPENAI_API_KEY or an explicitly supplied API key.")
+            raise TunnelError(f"The {self.kind} tunnel requires {self.credential_name} "
+                              "or an explicitly supplied API key.")
         if "\r" in key or "\n" in key:
             raise TunnelError("The API credential is not valid for an authorization header.")
         self._api_key = key.strip()
+
+    def _auth_headers(self) -> dict[str, str]:
+        raise NotImplementedError
 
     @staticmethod
     def _remaining(deadline: float) -> float:
@@ -378,24 +396,17 @@ class APITunnel(_Tunnel):
         if connection.sock is not None:
             connection.sock.settimeout(remaining)
 
-    def _generate(self, instructions: str, evidence: str, schema: dict, record: dict) -> dict:
-        payload = {
-            "model": self.model, "instructions": instructions, "input": evidence,
-            "reasoning": {"effort": self.reasoning_effort}, "store": False,
-            "text": {"format": {
-                "type": "json_schema", "name": "harness_result", "strict": True, "schema": schema,
-            }},
-        }
+    def _post_json(self, payload: dict, record: dict) -> dict:
         body = json.dumps(payload, ensure_ascii=False, allow_nan=False).encode("utf-8")
         connection = None
         deadline = time.perf_counter() + self.timeout
         try:
             context = _verified_ssl_context()
-            connection = http.client.HTTPSConnection(_API_HOST, timeout=self.timeout, context=context)
+            connection = http.client.HTTPSConnection(self.host, timeout=self.timeout, context=context)
             connection.connect()
             self._set_timeout(connection, deadline)
-            connection.request("POST", _API_PATH, body=body, headers={
-                "Authorization": "Bearer " + self._api_key, "Content-Type": "application/json",
+            connection.request("POST", self.path, body=body, headers={
+                **self._auth_headers(), "Content-Type": "application/json",
                 "Accept": "application/json",
             })
             self._set_timeout(connection, deadline)
@@ -430,6 +441,29 @@ class APITunnel(_Tunnel):
                     connection.close()
                 except Exception:
                     pass
+        return result
+
+
+class APITunnel(_HTTPSJSONTunnel):
+    """Call the fixed OpenAI Responses endpoint using an explicit API credential."""
+
+    kind = "api"
+    host = _API_HOST
+    path = _API_PATH
+    credential_name = "OPENAI_API_KEY"
+
+    def _auth_headers(self) -> dict[str, str]:
+        return {"Authorization": "Bearer " + self._api_key}
+
+    def _generate(self, instructions: str, evidence: str, schema: dict, record: dict) -> dict:
+        payload = {
+            "model": self.model, "instructions": instructions, "input": evidence,
+            "reasoning": {"effort": self.reasoning_effort}, "store": False,
+            "text": {"format": {
+                "type": "json_schema", "name": "harness_result", "strict": True, "schema": schema,
+            }},
+        }
+        result = self._post_json(payload, record)
         record["usage"] = _usage(result.get("usage"))
         if result.get("error") is not None:
             raise TunnelError("The API response reported a model error.")
@@ -464,3 +498,76 @@ class APITunnel(_Tunnel):
         if not texts:
             raise TunnelError("The API model did not return response text.")
         return _decode_object("".join(texts), "The API model response must be a valid JSON object.")
+
+
+class AnthropicTunnel(_HTTPSJSONTunnel):
+    """Call the fixed Anthropic Messages endpoint using an explicit API credential.
+
+    Schema compliance comes from forcing one tool call whose ``input_schema`` is
+    the harness schema; the tool's input is the returned object. The
+    reasoning-effort setting is recorded but not forwarded: forced tool choice is
+    the schema contract, and a provider reasoning mode is not combined with it.
+    """
+
+    kind = "anthropic"
+    host = _ANTHROPIC_HOST
+    path = _ANTHROPIC_PATH
+    credential_name = "ANTHROPIC_API_KEY"
+
+    def __init__(self, model: str, reasoning_effort: str = "medium", timeout: float = 180,
+                 api_key: str | None = None, max_output_tokens: int = 8192):
+        super().__init__(model, reasoning_effort, timeout, api_key)
+        if type(max_output_tokens) is not int or max_output_tokens < 1:
+            raise TunnelError("max_output_tokens must be a positive integer.")
+        self.max_output_tokens = max_output_tokens
+
+    def _auth_headers(self) -> dict[str, str]:
+        return {"x-api-key": self._api_key, "anthropic-version": _ANTHROPIC_VERSION}
+
+    def _generate(self, instructions: str, evidence: str, schema: dict, record: dict) -> dict:
+        payload = {
+            "model": self.model, "max_tokens": self.max_output_tokens,
+            "system": instructions,
+            "messages": [{"role": "user", "content": evidence}],
+            "tools": [{"name": _ANTHROPIC_TOOL, "input_schema": schema,
+                       "description": "Return the requested harness result object."}],
+            "tool_choice": {"type": "tool", "name": _ANTHROPIC_TOOL,
+                            "disable_parallel_tool_use": True},
+        }
+        record["reasoning_effort_forwarded"] = False
+        result = self._post_json(payload, record)
+        record["usage"] = _usage(result.get("usage"))
+        if result.get("type") == "error" or result.get("error") is not None:
+            raise TunnelError("The API response reported a model error.")
+        if result.get("type") != "message" or result.get("role") != "assistant":
+            raise TunnelError("The API response did not contain model output.")
+        stop = result.get("stop_reason")
+        if stop == "refusal":
+            raise TunnelError("The API model refused the request.")
+        if stop == "max_tokens":
+            raise TunnelError("The API model response was not completed.")
+        if stop != "tool_use":
+            raise TunnelError("The API model did not return the structured result.")
+        content = result.get("content")
+        if not isinstance(content, list):
+            raise TunnelError("The API response did not contain model output.")
+        values = []
+        for item in content:
+            if not isinstance(item, dict):
+                raise TunnelError("The API response contained an invalid output item.")
+            if item.get("type") == "text":
+                continue
+            if item.get("type") != "tool_use":
+                raise TunnelError("The API model returned an unexpected output item.")
+            if item.get("name") != _ANTHROPIC_TOOL:
+                raise TunnelError("The API model used a tool; closed-packet execution was rejected.")
+            values.append(item.get("input"))
+        if len(values) != 1:
+            raise TunnelError("The API model did not return exactly one structured result.")
+        if not isinstance(values[0], dict):
+            raise TunnelError("The API model response must be a valid JSON object.")
+        try:
+            json.dumps(values[0], allow_nan=False)
+        except (TypeError, ValueError):
+            raise TunnelError("The API model response must be a valid JSON object.") from None
+        return values[0]

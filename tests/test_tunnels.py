@@ -13,7 +13,7 @@ import tomllib
 import unittest
 from unittest.mock import Mock, patch
 
-from newsverify.tunnels import APITunnel, LocalTunnel, TunnelError, _local_skill_paths
+from newsverify.tunnels import AnthropicTunnel, APITunnel, LocalTunnel, TunnelError, _local_skill_paths
 
 
 SCHEMA = {"type": "object", "properties": {"answer": {"type": "string"}},
@@ -27,6 +27,23 @@ NORMALIZED_USAGE = {**USAGE, "cached_input_tokens": 10, "reasoning_output_tokens
 SECRET = "test-secret-key-never-report"
 
 
+ANTHROPIC_USAGE = {"input_tokens": 100, "output_tokens": 20,
+                   "cache_read_input_tokens": 10, "cache_creation_input_tokens": 0}
+NORMALIZED_ANTHROPIC_USAGE = {**ANTHROPIC_USAGE, "cached_input_tokens": 10,
+                              "reasoning_output_tokens": None, "total_tokens": 120}
+
+
+def anthropic_envelope(value=None, content=None, **updates):
+    if content is None:
+        content = [{"type": "tool_use", "id": "toolu_1", "name": "harness_result",
+                    "input": ANSWER if value is None else value}]
+    envelope = {"id": "msg_1", "type": "message", "role": "assistant", "model": "same-model",
+                "stop_reason": "tool_use", "stop_sequence": None, "usage": ANTHROPIC_USAGE,
+                "content": content}
+    envelope.update(updates)
+    return envelope
+
+
 def response_envelope(text=None, **updates):
     value = {
         "status": "completed", "error": None, "incomplete_details": None,
@@ -38,7 +55,9 @@ def response_envelope(text=None, **updates):
     return value
 
 
-class TunnelTests(unittest.TestCase):
+class _TunnelFixture(unittest.TestCase):
+    """Shared mocks: no network, no subprocess, no live API; helpers for both API shapes."""
+
     def setUp(self):
         self.network = patch("socket.socket", side_effect=AssertionError("live network forbidden")).start()
         self.process = patch("newsverify.tunnels.subprocess.run",
@@ -104,6 +123,8 @@ class TunnelTests(unittest.TestCase):
         self.assertGreaterEqual(record["wall_seconds"], 0)
         self.assertIn("usage", record)
 
+
+class TunnelTests(_TunnelFixture):
     def test_local_success_is_isolated_and_strips_api_keys(self):
         self.local_run(stderr=SECRET)
         tunnel = LocalTunnel("same-model", reasoning_effort="high", timeout=17)
@@ -525,3 +546,97 @@ class LocalSkillDiscoveryTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AnthropicTunnelTests(_TunnelFixture):
+    """The Messages transport keeps the same prompts, schema contract and redaction."""
+
+    def test_anthropic_payload_matches_local_prompt_and_forces_schema_tool(self):
+        self.local_run()
+        self.generate(LocalTunnel("same-model", "high"))
+        connection = self.api_response(anthropic_envelope())
+        tunnel = AnthropicTunnel("same-model", "high", timeout=17, api_key=SECRET)
+        self.assertEqual(self.generate(tunnel), ANSWER)
+        self.connection.assert_called_once_with("api.anthropic.com", timeout=17.0, context=self.ssl_context)
+        args, kwargs = connection.request.call_args
+        self.assertEqual(args, ("POST", "/v1/messages"))
+        self.assertEqual(kwargs["headers"]["x-api-key"], SECRET)
+        self.assertIn("anthropic-version", kwargs["headers"])
+        self.assertNotIn("Authorization", kwargs["headers"])
+        payload = json.loads(kwargs["body"])
+        self.assertEqual(payload["model"], "same-model")
+        self.assertEqual(payload["max_tokens"], 8192)
+        self.assertEqual(payload["messages"], [{"role": "user", "content": payload["messages"][0]["content"]}])
+        self.assertEqual(payload["system"] + "\n" + payload["messages"][0]["content"], self.local_kwargs["input"])
+        self.assertEqual(payload["tools"][0]["name"], "harness_result")
+        self.assertEqual(payload["tools"][0]["input_schema"], SCHEMA)
+        self.assertEqual(payload["tool_choice"], {"type": "tool", "name": "harness_result",
+                                                  "disable_parallel_tool_use": True})
+        self.assertNotIn("thinking", payload)
+        record = tunnel.calls[0]
+        self.assertEqual(record["usage"], NORMALIZED_ANTHROPIC_USAGE)
+        self.assertEqual(record["http_status"], 200)
+        self.assertFalse(record["reasoning_effort_forwarded"])
+        self.assertTrue(record["success"])
+        self.assertEqual(tunnel.kind, "anthropic")
+        connection.close.assert_called_once()
+        self.assertNotIn(SECRET, json.dumps(tunnel.calls))
+        self.assertEqual(1, self.process.call_count)  # only the local baseline above
+
+    def test_anthropic_text_block_beside_tool_result_is_ignored(self):
+        self.api_response(anthropic_envelope(content=[
+            {"type": "text", "text": "Working through the packet."},
+            {"type": "tool_use", "id": "toolu_1", "name": "harness_result", "input": ANSWER}]))
+        self.assertEqual(self.generate(AnthropicTunnel("model", api_key=SECRET)), ANSWER)
+
+    def test_anthropic_missing_key_never_uses_other_credentials(self):
+        for env in ({}, {"OPENAI_API_KEY": SECRET, "CODEX_API_KEY": SECRET}):
+            with self.subTest(env=list(env)), patch.dict(os.environ, env, clear=True):
+                with self.assertRaisesRegex(TunnelError, "requires ANTHROPIC_API_KEY"):
+                    AnthropicTunnel("model")
+        with patch.dict(os.environ, {"ANTHROPIC_API_KEY": SECRET}, clear=True):
+            self.assertEqual(AnthropicTunnel("model")._api_key, SECRET)
+        self.connection.assert_not_called()
+
+    def test_anthropic_rejects_invalid_max_output_tokens(self):
+        for value in (0, -1, 1.5, True, "8192"):
+            with self.subTest(value=value), self.assertRaises(TunnelError):
+                AnthropicTunnel("model", api_key=SECRET, max_output_tokens=value)
+
+    def test_anthropic_unstructured_or_incomplete_outputs_fail_safely(self):
+        cases = [
+            (anthropic_envelope(stop_reason="refusal", content=[]), "refused"),
+            (anthropic_envelope(stop_reason="max_tokens", content=[]), "not completed"),
+            (anthropic_envelope(stop_reason="end_turn", content=[{"type": "text", "text": SECRET}]),
+             "structured result"),
+            (anthropic_envelope(content=[{"type": "tool_use", "id": "t", "name": "web_search",
+                                          "input": {"query": SECRET}}]), "used a tool"),
+            (anthropic_envelope(content=[
+                {"type": "tool_use", "id": "a", "name": "harness_result", "input": ANSWER},
+                {"type": "tool_use", "id": "b", "name": "harness_result", "input": ANSWER}]),
+             "exactly one"),
+            (anthropic_envelope(value=[SECRET]), "valid JSON object"),
+            (anthropic_envelope(content=[{"type": "server_tool_use", "id": "t", "name": "x", "input": {}}]),
+             "unexpected output item"),
+            ({"type": "error", "error": {"type": "overloaded_error", "message": SECRET}}, "model error"),
+            ({"type": "completion", "completion": SECRET}, "did not contain model output"),
+        ]
+        for envelope, pattern in cases:
+            with self.subTest(pattern=pattern):
+                connection = self.api_response(envelope)
+                self.assert_safe_failure(AnthropicTunnel("model", api_key=SECRET), pattern)
+                connection.close.assert_called_once()
+        self.process.assert_not_called()
+
+    def test_anthropic_http_error_timeout_and_redirect_are_redacted(self):
+        connection = self.api_response(body=SECRET, status=401)
+        self.assert_safe_failure(AnthropicTunnel("model", api_key=SECRET), "HTTP 401")
+        connection.getresponse.return_value.read1.assert_not_called()
+        connection = self.api_response(body=SECRET, status=307)
+        self.assert_safe_failure(AnthropicTunnel("model", api_key=SECRET), "HTTP 307")
+        connection.request.assert_called_once()
+        connection = self.api_response(anthropic_envelope())
+        connection.getresponse.side_effect = socket.timeout(SECRET)
+        self.assert_safe_failure(AnthropicTunnel("model", api_key=SECRET), "timed out")
+        connection.close.assert_called_once()
+        self.process.assert_not_called()

@@ -565,7 +565,7 @@ class NewsTracingIntegrationTests(unittest.TestCase):
         with redirect_stdout(output), self.assertRaises(SystemExit) as caught:
             main(["trace-news", "--help"])
         self.assertEqual(0, caught.exception.code)
-        self.assertIn("{local,api}", output.getvalue())
+        self.assertIn("{local,api,anthropic}", output.getvalue())
         self.assertIn("--max-model-calls", output.getvalue())
 
     def test_research_advice_guides_selection_without_changing_explicit_claim_or_sources(self):

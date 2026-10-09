@@ -15,13 +15,14 @@ import json
 from pathlib import Path
 import time
 
-from .model_runner import COMMON, VERDICT_SCHEMA, _array, _object, _settings, exact_span
+from .model_runner import (COMMON, TUNNELS, VERDICT_SCHEMA, _array, _object, check_tunnel,
+                           exact_span, make_transport)
 from .provenance import (
     Analysis, ConservativeDecomposer, Fragment, Gap, MaterialVersion, OriginFinding,
     Relation, Resolution, Target, TraceConfig, VerificationResult,
     _material_eligibility, _time, from_mapping, run_provenance,
 )
-from .tunnels import APITunnel, LocalTunnel, TunnelError
+from .tunnels import TunnelError
 
 
 STRING = {"type": "string"}
@@ -567,8 +568,7 @@ class SnapshotPoolProvider:
 def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effort=None,
                           timeout=90, max_model_calls=10, transport=None):
     """Analyze each immutable snapshot once by default; explicit legacy mode remains available."""
-    if tunnel not in {"local", "api"}:
-        raise ValueError("tunnel must be local or api")
+    check_tunnel(tunnel)
     if not isinstance(payload, dict) or not isinstance(payload.get("target"), dict):
         raise ValueError("double-loop trace requires a target object")
     if not isinstance(payload.get("materials"), list) or not payload["materials"]:
@@ -590,9 +590,7 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         if type(getattr(config, name)) is not int or getattr(config, name) < 1:
             raise ValueError(f"{name} must be a positive integer")
     if transport is None:
-        model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
-        transport = (LocalTunnel if tunnel == "local" else APITunnel)(
-            model=model, reasoning_effort=effort, timeout=timeout)
+        transport = make_transport(tunnel, model, reasoning_effort, timeout)
     elif transport.kind != tunnel:
         raise ValueError("Supplied transport kind must match the selected tunnel")
     bounded = CallBudgetTransport(transport, max_model_calls)
@@ -623,7 +621,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--tunnel", choices=("local", "api"), default="local")
+    parser.add_argument("--tunnel", choices=TUNNELS, default="local")
     parser.add_argument("--model")
     parser.add_argument("--reasoning-effort")
     parser.add_argument("--timeout", type=float, default=90)

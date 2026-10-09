@@ -14,10 +14,10 @@ import json
 import re
 
 from .double_loop import CallBudgetTransport, run_double_loop_trace
-from .model_runner import _array, _object, _settings
+from .model_runner import _array, _object, check_tunnel, make_transport
 from .news_client import TracingClient, url_key, CONTRACT
 from .provenance import MaterialVersion, _material_eligibility, _time, from_mapping
-from .tunnels import APITunnel, LocalTunnel, TunnelError
+from .tunnels import TunnelError
 
 
 LINK_SCHEMA = _object(urls=_array({"type": "string"}), rationale={"type": "string"})
@@ -583,8 +583,7 @@ def _run_item(entry, config, bounded, collector_factory):
 def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=None,
                      timeout=90, max_model_calls=40, transport=None, collector_factory=None):
     """Run each news item independently, retaining failed items and claim rows."""
-    if tunnel not in {"local", "api"}:
-        raise ValueError("tunnel must be local or api")
+    check_tunnel(tunnel)
     if not isinstance(payload, dict) or not isinstance(payload.get("news"), list) or not payload["news"]:
         raise ValueError("News tracing requires a nonempty news list")
     if len(payload["news"]) > 20:
@@ -631,8 +630,7 @@ def run_news_tracing(payload, *, tunnel="local", model=None, reasoning_effort=No
         identifiers.add(item["id"])
         entries.append(deepcopy(item))
     if transport is None:
-        model, effort = _settings(model, reasoning_effort, tunnel=tunnel)
-        transport = (LocalTunnel if tunnel == "local" else APITunnel)(model=model, reasoning_effort=effort, timeout=timeout)
+        transport = make_transport(tunnel, model, reasoning_effort, timeout)
     elif transport.kind != tunnel:
         raise ValueError("The transport must match the selected tunnel")
     results = []

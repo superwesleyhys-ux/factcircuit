@@ -29,4 +29,8 @@ is stale.
   do not delete or reword them to look better.
 - Historical cutoff isolation applies to supplied evidence only; do not claim
   it removes later knowledge from a pretrained model.
-- Model credentials come from the environment, never from tracked files.
+- Model credentials come from the environment (`OPENAI_API_KEY`,
+  `ANTHROPIC_API_KEY`), never from tracked files.
+- A claim that the harness beats a bare model comes from a registered
+  `experiments/head_to_head.py` run (see `docs/HEAD_TO_HEAD.md`), not from a
+  selected comparison.
