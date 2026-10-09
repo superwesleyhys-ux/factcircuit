@@ -1,0 +1,430 @@
+{
+  "benchmark_id": "synthetic-dev-pool-002",
+  "arm": "direct",
+  "run_at": "2026-10-09T04:39:21.814778Z",
+  "settings": {
+    "tunnel": "local",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "low",
+    "timeout": 180
+  },
+  "cases_sha256": "975b9e461eb720f9b7e6a5d4a7f72f4ccb3e035627925ef35034f93e9b9ff89c",
+  "harness_commit": "38b8deb6c968216a443b1859a6d6a58ca3bba754",
+  "results": [
+    {
+      "case_id": "copy-is-not-a-second-source",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "rationale": "Both materials were available before the cutoff, but they repeat the same attributed claim and provide no independent confirmation. The cited original record is not supplied, so the packet does not establish the measured result.",
+      "basis": [
+        {
+          "version_id": "notice-a",
+          "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+        },
+        {
+          "version_id": "copy-of-notice-a",
+          "quote": "Daily Bulletin: the laboratory measured a result of 30 units, according to a statement. Source: https://fixture.example/record-a"
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 8.392178666999826,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11363,
+            "cached_input_tokens": 0,
+            "output_tokens": 144,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11507
+          },
+          "input_chars": 2751,
+          "local_skills_disabled": 112,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 8.39230091600075,
+      "tokens": {
+        "input_tokens": 11363,
+        "output_tokens": 144,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2751,
+        "total_tokens": 11507,
+        "mean_input_tokens_per_call": 11363.0
+      }
+    },
+    {
+      "case_id": "record-revised-before-cutoff",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-b-v1",
+        "record-b-v2"
+      ],
+      "error": null,
+      "rationale": "The original measurement record was corrected before the cutoff to 25 units, explicitly superseding the erroneous 30-unit result. The notice cites that same record and provides no independent confirmation.",
+      "basis": [
+        {
+          "version_id": "record-b-v2",
+          "quote": "Measurement record (version 2, corrected): a transcription error was found; the result was 25 units, not 30."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 5.642089582999688,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11244,
+            "cached_input_tokens": 0,
+            "output_tokens": 114,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11358
+          },
+          "input_chars": 2995,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 5.642319749998933,
+      "tokens": {
+        "input_tokens": 11244,
+        "output_tokens": 114,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2995,
+        "total_tokens": 11358,
+        "mean_input_tokens_per_call": 11244.0
+      }
+    },
+    {
+      "case_id": "decoy-record-same-number",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "rationale": "Both materials were available before the cutoff, but the notice's cited record for experiment X is not supplied. The supplied measurement record concerns only experiment Y. The notice alone does not establish X's actual result, and no eligible evidence contradicts it.",
+      "basis": [
+        {
+          "version_id": "notice-c",
+          "quote": "The notice reports that experiment X produced 30 units. Source: https://fixture.example/record-x"
+        },
+        {
+          "version_id": "record-y",
+          "quote": "Measurement record for experiment Y: the result was 30 units. Experiment X is not covered by this record."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.822220209000079,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11146,
+            "cached_input_tokens": 0,
+            "output_tokens": 139,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11285
+          },
+          "input_chars": 2687,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.822495166001318,
+      "tokens": {
+        "input_tokens": 11146,
+        "output_tokens": 139,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2687,
+        "total_tokens": 11285,
+        "mean_input_tokens_per_call": 11146.0
+      }
+    },
+    {
+      "case_id": "two-hop-supported",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "supported",
+      "original_version_ids": [
+        "record-d"
+      ],
+      "error": null,
+      "rationale": "The original measurement record was available before the cutoff and directly establishes the exact result of 30 units. The notice and summary derive from that record and are not independent confirmation.",
+      "basis": [
+        {
+          "version_id": "record-d",
+          "quote": "Original measurement record: the result was 30 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 5.865933791999851,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11235,
+            "cached_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11321
+          },
+          "input_chars": 2983,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 5.866100416998961,
+      "tokens": {
+        "input_tokens": 11235,
+        "output_tokens": 86,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2983,
+        "total_tokens": 11321,
+        "mean_input_tokens_per_call": 11235.0
+      }
+    },
+    {
+      "case_id": "two-hop-contradicted-by-record",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-e"
+      ],
+      "error": null,
+      "rationale": "All materials were available before the cutoff. The original measurement record gives 25 units, contradicting 30 units. The notice and summary form a dependent reporting chain that misstates the original result, not independent opposing measurement evidence.",
+      "basis": [
+        {
+          "version_id": "record-e",
+          "quote": "Original measurement record: the result was 25 units."
+        },
+        {
+          "version_id": "summary-e",
+          "quote": "Summary of the measurement campaign: the result was 30 units. Source: https://fixture.example/record-e"
+        },
+        {
+          "version_id": "notice-e",
+          "quote": "The notice reports a measurement of 30 units. Source: https://fixture.example/summary-e"
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 9.861391833001107,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11235,
+            "cached_input_tokens": 8192,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11393
+          },
+          "input_chars": 2983,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 9.861618790999273,
+      "tokens": {
+        "input_tokens": 11235,
+        "output_tokens": 158,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2983,
+        "total_tokens": 11393,
+        "mean_input_tokens_per_call": 11235.0
+      }
+    },
+    {
+      "case_id": "qualifier-site-mismatch",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-f"
+      ],
+      "error": null,
+      "rationale": "The eligible original measurement record gives site A's result as 20 units and assigns 30 units to site B. The notice misstates its cited source.",
+      "basis": [
+        {
+          "version_id": "record-f",
+          "quote": "Measurement record: site B produced 30 units; site A produced 20 units."
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.75272758400024,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11137,
+            "cached_input_tokens": 0,
+            "output_tokens": 91,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11228
+          },
+          "input_chars": 2641,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.752877249999074,
+      "tokens": {
+        "input_tokens": 11137,
+        "output_tokens": 91,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2641,
+        "total_tokens": 11228,
+        "mean_input_tokens_per_call": 11137.0
+      }
+    },
+    {
+      "case_id": "notice-corrected-before-cutoff",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "contradicted",
+      "original_version_ids": [
+        "record-g"
+      ],
+      "error": null,
+      "rationale": "The original measurement record establishes 25 units, and the notice corrected its earlier 30-unit report before the cutoff. The corrected report does not leave an unresolved conflict.",
+      "basis": [
+        {
+          "version_id": "record-g",
+          "quote": "Original measurement record: the result was 25 units."
+        },
+        {
+          "version_id": "notice-g-v2",
+          "quote": "Correction: an earlier version of this notice said 30 units; the record states 25 units. Source: https://fixture.example/record-g"
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.745697709000524,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11250,
+            "cached_input_tokens": 0,
+            "output_tokens": 127,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11377
+          },
+          "input_chars": 3016,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.745946708999327,
+      "tokens": {
+        "input_tokens": 11250,
+        "output_tokens": 127,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 3016,
+        "total_tokens": 11377,
+        "mean_input_tokens_per_call": 11250.0
+      }
+    },
+    {
+      "case_id": "notice-only-no-record",
+      "arm": "direct",
+      "valid": true,
+      "verdict": "unresolved",
+      "original_version_ids": [],
+      "error": null,
+      "rationale": "The notice was eligible at the cutoff, but it only reports the measurement and cites an underlying record that was not supplied. The packet does not sufficiently establish the measured result.",
+      "basis": [
+        {
+          "version_id": "notice-h",
+          "quote": "The notice reports a measurement of 30 units. Source: https://fixture.example/record-h"
+        }
+      ],
+      "calls": [
+        {
+          "stage": "direct_verdict",
+          "tunnel": "local",
+          "model": "gpt-6-astra",
+          "reasoning_effort": "low",
+          "timeout_seconds": 180.0,
+          "wall_seconds": 6.385423957999592,
+          "success": true,
+          "status": "completed",
+          "usage": {
+            "input_tokens": 11041,
+            "cached_input_tokens": 0,
+            "output_tokens": 92,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11133
+          },
+          "input_chars": 2305,
+          "local_skills_disabled": 113,
+          "exit_code": 0
+        }
+      ],
+      "wall_seconds": 6.38558408300014,
+      "tokens": {
+        "input_tokens": 11041,
+        "output_tokens": 92,
+        "calls": 1,
+        "failed_calls": 0,
+        "missing_usage": 0,
+        "input_chars": 2305,
+        "total_tokens": 11133,
+        "mean_input_tokens_per_call": 11041.0
+      }
+    }
+  ]
+}
