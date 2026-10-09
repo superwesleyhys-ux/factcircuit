@@ -222,6 +222,11 @@ class LocalTunnel(_Tunnel):
     def __init__(self, model: str, reasoning_effort: str = "medium", timeout: float = 180,
                  diagnostic_directory: str | Path | None = None):
         super().__init__(model, reasoning_effort, timeout)
+        if not shutil.which("codex"):
+            # Unavailable configuration is reported before any model work starts;
+            # the per-call check below still guards against PATH changes later.
+            raise TunnelError("The local tunnel requires the Codex CLI on PATH; "
+                              "install it or select the API tunnel explicitly.")
         if diagnostic_directory is None:
             self.diagnostic_directory = None
         else:

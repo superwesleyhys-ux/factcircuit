@@ -5,6 +5,19 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- Added a `double-loop` subcommand to the main CLI (the
+  `python -m factcircuit.double_loop` module entry point remains), help text for
+  every subcommand, and runnable example inputs for `early-risk` and
+  `double-loop`.
+- JSON inputs for `trace`, `trace-model`, `double-loop` and `trace-news` are now
+  validated by field name: missing or unknown fields in `target`, a material or
+  `config` produce a named error instead of a constructor message, and
+  list-valued `evidence_scope` is accepted on every path (previously only
+  `trace`).
+- A missing Codex CLI is reported when the local tunnel is constructed, so
+  every local-tunnel command exits 2 before any model work instead of recording
+  a failed call per stage.
+- Added a ruff lint job to CI and an end-to-end CLI test module.
 - Restored the canonical README that PR #7 had overwritten with the
   development-archive README (wrong title, stale v0.2.0 version, `newsverify`
   commands, five links to unpublished September 8 reports). Docs and

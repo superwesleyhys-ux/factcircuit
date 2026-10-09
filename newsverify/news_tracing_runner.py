@@ -16,7 +16,7 @@ import re
 from .double_loop import CallBudgetTransport, run_double_loop_trace
 from .model_runner import _array, _object, _settings
 from .news_client import TracingClient, url_key, CONTRACT
-from .provenance import MaterialVersion, _material_eligibility, _time
+from .provenance import MaterialVersion, _material_eligibility, _time, from_mapping
 from .tunnels import APITunnel, LocalTunnel, TunnelError
 
 
@@ -80,8 +80,8 @@ class _SnapshotCollector:
         self.documents, self.errors, self.requests, self.exclusions = {}, [], [], {}
         self.materials, self.evidence_documents = [], []
         seen = set()
-        for raw in materials:
-            material = MaterialVersion(**raw)
+        for index, raw in enumerate(materials):
+            material = from_mapping(MaterialVersion, raw, f"materials[{index}]")
             if material.version_id in seen:
                 raise ValueError("Snapshot version IDs must be unique")
             seen.add(material.version_id)

@@ -11,6 +11,19 @@ requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [{name = "FactCircuit contributors"}]
 dependencies = []
+keywords = ["fact-checking", "provenance", "news-verification", "evaluation", "audit"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing :: Linguistic",
+]
 
 [project.optional-dependencies]
 model = ["openai==3.8.0", "socksio==1.0.0"]
@@ -29,3 +42,20 @@ newsverify = ["data/*.json"]
 Homepage = "https://github.com/superwesleyhys-ux/factcircuit"
 Repository = "https://github.com/superwesleyhys-ux/factcircuit"
 Issues = "https://github.com/superwesleyhys-ux/factcircuit/issues"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# Dated experiment directories are archived records of published runs and are
+# kept as they ran; only the reusable experiment modules are linted.
+extend-exclude = ["integrations", "experiments/*-2026*", "experiments/double-loop-pilot"]
+
+[tool.ruff.lint]
+# F = pyflakes, E9 = syntax/IO errors, B006/B008 = mutable defaults, PLE = pylint errors.
+select = ["F", "E9", "B006", "B008", "PLE"]
+
+[tool.ruff.lint.per-file-ignores]
+# The factcircuit package is a thin canonical surface over newsverify.
+"factcircuit/*.py" = ["F401", "F403"]
+# loop_compare re-exports ResourceBudgetError for historical_compare.
+"experiments/loop_compare.py" = ["F401"]

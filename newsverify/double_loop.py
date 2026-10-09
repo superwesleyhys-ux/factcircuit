@@ -19,7 +19,7 @@ from .model_runner import COMMON, VERDICT_SCHEMA, _array, _object, _settings, ex
 from .provenance import (
     Analysis, ConservativeDecomposer, Fragment, Gap, MaterialVersion, OriginFinding,
     Relation, Resolution, Target, TraceConfig, VerificationResult,
-    _material_eligibility, _time, run_provenance,
+    _material_eligibility, _time, from_mapping, run_provenance,
 )
 from .tunnels import APITunnel, LocalTunnel, TunnelError
 
@@ -573,17 +573,17 @@ def run_double_loop_trace(payload, *, tunnel="local", model=None, reasoning_effo
         raise ValueError("double-loop trace requires a target object")
     if not isinstance(payload.get("materials"), list) or not payload["materials"]:
         raise ValueError("double-loop trace requires a nonempty materials list")
-    target = Target(**payload["target"])
+    target = from_mapping(Target, payload["target"], "target")
     materials = []
-    for item in payload["materials"]:
+    for index, item in enumerate(payload["materials"]):
         if not isinstance(item, dict):
             raise ValueError("each snapshot must be a material object")
-        materials.append(MaterialVersion(**item))
+        materials.append(from_mapping(MaterialVersion, item, f"materials[{index}]"))
     if payload.get("config") is not None and not isinstance(payload["config"], dict):
         raise ValueError("double-loop config must be an object")
     options = dict(payload.get("config") or {})
     options.setdefault("reanalyze_existing_versions", False)
-    config = TraceConfig(**options)
+    config = from_mapping(TraceConfig, options, "config")
     if type(config.reanalyze_existing_versions) is not bool:
         raise ValueError("reanalyze_existing_versions must be a boolean")
     for name in ("max_rounds", "max_documents", "max_decomposition_calls"):

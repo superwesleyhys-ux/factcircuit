@@ -12,6 +12,18 @@ from .comparison import compare
 from .local import run_local
 
 STATUSES = {"supported", "contradicted", "conflicting", "unresolved"}
+HELP = {
+    "demo": "run the bundled v0.1 annotated-evidence policy example",
+    "trace-demo": "replay four material versions over three offline retrieval rounds",
+    "trace": "replay a local JSON snapshot offline; URLs are never fetched",
+    "trace-model": "extract claims and verify facts over supplied snapshots with a model",
+    "early-risk": "single-pass provenance-risk assessment of one case with a model",
+    "double-loop": "model-selected follow-up retrieval from a fixed local snapshot pool",
+    "verify": "run the v0.1 annotated-evidence policy loop on a fixture",
+    "benchmark": "check the synthetic v0.1 policy cases; not a real-news accuracy estimate",
+    "score": "score fixed predictions against separate gold labels",
+    "compare": "paired event-cluster bootstrap comparison of two prediction runs",
+}
 
 
 def run_fixture(payload):
@@ -78,31 +90,37 @@ def main(argv=None, *, prog="newsverify"):
         "--config", type=Path,
         help="optional JSON resource budgets; no credentials",
     )
-    for command in ("demo", "trace-demo", "trace", "trace-model", "early-risk", "verify", "benchmark"):
-        child = sub.add_parser(command)
+    for command in ("demo", "trace-demo", "trace", "trace-model", "early-risk", "double-loop",
+                    "verify", "benchmark"):
+        child = sub.add_parser(command, help=HELP[command])
         if command not in ("demo", "trace-demo"):
-            child.add_argument("input", type=Path)
-        child.add_argument("--output", type=Path)
-        if command in {"trace-model", "early-risk"}:
+            child.add_argument("input", type=Path, help="JSON input file")
+        child.add_argument("--output", type=Path, help="write the JSON report here instead of stdout")
+        if command in {"trace-model", "early-risk", "double-loop"}:
+            default_timeout = 90 if command == "double-loop" else 180
             child.add_argument("--tunnel", choices=("local", "api"), default="local",
                                help="model execution path (default: local Codex CLI)")
             child.add_argument("--model", help="local model (default: FACTCIRCUIT_MODEL or gpt-6-astra); API requires --model or OPENAI_MODEL")
             child.add_argument("--reasoning-effort", help=(
                 "reasoning effort (default: low)" if command == "early-risk"
                 else "reasoning effort (default: Codex setting or medium)"))
-            child.add_argument("--timeout", type=float, default=180,
-                               help="timeout in seconds for each model call (default: 180)")
-    score_parser = sub.add_parser("score")
-    score_parser.add_argument("gold", type=Path)
-    score_parser.add_argument("predictions", type=Path)
-    score_parser.add_argument("--output", type=Path)
-    compare_parser = sub.add_parser("compare")
-    compare_parser.add_argument("gold", type=Path)
-    compare_parser.add_argument("baseline", type=Path)
-    compare_parser.add_argument("candidate", type=Path)
-    compare_parser.add_argument("--bootstrap-samples", type=int, default=500)
-    compare_parser.add_argument("--seed", type=int, default=0)
-    compare_parser.add_argument("--output", type=Path)
+            child.add_argument("--timeout", type=float, default=default_timeout,
+                               help=f"timeout in seconds for each model call (default: {default_timeout})")
+        if command == "double-loop":
+            child.add_argument("--max-model-calls", type=int, default=10,
+                               help="cap on selection, decomposition and verification calls (default: 10)")
+    score_parser = sub.add_parser("score", help=HELP["score"])
+    score_parser.add_argument("gold", type=Path, help="gold labels JSON")
+    score_parser.add_argument("predictions", type=Path, help="predictions JSON")
+    score_parser.add_argument("--output", type=Path, help="write the JSON report here instead of stdout")
+    compare_parser = sub.add_parser("compare", help=HELP["compare"])
+    compare_parser.add_argument("gold", type=Path, help="gold labels JSON")
+    compare_parser.add_argument("baseline", type=Path, help="baseline predictions JSON")
+    compare_parser.add_argument("candidate", type=Path, help="candidate predictions JSON")
+    compare_parser.add_argument("--bootstrap-samples", type=int, default=500,
+                                help="event-cluster bootstrap resamples, 20 to 10000 (default: 500)")
+    compare_parser.add_argument("--seed", type=int, default=0, help="bootstrap seed (default: 0)")
+    compare_parser.add_argument("--output", type=Path, help="write the JSON report here instead of stdout")
     news_parser = sub.add_parser("trace-news", help="trace each news claim to source records and verify it")
     news_parser.add_argument("input", type=Path, help="JSON file containing a news list")
     news_parser.add_argument("--output", type=Path)
@@ -165,6 +183,12 @@ def main(argv=None, *, prog="newsverify"):
                 result = run_early_risk(payload, tunnel=args.tunnel, model=args.model,
                                         reasoning_effort=args.reasoning_effort or "low",
                                         timeout=args.timeout)
+            elif args.command == "double-loop":
+                from .double_loop import run_double_loop_trace
+                result = run_double_loop_trace(payload, tunnel=args.tunnel, model=args.model,
+                                               reasoning_effort=args.reasoning_effort,
+                                               timeout=args.timeout,
+                                               max_model_calls=args.max_model_calls)
             elif args.command == "benchmark":
                 result = benchmark(payload)
             else:
@@ -176,7 +200,7 @@ def main(argv=None, *, prog="newsverify"):
             print(f"Wrote {args.output}")
         else:
             print(rendered, end="")
-        if args.command == "trace-model" and result["errors"]:
+        if args.command in {"trace-model", "double-loop"} and result["errors"]:
             return 1
         if args.command == "trace-news":
             return 1 if result["summary"]["failed"] or result["summary"]["partial"] else 0

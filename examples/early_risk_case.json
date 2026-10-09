@@ -1,0 +1,26 @@
+{
+  "target": {
+    "id": "early-risk-example",
+    "text": "The Vellum Workshop ledger reports exactly 12 blue cubes counted at noon on 12 June 2026.",
+    "as_of": "2026-06-12T18:00:00Z",
+    "source_version_id": "vellum-ledger:v1"
+  },
+  "materials": [
+    {
+      "version_id": "vellum-ledger:v1",
+      "url": "https://vellum.example/count-ledger",
+      "issuer": "synthetic-keeper; ledger excerpt",
+      "content": "Original Vellum Workshop count ledger: at noon on 12 June 2026, the keeper directly inspected the box and counted exactly 12 blue cubes. This is a fictional record for a harness integration example.",
+      "available_at": "2026-06-12T12:05:00Z",
+      "availability_basis": "Synthetic fixture stipulates this exact version was available at the stated time."
+    },
+    {
+      "version_id": "vellum-notice:v1",
+      "url": "https://vellum.example/later-notice",
+      "issuer": "synthetic-keeper; later notice",
+      "content": "Later notice: this fictional material is dated after the cutoff and must not reach the model.",
+      "available_at": "2026-06-13T09:00:00Z",
+      "availability_basis": "Synthetic fixture stipulates post-cutoff availability."
+    }
+  ]
+}

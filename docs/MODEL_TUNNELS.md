@@ -69,7 +69,7 @@ relations, origin resolution and active follow-up retrieval are not implemented
 in these semantic adapters. A supported fact can therefore retain `partial`
 provenance and open source questions. This is separate from the full core's
 plugin capability. The opt-in `run_double_loop_trace` adapter in
-`factcircuit/double_loop.py` (implemented in `newsverify/double_loop.py`) adds model-selected follow-up retrieval and source
+`factcircuit double-loop` (implemented in `newsverify/double_loop.py`) adds model-selected follow-up retrieval and source
 reanalysis over a finite material pool. The September 8 gstack-guided
 comparison protocol is kept in `experiments/gstack-harness-eval-20260908/`;
 its report artifacts are not published in this repository.

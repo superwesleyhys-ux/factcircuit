@@ -8,7 +8,7 @@ import unittest
 from newsverify.double_loop import DoubleLoopDecomposer, DoubleLoopVerifier, run_double_loop_trace
 from newsverify.provenance import MaterialVersion, ReplayTraceProvider, Target, TraceConfig, run_provenance
 from tests.test_double_loop import (
-    D1, D2, ScriptedTransport, analysis, edge, material, payload, quote,
+    D1, ScriptedTransport, analysis, edge, material, payload, quote,
     resolution, script, verdict,
 )
 

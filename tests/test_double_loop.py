@@ -101,6 +101,17 @@ class DoubleLoopTests(unittest.TestCase):
         report = run_double_loop_trace(payload() if data is None else data, transport=transport, **kwargs)
         return report, transport
 
+    def test_json_payload_fields_are_validated_by_name(self):
+        data = payload(); data["target"]["evidence_scope"] = ["notice", "record"]
+        report, _ = self.run_script(data=data)
+        self.assertEqual([], report["errors"])
+        data = payload(); data["materials"][1]["id"] = "record"
+        with self.assertRaisesRegex(ValueError, r"materials\[1\] has unknown field\(s\): id"):
+            run_double_loop_trace(data, transport=ScriptedTransport(script()))
+        data = payload(); del data["target"]["as_of"]
+        with self.assertRaisesRegex(ValueError, "target is missing required field\(s\): as_of"):
+            run_double_loop_trace(data, transport=ScriptedTransport(script()))
+
     def test_both_feedback_loops_revise_history_and_resolve_with_evidence(self):
         report, transport = self.run_script()
         self.assertEqual([], report["errors"])
