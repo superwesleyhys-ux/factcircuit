@@ -1,0 +1,58 @@
+{
+  "benchmark_id": "synthetic-dev-pool-002",
+  "registered_at": "2026-10-09T03:50:42.108218Z",
+  "harness_version": "0.3.2",
+  "harness_commit": "4c39b9e059595f741057d2eb4385e32b4376e978",
+  "cases_sha256": "975b9e461eb720f9b7e6a5d4a7f72f4ccb3e035627925ef35034f93e9b9ff89c",
+  "gold_sha256": "d4a33dbcd13abf61ed553fec6d4766d10606b6ecd293471133c73e679926a149",
+  "case_order": [
+    "copy-is-not-a-second-source",
+    "record-revised-before-cutoff",
+    "decoy-record-same-number",
+    "two-hop-supported",
+    "two-hop-contradicted-by-record",
+    "qualifier-site-mismatch",
+    "notice-corrected-before-cutoff",
+    "notice-only-no-record"
+  ],
+  "arm_order": [
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ],
+    [
+      "direct",
+      "harness"
+    ],
+    [
+      "harness",
+      "direct"
+    ]
+  ],
+  "max_token_ratio": 6.0,
+  "max_model_calls": 12,
+  "harness_config": {
+    "defer_verification_until_provenance_complete": true
+  },
+  "success_rule": "harness accuracy strictly greater than direct; every harness output valid; harness total tokens at most 6.0 x direct"
+}
