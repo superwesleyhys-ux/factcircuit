@@ -5,7 +5,7 @@ import json
 import unittest
 
 from newsverify.provenance import (
-    Analysis, ConservativeDecomposer, Fragment, Gap, MaterialVersion, OriginFinding,
+    Analysis, Fragment, Gap, MaterialVersion, OriginFinding,
     Relation, ReplayTraceProvider, Resolution, Span, Target, TraceConfig,
     VerificationResult, run_provenance,
 )

@@ -2,7 +2,7 @@
 
 from copy import deepcopy
 
-from .provenance import MaterialVersion, ReplayTraceProvider, run_provenance
+from .provenance import MaterialVersion, ReplayTraceProvider, from_mapping, run_provenance
 
 
 def prepare_snapshot(payload):
@@ -17,10 +17,10 @@ def prepare_snapshot(payload):
     materials = []
     for items in rounds:
         batch = []
-        for item in items:
+        for index, item in enumerate(items):
             if not isinstance(item, dict):
                 raise ValueError("each local material must be an object")
-            batch.append(MaterialVersion(**item))
+            batch.append(from_mapping(MaterialVersion, item, f"rounds[{len(materials)}][{index}]"))
         materials.append(batch)
     return payload["target"], ReplayTraceProvider(materials), payload.get("config")
 

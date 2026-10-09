@@ -136,6 +136,9 @@ python3 -m factcircuit trace examples/local_trace.json --output reports/local-tr
 # Four material versions over three retrieval rounds with hand-authored judgments
 python3 -m factcircuit trace-demo --output reports/trace-demo-local.json
 
+# Every subcommand documents itself
+python3 -m factcircuit --help
+
 # Score fixed predictions against separate gold labels
 python3 -m factcircuit score examples/evaluation_gold.json \
   examples/evaluation_predictions.json --output reports/all-metrics-local.json
@@ -173,17 +176,20 @@ python3 -m factcircuit trace-model examples/model_trace.json --tunnel api --mode
 python3 -m factcircuit trace-news examples/news_tracing.json --output reports/news-trace.json
 
 # Single-pass provenance-risk assessment
-python3 -m factcircuit early-risk CASE.json --model gpt-5.6-luna --reasoning-effort low --output RESULT.json
+python3 -m factcircuit early-risk examples/early_risk_case.json --reasoning-effort low --output reports/early-risk.json
 
 # Double loop: model-selected follow-up retrieval from a fixed local snapshot pool
-python3 -m factcircuit.double_loop CASE.json --output REPORT.json --max-model-calls 10
+python3 -m factcircuit double-loop examples/double_loop_case.json --output reports/double-loop.json --max-model-calls 10
 ```
 
 Reports record `execution.tunnel`, model settings, and measured usage for every
 call. Failed calls remain errors in the selected path. Exit status is 1 for an
-audited execution failure and 2 for invalid input or unavailable
-configuration. `trace-news` uses live public pages; finding an original source
-does not by itself establish truth. See [model execution tunnels](docs/MODEL_TUNNELS.md)
+audited execution failure and 2 for invalid input or unavailable configuration,
+including a missing Codex CLI or API key, which is reported before any model
+work starts. Input fields are validated by name: a missing or unknown field in
+`target`, a material, or `config` names the field in the error. `trace-news`
+uses live public pages; finding an original source does not by itself
+establish truth. See [model execution tunnels](docs/MODEL_TUNNELS.md)
 and [news tracing](docs/NEWS_TRACING.md) for budgets, snapshots, and
 limitations.
 

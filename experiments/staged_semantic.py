@@ -9,7 +9,6 @@ from __future__ import annotations
 from dataclasses import asdict, is_dataclass
 import hashlib
 import json
-import re
 from urllib.parse import urlsplit
 
 from factcircuit import provenance as p

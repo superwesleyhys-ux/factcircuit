@@ -142,9 +142,9 @@ def _load_freeze(path):
         raise ValueError("Freeze manifest must declare pre-run checksums")
     if type(value["files"]) is not dict or not value["files"]:
         raise ValueError("freeze files must be a nonempty object")
-    for name, digest in value["files"].items():
+    for name, file_digest in value["files"].items():
         _nonempty(name, "freeze filename")
-        if type(digest) is not str or not _HEX256.fullmatch(digest):
+        if type(file_digest) is not str or not _HEX256.fullmatch(file_digest):
             raise ValueError("freeze file digest must be lowercase sha256")
     return value
 

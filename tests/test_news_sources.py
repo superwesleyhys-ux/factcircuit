@@ -6,7 +6,7 @@ from threading import Event
 import unittest
 from unittest.mock import MagicMock, Mock, patch
 
-from newsverify.news_sources import NewsSourceCollector, SourceDocument, canonical_url
+from newsverify.news_sources import NewsSourceCollector, SourceDocument
 
 
 URL = "https://news.example.org/story"

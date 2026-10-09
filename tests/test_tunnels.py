@@ -282,7 +282,16 @@ class TunnelTests(unittest.TestCase):
 
     def test_local_missing_cli_never_uses_api(self):
         self.which.return_value = None
-        self.assert_safe_failure(LocalTunnel("model"), "requires the Codex CLI")
+        with self.assertRaises(TunnelError) as raised:
+            LocalTunnel("model")
+        self.assertIn("requires the Codex CLI", str(raised.exception))
+        self.connection.assert_not_called()
+        self.process.assert_not_called()
+
+    def test_local_cli_removed_after_construction_fails_safely(self):
+        tunnel = LocalTunnel("model")
+        self.which.return_value = None
+        self.assert_safe_failure(tunnel, "requires the Codex CLI")
         self.connection.assert_not_called()
 
     def test_local_timeout_is_redacted(self):

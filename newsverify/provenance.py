@@ -8,7 +8,7 @@ default decomposer deliberately leaves provenance unresolved. All inputs are dat
 from __future__ import annotations
 
 from copy import deepcopy
-from dataclasses import asdict, dataclass
+from dataclasses import MISSING, asdict, dataclass, fields
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -198,6 +198,31 @@ def _nonempty(value, name):
 def _tuple_of(items, cls, name):
     if not isinstance(items, tuple) or any(not isinstance(item, cls) for item in items):
         raise ValueError(f"{name} must be a tuple of {cls.__name__}")
+
+
+def from_mapping(cls, value, name):
+    """Build a frozen record from a JSON object with field-level error messages.
+
+    JSON cannot express tuples, so list-valued fields whose declared type is a
+    tuple are converted. Missing required fields and unknown fields are reported
+    by name as ``ValueError`` rather than surfacing a constructor ``TypeError``.
+    """
+    if not isinstance(value, dict):
+        raise ValueError(f"{name} must be a JSON object")
+    declared = {field.name: field for field in fields(cls)}
+    unknown = sorted(set(value) - set(declared))
+    if unknown:
+        raise ValueError(f"{name} has unknown field(s): {', '.join(unknown)}")
+    missing = [key for key, field in declared.items()
+               if field.default is MISSING and field.default_factory is MISSING
+               and key not in value]
+    if missing:
+        raise ValueError(f"{name} is missing required field(s): {', '.join(missing)}")
+    prepared = dict(value)
+    for key, field in declared.items():
+        if key in prepared and isinstance(prepared[key], list) and str(field.type).startswith("tuple"):
+            prepared[key] = tuple(prepared[key])
+    return cls(**prepared)
 
 
 def _fingerprint(material):
@@ -498,11 +523,9 @@ def run_provenance(target: Target | dict, provider: TraceProvider,
     unchanged version's accepted analysis instead of decomposing it again.
     """
     if isinstance(target, dict):
-        raw_target = dict(target)
-        if isinstance(raw_target.get("evidence_scope"), list):
-            raw_target["evidence_scope"] = tuple(raw_target["evidence_scope"])
-        target = Target(**raw_target)
-    config = TraceConfig(**config) if isinstance(config, dict) else (config or TraceConfig())
+        target = from_mapping(Target, target, "target")
+    config = (from_mapping(TraceConfig, config, "config") if isinstance(config, dict)
+              else (config or TraceConfig()))
     if not isinstance(target, Target) or not isinstance(config, TraceConfig):
         raise ValueError("invalid target or config type")
     _nonempty(target.id, "target.id")

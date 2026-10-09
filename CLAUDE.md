@@ -10,6 +10,7 @@ in `factcircuit/` (see `factcircuit/provenance.py`, `factcircuit/double_loop.py`
 ```bash
 python -m unittest discover -s tests -v
 python -m factcircuit benchmark examples/benchmark.json --output reports/benchmark.json
+ruff check .                              # pip install ruff; config in pyproject.toml
 python scripts/release_manifest.py write   # after changing any tracked file
 python scripts/release_manifest.py check
 ```
