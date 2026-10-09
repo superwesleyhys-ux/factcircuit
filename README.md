@@ -226,8 +226,12 @@ paid on 5 calls instead of 1. On the eight-case synthetic dev pool
 [dev-002b](reports/head-to-head-dev-002b/SUMMARY.md)) the bare model scored
 8/8 both times; the harness scored 7/8 with early verification and 8/8 with
 verification deferred until the provenance chain is complete, which is now
-the double loop's default. None of this establishes accuracy. The sections
-below are the earlier, mostly corrected, comparisons.
+the double loop's default ([dev-003](reports/head-to-head-dev-003/SUMMARY.md):
+8/8 against 8/8, origins 5/5 against 5/5, 5.11× the tokens). On a
+same-evidence pool the bare model has not lost a case; the harness's
+advantage, if any, is to be measured where the direct arm cannot be handed
+the evidence whole. None of this establishes accuracy. The sections below are
+the earlier, mostly corrected, comparisons.
 
 ## What the experiments show so far
 

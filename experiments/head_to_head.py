@@ -145,12 +145,24 @@ def acceptable_origin_sets(origins) -> list[list[str]]:
 
 # --- arms -------------------------------------------------------------------
 
-def direct_packet(case: dict) -> tuple[dict, dict[str, dict]]:
-    """Every cutoff-eligible material, verbatim, in one packet; nothing later."""
+def direct_packet(case: dict, scope: str = "pool") -> tuple[dict, dict[str, dict]]:
+    """One packet of cutoff-eligible materials, verbatim; nothing later.
+
+    ``scope="pool"`` hands the direct arm every eligible material: a
+    same-evidence test of reasoning and bookkeeping. ``scope="initial"`` hands
+    it only the case's ``initial_version_ids`` (what a user would paste), so the
+    difference measured is the harness's retrieval from the pool; the registered
+    summary says which was used, because the two answer different questions.
+    """
+    if scope not in {"pool", "initial"}:
+        raise ValueError("direct scope must be pool or initial")
     cutoff = _time(case["target"].get("as_of"), "target.as_of")
+    allowed = set(case.get("initial_version_ids") or []) if scope == "initial" else None
     eligible, excluded = [], {}
     for item in case["materials"]:
         material = from_mapping(MaterialVersion, item, "material")
+        if allowed is not None and material.version_id not in allowed:
+            continue
         reasons = _material_eligibility(material, cutoff)
         if reasons:
             excluded[material.version_id] = reasons
@@ -164,7 +176,8 @@ def direct_packet(case: dict) -> tuple[dict, dict[str, dict]]:
         raise ValueError(f"case {case['id']!r} has no cutoff-eligible material")
     packet = {"target": {"text": case["target"]["text"], "as_of": case["target"]["as_of"],
                          "source_version_id": case["target"].get("source_version_id")},
-              "materials": eligible, "excluded_version_ids": sorted(excluded)}
+              "materials": eligible, "excluded_version_ids": sorted(excluded),
+              "evidence_scope": scope}
     return packet, {item["version_id"]: item for item in eligible}
 
 
@@ -187,12 +200,12 @@ def validate_direct(value: dict, materials: dict[str, dict]) -> None:
         raise ValueError("a decisive direct verdict requires at least one quoted basis")
 
 
-def run_direct(case: dict, transport) -> dict:
+def run_direct(case: dict, transport, scope: str = "pool") -> dict:
     started = time.perf_counter()
     result = {"case_id": case["id"], "arm": "direct", "valid": False, "verdict": None,
-              "original_version_ids": None, "error": None}
+              "original_version_ids": None, "error": None, "evidence_scope": scope}
     try:
-        packet, materials = direct_packet(case)
+        packet, materials = direct_packet(case, scope)
         result["packet"] = packet
         value = transport.generate("direct_verdict", DIRECT_INSTRUCTIONS, packet, DIRECT_SCHEMA)
         result["raw_response"] = value
@@ -295,6 +308,11 @@ def command_register(arguments) -> int:
         "arm_order": [ARMS if index % 2 == 0 else ARMS[::-1] for index in range(len(cases))],
         "max_token_ratio": arguments.max_token_ratio, "max_model_calls": arguments.max_model_calls,
         "harness_config": parse_overrides(arguments.harness_config),
+        "direct_scope": arguments.direct_scope,
+        "comparison": ("same evidence: the direct arm receives every cutoff-eligible material"
+                       if arguments.direct_scope == "pool" else
+                       "retrieval: the direct arm receives only the initial materials; the harness "
+                       "retrieves from the pool"),
         "success_rule": ("harness accuracy strictly greater than direct; every harness output valid; "
                          f"harness total tokens at most {arguments.max_token_ratio} x direct"),
     }
@@ -327,7 +345,7 @@ def command_run(arguments) -> int:
             resolved.setdefault("reasoning_effort", getattr(transport, "reasoning_effort",
                                                             arguments.reasoning_effort))
             if arm == "direct":
-                result = run_direct(case, transport)
+                result = run_direct(case, transport, registration.get("direct_scope", "pool"))
             else:
                 result = run_harness(case, transport, registration["max_model_calls"],
                                      registration.get("harness_config") or None)
@@ -444,7 +462,8 @@ def command_score(arguments) -> int:
         "benchmark_id": registration["benchmark_id"], "scored_at": now(),
         "registration": {key: registration.get(key) for key in
                          ("registered_at", "harness_version", "harness_commit", "success_rule",
-                          "max_token_ratio", "max_model_calls", "harness_config")},
+                          "max_token_ratio", "max_model_calls", "harness_config", "direct_scope",
+                          "comparison")},
         "settings": predictions["direct"]["settings"],
         "direct": {key: value for key, value in direct.items() if key != "rows"},
         "harness": {key: value for key, value in harness.items() if key != "rows"},
@@ -481,6 +500,7 @@ def render_summary(summary: dict) -> str:
              f"harness {summary['registration']['harness_version']} "
              f"({(summary['registration']['harness_commit'] or 'uncommitted')[:12]}); "
              f"harness config overrides `{json.dumps(summary['registration'].get('harness_config') or {})}`.", "",
+             f"Comparison: {summary['registration'].get('comparison') or 'same evidence'}.", "",
              "| Measure | Direct | Harness |", "|---|---:|---:|",
              f"| Accuracy | {direct['correct']}/{direct['cases']} ({pct(direct['accuracy'])}) "
              f"| {harness['correct']}/{harness['cases']} ({pct(harness['accuracy'])}) |",
@@ -521,6 +541,9 @@ def main(argv=None) -> int:
     register.add_argument("--output", type=Path, required=True)
     register.add_argument("--max-token-ratio", type=float, default=2.0)
     register.add_argument("--max-model-calls", type=int, default=12)
+    register.add_argument("--direct-scope", choices=("pool", "initial"), default="pool",
+                          help="what the direct arm receives: every eligible material (pool, a "
+                               "same-evidence test) or only initial_version_ids (initial, a retrieval test)")
     register.add_argument("--harness-config", action="append", metavar="KEY=VALUE",
                           help="TraceConfig override applied to every case in the harness arm, e.g. "
                                "defer_verification_until_provenance_complete=true; recorded in the registration")

@@ -103,6 +103,23 @@ class HeadToHeadTests(unittest.TestCase):
         self.assertEqual(2, code)
         self.assertIn("key=value", stderr)
 
+    def test_direct_scope_initial_hands_the_direct_arm_only_the_initial_materials(self):
+        item = case("c1")
+        packet, materials = head_to_head.direct_packet(item, "initial")
+        self.assertEqual(["notice"], [m["version_id"] for m in packet["materials"]])
+        self.assertEqual("initial", packet["evidence_scope"])
+        self.assertEqual({"notice"}, set(materials))
+        packet, _ = head_to_head.direct_packet(item, "pool")
+        self.assertEqual(["notice", "record"], [m["version_id"] for m in packet["materials"]])
+        with self.assertRaises(ValueError):
+            head_to_head.direct_packet(item, "everything")
+        code, _, stderr = run(["register", str(self.cases), "--gold", str(self.gold),
+                               "--output", str(self.run_dir), "--direct-scope", "initial"])
+        self.assertEqual(0, code, stderr)
+        registration = json.loads((self.run_dir / "REGISTRATION.json").read_text())
+        self.assertEqual("initial", registration["direct_scope"])
+        self.assertIn("retrieval", registration["comparison"])
+
     def test_gold_accepts_alternative_origin_sets(self):
         self.assertEqual([], head_to_head.acceptable_origin_sets(None))
         self.assertEqual([["a"]], head_to_head.acceptable_origin_sets(["a"]))

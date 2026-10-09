@@ -24,6 +24,14 @@ are both acceptable answers; `null` marks an untraceable case.
 Materials that are ineligible at the cutoff are excluded from both arms. Both
 arms are supplied-snapshot only; neither retrieves from the open web.
 
+`register --direct-scope` picks which question a run answers. `pool` (the
+default) hands the direct arm every eligible material: a same-evidence test
+of reasoning and bookkeeping, on which a capable model is not expected to
+lose. `initial` hands the direct arm only the case's `initial_version_ids`,
+what a user would paste, so the difference measured is retrieval from the
+pool; it is a test of the whole system, not of the prompt, and its summary
+says so. Do not present an `initial` run as a same-evidence result.
+
 ## Procedure
 
 ```bash
@@ -117,10 +125,16 @@ file before inference, and never edit the case file after registration.
   defers by default and the verifier prompt states the sufficiency standard
   and forbids restating a gap with a stricter requirement; the news path
   keeps per-round verification until it is measured there.
+- dev-003 (deferral default, prompt amendment): 8/8 against 8/8, origins
+  5/5 against 5/5, 38 calls, 5.11×. With `input_chars` repaired the summary
+  shows the harness's own packets at about 9× the direct packet characters:
+  the harness's cost beyond the provider's fixed per-call overhead is the
+  context it carries (prior analyses, verification history, prior-material
+  metadata), not the documents.
 - On a pool where every eligible material is handed to the direct arm, the
-  bare model has not lost a case. The harness's remaining advantage to
-  measure is on pools the direct arm cannot be handed whole: live retrieval
-  from a page, decoys at scale, and cost.
+  bare model has not lost a case in three runs. The harness's remaining
+  advantage to measure is on pools the direct arm cannot be handed whole:
+  live retrieval from a page, decoys at scale, and cost.
 
 ## Published runs
 
@@ -136,5 +150,9 @@ file before inference, and never edit the case file after registration.
   calls (5.13×) with it. Origins named correctly 4/5 for every arm; the
   miss was a same-URL revision scored against a single acceptable set, which
   the gold format now allows to be listed as alternatives. Synthetic.
+- [dev-003](../reports/head-to-head-dev-003/SUMMARY.md): same pool and model
+  with deferral as the default and the amended verifier prompt. 8/8 against
+  8/8, origins 5/5 against 5/5, lineage certified on 4 of 5, 38 calls,
+  5.11×; harness packets 199,206 characters against 22,361. Synthetic.
 
 Synthetic pools check the mechanics. They are not real-news accuracy evidence.

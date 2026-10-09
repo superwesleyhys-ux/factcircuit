@@ -5,6 +5,10 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- `head_to_head.py register --direct-scope {pool,initial}` chooses whether
+  the direct arm receives every eligible material (same-evidence test) or
+  only the initial materials (retrieval test); the registration and summary
+  name the comparison. Published `reports/head-to-head-dev-003`.
 - The double loop now defers verification until the provenance chain is
   complete by default (`defer_verification_until_provenance_complete`; set it
   to `false` to restore per-round verification). dev-002 showed early
