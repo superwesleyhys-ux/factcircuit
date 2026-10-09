@@ -23,7 +23,8 @@ def case(identifier):
                        "as_of": "2026-01-03T00:00:00Z", "source_version_id": "notice"},
             "materials": deepcopy([D1, D2]), "initial_version_ids": ["notice"],
             "config": {"max_rounds": 4, "max_documents": 4, "max_decomposition_calls": 8,
-                       "reanalyze_existing_versions": True}}  # the shared script is the legacy sequence
+                       "reanalyze_existing_versions": True,  # the shared script is the legacy sequence
+                       "defer_verification_until_provenance_complete": False}}
 
 
 CASES = {"benchmark_id": "fixture-h2h", "cases": [case("c1"), case("c2")]}
@@ -101,6 +102,22 @@ class HeadToHeadTests(unittest.TestCase):
                                "--output", str(self.run_dir), "--harness-config", "broken"])
         self.assertEqual(2, code)
         self.assertIn("key=value", stderr)
+
+    def test_gold_accepts_alternative_origin_sets(self):
+        self.assertEqual([], head_to_head.acceptable_origin_sets(None))
+        self.assertEqual([["a"]], head_to_head.acceptable_origin_sets(["a"]))
+        self.assertEqual([["a"], ["a", "b"]], head_to_head.acceptable_origin_sets([["a"], ["a", "b"]]))
+        for bad in ([], [[]], ["a", ["b"]], "a", [1]):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                head_to_head.acceptable_origin_sets(bad)
+        labels = {"c1": {"truth": "supported", "original_version_ids": [["record"], ["notice", "record"]]}}
+        rows = [{"case_id": "c1", "valid": True, "verdict": "supported",
+                 "original_version_ids": ["notice", "record"], "lineage_certified": False,
+                 "tokens": {"total_tokens": 1, "calls": 1, "input_tokens": 1, "output_tokens": 0,
+                            "input_chars": 4}}]
+        scored = head_to_head.score_arm(rows, labels)
+        self.assertEqual(1, scored["origin_correct"])
+        self.assertEqual(0, scored["lineage_certified"])
 
     def test_register_refuses_gold_inside_repository(self):
         inside = head_to_head.ROOT / "examples" / "head_to_head_gold.example.json"

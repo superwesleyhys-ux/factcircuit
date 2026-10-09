@@ -8,7 +8,13 @@
     "record-revised-before-cutoff": {
       "truth": "contradicted",
       "original_version_ids": [
-        "record-b-v2"
+        [
+          "record-b-v2"
+        ],
+        [
+          "record-b-v1",
+          "record-b-v2"
+        ]
       ]
     },
     "decoy-record-same-number": {

@@ -5,6 +5,17 @@ semantic versioning for its public releases.
 
 ## Unreleased
 
+- The double loop now defers verification until the provenance chain is
+  complete by default (`defer_verification_until_provenance_complete`; set it
+  to `false` to restore per-round verification). dev-002 showed early
+  verification escalating its own evidence standard on a two-hop chain. The
+  verifier prompt states the sufficiency standard for an original record and
+  forbids restating a settled gap with a stricter requirement. `trace-news`
+  keeps per-round verification until measured there.
+- Head-to-head gold may list alternative acceptable origin sets; the origin
+  metric scores the origins the harness named, with lineage certification
+  reported separately. Double-loop call records carry `input_chars`.
+- Published `reports/head-to-head-dev-002a` and `dev-002b`.
 - Added `TraceConfig.defer_verification_until_provenance_complete` (default
   off): while a blocking provenance gap is open and retrieval can still act
   on it, the round skips verification; the verifier runs once the gap is

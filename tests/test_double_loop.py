@@ -92,7 +92,9 @@ def payload(extra=()):
                        "as_of": "2026-01-03T00:00:00Z", "source_version_id": "notice"},
             "materials": deepcopy([D1, D2, *extra]), "initial_version_ids": ["notice"],
             "config": {"max_rounds": 4, "max_documents": 4, "max_decomposition_calls": 8,
-                       "reanalyze_existing_versions": True}}
+                       "reanalyze_existing_versions": True,
+                       # the scripted sequences below verify before the record arrives
+                       "defer_verification_until_provenance_complete": False}}
 
 
 class DoubleLoopTests(unittest.TestCase):

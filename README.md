@@ -221,8 +221,13 @@ registered ratio). See the [protocol](docs/HEAD_TO_HEAD.md). The first
 run, [dev-001](reports/head-to-head-dev-001/SUMMARY.md), is a three-case
 synthetic mechanics check with Astra: 3/3 against 3/3, and 4.34× the
 provider-reported tokens, most of it the Codex CLI's fixed per-call prompt
-paid on 5 calls instead of 1. It establishes nothing about accuracy. The
-sections below are the earlier, mostly corrected, comparisons.
+paid on 5 calls instead of 1. On the eight-case synthetic dev pool
+([dev-002a](reports/head-to-head-dev-002a/SUMMARY.md),
+[dev-002b](reports/head-to-head-dev-002b/SUMMARY.md)) the bare model scored
+8/8 both times; the harness scored 7/8 with early verification and 8/8 with
+verification deferred until the provenance chain is complete, which is now
+the double loop's default. None of this establishes accuracy. The sections
+below are the earlier, mostly corrected, comparisons.
 
 ## What the experiments show so far
 
